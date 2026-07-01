@@ -1,0 +1,7 @@
+tunnel: 0a434a21-fc62-4670-a8e7-4cfb0743210f
+credentials-file: /home/blackhole/.cloudflared/0a434a21-fc62-4670-a8e7-4cfb0743210f.json
+
+ingress:
+  - hostname: tracer.xyz-labs.xyz
+    service: http://127.0.0.1:8088
+  - service: http_status:404
