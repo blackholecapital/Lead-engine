@@ -52,3 +52,12 @@ res.json({status:"idle",pending:0});
 app.get("/api/agents",(req,res)=>{
 res.json({status:"idle",running:0});
 });
+
+app.get("/api/retrieval",(req,res)=>{
+res.json({
+documents:18342,
+embeddings:18342,
+qps:0,
+status:"ONLINE"
+});
+});
