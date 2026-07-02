@@ -1,0 +1,1 @@
+module.exports={ROOT:"/mnt/eila-hot-sidecar",TRACER:"/mnt/eila-hot-sidecar/tracer-platform",INDEXES:"/mnt/eila-hot-sidecar/tracer-platform/indexes",WAREHOUSE:"/mnt/eila-hot-sidecar/tracer-platform/warehouse",REVIEW:"/mnt/eila-hot-sidecar/tracer-platform/review-center",STORAGE:"/mnt/eila-hot-sidecar/tracer-platform/storage"};
