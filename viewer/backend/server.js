@@ -61,3 +61,12 @@ qps:0,
 status:"ONLINE"
 });
 });
+
+app.get("/api/warehouse",(req,res)=>{
+res.json({
+status:"ONLINE",
+collections:8,
+vectors:18342,
+lastSync:new Date().toLocaleTimeString()
+});
+});
