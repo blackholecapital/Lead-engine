@@ -1,23 +1,21 @@
-const express = require("express");
-const cors = require("cors");
+const express=require("express");
+const cors=require("cors");
 
-const app = express();
-
+const app=express();
 app.use(cors());
 
-app.get("/api/runtime", (req, res) => {
-  res.json({
-    runtime: "online",
-    agents: 0,
-    warehouse: "ready",
-    storage: "48 GB",
-    indexes: "healthy",
-    cpu: 0,
-    memory: 0,
-    timestamp: Date.now()
-  });
+app.get("/api/runtime",(req,res)=>{
+res.json({
+runtime:"ONLINE",
+retrievalJobs:0,
+warehouse:"Ready",
+storage:"48 GB",
+indexes:"Healthy",
+agents:"Idle",
+cpu:0,
+memory:0,
+uptime:process.uptime()
+});
 });
 
-app.listen(9090, "0.0.0.0", () => {
-  console.log("Tracer Runtime API listening on http://0.0.0.0:9090");
-});
+app.listen(3001,()=>console.log("Tracer API listening on :3001"));
