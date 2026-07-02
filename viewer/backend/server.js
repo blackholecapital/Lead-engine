@@ -8,7 +8,7 @@ app.use(cors());
 
 app.get("/api/runtime",(req,res)=>{
 
-const disk=execSync("df -h / | tail -1 | awk '{print $4}'").toString().trim();
+const disk=execSync("df -h /mnt/eila-hot-sidecar | tail -1 | awk '{print $4}'").toString().trim();
 
 res.json({
 runtime:"ONLINE",
@@ -36,7 +36,7 @@ qps:0
 
 app.get("/api/storage",(req,res)=>{
 
-const d=execSync("df -h / | tail -1").toString().trim().split(/\s+/);
+const d=execSync("df -h /mnt/eila-hot-sidecar | tail -1").toString().trim().split(/\s+/);
 
 res.json({
 total:d[1],
