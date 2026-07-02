@@ -1,13 +1,16 @@
-import { defineConfig } from "vite";
+import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  plugins: [react()],
-  server: {
-    host: "0.0.0.0",
-    port: 8088,
-    allowedHosts: [
-      "tracer.xyz-labs.xyz",
-    ],
-  },
+  plugins:[react()],
+  server:{
+    host:"0.0.0.0",
+    port:8089,
+    proxy:{
+      "/api":{
+        target:"http://127.0.0.1:3001",
+        changeOrigin:true
+      }
+    }
+  }
 });
