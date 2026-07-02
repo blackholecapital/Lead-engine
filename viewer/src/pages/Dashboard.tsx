@@ -4,7 +4,16 @@ export default function Dashboard(){
 
 const {data,isLoading}=useRuntime();
 
-if(isLoading) return <h2>Connecting to Runtime...</h2>;
+if(isLoading) return <h2>Connecting...</h2>;
+
+const cards=[
+["Runtime",data.runtime],
+["Hostname",data.hostname],
+["CPU",data.cpu],
+["Memory",`${data.memory}%`],
+["Storage",data.storage],
+["Uptime",`${Math.floor(data.uptime/3600)} hrs`]
+];
 
 return(
 <div>
@@ -13,17 +22,12 @@ return(
 
 <div className="dashboard-grid">
 
-<div className="panel"><h3>Runtime</h3><p>{data.runtime}</p></div>
-
-<div className="panel"><h3>CPU Load</h3><p>{data.cpu}</p></div>
-
-<div className="panel"><h3>Memory</h3><p>{data.memory}%</p></div>
-
-<div className="panel"><h3>Storage</h3><p>{data.storage}</p></div>
-
-<div className="panel"><h3>Warehouse</h3><p>{data.warehouse}</p></div>
-
-<div className="panel"><h3>Indexes</h3><p>{data.indexes}</p></div>
+{cards.map(([k,v])=>(
+<div className="panel" key={k}>
+<h3>{k}</h3>
+<p>{v}</p>
+</div>
+))}
 
 </div>
 

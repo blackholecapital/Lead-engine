@@ -48,10 +48,14 @@ percent:d[4].replace("%","")
 });
 
 app.get("/api/indexes",(req,res)=>{
-const {execSync}=require("child_process");
+
 const count=execSync("find /mnt/eila-hot-sidecar/tracer-platform/indexes -type f 2>/dev/null | wc -l").toString().trim();
-res.json({status:"Healthy",indexes:Number(count)});
+
+res.json({
+status:"Healthy",
+indexes:Number(count)
 });
+
 });
 
 app.get("/api/warehouse",(req,res)=>{
