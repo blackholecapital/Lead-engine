@@ -68,10 +68,17 @@ lastSync:new Date().toLocaleTimeString()
 });
 
 app.get("/api/review",(req,res)=>{
+
+const files=execSync(
+"find /mnt/eila-hot-sidecar/tracer-platform/review-center -type f 2>/dev/null | wc -l"
+).toString().trim();
+
 res.json({
-status:"Idle",
-pending:0
+status:"READY",
+pending:Number(files),
+files:Number(files)
 });
+
 });
 
 app.get("/api/agents",(req,res)=>{
