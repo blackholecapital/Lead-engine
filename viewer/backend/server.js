@@ -28,3 +28,27 @@ agents:"Idle"
 });
 
 app.listen(3001,"0.0.0.0",()=>console.log("Tracer API :3001"));
+
+app.get("/api/retrieval",(req,res)=>{
+res.json({status:"online",documents:0,queue:0});
+});
+
+app.get("/api/storage",(req,res)=>{
+res.json({status:"online",drives:1,free:"Unknown"});
+});
+
+app.get("/api/indexes",(req,res)=>{
+res.json({status:"healthy",indexes:0});
+});
+
+app.get("/api/warehouse",(req,res)=>{
+res.json({status:"ready",datasets:0});
+});
+
+app.get("/api/review",(req,res)=>{
+res.json({status:"idle",pending:0});
+});
+
+app.get("/api/agents",(req,res)=>{
+res.json({status:"idle",running:0});
+});
