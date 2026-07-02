@@ -1,21 +1,21 @@
 import {
-  LayoutDashboard,
-  Search,
-  Archive,
-  HardDrive,
-  Database,
-  ClipboardList,
-  Bot,
-  Settings,
+LayoutDashboard,
+Search,
+Archive,
+HardDrive,
+Database,
+ClipboardList,
+Bot,
+Settings
 } from "lucide-react";
 
-export const navigation = [
-  { name: "Dashboard", path: "/", icon: LayoutDashboard },
-  { name: "Retrieval", path: "/retrieval", icon: Search },
-  { name: "Warehouse", path: "/warehouse", icon: Archive },
-  { name: "Storage", path: "/storage", icon: HardDrive },
-  { name: "Indexes", path: "/indexes", icon: Database },
-  { name: "Review Center", path: "/review", icon: ClipboardList },
-  { name: "Agents", path: "/agents", icon: Bot },
-  { name: "Settings", path: "/settings", icon: Settings },
+export const navigation=[
+{name:"Dashboard",path:"/",icon:LayoutDashboard,status:"LIVE"},
+{name:"Retrieval",path:"/retrieval",icon:Search,status:"LIVE"},
+{name:"Warehouse",path:"/warehouse",icon:Archive,status:"LIVE"},
+{name:"Storage",path:"/storage",icon:HardDrive,status:"LIVE"},
+{name:"Indexes",path:"/indexes",icon:Database,status:"LIVE"},
+{name:"Review",path:"/review",icon:ClipboardList,status:"READY"},
+{name:"Agents",path:"/agents",icon:Bot,status:"IDLE"},
+{name:"Settings",path:"/settings",icon:Settings,status:"SYS"}
 ];
