@@ -1,8 +1,4 @@
-export async function getRuntimeStatus() {
-  const r = await fetch("/api/runtime");
-
-  if (!r.ok)
-    throw new Error("Runtime unavailable");
-
-  return r.json();
+export async function getRuntime(){
+ const r=await fetch("http://100.104.23.59:3001/api/runtime");
+ return r.json();
 }
