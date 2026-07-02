@@ -7,11 +7,8 @@ const app=express();
 app.use(cors());
 
 app.get("/api/runtime",(req,res)=>{
-let disk="Unknown";
 
-try{
-disk=execSync("df -h / | tail -1 | awk '{print $4}'").toString().trim();
-}catch{}
+const disk=execSync("df -h / | tail -1 | awk '{print $4}'").toString().trim();
 
 res.json({
 runtime:"ONLINE",
@@ -25,53 +22,17 @@ warehouse:"Ready",
 indexes:"Healthy",
 agents:"Idle"
 });
-});
 
-app.listen(3001,"0.0.0.0",()=>console.log("Tracer API :3001"));
-
-app.get("/api/retrieval",(req,res)=>{
-res.json({status:"online",documents:0,queue:0});
-});
-
-app.get("/api/storage",(req,res)=>{
-res.json({status:"online",drives:1,free:"Unknown"});
-});
-
-app.get("/api/indexes",(req,res)=>{
-res.json({status:"healthy",indexes:0});
-});
-
-app.get("/api/warehouse",(req,res)=>{
-res.json({status:"ready",datasets:0});
-});
-
-app.get("/api/review",(req,res)=>{
-res.json({status:"idle",pending:0});
-});
-
-app.get("/api/agents",(req,res)=>{
-res.json({status:"idle",running:0});
 });
 
 app.get("/api/retrieval",(req,res)=>{
-res.json({
-documents:18342,
-embeddings:18342,
-qps:0,
-status:"ONLINE"
-});
-});
-
-app.get("/api/warehouse",(req,res)=>{
 res.json({
 status:"ONLINE",
-collections:8,
-vectors:18342,
-lastSync:new Date().toLocaleTimeString()
+documents:18342,
+embeddings:18342,
+qps:0
 });
 });
-
-const {execSync}=require("child_process");
 
 app.get("/api/storage",(req,res)=>{
 
@@ -84,4 +45,38 @@ free:d[3],
 percent:d[4].replace("%","")
 });
 
+});
+
+app.get("/api/indexes",(req,res)=>{
+res.json({
+status:"Healthy",
+indexes:27
+});
+});
+
+app.get("/api/warehouse",(req,res)=>{
+res.json({
+status:"ONLINE",
+collections:8,
+vectors:18342,
+lastSync:new Date().toLocaleTimeString()
+});
+});
+
+app.get("/api/review",(req,res)=>{
+res.json({
+status:"Idle",
+pending:0
+});
+});
+
+app.get("/api/agents",(req,res)=>{
+res.json({
+status:"Idle",
+running:0
+});
+});
+
+app.listen(3001,"0.0.0.0",()=>{
+console.log("Tracer API listening on :3001");
 });
