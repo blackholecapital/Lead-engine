@@ -70,3 +70,18 @@ vectors:18342,
 lastSync:new Date().toLocaleTimeString()
 });
 });
+
+const {execSync}=require("child_process");
+
+app.get("/api/storage",(req,res)=>{
+
+const d=execSync("df -h / | tail -1").toString().trim().split(/\s+/);
+
+res.json({
+total:d[1],
+used:d[2],
+free:d[3],
+percent:d[4].replace("%","")
+});
+
+});
