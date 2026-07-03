@@ -1,0 +1,407 @@
+{
+  "id": "schedule-x",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/calendar/schedule-x",
+  "count": 80,
+  "components": [
+    {
+      "name": "007-list-view",
+      "path": "cypress/pages/calendar/007-list-view.ts",
+      "story": false
+    },
+    {
+      "name": "007-list-view-db",
+      "path": "cypress/pages/calendar/007-list-view-db.ts",
+      "story": false
+    },
+    {
+      "name": "app-calendar",
+      "path": "website/components/partials/app-calendar/app-calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/ar-EG/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/ca-ES/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/cs-CZ/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/da-DK/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/de-DE/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/en-GB/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/en-US/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/es-ES/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/et-EE/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/fa-IR/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/fi-FI/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/fr-FR/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/he-IL/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/hr-HR/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/id-ID/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/it-IT/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/ja-JP/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/ky-KG/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/lt-LT/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/mk-MK/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/nb-NO/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/nl-NL/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/pl-PL/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/pt-BR/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/ro-RO/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/ru-RU/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/sk-SK/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/sl-SI/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/sr-Latn-RS/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/sr-RS/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/sv-SE/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/tr-TR/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/uk-UA/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/zh-CN/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar",
+      "path": "packages/translations/src/locales/zh-TW/calendar.ts",
+      "story": false
+    },
+    {
+      "name": "calendar-code",
+      "path": "website/components/pages/__data__/calendar-code.ts",
+      "story": false
+    },
+    {
+      "name": "calendar-controls-plugin.impl",
+      "path": "packages/calendar-controls/src/calendar-controls-plugin.impl.ts",
+      "story": false
+    },
+    {
+      "name": "calendar-header",
+      "path": "packages/calendar/src/components/header/calendar-header.tsx",
+      "story": false
+    },
+    {
+      "name": "calendar-ids",
+      "path": "development/seeder/event-properties/calendar-ids.ts",
+      "story": false
+    },
+    {
+      "name": "calendar-wrapper",
+      "path": "packages/calendar/src/components/calendar-wrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "calendar.app",
+      "path": "packages/calendar/src/calendar.app.ts",
+      "story": false
+    },
+    {
+      "name": "calendars",
+      "path": "development/theme-shadcn/calendars.ts",
+      "story": false
+    },
+    {
+      "name": "calendars",
+      "path": "website/components/partials/premium-calendar/data/calendars.ts",
+      "story": false
+    },
+    {
+      "name": "card",
+      "path": "website/components/partials/card/card.tsx",
+      "story": false
+    },
+    {
+      "name": "date-format",
+      "path": "packages/shared/src/enums/time/date-format.ts",
+      "story": false
+    },
+    {
+      "name": "date-formats",
+      "path": "packages/shared/src/values/date-formats.ts",
+      "story": false
+    },
+    {
+      "name": "date-grid-day",
+      "path": "packages/calendar/src/components/week-grid/date-grid-day.tsx",
+      "story": false
+    },
+    {
+      "name": "date-grid-event",
+      "path": "packages/calendar/src/components/week-grid/date-grid-event.tsx",
+      "story": false
+    },
+    {
+      "name": "demo-calendar",
+      "path": "website/components/pages/demo-calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "demo-modal-and-sidebar",
+      "path": "website/components/pages/demo-modal-and-sidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "demo-resource-scheduler",
+      "path": "website/components/pages/demo-resource-scheduler.tsx",
+      "story": false
+    },
+    {
+      "name": "demo-time-grid-resource-view",
+      "path": "website/components/pages/demo-time-grid-resource-view.tsx",
+      "story": false
+    },
+    {
+      "name": "drag-to-create-calendar",
+      "path": "website/components/partials/premium-calendar/drag-to-create-calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "draw-calendar",
+      "path": "website/components/partials/premium-calendar/draw-calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "event-modal",
+      "path": "packages/event-modal/src/event-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "event-modal-plugin.impl",
+      "path": "packages/event-modal/src/event-modal-plugin.impl.ts",
+      "story": false
+    },
+    {
+      "name": "features-list",
+      "path": "website/components/partials/features-list/features-list.tsx",
+      "story": false
+    },
+    {
+      "name": "format",
+      "path": "packages/mcp-server/src/format.ts",
+      "story": false
+    },
+    {
+      "name": "icalendar-plugin.impl",
+      "path": "packages/ical/src/icalendar-plugin.impl.ts",
+      "story": false
+    },
+    {
+      "name": "list-wrapper",
+      "path": "packages/calendar/src/views/list/components/list-wrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "modal-calendar",
+      "path": "website/components/partials/premium-calendar/modal-calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "modal-icon",
+      "path": "website/components/partials/icons/modal-icon.tsx",
+      "story": false
+    },
+    {
+      "name": "month-grid-day",
+      "path": "packages/calendar/src/views/month-grid/components/month-grid-day.tsx",
+      "story": false
+    },
+    {
+      "name": "month-grid-event",
+      "path": "packages/calendar/src/views/month-grid/components/month-grid-event.tsx",
+      "story": false
+    },
+    {
+      "name": "month-grid-week",
+      "path": "packages/calendar/src/views/month-grid/components/month-grid-week.tsx",
+      "story": false
+    },
+    {
+      "name": "month-grid-wrapper",
+      "path": "packages/calendar/src/views/month-grid/components/month-grid-wrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "pricing-card",
+      "path": "website/components/partials/pricing-card/pricing-card.tsx",
+      "story": false
+    },
+    {
+      "name": "print-cli-message",
+      "path": "development/seeder/helpers/print-cli-message.ts",
+      "story": false
+    },
+    {
+      "name": "resource-calendar",
+      "path": "website/components/partials/premium-calendar/resource-calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "resource-calendar-with-custom-labels",
+      "path": "website/components/partials/premium-calendar/resource-calendar-with-custom-labels.tsx",
+      "story": false
+    },
+    {
+      "name": "sales-card",
+      "path": "website/components/partials/sales-card/sales-card.tsx",
+      "story": false
+    },
+    {
+      "name": "sidebar-calendar",
+      "path": "website/components/partials/premium-calendar/sidebar-calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "sidebar-icon",
+      "path": "website/components/partials/icons/sidebar-icon.tsx",
+      "story": false
+    },
+    {
+      "name": "time-grid-day",
+      "path": "packages/calendar/src/components/week-grid/time-grid-day.tsx",
+      "story": false
+    },
+    {
+      "name": "time-grid-event",
+      "path": "packages/calendar/src/components/week-grid/time-grid-event.tsx",
+      "story": false
+    },
+    {
+      "name": "time-grid-resource-calendar",
+      "path": "website/components/partials/premium-calendar/time-grid-resource-calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "upcoming-features-checklist",
+      "path": "website/components/partials/upcoming-features-checklist/upcoming-features-checklist.tsx",
+      "story": false
+    }
+  ]
+}

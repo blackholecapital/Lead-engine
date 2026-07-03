@@ -1,0 +1,1058 @@
+{
+  "id": "documenso",
+  "features": {
+    "conversation": [
+      {
+        "name": "document-send-email-message-helper",
+        "path": "packages/ui/components/document/document-send-email-message-helper.tsx",
+        "story": false
+      },
+      {
+        "name": "find-inbox",
+        "path": "packages/trpc/server/document-router/find-inbox.ts",
+        "story": false
+      },
+      {
+        "name": "form-error-message",
+        "path": "packages/ui/primitives/form/form-error-message.tsx",
+        "story": false
+      },
+      {
+        "name": "get-inbox-count",
+        "path": "packages/trpc/server/document-router/get-inbox-count.ts",
+        "story": false
+      },
+      {
+        "name": "inbox",
+        "path": "apps/remix/app/routes/_authenticated+/inbox.tsx",
+        "story": false
+      },
+      {
+        "name": "inbox-table",
+        "path": "apps/remix/app/components/tables/inbox-table.tsx",
+        "story": false
+      },
+      {
+        "name": "template-custom-message-body",
+        "path": "packages/email/template-components/template-custom-message-body.tsx",
+        "story": false
+      }
+    ],
+    "contacts": [
+      {
+        "name": "create-customer",
+        "path": "packages/ee/server-only/stripe/create-customer.ts",
+        "story": false
+      },
+      {
+        "name": "create-stripe-customer",
+        "path": "packages/trpc/server/admin-router/create-stripe-customer.ts",
+        "story": false
+      },
+      {
+        "name": "get-customer",
+        "path": "packages/ee/server-only/stripe/get-customer.ts",
+        "story": false
+      },
+      {
+        "name": "get-public-profile-by-url",
+        "path": "packages/lib/server-only/profile/get-public-profile-by-url.ts",
+        "story": false
+      },
+      {
+        "name": "get-team-public-profile",
+        "path": "packages/lib/server-only/team/get-team-public-profile.ts",
+        "story": false
+      },
+      {
+        "name": "profile",
+        "path": "apps/remix/app/components/forms/profile.tsx",
+        "story": false
+      },
+      {
+        "name": "profile",
+        "path": "apps/remix/app/routes/_authenticated+/settings+/profile.tsx",
+        "story": false
+      },
+      {
+        "name": "public-profile",
+        "path": "apps/remix/app/routes/_authenticated+/settings+/_dynamic_personal_routes+/public-profile.tsx",
+        "story": false
+      },
+      {
+        "name": "public-profile-form",
+        "path": "apps/remix/app/components/forms/public-profile-form.tsx",
+        "story": false
+      },
+      {
+        "name": "public-profile-template-manage-dialog",
+        "path": "apps/remix/app/components/dialogs/public-profile-template-manage-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "settings-public-profile-templates-table",
+        "path": "apps/remix/app/components/tables/settings-public-profile-templates-table.tsx",
+        "story": false
+      },
+      {
+        "name": "settings.public-profile",
+        "path": "apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.public-profile.tsx",
+        "story": false
+      },
+      {
+        "name": "sync-stripe-customer-subscription",
+        "path": "packages/ee/server-only/stripe/sync-stripe-customer-subscription.ts",
+        "story": false
+      },
+      {
+        "name": "update-customer",
+        "path": "packages/ee/server-only/stripe/update-customer.ts",
+        "story": false
+      },
+      {
+        "name": "update-profile",
+        "path": "packages/lib/server-only/user/update-profile.ts",
+        "story": false
+      },
+      {
+        "name": "update-team-public-profile",
+        "path": "packages/lib/server-only/team/update-team-public-profile.ts",
+        "story": false
+      },
+      {
+        "name": "user-profile-skeleton",
+        "path": "apps/remix/app/components/general/user-profile-skeleton.tsx",
+        "story": false
+      },
+      {
+        "name": "user-profile-timur",
+        "path": "apps/remix/app/components/general/user-profile-timur.tsx",
+        "story": false
+      }
+    ],
+    "calendar": [
+      {
+        "name": "calendar",
+        "path": "packages/ui/primitives/calendar.tsx",
+        "story": false
+      }
+    ],
+    "automation": [],
+    "dashboard": [
+      {
+        "name": "admin-dashboard-users-table",
+        "path": "apps/remix/app/components/tables/admin-dashboard-users-table.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-organisation-overview-table",
+        "path": "apps/remix/app/components/tables/admin-organisation-overview-table.tsx",
+        "story": false
+      },
+      {
+        "name": "dashboard",
+        "path": "apps/remix/app/routes/_authenticated+/dashboard.tsx",
+        "story": false
+      }
+    ],
+    "settings": [
+      {
+        "name": "account-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/account-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-document-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-document-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-organisation-create-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-organisation-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-organisation-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-organisation-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-organisation-member-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-organisation-member-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-organisation-member-update-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-organisation-member-update-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-organisation-sync-subscription-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-organisation-sync-subscription-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-swap-subscription-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-swap-subscription-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-team-member-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-team-member-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-user-create-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-user-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-user-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-user-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-user-disable-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-user-disable-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-user-enable-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-user-enable-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-user-reset-two-factor-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-user-reset-two-factor-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "ai-features-enable-dialog",
+        "path": "apps/remix/app/components/dialogs/ai-features-enable-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "ai-field-detection-dialog",
+        "path": "apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "ai-recipient-detection-dialog",
+        "path": "apps/remix/app/components/dialogs/ai-recipient-detection-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "alert-dialog",
+        "path": "packages/ui/primitives/alert-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "assistant-confirmation-dialog",
+        "path": "apps/remix/app/components/dialogs/assistant-confirmation-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "branding-preferences-form",
+        "path": "apps/remix/app/components/forms/branding-preferences-form.tsx",
+        "story": false
+      },
+      {
+        "name": "claim-create-dialog",
+        "path": "apps/remix/app/components/dialogs/claim-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "claim-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/claim-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "claim-update-dialog",
+        "path": "apps/remix/app/components/dialogs/claim-update-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "dialog",
+        "path": "packages/ui/primitives/dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "disable-authenticator-app-dialog",
+        "path": "apps/remix/app/components/forms/2fa/disable-authenticator-app-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-move-to-folder-dialog",
+        "path": "apps/remix/app/components/dialogs/document-move-to-folder-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-preferences-form",
+        "path": "apps/remix/app/components/forms/document-preferences-form.tsx",
+        "story": false
+      },
+      {
+        "name": "document-recipient-link-copy-dialog",
+        "path": "apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-resend-dialog",
+        "path": "apps/remix/app/components/dialogs/document-resend-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-signing-auth-dialog",
+        "path": "apps/remix/app/components/general/document-signing/document-signing-auth-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-signing-complete-dialog",
+        "path": "apps/remix/app/components/general/document-signing/document-signing-complete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-signing-reject-dialog",
+        "path": "apps/remix/app/components/general/document-signing/document-signing-reject-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "email-preferences-form",
+        "path": "apps/remix/app/components/forms/email-preferences-form.tsx",
+        "story": false
+      },
+      {
+        "name": "email-transport-create-dialog",
+        "path": "apps/remix/app/components/dialogs/email-transport-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "email-transport-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/email-transport-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "email-transport-update-dialog",
+        "path": "apps/remix/app/components/dialogs/email-transport-update-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "enable-authenticator-app-dialog",
+        "path": "apps/remix/app/components/forms/2fa/enable-authenticator-app-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-cancel-dialog",
+        "path": "apps/remix/app/components/dialogs/envelope-cancel-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/envelope-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-download-dialog",
+        "path": "apps/remix/app/components/dialogs/envelope-download-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-duplicate-dialog",
+        "path": "apps/remix/app/components/dialogs/envelope-duplicate-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-settings-dialog",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-item-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/envelope-item-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-item-edit-dialog",
+        "path": "apps/remix/app/components/dialogs/envelope-item-edit-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-rename-dialog",
+        "path": "apps/remix/app/components/dialogs/envelope-rename-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-save-as-template-dialog",
+        "path": "apps/remix/app/components/dialogs/envelope-save-as-template-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-signing-complete-dialog",
+        "path": "apps/remix/app/components/general/envelope-signing/envelope-signing-complete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelopes-bulk-cancel-dialog",
+        "path": "apps/remix/app/components/dialogs/envelopes-bulk-cancel-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelopes-bulk-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/envelopes-bulk-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelopes-bulk-move-dialog",
+        "path": "apps/remix/app/components/dialogs/envelopes-bulk-move-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "folder-create-dialog",
+        "path": "apps/remix/app/components/dialogs/folder-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "folder-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/folder-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "folder-move-dialog",
+        "path": "apps/remix/app/components/dialogs/folder-move-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "folder-update-dialog",
+        "path": "apps/remix/app/components/dialogs/folder-update-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "get-email-blocklist-domains",
+        "path": "packages/lib/server-only/site-settings/get-email-blocklist-domains.ts",
+        "story": false
+      },
+      {
+        "name": "language-switcher-dialog",
+        "path": "packages/ui/components/common/language-switcher-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "missing-signature-field-dialog",
+        "path": "packages/ui/primitives/document-flow/missing-signature-field-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-create-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-email-create-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-email-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-email-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-email-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-email-domain-create-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-email-domain-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-email-domain-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-email-domain-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-email-domain-records-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-email-domain-records-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-email-update-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-email-update-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-group-create-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-group-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-group-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-group-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-leave-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-leave-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-member-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-member-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-member-invite-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-member-invite-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "organisation-member-update-dialog",
+        "path": "apps/remix/app/components/dialogs/organisation-member-update-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "passkey-create-dialog",
+        "path": "apps/remix/app/components/dialogs/passkey-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "profile",
+        "path": "apps/remix/app/routes/_authenticated+/settings+/profile.tsx",
+        "story": false
+      },
+      {
+        "name": "public-profile",
+        "path": "apps/remix/app/routes/_authenticated+/settings+/_dynamic_personal_routes+/public-profile.tsx",
+        "story": false
+      },
+      {
+        "name": "public-profile-template-manage-dialog",
+        "path": "apps/remix/app/components/dialogs/public-profile-template-manage-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "send-document-action-dialog",
+        "path": "packages/ui/primitives/document-flow/send-document-action-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "session-logout-all-dialog",
+        "path": "apps/remix/app/components/dialogs/session-logout-all-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "settings-public-profile-templates-table",
+        "path": "apps/remix/app/components/tables/settings-public-profile-templates-table.tsx",
+        "story": false
+      },
+      {
+        "name": "settings-security-activity-table",
+        "path": "apps/remix/app/components/tables/settings-security-activity-table.tsx",
+        "story": false
+      },
+      {
+        "name": "settings-security-passkey-table",
+        "path": "apps/remix/app/components/tables/settings-security-passkey-table.tsx",
+        "story": false
+      },
+      {
+        "name": "settings-security-passkey-table-actions",
+        "path": "apps/remix/app/components/tables/settings-security-passkey-table-actions.tsx",
+        "story": false
+      },
+      {
+        "name": "settings.public-profile",
+        "path": "apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.public-profile.tsx",
+        "story": false
+      },
+      {
+        "name": "sign-field-checkbox-dialog",
+        "path": "apps/remix/app/components/dialogs/sign-field-checkbox-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "sign-field-dropdown-dialog",
+        "path": "apps/remix/app/components/dialogs/sign-field-dropdown-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "sign-field-email-dialog",
+        "path": "apps/remix/app/components/dialogs/sign-field-email-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "sign-field-initials-dialog",
+        "path": "apps/remix/app/components/dialogs/sign-field-initials-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "sign-field-name-dialog",
+        "path": "apps/remix/app/components/dialogs/sign-field-name-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "sign-field-number-dialog",
+        "path": "apps/remix/app/components/dialogs/sign-field-number-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "sign-field-signature-dialog",
+        "path": "apps/remix/app/components/dialogs/sign-field-signature-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "sign-field-text-dialog",
+        "path": "apps/remix/app/components/dialogs/sign-field-text-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "signature-pad-dialog",
+        "path": "packages/ui/primitives/signature-pad/signature-pad-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-create-dialog",
+        "path": "apps/remix/app/components/dialogs/team-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/team-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-email-add-dialog",
+        "path": "apps/remix/app/components/dialogs/team-email-add-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-email-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/team-email-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-email-update-dialog",
+        "path": "apps/remix/app/components/dialogs/team-email-update-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-group-create-dialog",
+        "path": "apps/remix/app/components/dialogs/team-group-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-group-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/team-group-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-group-update-dialog",
+        "path": "apps/remix/app/components/dialogs/team-group-update-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-inherit-member-disable-dialog",
+        "path": "apps/remix/app/components/dialogs/team-inherit-member-disable-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-inherit-member-enable-dialog",
+        "path": "apps/remix/app/components/dialogs/team-inherit-member-enable-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-member-create-dialog",
+        "path": "apps/remix/app/components/dialogs/team-member-create-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-member-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/team-member-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "team-member-update-dialog",
+        "path": "apps/remix/app/components/dialogs/team-member-update-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "template-bulk-send-dialog",
+        "path": "apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "template-direct-link-dialog",
+        "path": "apps/remix/app/components/dialogs/template-direct-link-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "template-move-to-folder-dialog",
+        "path": "apps/remix/app/components/dialogs/template-move-to-folder-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "template-use-dialog",
+        "path": "apps/remix/app/components/dialogs/template-use-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "token-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/token-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "view-recovery-codes-dialog",
+        "path": "apps/remix/app/components/forms/2fa/view-recovery-codes-dialog.tsx",
+        "story": false
+      }
+    ],
+    "editor": [
+      {
+        "name": "access-auth-2fa-form",
+        "path": "apps/remix/app/components/general/document-signing/access-auth-2fa-form.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-document-delete-dialog",
+        "path": "apps/remix/app/components/dialogs/admin-document-delete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-document-jobs-table",
+        "path": "apps/remix/app/components/tables/admin-document-jobs-table.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-document-logs-table",
+        "path": "apps/remix/app/components/tables/admin-document-logs-table.tsx",
+        "story": false
+      },
+      {
+        "name": "admin-document-recipient-item-table",
+        "path": "apps/remix/app/components/tables/admin-document-recipient-item-table.tsx",
+        "story": false
+      },
+      {
+        "name": "direct-template-signing-form",
+        "path": "apps/remix/app/components/general/direct-template/direct-template-signing-form.tsx",
+        "story": false
+      },
+      {
+        "name": "document-edit-form",
+        "path": "apps/remix/app/components/general/document/document-edit-form.tsx",
+        "story": false
+      },
+      {
+        "name": "document-logs-table",
+        "path": "apps/remix/app/components/tables/document-logs-table.tsx",
+        "story": false
+      },
+      {
+        "name": "document-move-to-folder-dialog",
+        "path": "apps/remix/app/components/dialogs/document-move-to-folder-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-page-view-information",
+        "path": "apps/remix/app/components/general/document/document-page-view-information.tsx",
+        "story": false
+      },
+      {
+        "name": "document-preferences-form",
+        "path": "apps/remix/app/components/forms/document-preferences-form.tsx",
+        "story": false
+      },
+      {
+        "name": "document-recipient-link-copy-dialog",
+        "path": "apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-resend-dialog",
+        "path": "apps/remix/app/components/dialogs/document-resend-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-send-email-message-helper",
+        "path": "packages/ui/components/document/document-send-email-message-helper.tsx",
+        "story": false
+      },
+      {
+        "name": "document-signing-auth-dialog",
+        "path": "apps/remix/app/components/general/document-signing/document-signing-auth-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-signing-complete-dialog",
+        "path": "apps/remix/app/components/general/document-signing/document-signing-complete-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "document-signing-form",
+        "path": "apps/remix/app/components/general/document-signing/document-signing-form.tsx",
+        "story": false
+      },
+      {
+        "name": "document-signing-mobile-widget",
+        "path": "apps/remix/app/components/general/document-signing/document-signing-mobile-widget.tsx",
+        "story": false
+      },
+      {
+        "name": "document-signing-reject-dialog",
+        "path": "apps/remix/app/components/general/document-signing/document-signing-reject-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "documents-table",
+        "path": "apps/remix/app/components/tables/documents-table.tsx",
+        "story": false
+      },
+      {
+        "name": "documents-table-action-button",
+        "path": "apps/remix/app/components/tables/documents-table-action-button.tsx",
+        "story": false
+      },
+      {
+        "name": "documents-table-action-dropdown",
+        "path": "apps/remix/app/components/tables/documents-table-action-dropdown.tsx",
+        "story": false
+      },
+      {
+        "name": "documents-table-empty-state",
+        "path": "apps/remix/app/components/tables/documents-table-empty-state.tsx",
+        "story": false
+      },
+      {
+        "name": "documents-table-sender-filter",
+        "path": "apps/remix/app/components/tables/documents-table-sender-filter.tsx",
+        "story": false
+      },
+      {
+        "name": "documents-table-title",
+        "path": "apps/remix/app/components/tables/documents-table-title.tsx",
+        "story": false
+      },
+      {
+        "name": "documents.$id.legacy_editor",
+        "path": "apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id.legacy_editor.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-checkbox-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-checkbox-form.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-date-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-date-form.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-dropdown-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-dropdown-form.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-email-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-email-form.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-generic-field-forms",
+        "path": "apps/remix/app/components/forms/editor/editor-field-generic-field-forms.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-initials-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-initials-form.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-name-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-name-form.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-number-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-number-form.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-radio-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-radio-form.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-signature-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-signature-form.tsx",
+        "story": false
+      },
+      {
+        "name": "editor-field-text-form",
+        "path": "apps/remix/app/components/forms/editor/editor-field-text-form.tsx",
+        "story": false
+      },
+      {
+        "name": "embedded-editor-attachment-popover",
+        "path": "apps/remix/app/components/general/document/embedded-editor-attachment-popover.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-fields-drag-drop",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-fields-drag-drop.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-fields-page",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-fields-page.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-fields-page-renderer",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-fields-page-renderer.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-header",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-header.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-preview-page",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-preview-page.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-recipient-form",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-settings-dialog",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-title-input",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-title-input.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-editor-upload-page",
+        "path": "apps/remix/app/components/general/envelope-editor/envelope-editor-upload-page.tsx",
+        "story": false
+      },
+      {
+        "name": "envelope-save-as-template-dialog",
+        "path": "apps/remix/app/components/dialogs/envelope-save-as-template-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "find-inbox",
+        "path": "packages/trpc/server/document-router/find-inbox.ts",
+        "story": false
+      },
+      {
+        "name": "get-editor-envelope",
+        "path": "packages/trpc/server/envelope-router/get-editor-envelope.ts",
+        "story": false
+      },
+      {
+        "name": "get-editor-envelope-by-id",
+        "path": "packages/lib/server-only/envelope/get-editor-envelope-by-id.ts",
+        "story": false
+      },
+      {
+        "name": "get-inbox-count",
+        "path": "packages/trpc/server/document-router/get-inbox-count.ts",
+        "story": false
+      },
+      {
+        "name": "missing-signature-field-dialog",
+        "path": "packages/ui/primitives/document-flow/missing-signature-field-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "multi-sign-document-list",
+        "path": "apps/remix/app/components/embed/multisign/multi-sign-document-list.tsx",
+        "story": false
+      },
+      {
+        "name": "public-profile-template-manage-dialog",
+        "path": "apps/remix/app/components/dialogs/public-profile-template-manage-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "send-document-action-dialog",
+        "path": "packages/ui/primitives/document-flow/send-document-action-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "settings-public-profile-templates-table",
+        "path": "apps/remix/app/components/tables/settings-public-profile-templates-table.tsx",
+        "story": false
+      },
+      {
+        "name": "template-bulk-send-dialog",
+        "path": "apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "template-custom-message-body",
+        "path": "packages/email/template-components/template-custom-message-body.tsx",
+        "story": false
+      },
+      {
+        "name": "template-direct-link-dialog",
+        "path": "apps/remix/app/components/dialogs/template-direct-link-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "template-edit-form",
+        "path": "apps/remix/app/components/general/template/template-edit-form.tsx",
+        "story": false
+      },
+      {
+        "name": "template-move-to-folder-dialog",
+        "path": "apps/remix/app/components/dialogs/template-move-to-folder-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "template-page-view-documents-table",
+        "path": "apps/remix/app/components/general/template/template-page-view-documents-table.tsx",
+        "story": false
+      },
+      {
+        "name": "template-page-view-information",
+        "path": "apps/remix/app/components/general/template/template-page-view-information.tsx",
+        "story": false
+      },
+      {
+        "name": "template-use-dialog",
+        "path": "apps/remix/app/components/dialogs/template-use-dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "templates-table",
+        "path": "apps/remix/app/components/tables/templates-table.tsx",
+        "story": false
+      },
+      {
+        "name": "templates-table-action-dropdown",
+        "path": "apps/remix/app/components/tables/templates-table-action-dropdown.tsx",
+        "story": false
+      },
+      {
+        "name": "templates.$id.legacy_editor",
+        "path": "apps/remix/app/routes/_authenticated+/t.$teamUrl+/templates.$id.legacy_editor.tsx",
+        "story": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "email",
+  "features": {
+    "conversation": [
+      {
+        "name": "ListMessages",
+        "path": "mailpit/server/ui-src/components/ListMessages.vue",
+        "story": false
+      },
+      {
+        "name": "mail-message",
+        "path": "nodemailer/lib/mailer/mail-message.js",
+        "story": false
+      },
+      {
+        "name": "mailcomposer",
+        "path": "nodemailer/examples/mailcomposer.js",
+        "story": false
+      },
+      {
+        "name": "message-parser",
+        "path": "nodemailer/lib/dkim/message-parser.js",
+        "story": false
+      },
+      {
+        "name": "MessageAttachments",
+        "path": "mailpit/server/ui-src/components/message/MessageAttachments.vue",
+        "story": false
+      },
+      {
+        "name": "MessageHeaders",
+        "path": "mailpit/server/ui-src/components/message/MessageHeaders.vue",
+        "story": false
+      },
+      {
+        "name": "MessageItem",
+        "path": "mailpit/server/ui-src/components/message/MessageItem.vue",
+        "story": false
+      },
+      {
+        "name": "MessageRelease",
+        "path": "mailpit/server/ui-src/components/message/MessageRelease.vue",
+        "story": false
+      },
+      {
+        "name": "MessageScreenshot",
+        "path": "mailpit/server/ui-src/components/message/MessageScreenshot.vue",
+        "story": false
+      },
+      {
+        "name": "MessagesMixins",
+        "path": "mailpit/server/ui-src/mixins/MessagesMixins.js",
+        "story": false
+      },
+      {
+        "name": "MessageView",
+        "path": "mailpit/server/ui-src/views/MessageView.vue",
+        "story": false
+      }
+    ],
+    "contacts": [
+      {
+        "name": "profile",
+        "path": "haraka/plugins/profile.js",
+        "story": false
+      }
+    ],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "lancedb",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/retrieval/lancedb",
+  "count": 2,
+  "components": [
+    {
+      "name": "table",
+      "path": "nodejs/lancedb/table.ts",
+      "story": false
+    },
+    {
+      "name": "transformers",
+      "path": "nodejs/lancedb/embedding/transformers.ts",
+      "story": false
+    }
+  ]
+}

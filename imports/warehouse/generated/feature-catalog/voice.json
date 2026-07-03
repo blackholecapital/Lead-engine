@@ -1,0 +1,105 @@
+{
+  "id": "voice",
+  "features": {
+    "conversation": [
+      {
+        "name": "incoming-message",
+        "path": "sip-js/src/core/messages/incoming-message.ts",
+        "story": false
+      },
+      {
+        "name": "incoming-request-message",
+        "path": "sip-js/src/core/messages/incoming-request-message.ts",
+        "story": false
+      },
+      {
+        "name": "incoming-response-message",
+        "path": "sip-js/src/core/messages/incoming-response-message.ts",
+        "story": false
+      },
+      {
+        "name": "message",
+        "path": "sip-js/src/core/messages/methods/message.ts",
+        "story": false
+      },
+      {
+        "name": "Message",
+        "path": "jssip/src/Message.js",
+        "story": false
+      },
+      {
+        "name": "message-user-agent-client",
+        "path": "sip-js/src/core/user-agents/message-user-agent-client.ts",
+        "story": false
+      },
+      {
+        "name": "message-user-agent-server",
+        "path": "sip-js/src/core/user-agents/message-user-agent-server.ts",
+        "story": false
+      },
+      {
+        "name": "Message.d",
+        "path": "jssip/src/Message.d.ts",
+        "story": false
+      },
+      {
+        "name": "outgoing-request-message",
+        "path": "sip-js/src/core/messages/outgoing-request-message.ts",
+        "story": false
+      },
+      {
+        "name": "SIPMessage",
+        "path": "jssip/src/SIPMessage.js",
+        "story": false
+      },
+      {
+        "name": "SIPMessage.d",
+        "path": "jssip/src/SIPMessage.d.ts",
+        "story": false
+      }
+    ],
+    "contacts": [],
+    "calendar": [],
+    "automation": [
+      {
+        "name": "message-user-agent-client",
+        "path": "sip-js/src/core/user-agents/message-user-agent-client.ts",
+        "story": false
+      },
+      {
+        "name": "message-user-agent-server",
+        "path": "sip-js/src/core/user-agents/message-user-agent-server.ts",
+        "story": false
+      }
+    ],
+    "dashboard": [],
+    "settings": [
+      {
+        "name": "dialog",
+        "path": "sip-js/src/core/dialogs/dialog.ts",
+        "story": false
+      },
+      {
+        "name": "Dialog",
+        "path": "jssip/src/Dialog.js",
+        "story": false
+      },
+      {
+        "name": "dialog-state",
+        "path": "sip-js/src/core/dialogs/dialog-state.ts",
+        "story": false
+      },
+      {
+        "name": "session-dialog",
+        "path": "sip-js/src/core/dialogs/session-dialog.ts",
+        "story": false
+      },
+      {
+        "name": "subscription-dialog",
+        "path": "sip-js/src/core/dialogs/subscription-dialog.ts",
+        "story": false
+      }
+    ],
+    "editor": []
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "id": "email",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/comms/email",
+  "count": 16,
+  "components": [
+    {
+      "name": "discard",
+      "path": "haraka/plugins/queue/discard.js",
+      "story": false
+    },
+    {
+      "name": "ListMessages",
+      "path": "mailpit/server/ui-src/components/ListMessages.vue",
+      "story": false
+    },
+    {
+      "name": "mail-message",
+      "path": "nodemailer/lib/mailer/mail-message.js",
+      "story": false
+    },
+    {
+      "name": "mailcomposer",
+      "path": "nodemailer/examples/mailcomposer.js",
+      "story": false
+    },
+    {
+      "name": "message-parser",
+      "path": "nodemailer/lib/dkim/message-parser.js",
+      "story": false
+    },
+    {
+      "name": "MessageAttachments",
+      "path": "mailpit/server/ui-src/components/message/MessageAttachments.vue",
+      "story": false
+    },
+    {
+      "name": "MessageHeaders",
+      "path": "mailpit/server/ui-src/components/message/MessageHeaders.vue",
+      "story": false
+    },
+    {
+      "name": "MessageItem",
+      "path": "mailpit/server/ui-src/components/message/MessageItem.vue",
+      "story": false
+    },
+    {
+      "name": "MessageRelease",
+      "path": "mailpit/server/ui-src/components/message/MessageRelease.vue",
+      "story": false
+    },
+    {
+      "name": "MessageScreenshot",
+      "path": "mailpit/server/ui-src/components/message/MessageScreenshot.vue",
+      "story": false
+    },
+    {
+      "name": "MessagesMixins",
+      "path": "mailpit/server/ui-src/mixins/MessagesMixins.js",
+      "story": false
+    },
+    {
+      "name": "MessageView",
+      "path": "mailpit/server/ui-src/views/MessageView.vue",
+      "story": false
+    },
+    {
+      "name": "profile",
+      "path": "haraka/plugins/profile.js",
+      "story": false
+    },
+    {
+      "name": "rcpt_to.host_list_base",
+      "path": "haraka/plugins/rcpt_to.host_list_base.js",
+      "story": false
+    },
+    {
+      "name": "rcpt_to.in_host_list",
+      "path": "haraka/plugins/rcpt_to.in_host_list.js",
+      "story": false
+    },
+    {
+      "name": "SearchForm",
+      "path": "mailpit/server/ui-src/components/SearchForm.vue",
+      "story": false
+    }
+  ]
+}

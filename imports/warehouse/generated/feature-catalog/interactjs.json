@@ -1,0 +1,12 @@
+{
+  "id": "interactjs",
+  "features": {
+    "conversation": [],
+    "contacts": [],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

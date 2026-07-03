@@ -1,0 +1,6 @@
+{
+  "id": "memgraph",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/graph/memgraph",
+  "count": 0,
+  "components": []
+}

@@ -1,0 +1,22 @@
+{
+  "id": "fusejs",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/scoring/fusejs",
+  "count": 3,
+  "components": [
+    {
+      "name": "errorMessages",
+      "path": "src/core/errorMessages.ts",
+      "story": false
+    },
+    {
+      "name": "format",
+      "path": "src/core/format.ts",
+      "story": false
+    },
+    {
+      "name": "formatMatches",
+      "path": "src/core/formatMatches.ts",
+      "story": false
+    }
+  ]
+}

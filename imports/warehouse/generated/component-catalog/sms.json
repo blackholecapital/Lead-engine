@@ -1,0 +1,387 @@
+{
+  "id": "sms",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/comms/sms",
+  "count": 76,
+  "components": [
+    {
+      "name": "AbstractAudioMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/AbstractAudioMessage.ts",
+      "story": false
+    },
+    {
+      "name": "AbstractEmailMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/Email/AbstractEmailMessage.ts",
+      "story": false
+    },
+    {
+      "name": "AbstractFileMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/AbstractFileMessage.ts",
+      "story": false
+    },
+    {
+      "name": "AbstractImageMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/AbstractImageMessage.ts",
+      "story": false
+    },
+    {
+      "name": "AbstractMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/AbstractMessage.ts",
+      "story": false
+    },
+    {
+      "name": "AbstractTextMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/AbstractTextMessage.ts",
+      "story": false
+    },
+    {
+      "name": "AbstractVcardMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/AbstractVcardMessage.ts",
+      "story": false
+    },
+    {
+      "name": "AbstractVideoMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/AbstractVideoMessage.ts",
+      "story": false
+    },
+    {
+      "name": "availableAddOn",
+      "path": "twilio-node/src/rest/marketplace/v1/availableAddOn.ts",
+      "story": false
+    },
+    {
+      "name": "availableAddOn",
+      "path": "twilio-node/src/rest/preview/marketplace/availableAddOn.ts",
+      "story": false
+    },
+    {
+      "name": "availableAddOnExtension",
+      "path": "twilio-node/src/rest/marketplace/v1/availableAddOn/availableAddOnExtension.ts",
+      "story": false
+    },
+    {
+      "name": "availableAddOnExtension",
+      "path": "twilio-node/src/rest/preview/marketplace/availableAddOn/availableAddOnExtension.ts",
+      "story": false
+    },
+    {
+      "name": "bulkContacts",
+      "path": "twilio-node/src/rest/accounts/v1/bulkContacts.ts",
+      "story": false
+    },
+    {
+      "name": "Chat",
+      "path": "twilio-node/src/rest/Chat.ts",
+      "story": false
+    },
+    {
+      "name": "chat-state",
+      "path": "signalwire-js/packages/web-components/src/context/chat-state.ts",
+      "story": false
+    },
+    {
+      "name": "ChatBase",
+      "path": "twilio-node/src/rest/ChatBase.ts",
+      "story": false
+    },
+    {
+      "name": "CollectionFormats",
+      "path": "vonage-node-sdk/packages/sms/lib/enums/CollectionFormats.ts",
+      "story": false
+    },
+    {
+      "name": "conversation",
+      "path": "twilio-node/src/rest/conversations/v1/conversation.ts",
+      "story": false
+    },
+    {
+      "name": "conversation",
+      "path": "twilio-node/src/rest/conversations/v2/conversation.ts",
+      "story": false
+    },
+    {
+      "name": "conversation",
+      "path": "twilio-node/src/rest/intelligence/v3/conversation.ts",
+      "story": false
+    },
+    {
+      "name": "Conversation",
+      "path": "vonage-node-sdk/packages/voice/lib/classes/NCCO/Conversation.ts",
+      "story": false
+    },
+    {
+      "name": "Conversations",
+      "path": "twilio-node/src/rest/Conversations.ts",
+      "story": false
+    },
+    {
+      "name": "conversations",
+      "path": "vonage-node-sdk/packages/conversations/lib/conversations.ts",
+      "story": false
+    },
+    {
+      "name": "ConversationsBase",
+      "path": "twilio-node/src/rest/ConversationsBase.ts",
+      "story": false
+    },
+    {
+      "name": "ConversationsManager",
+      "path": "signalwire-js/packages/main/src/managers/ConversationsManager.ts",
+      "story": false
+    },
+    {
+      "name": "conversationState",
+      "path": "vonage-node-sdk/packages/conversations/lib/enums/conversationState.ts",
+      "story": false
+    },
+    {
+      "name": "conversationSummary",
+      "path": "twilio-node/src/rest/memory/v1/conversationSummary.ts",
+      "story": false
+    },
+    {
+      "name": "conversationWithParticipants",
+      "path": "twilio-node/src/rest/conversations/v1/conversationWithParticipants.ts",
+      "story": false
+    },
+    {
+      "name": "credentialList",
+      "path": "twilio-node/src/rest/trunking/v1/trunk/credentialList.ts",
+      "story": false
+    },
+    {
+      "name": "customerProfiles",
+      "path": "twilio-node/src/rest/trusthub/v1/customerProfiles.ts",
+      "story": false
+    },
+    {
+      "name": "customerProfilesChannelEndpointAssignment",
+      "path": "twilio-node/src/rest/trusthub/v1/customerProfiles/customerProfilesChannelEndpointAssignment.ts",
+      "story": false
+    },
+    {
+      "name": "customerProfilesEntityAssignments",
+      "path": "twilio-node/src/rest/trusthub/v1/customerProfiles/customerProfilesEntityAssignments.ts",
+      "story": false
+    },
+    {
+      "name": "customerProfilesEvaluations",
+      "path": "twilio-node/src/rest/trusthub/v1/customerProfiles/customerProfilesEvaluations.ts",
+      "story": false
+    },
+    {
+      "name": "CustomMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/WhatsApp/CustomMessage.ts",
+      "story": false
+    },
+    {
+      "name": "esimProfile",
+      "path": "twilio-node/src/rest/supersim/v1/esimProfile.ts",
+      "story": false
+    },
+    {
+      "name": "eventMessageType",
+      "path": "vonage-node-sdk/packages/conversations/lib/enums/eventMessageType.ts",
+      "story": false
+    },
+    {
+      "name": "ExperienceComposerResolution",
+      "path": "vonage-node-sdk/packages/video/lib/enums/ExperienceComposerResolution.ts",
+      "story": false
+    },
+    {
+      "name": "form",
+      "path": "twilio-node/src/rest/verify/v2/form.ts",
+      "story": false
+    },
+    {
+      "name": "HTMLEmailMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/Email/HTMLEmailMessage.ts",
+      "story": false
+    },
+    {
+      "name": "InboundCallModal",
+      "path": "signalwire-js/playground/react-demo/src/components/InboundCallModal.tsx",
+      "story": false
+    },
+    {
+      "name": "InboundCallModal",
+      "path": "signalwire-js/playground/web-components-demo/src/components/InboundCallModal.js",
+      "story": false
+    },
+    {
+      "name": "ipAccessControlList",
+      "path": "twilio-node/src/rest/trunking/v1/trunk/ipAccessControlList.ts",
+      "story": false
+    },
+    {
+      "name": "message",
+      "path": "twilio-node/src/rest/assistants/v1/assistant/message.ts",
+      "story": false
+    },
+    {
+      "name": "message",
+      "path": "twilio-node/src/rest/assistants/v1/session/message.ts",
+      "story": false
+    },
+    {
+      "name": "message",
+      "path": "twilio-node/src/rest/conversations/v1/conversation/message.ts",
+      "story": false
+    },
+    {
+      "name": "MessageCategory",
+      "path": "vonage-node-sdk/packages/messages/lib/enums/Messenger/MessageCategory.ts",
+      "story": false
+    },
+    {
+      "name": "MessageCategory",
+      "path": "vonage-node-sdk/packages/messages/lib/enums/Viber/MessageCategory.ts",
+      "story": false
+    },
+    {
+      "name": "MessageClassEnum",
+      "path": "vonage-node-sdk/packages/sms/lib/enums/MessageClassEnum.ts",
+      "story": false
+    },
+    {
+      "name": "messages",
+      "path": "vonage-node-sdk/packages/messages/lib/messages.ts",
+      "story": false
+    },
+    {
+      "name": "messages",
+      "path": "plivo-node/examples/messages.js",
+      "story": false
+    },
+    {
+      "name": "messages",
+      "path": "plivo-node/lib/resources/messages.js",
+      "story": false
+    },
+    {
+      "name": "MessagesCallbackTypeEnum",
+      "path": "vonage-node-sdk/packages/numbers/lib/enums/MessagesCallbackTypeEnum.ts",
+      "story": false
+    },
+    {
+      "name": "MessageSendAllFailure",
+      "path": "vonage-node-sdk/packages/sms/lib/classes/Error/MessageSendAllFailure.ts",
+      "story": false
+    },
+    {
+      "name": "MessageSendPartialFailure",
+      "path": "vonage-node-sdk/packages/sms/lib/classes/Error/MessageSendPartialFailure.ts",
+      "story": false
+    },
+    {
+      "name": "MMSVcard",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/MMS/MMSVcard.ts",
+      "story": false
+    },
+    {
+      "name": "networkAccessProfile",
+      "path": "twilio-node/src/rest/supersim/v1/networkAccessProfile.ts",
+      "story": false
+    },
+    {
+      "name": "networkAccessProfileNetwork",
+      "path": "twilio-node/src/rest/supersim/v1/networkAccessProfile/networkAccessProfileNetwork.ts",
+      "story": false
+    },
+    {
+      "name": "participantConversation",
+      "path": "twilio-node/src/rest/conversations/v1/participantConversation.ts",
+      "story": false
+    },
+    {
+      "name": "profile",
+      "path": "twilio-node/src/rest/memory/v1/profile.ts",
+      "story": false
+    },
+    {
+      "name": "profile",
+      "path": "plivo-node/lib/resources/profile.js",
+      "story": false
+    },
+    {
+      "name": "RCSCreateCalendarEventSuggestion",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/RCS/Suggestions/RCSCreateCalendarEventSuggestion.ts",
+      "story": false
+    },
+    {
+      "name": "reasonMessages",
+      "path": "vonage-node-sdk/packages/conversations/lib/enums/reasonMessages.ts",
+      "story": false
+    },
+    {
+      "name": "RecordingFormat",
+      "path": "vonage-node-sdk/packages/voice/lib/enums/NCCO/RecordingFormat.ts",
+      "story": false
+    },
+    {
+      "name": "safelist",
+      "path": "twilio-node/src/rest/accounts/v1/safelist.ts",
+      "story": false
+    },
+    {
+      "name": "safelist",
+      "path": "twilio-node/src/rest/verify/v2/safelist.ts",
+      "story": false
+    },
+    {
+      "name": "Sidebar",
+      "path": "signalwire-js/playground/web-components-demo/src/components/Sidebar.js",
+      "story": false
+    },
+    {
+      "name": "sw-call-widget",
+      "path": "signalwire-js/packages/web-components/src/components/sw-call-widget/sw-call-widget.ts",
+      "story": false
+    },
+    {
+      "name": "sw-call-widget.templates",
+      "path": "signalwire-js/packages/web-components/src/components/sw-call-widget/sw-call-widget.templates.ts",
+      "story": false
+    },
+    {
+      "name": "sw-ui-modal",
+      "path": "signalwire-js/packages/web-components/src/components/UI/layout/sw-ui-modal.ts",
+      "story": false
+    },
+    {
+      "name": "TemplateMessage",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/WhatsApp/TemplateMessage.ts",
+      "story": false
+    },
+    {
+      "name": "transformers",
+      "path": "vonage-node-sdk/packages/server-client/lib/transformers.ts",
+      "story": false
+    },
+    {
+      "name": "UpdateMessageStatus",
+      "path": "vonage-node-sdk/packages/messages/lib/enums/UpdateMessageStatus.ts",
+      "story": false
+    },
+    {
+      "name": "userConversation",
+      "path": "twilio-node/src/rest/conversations/v1/user/userConversation.ts",
+      "story": false
+    },
+    {
+      "name": "Vcard",
+      "path": "vonage-node-sdk/packages/messages/lib/classes/MMS/Vcard.ts",
+      "story": false
+    },
+    {
+      "name": "VertoMessages",
+      "path": "signalwire-js/packages/main/src/core/RPCMessages/VertoMessages.ts",
+      "story": false
+    },
+    {
+      "name": "WelcomeModal",
+      "path": "signalwire-js/playground/web-components-demo/src/components/WelcomeModal.js",
+      "story": false
+    }
+  ]
+}

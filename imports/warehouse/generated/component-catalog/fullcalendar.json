@@ -1,0 +1,367 @@
+{
+  "id": "fullcalendar",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/calendar/fullcalendar",
+  "count": 72,
+  "components": [
+    {
+      "name": "Calendar",
+      "path": "packages/preact/src/Calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "Calendar",
+      "path": "packages/vanilla-w-react/src/Calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "Calendar",
+      "path": "packages/vanilla/src/Calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "calendar-root",
+      "path": "packages/preact/src/calendar-root.tsx",
+      "story": false
+    },
+    {
+      "name": "calendar-system",
+      "path": "packages/headless-calendar/src/calendar-system.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarContext",
+      "path": "packages/preact/src/CalendarContext.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarInner",
+      "path": "packages/preact/src/CalendarInner.tsx",
+      "story": false
+    },
+    {
+      "name": "DateProfileGenerator",
+      "path": "packages/preact/src/DateProfileGenerator.ts",
+      "story": false
+    },
+    {
+      "name": "daygrid",
+      "path": "packages/preact/src/daygrid.ts",
+      "story": false
+    },
+    {
+      "name": "daygrid",
+      "path": "packages/vanilla-w-react/src/daygrid.ts",
+      "story": false
+    },
+    {
+      "name": "daygrid",
+      "path": "packages/vanilla/src/daygrid.ts",
+      "story": false
+    },
+    {
+      "name": "daygrid",
+      "path": "packages/vue3/src/daygrid.ts",
+      "story": false
+    },
+    {
+      "name": "daygrid",
+      "path": "packages/web-component/src/daygrid.ts",
+      "story": false
+    },
+    {
+      "name": "DayGridCell",
+      "path": "packages/preact/src/daygrid/components/DayGridCell.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridEventHarness",
+      "path": "packages/preact/src/daygrid/components/DayGridEventHarness.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridHeader",
+      "path": "packages/preact/src/daygrid/components/DayGridHeader.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridHeaderCell",
+      "path": "packages/preact/src/daygrid/components/DayGridHeaderCell.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridHeaderRow",
+      "path": "packages/preact/src/daygrid/components/DayGridHeaderRow.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridLayout",
+      "path": "packages/preact/src/daygrid/components/DayGridLayout.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridLayoutNormal",
+      "path": "packages/preact/src/daygrid/components/DayGridLayoutNormal.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridLayoutPannable",
+      "path": "packages/preact/src/daygrid/components/DayGridLayoutPannable.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridMoreLink",
+      "path": "packages/preact/src/daygrid/components/DayGridMoreLink.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridRow",
+      "path": "packages/preact/src/daygrid/components/DayGridRow.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridRows",
+      "path": "packages/preact/src/daygrid/components/DayGridRows.tsx",
+      "story": false
+    },
+    {
+      "name": "DayGridView",
+      "path": "packages/preact/src/daygrid/components/DayGridView.tsx",
+      "story": false
+    },
+    {
+      "name": "DayTableModel",
+      "path": "packages/preact/src/common/DayTableModel.ts",
+      "story": false
+    },
+    {
+      "name": "forma",
+      "path": "packages/vue3/src/themes/forma.ts",
+      "story": false
+    },
+    {
+      "name": "format",
+      "path": "packages/format-luxon3/src/format.ts",
+      "story": false
+    },
+    {
+      "name": "format",
+      "path": "packages/format-moment/src/format.ts",
+      "story": false
+    },
+    {
+      "name": "formatting",
+      "path": "packages/preact/src/datelib/formatting.ts",
+      "story": false
+    },
+    {
+      "name": "formatting-cmd",
+      "path": "packages/headless-calendar/src/formatting-cmd.ts",
+      "story": false
+    },
+    {
+      "name": "formatting-func",
+      "path": "packages/headless-calendar/src/formatting-func.ts",
+      "story": false
+    },
+    {
+      "name": "formatting-native",
+      "path": "packages/headless-calendar/src/formatting-native.ts",
+      "story": false
+    },
+    {
+      "name": "full-calendar.component",
+      "path": "packages/angular/lib/src/full-calendar.component.ts",
+      "story": false
+    },
+    {
+      "name": "full-calendar.module",
+      "path": "packages/angular/lib/src/full-calendar.module.ts",
+      "story": false
+    },
+    {
+      "name": "FullCalendar",
+      "path": "packages/vue3/src/FullCalendar.ts",
+      "story": false
+    },
+    {
+      "name": "FullCalendarElement",
+      "path": "packages/web-component/src/FullCalendarElement.ts",
+      "story": false
+    },
+    {
+      "name": "list",
+      "path": "packages/preact/src/list.ts",
+      "story": false
+    },
+    {
+      "name": "list",
+      "path": "packages/vanilla-w-react/src/list.ts",
+      "story": false
+    },
+    {
+      "name": "list",
+      "path": "packages/vanilla/src/list.ts",
+      "story": false
+    },
+    {
+      "name": "list",
+      "path": "packages/vue3/src/list.ts",
+      "story": false
+    },
+    {
+      "name": "list",
+      "path": "packages/web-component/src/list.ts",
+      "story": false
+    },
+    {
+      "name": "ListDay",
+      "path": "packages/preact/src/list/components/ListDay.tsx",
+      "story": false
+    },
+    {
+      "name": "ListDayHeader",
+      "path": "packages/preact/src/list/components/ListDayHeader.tsx",
+      "story": false
+    },
+    {
+      "name": "ListDayHeaderInner",
+      "path": "packages/preact/src/list/components/ListDayHeaderInner.tsx",
+      "story": false
+    },
+    {
+      "name": "ListEvent",
+      "path": "packages/preact/src/list/components/ListEvent.tsx",
+      "story": false
+    },
+    {
+      "name": "ListView",
+      "path": "packages/preact/src/list/components/ListView.tsx",
+      "story": false
+    },
+    {
+      "name": "ScrollListener",
+      "path": "packages/preact/src/scrollgrid/ScrollListener.ts",
+      "story": false
+    },
+    {
+      "name": "TableAndSubsections",
+      "path": "packages/preact/src/common/TableAndSubsections.ts",
+      "story": false
+    },
+    {
+      "name": "TableDateProfileGenerator",
+      "path": "packages/preact/src/daygrid/TableDateProfileGenerator.ts",
+      "story": false
+    },
+    {
+      "name": "TableSeg",
+      "path": "packages/preact/src/daygrid/TableSeg.ts",
+      "story": false
+    },
+    {
+      "name": "timegrid",
+      "path": "packages/preact/src/timegrid.ts",
+      "story": false
+    },
+    {
+      "name": "timegrid",
+      "path": "packages/vanilla-w-react/src/timegrid.ts",
+      "story": false
+    },
+    {
+      "name": "timegrid",
+      "path": "packages/vanilla/src/timegrid.ts",
+      "story": false
+    },
+    {
+      "name": "timegrid",
+      "path": "packages/vue3/src/timegrid.ts",
+      "story": false
+    },
+    {
+      "name": "timegrid",
+      "path": "packages/web-component/src/timegrid.ts",
+      "story": false
+    },
+    {
+      "name": "TimeGridAllDayHeader",
+      "path": "packages/preact/src/timegrid/components/TimeGridAllDayHeader.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridAllDayLane",
+      "path": "packages/preact/src/timegrid/components/TimeGridAllDayLane.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridAxisEmpty",
+      "path": "packages/preact/src/timegrid/components/TimeGridAxisEmpty.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridCol",
+      "path": "packages/preact/src/timegrid/components/TimeGridCol.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridCols",
+      "path": "packages/preact/src/timegrid/components/TimeGridCols.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridEvent",
+      "path": "packages/preact/src/timegrid/components/TimeGridEvent.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridLayout",
+      "path": "packages/preact/src/timegrid/components/TimeGridLayout.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridLayoutNormal",
+      "path": "packages/preact/src/timegrid/components/TimeGridLayoutNormal.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridLayoutPannable",
+      "path": "packages/preact/src/timegrid/components/TimeGridLayoutPannable.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridMoreLink",
+      "path": "packages/preact/src/timegrid/components/TimeGridMoreLink.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridNowIndicatorArrow",
+      "path": "packages/preact/src/timegrid/components/TimeGridNowIndicatorArrow.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridNowIndicatorLine",
+      "path": "packages/preact/src/timegrid/components/TimeGridNowIndicatorLine.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridSlatHeader",
+      "path": "packages/preact/src/timegrid/components/TimeGridSlatHeader.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridSlatLane",
+      "path": "packages/preact/src/timegrid/components/TimeGridSlatLane.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridView",
+      "path": "packages/preact/src/timegrid/components/TimeGridView.tsx",
+      "story": false
+    },
+    {
+      "name": "TimeGridWeekNumber",
+      "path": "packages/preact/src/timegrid/components/TimeGridWeekNumber.tsx",
+      "story": false
+    }
+  ]
+}

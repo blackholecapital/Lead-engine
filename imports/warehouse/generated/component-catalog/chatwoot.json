@@ -1,0 +1,2227 @@
+{
+  "id": "chatwoot",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/comms/chatwoot",
+  "count": 444,
+  "components": [
+    {
+      "name": "360DialogWhatsapp",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/channels/360DialogWhatsapp.vue",
+      "story": false
+    },
+    {
+      "name": "AddAccountModal",
+      "path": "app/javascript/dashboard/components/app/AddAccountModal.vue",
+      "story": false
+    },
+    {
+      "name": "AddCustomDomainDialog",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/PortalSettingsPage/AddCustomDomainDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AddLocaleDialog",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/LocalePage/AddLocaleDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AddNewRulesDialog",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/AddNewRulesDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AddNewRulesDialog.story",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/AddNewRulesDialog.story.vue",
+      "story": true
+    },
+    {
+      "name": "AddNewScenariosDialog",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/AddNewScenariosDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AgentAssignmentPolicyForm",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/AgentAssignmentPolicyForm.vue",
+      "story": false
+    },
+    {
+      "name": "AgentBotModal",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/agentBots/components/AgentBotModal.vue",
+      "story": false
+    },
+    {
+      "name": "AgentCapacityPolicyCard",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/AgentCapacityPolicyCard/AgentCapacityPolicyCard.vue",
+      "story": false
+    },
+    {
+      "name": "AgentCapacityPolicyCard.story",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/AgentCapacityPolicyCard/AgentCapacityPolicyCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "AgentCapacityPolicyForm",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/AgentCapacityPolicyForm.vue",
+      "story": false
+    },
+    {
+      "name": "AgentMessage",
+      "path": "app/javascript/widget/components/AgentMessage.vue",
+      "story": false
+    },
+    {
+      "name": "AgentMessageBubble",
+      "path": "app/javascript/widget/components/AgentMessageBubble.vue",
+      "story": false
+    },
+    {
+      "name": "AgentTable",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/overview/AgentTable.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleCard",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/ArticleCard/ArticleCard.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleCard.story",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/ArticleCard/ArticleCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ArticleEditor",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/ArticleEditorPage/ArticleEditor.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleEditorControls",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/ArticleEditorPage/ArticleEditorControls.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleEditorHeader",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/ArticleEditorPage/ArticleEditorHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleEditorProperties",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/ArticleEditorPage/ArticleEditorProperties.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleList",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/ArticlePage/ArticleList.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleListItem",
+      "path": "app/javascript/widget/components/pageComponents/Home/Article/ArticleListItem.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleViewer",
+      "path": "app/javascript/widget/views/ArticleViewer.vue",
+      "story": false
+    },
+    {
+      "name": "AssignmentCard",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/AssignmentCard/AssignmentCard.vue",
+      "story": false
+    },
+    {
+      "name": "AssignmentCard.story",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/AssignmentCard/AssignmentCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "AssignmentPolicyCard",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/AssignmentPolicyCard/AssignmentPolicyCard.vue",
+      "story": false
+    },
+    {
+      "name": "AssignmentPolicyCard.story",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/AssignmentPolicyCard/AssignmentPolicyCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "AssistantBasicSettingsForm",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/assistant/settings/AssistantBasicSettingsForm.vue",
+      "story": false
+    },
+    {
+      "name": "AssistantCard",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/AssistantCard.vue",
+      "story": false
+    },
+    {
+      "name": "AssistantCard.story",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/AssistantCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "AssistantForm",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/assistant/AssistantForm.vue",
+      "story": false
+    },
+    {
+      "name": "AssistantSystemSettingsForm",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/assistant/settings/AssistantSystemSettingsForm.vue",
+      "story": false
+    },
+    {
+      "name": "AttributeListItem",
+      "path": "app/javascript/dashboard/components-next/ConversationWorkflow/AttributeListItem.vue",
+      "story": false
+    },
+    {
+      "name": "AudioMessageHelper",
+      "path": "app/javascript/dashboard/helper/AudioAlerts/AudioMessageHelper.js",
+      "story": false
+    },
+    {
+      "name": "AutomationActionTeamMessageInput",
+      "path": "app/javascript/dashboard/components/widgets/AutomationActionTeamMessageInput.vue",
+      "story": false
+    },
+    {
+      "name": "AutomationRuleForm",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/automation/AutomationRuleForm.vue",
+      "story": false
+    },
+    {
+      "name": "BasePaywallModal",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/components/BasePaywallModal.vue",
+      "story": false
+    },
+    {
+      "name": "BaseSettingsListItem",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/components/BaseSettingsListItem.vue",
+      "story": false
+    },
+    {
+      "name": "BaseTable",
+      "path": "app/javascript/dashboard/components-next/table/BaseTable.vue",
+      "story": false
+    },
+    {
+      "name": "BaseTable.story",
+      "path": "app/javascript/dashboard/components-next/table/BaseTable.story.vue",
+      "story": true
+    },
+    {
+      "name": "BaseTableCell",
+      "path": "app/javascript/dashboard/components-next/table/BaseTableCell.vue",
+      "story": false
+    },
+    {
+      "name": "BaseTableRow",
+      "path": "app/javascript/dashboard/components-next/table/BaseTableRow.vue",
+      "story": false
+    },
+    {
+      "name": "BillingCard",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/billing/components/BillingCard.vue",
+      "story": false
+    },
+    {
+      "name": "BotMessage",
+      "path": "app/javascript/superadmin_pages/components/playground/BotMessage.vue",
+      "story": false
+    },
+    {
+      "name": "BulkDeleteDialog",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/BulkDeleteDialog.vue",
+      "story": false
+    },
+    {
+      "name": "BulkTranslateDialog",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/ArticlePage/BulkTranslateDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarAction",
+      "path": "app/javascript/dashboard/components/ui/DatePicker/components/CalendarAction.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarDateInput",
+      "path": "app/javascript/dashboard/components/ui/DatePicker/components/CalendarDateInput.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarDateRange",
+      "path": "app/javascript/dashboard/components/ui/DatePicker/components/CalendarDateRange.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarFooter",
+      "path": "app/javascript/dashboard/components/ui/DatePicker/components/CalendarFooter.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarMonth",
+      "path": "app/javascript/dashboard/components/ui/DatePicker/components/CalendarMonth.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarWeek",
+      "path": "app/javascript/dashboard/components/ui/DatePicker/components/CalendarWeek.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarWeekLabel",
+      "path": "app/javascript/dashboard/components/ui/DatePicker/components/CalendarWeekLabel.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarYear",
+      "path": "app/javascript/dashboard/components/ui/DatePicker/components/CalendarYear.vue",
+      "story": false
+    },
+    {
+      "name": "CallCard",
+      "path": "app/javascript/dashboard/components-next/call/CallCard.vue",
+      "story": false
+    },
+    {
+      "name": "CallCard.story",
+      "path": "app/javascript/dashboard/components-next/call/CallCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "CampaignCard",
+      "path": "app/javascript/dashboard/components-next/Campaigns/CampaignCard/CampaignCard.vue",
+      "story": false
+    },
+    {
+      "name": "CampaignList",
+      "path": "app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/CampaignList.vue",
+      "story": false
+    },
+    {
+      "name": "CardAvatar",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/CardAvatar.vue",
+      "story": false
+    },
+    {
+      "name": "CardButton",
+      "path": "app/javascript/shared/components/CardButton.vue",
+      "story": false
+    },
+    {
+      "name": "CardContent",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/CardContent.vue",
+      "story": false
+    },
+    {
+      "name": "CardLabels",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/CardLabels.vue",
+      "story": false
+    },
+    {
+      "name": "CardLabels",
+      "path": "app/javascript/dashboard/components/widgets/conversation/conversationCardComponents/CardLabels.vue",
+      "story": false
+    },
+    {
+      "name": "CardLabelsV5",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/CardLabelsV5.vue",
+      "story": false
+    },
+    {
+      "name": "CardLayout",
+      "path": "app/javascript/dashboard/components-next/CardLayout.vue",
+      "story": false
+    },
+    {
+      "name": "CardMessagePreview",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/CardMessagePreview.vue",
+      "story": false
+    },
+    {
+      "name": "CardMessagePreviewWithMeta",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/CardMessagePreviewWithMeta.vue",
+      "story": false
+    },
+    {
+      "name": "CardPopover",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/components/CardPopover.vue",
+      "story": false
+    },
+    {
+      "name": "CardPopover.story",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/components/story/CardPopover.story.vue",
+      "story": true
+    },
+    {
+      "name": "CardPriorityIcon",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/CardPriorityIcon.vue",
+      "story": false
+    },
+    {
+      "name": "CardStatusIcon",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/CardStatusIcon.vue",
+      "story": false
+    },
+    {
+      "name": "CardTemplate",
+      "path": "app/javascript/dashboard/components-next/template-preview/CardTemplate.vue",
+      "story": false
+    },
+    {
+      "name": "CategoryCard",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/CategoryCard/CategoryCard.vue",
+      "story": false
+    },
+    {
+      "name": "CategoryCard.story",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/CategoryCard/CategoryCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "CategoryDialog",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/CategoryPage/CategoryDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CategoryForm",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/CategoryPage/CategoryForm.vue",
+      "story": false
+    },
+    {
+      "name": "CategoryList",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/CategoryPage/CategoryList.vue",
+      "story": false
+    },
+    {
+      "name": "ChannelList",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/ChannelList.vue",
+      "story": false
+    },
+    {
+      "name": "ChatAttachment",
+      "path": "app/javascript/widget/components/ChatAttachment.vue",
+      "story": false
+    },
+    {
+      "name": "ChatCard",
+      "path": "app/javascript/shared/components/ChatCard.vue",
+      "story": false
+    },
+    {
+      "name": "ChatFooter",
+      "path": "app/javascript/widget/components/ChatFooter.vue",
+      "story": false
+    },
+    {
+      "name": "ChatForm",
+      "path": "app/javascript/shared/components/ChatForm.vue",
+      "story": false
+    },
+    {
+      "name": "ChatHeader",
+      "path": "app/javascript/widget/components/ChatHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ChatHeaderExpanded",
+      "path": "app/javascript/widget/components/ChatHeaderExpanded.vue",
+      "story": false
+    },
+    {
+      "name": "ChatInputWrap",
+      "path": "app/javascript/widget/components/ChatInputWrap.vue",
+      "story": false
+    },
+    {
+      "name": "ChatList",
+      "path": "app/javascript/dashboard/components/ChatList.vue",
+      "story": false
+    },
+    {
+      "name": "ChatListHeader",
+      "path": "app/javascript/dashboard/components/ChatListHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ChatMessage",
+      "path": "app/javascript/widget/components/ChatMessage.vue",
+      "story": false
+    },
+    {
+      "name": "ChatOption",
+      "path": "app/javascript/shared/components/ChatOption.vue",
+      "story": false
+    },
+    {
+      "name": "ChatOptions",
+      "path": "app/javascript/shared/components/ChatOptions.vue",
+      "story": false
+    },
+    {
+      "name": "ChatSendButton",
+      "path": "app/javascript/widget/components/ChatSendButton.vue",
+      "story": false
+    },
+    {
+      "name": "ChatTypeTabs",
+      "path": "app/javascript/dashboard/components/widgets/ChatTypeTabs.vue",
+      "story": false
+    },
+    {
+      "name": "CmdBarConversationSnooze",
+      "path": "app/javascript/dashboard/routes/dashboard/commands/CmdBarConversationSnooze.vue",
+      "story": false
+    },
+    {
+      "name": "CompaniesCard",
+      "path": "app/javascript/dashboard/components-next/Companies/CompaniesCard/CompaniesCard.vue",
+      "story": false
+    },
+    {
+      "name": "CompaniesListLayout",
+      "path": "app/javascript/dashboard/components-next/Companies/CompaniesListLayout.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyContactsSidebar",
+      "path": "app/javascript/dashboard/components-next/Companies/CompanyDetail/CompanyContactsSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyCreateDialog",
+      "path": "app/javascript/dashboard/components-next/Companies/CompanyCreateDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyHistorySidebar",
+      "path": "app/javascript/dashboard/components-next/Companies/CompanyDetail/CompanyHistorySidebar.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyNotesSidebar",
+      "path": "app/javascript/dashboard/components-next/Companies/CompanyDetail/CompanyNotesSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyProfileCard",
+      "path": "app/javascript/dashboard/components-next/Companies/CompanyDetail/CompanyProfileCard.vue",
+      "story": false
+    },
+    {
+      "name": "ComposeConversation",
+      "path": "app/javascript/dashboard/components-next/NewConversation/ComposeConversation.vue",
+      "story": false
+    },
+    {
+      "name": "composeConversationHelper",
+      "path": "app/javascript/dashboard/components-next/NewConversation/helpers/composeConversationHelper.js",
+      "story": false
+    },
+    {
+      "name": "ComposeNewConversationForm",
+      "path": "app/javascript/dashboard/components-next/NewConversation/components/ComposeNewConversationForm.vue",
+      "story": false
+    },
+    {
+      "name": "ComposeNewConversationForm.story",
+      "path": "app/javascript/dashboard/components-next/NewConversation/components/story/ComposeNewConversationForm.story.vue",
+      "story": true
+    },
+    {
+      "name": "ConfirmationModal",
+      "path": "app/javascript/dashboard/components/widgets/modal/ConfirmationModal.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmCompanyDeleteDialog",
+      "path": "app/javascript/dashboard/components-next/Companies/CompanyDetail/ConfirmCompanyDeleteDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmContactDeleteDialog",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/ConfirmContactDeleteDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmDeleteCampaignDialog",
+      "path": "app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/ConfirmDeleteCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmDeleteModal",
+      "path": "app/javascript/dashboard/components/widgets/modal/ConfirmDeleteModal.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmDeletePolicyDialog",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/ConfirmDeletePolicyDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmDeletePortalDialog",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/PortalSettingsPage/ConfirmDeletePortalDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmInboxDialog",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/ConfirmInboxDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmTemplateUpdateDialog",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/settingsPage/components/ConfirmTemplateUpdateDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConnectInboxDialog",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/inbox/ConnectInboxDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConnectInboxForm",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/inbox/ConnectInboxForm.vue",
+      "story": false
+    },
+    {
+      "name": "Contact",
+      "path": "app/javascript/dashboard/components-next/message/bubbles/Contact.vue",
+      "story": false
+    },
+    {
+      "name": "ContactConversations",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/ContactConversations.vue",
+      "story": false
+    },
+    {
+      "name": "ContactCustomAttributeItem",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactCustomAttributeItem.vue",
+      "story": false
+    },
+    {
+      "name": "ContactCustomAttributes",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactCustomAttributes.vue",
+      "story": false
+    },
+    {
+      "name": "ContactDeleteModal",
+      "path": "app/javascript/dashboard/modules/contact/ContactDeleteModal.vue",
+      "story": false
+    },
+    {
+      "name": "ContactDeleteSection",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsCard/ContactDeleteSection.vue",
+      "story": false
+    },
+    {
+      "name": "ContactDetails",
+      "path": "app/javascript/dashboard/components-next/Contacts/Pages/ContactDetails.vue",
+      "story": false
+    },
+    {
+      "name": "ContactDetailsItem",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/ContactDetailsItem.vue",
+      "story": false
+    },
+    {
+      "name": "ContactEmptyState",
+      "path": "app/javascript/dashboard/components-next/Contacts/EmptyState/ContactEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "ContactEmptyState.story",
+      "path": "app/javascript/dashboard/components-next/Contacts/EmptyState/ContactEmptyState.story.vue",
+      "story": true
+    },
+    {
+      "name": "contactEmptyStateContent",
+      "path": "app/javascript/dashboard/components-next/Contacts/EmptyState/contactEmptyStateContent.js",
+      "story": false
+    },
+    {
+      "name": "ContactExportDialog",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/ContactExportDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ContactForm",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/contact/ContactForm.vue",
+      "story": false
+    },
+    {
+      "name": "ContactHeader",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsHeader/ContactHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ContactHeader.story",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsHeader/story/ContactHeader.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactHistory",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactHistory.vue",
+      "story": false
+    },
+    {
+      "name": "ContactImportDialog",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/ContactImportDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ContactInfo",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/contact/ContactInfo.vue",
+      "story": false
+    },
+    {
+      "name": "ContactInfoRow",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/contact/ContactInfoRow.vue",
+      "story": false
+    },
+    {
+      "name": "ContactLabels",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactLabels/ContactLabels.vue",
+      "story": false
+    },
+    {
+      "name": "ContactListHeaderWrapper",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsHeader/ContactListHeaderWrapper.vue",
+      "story": false
+    },
+    {
+      "name": "ContactManageView",
+      "path": "app/javascript/dashboard/routes/dashboard/contacts/pages/ContactManageView.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMedia",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactMedia.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMerge",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactMerge.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMergeForm",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/ContactMergeForm.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMergeForm.story",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/story/ContactMergeForm.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactMergeModal",
+      "path": "app/javascript/dashboard/modules/contact/ContactMergeModal.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMoreActions",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsHeader/components/ContactMoreActions.vue",
+      "story": false
+    },
+    {
+      "name": "ContactNoteItem",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsSidebar/components/ContactNoteItem.vue",
+      "story": false
+    },
+    {
+      "name": "ContactNoteItem.story",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsSidebar/components/story/ContactNoteItem.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactNotes",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactNotes.vue",
+      "story": false
+    },
+    {
+      "name": "ContactNotes",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/contact/ContactNotes.vue",
+      "story": false
+    },
+    {
+      "name": "ContactPanel",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/ContactPanel.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsActiveFiltersPreview",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsHeader/components/ContactsActiveFiltersPreview.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsBulkActionBar",
+      "path": "app/javascript/dashboard/routes/dashboard/contacts/components/ContactsBulkActionBar.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsCard",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsCard/ContactsCard.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsCard.story",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsCard/story/ContactsCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactsDetailsLayout",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsDetailsLayout.vue",
+      "story": false
+    },
+    {
+      "name": "ContactSelector",
+      "path": "app/javascript/dashboard/components-next/NewConversation/components/ContactSelector.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsFilter",
+      "path": "app/javascript/dashboard/components-next/filter/ContactsFilter.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsForm",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/ContactsForm.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsForm.story",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/story/ContactsForm.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactsIndex",
+      "path": "app/javascript/dashboard/routes/dashboard/contacts/pages/ContactsIndex.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsList",
+      "path": "app/javascript/dashboard/components-next/Contacts/Pages/ContactsList.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsListLayout",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsListLayout.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsLoadMore",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsLoadMore.vue",
+      "story": false
+    },
+    {
+      "name": "ContactSortMenu",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsHeader/components/ContactSortMenu.vue",
+      "story": false
+    },
+    {
+      "name": "ContentTemplateForm",
+      "path": "app/javascript/dashboard/components-next/NewConversation/components/ContentTemplateForm.vue",
+      "story": false
+    },
+    {
+      "name": "ContentTemplatesModal",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ContentTemplates/ContentTemplatesModal.vue",
+      "story": false
+    },
+    {
+      "name": "conversation.routes",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/conversation.routes.js",
+      "story": false
+    },
+    {
+      "name": "ConversationAction",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/ConversationAction.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationBasicFilter",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ConversationBasicFilter.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationBox",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ConversationBox.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationCallButton",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ConversationCallButton.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationCard",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/ConversationCard.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationCard",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ConversationCard.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationCard.story",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/ConversationCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ConversationCardExpanded",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/ConversationCardExpanded.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationFilter",
+      "path": "app/javascript/dashboard/components-next/filter/ConversationFilter.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationHeader",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ConversationHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationHeatmapContainer",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/heatmaps/ConversationHeatmapContainer.vue",
+      "story": false
+    },
+    {
+      "name": "conversationHelper",
+      "path": "app/javascript/dashboard/helper/conversationHelper.js",
+      "story": false
+    },
+    {
+      "name": "ConversationInfo",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/ConversationInfo.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationItem",
+      "path": "app/javascript/dashboard/components/ConversationItem.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationList",
+      "path": "app/javascript/dashboard/components/ConversationList.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationParticipant",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/ConversationParticipant.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationRequiredAttributeItem",
+      "path": "app/javascript/dashboard/components-next/ConversationWorkflow/ConversationRequiredAttributeItem.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationRequiredAttributes",
+      "path": "app/javascript/dashboard/components-next/ConversationWorkflow/ConversationRequiredAttributes.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationRequiredEmpty",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationRequiredEmpty.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationResolveAttributesModal",
+      "path": "app/javascript/dashboard/components-next/ConversationWorkflow/ConversationResolveAttributesModal.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationSidebar",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ConversationSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationsSlide",
+      "path": "app/javascript/dashboard/components-next/year-in-review/slides/ConversationsSlide.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationView",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/ConversationView.vue",
+      "story": false
+    },
+    {
+      "name": "conversationWorkflow.routes",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/conversationWorkflow/conversationWorkflow.routes.js",
+      "story": false
+    },
+    {
+      "name": "ConversationWrap",
+      "path": "app/javascript/widget/components/ConversationWrap.vue",
+      "story": false
+    },
+    {
+      "name": "CopilotAgentMessage",
+      "path": "app/javascript/dashboard/components-next/copilot/CopilotAgentMessage.vue",
+      "story": false
+    },
+    {
+      "name": "CopilotAssistantMessage",
+      "path": "app/javascript/dashboard/components-next/copilot/CopilotAssistantMessage.vue",
+      "story": false
+    },
+    {
+      "name": "CopilotEditor",
+      "path": "app/javascript/dashboard/components/widgets/WootWriter/CopilotEditor.vue",
+      "story": false
+    },
+    {
+      "name": "CopilotEditorSection",
+      "path": "app/javascript/dashboard/components/widgets/conversation/CopilotEditorSection.vue",
+      "story": false
+    },
+    {
+      "name": "CopilotReplyBottomPanel",
+      "path": "app/javascript/dashboard/components/widgets/WootWriter/CopilotReplyBottomPanel.vue",
+      "story": false
+    },
+    {
+      "name": "CreateAssistantDialog",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/assistant/CreateAssistantDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateCustomToolDialog",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/customTool/CreateCustomToolDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateDocumentDialog",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/document/CreateDocumentDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateNewContactDialog",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/CreateNewContactDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreatePortalDialog",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/PortalSwitcher/CreatePortalDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateResponseDialog",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/response/CreateResponseDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateSegmentDialog",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/CreateSegmentDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreditPackageCard",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/billing/components/CreditPackageCard.vue",
+      "story": false
+    },
+    {
+      "name": "CsatContactCell",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatContactCell.vue",
+      "story": false
+    },
+    {
+      "name": "CsatMetricCard",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatMetricCard.vue",
+      "story": false
+    },
+    {
+      "name": "CsatMetricCard.story",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatMetricCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "CsatTable",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatTable.vue",
+      "story": false
+    },
+    {
+      "name": "CsatTableLoader",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatTableLoader.vue",
+      "story": false
+    },
+    {
+      "name": "CustomErrors",
+      "path": "app/javascript/shared/helpers/CustomErrors.js",
+      "story": false
+    },
+    {
+      "name": "CustomerSatisfaction",
+      "path": "app/javascript/shared/components/CustomerSatisfaction.vue",
+      "story": false
+    },
+    {
+      "name": "CustomerSatisfactionPage",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/settingsPage/CustomerSatisfactionPage.vue",
+      "story": false
+    },
+    {
+      "name": "CustomRoleModal",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/customRoles/component/CustomRoleModal.vue",
+      "story": false
+    },
+    {
+      "name": "CustomRoleTableBody",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/customRoles/component/CustomRoleTableBody.vue",
+      "story": false
+    },
+    {
+      "name": "CustomSnoozeModal",
+      "path": "app/javascript/dashboard/components/CustomSnoozeModal.vue",
+      "story": false
+    },
+    {
+      "name": "CustomToolCard",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/customTool/CustomToolCard.vue",
+      "story": false
+    },
+    {
+      "name": "CustomToolForm",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/customTool/CustomToolForm.vue",
+      "story": false
+    },
+    {
+      "name": "Dashboard",
+      "path": "app/javascript/dashboard/routes/dashboard/Dashboard.vue",
+      "story": false
+    },
+    {
+      "name": "dashboard",
+      "path": "app/javascript/entrypoints/dashboard.js",
+      "story": false
+    },
+    {
+      "name": "dashboard.routes",
+      "path": "app/javascript/dashboard/routes/dashboard/dashboard.routes.js",
+      "story": false
+    },
+    {
+      "name": "DashboardAppModal",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/integrations/DashboardApps/DashboardAppModal.vue",
+      "story": false
+    },
+    {
+      "name": "DashboardAppsRow",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/integrations/DashboardApps/DashboardAppsRow.vue",
+      "story": false
+    },
+    {
+      "name": "DashboardAudioNotificationHelper",
+      "path": "app/javascript/dashboard/helper/AudioAlerts/DashboardAudioNotificationHelper.js",
+      "story": false
+    },
+    {
+      "name": "DashboardIcon",
+      "path": "app/javascript/shared/components/FluentIcon/DashboardIcon.vue",
+      "story": false
+    },
+    {
+      "name": "DataTable",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/components/DataTable.vue",
+      "story": false
+    },
+    {
+      "name": "DataTable.story",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/components/story/DataTable.story.vue",
+      "story": true
+    },
+    {
+      "name": "DeleteDialog",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/DeleteDialog.vue",
+      "story": false
+    },
+    {
+      "name": "DeleteModal",
+      "path": "app/javascript/dashboard/components/widgets/modal/DeleteModal.vue",
+      "story": false
+    },
+    {
+      "name": "DeleteSegmentDialog",
+      "path": "app/javascript/dashboard/components-next/Contacts/ContactsForm/DeleteSegmentDialog.vue",
+      "story": false
+    },
+    {
+      "name": "Dialog",
+      "path": "app/javascript/dashboard/components-next/dialog/Dialog.vue",
+      "story": false
+    },
+    {
+      "name": "Dialog.story",
+      "path": "app/javascript/dashboard/components-next/dialog/Dialog.story.vue",
+      "story": true
+    },
+    {
+      "name": "DocumentCard",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/DocumentCard.vue",
+      "story": false
+    },
+    {
+      "name": "DocumentCard.story",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/DocumentCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "DocumentForm",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/document/DocumentForm.vue",
+      "story": false
+    },
+    {
+      "name": "DropdownList",
+      "path": "app/javascript/dashboard/components/ui/Dropdown/DropdownList.vue",
+      "story": false
+    },
+    {
+      "name": "DropdownListItemButton",
+      "path": "app/javascript/dashboard/components/ui/Dropdown/DropdownListItemButton.vue",
+      "story": false
+    },
+    {
+      "name": "DuplicateInboxBanner",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/channels/instagram/DuplicateInboxBanner.vue",
+      "story": false
+    },
+    {
+      "name": "EditCategoryDialog",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/CategoryPage/EditCategoryDialog.vue",
+      "story": false
+    },
+    {
+      "name": "EditContact",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/contact/EditContact.vue",
+      "story": false
+    },
+    {
+      "name": "EditLiveChatCampaignDialog",
+      "path": "app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/LiveChatCampaign/EditLiveChatCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "app/javascript/dashboard/components-next/Editor/Editor.vue",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "app/javascript/dashboard/components/widgets/WootWriter/Editor.vue",
+      "story": false
+    },
+    {
+      "name": "editor",
+      "path": "app/javascript/dashboard/constants/editor.js",
+      "story": false
+    },
+    {
+      "name": "editorHelper",
+      "path": "app/javascript/dashboard/helper/editorHelper.js",
+      "story": false
+    },
+    {
+      "name": "EditorModeToggle",
+      "path": "app/javascript/dashboard/components/widgets/WootWriter/EditorModeToggle.vue",
+      "story": false
+    },
+    {
+      "name": "EmailInboxFinish",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/channels/emailChannels/EmailInboxFinish.vue",
+      "story": false
+    },
+    {
+      "name": "EmailMessages.story",
+      "path": "app/javascript/dashboard/components-next/message/stories/EmailMessages.story.vue",
+      "story": true
+    },
+    {
+      "name": "EmailTranscriptModal",
+      "path": "app/javascript/dashboard/components/widgets/conversation/EmailTranscriptModal.vue",
+      "story": false
+    },
+    {
+      "name": "EmptyStateMessage",
+      "path": "app/javascript/dashboard/components/widgets/conversation/EmptyState/EmptyStateMessage.vue",
+      "story": false
+    },
+    {
+      "name": "FloatingCallWidget",
+      "path": "app/javascript/dashboard/components-next/call/FloatingCallWidget.vue",
+      "story": false
+    },
+    {
+      "name": "Form",
+      "path": "app/javascript/dashboard/components-next/message/bubbles/Form.vue",
+      "story": false
+    },
+    {
+      "name": "Form",
+      "path": "app/javascript/v3/views/auth/signup/components/Signup/Form.vue",
+      "story": false
+    },
+    {
+      "name": "Form",
+      "path": "app/javascript/widget/components/PreChat/Form.vue",
+      "story": false
+    },
+    {
+      "name": "FormattedContent",
+      "path": "app/javascript/dashboard/components-next/message/bubbles/Text/FormattedContent.vue",
+      "story": false
+    },
+    {
+      "name": "FullEditor",
+      "path": "app/javascript/dashboard/components/widgets/WootWriter/FullEditor.vue",
+      "story": false
+    },
+    {
+      "name": "GreetingsEditor",
+      "path": "app/javascript/shared/components/GreetingsEditor.vue",
+      "story": false
+    },
+    {
+      "name": "GroupedStackedChangelogCard",
+      "path": "app/javascript/dashboard/components-next/changelog-card/GroupedStackedChangelogCard.vue",
+      "story": false
+    },
+    {
+      "name": "GroupedStackedChangelogCard.story",
+      "path": "app/javascript/dashboard/components-next/changelog-card/GroupedStackedChangelogCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "inbox",
+      "path": "app/javascript/dashboard/helper/inbox.js",
+      "story": false
+    },
+    {
+      "name": "inbox.routes",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/inbox.routes.js",
+      "story": false
+    },
+    {
+      "name": "InboxCapacityLimits",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/components/InboxCapacityLimits.vue",
+      "story": false
+    },
+    {
+      "name": "InboxCapacityLimits.story",
+      "path": "app/javascript/dashboard/components-next/AssignmentPolicy/components/story/InboxCapacityLimits.story.vue",
+      "story": true
+    },
+    {
+      "name": "InboxCard",
+      "path": "app/javascript/dashboard/components-next/Inbox/InboxCard.vue",
+      "story": false
+    },
+    {
+      "name": "InboxCard",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/InboxCard.vue",
+      "story": false
+    },
+    {
+      "name": "InboxCard.story",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/InboxCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "InboxChannels",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/InboxChannels.vue",
+      "story": false
+    },
+    {
+      "name": "InboxContextMenu",
+      "path": "app/javascript/dashboard/routes/dashboard/inbox/components/InboxContextMenu.vue",
+      "story": false
+    },
+    {
+      "name": "InboxDisplayMenu",
+      "path": "app/javascript/dashboard/routes/dashboard/inbox/components/InboxDisplayMenu.vue",
+      "story": false
+    },
+    {
+      "name": "InboxEmptyState",
+      "path": "app/javascript/dashboard/components-next/NewConversation/components/InboxEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "InboxEmptyState",
+      "path": "app/javascript/dashboard/routes/dashboard/inbox/InboxEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "InboxItemHeader",
+      "path": "app/javascript/dashboard/routes/dashboard/inbox/components/InboxItemHeader.vue",
+      "story": false
+    },
+    {
+      "name": "InboxLinkDialog",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/InboxLinkDialog.vue",
+      "story": false
+    },
+    {
+      "name": "InboxList",
+      "path": "app/javascript/dashboard/routes/dashboard/inbox/InboxList.vue",
+      "story": false
+    },
+    {
+      "name": "InboxListHeader",
+      "path": "app/javascript/dashboard/routes/dashboard/inbox/components/InboxListHeader.vue",
+      "story": false
+    },
+    {
+      "name": "inboxMixin",
+      "path": "app/javascript/shared/mixins/inboxMixin.js",
+      "story": false
+    },
+    {
+      "name": "InboxName",
+      "path": "app/javascript/dashboard/components-next/Conversation/InboxName.vue",
+      "story": false
+    },
+    {
+      "name": "InboxName",
+      "path": "app/javascript/dashboard/components/widgets/InboxName.vue",
+      "story": false
+    },
+    {
+      "name": "InboxOptionMenu",
+      "path": "app/javascript/dashboard/routes/dashboard/inbox/components/InboxOptionMenu.vue",
+      "story": false
+    },
+    {
+      "name": "InboxPageEmptyState",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/emptyStates/InboxPageEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "InboxReconnectionRequired",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/components/InboxReconnectionRequired.vue",
+      "story": false
+    },
+    {
+      "name": "InboxReports",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/InboxReports.vue",
+      "story": false
+    },
+    {
+      "name": "InboxReportsIndex",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/InboxReportsIndex.vue",
+      "story": false
+    },
+    {
+      "name": "InboxReportsShow",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/InboxReportsShow.vue",
+      "story": false
+    },
+    {
+      "name": "InboxSelector",
+      "path": "app/javascript/dashboard/components-next/NewConversation/components/InboxSelector.vue",
+      "story": false
+    },
+    {
+      "name": "InboxView",
+      "path": "app/javascript/dashboard/routes/dashboard/inbox/InboxView.vue",
+      "story": false
+    },
+    {
+      "name": "InboxViewHelpers",
+      "path": "app/javascript/dashboard/routes/dashboard/inbox/helpers/InboxViewHelpers.js",
+      "story": false
+    },
+    {
+      "name": "InstagramMessages.story",
+      "path": "app/javascript/dashboard/components-next/message/stories/InstagramMessages.story.vue",
+      "story": true
+    },
+    {
+      "name": "IntegrationCard",
+      "path": "app/javascript/widget/components/template/IntegrationCard.vue",
+      "story": false
+    },
+    {
+      "name": "IssuesList",
+      "path": "app/javascript/dashboard/components/widgets/conversation/linear/IssuesList.vue",
+      "story": false
+    },
+    {
+      "name": "keyboardEventListenerMixins",
+      "path": "app/javascript/shared/mixins/keyboardEventListenerMixins.js",
+      "story": false
+    },
+    {
+      "name": "List",
+      "path": "app/javascript/dashboard/routes/dashboard/conversation/Macros/List.vue",
+      "story": false
+    },
+    {
+      "name": "ListAttribute",
+      "path": "app/javascript/dashboard/components-next/CustomAttributes/ListAttribute.vue",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignDetails",
+      "path": "app/javascript/dashboard/components-next/Campaigns/CampaignCard/LiveChatCampaignDetails.vue",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignDialog",
+      "path": "app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/LiveChatCampaign/LiveChatCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignEmptyState",
+      "path": "app/javascript/dashboard/components-next/Campaigns/EmptyState/LiveChatCampaignEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignForm",
+      "path": "app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/LiveChatCampaign/LiveChatCampaignForm.vue",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignsPage",
+      "path": "app/javascript/dashboard/routes/dashboard/campaigns/pages/LiveChatCampaignsPage.vue",
+      "story": false
+    },
+    {
+      "name": "LocaleCard",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/LocaleCard/LocaleCard.vue",
+      "story": false
+    },
+    {
+      "name": "LocaleCard.story",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/LocaleCard/LocaleCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "LocaleContentDialog",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/LocalePage/LocaleContentDialog.vue",
+      "story": false
+    },
+    {
+      "name": "LocaleList",
+      "path": "app/javascript/dashboard/components-next/HelpCenter/Pages/LocalePage/LocaleList.vue",
+      "story": false
+    },
+    {
+      "name": "LockToSingleConversationPreview",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/components/LockToSingleConversationPreview.vue",
+      "story": false
+    },
+    {
+      "name": "MacroEditor",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/macros/MacroEditor.vue",
+      "story": false
+    },
+    {
+      "name": "MacroForm",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/macros/MacroForm.vue",
+      "story": false
+    },
+    {
+      "name": "MacrosTableRow",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/macros/MacrosTableRow.vue",
+      "story": false
+    },
+    {
+      "name": "MergeContact",
+      "path": "app/javascript/dashboard/modules/contact/components/MergeContact.vue",
+      "story": false
+    },
+    {
+      "name": "MergeContactSummary",
+      "path": "app/javascript/dashboard/modules/contact/components/MergeContactSummary.vue",
+      "story": false
+    },
+    {
+      "name": "Message",
+      "path": "app/javascript/dashboard/components-next/message/Message.vue",
+      "story": false
+    },
+    {
+      "name": "MessageBubbles.story",
+      "path": "app/javascript/dashboard/components-next/message/stories/MessageBubbles.story.vue",
+      "story": true
+    },
+    {
+      "name": "MessageContent",
+      "path": "app/javascript/dashboard/modules/search/components/MessageContent.vue",
+      "story": false
+    },
+    {
+      "name": "MessageContextMenu",
+      "path": "app/javascript/dashboard/modules/conversations/components/MessageContextMenu.vue",
+      "story": false
+    },
+    {
+      "name": "MessageEditor",
+      "path": "app/javascript/dashboard/components-next/NewConversation/components/MessageEditor.vue",
+      "story": false
+    },
+    {
+      "name": "MessageError",
+      "path": "app/javascript/dashboard/components-next/message/MessageError.vue",
+      "story": false
+    },
+    {
+      "name": "MessageFormatter",
+      "path": "app/javascript/shared/helpers/MessageFormatter.js",
+      "story": false
+    },
+    {
+      "name": "MessageList",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/MessageList.vue",
+      "story": false
+    },
+    {
+      "name": "MessageList",
+      "path": "app/javascript/dashboard/components-next/message/MessageList.vue",
+      "story": false
+    },
+    {
+      "name": "MessageMeta",
+      "path": "app/javascript/dashboard/components-next/message/MessageMeta.vue",
+      "story": false
+    },
+    {
+      "name": "messageMixin",
+      "path": "app/javascript/widget/mixins/messageMixin.js",
+      "story": false
+    },
+    {
+      "name": "MessagePreview",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/MessagePreview.vue",
+      "story": false
+    },
+    {
+      "name": "MessagePreview",
+      "path": "app/javascript/dashboard/components/widgets/conversation/MessagePreview.vue",
+      "story": false
+    },
+    {
+      "name": "MessageReplyButton",
+      "path": "app/javascript/widget/components/MessageReplyButton.vue",
+      "story": false
+    },
+    {
+      "name": "messages",
+      "path": "app/javascript/shared/constants/messages.js",
+      "story": false
+    },
+    {
+      "name": "Messages",
+      "path": "app/javascript/widget/views/Messages.vue",
+      "story": false
+    },
+    {
+      "name": "MessageSignature",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/profile/MessageSignature.vue",
+      "story": false
+    },
+    {
+      "name": "MessageSignatureMissingAlert",
+      "path": "app/javascript/dashboard/components/widgets/conversation/MessageSignatureMissingAlert.vue",
+      "story": false
+    },
+    {
+      "name": "MessageStatus",
+      "path": "app/javascript/dashboard/components-next/message/MessageStatus.vue",
+      "story": false
+    },
+    {
+      "name": "MessagesView",
+      "path": "app/javascript/dashboard/components/widgets/conversation/MessagesView.vue",
+      "story": false
+    },
+    {
+      "name": "MessageTypeHelper",
+      "path": "app/javascript/shared/helpers/MessageTypeHelper.js",
+      "story": false
+    },
+    {
+      "name": "MetricCard",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/overview/MetricCard.vue",
+      "story": false
+    },
+    {
+      "name": "MfaSettingsCard",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/profile/MfaSettingsCard.vue",
+      "story": false
+    },
+    {
+      "name": "MfaStatusCard",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/profile/MfaStatusCard.vue",
+      "story": false
+    },
+    {
+      "name": "MobileSidebarLauncher",
+      "path": "app/javascript/dashboard/components-next/sidebar/MobileSidebarLauncher.vue",
+      "story": false
+    },
+    {
+      "name": "Modal",
+      "path": "app/javascript/dashboard/components/Modal.vue",
+      "story": false
+    },
+    {
+      "name": "Modal",
+      "path": "app/javascript/dashboard/components/widgets/conversation/WhatsappTemplates/Modal.vue",
+      "story": false
+    },
+    {
+      "name": "ModalHeader",
+      "path": "app/javascript/dashboard/components/ModalHeader.vue",
+      "story": false
+    },
+    {
+      "name": "NotificationTable",
+      "path": "app/javascript/dashboard/routes/dashboard/notifications/components/NotificationTable.vue",
+      "story": false
+    },
+    {
+      "name": "OnboardingFeatureCard",
+      "path": "app/javascript/dashboard/components/widgets/conversation/OnboardingFeatureCard.vue",
+      "story": false
+    },
+    {
+      "name": "OnboardingFormRow",
+      "path": "app/javascript/dashboard/routes/dashboard/onboarding/OnboardingFormRow.vue",
+      "story": false
+    },
+    {
+      "name": "OnboardingFormSelect",
+      "path": "app/javascript/dashboard/routes/dashboard/onboarding/OnboardingFormSelect.vue",
+      "story": false
+    },
+    {
+      "name": "platform",
+      "path": "app/javascript/shared/helpers/platform.js",
+      "story": false
+    },
+    {
+      "name": "preChat",
+      "path": "app/javascript/dashboard/helper/preChat.js",
+      "story": false
+    },
+    {
+      "name": "PreChatFields",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/inbox/PreChatForm/PreChatFields.vue",
+      "story": false
+    },
+    {
+      "name": "PreChatForm",
+      "path": "app/javascript/widget/views/PreChatForm.vue",
+      "story": false
+    },
+    {
+      "name": "PreviewCard",
+      "path": "app/javascript/dashboard/components/ui/PreviewCard.vue",
+      "story": false
+    },
+    {
+      "name": "profile.routes",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/profile/profile.routes.js",
+      "story": false
+    },
+    {
+      "name": "PurchaseCreditsModal",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/billing/components/PurchaseCreditsModal.vue",
+      "story": false
+    },
+    {
+      "name": "RadioCard",
+      "path": "app/javascript/dashboard/components-next/radioCard/RadioCard.vue",
+      "story": false
+    },
+    {
+      "name": "RadioCard.story",
+      "path": "app/javascript/dashboard/components-next/radioCard/RadioCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ReplyBottomPanel",
+      "path": "app/javascript/dashboard/components/widgets/WootWriter/ReplyBottomPanel.vue",
+      "story": false
+    },
+    {
+      "name": "ReplyToMessage",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ReplyToMessage.vue",
+      "story": false
+    },
+    {
+      "name": "ReplyTopPanel",
+      "path": "app/javascript/dashboard/components/widgets/WootWriter/ReplyTopPanel.vue",
+      "story": false
+    },
+    {
+      "name": "ReportMetricCard",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/ReportMetricCard.vue",
+      "story": false
+    },
+    {
+      "name": "ResizableEditorWrapper",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ResizableEditorWrapper.vue",
+      "story": false
+    },
+    {
+      "name": "ResponseCard",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/ResponseCard.vue",
+      "story": false
+    },
+    {
+      "name": "ResponseCard.story",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/ResponseCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ResponseForm",
+      "path": "app/javascript/dashboard/components-next/captain/pageComponents/response/ResponseForm.vue",
+      "story": false
+    },
+    {
+      "name": "RuleCard",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/RuleCard.vue",
+      "story": false
+    },
+    {
+      "name": "RuleCard.story",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/RuleCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ScenariosCard",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/ScenariosCard.vue",
+      "story": false
+    },
+    {
+      "name": "ScenariosCard.story",
+      "path": "app/javascript/dashboard/components-next/captain/assistant/ScenariosCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "SearchContactAgentSelector",
+      "path": "app/javascript/dashboard/modules/search/components/SearchContactAgentSelector.vue",
+      "story": false
+    },
+    {
+      "name": "SearchInboxSelector",
+      "path": "app/javascript/dashboard/modules/search/components/SearchInboxSelector.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultArticlesList",
+      "path": "app/javascript/dashboard/modules/search/components/SearchResultArticlesList.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultContactItem",
+      "path": "app/javascript/dashboard/modules/search/components/SearchResultContactItem.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultContactsList",
+      "path": "app/javascript/dashboard/modules/search/components/SearchResultContactsList.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultConversationItem",
+      "path": "app/javascript/dashboard/modules/search/components/SearchResultConversationItem.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultConversationsList",
+      "path": "app/javascript/dashboard/modules/search/components/SearchResultConversationsList.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultMessageItem",
+      "path": "app/javascript/dashboard/modules/search/components/SearchResultMessageItem.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultMessagesList",
+      "path": "app/javascript/dashboard/modules/search/components/SearchResultMessagesList.vue",
+      "story": false
+    },
+    {
+      "name": "ShareModal",
+      "path": "app/javascript/dashboard/components-next/year-in-review/ShareModal.vue",
+      "story": false
+    },
+    {
+      "name": "ShopifyOrdersList",
+      "path": "app/javascript/dashboard/components/widgets/conversation/ShopifyOrdersList.vue",
+      "story": false
+    },
+    {
+      "name": "Sidebar",
+      "path": "app/javascript/dashboard/components-next/sidebar/Sidebar.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarAccountSwitcher",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarAccountSwitcher.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarActionsHeader",
+      "path": "app/javascript/dashboard/components-next/SidebarActionsHeader.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarActionsHeader.story",
+      "path": "app/javascript/dashboard/components-next/SidebarActionsHeader.story.vue",
+      "story": true
+    },
+    {
+      "name": "SidebarChangelogButton",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarChangelogButton.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarChangelogCard",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarChangelogCard.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarCollapsedPopover",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarCollapsedPopover.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroup",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarGroup.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroupEmptyLeaf",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarGroupEmptyLeaf.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroupHeader",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarGroupHeader.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroupLeaf",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarGroupLeaf.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroupSeparator",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarGroupSeparator.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarNotificationBell",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarNotificationBell.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarProfileMenu",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarProfileMenu.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarProfileMenuStatus",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarProfileMenuStatus.vue",
+      "story": false
+    },
+    {
+      "name": "sidebarSort",
+      "path": "app/javascript/dashboard/helper/sidebarSort.js",
+      "story": false
+    },
+    {
+      "name": "SidebarSortMenu",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarSortMenu.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarSubGroup",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarSubGroup.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarThemeToggle",
+      "path": "app/javascript/portal/components/SidebarThemeToggle.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarUnreadBadge",
+      "path": "app/javascript/dashboard/components-next/sidebar/SidebarUnreadBadge.vue",
+      "story": false
+    },
+    {
+      "name": "SidepanelSwitch",
+      "path": "app/javascript/dashboard/components-next/Conversation/SidepanelSwitch.vue",
+      "story": false
+    },
+    {
+      "name": "SLACardLabel",
+      "path": "app/javascript/dashboard/components-next/Conversation/ConversationCard/SLACardLabel.vue",
+      "story": false
+    },
+    {
+      "name": "SLACardLabel",
+      "path": "app/javascript/dashboard/components-next/Conversation/Sla/SLACardLabel.vue",
+      "story": false
+    },
+    {
+      "name": "SLACardLabel",
+      "path": "app/javascript/dashboard/components/widgets/conversation/components/SLACardLabel.vue",
+      "story": false
+    },
+    {
+      "name": "SlaForm",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/sla/SlaForm.vue",
+      "story": false
+    },
+    {
+      "name": "SLAMetricCard",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/SLA/SLAMetricCard.vue",
+      "story": false
+    },
+    {
+      "name": "SLAPopoverCard",
+      "path": "app/javascript/dashboard/components/widgets/conversation/components/SLAPopoverCard.vue",
+      "story": false
+    },
+    {
+      "name": "SLATable",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/SLA/SLATable.vue",
+      "story": false
+    },
+    {
+      "name": "SMSCampaignDialog",
+      "path": "app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/SMSCampaign/SMSCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "SMSCampaignForm",
+      "path": "app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/SMSCampaign/SMSCampaignForm.vue",
+      "story": false
+    },
+    {
+      "name": "StackedChangelogCard",
+      "path": "app/javascript/dashboard/components-next/changelog-card/StackedChangelogCard.vue",
+      "story": false
+    },
+    {
+      "name": "StackedChangelogCard.story",
+      "path": "app/javascript/dashboard/components-next/changelog-card/StackedChangelogCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "Table",
+      "path": "app/javascript/dashboard/components/table/Table.vue",
+      "story": false
+    },
+    {
+      "name": "TableFooter",
+      "path": "app/javascript/dashboard/components/widgets/TableFooter.vue",
+      "story": false
+    },
+    {
+      "name": "TableFooterPagination",
+      "path": "app/javascript/dashboard/components/widgets/TableFooterPagination.vue",
+      "story": false
+    },
+    {
+      "name": "TableFooterResults",
+      "path": "app/javascript/dashboard/components/widgets/TableFooterResults.vue",
+      "story": false
+    },
+    {
+      "name": "TableHeaderCell",
+      "path": "app/javascript/dashboard/components/widgets/TableHeaderCell.vue",
+      "story": false
+    },
+    {
+      "name": "TableOfContents",
+      "path": "app/javascript/portal/components/TableOfContents.vue",
+      "story": false
+    },
+    {
+      "name": "TeamForm",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/teams/TeamForm.vue",
+      "story": false
+    },
+    {
+      "name": "TeamTable",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/reports/components/overview/TeamTable.vue",
+      "story": false
+    },
+    {
+      "name": "TextMessages.story",
+      "path": "app/javascript/dashboard/components-next/message/stories/TextMessages.story.vue",
+      "story": true
+    },
+    {
+      "name": "UnreadMessage",
+      "path": "app/javascript/widget/components/UnreadMessage.vue",
+      "story": false
+    },
+    {
+      "name": "UnreadMessageList",
+      "path": "app/javascript/widget/components/UnreadMessageList.vue",
+      "story": false
+    },
+    {
+      "name": "UnreadMessages",
+      "path": "app/javascript/widget/views/UnreadMessages.vue",
+      "story": false
+    },
+    {
+      "name": "useAgentsList",
+      "path": "app/javascript/dashboard/composables/useAgentsList.js",
+      "story": false
+    },
+    {
+      "name": "useChatListKeyboardEvents",
+      "path": "app/javascript/dashboard/composables/chatlist/useChatListKeyboardEvents.js",
+      "story": false
+    },
+    {
+      "name": "useConversationHotKeys",
+      "path": "app/javascript/dashboard/composables/commands/useConversationHotKeys.js",
+      "story": false
+    },
+    {
+      "name": "useConversationLabels",
+      "path": "app/javascript/dashboard/composables/useConversationLabels.js",
+      "story": false
+    },
+    {
+      "name": "useConversationRequiredAttributes",
+      "path": "app/javascript/dashboard/composables/useConversationRequiredAttributes.js",
+      "story": false
+    },
+    {
+      "name": "useEditableAutomation",
+      "path": "app/javascript/dashboard/composables/useEditableAutomation.js",
+      "story": false
+    },
+    {
+      "name": "useInbox",
+      "path": "app/javascript/dashboard/composables/useInbox.js",
+      "story": false
+    },
+    {
+      "name": "useInboxHotKeys",
+      "path": "app/javascript/dashboard/composables/commands/useInboxHotKeys.js",
+      "story": false
+    },
+    {
+      "name": "useKeyboardNavigableList",
+      "path": "app/javascript/dashboard/composables/useKeyboardNavigableList.js",
+      "story": false
+    },
+    {
+      "name": "useMessageFormatter",
+      "path": "app/javascript/shared/composables/useMessageFormatter.js",
+      "story": false
+    },
+    {
+      "name": "useNumberFormatter",
+      "path": "app/javascript/shared/composables/useNumberFormatter.js",
+      "story": false
+    },
+    {
+      "name": "UserMessage",
+      "path": "app/javascript/superadmin_pages/components/playground/UserMessage.vue",
+      "story": false
+    },
+    {
+      "name": "UserMessage",
+      "path": "app/javascript/widget/components/UserMessage.vue",
+      "story": false
+    },
+    {
+      "name": "UserMessageBubble",
+      "path": "app/javascript/widget/components/UserMessageBubble.vue",
+      "story": false
+    },
+    {
+      "name": "UserProfilePicture",
+      "path": "app/javascript/dashboard/routes/dashboard/settings/profile/UserProfilePicture.vue",
+      "story": false
+    },
+    {
+      "name": "useSidebarKeyboardShortcuts",
+      "path": "app/javascript/dashboard/components-next/sidebar/useSidebarKeyboardShortcuts.js",
+      "story": false
+    },
+    {
+      "name": "useTransformKeys",
+      "path": "app/javascript/dashboard/composables/useTransformKeys.js",
+      "story": false
+    },
+    {
+      "name": "VariableList",
+      "path": "app/javascript/dashboard/components/widgets/conversation/VariableList.vue",
+      "story": false
+    },
+    {
+      "name": "WhatsAppCampaignDialog",
+      "path": "app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/WhatsAppCampaign/WhatsAppCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "WhatsAppCampaignForm",
+      "path": "app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/WhatsAppCampaign/WhatsAppCampaignForm.vue",
+      "story": false
+    },
+    {
+      "name": "Widget",
+      "path": "app/javascript/dashboard/modules/widget-preview/components/Widget.vue",
+      "story": false
+    },
+    {
+      "name": "widget",
+      "path": "app/javascript/entrypoints/widget.js",
+      "story": false
+    },
+    {
+      "name": "WidgetAudioNotificationHelper",
+      "path": "app/javascript/widget/helpers/WidgetAudioNotificationHelper.js",
+      "story": false
+    },
+    {
+      "name": "WidgetBody",
+      "path": "app/javascript/dashboard/modules/widget-preview/components/WidgetBody.vue",
+      "story": false
+    },
+    {
+      "name": "widgetBusEvents",
+      "path": "app/javascript/widget/constants/widgetBusEvents.js",
+      "story": false
+    },
+    {
+      "name": "WidgetFooter",
+      "path": "app/javascript/dashboard/modules/widget-preview/components/WidgetFooter.vue",
+      "story": false
+    },
+    {
+      "name": "WidgetHead",
+      "path": "app/javascript/dashboard/modules/widget-preview/components/WidgetHead.vue",
+      "story": false
+    },
+    {
+      "name": "WootKeyShortcutModal",
+      "path": "app/javascript/dashboard/components/widgets/modal/WootKeyShortcutModal.vue",
+      "story": false
+    },
+    {
+      "name": "YearInReviewModal",
+      "path": "app/javascript/dashboard/components-next/year-in-review/YearInReviewModal.vue",
+      "story": false
+    }
+  ]
+}
