@@ -16,3 +16,5 @@ export const getFamilies=()=>fetch(`${api}/families`).then(r=>r.json());
 export const getRuns=()=>fetch(`${api}/runs`).then(r=>r.json());
 export const getBundles=()=>fetch(`${api}/bundles`).then(r=>r.json());
 export const getSearch=()=>fetch(`${api}/search`).then(r=>r.json());
+
+export const getScores=()=>fetch(`${api}/scores`).then(r=>r.json());
