@@ -1,0 +1,21 @@
+{
+  "status": "ONLINE",
+  "rankings": 15,
+  "files": [
+    "apache-age.rank.json",
+    "cal-com.rank.json",
+    "chatwoot.rank.json",
+    "documenso.rank.json",
+    "flexsearch.rank.json",
+    "fusejs.rank.json",
+    "fuzzysort.rank.json",
+    "lancedb.rank.json",
+    "listmonk.rank.json",
+    "memgraph.rank.json",
+    "novu.rank.json",
+    "postiz.rank.json",
+    "qdrant.rank.json",
+    "rotki.rank.json",
+    "tagify.rank.json"
+  ]
+}
