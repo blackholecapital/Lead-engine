@@ -23,18 +23,18 @@ return(
 </div>
 
 <div className="panel">
-<h3>Documents</h3>
-<p>{data.documents}</p>
+<h3>Engine</h3>
+<p>{data.engine}</p>
 </div>
 
 <div className="panel">
-<h3>Embeddings</h3>
-<p>{data.embeddings}</p>
+<h3>Manifests</h3>
+<p>{data.manifests}</p>
 </div>
 
 <div className="panel">
-<h3>Queries/sec</h3>
-<p>{data.qps}</p>
+<h3>Outputs</h3>
+<p>{data.outputs}</p>
 </div>
 
 </div>

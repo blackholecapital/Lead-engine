@@ -23,18 +23,18 @@ return(
 </div>
 
 <div className="panel">
-<h3>Collections</h3>
-<p>{data.collections}</p>
+<h3>Kind</h3>
+<p>{data.kind}</p>
 </div>
 
 <div className="panel">
-<h3>Vectors</h3>
-<p>{data.vectors}</p>
+<h3>Categories</h3>
+<p>{data.categories}</p>
 </div>
 
 <div className="panel">
-<h3>Last Sync</h3>
-<p>{data.lastSync}</p>
+<h3>Generated</h3>
+<p>{String(data.generated)}</p>
 </div>
 
 </div>
