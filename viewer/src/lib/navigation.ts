@@ -4,6 +4,7 @@ Search,
 Archive,
 HardDrive,
 Database,
+GitBranch,
 ClipboardList,
 Bot,
 Settings
@@ -15,6 +16,7 @@ export const navigation=[
 {name:"Warehouse",path:"/warehouse",icon:Archive,status:"LIVE"},
 {name:"Storage",path:"/storage",icon:HardDrive,status:"LIVE"},
 {name:"Indexes",path:"/indexes",icon:Database,status:"LIVE"},
+{name:"Vectors",path:"/vectors",icon:GitBranch,status:"LIVE"},
 {name:"Review",path:"/review",icon:ClipboardList,status:"READY"},
 {name:"Agents",path:"/agents",icon:Bot,status:"IDLE"},
 {name:"Settings",path:"/settings",icon:Settings,status:"SYS"}
