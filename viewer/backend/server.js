@@ -7,36 +7,19 @@ const app=express();
 app.use(cors());
 
 require("./routes/runtime")(app);
+require("./routes/retrieval")(app);
+require("./routes/indexes")(app);
 require("./routes/storage")(app);
-
-app.get("/api/retrieval",(req,res)=>{
-res.json({
-status:"ONLINE",
-documents:18342,
-embeddings:18342,
-qps:0
-});
-});
-
-app.get("/api/indexes",(req,res)=>{
-
-const count=execSync("find /mnt/eila-hot-sidecar/tracer-platform/indexes -type f 2>/dev/null | wc -l").toString().trim();
-
-res.json({
-status:"Healthy",
-indexes:Number(count)
-});
-
-});
-
-app.get("/api/warehouse",(req,res)=>{
-res.json({
-status:"ONLINE",
-collections:8,
-vectors:18342,
-lastSync:new Date().toLocaleTimeString()
-});
-});
+require("./routes/vectors")(app);
+require("./routes/graphs")(app);
+require("./routes/ranking")(app);
+require("./routes/goldens")(app);
+require("./routes/families")(app);
+require("./routes/runs")(app);
+require("./routes/bundles")(app);
+require("./routes/search")(app);
+require("./routes/inspect")(app);
+require("./routes/warehouse")(app);
 
 app.get("/api/review",(req,res)=>{
 
