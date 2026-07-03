@@ -1,0 +1,8 @@
+{
+  "status": "ONLINE",
+  "bundles": 2,
+  "files": [
+    "crm-auto.bundle.json",
+    "crm-stack.bundle.json"
+  ]
+}
