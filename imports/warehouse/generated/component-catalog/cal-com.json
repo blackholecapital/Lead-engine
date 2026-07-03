@@ -1,0 +1,1432 @@
+{
+  "id": "cal-com",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com",
+  "count": 285,
+  "components": [
+    {
+      "name": "[scheduleId]",
+      "path": "packages/platform/examples/base/src/pages/availability/[scheduleId].tsx",
+      "story": false
+    },
+    {
+      "name": "AccountsStepCard",
+      "path": "apps/web/components/apps/installation/AccountsStepCard.tsx",
+      "story": false
+    },
+    {
+      "name": "AddCalendarButton",
+      "path": "apps/web/modules/settings/my-account/components/AddCalendarButton.tsx",
+      "story": false
+    },
+    {
+      "name": "AddGuestsDialog",
+      "path": "apps/web/components/dialog/AddGuestsDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "AdditionalCalendarSelector",
+      "path": "apps/web/modules/calendars/components/AdditionalCalendarSelector.tsx",
+      "story": false
+    },
+    {
+      "name": "AdminAppsList",
+      "path": "apps/web/modules/apps/components/AdminAppsList.tsx",
+      "story": false
+    },
+    {
+      "name": "alert-dialog",
+      "path": "packages/coss-ui/src/components/alert-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "AppCard",
+      "path": "apps/web/modules/apps/components/AppCard.tsx",
+      "story": false
+    },
+    {
+      "name": "AppList",
+      "path": "packages/features/apps/components/AppList.tsx",
+      "story": false
+    },
+    {
+      "name": "AppListCard",
+      "path": "packages/ui/components/app-list-card/AppListCard.tsx",
+      "story": false
+    },
+    {
+      "name": "AppListCardPlatformWrapper",
+      "path": "packages/platform/atoms/connect/conferencing-apps/AppListCardPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "AppListCardWebWrapper",
+      "path": "apps/web/modules/apps/components/AppListCardWebWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "AppSetDefaultLinkDialog",
+      "path": "packages/features/apps/components/AppSetDefaultLinkDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "attendee-rescheduled-email",
+      "path": "packages/emails/templates/attendee-rescheduled-email.ts",
+      "story": false
+    },
+    {
+      "name": "attendee-scheduled-email",
+      "path": "packages/emails/templates/attendee-scheduled-email.ts",
+      "story": false
+    },
+    {
+      "name": "attendee-was-requested-to-reschedule-email",
+      "path": "packages/emails/templates/attendee-was-requested-to-reschedule-email.ts",
+      "story": false
+    },
+    {
+      "name": "AttendeeRescheduledEmail",
+      "path": "packages/emails/src/templates/AttendeeRescheduledEmail.tsx",
+      "story": false
+    },
+    {
+      "name": "attendeeRescheduleSeatedBooking",
+      "path": "packages/features/bookings/lib/handleSeats/reschedule/attendee/attendeeRescheduleSeatedBooking.ts",
+      "story": false
+    },
+    {
+      "name": "AttendeeScheduledEmail",
+      "path": "packages/emails/src/templates/AttendeeScheduledEmail.tsx",
+      "story": false
+    },
+    {
+      "name": "AvailabilitySchedulesContainer",
+      "path": "apps/web/modules/troubleshooter/components/AvailabilitySchedulesContainer.tsx",
+      "story": false
+    },
+    {
+      "name": "AvailabilitySettingsPlatformWrapper",
+      "path": "packages/platform/atoms/availability/wrappers/AvailabilitySettingsPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "BaseScheduledEmail",
+      "path": "packages/emails/src/templates/BaseScheduledEmail.tsx",
+      "story": false
+    },
+    {
+      "name": "BaseTable",
+      "path": "packages/emails/src/components/BaseTable.tsx",
+      "story": false
+    },
+    {
+      "name": "BlockedEntriesTable",
+      "path": "apps/web/modules/blocklist/components/BlockedEntriesTable.tsx",
+      "story": false
+    },
+    {
+      "name": "BlockedList",
+      "path": "apps/web/modules/calendars/weeklyview/components/blocking/BlockedList.tsx",
+      "story": false
+    },
+    {
+      "name": "BlocklistEntryDetailsSheet",
+      "path": "apps/web/modules/blocklist/components/BlocklistEntryDetailsSheet.tsx",
+      "story": false
+    },
+    {
+      "name": "BookerPlatformWrapper",
+      "path": "packages/platform/atoms/booker/BookerPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "BookEventForm",
+      "path": "apps/web/modules/bookings/components/BookEventForm/BookEventForm.tsx",
+      "story": false
+    },
+    {
+      "name": "BookFormAsModal",
+      "path": "apps/web/modules/bookings/components/BookEventForm/BookFormAsModal.tsx",
+      "story": false
+    },
+    {
+      "name": "BookingCalendarContainer",
+      "path": "apps/web/modules/bookings/components/BookingCalendarContainer.tsx",
+      "story": false
+    },
+    {
+      "name": "BookingCalendarView",
+      "path": "apps/web/modules/bookings/components/BookingCalendarView.tsx",
+      "story": false
+    },
+    {
+      "name": "BookingConfirmationForm",
+      "path": "packages/emails/src/components/BookingConfirmationForm.tsx",
+      "story": false
+    },
+    {
+      "name": "BookingList",
+      "path": "apps/web/modules/bookings/components/BookingList.tsx",
+      "story": false
+    },
+    {
+      "name": "BookingListContainer",
+      "path": "apps/web/modules/bookings/components/BookingListContainer.tsx",
+      "story": false
+    },
+    {
+      "name": "BookingListItem",
+      "path": "apps/web/components/booking/BookingListItem.tsx",
+      "story": false
+    },
+    {
+      "name": "BookingReportDetailsModal",
+      "path": "apps/web/modules/blocklist/components/BookingReportDetailsModal.tsx",
+      "story": false
+    },
+    {
+      "name": "BookingSuccessCard",
+      "path": "apps/web/modules/bookings/components/BookingSuccessCard.tsx",
+      "story": false
+    },
+    {
+      "name": "calcom-dashboard.check",
+      "path": "__checks__/calcom-dashboard.check.js",
+      "story": false
+    },
+    {
+      "name": "Calendar",
+      "path": "apps/web/modules/calendars/weeklyview/components/Calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "Calendar",
+      "path": "packages/ui/components/form/date-range-picker/Calendar.tsx",
+      "story": false
+    },
+    {
+      "name": "calendar-view",
+      "path": "packages/platform/examples/base/src/pages/calendar-view.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarAppError",
+      "path": "packages/lib/CalendarAppError.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarCacheWrapper",
+      "path": "packages/features/calendar-subscription/lib/cache/CalendarCacheWrapper.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarCredentialBanner",
+      "path": "apps/web/modules/users/components/CalendarCredentialBanner.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarEventBuilder",
+      "path": "packages/features/CalendarEventBuilder.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarListContainer",
+      "path": "apps/web/components/apps/CalendarListContainer.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarManager",
+      "path": "packages/features/calendars/lib/CalendarManager.ts",
+      "story": false
+    },
+    {
+      "name": "calendarOverlay.handler",
+      "path": "packages/trpc/server/routers/viewer/availability/calendarOverlay.handler.ts",
+      "story": false
+    },
+    {
+      "name": "calendars",
+      "path": "packages/platform/examples/base/src/pages/calendars.tsx",
+      "story": false
+    },
+    {
+      "name": "calendars",
+      "path": "packages/platform/libraries/calendars.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarSettingsPlatformWrapper",
+      "path": "packages/platform/atoms/calendar-settings/wrappers/CalendarSettingsPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarsSyncTasker",
+      "path": "packages/features/calendars/lib/tasker/CalendarsSyncTasker.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarsSyncTasker.module",
+      "path": "packages/features/calendars/di/tasker/CalendarsSyncTasker.module.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarsTasker",
+      "path": "packages/features/calendars/lib/tasker/CalendarsTasker.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarsTasker.container",
+      "path": "packages/features/calendars/di/tasker/CalendarsTasker.container.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarsTasker.module",
+      "path": "packages/features/calendars/di/tasker/CalendarsTasker.module.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarsTriggerTasker",
+      "path": "packages/features/calendars/lib/tasker/CalendarsTriggerTasker.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarsTriggerTasker.module",
+      "path": "packages/features/calendars/di/tasker/CalendarsTriggerTasker.module.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarSwitch",
+      "path": "apps/web/modules/calendars/components/CalendarSwitch.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarSwitch",
+      "path": "packages/ui/components/calendar-switch/CalendarSwitch.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarTelemetryWrapper",
+      "path": "packages/features/calendar-subscription/lib/telemetry/CalendarTelemetryWrapper.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarToggleContainer",
+      "path": "apps/web/modules/troubleshooter/components/CalendarToggleContainer.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarToggleContainer",
+      "path": "packages/platform/atoms/troubleshooter/sidebar/CalendarToggleContainer.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarToggleContainerComponent",
+      "path": "packages/features/troubleshooter/components/CalendarToggleContainerComponent.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarViewComponent",
+      "path": "packages/platform/atoms/calendar-view/CalendarViewComponent.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarViewPlatformWrapper",
+      "path": "packages/platform/atoms/calendar-view/wrappers/CalendarViewPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "CallToActionTable",
+      "path": "packages/emails/src/components/CallToActionTable.tsx",
+      "story": false
+    },
+    {
+      "name": "CancelBookingDialog",
+      "path": "apps/web/components/dialog/CancelBookingDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "card",
+      "path": "packages/coss-ui/src/components/card.tsx",
+      "story": false
+    },
+    {
+      "name": "Card",
+      "path": "packages/ui/components/card/Card.tsx",
+      "story": false
+    },
+    {
+      "name": "ChangeUserRoleModal",
+      "path": "apps/web/modules/users/components/UserTable/ChangeUserRoleModal.tsx",
+      "story": false
+    },
+    {
+      "name": "chargeCard.handler",
+      "path": "packages/trpc/server/routers/viewer/payments/chargeCard.handler.ts",
+      "story": false
+    },
+    {
+      "name": "ChargeCardDialog",
+      "path": "apps/web/components/dialog/ChargeCardDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "ConferencingAppsViewPlatformWrapper",
+      "path": "packages/platform/atoms/connect/conferencing-apps/ConferencingAppsViewPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "ConfirmationDialogContent",
+      "path": "packages/ui/components/dialog/ConfirmationDialogContent.tsx",
+      "story": false
+    },
+    {
+      "name": "confirmDialog",
+      "path": "apps/web/components/apps/wipemycalother/confirmDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "ConnectCalendars",
+      "path": "apps/web/components/getting-started/steps-views/ConnectCalendars.tsx",
+      "story": false
+    },
+    {
+      "name": "connectedCalendar",
+      "path": "packages/lib/connectedCalendar.ts",
+      "story": false
+    },
+    {
+      "name": "ConnectedCalendarItem",
+      "path": "apps/web/components/getting-started/components/ConnectedCalendarItem.tsx",
+      "story": false
+    },
+    {
+      "name": "connectedCalendars.handler",
+      "path": "packages/trpc/server/routers/viewer/calendars/connectedCalendars.handler.ts",
+      "story": false
+    },
+    {
+      "name": "createAProfileForAnExistingUser",
+      "path": "packages/features/profile/lib/createAProfileForAnExistingUser.ts",
+      "story": false
+    },
+    {
+      "name": "CreateBlocklistEntryModal",
+      "path": "apps/web/modules/blocklist/components/CreateBlocklistEntryModal.tsx",
+      "story": false
+    },
+    {
+      "name": "CreateEventsOnCalendarSelect",
+      "path": "apps/web/components/getting-started/components/CreateEventsOnCalendarSelect.tsx",
+      "story": false
+    },
+    {
+      "name": "CreateOrEditOutOfOfficeModal",
+      "path": "apps/web/modules/settings/outOfOffice/CreateOrEditOutOfOfficeModal.tsx",
+      "story": false
+    },
+    {
+      "name": "CreateScheduleForm",
+      "path": "packages/platform/atoms/create-schedule/CreateScheduleForm.tsx",
+      "story": false
+    },
+    {
+      "name": "CreateSchedulePlatformWrapper",
+      "path": "packages/platform/atoms/create-schedule/wrappers/CreateSchedulePlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "crmScheduler",
+      "path": "packages/features/crmManager/crmScheduler.ts",
+      "story": false
+    },
+    {
+      "name": "DataTable",
+      "path": "apps/web/modules/data-table/components/DataTable.tsx",
+      "story": false
+    },
+    {
+      "name": "DataTableFiltersContext",
+      "path": "apps/web/modules/data-table/contexts/DataTableFiltersContext.tsx",
+      "story": false
+    },
+    {
+      "name": "DataTablePagination",
+      "path": "apps/web/modules/data-table/components/DataTablePagination.tsx",
+      "story": false
+    },
+    {
+      "name": "DataTableSegmentContext",
+      "path": "apps/web/modules/data-table/contexts/DataTableSegmentContext.tsx",
+      "story": false
+    },
+    {
+      "name": "DataTableSelectionBar",
+      "path": "apps/web/modules/data-table/components/DataTableSelectionBar.tsx",
+      "story": false
+    },
+    {
+      "name": "DataTableSkeleton",
+      "path": "apps/web/modules/data-table/components/DataTableSkeleton.tsx",
+      "story": false
+    },
+    {
+      "name": "DataTableStateContext",
+      "path": "apps/web/modules/data-table/contexts/DataTableStateContext.tsx",
+      "story": false
+    },
+    {
+      "name": "DataTableToolbar",
+      "path": "apps/web/modules/data-table/components/DataTableToolbar.tsx",
+      "story": false
+    },
+    {
+      "name": "DataTableWrapper",
+      "path": "apps/web/modules/data-table/components/DataTableWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "DateOverrideInputDialog",
+      "path": "packages/features/schedules/components/DateOverrideInputDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "DateOverrideList",
+      "path": "packages/features/schedules/components/DateOverrideList.tsx",
+      "story": false
+    },
+    {
+      "name": "dateTimeFormatter",
+      "path": "packages/lib/dateTimeFormatter.ts",
+      "story": false
+    },
+    {
+      "name": "DecoyBookingSuccessCard",
+      "path": "apps/web/modules/bookings/components/DecoyBookingSuccessCard.tsx",
+      "story": false
+    },
+    {
+      "name": "DeleteMemberModal",
+      "path": "apps/web/modules/users/components/UserTable/DeleteMemberModal.tsx",
+      "story": false
+    },
+    {
+      "name": "DeleteSegmentDialog",
+      "path": "apps/web/modules/data-table/components/segment/DeleteSegmentDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "DestinationCalendar",
+      "path": "packages/features/di/containers/DestinationCalendar.ts",
+      "story": false
+    },
+    {
+      "name": "DestinationCalendar",
+      "path": "packages/features/di/modules/DestinationCalendar.ts",
+      "story": false
+    },
+    {
+      "name": "DestinationCalendar",
+      "path": "packages/platform/atoms/destination-calendar/DestinationCalendar.tsx",
+      "story": false
+    },
+    {
+      "name": "DestinationCalendarSelector",
+      "path": "packages/features/calendars/components/DestinationCalendarSelector.tsx",
+      "story": false
+    },
+    {
+      "name": "DestinationCalendarSelector",
+      "path": "packages/platform/atoms/destination-calendar/DestinationCalendarSelector.tsx",
+      "story": false
+    },
+    {
+      "name": "DestinationCalendarSettingsPlatformWrapper",
+      "path": "packages/platform/atoms/destination-calendar/wrappers/DestinationCalendarSettingsPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "DestinationCalendarSettingsWebWrapper",
+      "path": "apps/web/components/apps/DestinationCalendarSettingsWebWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "determineReschedulePreventionRedirect",
+      "path": "packages/features/bookings/lib/reschedule/determineReschedulePreventionRedirect.ts",
+      "story": false
+    },
+    {
+      "name": "dialog",
+      "path": "packages/coss-ui/src/components/dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "dialog",
+      "path": "packages/platform/atoms/src/components/ui/dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "Dialog",
+      "path": "packages/ui/components/dialog/Dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "DisableTwoFactorModal",
+      "path": "apps/web/components/security/DisableTwoFactorModal.tsx",
+      "story": false
+    },
+    {
+      "name": "DisableTwoFactorModal",
+      "path": "apps/web/components/settings/DisableTwoFactorModal.tsx",
+      "story": false
+    },
+    {
+      "name": "DisconnectIntegrationModal",
+      "path": "packages/features/apps/components/DisconnectIntegrationModal.tsx",
+      "story": false
+    },
+    {
+      "name": "DryRunMessage",
+      "path": "apps/web/modules/bookings/components/DryRunMessage.tsx",
+      "story": false
+    },
+    {
+      "name": "DuplicateSegmentDialog",
+      "path": "apps/web/modules/data-table/components/segment/DuplicateSegmentDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "DynamicModals",
+      "path": "apps/web/modules/shell/DynamicModals.tsx",
+      "story": false
+    },
+    {
+      "name": "EditableHeading",
+      "path": "packages/ui/components/editable-heading/EditableHeading.tsx",
+      "story": false
+    },
+    {
+      "name": "EditablePlugin",
+      "path": "packages/ui/components/editor/plugins/EditablePlugin.tsx",
+      "story": false
+    },
+    {
+      "name": "EditLocationDialog",
+      "path": "apps/web/components/dialog/EditLocationDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "packages/ui/components/editor/Editor.tsx",
+      "story": false
+    },
+    {
+      "name": "EditUserForm",
+      "path": "apps/web/modules/users/components/UserTable/EditSheet/EditUserForm.tsx",
+      "story": false
+    },
+    {
+      "name": "EmailInviteForm",
+      "path": "apps/web/modules/onboarding/components/EmailInviteForm.tsx",
+      "story": false
+    },
+    {
+      "name": "EmailScheduledBodyHeaderContent",
+      "path": "packages/emails/src/components/EmailScheduledBodyHeaderContent.tsx",
+      "story": false
+    },
+    {
+      "name": "EnableTwoFactorModal",
+      "path": "apps/web/components/security/EnableTwoFactorModal.tsx",
+      "story": false
+    },
+    {
+      "name": "EnableTwoFactorModal",
+      "path": "apps/web/components/settings/EnableTwoFactorModal.tsx",
+      "story": false
+    },
+    {
+      "name": "ensure-default-calendars",
+      "path": "packages/features/calendars/lib/tasker/trigger/ensure-default-calendars.ts",
+      "story": false
+    },
+    {
+      "name": "errorFormatter",
+      "path": "packages/trpc/server/errorFormatter.ts",
+      "story": false
+    },
+    {
+      "name": "event-request-to-reschedule-sms",
+      "path": "packages/sms/attendee/event-request-to-reschedule-sms.ts",
+      "story": false
+    },
+    {
+      "name": "event-rescheduled-sms",
+      "path": "packages/sms/attendee/event-rescheduled-sms.ts",
+      "story": false
+    },
+    {
+      "name": "event-scheduled-sms",
+      "path": "packages/sms/attendee/event-scheduled-sms.ts",
+      "story": false
+    },
+    {
+      "name": "EventList",
+      "path": "apps/web/modules/calendars/weeklyview/components/event/EventList.tsx",
+      "story": false
+    },
+    {
+      "name": "EventScheduleItem",
+      "path": "apps/web/modules/troubleshooter/components/EventScheduleItem.tsx",
+      "story": false
+    },
+    {
+      "name": "EventScheduleItem",
+      "path": "packages/platform/atoms/troubleshooter/sidebar/EventScheduleItem.tsx",
+      "story": false
+    },
+    {
+      "name": "EventScheduleItemComponent",
+      "path": "packages/features/troubleshooter/components/EventScheduleItemComponent.tsx",
+      "story": false
+    },
+    {
+      "name": "EventTypeCalendarViewComponent",
+      "path": "packages/platform/atoms/calendar-view/EventTypeCalendarViewComponent.tsx",
+      "story": false
+    },
+    {
+      "name": "flag-listing-view",
+      "path": "apps/web/modules/feature-flags/views/flag-listing-view.tsx",
+      "story": false
+    },
+    {
+      "name": "FlagAdminList",
+      "path": "apps/web/modules/feature-flags/components/FlagAdminList.tsx",
+      "story": false
+    },
+    {
+      "name": "form",
+      "path": "packages/coss-ui/src/components/form.tsx",
+      "story": false
+    },
+    {
+      "name": "Form",
+      "path": "packages/ui/components/form/inputs/Form.tsx",
+      "story": false
+    },
+    {
+      "name": "formatCalendarEvent",
+      "path": "packages/lib/formatCalendarEvent.ts",
+      "story": false
+    },
+    {
+      "name": "formatPhoneNumber",
+      "path": "packages/lib/formatPhoneNumber.ts",
+      "story": false
+    },
+    {
+      "name": "formbricks",
+      "path": "packages/lib/formbricks.ts",
+      "story": false
+    },
+    {
+      "name": "FormCard",
+      "path": "packages/ui/components/card/FormCard.tsx",
+      "story": false
+    },
+    {
+      "name": "get-platform-params",
+      "path": "packages/features/platform-oauth-client/get-platform-params.ts",
+      "story": false
+    },
+    {
+      "name": "getAllSchedulesByUserId.handler",
+      "path": "packages/trpc/server/routers/viewer/availability/schedule/getAllSchedulesByUserId.handler.ts",
+      "story": false
+    },
+    {
+      "name": "getCalendarLinks",
+      "path": "packages/features/bookings/lib/getCalendarLinks.ts",
+      "story": false
+    },
+    {
+      "name": "getCalendarsEvents",
+      "path": "packages/features/calendars/lib/getCalendarsEvents.ts",
+      "story": false
+    },
+    {
+      "name": "getConnectedDestinationCalendars",
+      "path": "packages/features/calendars/lib/getConnectedDestinationCalendars.ts",
+      "story": false
+    },
+    {
+      "name": "getMeetingInformation.handler",
+      "path": "packages/trpc/server/routers/viewer/calVideo/getMeetingInformation.handler.ts",
+      "story": false
+    },
+    {
+      "name": "getSchedule.handler",
+      "path": "packages/trpc/server/routers/viewer/slots/getSchedule.handler.ts",
+      "story": false
+    },
+    {
+      "name": "getScheduleByUserId.handler",
+      "path": "packages/trpc/server/routers/viewer/availability/schedule/getScheduleByUserId.handler.ts",
+      "story": false
+    },
+    {
+      "name": "getScheduleListItemData",
+      "path": "packages/lib/schedules/transformers/getScheduleListItemData.ts",
+      "story": false
+    },
+    {
+      "name": "getTravelSchedules.handler",
+      "path": "packages/trpc/server/routers/viewer/travelSchedules/getTravelSchedules.handler.ts",
+      "story": false
+    },
+    {
+      "name": "GoogleCalendarClient",
+      "path": "packages/lib/holidays/GoogleCalendarClient.ts",
+      "story": false
+    },
+    {
+      "name": "GoogleCalendarSubscription.adapter",
+      "path": "packages/features/calendar-subscription/adapters/GoogleCalendarSubscription.adapter.ts",
+      "story": false
+    },
+    {
+      "name": "IconGrid",
+      "path": "apps/web/app/icons/IconGrid.tsx",
+      "story": false
+    },
+    {
+      "name": "InstallableAppCard",
+      "path": "apps/web/modules/onboarding/personal/_components/InstallableAppCard.tsx",
+      "story": false
+    },
+    {
+      "name": "InviteMemberModal",
+      "path": "apps/web/modules/users/components/UserTable/InviteMemberModal.tsx",
+      "story": false
+    },
+    {
+      "name": "isWithinMinimumRescheduleNotice",
+      "path": "packages/features/bookings/lib/reschedule/isWithinMinimumRescheduleNotice.ts",
+      "story": false
+    },
+    {
+      "name": "LargeCalendar",
+      "path": "apps/web/modules/bookings/components/LargeCalendar.tsx",
+      "story": false
+    },
+    {
+      "name": "LargeCalendar",
+      "path": "apps/web/modules/calendar-view/components/LargeCalendar.tsx",
+      "story": false
+    },
+    {
+      "name": "LargeCalendar",
+      "path": "apps/web/modules/troubleshooter/components/LargeCalendar.tsx",
+      "story": false
+    },
+    {
+      "name": "LargeCalendar",
+      "path": "packages/platform/atoms/troubleshooter/large-calendar/LargeCalendar.tsx",
+      "story": false
+    },
+    {
+      "name": "List",
+      "path": "packages/ui/components/list/List.tsx",
+      "story": false
+    },
+    {
+      "name": "list-item",
+      "path": "packages/coss-ui/src/shared/list-item.tsx",
+      "story": false
+    },
+    {
+      "name": "list.handler",
+      "path": "packages/trpc/server/routers/viewer/admin/watchlist/list.handler.ts",
+      "story": false
+    },
+    {
+      "name": "list.handler",
+      "path": "packages/trpc/server/routers/viewer/availability/list.handler.ts",
+      "story": false
+    },
+    {
+      "name": "list.handler",
+      "path": "packages/trpc/server/routers/viewer/filterSegments/list.handler.ts",
+      "story": false
+    },
+    {
+      "name": "listClients.handler",
+      "path": "packages/trpc/server/routers/viewer/oAuth/listClients.handler.ts",
+      "story": false
+    },
+    {
+      "name": "listLocal.handler",
+      "path": "packages/trpc/server/routers/viewer/apps/listLocal.handler.ts",
+      "story": false
+    },
+    {
+      "name": "listPaginated.handler",
+      "path": "packages/trpc/server/routers/viewer/admin/listPaginated.handler.ts",
+      "story": false
+    },
+    {
+      "name": "listReports.handler",
+      "path": "packages/trpc/server/routers/viewer/admin/watchlist/listReports.handler.ts",
+      "story": false
+    },
+    {
+      "name": "ListSchedulesPlatformWrapper",
+      "path": "packages/platform/atoms/list-schedules/wrappers/ListSchedulesPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "listTeamAvailability.handler",
+      "path": "packages/trpc/server/routers/viewer/availability/team/listTeamAvailability.handler.ts",
+      "story": false
+    },
+    {
+      "name": "listUserClients.handler",
+      "path": "packages/trpc/server/routers/viewer/oAuth/listUserClients.handler.ts",
+      "story": false
+    },
+    {
+      "name": "ModalBox",
+      "path": "packages/embeds/embed-core/src/ModalBox/ModalBox.ts",
+      "story": false
+    },
+    {
+      "name": "ModalBoxHtml",
+      "path": "packages/embeds/embed-core/src/ModalBox/ModalBoxHtml.ts",
+      "story": false
+    },
+    {
+      "name": "ModalContainer",
+      "path": "apps/web/components/ui/ModalContainer.tsx",
+      "story": false
+    },
+    {
+      "name": "NewScheduleButton",
+      "path": "apps/web/modules/schedules/components/NewScheduleButton.tsx",
+      "story": false
+    },
+    {
+      "name": "NoAvailabilityDialog",
+      "path": "packages/features/calendars/components/NoAvailabilityDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "OAuthClientCreateModal",
+      "path": "apps/web/modules/settings/oauth/create/OAuthClientCreateModal.tsx",
+      "story": false
+    },
+    {
+      "name": "OAuthClientDetailsDialog",
+      "path": "apps/web/modules/settings/oauth/view/OAuthClientDetailsDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "OAuthClientFormFields",
+      "path": "apps/web/modules/settings/oauth/view/OAuthClientFormFields.tsx",
+      "story": false
+    },
+    {
+      "name": "OAuthClientPreviewDialog",
+      "path": "apps/web/modules/settings/oauth/create/OAuthClientPreviewDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "OAuthClientsList",
+      "path": "apps/web/modules/settings/oauth/OAuthClientsList.tsx",
+      "story": false
+    },
+    {
+      "name": "Office365CalendarSubscription.adapter",
+      "path": "packages/features/calendar-subscription/adapters/Office365CalendarSubscription.adapter.ts",
+      "story": false
+    },
+    {
+      "name": "onboarding-calendar-browser-view",
+      "path": "apps/web/modules/onboarding/components/onboarding-calendar-browser-view.tsx",
+      "story": false
+    },
+    {
+      "name": "OnboardingCard",
+      "path": "apps/web/modules/onboarding/components/OnboardingCard.tsx",
+      "story": false
+    },
+    {
+      "name": "OnboardingCard",
+      "path": "apps/web/modules/onboarding/personal/_components/OnboardingCard.tsx",
+      "story": false
+    },
+    {
+      "name": "organizer-requested-to-reschedule-email",
+      "path": "packages/emails/templates/organizer-requested-to-reschedule-email.ts",
+      "story": false
+    },
+    {
+      "name": "organizer-rescheduled-email",
+      "path": "packages/emails/templates/organizer-rescheduled-email.ts",
+      "story": false
+    },
+    {
+      "name": "organizer-scheduled-email",
+      "path": "packages/emails/templates/organizer-scheduled-email.ts",
+      "story": false
+    },
+    {
+      "name": "OrganizerRescheduledEmail",
+      "path": "packages/emails/src/templates/OrganizerRescheduledEmail.tsx",
+      "story": false
+    },
+    {
+      "name": "OrganizerScheduledEmail",
+      "path": "packages/emails/src/templates/OrganizerScheduledEmail.tsx",
+      "story": false
+    },
+    {
+      "name": "OutOfOfficeEntriesList",
+      "path": "apps/web/modules/settings/outOfOffice/OutOfOfficeEntriesList.tsx",
+      "story": false
+    },
+    {
+      "name": "outOfOfficeEntriesList.handler",
+      "path": "packages/trpc/server/routers/viewer/ooo/outOfOfficeEntriesList.handler.ts",
+      "story": false
+    },
+    {
+      "name": "OverlayCalendar",
+      "path": "apps/web/modules/bookings/components/OverlayCalendar/OverlayCalendar.tsx",
+      "story": false
+    },
+    {
+      "name": "OverlayCalendarContinueModal",
+      "path": "apps/web/modules/bookings/components/OverlayCalendar/OverlayCalendarContinueModal.tsx",
+      "story": false
+    },
+    {
+      "name": "OverlayCalendarSettingsModal",
+      "path": "apps/web/modules/bookings/components/OverlayCalendar/OverlayCalendarSettingsModal.tsx",
+      "story": false
+    },
+    {
+      "name": "OverlayCalendarSwitch",
+      "path": "apps/web/modules/bookings/components/OverlayCalendar/OverlayCalendarSwitch.tsx",
+      "story": false
+    },
+    {
+      "name": "ownerRescheduleSeatedBooking",
+      "path": "packages/features/bookings/lib/handleSeats/reschedule/owner/ownerRescheduleSeatedBooking.ts",
+      "story": false
+    },
+    {
+      "name": "PanelCard",
+      "path": "packages/ui/components/card/PanelCard.tsx",
+      "story": false
+    },
+    {
+      "name": "PendingReportsTable",
+      "path": "apps/web/modules/blocklist/components/PendingReportsTable.tsx",
+      "story": false
+    },
+    {
+      "name": "personal-calendar-view",
+      "path": "apps/web/modules/onboarding/personal/calendar/personal-calendar-view.tsx",
+      "story": false
+    },
+    {
+      "name": "PlatformManagedUsersTable",
+      "path": "apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx",
+      "story": false
+    },
+    {
+      "name": "platformMe",
+      "path": "packages/trpc/server/routers/viewer/me/procedures/platformMe.ts",
+      "story": false
+    },
+    {
+      "name": "platformMe.handler",
+      "path": "packages/trpc/server/routers/viewer/me/platformMe.handler.ts",
+      "story": false
+    },
+    {
+      "name": "preview-card",
+      "path": "packages/coss-ui/src/components/preview-card.tsx",
+      "story": false
+    },
+    {
+      "name": "profile-skeleton",
+      "path": "apps/web/modules/settings/my-account/profile-skeleton.tsx",
+      "story": false
+    },
+    {
+      "name": "profile-view",
+      "path": "apps/web/modules/settings/my-account/profile-view.tsx",
+      "story": false
+    },
+    {
+      "name": "Profile.module",
+      "path": "packages/features/users/di/Profile.module.ts",
+      "story": false
+    },
+    {
+      "name": "ProfileDropdown",
+      "path": "apps/web/modules/shell/user-dropdown/ProfileDropdown.tsx",
+      "story": false
+    },
+    {
+      "name": "ReassignDialog",
+      "path": "apps/web/components/dialog/ReassignDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "RejectionReasonDialog",
+      "path": "apps/web/components/dialog/RejectionReasonDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "RenameSegmentDialog",
+      "path": "apps/web/modules/data-table/components/segment/RenameSegmentDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "ReportBookingDialog",
+      "path": "apps/web/components/dialog/ReportBookingDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "requestReschedule.handler",
+      "path": "packages/trpc/server/routers/viewer/bookings/requestReschedule.handler.ts",
+      "story": false
+    },
+    {
+      "name": "reschedule",
+      "path": "packages/features/bookings/lib/tasker/trigger/notifications/reschedule.ts",
+      "story": false
+    },
+    {
+      "name": "RescheduleDialog",
+      "path": "apps/web/components/dialog/RescheduleDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "rescheduleSeatedBooking",
+      "path": "packages/features/bookings/lib/handleSeats/reschedule/rescheduleSeatedBooking.ts",
+      "story": false
+    },
+    {
+      "name": "rr-reschedule",
+      "path": "packages/features/bookings/lib/tasker/trigger/notifications/rr-reschedule.ts",
+      "story": false
+    },
+    {
+      "name": "sanitizeCalendarObject",
+      "path": "packages/lib/sanitizeCalendarObject.ts",
+      "story": false
+    },
+    {
+      "name": "Schedule",
+      "path": "apps/web/modules/schedules/components/Schedule.tsx",
+      "story": false
+    },
+    {
+      "name": "Schedule",
+      "path": "packages/features/di/modules/Schedule.ts",
+      "story": false
+    },
+    {
+      "name": "schedule-view",
+      "path": "apps/web/modules/availability/[schedule]/schedule-view.tsx",
+      "story": false
+    },
+    {
+      "name": "ScheduleComponent",
+      "path": "packages/features/schedules/components/ScheduleComponent.tsx",
+      "story": false
+    },
+    {
+      "name": "ScheduleListItem",
+      "path": "packages/features/schedules/components/ScheduleListItem.tsx",
+      "story": false
+    },
+    {
+      "name": "scheduleNoShowTriggers",
+      "path": "packages/features/bookings/lib/handleNewBooking/scheduleNoShowTriggers.ts",
+      "story": false
+    },
+    {
+      "name": "SchedulerHeading",
+      "path": "apps/web/modules/calendars/weeklyview/components/heading/SchedulerHeading.tsx",
+      "story": false
+    },
+    {
+      "name": "schedules",
+      "path": "packages/platform/libraries/schedules.ts",
+      "story": false
+    },
+    {
+      "name": "SecondaryEmailConfirmModal",
+      "path": "apps/web/components/settings/SecondaryEmailConfirmModal.tsx",
+      "story": false
+    },
+    {
+      "name": "SecondaryEmailModal",
+      "path": "apps/web/components/settings/SecondaryEmailModal.tsx",
+      "story": false
+    },
+    {
+      "name": "SelectedCalendarsSettings",
+      "path": "packages/platform/atoms/selected-calendars/SelectedCalendarsSettings.tsx",
+      "story": false
+    },
+    {
+      "name": "SelectedCalendarsSettingsPlatformWrapper",
+      "path": "packages/platform/atoms/selected-calendars/wrappers/SelectedCalendarsSettingsPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "SelectedCalendarsSettingsWebWrapper",
+      "path": "apps/web/modules/calendars/components/SelectedCalendarsSettingsWebWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "Sendgrid",
+      "path": "packages/lib/Sendgrid.ts",
+      "story": false
+    },
+    {
+      "name": "setDestinationCalendar.handler",
+      "path": "packages/trpc/server/routers/viewer/calendars/setDestinationCalendar.handler.ts",
+      "story": false
+    },
+    {
+      "name": "SideBar",
+      "path": "apps/web/modules/shell/SideBar.tsx",
+      "story": false
+    },
+    {
+      "name": "sidebar",
+      "path": "packages/coss-ui/src/components/sidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "slot-format.enum",
+      "path": "packages/platform/enums/slot-format.enum.ts",
+      "story": false
+    },
+    {
+      "name": "SlotSelectionModalHeader",
+      "path": "apps/web/modules/bookings/components/SlotSelectionModalHeader.tsx",
+      "story": false
+    },
+    {
+      "name": "StepCard",
+      "path": "packages/ui/components/card/StepCard.tsx",
+      "story": false
+    },
+    {
+      "name": "stripeCustomer.handler",
+      "path": "packages/trpc/server/routers/loggedInViewer/stripeCustomer.handler.ts",
+      "story": false
+    },
+    {
+      "name": "table",
+      "path": "packages/coss-ui/src/components/table.tsx",
+      "story": false
+    },
+    {
+      "name": "Table",
+      "path": "packages/ui/components/table/Table.tsx",
+      "story": false
+    },
+    {
+      "name": "TableActions",
+      "path": "packages/ui/components/table/TableActions.tsx",
+      "story": false
+    },
+    {
+      "name": "TableExamples",
+      "path": "packages/ui/components/table/TableExamples.tsx",
+      "story": false
+    },
+    {
+      "name": "TableNew",
+      "path": "packages/ui/components/table/TableNew.tsx",
+      "story": false
+    },
+    {
+      "name": "teamsAndUserProfilesQuery",
+      "path": "packages/trpc/server/routers/loggedInViewer/procedures/teamsAndUserProfilesQuery.ts",
+      "story": false
+    },
+    {
+      "name": "teamsAndUserProfilesQuery.handler",
+      "path": "packages/trpc/server/routers/loggedInViewer/teamsAndUserProfilesQuery.handler.ts",
+      "story": false
+    },
+    {
+      "name": "timeFormat",
+      "path": "packages/lib/timeFormat.ts",
+      "story": false
+    },
+    {
+      "name": "TimeFormatToggle",
+      "path": "packages/features/bookings/components/TimeFormatToggle.tsx",
+      "story": false
+    },
+    {
+      "name": "TimezoneChangeDialog",
+      "path": "apps/web/modules/settings/components/TimezoneChangeDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "trackFormbricksAction",
+      "path": "apps/web/modules/formbricks/lib/trackFormbricksAction.ts",
+      "story": false
+    },
+    {
+      "name": "transform",
+      "path": ".snaplet/transform.ts",
+      "story": false
+    },
+    {
+      "name": "travelSchedule",
+      "path": "apps/web/app/cache/travelSchedule.ts",
+      "story": false
+    },
+    {
+      "name": "TravelScheduleModal",
+      "path": "apps/web/components/settings/TravelScheduleModal.tsx",
+      "story": false
+    },
+    {
+      "name": "TroubleshooterListItemContainer",
+      "path": "packages/features/troubleshooter/components/TroubleshooterListItemContainer.tsx",
+      "story": false
+    },
+    {
+      "name": "TroubleshooterPlatformWrapper",
+      "path": "packages/platform/atoms/troubleshooter/wrappers/TroubleshooterPlatformWrapper.tsx",
+      "story": false
+    },
+    {
+      "name": "TroubleshooterSidebar",
+      "path": "apps/web/modules/troubleshooter/components/TroubleshooterSidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "TroubleshooterSidebar",
+      "path": "packages/platform/atoms/troubleshooter/sidebar/TroubleshooterSidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "TwoFactorModalHeader",
+      "path": "apps/web/components/security/TwoFactorModalHeader.tsx",
+      "story": false
+    },
+    {
+      "name": "unstable_cache",
+      "path": "packages/lib/unstable_cache/unstable_cache.ts",
+      "story": false
+    },
+    {
+      "name": "updateProfile.handler",
+      "path": "packages/trpc/server/routers/viewer/me/updateProfile.handler.ts",
+      "story": false
+    },
+    {
+      "name": "UserForm",
+      "path": "apps/web/modules/users/components/UserForm.tsx",
+      "story": false
+    },
+    {
+      "name": "UserListTable",
+      "path": "apps/web/modules/users/components/UserTable/UserListTable.tsx",
+      "story": false
+    },
+    {
+      "name": "UserListTableSkeleton",
+      "path": "apps/web/modules/users/components/UserTable/UserListTableSkeleton.tsx",
+      "story": false
+    },
+    {
+      "name": "UserProfile",
+      "path": "apps/web/components/getting-started/steps-views/UserProfile.tsx",
+      "story": false
+    },
+    {
+      "name": "users-listing-view",
+      "path": "apps/web/modules/users/views/users-listing-view.tsx",
+      "story": false
+    },
+    {
+      "name": "UsersTable",
+      "path": "apps/web/modules/settings/admin/components/UsersTable.tsx",
+      "story": false
+    },
+    {
+      "name": "UsersTable",
+      "path": "apps/web/modules/users/components/UsersTable.tsx",
+      "story": false
+    },
+    {
+      "name": "UserTableActions",
+      "path": "apps/web/modules/users/components/UserTable/UserTableActions.tsx",
+      "story": false
+    },
+    {
+      "name": "VerifyCodeDialog",
+      "path": "apps/web/modules/bookings/components/VerifyCodeDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "watchlist",
+      "path": "packages/features/di/watchlist/containers/watchlist.ts",
+      "story": false
+    },
+    {
+      "name": "Watchlist.module",
+      "path": "packages/features/di/watchlist/modules/Watchlist.module.ts",
+      "story": false
+    },
+    {
+      "name": "Watchlist.tokens",
+      "path": "packages/features/di/watchlist/Watchlist.tokens.ts",
+      "story": false
+    },
+    {
+      "name": "WatchlistErrors",
+      "path": "packages/features/watchlist/lib/errors/WatchlistErrors.ts",
+      "story": false
+    },
+    {
+      "name": "WatchlistFeature",
+      "path": "packages/features/watchlist/lib/facade/WatchlistFeature.ts",
+      "story": false
+    },
+    {
+      "name": "WelcomeToCalcomModal",
+      "path": "apps/web/modules/shell/components/WelcomeToCalcomModal.tsx",
+      "story": false
+    },
+    {
+      "name": "withSelectedCalendars",
+      "path": "packages/lib/server/withSelectedCalendars.ts",
+      "story": false
+    },
+    {
+      "name": "WizardForm",
+      "path": "packages/ui/components/form/wizard/WizardForm.tsx",
+      "story": false
+    },
+    {
+      "name": "WrongAssignmentDialog",
+      "path": "apps/web/components/dialog/WrongAssignmentDialog.tsx",
+      "story": false
+    }
+  ]
+}

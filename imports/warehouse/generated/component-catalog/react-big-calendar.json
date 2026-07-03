@@ -1,0 +1,147 @@
+{
+  "id": "react-big-calendar",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/calendar/react-big-calendar",
+  "count": 28,
+  "components": [
+    {
+      "name": "Calendar",
+      "path": "src/Calendar.js",
+      "story": false
+    },
+    {
+      "name": "Calendar.stories",
+      "path": "stories/Calendar.stories.js",
+      "story": true
+    },
+    {
+      "name": "CalendarContext",
+      "path": "src/CalendarContext.js",
+      "story": false
+    },
+    {
+      "name": "Card",
+      "path": "stories/resources/Card.js",
+      "story": false
+    },
+    {
+      "name": "formats.stories",
+      "path": "stories/props/formats.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsAgendaDateFormat.stories",
+      "path": "stories/props/formatsAgendaDateFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsAgendaHeaderFormat.stories",
+      "path": "stories/props/formatsAgendaHeaderFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsAgendaTimeFormat.stories",
+      "path": "stories/props/formatsAgendaTimeFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsAgendaTimeRangeFormat.stories",
+      "path": "stories/props/formatsAgendaTimeRangeFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsDateFormat.stories",
+      "path": "stories/props/formatsDateFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsDayFormat.stories",
+      "path": "stories/props/formatsDayFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsDayHeaderFormat.stories",
+      "path": "stories/props/formatsDayHeaderFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsDayRangeHeaderFormat.stories",
+      "path": "stories/props/formatsDayRangeHeaderFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsEventTimeRangeEndFormat.stories",
+      "path": "stories/props/formatsEventTimeRangeEndFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsEventTimeRangeFormat.stories",
+      "path": "stories/props/formatsEventTimeRangeFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsEventTimeRangeStartFormat.stories",
+      "path": "stories/props/formatsEventTimeRangeStartFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsMonthHeaderFormat.stories",
+      "path": "stories/props/formatsMonthHeaderFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsSelectRangeFormat.stories",
+      "path": "stories/props/formatsSelectRangeFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsTimeGutterFormat.stories",
+      "path": "stories/props/formatsTimeGutterFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "formatsWeekdayFormat.stories",
+      "path": "stories/props/formatsWeekdayFormat.stories.js",
+      "story": true
+    },
+    {
+      "name": "messages.stories",
+      "path": "stories/props/messages.stories.js",
+      "story": true
+    },
+    {
+      "name": "selectable",
+      "path": "stories/demos/exampleCode/selectable.js",
+      "story": false
+    },
+    {
+      "name": "selectable.stories",
+      "path": "stories/demos/selectable.stories.js",
+      "story": true
+    },
+    {
+      "name": "selectable.stories",
+      "path": "stories/props/selectable.stories.js",
+      "story": true
+    },
+    {
+      "name": "TimeGrid",
+      "path": "src/TimeGrid.js",
+      "story": false
+    },
+    {
+      "name": "TimeGridEvent",
+      "path": "src/TimeGridEvent.js",
+      "story": false
+    },
+    {
+      "name": "TimeGridHeader",
+      "path": "src/TimeGridHeader.js",
+      "story": false
+    },
+    {
+      "name": "TimeGridHeaderResources",
+      "path": "src/TimeGridHeaderResources.js",
+      "story": false
+    }
+  ]
+}

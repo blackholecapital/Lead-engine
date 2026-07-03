@@ -1,0 +1,12 @@
+{
+  "id": "flexsearch",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/scoring/flexsearch",
+  "count": 1,
+  "components": [
+    {
+      "name": "profiler",
+      "path": "src/profiler.js",
+      "story": false
+    }
+  ]
+}

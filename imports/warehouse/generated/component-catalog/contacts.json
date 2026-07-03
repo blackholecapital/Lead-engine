@@ -1,0 +1,17 @@
+{
+  "id": "contacts",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/comms/contacts",
+  "count": 2,
+  "components": [
+    {
+      "name": "vcard-js.d",
+      "path": "vcard-js/vcard-js.d.ts",
+      "story": false
+    },
+    {
+      "name": "vCardFormatter",
+      "path": "vcard-js/lib/vCardFormatter.js",
+      "story": false
+    }
+  ]
+}

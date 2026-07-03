@@ -1,0 +1,252 @@
+{
+  "id": "identity",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/comms/identity",
+  "count": 49,
+  "components": [
+    {
+      "name": "AuthMethodChallengeForm",
+      "path": "msal-js/samples/msal-browser-samples/NativeAuthSample/app/shared/jit/AuthMethodChallengeForm.js",
+      "story": false
+    },
+    {
+      "name": "AuthMethodSelectionForm",
+      "path": "msal-js/samples/msal-browser-samples/NativeAuthSample/app/shared/jit/AuthMethodSelectionForm.js",
+      "story": false
+    },
+    {
+      "name": "BrowserPerformanceClient",
+      "path": "msal-js/lib/msal-browser/src/telemetry/BrowserPerformanceClient.ts",
+      "story": false
+    },
+    {
+      "name": "BrowserPerformanceEvents",
+      "path": "msal-js/lib/msal-browser/src/telemetry/BrowserPerformanceEvents.ts",
+      "story": false
+    },
+    {
+      "name": "BrowserPerformanceMeasurement",
+      "path": "msal-js/lib/msal-browser/src/telemetry/BrowserPerformanceMeasurement.ts",
+      "story": false
+    },
+    {
+      "name": "BrowserRootPerformanceEvents",
+      "path": "msal-js/lib/msal-browser/src/telemetry/BrowserRootPerformanceEvents.ts",
+      "story": false
+    },
+    {
+      "name": "CrossPlatformLock",
+      "path": "msal-js/extensions/msal-node-extensions/src/lock/CrossPlatformLock.ts",
+      "story": false
+    },
+    {
+      "name": "CrossPlatformLockOptions",
+      "path": "msal-js/extensions/msal-node-extensions/src/lock/CrossPlatformLockOptions.ts",
+      "story": false
+    },
+    {
+      "name": "EditProfileButton",
+      "path": "msal-js/samples/msal-react-samples/b2c-sample/src/ui-components/EditProfileButton.jsx",
+      "story": false
+    },
+    {
+      "name": "EventMessage",
+      "path": "msal-js/lib/msal-browser/src/event/EventMessage.ts",
+      "story": false
+    },
+    {
+      "name": "FormManager",
+      "path": "msal-js/samples/msal-browser-samples/NativeAuthSample/app/ui/FormManager.js",
+      "story": false
+    },
+    {
+      "name": "IPerformanceClient",
+      "path": "msal-js/lib/msal-common/src/telemetry/performance/IPerformanceClient.ts",
+      "story": false
+    },
+    {
+      "name": "IPerformanceMeasurement",
+      "path": "msal-js/lib/msal-common/src/telemetry/performance/IPerformanceMeasurement.ts",
+      "story": false
+    },
+    {
+      "name": "IPlatformAuthHandler",
+      "path": "msal-js/lib/msal-browser/src/broker/nativeBroker/IPlatformAuthHandler.ts",
+      "story": false
+    },
+    {
+      "name": "MfaChallengeForm",
+      "path": "msal-js/samples/msal-browser-samples/NativeAuthSample/app/shared/mfa/MfaChallengeForm.js",
+      "story": false
+    },
+    {
+      "name": "MfaMethodSelectionForm",
+      "path": "msal-js/samples/msal-browser-samples/NativeAuthSample/app/shared/mfa/MfaMethodSelectionForm.js",
+      "story": false
+    },
+    {
+      "name": "PerformanceClient",
+      "path": "msal-js/lib/msal-common/src/telemetry/performance/PerformanceClient.ts",
+      "story": false
+    },
+    {
+      "name": "PerformanceEvent",
+      "path": "msal-js/lib/msal-common/src/telemetry/performance/PerformanceEvent.ts",
+      "story": false
+    },
+    {
+      "name": "PerformanceEvents",
+      "path": "msal-js/lib/msal-common/src/telemetry/performance/PerformanceEvents.ts",
+      "story": false
+    },
+    {
+      "name": "PlatformAuthDOMHandler",
+      "path": "msal-js/lib/msal-browser/src/broker/nativeBroker/PlatformAuthDOMHandler.ts",
+      "story": false
+    },
+    {
+      "name": "PlatformAuthExtensionHandler",
+      "path": "msal-js/lib/msal-browser/src/broker/nativeBroker/PlatformAuthExtensionHandler.ts",
+      "story": false
+    },
+    {
+      "name": "PlatformAuthInteractionClient",
+      "path": "msal-js/lib/msal-browser/src/interaction_client/PlatformAuthInteractionClient.ts",
+      "story": false
+    },
+    {
+      "name": "PlatformAuthRequest",
+      "path": "msal-js/lib/msal-browser/src/broker/nativeBroker/PlatformAuthRequest.ts",
+      "story": false
+    },
+    {
+      "name": "PlatformAuthResponse",
+      "path": "msal-js/lib/msal-browser/src/broker/nativeBroker/PlatformAuthResponse.ts",
+      "story": false
+    },
+    {
+      "name": "PlatformBrokerError",
+      "path": "msal-js/lib/msal-common/src/error/PlatformBrokerError.ts",
+      "story": false
+    },
+    {
+      "name": "Profile",
+      "path": "msal-js/samples/msal-react-samples/b2c-sample/src/pages/Profile.jsx",
+      "story": false
+    },
+    {
+      "name": "profile",
+      "path": "msal-js/samples/msal-react-samples/nextjs-sample/pages/profile.js",
+      "story": false
+    },
+    {
+      "name": "Profile",
+      "path": "msal-js/samples/msal-react-samples/react-router-sample/src/pages/Profile.jsx",
+      "story": false
+    },
+    {
+      "name": "Profile",
+      "path": "msal-js/samples/msal-react-samples/react16-sample/src/pages/Profile.jsx",
+      "story": false
+    },
+    {
+      "name": "Profile",
+      "path": "msal-js/samples/msal-react-samples/react17-sample/src/pages/Profile.jsx",
+      "story": false
+    },
+    {
+      "name": "Profile",
+      "path": "msal-js/samples/msal-react-samples/react18-sample/src/pages/Profile.jsx",
+      "story": false
+    },
+    {
+      "name": "profile.component",
+      "path": "msal-js/samples/msal-angular-samples/angular-b2c-sample/src/app/profile/profile.component.ts",
+      "story": false
+    },
+    {
+      "name": "profile.component",
+      "path": "msal-js/samples/msal-angular-samples/angular-modules-sample/src/app/profile/profile.component.ts",
+      "story": false
+    },
+    {
+      "name": "profile.component",
+      "path": "msal-js/samples/msal-angular-samples/angular-standalone-sample/src/app/profile/profile.component.ts",
+      "story": false
+    },
+    {
+      "name": "ProfileData",
+      "path": "msal-js/samples/msal-react-samples/b2c-sample/src/ui-components/ProfileData.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileData",
+      "path": "msal-js/samples/msal-react-samples/nextjs-sample/src/ui-components/ProfileData.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileData",
+      "path": "msal-js/samples/msal-react-samples/react-router-sample/src/ui-components/ProfileData.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileData",
+      "path": "msal-js/samples/msal-react-samples/react16-sample/src/ui-components/ProfileData.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileData",
+      "path": "msal-js/samples/msal-react-samples/react17-sample/src/ui-components/ProfileData.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileData",
+      "path": "msal-js/samples/msal-react-samples/react18-sample/src/ui-components/ProfileData.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileRawContext",
+      "path": "msal-js/samples/msal-react-samples/react-router-sample/src/pages/ProfileRawContext.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileRawContext",
+      "path": "msal-js/samples/msal-react-samples/react16-sample/src/pages/ProfileRawContext.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileRawContext",
+      "path": "msal-js/samples/msal-react-samples/react17-sample/src/pages/ProfileRawContext.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileRawContext",
+      "path": "msal-js/samples/msal-react-samples/react18-sample/src/pages/ProfileRawContext.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileWithMsal",
+      "path": "msal-js/samples/msal-react-samples/react-router-sample/src/pages/ProfileWithMsal.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileWithMsal",
+      "path": "msal-js/samples/msal-react-samples/react16-sample/src/pages/ProfileWithMsal.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileWithMsal",
+      "path": "msal-js/samples/msal-react-samples/react17-sample/src/pages/ProfileWithMsal.jsx",
+      "story": false
+    },
+    {
+      "name": "ProfileWithMsal",
+      "path": "msal-js/samples/msal-react-samples/react18-sample/src/pages/ProfileWithMsal.jsx",
+      "story": false
+    },
+    {
+      "name": "StubPerformanceClient",
+      "path": "msal-js/lib/msal-common/src/telemetry/performance/StubPerformanceClient.ts",
+      "story": false
+    }
+  ]
+}

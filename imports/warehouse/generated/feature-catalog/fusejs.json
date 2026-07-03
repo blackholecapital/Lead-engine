@@ -1,0 +1,18 @@
+{
+  "id": "fusejs",
+  "features": {
+    "conversation": [
+      {
+        "name": "errorMessages",
+        "path": "src/core/errorMessages.ts",
+        "story": false
+      }
+    ],
+    "contacts": [],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

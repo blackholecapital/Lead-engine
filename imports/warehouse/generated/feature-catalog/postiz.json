@@ -1,0 +1,169 @@
+{
+  "id": "postiz",
+  "features": {
+    "conversation": [
+      {
+        "name": "agent.chat",
+        "path": "apps/frontend/src/components/agents/agent.chat.tsx",
+        "story": false
+      },
+      {
+        "name": "chat.module",
+        "path": "libraries/nestjs-libraries/src/chat/chat.module.ts",
+        "story": false
+      },
+      {
+        "name": "chatbase.component",
+        "path": "apps/frontend/src/components/layout/chatbase.component.tsx",
+        "story": false
+      },
+      {
+        "name": "group.list.tool",
+        "path": "libraries/nestjs-libraries/src/chat/tools/group.list.tool.ts",
+        "story": false
+      },
+      {
+        "name": "integration.list.tool",
+        "path": "libraries/nestjs-libraries/src/chat/tools/integration.list.tool.ts",
+        "story": false
+      },
+      {
+        "name": "integration.schedule.post",
+        "path": "libraries/nestjs-libraries/src/chat/tools/integration.schedule.post.ts",
+        "story": false
+      },
+      {
+        "name": "tool.list",
+        "path": "libraries/nestjs-libraries/src/chat/tools/tool.list.ts",
+        "story": false
+      }
+    ],
+    "contacts": [
+      {
+        "name": "customer.modal",
+        "path": "apps/frontend/src/components/launches/customer.modal.tsx",
+        "story": false
+      },
+      {
+        "name": "select.customer",
+        "path": "apps/frontend/src/components/launches/select.customer.tsx",
+        "story": false
+      }
+    ],
+    "calendar": [
+      {
+        "name": "calendar",
+        "path": "apps/frontend/src/components/launches/calendar.tsx",
+        "story": false
+      },
+      {
+        "name": "calendar.context",
+        "path": "apps/frontend/src/components/launches/calendar.context.tsx",
+        "story": false
+      },
+      {
+        "name": "integration.schedule.post",
+        "path": "libraries/nestjs-libraries/src/chat/tools/integration.schedule.post.ts",
+        "story": false
+      }
+    ],
+    "automation": [
+      {
+        "name": "agent.chat",
+        "path": "apps/frontend/src/components/agents/agent.chat.tsx",
+        "story": false
+      },
+      {
+        "name": "agent.media.modal",
+        "path": "apps/frontend/src/components/layout/agent.media.modal.tsx",
+        "story": false
+      }
+    ],
+    "dashboard": [
+      {
+        "name": "platform.analytics",
+        "path": "apps/frontend/src/components/platform-analytics/platform.analytics.tsx",
+        "story": false
+      },
+      {
+        "name": "stars.table.component",
+        "path": "apps/frontend/src/components/analytics/stars.table.component.tsx",
+        "story": false
+      }
+    ],
+    "settings": [
+      {
+        "name": "add.edit.modal",
+        "path": "apps/frontend/src/components/new-launch/add.edit.modal.tsx",
+        "story": false
+      },
+      {
+        "name": "agent.media.modal",
+        "path": "apps/frontend/src/components/layout/agent.media.modal.tsx",
+        "story": false
+      },
+      {
+        "name": "customer.modal",
+        "path": "apps/frontend/src/components/launches/customer.modal.tsx",
+        "story": false
+      },
+      {
+        "name": "delete.dialog",
+        "path": "libraries/react-shared-libraries/src/helpers/delete.dialog.tsx",
+        "story": false
+      },
+      {
+        "name": "import-debug-post.modal",
+        "path": "apps/frontend/src/components/launches/import-debug-post.modal.tsx",
+        "story": false
+      },
+      {
+        "name": "manage.modal",
+        "path": "apps/frontend/src/components/new-launch/manage.modal.tsx",
+        "story": false
+      },
+      {
+        "name": "missing-release.modal",
+        "path": "apps/frontend/src/components/launches/missing-release.modal.tsx",
+        "story": false
+      },
+      {
+        "name": "modal.wrapper.component",
+        "path": "apps/frontend/src/components/new-launch/modal.wrapper.component.tsx",
+        "story": false
+      },
+      {
+        "name": "new-modal",
+        "path": "apps/frontend/src/components/layout/new-modal.tsx",
+        "story": false
+      },
+      {
+        "name": "onboarding.modal",
+        "path": "apps/frontend/src/components/onboarding/onboarding.modal.tsx",
+        "story": false
+      },
+      {
+        "name": "settings.modal",
+        "path": "apps/frontend/src/components/launches/settings.modal.tsx",
+        "story": false
+      },
+      {
+        "name": "standalone.modal",
+        "path": "apps/frontend/src/components/standalone-modal/standalone.modal.tsx",
+        "story": false
+      }
+    ],
+    "editor": [
+      {
+        "name": "editor",
+        "path": "apps/frontend/src/components/new-launch/editor.tsx",
+        "story": false
+      },
+      {
+        "name": "use.hide.top.editor",
+        "path": "apps/frontend/src/components/launches/helpers/use.hide.top.editor.tsx",
+        "story": false
+      }
+    ]
+  }
+}

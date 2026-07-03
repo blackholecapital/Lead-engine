@@ -1,0 +1,216 @@
+{
+  "id": "uploads",
+  "features": {
+    "conversation": [
+      {
+        "name": "MetaErrorMessage",
+        "path": "uppy/packages/@uppy/dashboard/src/components/FileItem/MetaErrorMessage.tsx",
+        "story": false
+      }
+    ],
+    "contacts": [],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [
+      {
+        "name": "AddFilesPanel",
+        "path": "uppy/packages/@uppy/dashboard/src/components/AddFilesPanel.tsx",
+        "story": false
+      },
+      {
+        "name": "Dashboard",
+        "path": "uppy/packages/@uppy/dashboard/src/Dashboard.tsx",
+        "story": false
+      },
+      {
+        "name": "Dashboard",
+        "path": "uppy/packages/@uppy/dashboard/src/components/Dashboard.tsx",
+        "story": false
+      },
+      {
+        "name": "Dashboard",
+        "path": "uppy/packages/@uppy/react/src/Dashboard.ts",
+        "story": false
+      },
+      {
+        "name": "Dashboard",
+        "path": "uppy/packages/@uppy/svelte/src/lib/components/Dashboard.svelte",
+        "story": false
+      },
+      {
+        "name": "dashboard",
+        "path": "uppy/packages/@uppy/vue/src/dashboard.ts",
+        "story": false
+      },
+      {
+        "name": "Dashboard",
+        "path": "uppy/private/dev/Dashboard.js",
+        "story": false
+      },
+      {
+        "name": "dashboard-demo.component",
+        "path": "uppy/packages/@uppy/angular/projects/uppy/angular/src/lib/components/dashboard/dashboard-demo.component.ts",
+        "story": false
+      },
+      {
+        "name": "dashboard-modal",
+        "path": "uppy/packages/@uppy/vue/src/dashboard-modal.ts",
+        "story": false
+      },
+      {
+        "name": "dashboard-modal-demo.component",
+        "path": "uppy/packages/@uppy/angular/projects/uppy/angular/src/lib/components/dashboard-modal/dashboard-modal-demo.component.ts",
+        "story": false
+      },
+      {
+        "name": "dashboard-modal.component",
+        "path": "uppy/packages/@uppy/angular/projects/uppy/angular/src/lib/components/dashboard-modal/dashboard-modal.component.ts",
+        "story": false
+      },
+      {
+        "name": "dashboard-modal.stories",
+        "path": "uppy/packages/@uppy/angular/projects/uppy/angular/src/lib/components/dashboard-modal/dashboard-modal.stories.ts",
+        "story": true
+      },
+      {
+        "name": "dashboard.component",
+        "path": "uppy/packages/@uppy/angular/projects/uppy/angular/src/lib/components/dashboard/dashboard.component.ts",
+        "story": false
+      },
+      {
+        "name": "dashboard.stories",
+        "path": "uppy/packages/@uppy/angular/projects/uppy/angular/src/lib/components/dashboard/dashboard.stories.ts",
+        "story": true
+      },
+      {
+        "name": "DashboardModal",
+        "path": "uppy/packages/@uppy/react/src/DashboardModal.ts",
+        "story": false
+      },
+      {
+        "name": "DashboardModal",
+        "path": "uppy/packages/@uppy/svelte/src/lib/components/DashboardModal.svelte",
+        "story": false
+      },
+      {
+        "name": "EditorPanel",
+        "path": "uppy/packages/@uppy/dashboard/src/components/EditorPanel.tsx",
+        "story": false
+      },
+      {
+        "name": "FileList",
+        "path": "uppy/packages/@uppy/dashboard/src/components/FileList.tsx",
+        "story": false
+      },
+      {
+        "name": "Informer",
+        "path": "uppy/packages/@uppy/dashboard/src/components/Informer/Informer.tsx",
+        "story": false
+      },
+      {
+        "name": "MetaErrorMessage",
+        "path": "uppy/packages/@uppy/dashboard/src/components/FileItem/MetaErrorMessage.tsx",
+        "story": false
+      },
+      {
+        "name": "PickerPanelContent",
+        "path": "uppy/packages/@uppy/dashboard/src/components/PickerPanelContent.tsx",
+        "story": false
+      },
+      {
+        "name": "PickerPanelTopBar",
+        "path": "uppy/packages/@uppy/dashboard/src/components/PickerPanelTopBar.tsx",
+        "story": false
+      },
+      {
+        "name": "UppyDashboard",
+        "path": "uppy/examples/nextjs/src/components/UppyDashboard.tsx",
+        "story": false
+      }
+    ],
+    "settings": [
+      {
+        "name": "dashboard-modal",
+        "path": "uppy/packages/@uppy/vue/src/dashboard-modal.ts",
+        "story": false
+      },
+      {
+        "name": "dashboard-modal-demo.component",
+        "path": "uppy/packages/@uppy/angular/projects/uppy/angular/src/lib/components/dashboard-modal/dashboard-modal-demo.component.ts",
+        "story": false
+      },
+      {
+        "name": "dashboard-modal.component",
+        "path": "uppy/packages/@uppy/angular/projects/uppy/angular/src/lib/components/dashboard-modal/dashboard-modal.component.ts",
+        "story": false
+      },
+      {
+        "name": "dashboard-modal.stories",
+        "path": "uppy/packages/@uppy/angular/projects/uppy/angular/src/lib/components/dashboard-modal/dashboard-modal.stories.ts",
+        "story": true
+      },
+      {
+        "name": "DashboardModal",
+        "path": "uppy/packages/@uppy/react/src/DashboardModal.ts",
+        "story": false
+      },
+      {
+        "name": "DashboardModal",
+        "path": "uppy/packages/@uppy/svelte/src/lib/components/DashboardModal.svelte",
+        "story": false
+      }
+    ],
+    "editor": [
+      {
+        "name": "Editor",
+        "path": "uppy/packages/@uppy/image-editor/src/Editor.tsx",
+        "story": false
+      },
+      {
+        "name": "EditorPanel",
+        "path": "uppy/packages/@uppy/dashboard/src/components/EditorPanel.tsx",
+        "story": false
+      },
+      {
+        "name": "ImageEditor",
+        "path": "uppy/examples/react/src/ImageEditor.tsx",
+        "story": false
+      },
+      {
+        "name": "ImageEditor",
+        "path": "uppy/examples/sveltekit/src/components/ImageEditor.svelte",
+        "story": false
+      },
+      {
+        "name": "ImageEditor",
+        "path": "uppy/examples/vue/src/ImageEditor.vue",
+        "story": false
+      },
+      {
+        "name": "ImageEditor",
+        "path": "uppy/packages/@uppy/image-editor/src/ImageEditor.tsx",
+        "story": false
+      },
+      {
+        "name": "PickerPanelContent",
+        "path": "uppy/packages/@uppy/dashboard/src/components/PickerPanelContent.tsx",
+        "story": false
+      },
+      {
+        "name": "useImageEditor",
+        "path": "uppy/packages/@uppy/react/src/useImageEditor.ts",
+        "story": false
+      },
+      {
+        "name": "useImageEditor",
+        "path": "uppy/packages/@uppy/vue/src/useImageEditor.ts",
+        "story": false
+      },
+      {
+        "name": "useImageEditor.svelte",
+        "path": "uppy/packages/@uppy/svelte/src/lib/useImageEditor.svelte.ts",
+        "story": false
+      }
+    ]
+  }
+}

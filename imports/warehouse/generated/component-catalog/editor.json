@@ -1,0 +1,727 @@
+{
+  "id": "editor",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/comms/editor",
+  "count": 144,
+  "components": [
+    {
+      "name": "bullet-list",
+      "path": "tiptap/packages/extension-list/src/bullet-list/bullet-list.ts",
+      "story": false
+    },
+    {
+      "name": "Card",
+      "path": "lexical/packages/lexical-website/src/components/Gallery/Card.tsx",
+      "story": false
+    },
+    {
+      "name": "CardNode",
+      "path": "lexical/packages/lexical-playground/src/plugins/CardExtension/CardNode.tsx",
+      "story": false
+    },
+    {
+      "name": "ChatInput",
+      "path": "lexical/examples/website-chat/src/ChatInput.tsx",
+      "story": false
+    },
+    {
+      "name": "ChatMessage",
+      "path": "lexical/examples/website-chat/src/ChatMessage.tsx",
+      "story": false
+    },
+    {
+      "name": "checkList",
+      "path": "lexical/packages/lexical-list/src/checkList.ts",
+      "story": false
+    },
+    {
+      "name": "ClearEditorExtension",
+      "path": "lexical/packages/lexical-extension/src/ClearEditorExtension.ts",
+      "story": false
+    },
+    {
+      "name": "CommandsList",
+      "path": "tiptap/demos/src/Experiments/Commands/Vue/CommandsList.vue",
+      "story": false
+    },
+    {
+      "name": "CommentEditorTheme",
+      "path": "lexical/packages/lexical-playground/src/themes/CommentEditorTheme.ts",
+      "story": false
+    },
+    {
+      "name": "ContentEditable",
+      "path": "lexical/packages/lexical-playground/src/ui/ContentEditable.tsx",
+      "story": false
+    },
+    {
+      "name": "createBranchingListDeleteKeymap",
+      "path": "tiptap/packages/extension-list/src/helpers/createBranchingListDeleteKeymap.ts",
+      "story": false
+    },
+    {
+      "name": "Dialog",
+      "path": "lexical/packages/lexical-playground/src/ui/Dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "DropdownList",
+      "path": "tiptap/demos/src/Examples/SuggestionPositioning/React/DropdownList.jsx",
+      "story": false
+    },
+    {
+      "name": "DropdownList",
+      "path": "tiptap/demos/src/Examples/SuggestionPositioning/Vue/DropdownList.vue",
+      "story": false
+    },
+    {
+      "name": "editable",
+      "path": "tiptap/packages/core/src/extensions/editable.ts",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "tiptap/demos/src/Demos/CollaborationSplitPane/React/Editor.jsx",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "tiptap/demos/src/Examples/InteractivityComponentProvideInject/Vue/Editor.vue",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "tiptap/demos/src/GuideGettingStarted/VModel/Vue/Editor.vue",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "tiptap/packages/core/src/Editor.ts",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "tiptap/packages/react/src/Editor.ts",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "tiptap/packages/vue-2/src/Editor.ts",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "tiptap/packages/vue-3/src/Editor.ts",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "lexical/examples/agent-example/src/Editor.tsx",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "lexical/examples/markdown-editor/src/Editor.tsx",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "lexical/examples/react-rich-collab/src/Editor.tsx",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "lexical/examples/website-chat/src/Editor.tsx",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "lexical/examples/website-notion/src/Editor.tsx",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "lexical/examples/website-rich-input/src/Editor.tsx",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "lexical/examples/website-toolbar/src/Editor.tsx",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "lexical/packages/lexical-playground/src/Editor.tsx",
+      "story": false
+    },
+    {
+      "name": "EditorClient",
+      "path": "lexical/examples/nextjs-code-shiki/app/EditorClient.tsx",
+      "story": false
+    },
+    {
+      "name": "EditorContent",
+      "path": "tiptap/packages/react/src/EditorContent.tsx",
+      "story": false
+    },
+    {
+      "name": "EditorContent",
+      "path": "tiptap/packages/vue-2/src/EditorContent.ts",
+      "story": false
+    },
+    {
+      "name": "EditorContent",
+      "path": "tiptap/packages/vue-3/src/EditorContent.ts",
+      "story": false
+    },
+    {
+      "name": "editorCycle.bench",
+      "path": "lexical/packages/lexical/src/__bench__/dom/editorCycle.bench.ts",
+      "story": false
+    },
+    {
+      "name": "EditorsList",
+      "path": "lexical/packages/lexical-devtools/src/entrypoints/devtools-panel/components/EditorsList.tsx",
+      "story": false
+    },
+    {
+      "name": "EditorsRefreshCTA",
+      "path": "lexical/packages/lexical-devtools/src/components/EditorsRefreshCTA.tsx",
+      "story": false
+    },
+    {
+      "name": "EditorStateExtension",
+      "path": "lexical/packages/lexical-extension/src/EditorStateExtension.ts",
+      "story": false
+    },
+    {
+      "name": "EmojiList",
+      "path": "tiptap/demos/src/Nodes/Emoji/React/EmojiList.jsx",
+      "story": false
+    },
+    {
+      "name": "EmojiList",
+      "path": "tiptap/demos/src/Nodes/Emoji/Vue/EmojiList.vue",
+      "story": false
+    },
+    {
+      "name": "EquationEditor",
+      "path": "lexical/packages/lexical-playground/src/ui/EquationEditor.tsx",
+      "story": false
+    },
+    {
+      "name": "ExcalidrawModal",
+      "path": "lexical/packages/lexical-playground/src/ui/ExcalidrawModal.tsx",
+      "story": false
+    },
+    {
+      "name": "findListItemPos",
+      "path": "tiptap/packages/extension-list/src/keymap/listHelpers/findListItemPos.ts",
+      "story": false
+    },
+    {
+      "name": "FlashMessage",
+      "path": "lexical/packages/lexical-playground/src/ui/FlashMessage.tsx",
+      "story": false
+    },
+    {
+      "name": "FlashMessageContext",
+      "path": "lexical/packages/lexical-playground/src/context/FlashMessageContext.tsx",
+      "story": false
+    },
+    {
+      "name": "formatCodeWithPrettier",
+      "path": "lexical/packages/lexical-playground/src/plugins/CodeActionMenuPlugin/formatCodeWithPrettier.ts",
+      "story": false
+    },
+    {
+      "name": "formatDevErrorMessage",
+      "path": "lexical/packages/lexical-internal/src/formatDevErrorMessage.ts",
+      "story": false
+    },
+    {
+      "name": "formatDevWarningMessage",
+      "path": "lexical/packages/lexical-internal/src/formatDevWarningMessage.ts",
+      "story": false
+    },
+    {
+      "name": "formatList",
+      "path": "lexical/packages/lexical-list/src/formatList.ts",
+      "story": false
+    },
+    {
+      "name": "formatProdErrorMessage",
+      "path": "lexical/packages/lexical-internal/src/formatProdErrorMessage.ts",
+      "story": false
+    },
+    {
+      "name": "formatProdWarningMessage",
+      "path": "lexical/packages/lexical-internal/src/formatProdWarningMessage.ts",
+      "story": false
+    },
+    {
+      "name": "GalleryCards",
+      "path": "lexical/packages/lexical-website/src/components/Gallery/GalleryCards.tsx",
+      "story": false
+    },
+    {
+      "name": "getBranchingNestedListAtCursor",
+      "path": "tiptap/packages/extension-list/src/helpers/getBranchingNestedListAtCursor.ts",
+      "story": false
+    },
+    {
+      "name": "getExtensionDependencyFromEditor",
+      "path": "lexical/packages/lexical-extension/src/getExtensionDependencyFromEditor.ts",
+      "story": false
+    },
+    {
+      "name": "getNextListDepth",
+      "path": "tiptap/packages/extension-list/src/keymap/listHelpers/getNextListDepth.ts",
+      "story": false
+    },
+    {
+      "name": "getPeerDependencyFromEditor",
+      "path": "lexical/packages/lexical-extension/src/getPeerDependencyFromEditor.ts",
+      "story": false
+    },
+    {
+      "name": "getRandomUserProfile",
+      "path": "lexical/examples/react-rich-collab/src/getRandomUserProfile.ts",
+      "story": false
+    },
+    {
+      "name": "handleDeleteBranchingNestedList",
+      "path": "tiptap/packages/extension-list/src/helpers/handleDeleteBranchingNestedList.ts",
+      "story": false
+    },
+    {
+      "name": "hasBranchingNestedListAfterCursor",
+      "path": "tiptap/packages/extension-list/src/helpers/hasBranchingNestedListAfterCursor.ts",
+      "story": false
+    },
+    {
+      "name": "hasListBefore",
+      "path": "tiptap/packages/extension-list/src/keymap/listHelpers/hasListBefore.ts",
+      "story": false
+    },
+    {
+      "name": "hasListItemAfter",
+      "path": "tiptap/packages/extension-list/src/keymap/listHelpers/hasListItemAfter.ts",
+      "story": false
+    },
+    {
+      "name": "hasListItemBefore",
+      "path": "tiptap/packages/extension-list/src/keymap/listHelpers/hasListItemBefore.ts",
+      "story": false
+    },
+    {
+      "name": "hoistBranchingNestedList",
+      "path": "tiptap/packages/extension-list/src/helpers/hoistBranchingNestedList.ts",
+      "story": false
+    },
+    {
+      "name": "ImportHtmlDialog",
+      "path": "lexical/dev-examples/dom-import/src/ImportHtmlDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "importTextFormatTransformer",
+      "path": "lexical/packages/lexical-markdown/src/importTextFormatTransformer.ts",
+      "story": false
+    },
+    {
+      "name": "importTextMatchTransformer",
+      "path": "lexical/packages/lexical-markdown/src/importTextMatchTransformer.ts",
+      "story": false
+    },
+    {
+      "name": "importTextTransformers",
+      "path": "lexical/packages/lexical-markdown/src/importTextTransformers.ts",
+      "story": false
+    },
+    {
+      "name": "InsertLayoutDialog",
+      "path": "lexical/packages/lexical-playground/src/plugins/LayoutExtension/InsertLayoutDialog.tsx",
+      "story": false
+    },
+    {
+      "name": "isList",
+      "path": "tiptap/packages/core/src/helpers/isList.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalCheckListPlugin",
+      "path": "lexical/packages/lexical-react/src/LexicalCheckListPlugin.tsx",
+      "story": false
+    },
+    {
+      "name": "LexicalClearEditorPlugin",
+      "path": "lexical/packages/lexical-react/src/LexicalClearEditorPlugin.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalComposer",
+      "path": "lexical/packages/lexical-react/src/LexicalComposer.tsx",
+      "story": false
+    },
+    {
+      "name": "LexicalComposerContext",
+      "path": "lexical/packages/lexical-react/src/LexicalComposerContext.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalContentEditable",
+      "path": "lexical/packages/lexical-react/src/LexicalContentEditable.tsx",
+      "story": false
+    },
+    {
+      "name": "LexicalContentEditableElement",
+      "path": "lexical/packages/lexical-react/src/shared/LexicalContentEditableElement.tsx",
+      "story": false
+    },
+    {
+      "name": "LexicalEditor",
+      "path": "lexical/packages/lexical/src/LexicalEditor.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalEditorElement",
+      "path": "lexical/dev-examples/shadow-dom-web-component/src/LexicalEditorElement.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalEditorRefPlugin",
+      "path": "lexical/packages/lexical-react/src/LexicalEditorRefPlugin.tsx",
+      "story": false
+    },
+    {
+      "name": "LexicalEditorState",
+      "path": "lexical/packages/lexical/src/LexicalEditorState.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalExtensionComposer",
+      "path": "lexical/packages/lexical-react/src/LexicalExtensionComposer.tsx",
+      "story": false
+    },
+    {
+      "name": "LexicalExtensionEditorComposer",
+      "path": "lexical/packages/lexical-react/src/LexicalExtensionEditorComposer.tsx",
+      "story": false
+    },
+    {
+      "name": "LexicalList",
+      "path": "lexical/packages/lexical-list/LexicalList.js",
+      "story": false
+    },
+    {
+      "name": "LexicalListExtension",
+      "path": "lexical/packages/lexical-list/src/LexicalListExtension.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalListItemNode",
+      "path": "lexical/packages/lexical-list/src/LexicalListItemNode.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalListNode",
+      "path": "lexical/packages/lexical-list/src/LexicalListNode.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalListPlugin",
+      "path": "lexical/packages/lexical-react/src/LexicalListPlugin.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalNestedComposer",
+      "path": "lexical/packages/lexical-react/src/LexicalNestedComposer.tsx",
+      "story": false
+    },
+    {
+      "name": "LexicalTable",
+      "path": "lexical/packages/lexical-table/LexicalTable.js",
+      "story": false
+    },
+    {
+      "name": "LexicalTableCellNode",
+      "path": "lexical/packages/lexical-table/src/LexicalTableCellNode.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalTableCommands",
+      "path": "lexical/packages/lexical-table/src/LexicalTableCommands.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalTableExtension",
+      "path": "lexical/packages/lexical-table/src/LexicalTableExtension.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalTableNode",
+      "path": "lexical/packages/lexical-table/src/LexicalTableNode.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalTableObserver",
+      "path": "lexical/packages/lexical-table/src/LexicalTableObserver.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalTableOfContentsPlugin",
+      "path": "lexical/packages/lexical-react/src/LexicalTableOfContentsPlugin.tsx",
+      "story": false
+    },
+    {
+      "name": "LexicalTablePlugin",
+      "path": "lexical/packages/lexical-react/src/LexicalTablePlugin.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalTablePluginHelpers",
+      "path": "lexical/packages/lexical-table/src/LexicalTablePluginHelpers.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalTableRowNode",
+      "path": "lexical/packages/lexical-table/src/LexicalTableRowNode.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalTableSelection",
+      "path": "lexical/packages/lexical-table/src/LexicalTableSelection.ts",
+      "story": false
+    },
+    {
+      "name": "LexicalTableSelectionHelpers",
+      "path": "lexical/packages/lexical-table/src/LexicalTableSelectionHelpers.ts",
+      "story": false
+    },
+    {
+      "name": "liftListItem",
+      "path": "tiptap/packages/core/src/commands/liftListItem.ts",
+      "story": false
+    },
+    {
+      "name": "list-item",
+      "path": "tiptap/packages/extension-list/src/item/list-item.ts",
+      "story": false
+    },
+    {
+      "name": "list-keymap",
+      "path": "tiptap/packages/extension-list/src/keymap/list-keymap.ts",
+      "story": false
+    },
+    {
+      "name": "ListImportExtension",
+      "path": "lexical/packages/lexical-list/src/ListImportExtension.ts",
+      "story": false
+    },
+    {
+      "name": "listItemHasSubList",
+      "path": "tiptap/packages/extension-list/src/keymap/listHelpers/listItemHasSubList.ts",
+      "story": false
+    },
+    {
+      "name": "MarkdownTransformers",
+      "path": "lexical/packages/lexical-markdown/src/MarkdownTransformers.ts",
+      "story": false
+    },
+    {
+      "name": "MentionList",
+      "path": "tiptap/demos/src/Examples/Community/React/MentionList.jsx",
+      "story": false
+    },
+    {
+      "name": "MentionList",
+      "path": "tiptap/demos/src/Examples/Community/Vue/MentionList.vue",
+      "story": false
+    },
+    {
+      "name": "MentionList",
+      "path": "tiptap/demos/src/Examples/MultiMention/React/MentionList.jsx",
+      "story": false
+    },
+    {
+      "name": "MentionList",
+      "path": "tiptap/demos/src/Examples/MultiMention/Vue/MentionList.vue",
+      "story": false
+    },
+    {
+      "name": "MentionList",
+      "path": "tiptap/demos/src/Nodes/Mention/React/MentionList.jsx",
+      "story": false
+    },
+    {
+      "name": "MentionList",
+      "path": "tiptap/demos/src/Nodes/Mention/Vue/MentionList.vue",
+      "story": false
+    },
+    {
+      "name": "Modal",
+      "path": "lexical/packages/lexical-playground/src/ui/Modal.tsx",
+      "story": false
+    },
+    {
+      "name": "NestedEditorExtension",
+      "path": "lexical/packages/lexical-extension/src/NestedEditorExtension.ts",
+      "story": false
+    },
+    {
+      "name": "nextListIsDeeper",
+      "path": "tiptap/packages/extension-list/src/keymap/listHelpers/nextListIsDeeper.ts",
+      "story": false
+    },
+    {
+      "name": "nextListIsHigher",
+      "path": "tiptap/packages/extension-list/src/keymap/listHelpers/nextListIsHigher.ts",
+      "story": false
+    },
+    {
+      "name": "ordered-list",
+      "path": "tiptap/packages/extension-list/src/ordered-list/ordered-list.ts",
+      "story": false
+    },
+    {
+      "name": "PlaygroundEditorTheme",
+      "path": "lexical/packages/lexical-playground/src/themes/PlaygroundEditorTheme.ts",
+      "story": false
+    },
+    {
+      "name": "pluginList",
+      "path": "lexical/packages/lexical-website/src/components/Gallery/pluginList.tsx",
+      "story": false
+    },
+    {
+      "name": "registerList",
+      "path": "lexical/packages/lexical-list/src/registerList.ts",
+      "story": false
+    },
+    {
+      "name": "scanAndListenForEditors",
+      "path": "lexical/packages/lexical-devtools/src/entrypoints/injected/scanAndListenForEditors.ts",
+      "story": false
+    },
+    {
+      "name": "serializeEditorState",
+      "path": "lexical/packages/lexical-devtools/src/serializeEditorState.ts",
+      "story": false
+    },
+    {
+      "name": "sidebars",
+      "path": "lexical/packages/lexical-website/sidebars.js",
+      "story": false
+    },
+    {
+      "name": "sinkListItem",
+      "path": "tiptap/packages/core/src/commands/sinkListItem.ts",
+      "story": false
+    },
+    {
+      "name": "splitListItem",
+      "path": "tiptap/packages/core/src/commands/splitListItem.ts",
+      "story": false
+    },
+    {
+      "name": "StickyEditorTheme",
+      "path": "lexical/packages/lexical-playground/src/themes/StickyEditorTheme.ts",
+      "story": false
+    },
+    {
+      "name": "SyncEditorStates",
+      "path": "lexical/packages/lexical-yjs/src/SyncEditorStates.ts",
+      "story": false
+    },
+    {
+      "name": "table",
+      "path": "tiptap/packages/extension-table/src/table/table.ts",
+      "story": false
+    },
+    {
+      "name": "table-cell",
+      "path": "tiptap/packages/extension-table/src/cell/table-cell.ts",
+      "story": false
+    },
+    {
+      "name": "table-header",
+      "path": "tiptap/packages/extension-table/src/header/table-header.ts",
+      "story": false
+    },
+    {
+      "name": "table-row",
+      "path": "tiptap/packages/extension-table/src/row/table-row.ts",
+      "story": false
+    },
+    {
+      "name": "TableImportExtension",
+      "path": "lexical/packages/lexical-table/src/TableImportExtension.ts",
+      "story": false
+    },
+    {
+      "name": "tableOfContents",
+      "path": "tiptap/packages/extension-table-of-contents/src/tableOfContents.ts",
+      "story": false
+    },
+    {
+      "name": "TablePlugin",
+      "path": "lexical/packages/lexical-playground/src/plugins/TablePlugin.tsx",
+      "story": false
+    },
+    {
+      "name": "TableView",
+      "path": "tiptap/packages/extension-table/src/table/TableView.ts",
+      "story": false
+    },
+    {
+      "name": "tagList",
+      "path": "lexical/packages/lexical-website/src/components/Gallery/tagList.tsx",
+      "story": false
+    },
+    {
+      "name": "task-list",
+      "path": "tiptap/packages/extension-list/src/task-list/task-list.ts",
+      "story": false
+    },
+    {
+      "name": "toggleList",
+      "path": "tiptap/packages/core/src/commands/toggleList.ts",
+      "story": false
+    },
+    {
+      "name": "useEditor",
+      "path": "tiptap/packages/react/src/useEditor.ts",
+      "story": false
+    },
+    {
+      "name": "useEditor",
+      "path": "tiptap/packages/vue-3/src/useEditor.ts",
+      "story": false
+    },
+    {
+      "name": "useEditorState",
+      "path": "tiptap/packages/react/src/useEditorState.ts",
+      "story": false
+    },
+    {
+      "name": "useLexicalEditable",
+      "path": "lexical/packages/lexical-react/src/useLexicalEditable.ts",
+      "story": false
+    },
+    {
+      "name": "useLexicalIsTextContentEmpty",
+      "path": "lexical/packages/lexical-react/src/useLexicalIsTextContentEmpty.ts",
+      "story": false
+    },
+    {
+      "name": "useList",
+      "path": "lexical/packages/lexical-react/src/shared/useList.ts",
+      "story": false
+    },
+    {
+      "name": "WatchEditableExtension",
+      "path": "lexical/packages/lexical-extension/src/WatchEditableExtension.ts",
+      "story": false
+    }
+  ]
+}

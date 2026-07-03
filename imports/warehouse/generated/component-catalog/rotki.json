@@ -1,0 +1,1257 @@
+{
+  "id": "rotki",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki",
+  "count": 250,
+  "components": [
+    {
+      "name": "AccountBalancesTable",
+      "path": "frontend/app/src/modules/accounts/table/AccountBalancesTable.vue",
+      "story": false
+    },
+    {
+      "name": "AccountDialog",
+      "path": "frontend/app/src/modules/accounts/management/AccountDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AccountForm",
+      "path": "frontend/app/src/modules/accounts/management/AccountForm.vue",
+      "story": false
+    },
+    {
+      "name": "AccountGroupDetailsTable",
+      "path": "frontend/app/src/modules/accounts/AccountGroupDetailsTable.vue",
+      "story": false
+    },
+    {
+      "name": "AccountingRuleActionDialog",
+      "path": "frontend/app/src/modules/settings/accounting/rule/AccountingRuleActionDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AccountingRuleConflictsDialog",
+      "path": "frontend/app/src/modules/settings/accounting/rule/AccountingRuleConflictsDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AccountingRuleEventsDialog",
+      "path": "frontend/app/src/modules/settings/accounting/rule/AccountingRuleEventsDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AccountingRuleForm",
+      "path": "frontend/app/src/modules/settings/accounting/rule/AccountingRuleForm.vue",
+      "story": false
+    },
+    {
+      "name": "AccountingRuleFormDialog",
+      "path": "frontend/app/src/modules/settings/accounting/rule/AccountingRuleFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AccountingRuleImportDialog",
+      "path": "frontend/app/src/modules/settings/accounting/rule/AccountingRuleImportDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AccountingRuleTable",
+      "path": "frontend/app/src/modules/settings/accounting/rule/AccountingRuleTable.vue",
+      "story": false
+    },
+    {
+      "name": "AccountTableGroupHeader",
+      "path": "frontend/app/src/modules/accounts/table/components/AccountTableGroupHeader.vue",
+      "story": false
+    },
+    {
+      "name": "AddressBookForm",
+      "path": "frontend/app/src/modules/accounts/address-book/AddressBookForm.vue",
+      "story": false
+    },
+    {
+      "name": "AddressBookFormDialog",
+      "path": "frontend/app/src/modules/accounts/address-book/AddressBookFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AddressBookTable",
+      "path": "frontend/app/src/modules/accounts/address-book/AddressBookTable.vue",
+      "story": false
+    },
+    {
+      "name": "amount-formatter",
+      "path": "frontend/app/src/modules/assets/amount-display/amount-formatter.ts",
+      "story": false
+    },
+    {
+      "name": "AppMessages",
+      "path": "frontend/app/src/modules/shell/app/AppMessages.vue",
+      "story": false
+    },
+    {
+      "name": "AppSidebars",
+      "path": "frontend/app/src/modules/shell/app/AppSidebars.vue",
+      "story": false
+    },
+    {
+      "name": "AssetConflictDialog",
+      "path": "frontend/app/src/modules/shell/app/AssetConflictDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AssetIconForm",
+      "path": "frontend/app/src/modules/assets/admin/AssetIconForm.vue",
+      "story": false
+    },
+    {
+      "name": "AssetMovementEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/AssetMovementEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "AssetUpdateMessage",
+      "path": "frontend/app/src/modules/shell/app/AssetUpdateMessage.vue",
+      "story": false
+    },
+    {
+      "name": "balance-transformations",
+      "path": "frontend/app/src/modules/balances/balance-transformations.ts",
+      "story": false
+    },
+    {
+      "name": "base-message",
+      "path": "frontend/app/src/modules/core/messaging/base-message.ts",
+      "story": false
+    },
+    {
+      "name": "BigDialog",
+      "path": "frontend/app/src/modules/shell/components/dialogs/BigDialog.vue",
+      "story": false
+    },
+    {
+      "name": "BlockchainBalanceCardList",
+      "path": "frontend/app/src/modules/dashboard/summary/BlockchainBalanceCardList.vue",
+      "story": false
+    },
+    {
+      "name": "BlockchainRpcNodeForm",
+      "path": "frontend/app/src/modules/settings/general/rpc/BlockchainRpcNodeForm.vue",
+      "story": false
+    },
+    {
+      "name": "BlockchainRpcNodeFormDialog",
+      "path": "frontend/app/src/modules/settings/general/rpc/BlockchainRpcNodeFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "BlockchainSummaryCardCreateButton",
+      "path": "frontend/app/src/modules/dashboard/summary/BlockchainSummaryCardCreateButton.vue",
+      "story": false
+    },
+    {
+      "name": "calendar-reminder",
+      "path": "frontend/app/src/modules/core/messaging/handlers/calendar-reminder.ts",
+      "story": false
+    },
+    {
+      "name": "CalendarColorInput",
+      "path": "frontend/app/src/modules/calendar/CalendarColorInput.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarDateNavigator",
+      "path": "frontend/app/src/modules/calendar/CalendarDateNavigator.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarEventList",
+      "path": "frontend/app/src/modules/calendar/CalendarEventList.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarForm",
+      "path": "frontend/app/src/modules/calendar/CalendarForm.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarFormDialog",
+      "path": "frontend/app/src/modules/calendar/CalendarFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarGrid",
+      "path": "frontend/app/src/modules/calendar/CalendarGrid.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarMonthDayItem",
+      "path": "frontend/app/src/modules/calendar/CalendarMonthDayItem.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarMonthNavigator",
+      "path": "frontend/app/src/modules/calendar/CalendarMonthNavigator.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarReminder",
+      "path": "frontend/app/src/modules/calendar/CalendarReminder.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarReminderEntry",
+      "path": "frontend/app/src/modules/calendar/CalendarReminderEntry.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarSelectedEventsPanel",
+      "path": "frontend/app/src/modules/calendar/CalendarSelectedEventsPanel.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarSettingsMenu",
+      "path": "frontend/app/src/modules/calendar/CalendarSettingsMenu.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarUpcomingEventList",
+      "path": "frontend/app/src/modules/calendar/CalendarUpcomingEventList.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarUpcomingEventsPanel",
+      "path": "frontend/app/src/modules/calendar/CalendarUpcomingEventsPanel.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarView",
+      "path": "frontend/app/src/modules/calendar/CalendarView.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarWeekdays",
+      "path": "frontend/app/src/modules/calendar/CalendarWeekdays.vue",
+      "story": false
+    },
+    {
+      "name": "CardTitle",
+      "path": "frontend/app/src/modules/shell/components/CardTitle.vue",
+      "story": false
+    },
+    {
+      "name": "ChainProgressList",
+      "path": "frontend/app/src/modules/shell/sync-progress/components/ChainProgressList.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmDialog",
+      "path": "frontend/app/src/modules/shell/components/dialogs/ConfirmDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmSnapshotConflictReplacementDialog",
+      "path": "frontend/app/src/modules/dashboard/ConfirmSnapshotConflictReplacementDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConnectionFailureMessage",
+      "path": "frontend/app/src/modules/auth/ConnectionFailureMessage.vue",
+      "story": false
+    },
+    {
+      "name": "CostBasisTable",
+      "path": "frontend/app/src/modules/reports/CostBasisTable.vue",
+      "story": false
+    },
+    {
+      "name": "CreateAccountCredentialsForm",
+      "path": "frontend/app/src/modules/auth/create-account/credentials/CreateAccountCredentialsForm.vue",
+      "story": false
+    },
+    {
+      "name": "CreateAccountPremiumForm",
+      "path": "frontend/app/src/modules/auth/create-account/premium/CreateAccountPremiumForm.vue",
+      "story": false
+    },
+    {
+      "name": "CustomAssetForm",
+      "path": "frontend/app/src/modules/assets/admin/custom/CustomAssetForm.vue",
+      "story": false
+    },
+    {
+      "name": "CustomAssetFormDialog",
+      "path": "frontend/app/src/modules/assets/admin/custom/CustomAssetFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CustomAssetTable",
+      "path": "frontend/app/src/modules/assets/admin/custom/CustomAssetTable.vue",
+      "story": false
+    },
+    {
+      "name": "CustomizedEventDuplicatesDialog",
+      "path": "frontend/app/src/modules/history/events/CustomizedEventDuplicatesDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CustomizedEventDuplicatesList",
+      "path": "frontend/app/src/modules/history/events/CustomizedEventDuplicatesList.vue",
+      "story": false
+    },
+    {
+      "name": "Dashboard",
+      "path": "frontend/app/src/modules/dashboard/Dashboard.vue",
+      "story": false
+    },
+    {
+      "name": "DashboardAssetTable",
+      "path": "frontend/app/src/modules/dashboard/DashboardAssetTable.vue",
+      "story": false
+    },
+    {
+      "name": "DashboardAssetWarnings",
+      "path": "frontend/app/src/modules/dashboard/DashboardAssetWarnings.vue",
+      "story": false
+    },
+    {
+      "name": "DashboardExpandableTable",
+      "path": "frontend/app/src/modules/dashboard/DashboardExpandableTable.vue",
+      "story": false
+    },
+    {
+      "name": "DashboardProgressIndicator",
+      "path": "frontend/app/src/modules/dashboard/progress/DashboardProgressIndicator.vue",
+      "story": false
+    },
+    {
+      "name": "DatabaseInformation",
+      "path": "frontend/app/src/modules/settings/database/DatabaseInformation.vue",
+      "story": false
+    },
+    {
+      "name": "DatabaseInformationCategory",
+      "path": "frontend/app/src/modules/settings/database/DatabaseInformationCategory.vue",
+      "story": false
+    },
+    {
+      "name": "date-format",
+      "path": "frontend/app/src/modules/core/common/date-format.ts",
+      "story": false
+    },
+    {
+      "name": "date-formatter",
+      "path": "frontend/app/src/modules/core/common/date-formatter.ts",
+      "story": false
+    },
+    {
+      "name": "DateDisplayFormatSetting",
+      "path": "frontend/app/src/modules/settings/general/DateDisplayFormatSetting.vue",
+      "story": false
+    },
+    {
+      "name": "DateFormatHelp",
+      "path": "frontend/app/src/modules/settings/controls/DateFormatHelp.vue",
+      "story": false
+    },
+    {
+      "name": "DateInputFormatSelector",
+      "path": "frontend/app/src/modules/settings/general/DateInputFormatSelector.vue",
+      "story": false
+    },
+    {
+      "name": "DateInputFormatSetting",
+      "path": "frontend/app/src/modules/settings/general/DateInputFormatSetting.vue",
+      "story": false
+    },
+    {
+      "name": "DecodingProgressList",
+      "path": "frontend/app/src/modules/shell/sync-progress/components/DecodingProgressList.vue",
+      "story": false
+    },
+    {
+      "name": "dialogs",
+      "path": "frontend/app/src/modules/core/common/dialogs.ts",
+      "story": false
+    },
+    {
+      "name": "DisabledChainQueryRuleDialog",
+      "path": "frontend/app/src/modules/settings/general/disabled-chain-queries/DisabledChainQueryRuleDialog.vue",
+      "story": false
+    },
+    {
+      "name": "dynamic-messages",
+      "path": "frontend/app/src/modules/core/messaging/dynamic-messages.ts",
+      "story": false
+    },
+    {
+      "name": "DynamicMessageDisplay",
+      "path": "frontend/app/src/modules/dashboard/DynamicMessageDisplay.vue",
+      "story": false
+    },
+    {
+      "name": "EditBalancesSnapshotAssetPriceForm",
+      "path": "frontend/app/src/modules/dashboard/edit-snapshot/EditBalancesSnapshotAssetPriceForm.vue",
+      "story": false
+    },
+    {
+      "name": "EditBalancesSnapshotDeleteDialog",
+      "path": "frontend/app/src/modules/dashboard/edit-snapshot/EditBalancesSnapshotDeleteDialog.vue",
+      "story": false
+    },
+    {
+      "name": "EditBalancesSnapshotEntryDialog",
+      "path": "frontend/app/src/modules/dashboard/edit-snapshot/EditBalancesSnapshotEntryDialog.vue",
+      "story": false
+    },
+    {
+      "name": "EditBalancesSnapshotForm",
+      "path": "frontend/app/src/modules/dashboard/edit-snapshot/EditBalancesSnapshotForm.vue",
+      "story": false
+    },
+    {
+      "name": "EditBalancesSnapshotTable",
+      "path": "frontend/app/src/modules/dashboard/edit-snapshot/EditBalancesSnapshotTable.vue",
+      "story": false
+    },
+    {
+      "name": "EditLocationDataSnapshotForm",
+      "path": "frontend/app/src/modules/dashboard/edit-snapshot/EditLocationDataSnapshotForm.vue",
+      "story": false
+    },
+    {
+      "name": "EditLocationDataSnapshotTable",
+      "path": "frontend/app/src/modules/dashboard/edit-snapshot/EditLocationDataSnapshotTable.vue",
+      "story": false
+    },
+    {
+      "name": "EditSnapshotDialog",
+      "path": "frontend/app/src/modules/dashboard/edit-snapshot/EditSnapshotDialog.vue",
+      "story": false
+    },
+    {
+      "name": "EthBlockEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/EthBlockEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "EthDepositEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/EthDepositEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "EthWithdrawalEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/EthWithdrawalEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "EventAssetPriceUpdateDialog",
+      "path": "frontend/app/src/modules/history/events/prices/EventAssetPriceUpdateDialog.vue",
+      "story": false
+    },
+    {
+      "name": "evm-swap-event-form",
+      "path": "frontend/app/src/modules/history/management/forms/evm-swap-event-form.ts",
+      "story": false
+    },
+    {
+      "name": "EvmEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/EvmEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "EvmSwapEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/EvmSwapEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "ExportSnapshotDialog",
+      "path": "frontend/app/src/modules/dashboard/ExportSnapshotDialog.vue",
+      "story": false
+    },
+    {
+      "name": "format",
+      "path": "frontend/scripts/dev-instance/format.ts",
+      "story": false
+    },
+    {
+      "name": "FormattedNumber",
+      "path": "frontend/app/src/modules/assets/amount-display/components/FormattedNumber.vue",
+      "story": false
+    },
+    {
+      "name": "GnosisPaySignMessage",
+      "path": "frontend/app/src/modules/integrations/gnosis-pay/components/GnosisPaySignMessage.vue",
+      "story": false
+    },
+    {
+      "name": "HelpSidebar",
+      "path": "frontend/app/src/modules/shell/components/HelpSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "HistoricPriceForm",
+      "path": "frontend/app/src/modules/assets/prices/historic/HistoricPriceForm.vue",
+      "story": false
+    },
+    {
+      "name": "HistoricPriceFormDialog",
+      "path": "frontend/app/src/modules/assets/prices/historic/HistoricPriceFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventAssetPriceForm",
+      "path": "frontend/app/src/modules/history/management/forms/HistoryEventAssetPriceForm.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventForm",
+      "path": "frontend/app/src/modules/history/events/HistoryEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventFormDialog",
+      "path": "frontend/app/src/modules/history/events/HistoryEventFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventsDecodingStatusDialog",
+      "path": "frontend/app/src/modules/history/events/HistoryEventsDecodingStatusDialog.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventsDialogContainer",
+      "path": "frontend/app/src/modules/history/events/HistoryEventsDialogContainer.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventsListItemAction",
+      "path": "frontend/app/src/modules/history/events/HistoryEventsListItemAction.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventsProtocolCacheStatusDialog",
+      "path": "frontend/app/src/modules/history/events/HistoryEventsProtocolCacheStatusDialog.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventsTableActions",
+      "path": "frontend/app/src/modules/history/events/HistoryEventsTableActions.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventsVirtualTable",
+      "path": "frontend/app/src/modules/history/events/components/HistoryEventsVirtualTable.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryEventTypeForm",
+      "path": "frontend/app/src/modules/history/management/forms/HistoryEventTypeForm.vue",
+      "story": false
+    },
+    {
+      "name": "HistoryTableActions",
+      "path": "frontend/app/src/modules/history/HistoryTableActions.vue",
+      "story": false
+    },
+    {
+      "name": "InternalTxConflictsDialog",
+      "path": "frontend/app/src/modules/history/internal-tx-conflicts/InternalTxConflictsDialog.vue",
+      "story": false
+    },
+    {
+      "name": "LidoCsmAddDialog",
+      "path": "frontend/app/src/modules/staking/lido-csm/LidoCsmAddDialog.vue",
+      "story": false
+    },
+    {
+      "name": "LidoCsmTable",
+      "path": "frontend/app/src/modules/staking/lido-csm/LidoCsmTable.vue",
+      "story": false
+    },
+    {
+      "name": "ListItem",
+      "path": "frontend/app/src/modules/shell/components/ListItem.vue",
+      "story": false
+    },
+    {
+      "name": "LocationProgressList",
+      "path": "frontend/app/src/modules/shell/sync-progress/components/LocationProgressList.vue",
+      "story": false
+    },
+    {
+      "name": "LoginForm",
+      "path": "frontend/app/src/modules/auth/login/LoginForm.vue",
+      "story": false
+    },
+    {
+      "name": "ManageCexMappingForm",
+      "path": "frontend/app/src/modules/assets/admin/cex-mapping/ManageCexMappingForm.vue",
+      "story": false
+    },
+    {
+      "name": "ManageCexMappingFormDialog",
+      "path": "frontend/app/src/modules/assets/admin/cex-mapping/ManageCexMappingFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ManageCexMappingTable",
+      "path": "frontend/app/src/modules/assets/admin/cex-mapping/ManageCexMappingTable.vue",
+      "story": false
+    },
+    {
+      "name": "ManageCounterpartyMappingForm",
+      "path": "frontend/app/src/modules/assets/admin/counterparty-mapping/ManageCounterpartyMappingForm.vue",
+      "story": false
+    },
+    {
+      "name": "ManageCounterpartyMappingFormDialog",
+      "path": "frontend/app/src/modules/assets/admin/counterparty-mapping/ManageCounterpartyMappingFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ManageCounterpartyMappingTable",
+      "path": "frontend/app/src/modules/assets/admin/counterparty-mapping/ManageCounterpartyMappingTable.vue",
+      "story": false
+    },
+    {
+      "name": "ManagedAssetForm",
+      "path": "frontend/app/src/modules/assets/admin/managed/ManagedAssetForm.vue",
+      "story": false
+    },
+    {
+      "name": "ManagedAssetFormDialog",
+      "path": "frontend/app/src/modules/assets/admin/managed/ManagedAssetFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ManagedAssetTable",
+      "path": "frontend/app/src/modules/assets/admin/managed/ManagedAssetTable.vue",
+      "story": false
+    },
+    {
+      "name": "ManualBalanceCardList",
+      "path": "frontend/app/src/modules/dashboard/summary/ManualBalanceCardList.vue",
+      "story": false
+    },
+    {
+      "name": "ManualBalancesDialog",
+      "path": "frontend/app/src/modules/accounts/manual-balances/ManualBalancesDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ManualBalancesForm",
+      "path": "frontend/app/src/modules/accounts/manual-balances/ManualBalancesForm.vue",
+      "story": false
+    },
+    {
+      "name": "ManualBalancesPriceForm",
+      "path": "frontend/app/src/modules/accounts/manual-balances/ManualBalancesPriceForm.vue",
+      "story": false
+    },
+    {
+      "name": "ManualBalanceTable",
+      "path": "frontend/app/src/modules/accounts/manual-balances/ManualBalanceTable.vue",
+      "story": false
+    },
+    {
+      "name": "MatchAssetMovementsDialog",
+      "path": "frontend/app/src/modules/history/events/MatchAssetMovementsDialog.vue",
+      "story": false
+    },
+    {
+      "name": "MergeDialog",
+      "path": "frontend/app/src/modules/assets/admin/MergeDialog.vue",
+      "story": false
+    },
+    {
+      "name": "MessageDialog",
+      "path": "frontend/app/src/modules/shell/components/dialogs/MessageDialog.vue",
+      "story": false
+    },
+    {
+      "name": "messages",
+      "path": "frontend/app/src/modules/core/messaging/messages.ts",
+      "story": false
+    },
+    {
+      "name": "MissingRulesDialog",
+      "path": "frontend/app/src/modules/history/management/MissingRulesDialog.vue",
+      "story": false
+    },
+    {
+      "name": "NewlyDetectedAssetTable",
+      "path": "frontend/app/src/modules/assets/detection/NewlyDetectedAssetTable.vue",
+      "story": false
+    },
+    {
+      "name": "NftBalanceTable",
+      "path": "frontend/app/src/modules/dashboard/NftBalanceTable.vue",
+      "story": false
+    },
+    {
+      "name": "NftGalleryGrid",
+      "path": "frontend/app/src/modules/balances/nft/NftGalleryGrid.vue",
+      "story": false
+    },
+    {
+      "name": "NotificationSidebar",
+      "path": "frontend/app/src/modules/core/notifications/NotificationSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "OnlineHistoryEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/OnlineHistoryEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "OraclePriceEditDialog",
+      "path": "frontend/app/src/modules/assets/prices/components/oracle/OraclePriceEditDialog.vue",
+      "story": false
+    },
+    {
+      "name": "PaginatedCards",
+      "path": "frontend/app/src/modules/shell/components/PaginatedCards.vue",
+      "story": false
+    },
+    {
+      "name": "panel",
+      "path": "tools/chrome-task-tracker/panel.js",
+      "story": false
+    },
+    {
+      "name": "PasswordConfirmationDialog",
+      "path": "frontend/app/src/modules/auth/login/PasswordConfirmationDialog.vue",
+      "story": false
+    },
+    {
+      "name": "PersistTableSortingSetting",
+      "path": "frontend/app/src/modules/settings/frontend/PersistTableSortingSetting.vue",
+      "story": false
+    },
+    {
+      "name": "PinnedSidebar",
+      "path": "frontend/app/src/modules/shell/components/navigation/PinnedSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "PnlCsvWithFormulasSetting",
+      "path": "frontend/app/src/modules/settings/accounting/PnlCsvWithFormulasSetting.vue",
+      "story": false
+    },
+    {
+      "name": "PoolTable",
+      "path": "frontend/app/src/modules/dashboard/liquidity-pools/PoolTable.vue",
+      "story": false
+    },
+    {
+      "name": "PotentialMatchesDialog",
+      "path": "frontend/app/src/modules/history/events/PotentialMatchesDialog.vue",
+      "story": false
+    },
+    {
+      "name": "PotentialMatchesList",
+      "path": "frontend/app/src/modules/history/events/PotentialMatchesList.vue",
+      "story": false
+    },
+    {
+      "name": "PremiumDeviceForm",
+      "path": "frontend/app/src/modules/premium/devices/components/PremiumDeviceForm.vue",
+      "story": false
+    },
+    {
+      "name": "PremiumDeviceFormDialog",
+      "path": "frontend/app/src/modules/premium/devices/components/PremiumDeviceFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "PremiumDeviceList",
+      "path": "frontend/app/src/modules/premium/devices/components/PremiumDeviceList.vue",
+      "story": false
+    },
+    {
+      "name": "PrioritizedList",
+      "path": "frontend/app/src/modules/shell/components/PrioritizedList.vue",
+      "story": false
+    },
+    {
+      "name": "PrioritizedListEntry",
+      "path": "frontend/app/src/modules/shell/components/PrioritizedListEntry.vue",
+      "story": false
+    },
+    {
+      "name": "ProtocolCacheProgressList",
+      "path": "frontend/app/src/modules/shell/sync-progress/components/ProtocolCacheProgressList.vue",
+      "story": false
+    },
+    {
+      "name": "ps-list",
+      "path": "frontend/app/electron/main/ps-list.ts",
+      "story": false
+    },
+    {
+      "name": "QueriedAddressDialog",
+      "path": "frontend/app/src/modules/accounts/QueriedAddressDialog.vue",
+      "story": false
+    },
+    {
+      "name": "RedecodeConfirmationDialog",
+      "path": "frontend/app/src/modules/history/events/components/RedecodeConfirmationDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ReportActionableCard",
+      "path": "frontend/app/src/modules/reports/ReportActionableCard.vue",
+      "story": false
+    },
+    {
+      "name": "ReportIssueDialog",
+      "path": "frontend/app/src/modules/shell/components/ReportIssueDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ReportsTable",
+      "path": "frontend/app/src/modules/reports/ReportsTable.vue",
+      "story": false
+    },
+    {
+      "name": "ReportsTableMoreAction",
+      "path": "frontend/app/src/modules/reports/ReportsTableMoreAction.vue",
+      "story": false
+    },
+    {
+      "name": "RepullingBlockchainForm",
+      "path": "frontend/app/src/modules/history/events/tx/RepullingBlockchainForm.vue",
+      "story": false
+    },
+    {
+      "name": "RepullingEthStakingForm",
+      "path": "frontend/app/src/modules/history/events/tx/RepullingEthStakingForm.vue",
+      "story": false
+    },
+    {
+      "name": "RepullingExchangeForm",
+      "path": "frontend/app/src/modules/history/events/tx/RepullingExchangeForm.vue",
+      "story": false
+    },
+    {
+      "name": "RepullingTransactionForm",
+      "path": "frontend/app/src/modules/history/events/tx/RepullingTransactionForm.vue",
+      "story": false
+    },
+    {
+      "name": "RepullingTransactionFormDialog",
+      "path": "frontend/app/src/modules/history/events/tx/RepullingTransactionFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "SettingsStatusMessage",
+      "path": "frontend/app/src/modules/settings/controls/SettingsStatusMessage.vue",
+      "story": false
+    },
+    {
+      "name": "SettingsSuggestionsDialog",
+      "path": "frontend/app/src/modules/settings/suggestions/SettingsSuggestionsDialog.vue",
+      "story": false
+    },
+    {
+      "name": "setup-formatter",
+      "path": "frontend/app/src/modules/assets/amount-display/setup-formatter.ts",
+      "story": false
+    },
+    {
+      "name": "sidebar-resize-constants",
+      "path": "frontend/app/src/modules/shell/layout/sidebar-resize-constants.ts",
+      "story": false
+    },
+    {
+      "name": "SimpleFeeList",
+      "path": "frontend/app/src/modules/history/management/forms/common/SimpleFeeList.vue",
+      "story": false
+    },
+    {
+      "name": "SimpleRpcNodeManagerForm",
+      "path": "frontend/app/src/modules/settings/general/rpc/simple/SimpleRpcNodeManagerForm.vue",
+      "story": false
+    },
+    {
+      "name": "SimpleTable",
+      "path": "frontend/app/src/modules/shell/components/SimpleTable.vue",
+      "story": false
+    },
+    {
+      "name": "SnapshotImportDialog",
+      "path": "frontend/app/src/modules/dashboard/SnapshotImportDialog.vue",
+      "story": false
+    },
+    {
+      "name": "solana-swap-event-form",
+      "path": "frontend/app/src/modules/history/management/forms/solana-swap-event-form.ts",
+      "story": false
+    },
+    {
+      "name": "SolanaEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/SolanaEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "SolanaSwapEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/SolanaSwapEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "SummaryCard",
+      "path": "frontend/app/src/modules/dashboard/summary/SummaryCard.vue",
+      "story": false
+    },
+    {
+      "name": "SummaryCardCreateButton",
+      "path": "frontend/app/src/modules/dashboard/summary/SummaryCardCreateButton.vue",
+      "story": false
+    },
+    {
+      "name": "SummaryCardRefreshMenu",
+      "path": "frontend/app/src/modules/dashboard/summary/SummaryCardRefreshMenu.vue",
+      "story": false
+    },
+    {
+      "name": "SwapEventForm",
+      "path": "frontend/app/src/modules/history/management/forms/SwapEventForm.vue",
+      "story": false
+    },
+    {
+      "name": "SwapSubEventList",
+      "path": "frontend/app/src/modules/history/management/forms/swap/SwapSubEventList.vue",
+      "story": false
+    },
+    {
+      "name": "SyncProgressPanel",
+      "path": "frontend/app/src/modules/shell/sync-progress/components/SyncProgressPanel.vue",
+      "story": false
+    },
+    {
+      "name": "table-column",
+      "path": "frontend/app/src/modules/core/table/table-column.ts",
+      "story": false
+    },
+    {
+      "name": "TableFilter",
+      "path": "frontend/app/src/modules/core/table/TableFilter.vue",
+      "story": false
+    },
+    {
+      "name": "TablePageLayout",
+      "path": "frontend/app/src/modules/shell/layout/TablePageLayout.vue",
+      "story": false
+    },
+    {
+      "name": "TableStatusFilter",
+      "path": "frontend/app/src/modules/core/table/TableStatusFilter.vue",
+      "story": false
+    },
+    {
+      "name": "TagForm",
+      "path": "frontend/app/src/modules/tags/TagForm.vue",
+      "story": false
+    },
+    {
+      "name": "TagFormDialog",
+      "path": "frontend/app/src/modules/tags/TagFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "TradeSendCard",
+      "path": "frontend/app/src/modules/wallet/send/TradeSendCard.vue",
+      "story": false
+    },
+    {
+      "name": "TransactionForm",
+      "path": "frontend/app/src/modules/history/events/tx/TransactionForm.vue",
+      "story": false
+    },
+    {
+      "name": "TransactionFormDialog",
+      "path": "frontend/app/src/modules/history/events/tx/TransactionFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "UnmatchedMovementsList",
+      "path": "frontend/app/src/modules/history/events/UnmatchedMovementsList.vue",
+      "story": false
+    },
+    {
+      "name": "use-account-table-data",
+      "path": "frontend/app/src/modules/accounts/table/use-account-table-data.ts",
+      "story": false
+    },
+    {
+      "name": "use-address-book-form",
+      "path": "frontend/app/src/modules/accounts/address-book/use-address-book-form.ts",
+      "story": false
+    },
+    {
+      "name": "use-amount-formatter",
+      "path": "frontend/app/src/modules/assets/amount-display/use-amount-formatter.ts",
+      "story": false
+    },
+    {
+      "name": "use-backend-messages",
+      "path": "frontend/app/src/modules/shell/app/use-backend-messages.ts",
+      "story": false
+    },
+    {
+      "name": "use-balance-refresh-scheduler",
+      "path": "frontend/app/src/modules/shell/app/schedulers/use-balance-refresh-scheduler.ts",
+      "story": false
+    },
+    {
+      "name": "use-bridge-message-handlers",
+      "path": "frontend/app/src/modules/wallet/bridge/use-bridge-message-handlers.ts",
+      "story": false
+    },
+    {
+      "name": "use-calendar-data",
+      "path": "frontend/app/src/modules/calendar/use-calendar-data.ts",
+      "story": false
+    },
+    {
+      "name": "use-calendar-date-management",
+      "path": "frontend/app/src/modules/calendar/use-calendar-date-management.ts",
+      "story": false
+    },
+    {
+      "name": "use-calendar-operations",
+      "path": "frontend/app/src/modules/calendar/use-calendar-operations.ts",
+      "story": false
+    },
+    {
+      "name": "use-clearable-messages",
+      "path": "frontend/app/src/modules/settings/use-clearable-messages.ts",
+      "story": false
+    },
+    {
+      "name": "use-common-table-props",
+      "path": "frontend/app/src/modules/core/table/use-common-table-props.ts",
+      "story": false
+    },
+    {
+      "name": "use-dashboard-asset-data",
+      "path": "frontend/app/src/modules/dashboard/use-dashboard-asset-data.ts",
+      "story": false
+    },
+    {
+      "name": "use-dashboard-asset-operations",
+      "path": "frontend/app/src/modules/dashboard/use-dashboard-asset-operations.ts",
+      "story": false
+    },
+    {
+      "name": "use-dynamic-messages",
+      "path": "frontend/app/src/modules/core/messaging/use-dynamic-messages.ts",
+      "story": false
+    },
+    {
+      "name": "use-eth-staking-performance",
+      "path": "frontend/app/src/modules/staking/eth/use-eth-staking-performance.ts",
+      "story": false
+    },
+    {
+      "name": "use-event-form-base",
+      "path": "frontend/app/src/modules/history/management/forms/use-event-form-base.ts",
+      "story": false
+    },
+    {
+      "name": "use-event-form-validation",
+      "path": "frontend/app/src/modules/history/management/forms/use-event-form-validation.ts",
+      "story": false
+    },
+    {
+      "name": "use-evm-status-scheduler",
+      "path": "frontend/app/src/modules/shell/app/schedulers/use-evm-status-scheduler.ts",
+      "story": false
+    },
+    {
+      "name": "use-form",
+      "path": "frontend/app/src/modules/core/common/use-form.ts",
+      "story": false
+    },
+    {
+      "name": "use-form-error-scroll",
+      "path": "frontend/app/src/modules/core/common/use-form-error-scroll.ts",
+      "story": false
+    },
+    {
+      "name": "use-history-events-dialog-handlers",
+      "path": "frontend/app/src/modules/history/events/use-history-events-dialog-handlers.ts",
+      "story": false
+    },
+    {
+      "name": "use-history-events-dialog-manager",
+      "path": "frontend/app/src/modules/history/events/dialog-manager/use-history-events-dialog-manager.ts",
+      "story": false
+    },
+    {
+      "name": "use-history-events-form",
+      "path": "frontend/app/src/modules/history/events/use-history-events-form.ts",
+      "story": false
+    },
+    {
+      "name": "use-history-events-forms",
+      "path": "frontend/app/src/modules/history/events/use-history-events-forms.ts",
+      "story": false
+    },
+    {
+      "name": "use-interval-scheduler",
+      "path": "frontend/app/src/modules/shell/app/schedulers/use-interval-scheduler.ts",
+      "story": false
+    },
+    {
+      "name": "use-managed-asset-form-validation",
+      "path": "frontend/app/src/modules/assets/admin/managed/use-managed-asset-form-validation.ts",
+      "story": false
+    },
+    {
+      "name": "use-managed-asset-table",
+      "path": "frontend/app/src/modules/assets/admin/use-managed-asset-table.ts",
+      "story": false
+    },
+    {
+      "name": "use-manual-balance-table-actions",
+      "path": "frontend/app/src/modules/accounts/manual-balances/use-manual-balance-table-actions.ts",
+      "story": false
+    },
+    {
+      "name": "use-password-check-scheduler",
+      "path": "frontend/app/src/modules/shell/app/schedulers/use-password-check-scheduler.ts",
+      "story": false
+    },
+    {
+      "name": "use-periodic-polling-scheduler",
+      "path": "frontend/app/src/modules/shell/app/schedulers/use-periodic-polling-scheduler.ts",
+      "story": false
+    },
+    {
+      "name": "use-remember-table-filter",
+      "path": "frontend/app/src/modules/core/table/use-remember-table-filter.ts",
+      "story": false
+    },
+    {
+      "name": "use-remember-table-sorting",
+      "path": "frontend/app/src/modules/core/table/use-remember-table-sorting.ts",
+      "story": false
+    },
+    {
+      "name": "use-repulling-transaction-form",
+      "path": "frontend/app/src/modules/history/events/tx/use-repulling-transaction-form.ts",
+      "story": false
+    },
+    {
+      "name": "use-rule-editor-form",
+      "path": "frontend/app/src/modules/settings/general/disabled-chain-queries/use-rule-editor-form.ts",
+      "story": false
+    },
+    {
+      "name": "use-saved-profiles",
+      "path": "frontend/app/src/modules/auth/use-saved-profiles.ts",
+      "story": false
+    },
+    {
+      "name": "use-scheduler-state",
+      "path": "frontend/app/src/modules/session/use-scheduler-state.ts",
+      "story": false
+    },
+    {
+      "name": "use-sidebar-resize",
+      "path": "frontend/app/src/modules/shell/layout/use-sidebar-resize.ts",
+      "story": false
+    },
+    {
+      "name": "use-swap-event-form",
+      "path": "frontend/app/src/modules/history/management/forms/use-swap-event-form.ts",
+      "story": false
+    },
+    {
+      "name": "use-task-polling-scheduler",
+      "path": "frontend/app/src/modules/shell/app/schedulers/use-task-polling-scheduler.ts",
+      "story": false
+    },
+    {
+      "name": "use-update-message",
+      "path": "frontend/app/src/modules/core/messaging/use-update-message.ts",
+      "story": false
+    },
+    {
+      "name": "use-whitelisted-asset-operations",
+      "path": "frontend/app/src/modules/assets/use-whitelisted-asset-operations.ts",
+      "story": false
+    },
+    {
+      "name": "use-wrapped-formatters",
+      "path": "frontend/app/src/modules/statistics/wrapped/use-wrapped-formatters.ts",
+      "story": false
+    },
+    {
+      "name": "UserNotesForm",
+      "path": "frontend/app/src/modules/notes/UserNotesForm.vue",
+      "story": false
+    },
+    {
+      "name": "UserNotesFormDialog",
+      "path": "frontend/app/src/modules/notes/UserNotesFormDialog.vue",
+      "story": false
+    },
+    {
+      "name": "UserNotesList",
+      "path": "frontend/app/src/modules/notes/UserNotesList.vue",
+      "story": false
+    },
+    {
+      "name": "UserNotesSidebar",
+      "path": "frontend/app/src/modules/notes/UserNotesSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "wallet-bridge-message-handler",
+      "path": "frontend/app/electron/main/wallet-bridge-message-handler.ts",
+      "story": false
+    },
+    {
+      "name": "WelcomeMessageDisplay",
+      "path": "frontend/app/src/modules/auth/login/WelcomeMessageDisplay.vue",
+      "story": false
+    },
+    {
+      "name": "WrappedCard",
+      "path": "frontend/app/src/modules/statistics/wrapped/components/WrappedCard.vue",
+      "story": false
+    },
+    {
+      "name": "WrappedExchangeCard",
+      "path": "frontend/app/src/modules/statistics/wrapped/components/cards/WrappedExchangeCard.vue",
+      "story": false
+    },
+    {
+      "name": "WrappedGasCard",
+      "path": "frontend/app/src/modules/statistics/wrapped/components/cards/WrappedGasCard.vue",
+      "story": false
+    },
+    {
+      "name": "WrappedGnosisPayCard",
+      "path": "frontend/app/src/modules/statistics/wrapped/components/cards/WrappedGnosisPayCard.vue",
+      "story": false
+    },
+    {
+      "name": "WrappedProtocolCard",
+      "path": "frontend/app/src/modules/statistics/wrapped/components/cards/WrappedProtocolCard.vue",
+      "story": false
+    },
+    {
+      "name": "WrappedSkeletonCards",
+      "path": "frontend/app/src/modules/statistics/wrapped/components/WrappedSkeletonCards.vue",
+      "story": false
+    },
+    {
+      "name": "WrappedTransactionsCard",
+      "path": "frontend/app/src/modules/statistics/wrapped/components/cards/WrappedTransactionsCard.vue",
+      "story": false
+    }
+  ]
+}

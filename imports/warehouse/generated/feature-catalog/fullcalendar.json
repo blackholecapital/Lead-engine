@@ -1,0 +1,94 @@
+{
+  "id": "fullcalendar",
+  "features": {
+    "conversation": [],
+    "contacts": [
+      {
+        "name": "DateProfileGenerator",
+        "path": "packages/preact/src/DateProfileGenerator.ts",
+        "story": false
+      },
+      {
+        "name": "TableDateProfileGenerator",
+        "path": "packages/preact/src/daygrid/TableDateProfileGenerator.ts",
+        "story": false
+      }
+    ],
+    "calendar": [
+      {
+        "name": "Calendar",
+        "path": "packages/preact/src/Calendar.tsx",
+        "story": false
+      },
+      {
+        "name": "Calendar",
+        "path": "packages/vanilla-w-react/src/Calendar.tsx",
+        "story": false
+      },
+      {
+        "name": "Calendar",
+        "path": "packages/vanilla/src/Calendar.tsx",
+        "story": false
+      },
+      {
+        "name": "calendar-root",
+        "path": "packages/preact/src/calendar-root.tsx",
+        "story": false
+      },
+      {
+        "name": "calendar-system",
+        "path": "packages/headless-calendar/src/calendar-system.ts",
+        "story": false
+      },
+      {
+        "name": "CalendarContext",
+        "path": "packages/preact/src/CalendarContext.ts",
+        "story": false
+      },
+      {
+        "name": "CalendarInner",
+        "path": "packages/preact/src/CalendarInner.tsx",
+        "story": false
+      },
+      {
+        "name": "formatting-cmd",
+        "path": "packages/headless-calendar/src/formatting-cmd.ts",
+        "story": false
+      },
+      {
+        "name": "formatting-func",
+        "path": "packages/headless-calendar/src/formatting-func.ts",
+        "story": false
+      },
+      {
+        "name": "formatting-native",
+        "path": "packages/headless-calendar/src/formatting-native.ts",
+        "story": false
+      },
+      {
+        "name": "full-calendar.component",
+        "path": "packages/angular/lib/src/full-calendar.component.ts",
+        "story": false
+      },
+      {
+        "name": "full-calendar.module",
+        "path": "packages/angular/lib/src/full-calendar.module.ts",
+        "story": false
+      },
+      {
+        "name": "FullCalendar",
+        "path": "packages/vue3/src/FullCalendar.ts",
+        "story": false
+      },
+      {
+        "name": "FullCalendarElement",
+        "path": "packages/web-component/src/FullCalendarElement.ts",
+        "story": false
+      }
+    ],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

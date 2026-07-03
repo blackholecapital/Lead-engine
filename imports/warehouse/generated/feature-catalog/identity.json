@@ -1,0 +1,139 @@
+{
+  "id": "identity",
+  "features": {
+    "conversation": [
+      {
+        "name": "EventMessage",
+        "path": "msal-js/lib/msal-browser/src/event/EventMessage.ts",
+        "story": false
+      }
+    ],
+    "contacts": [
+      {
+        "name": "EditProfileButton",
+        "path": "msal-js/samples/msal-react-samples/b2c-sample/src/ui-components/EditProfileButton.jsx",
+        "story": false
+      },
+      {
+        "name": "Profile",
+        "path": "msal-js/samples/msal-react-samples/b2c-sample/src/pages/Profile.jsx",
+        "story": false
+      },
+      {
+        "name": "profile",
+        "path": "msal-js/samples/msal-react-samples/nextjs-sample/pages/profile.js",
+        "story": false
+      },
+      {
+        "name": "Profile",
+        "path": "msal-js/samples/msal-react-samples/react-router-sample/src/pages/Profile.jsx",
+        "story": false
+      },
+      {
+        "name": "Profile",
+        "path": "msal-js/samples/msal-react-samples/react16-sample/src/pages/Profile.jsx",
+        "story": false
+      },
+      {
+        "name": "Profile",
+        "path": "msal-js/samples/msal-react-samples/react17-sample/src/pages/Profile.jsx",
+        "story": false
+      },
+      {
+        "name": "Profile",
+        "path": "msal-js/samples/msal-react-samples/react18-sample/src/pages/Profile.jsx",
+        "story": false
+      },
+      {
+        "name": "profile.component",
+        "path": "msal-js/samples/msal-angular-samples/angular-b2c-sample/src/app/profile/profile.component.ts",
+        "story": false
+      },
+      {
+        "name": "profile.component",
+        "path": "msal-js/samples/msal-angular-samples/angular-modules-sample/src/app/profile/profile.component.ts",
+        "story": false
+      },
+      {
+        "name": "profile.component",
+        "path": "msal-js/samples/msal-angular-samples/angular-standalone-sample/src/app/profile/profile.component.ts",
+        "story": false
+      },
+      {
+        "name": "ProfileData",
+        "path": "msal-js/samples/msal-react-samples/b2c-sample/src/ui-components/ProfileData.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileData",
+        "path": "msal-js/samples/msal-react-samples/nextjs-sample/src/ui-components/ProfileData.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileData",
+        "path": "msal-js/samples/msal-react-samples/react-router-sample/src/ui-components/ProfileData.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileData",
+        "path": "msal-js/samples/msal-react-samples/react16-sample/src/ui-components/ProfileData.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileData",
+        "path": "msal-js/samples/msal-react-samples/react17-sample/src/ui-components/ProfileData.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileData",
+        "path": "msal-js/samples/msal-react-samples/react18-sample/src/ui-components/ProfileData.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileRawContext",
+        "path": "msal-js/samples/msal-react-samples/react-router-sample/src/pages/ProfileRawContext.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileRawContext",
+        "path": "msal-js/samples/msal-react-samples/react16-sample/src/pages/ProfileRawContext.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileRawContext",
+        "path": "msal-js/samples/msal-react-samples/react17-sample/src/pages/ProfileRawContext.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileRawContext",
+        "path": "msal-js/samples/msal-react-samples/react18-sample/src/pages/ProfileRawContext.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileWithMsal",
+        "path": "msal-js/samples/msal-react-samples/react-router-sample/src/pages/ProfileWithMsal.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileWithMsal",
+        "path": "msal-js/samples/msal-react-samples/react16-sample/src/pages/ProfileWithMsal.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileWithMsal",
+        "path": "msal-js/samples/msal-react-samples/react17-sample/src/pages/ProfileWithMsal.jsx",
+        "story": false
+      },
+      {
+        "name": "ProfileWithMsal",
+        "path": "msal-js/samples/msal-react-samples/react18-sample/src/pages/ProfileWithMsal.jsx",
+        "story": false
+      }
+    ],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

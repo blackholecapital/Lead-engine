@@ -1,0 +1,52 @@
+{
+  "id": "interactjs",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/calendar/interactjs",
+  "count": 9,
+  "components": [
+    {
+      "name": "Eventable",
+      "path": "packages/@interactjs/core/Eventable.ts",
+      "story": false
+    },
+    {
+      "name": "grid",
+      "path": "packages/@interactjs/snappers/grid.ts",
+      "story": false
+    },
+    {
+      "name": "Interactable",
+      "path": "packages/@interactjs/core/Interactable.ts",
+      "story": false
+    },
+    {
+      "name": "InteractableMethods",
+      "path": "packages/@interactjs/auto-start/InteractableMethods.ts",
+      "story": false
+    },
+    {
+      "name": "interactablePreventDefault",
+      "path": "packages/@interactjs/core/interactablePreventDefault.ts",
+      "story": false
+    },
+    {
+      "name": "InteractableSet",
+      "path": "packages/@interactjs/core/InteractableSet.ts",
+      "story": false
+    },
+    {
+      "name": "interactableTargets",
+      "path": "packages/@interactjs/pointer-events/interactableTargets.ts",
+      "story": false
+    },
+    {
+      "name": "transform",
+      "path": "packages/@interactjs/modifiers/transform/transform.ts",
+      "story": false
+    },
+    {
+      "name": "transform.stub",
+      "path": "packages/@interactjs/modifiers/transform/transform.stub.ts",
+      "story": false
+    }
+  ]
+}

@@ -1,0 +1,4307 @@
+{
+  "id": "chat",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/comms/chat",
+  "count": 860,
+  "components": [
+    {
+      "name": "360DialogWhatsapp",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/channels/360DialogWhatsapp.vue",
+      "story": false
+    },
+    {
+      "name": "activity-detail-card",
+      "path": "novu/apps/dashboard/src/components/activity/activity-detail-card.tsx",
+      "story": false
+    },
+    {
+      "name": "activity-panel",
+      "path": "novu/apps/dashboard/src/components/activity/activity-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "activity-table",
+      "path": "novu/apps/dashboard/src/components/activity/activity-table.tsx",
+      "story": false
+    },
+    {
+      "name": "activity-table-row",
+      "path": "novu/apps/dashboard/src/components/activity/components/activity-table-row.tsx",
+      "story": false
+    },
+    {
+      "name": "activityRequestsList",
+      "path": "novu/libs/internal-sdk/src/funcs/activityRequestsList.ts",
+      "story": false
+    },
+    {
+      "name": "activityRequestsList",
+      "path": "novu/libs/internal-sdk/src/react-query/activityRequestsList.ts",
+      "story": false
+    },
+    {
+      "name": "activityRequestsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/activityRequestsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "activityWorkflowRunsList",
+      "path": "novu/libs/internal-sdk/src/funcs/activityWorkflowRunsList.ts",
+      "story": false
+    },
+    {
+      "name": "activityWorkflowRunsList",
+      "path": "novu/libs/internal-sdk/src/react-query/activityWorkflowRunsList.ts",
+      "story": false
+    },
+    {
+      "name": "activityWorkflowRunsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/activityWorkflowRunsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "add-domain-dialog",
+      "path": "novu/apps/dashboard/src/components/domains/add-domain-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "add-subscriber-form",
+      "path": "novu/apps/dashboard/src/components/topics/add-subscriber-form.tsx",
+      "story": false
+    },
+    {
+      "name": "AddAccountModal",
+      "path": "chatwoot/app/javascript/dashboard/components/app/AddAccountModal.vue",
+      "story": false
+    },
+    {
+      "name": "AddCustomDomainDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/PortalSettingsPage/AddCustomDomainDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AddLocaleDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/LocalePage/AddLocaleDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AddNewRulesDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/AddNewRulesDialog.vue",
+      "story": false
+    },
+    {
+      "name": "AddNewRulesDialog.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/AddNewRulesDialog.story.vue",
+      "story": true
+    },
+    {
+      "name": "AddNewScenariosDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/AddNewScenariosDialog.vue",
+      "story": false
+    },
+    {
+      "name": "agent-form-validation",
+      "path": "novu/apps/dashboard/src/components/agents/create-agent-fields/agent-form-validation.ts",
+      "story": false
+    },
+    {
+      "name": "agent-listen-step",
+      "path": "novu/apps/dashboard/src/components/agents/agent-listen-step.tsx",
+      "story": false
+    },
+    {
+      "name": "agent-setup-modal",
+      "path": "novu/apps/dashboard/src/components/agents/agent-setup-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "agent-sidebar-widget",
+      "path": "novu/apps/dashboard/src/components/agents/agent-sidebar-widget.tsx",
+      "story": false
+    },
+    {
+      "name": "AgentAssignmentPolicyForm",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/AgentAssignmentPolicyForm.vue",
+      "story": false
+    },
+    {
+      "name": "AgentBotModal",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/agentBots/components/AgentBotModal.vue",
+      "story": false
+    },
+    {
+      "name": "AgentCapacityPolicyCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/AgentCapacityPolicyCard/AgentCapacityPolicyCard.vue",
+      "story": false
+    },
+    {
+      "name": "AgentCapacityPolicyCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/AgentCapacityPolicyCard/AgentCapacityPolicyCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "AgentCapacityPolicyForm",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/AgentCapacityPolicyForm.vue",
+      "story": false
+    },
+    {
+      "name": "AgentMessage",
+      "path": "chatwoot/app/javascript/widget/components/AgentMessage.vue",
+      "story": false
+    },
+    {
+      "name": "AgentMessageBubble",
+      "path": "chatwoot/app/javascript/widget/components/AgentMessageBubble.vue",
+      "story": false
+    },
+    {
+      "name": "agents-list",
+      "path": "novu/apps/dashboard/src/components/agents/agents-list.tsx",
+      "story": false
+    },
+    {
+      "name": "agents-table",
+      "path": "novu/apps/dashboard/src/components/agents/agents-table.tsx",
+      "story": false
+    },
+    {
+      "name": "AgentTable",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/overview/AgentTable.vue",
+      "story": false
+    },
+    {
+      "name": "ai-chat-context",
+      "path": "novu/apps/dashboard/src/components/ai-sidekick/ai-chat-context.tsx",
+      "story": false
+    },
+    {
+      "name": "ai-chat.entity",
+      "path": "novu/libs/dal/src/repositories/ai-chat/ai-chat.entity.ts",
+      "story": false
+    },
+    {
+      "name": "analytics-card",
+      "path": "novu/apps/dashboard/src/components/primitives/analytics-card.tsx",
+      "story": false
+    },
+    {
+      "name": "ArticleCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/ArticleCard/ArticleCard.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/ArticleCard/ArticleCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ArticleEditor",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/ArticleEditorPage/ArticleEditor.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleEditorControls",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/ArticleEditorPage/ArticleEditorControls.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleEditorHeader",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/ArticleEditorPage/ArticleEditorHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleEditorProperties",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/ArticleEditorPage/ArticleEditorProperties.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleList",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/ArticlePage/ArticleList.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleListItem",
+      "path": "chatwoot/app/javascript/widget/components/pageComponents/Home/Article/ArticleListItem.vue",
+      "story": false
+    },
+    {
+      "name": "ArticleViewer",
+      "path": "chatwoot/app/javascript/widget/views/ArticleViewer.vue",
+      "story": false
+    },
+    {
+      "name": "AssignmentCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/AssignmentCard/AssignmentCard.vue",
+      "story": false
+    },
+    {
+      "name": "AssignmentCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/AssignmentCard/AssignmentCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "AssignmentPolicyCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/AssignmentPolicyCard/AssignmentPolicyCard.vue",
+      "story": false
+    },
+    {
+      "name": "AssignmentPolicyCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/AssignmentPolicyCard/AssignmentPolicyCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "assistant-message",
+      "path": "novu/apps/dashboard/src/components/ai-sidekick/assistant-message.tsx",
+      "story": false
+    },
+    {
+      "name": "AssistantBasicSettingsForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/assistant/settings/AssistantBasicSettingsForm.vue",
+      "story": false
+    },
+    {
+      "name": "AssistantCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/AssistantCard.vue",
+      "story": false
+    },
+    {
+      "name": "AssistantCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/AssistantCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "AssistantForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/assistant/AssistantForm.vue",
+      "story": false
+    },
+    {
+      "name": "AssistantSystemSettingsForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/assistant/settings/AssistantSystemSettingsForm.vue",
+      "story": false
+    },
+    {
+      "name": "AttributeListItem",
+      "path": "chatwoot/app/javascript/dashboard/components-next/ConversationWorkflow/AttributeListItem.vue",
+      "story": false
+    },
+    {
+      "name": "AudioMessageHelper",
+      "path": "chatwoot/app/javascript/dashboard/helper/AudioAlerts/AudioMessageHelper.js",
+      "story": false
+    },
+    {
+      "name": "auth-card",
+      "path": "novu/apps/dashboard/src/components/auth/auth-card.tsx",
+      "story": false
+    },
+    {
+      "name": "AutomationActionTeamMessageInput",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/AutomationActionTeamMessageInput.vue",
+      "story": false
+    },
+    {
+      "name": "AutomationRuleForm",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/automation/AutomationRuleForm.vue",
+      "story": false
+    },
+    {
+      "name": "BasePaywallModal",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/components/BasePaywallModal.vue",
+      "story": false
+    },
+    {
+      "name": "BaseSettingsListItem",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/components/BaseSettingsListItem.vue",
+      "story": false
+    },
+    {
+      "name": "BaseTable",
+      "path": "chatwoot/app/javascript/dashboard/components-next/table/BaseTable.vue",
+      "story": false
+    },
+    {
+      "name": "BaseTable.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/table/BaseTable.story.vue",
+      "story": true
+    },
+    {
+      "name": "BaseTableCell",
+      "path": "chatwoot/app/javascript/dashboard/components-next/table/BaseTableCell.vue",
+      "story": false
+    },
+    {
+      "name": "BaseTableRow",
+      "path": "chatwoot/app/javascript/dashboard/components-next/table/BaseTableRow.vue",
+      "story": false
+    },
+    {
+      "name": "BillingCard",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/billing/components/BillingCard.vue",
+      "story": false
+    },
+    {
+      "name": "BotMessage",
+      "path": "chatwoot/app/javascript/superadmin_pages/components/playground/BotMessage.vue",
+      "story": false
+    },
+    {
+      "name": "BulkDeleteDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/BulkDeleteDialog.vue",
+      "story": false
+    },
+    {
+      "name": "BulkTranslateDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/ArticlePage/BulkTranslateDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarAction",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/DatePicker/components/CalendarAction.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarDateInput",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/DatePicker/components/CalendarDateInput.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarDateRange",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/DatePicker/components/CalendarDateRange.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarFooter",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/DatePicker/components/CalendarFooter.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarMonth",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/DatePicker/components/CalendarMonth.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarSchedule",
+      "path": "novu/packages/js/src/ui/icons/CalendarSchedule.tsx",
+      "story": false
+    },
+    {
+      "name": "CalendarWeek",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/DatePicker/components/CalendarWeek.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarWeekLabel",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/DatePicker/components/CalendarWeekLabel.vue",
+      "story": false
+    },
+    {
+      "name": "CalendarYear",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/DatePicker/components/CalendarYear.vue",
+      "story": false
+    },
+    {
+      "name": "CallCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/call/CallCard.vue",
+      "story": false
+    },
+    {
+      "name": "CallCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/call/CallCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "CampaignCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/CampaignCard/CampaignCard.vue",
+      "story": false
+    },
+    {
+      "name": "CampaignList",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/CampaignList.vue",
+      "story": false
+    },
+    {
+      "name": "card",
+      "path": "novu/apps/dashboard/src/components/primitives/card.tsx",
+      "story": false
+    },
+    {
+      "name": "card",
+      "path": "novu/playground/nextjs/src/components/ui/card.tsx",
+      "story": false
+    },
+    {
+      "name": "card-layout",
+      "path": "novu/packages/novu/src/commands/wizard/ui/primitives/card-layout.tsx",
+      "story": false
+    },
+    {
+      "name": "card-renderer",
+      "path": "novu/packages/chat-adapter-email/src/card-renderer.tsx",
+      "story": false
+    },
+    {
+      "name": "CardAvatar",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/CardAvatar.vue",
+      "story": false
+    },
+    {
+      "name": "CardButton",
+      "path": "chatwoot/app/javascript/shared/components/CardButton.vue",
+      "story": false
+    },
+    {
+      "name": "CardContent",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/CardContent.vue",
+      "story": false
+    },
+    {
+      "name": "CardLabels",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/CardLabels.vue",
+      "story": false
+    },
+    {
+      "name": "CardLabels",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/conversationCardComponents/CardLabels.vue",
+      "story": false
+    },
+    {
+      "name": "CardLabelsV5",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/CardLabelsV5.vue",
+      "story": false
+    },
+    {
+      "name": "CardLayout",
+      "path": "chatwoot/app/javascript/dashboard/components-next/CardLayout.vue",
+      "story": false
+    },
+    {
+      "name": "CardMessagePreview",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/CardMessagePreview.vue",
+      "story": false
+    },
+    {
+      "name": "CardMessagePreviewWithMeta",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/CardMessagePreviewWithMeta.vue",
+      "story": false
+    },
+    {
+      "name": "CardPopover",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/components/CardPopover.vue",
+      "story": false
+    },
+    {
+      "name": "CardPopover.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/components/story/CardPopover.story.vue",
+      "story": true
+    },
+    {
+      "name": "CardPriorityIcon",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/CardPriorityIcon.vue",
+      "story": false
+    },
+    {
+      "name": "cards",
+      "path": "novu/apps/dashboard/src/components/maily/blocks/cards.tsx",
+      "story": false
+    },
+    {
+      "name": "cards",
+      "path": "novu/packages/framework/src/cards.ts",
+      "story": false
+    },
+    {
+      "name": "cards-blocks",
+      "path": "novu/apps/dashboard/src/components/icons/cards-blocks.tsx",
+      "story": false
+    },
+    {
+      "name": "CardStatusIcon",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/CardStatusIcon.vue",
+      "story": false
+    },
+    {
+      "name": "CardTemplate",
+      "path": "chatwoot/app/javascript/dashboard/components-next/template-preview/CardTemplate.vue",
+      "story": false
+    },
+    {
+      "name": "CategoryCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/CategoryCard/CategoryCard.vue",
+      "story": false
+    },
+    {
+      "name": "CategoryCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/CategoryCard/CategoryCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "CategoryDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/CategoryPage/CategoryDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CategoryForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/CategoryPage/CategoryForm.vue",
+      "story": false
+    },
+    {
+      "name": "CategoryList",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/CategoryPage/CategoryList.vue",
+      "story": false
+    },
+    {
+      "name": "changelog-cards",
+      "path": "novu/apps/dashboard/src/components/side-navigation/changelog-cards.tsx",
+      "story": false
+    },
+    {
+      "name": "channel-preferences-form",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/channel-preferences-form.tsx",
+      "story": false
+    },
+    {
+      "name": "channelConnectionsList",
+      "path": "novu/libs/internal-sdk/src/funcs/channelConnectionsList.ts",
+      "story": false
+    },
+    {
+      "name": "channelConnectionsList",
+      "path": "novu/libs/internal-sdk/src/react-query/channelConnectionsList.ts",
+      "story": false
+    },
+    {
+      "name": "channelConnectionsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/channelConnectionsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "channelEndpointsList",
+      "path": "novu/libs/internal-sdk/src/funcs/channelEndpointsList.ts",
+      "story": false
+    },
+    {
+      "name": "channelEndpointsList",
+      "path": "novu/libs/internal-sdk/src/react-query/channelEndpointsList.ts",
+      "story": false
+    },
+    {
+      "name": "channelEndpointsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/channelEndpointsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "ChannelList",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/ChannelList.vue",
+      "story": false
+    },
+    {
+      "name": "Chat",
+      "path": "novu/packages/js/src/ui/icons/Chat.tsx",
+      "story": false
+    },
+    {
+      "name": "chat-body",
+      "path": "novu/apps/dashboard/src/components/ai-sidekick/chat-body.tsx",
+      "story": false
+    },
+    {
+      "name": "chat-chain-of-thought",
+      "path": "novu/apps/dashboard/src/components/ai-sidekick/chat-chain-of-thought.tsx",
+      "story": false
+    },
+    {
+      "name": "chat-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/chat/chat-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "chat-message-actions",
+      "path": "novu/apps/dashboard/src/components/ai-sidekick/chat-message-actions.tsx",
+      "story": false
+    },
+    {
+      "name": "chat-message-response",
+      "path": "novu/apps/dashboard/src/components/ai-sidekick/chat-message-response.tsx",
+      "story": false
+    },
+    {
+      "name": "chat-overlay",
+      "path": "novu/packages/novu/src/commands/wizard/ui/overlays/chat-overlay.tsx",
+      "story": false
+    },
+    {
+      "name": "chat-preview",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/chat/chat-preview.tsx",
+      "story": false
+    },
+    {
+      "name": "chat-sdk-phase-content",
+      "path": "novu/packages/novu/src/commands/connect/ui/chat-sdk-phase-content.tsx",
+      "story": false
+    },
+    {
+      "name": "chat.factory",
+      "path": "novu/libs/application-generic/src/factories/chat/chat.factory.ts",
+      "story": false
+    },
+    {
+      "name": "chat.handler",
+      "path": "novu/packages/stateless/src/lib/handler/chat.handler.ts",
+      "story": false
+    },
+    {
+      "name": "ChatAttachment",
+      "path": "chatwoot/app/javascript/widget/components/ChatAttachment.vue",
+      "story": false
+    },
+    {
+      "name": "ChatCard",
+      "path": "chatwoot/app/javascript/shared/components/ChatCard.vue",
+      "story": false
+    },
+    {
+      "name": "ChatFooter",
+      "path": "chatwoot/app/javascript/widget/components/ChatFooter.vue",
+      "story": false
+    },
+    {
+      "name": "ChatForm",
+      "path": "chatwoot/app/javascript/shared/components/ChatForm.vue",
+      "story": false
+    },
+    {
+      "name": "ChatHeader",
+      "path": "chatwoot/app/javascript/widget/components/ChatHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ChatHeaderExpanded",
+      "path": "chatwoot/app/javascript/widget/components/ChatHeaderExpanded.vue",
+      "story": false
+    },
+    {
+      "name": "ChatInputWrap",
+      "path": "chatwoot/app/javascript/widget/components/ChatInputWrap.vue",
+      "story": false
+    },
+    {
+      "name": "ChatList",
+      "path": "chatwoot/app/javascript/dashboard/components/ChatList.vue",
+      "story": false
+    },
+    {
+      "name": "ChatListHeader",
+      "path": "chatwoot/app/javascript/dashboard/components/ChatListHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ChatMessage",
+      "path": "chatwoot/app/javascript/widget/components/ChatMessage.vue",
+      "story": false
+    },
+    {
+      "name": "ChatOption",
+      "path": "chatwoot/app/javascript/shared/components/ChatOption.vue",
+      "story": false
+    },
+    {
+      "name": "ChatOptions",
+      "path": "chatwoot/app/javascript/shared/components/ChatOptions.vue",
+      "story": false
+    },
+    {
+      "name": "chatrenderoutput",
+      "path": "novu/libs/internal-sdk/src/models/components/chatrenderoutput.ts",
+      "story": false
+    },
+    {
+      "name": "ChatSendButton",
+      "path": "chatwoot/app/javascript/widget/components/ChatSendButton.vue",
+      "story": false
+    },
+    {
+      "name": "ChatTypeTabs",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/ChatTypeTabs.vue",
+      "story": false
+    },
+    {
+      "name": "CmdBarConversationSnooze",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/commands/CmdBarConversationSnooze.vue",
+      "story": false
+    },
+    {
+      "name": "CompaniesCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Companies/CompaniesCard/CompaniesCard.vue",
+      "story": false
+    },
+    {
+      "name": "CompaniesListLayout",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Companies/CompaniesListLayout.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyContactsSidebar",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Companies/CompanyDetail/CompanyContactsSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyCreateDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Companies/CompanyCreateDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyHistorySidebar",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Companies/CompanyDetail/CompanyHistorySidebar.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyNotesSidebar",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Companies/CompanyDetail/CompanyNotesSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "CompanyProfileCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Companies/CompanyDetail/CompanyProfileCard.vue",
+      "story": false
+    },
+    {
+      "name": "ComposeConversation",
+      "path": "chatwoot/app/javascript/dashboard/components-next/NewConversation/ComposeConversation.vue",
+      "story": false
+    },
+    {
+      "name": "composeConversationHelper",
+      "path": "chatwoot/app/javascript/dashboard/components-next/NewConversation/helpers/composeConversationHelper.js",
+      "story": false
+    },
+    {
+      "name": "ComposeNewConversationForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/NewConversation/components/ComposeNewConversationForm.vue",
+      "story": false
+    },
+    {
+      "name": "ComposeNewConversationForm.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/NewConversation/components/story/ComposeNewConversationForm.story.vue",
+      "story": true
+    },
+    {
+      "name": "conditions-editor",
+      "path": "novu/apps/dashboard/src/components/conditions-editor/conditions-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "conditions-editor-context",
+      "path": "novu/apps/dashboard/src/components/conditions-editor/conditions-editor-context.tsx",
+      "story": false
+    },
+    {
+      "name": "confirmation-modal",
+      "path": "novu/apps/dashboard/src/components/confirmation-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "ConfirmationModal",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/modal/ConfirmationModal.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmCompanyDeleteDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Companies/CompanyDetail/ConfirmCompanyDeleteDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmContactDeleteDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/ConfirmContactDeleteDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmDeleteCampaignDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/ConfirmDeleteCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmDeleteModal",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/modal/ConfirmDeleteModal.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmDeletePolicyDialog",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/ConfirmDeletePolicyDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmDeletePortalDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/PortalSettingsPage/ConfirmDeletePortalDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmInboxDialog",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/ConfirmInboxDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConfirmTemplateUpdateDialog",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/settingsPage/components/ConfirmTemplateUpdateDialog.vue",
+      "story": false
+    },
+    {
+      "name": "connect-agent-demo-form",
+      "path": "novu/apps/dashboard/src/components/onboarding/connect-agent/connect-agent-demo-form.tsx",
+      "story": false
+    },
+    {
+      "name": "connect-agent-form",
+      "path": "novu/apps/dashboard/src/components/onboarding/connect-agent/connect-agent-form.tsx",
+      "story": false
+    },
+    {
+      "name": "ConnectChat",
+      "path": "novu/packages/js/src/ui/components/connect-chat/ConnectChat.tsx",
+      "story": false
+    },
+    {
+      "name": "ConnectChat",
+      "path": "novu/packages/react/src/components/connect-chat/ConnectChat.tsx",
+      "story": false
+    },
+    {
+      "name": "ConnectInboxDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/inbox/ConnectInboxDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ConnectInboxForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/inbox/ConnectInboxForm.vue",
+      "story": false
+    },
+    {
+      "name": "console-chat-sdk-prompts",
+      "path": "novu/packages/novu/src/commands/connect/ui/console-chat-sdk-prompts.ts",
+      "story": false
+    },
+    {
+      "name": "Contact",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/bubbles/Contact.vue",
+      "story": false
+    },
+    {
+      "name": "contact-sales-button",
+      "path": "novu/apps/dashboard/src/components/billing/contact-sales-button.tsx",
+      "story": false
+    },
+    {
+      "name": "ContactConversations",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/ContactConversations.vue",
+      "story": false
+    },
+    {
+      "name": "ContactCustomAttributeItem",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactCustomAttributeItem.vue",
+      "story": false
+    },
+    {
+      "name": "ContactCustomAttributes",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactCustomAttributes.vue",
+      "story": false
+    },
+    {
+      "name": "ContactDeleteModal",
+      "path": "chatwoot/app/javascript/dashboard/modules/contact/ContactDeleteModal.vue",
+      "story": false
+    },
+    {
+      "name": "ContactDeleteSection",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsCard/ContactDeleteSection.vue",
+      "story": false
+    },
+    {
+      "name": "ContactDetails",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/Pages/ContactDetails.vue",
+      "story": false
+    },
+    {
+      "name": "ContactDetailsItem",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/ContactDetailsItem.vue",
+      "story": false
+    },
+    {
+      "name": "ContactEmptyState",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/EmptyState/ContactEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "ContactEmptyState.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/EmptyState/ContactEmptyState.story.vue",
+      "story": true
+    },
+    {
+      "name": "contactEmptyStateContent",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/EmptyState/contactEmptyStateContent.js",
+      "story": false
+    },
+    {
+      "name": "ContactExportDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/ContactExportDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ContactForm",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/contact/ContactForm.vue",
+      "story": false
+    },
+    {
+      "name": "ContactHeader",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsHeader/ContactHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ContactHeader.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsHeader/story/ContactHeader.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactHistory",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactHistory.vue",
+      "story": false
+    },
+    {
+      "name": "ContactImportDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/ContactImportDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ContactInfo",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/contact/ContactInfo.vue",
+      "story": false
+    },
+    {
+      "name": "ContactInfoRow",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/contact/ContactInfoRow.vue",
+      "story": false
+    },
+    {
+      "name": "ContactLabels",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactLabels/ContactLabels.vue",
+      "story": false
+    },
+    {
+      "name": "ContactListHeaderWrapper",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsHeader/ContactListHeaderWrapper.vue",
+      "story": false
+    },
+    {
+      "name": "ContactManageView",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/contacts/pages/ContactManageView.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMedia",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactMedia.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMerge",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactMerge.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMergeForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/ContactMergeForm.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMergeForm.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/story/ContactMergeForm.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactMergeModal",
+      "path": "chatwoot/app/javascript/dashboard/modules/contact/ContactMergeModal.vue",
+      "story": false
+    },
+    {
+      "name": "ContactMoreActions",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsHeader/components/ContactMoreActions.vue",
+      "story": false
+    },
+    {
+      "name": "ContactNoteItem",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsSidebar/components/ContactNoteItem.vue",
+      "story": false
+    },
+    {
+      "name": "ContactNoteItem.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsSidebar/components/story/ContactNoteItem.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactNotes",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsSidebar/ContactNotes.vue",
+      "story": false
+    },
+    {
+      "name": "ContactNotes",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/contact/ContactNotes.vue",
+      "story": false
+    },
+    {
+      "name": "ContactPanel",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/ContactPanel.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsActiveFiltersPreview",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsHeader/components/ContactsActiveFiltersPreview.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsBulkActionBar",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/contacts/components/ContactsBulkActionBar.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsCard/ContactsCard.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsCard/story/ContactsCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactsDetailsLayout",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsDetailsLayout.vue",
+      "story": false
+    },
+    {
+      "name": "ContactSelector",
+      "path": "chatwoot/app/javascript/dashboard/components-next/NewConversation/components/ContactSelector.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsFilter",
+      "path": "chatwoot/app/javascript/dashboard/components-next/filter/ContactsFilter.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/ContactsForm.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsForm.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/story/ContactsForm.story.vue",
+      "story": true
+    },
+    {
+      "name": "ContactsIndex",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/contacts/pages/ContactsIndex.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsList",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/Pages/ContactsList.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsListLayout",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsListLayout.vue",
+      "story": false
+    },
+    {
+      "name": "ContactsLoadMore",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsLoadMore.vue",
+      "story": false
+    },
+    {
+      "name": "ContactSortMenu",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsHeader/components/ContactSortMenu.vue",
+      "story": false
+    },
+    {
+      "name": "ContentTemplateForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/NewConversation/components/ContentTemplateForm.vue",
+      "story": false
+    },
+    {
+      "name": "ContentTemplatesModal",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ContentTemplates/ContentTemplatesModal.vue",
+      "story": false
+    },
+    {
+      "name": "context-list",
+      "path": "novu/apps/dashboard/src/components/contexts/context-list.tsx",
+      "story": false
+    },
+    {
+      "name": "context-list-blank",
+      "path": "novu/apps/dashboard/src/components/contexts/context-list-blank.tsx",
+      "story": false
+    },
+    {
+      "name": "context-search-editor",
+      "path": "novu/apps/dashboard/src/components/context-search-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "contextsList",
+      "path": "novu/libs/internal-sdk/src/funcs/contextsList.ts",
+      "story": false
+    },
+    {
+      "name": "contextsList",
+      "path": "novu/libs/internal-sdk/src/react-query/contextsList.ts",
+      "story": false
+    },
+    {
+      "name": "contextsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/contextsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "conversation",
+      "path": "novu/apps/dashboard/src/components/ai-elements/conversation.tsx",
+      "story": false
+    },
+    {
+      "name": "conversation",
+      "path": "novu/playground/nextjs/src/components/ai-elements/conversation.tsx",
+      "story": false
+    },
+    {
+      "name": "conversation-activation.entity",
+      "path": "novu/libs/dal/src/repositories/conversation-activation/conversation-activation.entity.ts",
+      "story": false
+    },
+    {
+      "name": "conversation-activity.entity",
+      "path": "novu/libs/dal/src/repositories/conversation-activity/conversation-activity.entity.ts",
+      "story": false
+    },
+    {
+      "name": "conversation-detail",
+      "path": "novu/apps/dashboard/src/components/conversations/conversation-detail.tsx",
+      "story": false
+    },
+    {
+      "name": "conversation-detail-sheet",
+      "path": "novu/apps/dashboard/src/components/conversations/conversation-detail-sheet.tsx",
+      "story": false
+    },
+    {
+      "name": "conversation-overview",
+      "path": "novu/apps/dashboard/src/components/conversations/conversation-overview.tsx",
+      "story": false
+    },
+    {
+      "name": "conversation-query-keys",
+      "path": "novu/apps/dashboard/src/components/conversations/conversation-query-keys.ts",
+      "story": false
+    },
+    {
+      "name": "conversation-status-badge",
+      "path": "novu/apps/dashboard/src/components/conversations/conversation-status-badge.tsx",
+      "story": false
+    },
+    {
+      "name": "conversation-table-row",
+      "path": "novu/apps/dashboard/src/components/conversations/conversation-table-row.tsx",
+      "story": false
+    },
+    {
+      "name": "conversation-timeline",
+      "path": "novu/apps/dashboard/src/components/conversations/conversation-timeline.tsx",
+      "story": false
+    },
+    {
+      "name": "conversation.entity",
+      "path": "novu/libs/dal/src/repositories/conversation/conversation.entity.ts",
+      "story": false
+    },
+    {
+      "name": "conversation.routes",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/conversation.routes.js",
+      "story": false
+    },
+    {
+      "name": "ConversationAction",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/ConversationAction.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationBasicFilter",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ConversationBasicFilter.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationBox",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ConversationBox.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationCallButton",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ConversationCallButton.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/ConversationCard.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationCard",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ConversationCard.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/ConversationCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ConversationCardExpanded",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/ConversationCardExpanded.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationFilter",
+      "path": "chatwoot/app/javascript/dashboard/components-next/filter/ConversationFilter.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationHeader",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ConversationHeader.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationHeatmapContainer",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/heatmaps/ConversationHeatmapContainer.vue",
+      "story": false
+    },
+    {
+      "name": "conversationHelper",
+      "path": "chatwoot/app/javascript/dashboard/helper/conversationHelper.js",
+      "story": false
+    },
+    {
+      "name": "ConversationInfo",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/ConversationInfo.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationItem",
+      "path": "chatwoot/app/javascript/dashboard/components/ConversationItem.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationList",
+      "path": "chatwoot/app/javascript/dashboard/components/ConversationList.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationParticipant",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/ConversationParticipant.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationRequiredAttributeItem",
+      "path": "chatwoot/app/javascript/dashboard/components-next/ConversationWorkflow/ConversationRequiredAttributeItem.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationRequiredAttributes",
+      "path": "chatwoot/app/javascript/dashboard/components-next/ConversationWorkflow/ConversationRequiredAttributes.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationRequiredEmpty",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationRequiredEmpty.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationResolveAttributesModal",
+      "path": "chatwoot/app/javascript/dashboard/components-next/ConversationWorkflow/ConversationResolveAttributesModal.vue",
+      "story": false
+    },
+    {
+      "name": "conversations-content",
+      "path": "novu/apps/dashboard/src/components/conversations/conversations-content.tsx",
+      "story": false
+    },
+    {
+      "name": "conversations-empty-state",
+      "path": "novu/apps/dashboard/src/components/conversations/conversations-empty-state.tsx",
+      "story": false
+    },
+    {
+      "name": "conversations-filters",
+      "path": "novu/apps/dashboard/src/components/conversations/conversations-filters.tsx",
+      "story": false
+    },
+    {
+      "name": "conversations-table",
+      "path": "novu/apps/dashboard/src/components/conversations/conversations-table.tsx",
+      "story": false
+    },
+    {
+      "name": "conversations-upgrade-cta",
+      "path": "novu/apps/dashboard/src/components/conversations/conversations-upgrade-cta.tsx",
+      "story": false
+    },
+    {
+      "name": "ConversationSidebar",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ConversationSidebar.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationsSlide",
+      "path": "chatwoot/app/javascript/dashboard/components-next/year-in-review/slides/ConversationsSlide.vue",
+      "story": false
+    },
+    {
+      "name": "ConversationView",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/ConversationView.vue",
+      "story": false
+    },
+    {
+      "name": "conversationWorkflow.routes",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/conversationWorkflow/conversationWorkflow.routes.js",
+      "story": false
+    },
+    {
+      "name": "ConversationWrap",
+      "path": "chatwoot/app/javascript/widget/components/ConversationWrap.vue",
+      "story": false
+    },
+    {
+      "name": "copilot-sidebar",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/layout/copilot-sidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "CopilotAgentMessage",
+      "path": "chatwoot/app/javascript/dashboard/components-next/copilot/CopilotAgentMessage.vue",
+      "story": false
+    },
+    {
+      "name": "CopilotAssistantMessage",
+      "path": "chatwoot/app/javascript/dashboard/components-next/copilot/CopilotAssistantMessage.vue",
+      "story": false
+    },
+    {
+      "name": "CopilotEditor",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/WootWriter/CopilotEditor.vue",
+      "story": false
+    },
+    {
+      "name": "CopilotEditorSection",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/CopilotEditorSection.vue",
+      "story": false
+    },
+    {
+      "name": "CopilotReplyBottomPanel",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/WootWriter/CopilotReplyBottomPanel.vue",
+      "story": false
+    },
+    {
+      "name": "create-agent-dialog",
+      "path": "novu/apps/dashboard/src/components/agents/create-agent-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "create-context-form",
+      "path": "novu/apps/dashboard/src/components/contexts/create-context-form.tsx",
+      "story": false
+    },
+    {
+      "name": "create-integration-sidebar",
+      "path": "novu/apps/dashboard/src/components/integrations/components/create-integration-sidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "create-layout-form",
+      "path": "novu/apps/dashboard/src/components/layouts/create-layout-form.tsx",
+      "story": false
+    },
+    {
+      "name": "create-message-template.command",
+      "path": "novu/libs/application-generic/src/usecases/message-template/create-message-template/create-message-template.command.ts",
+      "story": false
+    },
+    {
+      "name": "create-message-template.usecase",
+      "path": "novu/libs/application-generic/src/usecases/message-template/create-message-template/create-message-template.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "create-subscriber-form",
+      "path": "novu/apps/dashboard/src/components/subscribers/create-subscriber-form.tsx",
+      "story": false
+    },
+    {
+      "name": "create-topic-form",
+      "path": "novu/apps/dashboard/src/components/topics/create-topic-form.tsx",
+      "story": false
+    },
+    {
+      "name": "create-workflow-form",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/create-workflow-form.tsx",
+      "story": false
+    },
+    {
+      "name": "create-workflow-modal",
+      "path": "novu/apps/dashboard/src/components/create-workflow-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "CreateAssistantDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/assistant/CreateAssistantDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateCustomToolDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/customTool/CreateCustomToolDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateDocumentDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/document/CreateDocumentDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateNewContactDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/CreateNewContactDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreatePortalDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/PortalSwitcher/CreatePortalDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateResponseDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/response/CreateResponseDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreateSegmentDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/CreateSegmentDialog.vue",
+      "story": false
+    },
+    {
+      "name": "CreditPackageCard",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/billing/components/CreditPackageCard.vue",
+      "story": false
+    },
+    {
+      "name": "CsatContactCell",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatContactCell.vue",
+      "story": false
+    },
+    {
+      "name": "CsatMetricCard",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatMetricCard.vue",
+      "story": false
+    },
+    {
+      "name": "CsatMetricCard.story",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatMetricCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "CsatTable",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatTable.vue",
+      "story": false
+    },
+    {
+      "name": "CsatTableLoader",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/CsatTableLoader.vue",
+      "story": false
+    },
+    {
+      "name": "custom-text-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/shared/editable-json-viewer/custom-text-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "customer-support-button",
+      "path": "novu/apps/dashboard/src/components/header-navigation/customer-support-button.tsx",
+      "story": false
+    },
+    {
+      "name": "CustomErrors",
+      "path": "chatwoot/app/javascript/shared/helpers/CustomErrors.js",
+      "story": false
+    },
+    {
+      "name": "CustomerSatisfaction",
+      "path": "chatwoot/app/javascript/shared/components/CustomerSatisfaction.vue",
+      "story": false
+    },
+    {
+      "name": "CustomerSatisfactionPage",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/settingsPage/CustomerSatisfactionPage.vue",
+      "story": false
+    },
+    {
+      "name": "CustomRoleModal",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/customRoles/component/CustomRoleModal.vue",
+      "story": false
+    },
+    {
+      "name": "CustomRoleTableBody",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/customRoles/component/CustomRoleTableBody.vue",
+      "story": false
+    },
+    {
+      "name": "CustomSnoozeModal",
+      "path": "chatwoot/app/javascript/dashboard/components/CustomSnoozeModal.vue",
+      "story": false
+    },
+    {
+      "name": "CustomToolCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/customTool/CustomToolCard.vue",
+      "story": false
+    },
+    {
+      "name": "CustomToolForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/customTool/CustomToolForm.vue",
+      "story": false
+    },
+    {
+      "name": "Dashboard",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/Dashboard.vue",
+      "story": false
+    },
+    {
+      "name": "dashboard",
+      "path": "chatwoot/app/javascript/entrypoints/dashboard.js",
+      "story": false
+    },
+    {
+      "name": "dashboard",
+      "path": "novu/apps/dashboard/src/routes/dashboard.tsx",
+      "story": false
+    },
+    {
+      "name": "dashboard-layout",
+      "path": "novu/apps/dashboard/src/components/dashboard-layout.tsx",
+      "story": false
+    },
+    {
+      "name": "dashboard-urls",
+      "path": "novu/packages/novu/src/commands/connect/dashboard-urls.ts",
+      "story": false
+    },
+    {
+      "name": "dashboard.routes",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/dashboard.routes.js",
+      "story": false
+    },
+    {
+      "name": "DashboardAppModal",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/integrations/DashboardApps/DashboardAppModal.vue",
+      "story": false
+    },
+    {
+      "name": "DashboardAppsRow",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/integrations/DashboardApps/DashboardAppsRow.vue",
+      "story": false
+    },
+    {
+      "name": "DashboardAudioNotificationHelper",
+      "path": "chatwoot/app/javascript/dashboard/helper/AudioAlerts/DashboardAudioNotificationHelper.js",
+      "story": false
+    },
+    {
+      "name": "DashboardIcon",
+      "path": "chatwoot/app/javascript/shared/components/FluentIcon/DashboardIcon.vue",
+      "story": false
+    },
+    {
+      "name": "DataTable",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/components/DataTable.vue",
+      "story": false
+    },
+    {
+      "name": "DataTable.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/components/story/DataTable.story.vue",
+      "story": true
+    },
+    {
+      "name": "day-schedule-copy",
+      "path": "novu/apps/dashboard/src/components/subscribers/preferences/day-schedule-copy.tsx",
+      "story": false
+    },
+    {
+      "name": "DayScheduleCopy",
+      "path": "novu/packages/js/src/ui/components/elements/Preferences/DayScheduleCopy.tsx",
+      "story": false
+    },
+    {
+      "name": "DefaultConnectChat",
+      "path": "novu/packages/react/src/components/connect-chat/DefaultConnectChat.tsx",
+      "story": false
+    },
+    {
+      "name": "delayscheduledmetadata",
+      "path": "novu/libs/internal-sdk/src/models/components/delayscheduledmetadata.ts",
+      "story": false
+    },
+    {
+      "name": "delete-agent-dialog",
+      "path": "novu/apps/dashboard/src/components/agents/delete-agent-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "delete-environment-dialog",
+      "path": "novu/apps/dashboard/src/components/environments/delete-environment-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "delete-integration-modal",
+      "path": "novu/apps/dashboard/src/components/integrations/components/modals/delete-integration-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "delete-layout-dialog",
+      "path": "novu/apps/dashboard/src/components/layouts/delete-layout-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "delete-message-template.command",
+      "path": "novu/libs/application-generic/src/usecases/message-template/delete-message-template/delete-message-template.command.ts",
+      "story": false
+    },
+    {
+      "name": "delete-message-template.usecase",
+      "path": "novu/libs/application-generic/src/usecases/message-template/delete-message-template/delete-message-template.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "delete-resource-confirmation-dialog",
+      "path": "novu/apps/dashboard/src/components/delete-resource-confirmation-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "delete-translation-modal",
+      "path": "novu/apps/dashboard/src/components/translations/delete-translation-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "delete-variable-dialog",
+      "path": "novu/apps/dashboard/src/components/variables/delete-variable-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "delete-workflow-dialog",
+      "path": "novu/apps/dashboard/src/components/delete-workflow-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "DeleteDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/DeleteDialog.vue",
+      "story": false
+    },
+    {
+      "name": "DeleteModal",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/modal/DeleteModal.vue",
+      "story": false
+    },
+    {
+      "name": "DeleteSegmentDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Contacts/ContactsForm/DeleteSegmentDialog.vue",
+      "story": false
+    },
+    {
+      "name": "demo-claude-upgrade-panel",
+      "path": "novu/apps/dashboard/src/components/agents/demo-claude-upgrade-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "details-sidebar",
+      "path": "novu/apps/dashboard/src/components/details-sidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "Dialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/dialog/Dialog.vue",
+      "story": false
+    },
+    {
+      "name": "dialog",
+      "path": "novu/apps/dashboard/src/components/primitives/dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "dialog",
+      "path": "novu/playground/nextjs/src/components/ui/dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "Dialog.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/dialog/Dialog.story.vue",
+      "story": true
+    },
+    {
+      "name": "DocumentCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/DocumentCard.vue",
+      "story": false
+    },
+    {
+      "name": "DocumentCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/DocumentCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "DocumentForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/document/DocumentForm.vue",
+      "story": false
+    },
+    {
+      "name": "domain-limit-dialog",
+      "path": "novu/apps/dashboard/src/components/domains/domain-limit-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "domainsList",
+      "path": "novu/libs/internal-sdk/src/funcs/domainsList.ts",
+      "story": false
+    },
+    {
+      "name": "domainsList",
+      "path": "novu/libs/internal-sdk/src/react-query/domainsList.ts",
+      "story": false
+    },
+    {
+      "name": "domainsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/domainsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "domainsRoutesList",
+      "path": "novu/libs/internal-sdk/src/funcs/domainsRoutesList.ts",
+      "story": false
+    },
+    {
+      "name": "domainsRoutesList",
+      "path": "novu/libs/internal-sdk/src/react-query/domainsRoutesList.ts",
+      "story": false
+    },
+    {
+      "name": "domainsRoutesList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/domainsRoutesList.core.ts",
+      "story": false
+    },
+    {
+      "name": "DropdownList",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/Dropdown/DropdownList.vue",
+      "story": false
+    },
+    {
+      "name": "DropdownListItemButton",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/Dropdown/DropdownListItemButton.vue",
+      "story": false
+    },
+    {
+      "name": "DuplicateInboxBanner",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/channels/instagram/DuplicateInboxBanner.vue",
+      "story": false
+    },
+    {
+      "name": "edit-step-conditions-form",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/conditions/edit-step-conditions-form.tsx",
+      "story": false
+    },
+    {
+      "name": "editable-json-viewer",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/shared/editable-json-viewer/editable-json-viewer.tsx",
+      "story": false
+    },
+    {
+      "name": "EditCategoryDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/CategoryPage/EditCategoryDialog.vue",
+      "story": false
+    },
+    {
+      "name": "EditContact",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/contact/EditContact.vue",
+      "story": false
+    },
+    {
+      "name": "EditLiveChatCampaignDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/LiveChatCampaign/EditLiveChatCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Editor/Editor.vue",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/WootWriter/Editor.vue",
+      "story": false
+    },
+    {
+      "name": "editor",
+      "path": "chatwoot/app/javascript/dashboard/constants/editor.js",
+      "story": false
+    },
+    {
+      "name": "editor",
+      "path": "novu/apps/dashboard/src/components/primitives/editor.tsx",
+      "story": false
+    },
+    {
+      "name": "editor-actions",
+      "path": "novu/apps/dashboard/src/components/translations/translation-drawer/editor-actions.tsx",
+      "story": false
+    },
+    {
+      "name": "editor-breadcrumbs",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/editor-breadcrumbs.tsx",
+      "story": false
+    },
+    {
+      "name": "editor-menu-bar",
+      "path": "novu/libs/maily-core/src/editor/components/editor-menu-bar.tsx",
+      "story": false
+    },
+    {
+      "name": "editor-overlays",
+      "path": "novu/apps/dashboard/src/components/editor-overlays.tsx",
+      "story": false
+    },
+    {
+      "name": "editor-panel",
+      "path": "novu/apps/dashboard/src/components/translations/translation-drawer/editor-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "editorHelper",
+      "path": "chatwoot/app/javascript/dashboard/helper/editorHelper.js",
+      "story": false
+    },
+    {
+      "name": "EditorModeToggle",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/WootWriter/EditorModeToggle.vue",
+      "story": false
+    },
+    {
+      "name": "email-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/email/email-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "email-editor-select",
+      "path": "novu/apps/dashboard/src/components/email-editor-select.tsx",
+      "story": false
+    },
+    {
+      "name": "email-inbox-card",
+      "path": "novu/apps/dashboard/src/components/agents/email-inbox-card.tsx",
+      "story": false
+    },
+    {
+      "name": "EmailInboxFinish",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/channels/emailChannels/EmailInboxFinish.vue",
+      "story": false
+    },
+    {
+      "name": "EmailMessages.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/stories/EmailMessages.story.vue",
+      "story": true
+    },
+    {
+      "name": "EmailTranscriptModal",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/EmailTranscriptModal.vue",
+      "story": false
+    },
+    {
+      "name": "empty-conversations-ilustration",
+      "path": "novu/apps/dashboard/src/components/conversations/empty-conversations-ilustration.tsx",
+      "story": false
+    },
+    {
+      "name": "EmptyStateMessage",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/EmptyState/EmptyStateMessage.vue",
+      "story": false
+    },
+    {
+      "name": "environment-form",
+      "path": "novu/apps/dashboard/src/components/environments/environment-form.tsx",
+      "story": false
+    },
+    {
+      "name": "environments-list",
+      "path": "novu/apps/dashboard/src/components/environments/environments-list.tsx",
+      "story": false
+    },
+    {
+      "name": "environmentsList",
+      "path": "novu/libs/internal-sdk/src/funcs/environmentsList.ts",
+      "story": false
+    },
+    {
+      "name": "environmentsList",
+      "path": "novu/libs/internal-sdk/src/react-query/environmentsList.ts",
+      "story": false
+    },
+    {
+      "name": "environmentsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/environmentsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "environmentVariablesList",
+      "path": "novu/libs/internal-sdk/src/funcs/environmentVariablesList.ts",
+      "story": false
+    },
+    {
+      "name": "environmentVariablesList",
+      "path": "novu/libs/internal-sdk/src/react-query/environmentVariablesList.ts",
+      "story": false
+    },
+    {
+      "name": "environmentVariablesList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/environmentVariablesList.core.ts",
+      "story": false
+    },
+    {
+      "name": "event-timeline",
+      "path": "matrix-js-sdk/src/models/event-timeline.ts",
+      "story": false
+    },
+    {
+      "name": "event-timeline-set",
+      "path": "matrix-js-sdk/src/models/event-timeline-set.ts",
+      "story": false
+    },
+    {
+      "name": "extend-to-schedule",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/shared/extend-to-schedule.tsx",
+      "story": false
+    },
+    {
+      "name": "facated-form-filter",
+      "path": "novu/apps/dashboard/src/components/primitives/form/faceted-filter/facated-form-filter.tsx",
+      "story": false
+    },
+    {
+      "name": "field-type-editors",
+      "path": "novu/apps/dashboard/src/components/conditions-editor/field-type-editors.ts",
+      "story": false
+    },
+    {
+      "name": "flickering-grid",
+      "path": "novu/apps/dashboard/src/components/analytics/charts/flickering-grid.tsx",
+      "story": false
+    },
+    {
+      "name": "flickering-grid-placeholder",
+      "path": "novu/apps/dashboard/src/components/analytics/components/flickering-grid-placeholder.tsx",
+      "story": false
+    },
+    {
+      "name": "FloatingCallWidget",
+      "path": "chatwoot/app/javascript/dashboard/components-next/call/FloatingCallWidget.vue",
+      "story": false
+    },
+    {
+      "name": "Form",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/bubbles/Form.vue",
+      "story": false
+    },
+    {
+      "name": "Form",
+      "path": "chatwoot/app/javascript/v3/views/auth/signup/components/Signup/Form.vue",
+      "story": false
+    },
+    {
+      "name": "Form",
+      "path": "chatwoot/app/javascript/widget/components/PreChat/Form.vue",
+      "story": false
+    },
+    {
+      "name": "form",
+      "path": "novu/apps/dashboard/src/components/primitives/form/form.tsx",
+      "story": false
+    },
+    {
+      "name": "form-context",
+      "path": "novu/apps/dashboard/src/components/primitives/form/form-context.ts",
+      "story": false
+    },
+    {
+      "name": "format-converter",
+      "path": "novu/packages/chat-adapter-email/src/format-converter.ts",
+      "story": false
+    },
+    {
+      "name": "FormattedContent",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/bubbles/Text/FormattedContent.vue",
+      "story": false
+    },
+    {
+      "name": "formatToRelativeTime",
+      "path": "novu/packages/js/src/ui/helpers/formatToRelativeTime.ts",
+      "story": false
+    },
+    {
+      "name": "framework-card",
+      "path": "novu/apps/dashboard/src/components/welcome/inbox-framework-guide/framework-card.tsx",
+      "story": false
+    },
+    {
+      "name": "framework-grid",
+      "path": "novu/apps/dashboard/src/components/welcome/inbox-framework-guide/framework-grid.tsx",
+      "story": false
+    },
+    {
+      "name": "free-trial-card",
+      "path": "novu/apps/dashboard/src/components/side-navigation/free-trial-card.tsx",
+      "story": false
+    },
+    {
+      "name": "FullEditor",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/WootWriter/FullEditor.vue",
+      "story": false
+    },
+    {
+      "name": "get-subscriber-schedule.command",
+      "path": "novu/libs/application-generic/src/usecases/get-subscriber-schedule/get-subscriber-schedule.command.ts",
+      "story": false
+    },
+    {
+      "name": "get-subscriber-schedule.usecase",
+      "path": "novu/libs/application-generic/src/usecases/get-subscriber-schedule/get-subscriber-schedule.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "GreetingsEditor",
+      "path": "chatwoot/app/javascript/shared/components/GreetingsEditor.vue",
+      "story": false
+    },
+    {
+      "name": "grid-lines",
+      "path": "novu/libs/maily-core/src/editor/components/icons/grid-lines.tsx",
+      "story": false
+    },
+    {
+      "name": "GroupedStackedChangelogCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/changelog-card/GroupedStackedChangelogCard.vue",
+      "story": false
+    },
+    {
+      "name": "GroupedStackedChangelogCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/changelog-card/GroupedStackedChangelogCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "horizontal-card-with-image",
+      "path": "novu/apps/dashboard/src/components/icons/horizontal-card-with-image.tsx",
+      "story": false
+    },
+    {
+      "name": "hover-card",
+      "path": "novu/apps/dashboard/src/components/primitives/hover-card.tsx",
+      "story": false
+    },
+    {
+      "name": "hover-card",
+      "path": "novu/playground/nextjs/src/components/ui/hover-card.tsx",
+      "story": false
+    },
+    {
+      "name": "html-editor",
+      "path": "novu/apps/dashboard/src/components/html-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "http-request-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/http-request/http-request-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "in-app-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/in-app/in-app-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "inbound-address-form",
+      "path": "novu/apps/dashboard/src/components/agents/inbound-address-form.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox",
+      "path": "chatwoot/app/javascript/dashboard/helper/inbox.js",
+      "story": false
+    },
+    {
+      "name": "Inbox",
+      "path": "novu/packages/js/src/ui/components/Inbox.tsx",
+      "story": false
+    },
+    {
+      "name": "Inbox",
+      "path": "novu/packages/nextjs/src/app-router/Inbox.tsx",
+      "story": false
+    },
+    {
+      "name": "Inbox",
+      "path": "novu/packages/nextjs/src/pages-router/Inbox.tsx",
+      "story": false
+    },
+    {
+      "name": "Inbox",
+      "path": "novu/packages/react/src/components/Inbox.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-arrow-down",
+      "path": "novu/apps/dashboard/src/components/icons/inbox-arrow-down.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-bell",
+      "path": "novu/apps/dashboard/src/components/icons/inbox-bell.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-bell-filled",
+      "path": "novu/apps/dashboard/src/components/icons/inbox-bell-filled.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-bell-filled-dev",
+      "path": "novu/apps/dashboard/src/components/icons/inbox-bell-filled-dev.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-button",
+      "path": "novu/apps/dashboard/src/components/inbox-button.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-connected-guide",
+      "path": "novu/apps/dashboard/src/components/welcome/inbox-connected-guide.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-ellipsis",
+      "path": "novu/apps/dashboard/src/components/icons/inbox-ellipsis.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-embed",
+      "path": "novu/apps/dashboard/src/components/welcome/inbox-embed.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-embed-page",
+      "path": "novu/apps/dashboard/src/pages/inbox-embed-page.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-embed-success-page",
+      "path": "novu/apps/dashboard/src/pages/inbox-embed-success-page.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-framework-guide",
+      "path": "novu/apps/dashboard/src/components/welcome/inbox-framework-guide.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-playground",
+      "path": "novu/apps/dashboard/src/components/auth/inbox-playground.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-preview",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/in-app/inbox-preview.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-preview-content",
+      "path": "novu/apps/dashboard/src/components/auth/inbox-preview-content.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-settings",
+      "path": "novu/apps/dashboard/src/components/icons/inbox-settings.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox-usecase-page",
+      "path": "novu/apps/dashboard/src/pages/inbox-usecase-page.tsx",
+      "story": false
+    },
+    {
+      "name": "inbox.routes",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/inbox.routes.js",
+      "story": false
+    },
+    {
+      "name": "InboxCapacityLimits",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/components/InboxCapacityLimits.vue",
+      "story": false
+    },
+    {
+      "name": "InboxCapacityLimits.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/AssignmentPolicy/components/story/InboxCapacityLimits.story.vue",
+      "story": true
+    },
+    {
+      "name": "InboxCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Inbox/InboxCard.vue",
+      "story": false
+    },
+    {
+      "name": "InboxCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/InboxCard.vue",
+      "story": false
+    },
+    {
+      "name": "InboxCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/InboxCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "InboxChannelForm",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/onboarding/inbox-setup/InboxChannelForm.vue",
+      "story": false
+    },
+    {
+      "name": "InboxChannels",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/InboxChannels.vue",
+      "story": false
+    },
+    {
+      "name": "InboxChannelsDialog",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/onboarding/inbox-setup/InboxChannelsDialog.vue",
+      "story": false
+    },
+    {
+      "name": "InboxChannelsFooter",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/onboarding/inbox-setup/InboxChannelsFooter.vue",
+      "story": false
+    },
+    {
+      "name": "InboxContent",
+      "path": "novu/packages/react/src/components/InboxContent.tsx",
+      "story": false
+    },
+    {
+      "name": "InboxContext",
+      "path": "novu/packages/js/src/ui/context/InboxContext.tsx",
+      "story": false
+    },
+    {
+      "name": "InboxContextMenu",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/inbox/components/InboxContextMenu.vue",
+      "story": false
+    },
+    {
+      "name": "InboxDisplayMenu",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/inbox/components/InboxDisplayMenu.vue",
+      "story": false
+    },
+    {
+      "name": "InboxEmptyState",
+      "path": "chatwoot/app/javascript/dashboard/components-next/NewConversation/components/InboxEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "InboxEmptyState",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/inbox/InboxEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "InboxFacebookForm",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/onboarding/inbox-setup/InboxFacebookForm.vue",
+      "story": false
+    },
+    {
+      "name": "InboxItemHeader",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/inbox/components/InboxItemHeader.vue",
+      "story": false
+    },
+    {
+      "name": "InboxLinkDialog",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/assignmentPolicy/pages/components/InboxLinkDialog.vue",
+      "story": false
+    },
+    {
+      "name": "InboxList",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/inbox/InboxList.vue",
+      "story": false
+    },
+    {
+      "name": "InboxListHeader",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/inbox/components/InboxListHeader.vue",
+      "story": false
+    },
+    {
+      "name": "inboxMixin",
+      "path": "chatwoot/app/javascript/shared/mixins/inboxMixin.js",
+      "story": false
+    },
+    {
+      "name": "InboxName",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/InboxName.vue",
+      "story": false
+    },
+    {
+      "name": "InboxName",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/InboxName.vue",
+      "story": false
+    },
+    {
+      "name": "InboxOptionMenu",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/inbox/components/InboxOptionMenu.vue",
+      "story": false
+    },
+    {
+      "name": "InboxPageEmptyState",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/emptyStates/InboxPageEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "InboxReconnectionRequired",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/components/InboxReconnectionRequired.vue",
+      "story": false
+    },
+    {
+      "name": "InboxReports",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/InboxReports.vue",
+      "story": false
+    },
+    {
+      "name": "InboxReportsIndex",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/InboxReportsIndex.vue",
+      "story": false
+    },
+    {
+      "name": "InboxReportsShow",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/InboxReportsShow.vue",
+      "story": false
+    },
+    {
+      "name": "InboxSelector",
+      "path": "chatwoot/app/javascript/dashboard/components-next/NewConversation/components/InboxSelector.vue",
+      "story": false
+    },
+    {
+      "name": "InboxSetup",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/onboarding/InboxSetup.vue",
+      "story": false
+    },
+    {
+      "name": "InboxStatusDropdown",
+      "path": "novu/packages/js/src/ui/components/elements/InboxStatus/InboxStatusDropdown.tsx",
+      "story": false
+    },
+    {
+      "name": "InboxStatusOptions",
+      "path": "novu/packages/js/src/ui/components/elements/InboxStatus/InboxStatusOptions.tsx",
+      "story": false
+    },
+    {
+      "name": "InboxTab",
+      "path": "novu/packages/js/src/ui/components/InboxTabs/InboxTab.tsx",
+      "story": false
+    },
+    {
+      "name": "InboxTabs",
+      "path": "novu/packages/js/src/ui/components/InboxTabs/InboxTabs.tsx",
+      "story": false
+    },
+    {
+      "name": "InboxView",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/inbox/InboxView.vue",
+      "story": false
+    },
+    {
+      "name": "InboxViewHelpers",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/inbox/helpers/InboxViewHelpers.js",
+      "story": false
+    },
+    {
+      "name": "information-card-with-logo",
+      "path": "novu/apps/dashboard/src/components/icons/information-card-with-logo.tsx",
+      "story": false
+    },
+    {
+      "name": "inline-decorator-list",
+      "path": "novu/libs/maily-core/src/editor/extensions/inline-decorator/inline-decorator-list.tsx",
+      "story": false
+    },
+    {
+      "name": "InstagramMessages.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/stories/InstagramMessages.story.vue",
+      "story": true
+    },
+    {
+      "name": "instructions-panel",
+      "path": "novu/apps/dashboard/src/components/welcome/inbox-framework-guide/instructions-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "integration-card",
+      "path": "novu/apps/dashboard/src/components/integrations/components/integration-card.tsx",
+      "story": false
+    },
+    {
+      "name": "integration-list-item",
+      "path": "novu/apps/dashboard/src/components/integrations/components/integration-list-item.tsx",
+      "story": false
+    },
+    {
+      "name": "IntegrationCard",
+      "path": "chatwoot/app/javascript/widget/components/template/IntegrationCard.vue",
+      "story": false
+    },
+    {
+      "name": "integrations-list",
+      "path": "novu/apps/dashboard/src/components/integrations/components/integrations-list.tsx",
+      "story": false
+    },
+    {
+      "name": "integrations-list-page",
+      "path": "novu/apps/dashboard/src/pages/integrations-list-page.tsx",
+      "story": false
+    },
+    {
+      "name": "integrationsGenerateChatOAuthUrl",
+      "path": "novu/libs/internal-sdk/src/funcs/integrationsGenerateChatOAuthUrl.ts",
+      "story": false
+    },
+    {
+      "name": "integrationsGenerateChatOAuthUrl",
+      "path": "novu/libs/internal-sdk/src/react-query/integrationsGenerateChatOAuthUrl.ts",
+      "story": false
+    },
+    {
+      "name": "integrationsList",
+      "path": "novu/libs/internal-sdk/src/funcs/integrationsList.ts",
+      "story": false
+    },
+    {
+      "name": "integrationsList",
+      "path": "novu/libs/internal-sdk/src/react-query/integrationsList.ts",
+      "story": false
+    },
+    {
+      "name": "integrationsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/integrationsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "integrationsListActive",
+      "path": "novu/libs/internal-sdk/src/funcs/integrationsListActive.ts",
+      "story": false
+    },
+    {
+      "name": "integrationsListActive",
+      "path": "novu/libs/internal-sdk/src/react-query/integrationsListActive.ts",
+      "story": false
+    },
+    {
+      "name": "integrationsListActive.core",
+      "path": "novu/libs/internal-sdk/src/react-query/integrationsListActive.core.ts",
+      "story": false
+    },
+    {
+      "name": "issues-panel",
+      "path": "novu/apps/dashboard/src/components/issues-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "IssuesList",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/linear/IssuesList.vue",
+      "story": false
+    },
+    {
+      "name": "json-form",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/controls/json-form.tsx",
+      "story": false
+    },
+    {
+      "name": "key-value-pair-list",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/http-request/key-value-pair-list.tsx",
+      "story": false
+    },
+    {
+      "name": "keyboardEventListenerMixins",
+      "path": "chatwoot/app/javascript/shared/mixins/keyboardEventListenerMixins.js",
+      "story": false
+    },
+    {
+      "name": "layout-editor",
+      "path": "novu/apps/dashboard/src/components/layouts/layout-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "layout-editor-factory",
+      "path": "novu/apps/dashboard/src/components/layouts/layout-editor-factory.tsx",
+      "story": false
+    },
+    {
+      "name": "layout-editor-settings-drawer",
+      "path": "novu/apps/dashboard/src/components/layouts/layout-editor-settings-drawer.tsx",
+      "story": false
+    },
+    {
+      "name": "layout-editor-skeleton",
+      "path": "novu/apps/dashboard/src/components/layouts/layout-editor-skeleton.tsx",
+      "story": false
+    },
+    {
+      "name": "layout-email-editor",
+      "path": "novu/apps/dashboard/src/components/layouts/layout-email-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "layout-list",
+      "path": "novu/apps/dashboard/src/components/layouts/layout-list.tsx",
+      "story": false
+    },
+    {
+      "name": "layout-list-blank",
+      "path": "novu/apps/dashboard/src/components/layouts/layout-list-blank.tsx",
+      "story": false
+    },
+    {
+      "name": "layout-preview-context-panel",
+      "path": "novu/apps/dashboard/src/components/layouts/layout-preview-context-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "layouts-list-upgrade-cta",
+      "path": "novu/apps/dashboard/src/components/layouts/layouts-list-upgrade-cta.tsx",
+      "story": false
+    },
+    {
+      "name": "layoutsList",
+      "path": "novu/libs/internal-sdk/src/funcs/layoutsList.ts",
+      "story": false
+    },
+    {
+      "name": "layoutsList",
+      "path": "novu/libs/internal-sdk/src/react-query/layoutsList.ts",
+      "story": false
+    },
+    {
+      "name": "layoutsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/layoutsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "link-card",
+      "path": "novu/libs/maily-core/src/editor/extensions/link-card.ts",
+      "story": false
+    },
+    {
+      "name": "link-card",
+      "path": "novu/libs/maily-core/src/editor/nodes/link-card.tsx",
+      "story": false
+    },
+    {
+      "name": "List",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/conversation/Macros/List.vue",
+      "story": false
+    },
+    {
+      "name": "list",
+      "path": "novu/libs/maily-core/src/blocks/list.tsx",
+      "story": false
+    },
+    {
+      "name": "list-no-results",
+      "path": "novu/apps/dashboard/src/components/list-no-results.tsx",
+      "story": false
+    },
+    {
+      "name": "ListAttribute",
+      "path": "chatwoot/app/javascript/dashboard/components-next/CustomAttributes/ListAttribute.vue",
+      "story": false
+    },
+    {
+      "name": "listworkflowresponse",
+      "path": "novu/libs/internal-sdk/src/models/components/listworkflowresponse.ts",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignDetails",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/CampaignCard/LiveChatCampaignDetails.vue",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/LiveChatCampaign/LiveChatCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignEmptyState",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/EmptyState/LiveChatCampaignEmptyState.vue",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/LiveChatCampaign/LiveChatCampaignForm.vue",
+      "story": false
+    },
+    {
+      "name": "LiveChatCampaignsPage",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/campaigns/pages/LiveChatCampaignsPage.vue",
+      "story": false
+    },
+    {
+      "name": "locale-list",
+      "path": "novu/apps/dashboard/src/components/translations/translation-drawer/locale-list.tsx",
+      "story": false
+    },
+    {
+      "name": "LocaleCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/LocaleCard/LocaleCard.vue",
+      "story": false
+    },
+    {
+      "name": "LocaleCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/LocaleCard/LocaleCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "LocaleContentDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/LocalePage/LocaleContentDialog.vue",
+      "story": false
+    },
+    {
+      "name": "LocaleList",
+      "path": "chatwoot/app/javascript/dashboard/components-next/HelpCenter/Pages/LocalePage/LocaleList.vue",
+      "story": false
+    },
+    {
+      "name": "LockToSingleConversationPreview",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/components/LockToSingleConversationPreview.vue",
+      "story": false
+    },
+    {
+      "name": "log-viewer",
+      "path": "novu/packages/novu/src/commands/wizard/ui/primitives/log-viewer.tsx",
+      "story": false
+    },
+    {
+      "name": "logs-detail-panel",
+      "path": "novu/apps/dashboard/src/components/http-logs/logs-detail-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "logs-table",
+      "path": "novu/apps/dashboard/src/components/http-logs/logs-table.tsx",
+      "story": false
+    },
+    {
+      "name": "logs-table-row",
+      "path": "novu/apps/dashboard/src/components/http-logs/logs-table-row.tsx",
+      "story": false
+    },
+    {
+      "name": "logs-table-skeleton-row",
+      "path": "novu/apps/dashboard/src/components/http-logs/logs-table-skeleton-row.tsx",
+      "story": false
+    },
+    {
+      "name": "MacroEditor",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/macros/MacroEditor.vue",
+      "story": false
+    },
+    {
+      "name": "MacroForm",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/macros/MacroForm.vue",
+      "story": false
+    },
+    {
+      "name": "MacrosTableRow",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/macros/MacrosTableRow.vue",
+      "story": false
+    },
+    {
+      "name": "maily-variables-list-view",
+      "path": "novu/apps/dashboard/src/components/maily/views/maily-variables-list-view.tsx",
+      "story": false
+    },
+    {
+      "name": "MembershipManagerActionScheduler",
+      "path": "matrix-js-sdk/src/matrixrtc/MembershipManagerActionScheduler.ts",
+      "story": false
+    },
+    {
+      "name": "MergeContact",
+      "path": "chatwoot/app/javascript/dashboard/modules/contact/components/MergeContact.vue",
+      "story": false
+    },
+    {
+      "name": "MergeContactSummary",
+      "path": "chatwoot/app/javascript/dashboard/modules/contact/components/MergeContactSummary.vue",
+      "story": false
+    },
+    {
+      "name": "Message",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/Message.vue",
+      "story": false
+    },
+    {
+      "name": "message",
+      "path": "novu/apps/dashboard/src/components/ai-elements/message.tsx",
+      "story": false
+    },
+    {
+      "name": "message",
+      "path": "novu/playground/nextjs/src/components/ai-elements/message.tsx",
+      "story": false
+    },
+    {
+      "name": "message-mapper",
+      "path": "novu/packages/chat-adapter/src/message-mapper.ts",
+      "story": false
+    },
+    {
+      "name": "message-parser",
+      "path": "novu/packages/chat-adapter-email/src/message-parser.ts",
+      "story": false
+    },
+    {
+      "name": "message-renderer",
+      "path": "novu/packages/chat-adapter-email/src/message-renderer.ts",
+      "story": false
+    },
+    {
+      "name": "message-template.entity",
+      "path": "novu/libs/dal/src/repositories/message-template/message-template.entity.ts",
+      "story": false
+    },
+    {
+      "name": "message.entity",
+      "path": "novu/libs/dal/src/repositories/message/message.entity.ts",
+      "story": false
+    },
+    {
+      "name": "message.filter",
+      "path": "novu/libs/application-generic/src/value-objects/message.filter.ts",
+      "story": false
+    },
+    {
+      "name": "messageaction",
+      "path": "novu/libs/internal-sdk/src/models/components/messageaction.ts",
+      "story": false
+    },
+    {
+      "name": "messageactionresult",
+      "path": "novu/libs/internal-sdk/src/models/components/messageactionresult.ts",
+      "story": false
+    },
+    {
+      "name": "messageactionstatusenum",
+      "path": "novu/libs/internal-sdk/src/models/components/messageactionstatusenum.ts",
+      "story": false
+    },
+    {
+      "name": "messagebird.handler",
+      "path": "novu/libs/application-generic/src/factories/sms/handlers/messagebird.handler.ts",
+      "story": false
+    },
+    {
+      "name": "MessageBubbles.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/stories/MessageBubbles.story.vue",
+      "story": true
+    },
+    {
+      "name": "messagebutton",
+      "path": "novu/libs/internal-sdk/src/models/components/messagebutton.ts",
+      "story": false
+    },
+    {
+      "name": "MessageContent",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/MessageContent.vue",
+      "story": false
+    },
+    {
+      "name": "MessageContextMenu",
+      "path": "chatwoot/app/javascript/dashboard/modules/conversations/components/MessageContextMenu.vue",
+      "story": false
+    },
+    {
+      "name": "messagecta",
+      "path": "novu/libs/internal-sdk/src/models/components/messagecta.ts",
+      "story": false
+    },
+    {
+      "name": "messagectadata",
+      "path": "novu/libs/internal-sdk/src/models/components/messagectadata.ts",
+      "story": false
+    },
+    {
+      "name": "MessageEditor",
+      "path": "chatwoot/app/javascript/dashboard/components-next/NewConversation/components/MessageEditor.vue",
+      "story": false
+    },
+    {
+      "name": "MessageError",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/MessageError.vue",
+      "story": false
+    },
+    {
+      "name": "MessageEvent",
+      "path": "matrix-js-sdk/src/extensible_events_v1/MessageEvent.ts",
+      "story": false
+    },
+    {
+      "name": "MessageFormatter",
+      "path": "chatwoot/app/javascript/shared/helpers/MessageFormatter.js",
+      "story": false
+    },
+    {
+      "name": "MessageList",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/MessageList.vue",
+      "story": false
+    },
+    {
+      "name": "MessageList",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/MessageList.vue",
+      "story": false
+    },
+    {
+      "name": "MessageMeta",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/MessageMeta.vue",
+      "story": false
+    },
+    {
+      "name": "messageMixin",
+      "path": "chatwoot/app/javascript/widget/mixins/messageMixin.js",
+      "story": false
+    },
+    {
+      "name": "MessagePreview",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/MessagePreview.vue",
+      "story": false
+    },
+    {
+      "name": "MessagePreview",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/MessagePreview.vue",
+      "story": false
+    },
+    {
+      "name": "MessageReplyButton",
+      "path": "chatwoot/app/javascript/widget/components/MessageReplyButton.vue",
+      "story": false
+    },
+    {
+      "name": "messages",
+      "path": "chatwoot/app/javascript/shared/constants/messages.js",
+      "story": false
+    },
+    {
+      "name": "Messages",
+      "path": "chatwoot/app/javascript/widget/views/Messages.vue",
+      "story": false
+    },
+    {
+      "name": "messages",
+      "path": "novu/libs/internal-sdk/src/sdk/messages.ts",
+      "story": false
+    },
+    {
+      "name": "messagesDelete",
+      "path": "novu/libs/internal-sdk/src/funcs/messagesDelete.ts",
+      "story": false
+    },
+    {
+      "name": "messagesDelete",
+      "path": "novu/libs/internal-sdk/src/react-query/messagesDelete.ts",
+      "story": false
+    },
+    {
+      "name": "messagesDeleteByTransactionId",
+      "path": "novu/libs/internal-sdk/src/funcs/messagesDeleteByTransactionId.ts",
+      "story": false
+    },
+    {
+      "name": "messagesDeleteByTransactionId",
+      "path": "novu/libs/internal-sdk/src/react-query/messagesDeleteByTransactionId.ts",
+      "story": false
+    },
+    {
+      "name": "MessageSignature",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/profile/MessageSignature.vue",
+      "story": false
+    },
+    {
+      "name": "MessageSignatureMissingAlert",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/MessageSignatureMissingAlert.vue",
+      "story": false
+    },
+    {
+      "name": "messagesRetrieve",
+      "path": "novu/libs/internal-sdk/src/funcs/messagesRetrieve.ts",
+      "story": false
+    },
+    {
+      "name": "messagesRetrieve",
+      "path": "novu/libs/internal-sdk/src/react-query/messagesRetrieve.ts",
+      "story": false
+    },
+    {
+      "name": "messagesRetrieve.core",
+      "path": "novu/libs/internal-sdk/src/react-query/messagesRetrieve.core.ts",
+      "story": false
+    },
+    {
+      "name": "MessageStatus",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/MessageStatus.vue",
+      "story": false
+    },
+    {
+      "name": "messagestatusenum",
+      "path": "novu/libs/internal-sdk/src/models/components/messagestatusenum.ts",
+      "story": false
+    },
+    {
+      "name": "MessagesView",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/MessagesView.vue",
+      "story": false
+    },
+    {
+      "name": "messagetemplate",
+      "path": "novu/libs/internal-sdk/src/models/components/messagetemplate.ts",
+      "story": false
+    },
+    {
+      "name": "MessageTypeHelper",
+      "path": "chatwoot/app/javascript/shared/helpers/MessageTypeHelper.js",
+      "story": false
+    },
+    {
+      "name": "MetricCard",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/overview/MetricCard.vue",
+      "story": false
+    },
+    {
+      "name": "MfaSettingsCard",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/profile/MfaSettingsCard.vue",
+      "story": false
+    },
+    {
+      "name": "MfaStatusCard",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/profile/MfaStatusCard.vue",
+      "story": false
+    },
+    {
+      "name": "MobileSidebarLauncher",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/MobileSidebarLauncher.vue",
+      "story": false
+    },
+    {
+      "name": "Modal",
+      "path": "chatwoot/app/javascript/dashboard/components/Modal.vue",
+      "story": false
+    },
+    {
+      "name": "Modal",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/WhatsappTemplates/Modal.vue",
+      "story": false
+    },
+    {
+      "name": "ModalHeader",
+      "path": "chatwoot/app/javascript/dashboard/components/ModalHeader.vue",
+      "story": false
+    },
+    {
+      "name": "NewMessagesCta",
+      "path": "novu/packages/js/src/ui/components/Notification/NewMessagesCta.tsx",
+      "story": false
+    },
+    {
+      "name": "no-changes-modal",
+      "path": "novu/apps/dashboard/src/components/header-navigation/no-changes-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "NotificationList",
+      "path": "novu/packages/js/src/ui/components/Notification/NotificationList.tsx",
+      "story": false
+    },
+    {
+      "name": "NotificationListSkeleton",
+      "path": "novu/packages/js/src/ui/components/Notification/NotificationListSkeleton.tsx",
+      "story": false
+    },
+    {
+      "name": "notificationsList",
+      "path": "novu/libs/internal-sdk/src/funcs/notificationsList.ts",
+      "story": false
+    },
+    {
+      "name": "notificationsList",
+      "path": "novu/libs/internal-sdk/src/react-query/notificationsList.ts",
+      "story": false
+    },
+    {
+      "name": "notificationsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/notificationsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "NotificationTable",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/notifications/components/NotificationTable.vue",
+      "story": false
+    },
+    {
+      "name": "novu-copilot-panel",
+      "path": "novu/apps/dashboard/src/components/ai-sidekick/novu-copilot-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "novumessages",
+      "path": "novu/libs/internal-sdk/src/sdk/novumessages.ts",
+      "story": false
+    },
+    {
+      "name": "OnboardingFeatureCard",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/OnboardingFeatureCard.vue",
+      "story": false
+    },
+    {
+      "name": "OnboardingFormRow",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/onboarding/account-details/OnboardingFormRow.vue",
+      "story": false
+    },
+    {
+      "name": "OnboardingFormSelect",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/onboarding/account-details/OnboardingFormSelect.vue",
+      "story": false
+    },
+    {
+      "name": "open-in-chat",
+      "path": "novu/playground/nextjs/src/components/ai-elements/open-in-chat.tsx",
+      "story": false
+    },
+    {
+      "name": "organization-list",
+      "path": "novu/apps/dashboard/src/pages/organization-list.tsx",
+      "story": false
+    },
+    {
+      "name": "panel",
+      "path": "novu/apps/dashboard/src/components/primitives/panel.tsx",
+      "story": false
+    },
+    {
+      "name": "panel",
+      "path": "novu/playground/nextjs/src/components/ai-elements/panel.tsx",
+      "story": false
+    },
+    {
+      "name": "panel-header",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/layout/panel-header.tsx",
+      "story": false
+    },
+    {
+      "name": "pause-workflow-dialog",
+      "path": "novu/apps/dashboard/src/components/pause-workflow-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "pill-widget",
+      "path": "novu/apps/dashboard/src/components/primitives/translation-plugin/pill-widget.ts",
+      "story": false
+    },
+    {
+      "name": "plan-limit-upgrade-dialog",
+      "path": "novu/apps/dashboard/src/components/agents/plan-limit-upgrade-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "plan-limit-upgrade-dialog",
+      "path": "novu/apps/dashboard/src/components/billing/plan-limit-upgrade-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "platform",
+      "path": "chatwoot/app/javascript/shared/helpers/platform.js",
+      "story": false
+    },
+    {
+      "name": "platform.errors",
+      "path": "novu/packages/framework/src/errors/platform.errors.ts",
+      "story": false
+    },
+    {
+      "name": "preChat",
+      "path": "chatwoot/app/javascript/dashboard/helper/preChat.js",
+      "story": false
+    },
+    {
+      "name": "PreChatFields",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/inbox/PreChatForm/PreChatFields.vue",
+      "story": false
+    },
+    {
+      "name": "PreChatForm",
+      "path": "chatwoot/app/javascript/widget/views/PreChatForm.vue",
+      "story": false
+    },
+    {
+      "name": "preference-schedule",
+      "path": "novu/packages/js/src/preferences/preference-schedule.ts",
+      "story": false
+    },
+    {
+      "name": "PreferencesListSkeleton",
+      "path": "novu/packages/js/src/ui/components/elements/Preferences/PreferencesListSkeleton.tsx",
+      "story": false
+    },
+    {
+      "name": "preview-context-panel",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/preview-context-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "PreviewCard",
+      "path": "chatwoot/app/javascript/dashboard/components/ui/PreviewCard.vue",
+      "story": false
+    },
+    {
+      "name": "print-chat-sdk-reconcile-plan",
+      "path": "novu/packages/novu/src/commands/connect/ui/print-chat-sdk-reconcile-plan.ts",
+      "story": false
+    },
+    {
+      "name": "profile-keys",
+      "path": "matrix-js-sdk/src/models/profile-keys.ts",
+      "story": false
+    },
+    {
+      "name": "profile.routes",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/profile/profile.routes.js",
+      "story": false
+    },
+    {
+      "name": "progress-list",
+      "path": "novu/packages/novu/src/commands/wizard/ui/primitives/progress-list.tsx",
+      "story": false
+    },
+    {
+      "name": "publish-modal",
+      "path": "novu/apps/dashboard/src/components/header-navigation/publish-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "publish-success-modal",
+      "path": "novu/apps/dashboard/src/components/header-navigation/publish-success-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "PurchaseCreditsModal",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/billing/components/PurchaseCreditsModal.vue",
+      "story": false
+    },
+    {
+      "name": "push-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/push/push-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "RadioCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/radioCard/RadioCard.vue",
+      "story": false
+    },
+    {
+      "name": "RadioCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/radioCard/RadioCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "raw-body-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/http-request/raw-body-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "recent-conversations-section",
+      "path": "novu/apps/dashboard/src/components/agents/recent-conversations-section.tsx",
+      "story": false
+    },
+    {
+      "name": "region-modals",
+      "path": "novu/apps/dashboard/src/context/region/region-modals.tsx",
+      "story": false
+    },
+    {
+      "name": "ReplyBottomPanel",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/WootWriter/ReplyBottomPanel.vue",
+      "story": false
+    },
+    {
+      "name": "ReplyToMessage",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ReplyToMessage.vue",
+      "story": false
+    },
+    {
+      "name": "ReplyTopPanel",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/WootWriter/ReplyTopPanel.vue",
+      "story": false
+    },
+    {
+      "name": "ReportCaptainMessageDialog",
+      "path": "chatwoot/app/javascript/dashboard/modules/conversations/components/ReportCaptainMessageDialog.vue",
+      "story": false
+    },
+    {
+      "name": "ReportMetricCard",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/ReportMetricCard.vue",
+      "story": false
+    },
+    {
+      "name": "ResizableEditorWrapper",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ResizableEditorWrapper.vue",
+      "story": false
+    },
+    {
+      "name": "ResponseCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/ResponseCard.vue",
+      "story": false
+    },
+    {
+      "name": "ResponseCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/ResponseCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "ResponseForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/pageComponents/response/ResponseForm.vue",
+      "story": false
+    },
+    {
+      "name": "rocket-chat.handler",
+      "path": "novu/libs/application-generic/src/factories/chat/handlers/rocket-chat.handler.ts",
+      "story": false
+    },
+    {
+      "name": "RuleCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/RuleCard.vue",
+      "story": false
+    },
+    {
+      "name": "RuleCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/RuleCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "save-form-context",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/save-form-context.ts",
+      "story": false
+    },
+    {
+      "name": "ScenariosCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/ScenariosCard.vue",
+      "story": false
+    },
+    {
+      "name": "ScenariosCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/captain/assistant/ScenariosCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "schedule",
+      "path": "novu/packages/js/src/preferences/schedule.ts",
+      "story": false
+    },
+    {
+      "name": "schedule-cache",
+      "path": "novu/packages/js/src/cache/schedule-cache.ts",
+      "story": false
+    },
+    {
+      "name": "schedule-table",
+      "path": "novu/apps/dashboard/src/components/subscribers/preferences/schedule-table.tsx",
+      "story": false
+    },
+    {
+      "name": "schedule-validator",
+      "path": "novu/apps/worker/src/app/workflow/usecases/run-job/schedule-validator.ts",
+      "story": false
+    },
+    {
+      "name": "scheduled-type",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/digest-delay-tabs/scheduled-type.tsx",
+      "story": false
+    },
+    {
+      "name": "scheduler",
+      "path": "novu/enterprise/workers/scheduler/src/scheduler.ts",
+      "story": false
+    },
+    {
+      "name": "scheduler",
+      "path": "matrix-js-sdk/src/scheduler.ts",
+      "story": false
+    },
+    {
+      "name": "ScheduleRow",
+      "path": "novu/packages/js/src/ui/components/elements/Preferences/ScheduleRow.tsx",
+      "story": false
+    },
+    {
+      "name": "ScheduleTable",
+      "path": "novu/packages/js/src/ui/components/elements/Preferences/ScheduleTable.tsx",
+      "story": false
+    },
+    {
+      "name": "SearchContactAgentSelector",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/SearchContactAgentSelector.vue",
+      "story": false
+    },
+    {
+      "name": "SearchInboxSelector",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/SearchInboxSelector.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultArticlesList",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/SearchResultArticlesList.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultContactItem",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/SearchResultContactItem.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultContactsList",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/SearchResultContactsList.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultConversationItem",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/SearchResultConversationItem.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultConversationsList",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/SearchResultConversationsList.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultMessageItem",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/SearchResultMessageItem.vue",
+      "story": false
+    },
+    {
+      "name": "SearchResultMessagesList",
+      "path": "chatwoot/app/javascript/dashboard/modules/search/components/SearchResultMessagesList.vue",
+      "story": false
+    },
+    {
+      "name": "select-primary-integration-modal",
+      "path": "novu/apps/dashboard/src/components/integrations/components/modals/select-primary-integration-modal.tsx",
+      "story": false
+    },
+    {
+      "name": "select-widget",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/controls/select-widget.tsx",
+      "story": false
+    },
+    {
+      "name": "send-message-channel.command",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message-channel.command.ts",
+      "story": false
+    },
+    {
+      "name": "send-message-chat.usecase",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message-chat.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "send-message-delay.usecase",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message-delay.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "send-message-email.usecase",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message-email.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "send-message-in-app.usecase",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message-in-app.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "send-message-push.usecase",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message-push.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "send-message-sms.usecase",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message-sms.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "send-message-type.usecase",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message-type.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "send-message.base",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message.base.ts",
+      "story": false
+    },
+    {
+      "name": "send-message.command",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message.command.ts",
+      "story": false
+    },
+    {
+      "name": "send-message.usecase",
+      "path": "novu/apps/worker/src/app/workflow/usecases/send-message/send-message.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "sendgrid.handler",
+      "path": "novu/libs/application-generic/src/factories/mail/handlers/sendgrid.handler.ts",
+      "story": false
+    },
+    {
+      "name": "setup-guide-card",
+      "path": "novu/apps/dashboard/src/components/agents/setup-guide-card.tsx",
+      "story": false
+    },
+    {
+      "name": "setup-outcome-message",
+      "path": "novu/packages/novu/src/commands/connect/pipeline/bridge/setup-outcome-message.ts",
+      "story": false
+    },
+    {
+      "name": "setup-steps-card",
+      "path": "novu/apps/dashboard/src/components/welcome/home/setup-steps-card.tsx",
+      "story": false
+    },
+    {
+      "name": "ShareModal",
+      "path": "chatwoot/app/javascript/dashboard/components-next/year-in-review/ShareModal.vue",
+      "story": false
+    },
+    {
+      "name": "ShopifyOrdersList",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/ShopifyOrdersList.vue",
+      "story": false
+    },
+    {
+      "name": "Sidebar",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/Sidebar.vue",
+      "story": false
+    },
+    {
+      "name": "sidebar",
+      "path": "novu/apps/dashboard/src/components/side-navigation/sidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "SidebarAccountSwitcher",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarAccountSwitcher.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarActionsHeader",
+      "path": "chatwoot/app/javascript/dashboard/components-next/SidebarActionsHeader.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarActionsHeader.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/SidebarActionsHeader.story.vue",
+      "story": true
+    },
+    {
+      "name": "SidebarChangelogButton",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarChangelogButton.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarChangelogCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarChangelogCard.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarCollapsedPopover",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarCollapsedPopover.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroup",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarGroup.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroupEmptyLeaf",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarGroupEmptyLeaf.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroupHeader",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarGroupHeader.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroupLeaf",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarGroupLeaf.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarGroupSeparator",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarGroupSeparator.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarNotificationBell",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarNotificationBell.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarProfileMenu",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarProfileMenu.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarProfileMenuStatus",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarProfileMenuStatus.vue",
+      "story": false
+    },
+    {
+      "name": "sidebarSort",
+      "path": "chatwoot/app/javascript/dashboard/helper/sidebarSort.js",
+      "story": false
+    },
+    {
+      "name": "SidebarSortMenu",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarSortMenu.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarSubGroup",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarSubGroup.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarThemeToggle",
+      "path": "chatwoot/app/javascript/portal/components/SidebarThemeToggle.vue",
+      "story": false
+    },
+    {
+      "name": "SidebarUnreadBadge",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/SidebarUnreadBadge.vue",
+      "story": false
+    },
+    {
+      "name": "SidepanelSwitch",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/SidepanelSwitch.vue",
+      "story": false
+    },
+    {
+      "name": "single-click-editable-value",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/shared/editable-json-viewer/single-click-editable-value.tsx",
+      "story": false
+    },
+    {
+      "name": "SLACardLabel",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/ConversationCard/SLACardLabel.vue",
+      "story": false
+    },
+    {
+      "name": "SLACardLabel",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Conversation/Sla/SLACardLabel.vue",
+      "story": false
+    },
+    {
+      "name": "SLACardLabel",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/components/SLACardLabel.vue",
+      "story": false
+    },
+    {
+      "name": "SlaForm",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/sla/SlaForm.vue",
+      "story": false
+    },
+    {
+      "name": "SLAMetricCard",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/SLA/SLAMetricCard.vue",
+      "story": false
+    },
+    {
+      "name": "SLAPopoverCard",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/components/SLAPopoverCard.vue",
+      "story": false
+    },
+    {
+      "name": "SLATable",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/SLA/SLATable.vue",
+      "story": false
+    },
+    {
+      "name": "sms-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/sms/sms-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "SMSCampaignDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/SMSCampaign/SMSCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "SMSCampaignForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/SMSCampaign/SMSCampaignForm.vue",
+      "story": false
+    },
+    {
+      "name": "StackedChangelogCard",
+      "path": "chatwoot/app/javascript/dashboard/components-next/changelog-card/StackedChangelogCard.vue",
+      "story": false
+    },
+    {
+      "name": "StackedChangelogCard.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/changelog-card/StackedChangelogCard.story.vue",
+      "story": true
+    },
+    {
+      "name": "status-preview-card",
+      "path": "novu/apps/dashboard/src/components/activity/components/status-preview-card.tsx",
+      "story": false
+    },
+    {
+      "name": "step-editor-context",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/context/step-editor-context.tsx",
+      "story": false
+    },
+    {
+      "name": "step-editor-factory",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/editor/step-editor-factory.tsx",
+      "story": false
+    },
+    {
+      "name": "step-editor-layout",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/step-editor-layout.tsx",
+      "story": false
+    },
+    {
+      "name": "step-editor-mode-toggle",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/shared/step-editor-mode-toggle.tsx",
+      "story": false
+    },
+    {
+      "name": "step-editor-unavailable",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/step-editor-unavailable.tsx",
+      "story": false
+    },
+    {
+      "name": "step-preview-hover-card",
+      "path": "novu/apps/dashboard/src/components/step-preview-hover-card.tsx",
+      "story": false
+    },
+    {
+      "name": "step-resolver-active-panel",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/shared/step-resolver-active-panel.tsx",
+      "story": false
+    },
+    {
+      "name": "subscriber-activity-list",
+      "path": "novu/apps/dashboard/src/components/subscribers/subscriber-activity-list.tsx",
+      "story": false
+    },
+    {
+      "name": "subscriber-list",
+      "path": "novu/apps/dashboard/src/components/subscribers/subscriber-list.tsx",
+      "story": false
+    },
+    {
+      "name": "subscriber-list-blank",
+      "path": "novu/apps/dashboard/src/components/subscribers/subscriber-list-blank.tsx",
+      "story": false
+    },
+    {
+      "name": "subscriber-overview-form",
+      "path": "novu/apps/dashboard/src/components/subscribers/subscriber-overview-form.tsx",
+      "story": false
+    },
+    {
+      "name": "subscribers-schedule",
+      "path": "novu/apps/dashboard/src/components/subscribers/preferences/subscribers-schedule.tsx",
+      "story": false
+    },
+    {
+      "name": "subscribersMessagesMarkAll",
+      "path": "novu/libs/internal-sdk/src/funcs/subscribersMessagesMarkAll.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersMessagesMarkAll",
+      "path": "novu/libs/internal-sdk/src/react-query/subscribersMessagesMarkAll.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersMessagesMarkAllAs",
+      "path": "novu/libs/internal-sdk/src/funcs/subscribersMessagesMarkAllAs.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersMessagesMarkAllAs",
+      "path": "novu/libs/internal-sdk/src/react-query/subscribersMessagesMarkAllAs.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersMessagesUpdateAsSeen",
+      "path": "novu/libs/internal-sdk/src/funcs/subscribersMessagesUpdateAsSeen.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersMessagesUpdateAsSeen",
+      "path": "novu/libs/internal-sdk/src/react-query/subscribersMessagesUpdateAsSeen.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersNotificationsList",
+      "path": "novu/libs/internal-sdk/src/funcs/subscribersNotificationsList.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersNotificationsList",
+      "path": "novu/libs/internal-sdk/src/react-query/subscribersNotificationsList.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersNotificationsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/subscribersNotificationsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersPreferencesList",
+      "path": "novu/libs/internal-sdk/src/funcs/subscribersPreferencesList.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersPreferencesList",
+      "path": "novu/libs/internal-sdk/src/react-query/subscribersPreferencesList.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersPreferencesList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/subscribersPreferencesList.core.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersTopicsList",
+      "path": "novu/libs/internal-sdk/src/funcs/subscribersTopicsList.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersTopicsList",
+      "path": "novu/libs/internal-sdk/src/react-query/subscribersTopicsList.ts",
+      "story": false
+    },
+    {
+      "name": "subscribersTopicsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/subscribersTopicsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "SubscriptionPreferencesListSkeleton",
+      "path": "novu/packages/js/src/ui/components/subscription/SubscriptionPreferencesListSkeleton.tsx",
+      "story": false
+    },
+    {
+      "name": "switch-widget",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/controls/switch-widget.tsx",
+      "story": false
+    },
+    {
+      "name": "Table",
+      "path": "chatwoot/app/javascript/dashboard/components/table/Table.vue",
+      "story": false
+    },
+    {
+      "name": "table",
+      "path": "novu/apps/dashboard/src/components/primitives/table.tsx",
+      "story": false
+    },
+    {
+      "name": "table",
+      "path": "novu/packages/novu/src/commands/wizard/ui/markdown/table.tsx",
+      "story": false
+    },
+    {
+      "name": "table-pagination-footer",
+      "path": "novu/apps/dashboard/src/components/primitives/table-pagination-footer.tsx",
+      "story": false
+    },
+    {
+      "name": "TableFooter",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/TableFooter.vue",
+      "story": false
+    },
+    {
+      "name": "TableFooterPagination",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/TableFooterPagination.vue",
+      "story": false
+    },
+    {
+      "name": "TableFooterResults",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/TableFooterResults.vue",
+      "story": false
+    },
+    {
+      "name": "TableHeaderCell",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/TableHeaderCell.vue",
+      "story": false
+    },
+    {
+      "name": "TableOfContents",
+      "path": "chatwoot/app/javascript/portal/components/TableOfContents.vue",
+      "story": false
+    },
+    {
+      "name": "TabsList",
+      "path": "novu/packages/js/src/ui/components/primitives/Tabs/TabsList.tsx",
+      "story": false
+    },
+    {
+      "name": "TeamForm",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/teams/TeamForm.vue",
+      "story": false
+    },
+    {
+      "name": "TeamTable",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/reports/components/overview/TeamTable.vue",
+      "story": false
+    },
+    {
+      "name": "telegram-mobile-setup-card",
+      "path": "novu/apps/dashboard/src/components/agents/telegram-mobile-setup-card.tsx",
+      "story": false
+    },
+    {
+      "name": "text-widget",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/controls/text-widget.tsx",
+      "story": false
+    },
+    {
+      "name": "TextMessages.story",
+      "path": "chatwoot/app/javascript/dashboard/components-next/message/stories/TextMessages.story.vue",
+      "story": true
+    },
+    {
+      "name": "throttle-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/throttle/throttle-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "time-display-hover-card",
+      "path": "novu/apps/dashboard/src/components/time-display-hover-card.tsx",
+      "story": false
+    },
+    {
+      "name": "timeline",
+      "path": "novu/apps/dashboard/src/components/primitives/timeline.tsx",
+      "story": false
+    },
+    {
+      "name": "timeline-window",
+      "path": "matrix-js-sdk/src/timeline-window.ts",
+      "story": false
+    },
+    {
+      "name": "ToDeviceMessage",
+      "path": "matrix-js-sdk/src/models/ToDeviceMessage.ts",
+      "story": false
+    },
+    {
+      "name": "ToDeviceMessageQueue",
+      "path": "matrix-js-sdk/src/ToDeviceMessageQueue.ts",
+      "story": false
+    },
+    {
+      "name": "tool-progress-card",
+      "path": "novu/apps/dashboard/src/components/conversations/tool-progress-card.tsx",
+      "story": false
+    },
+    {
+      "name": "topic-list",
+      "path": "novu/apps/dashboard/src/components/topics/topic-list.tsx",
+      "story": false
+    },
+    {
+      "name": "topic-list-blank",
+      "path": "novu/apps/dashboard/src/components/topics/topic-list-blank.tsx",
+      "story": false
+    },
+    {
+      "name": "topic-overview-form",
+      "path": "novu/apps/dashboard/src/components/topics/topic-overview-form.tsx",
+      "story": false
+    },
+    {
+      "name": "topicsList",
+      "path": "novu/libs/internal-sdk/src/funcs/topicsList.ts",
+      "story": false
+    },
+    {
+      "name": "topicsList",
+      "path": "novu/libs/internal-sdk/src/react-query/topicsList.ts",
+      "story": false
+    },
+    {
+      "name": "topicsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/topicsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "topicsSubscriptionsList",
+      "path": "novu/libs/internal-sdk/src/funcs/topicsSubscriptionsList.ts",
+      "story": false
+    },
+    {
+      "name": "topicsSubscriptionsList",
+      "path": "novu/libs/internal-sdk/src/react-query/topicsSubscriptionsList.ts",
+      "story": false
+    },
+    {
+      "name": "topicsSubscriptionsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/topicsSubscriptionsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "translation-list",
+      "path": "novu/apps/dashboard/src/components/translations/translation-list.tsx",
+      "story": false
+    },
+    {
+      "name": "translation-list-upgrade-cta",
+      "path": "novu/apps/dashboard/src/components/translations/translation-list-upgrade-cta.tsx",
+      "story": false
+    },
+    {
+      "name": "translation-suggestions-list-view",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/email/translations/translation-suggestions-list-view.tsx",
+      "story": false
+    },
+    {
+      "name": "UnreadMessage",
+      "path": "chatwoot/app/javascript/widget/components/UnreadMessage.vue",
+      "story": false
+    },
+    {
+      "name": "UnreadMessageList",
+      "path": "chatwoot/app/javascript/widget/components/UnreadMessageList.vue",
+      "story": false
+    },
+    {
+      "name": "UnreadMessages",
+      "path": "chatwoot/app/javascript/widget/views/UnreadMessages.vue",
+      "story": false
+    },
+    {
+      "name": "unsaved-changes-alert-dialog",
+      "path": "novu/apps/dashboard/src/components/unsaved-changes-alert-dialog.tsx",
+      "story": false
+    },
+    {
+      "name": "update-integration-sidebar",
+      "path": "novu/apps/dashboard/src/components/integrations/components/update-integration-sidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "update-message-template.command",
+      "path": "novu/libs/application-generic/src/usecases/message-template/update-message-template/update-message-template.command.ts",
+      "story": false
+    },
+    {
+      "name": "update-message-template.usecase",
+      "path": "novu/libs/application-generic/src/usecases/message-template/update-message-template/update-message-template.usecase.ts",
+      "story": false
+    },
+    {
+      "name": "upsert-variable-form",
+      "path": "novu/apps/dashboard/src/components/variables/upsert-variable-form.tsx",
+      "story": false
+    },
+    {
+      "name": "usage-card",
+      "path": "novu/apps/dashboard/src/components/side-navigation/usage-card.tsx",
+      "story": false
+    },
+    {
+      "name": "use-editor-preview",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/use-editor-preview.tsx",
+      "story": false
+    },
+    {
+      "name": "use-translation-editor",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/email/translations/edit-translation-popover/use-translation-editor.ts",
+      "story": false
+    },
+    {
+      "name": "use-translation-form",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/steps/email/translations/edit-translation-popover/use-translation-form.ts",
+      "story": false
+    },
+    {
+      "name": "useAgentsList",
+      "path": "chatwoot/app/javascript/dashboard/composables/useAgentsList.js",
+      "story": false
+    },
+    {
+      "name": "useChatListKeyboardEvents",
+      "path": "chatwoot/app/javascript/dashboard/composables/chatlist/useChatListKeyboardEvents.js",
+      "story": false
+    },
+    {
+      "name": "useConversationHotKeys",
+      "path": "chatwoot/app/javascript/dashboard/composables/commands/useConversationHotKeys.js",
+      "story": false
+    },
+    {
+      "name": "useConversationLabels",
+      "path": "chatwoot/app/javascript/dashboard/composables/useConversationLabels.js",
+      "story": false
+    },
+    {
+      "name": "useConversationRequiredAttributes",
+      "path": "chatwoot/app/javascript/dashboard/composables/useConversationRequiredAttributes.js",
+      "story": false
+    },
+    {
+      "name": "useEditableAutomation",
+      "path": "chatwoot/app/javascript/dashboard/composables/useEditableAutomation.js",
+      "story": false
+    },
+    {
+      "name": "useInbox",
+      "path": "chatwoot/app/javascript/dashboard/composables/useInbox.js",
+      "story": false
+    },
+    {
+      "name": "useInboxHotKeys",
+      "path": "chatwoot/app/javascript/dashboard/composables/commands/useInboxHotKeys.js",
+      "story": false
+    },
+    {
+      "name": "useKeyboardNavigableList",
+      "path": "chatwoot/app/javascript/dashboard/composables/useKeyboardNavigableList.js",
+      "story": false
+    },
+    {
+      "name": "useMessageFormatter",
+      "path": "chatwoot/app/javascript/shared/composables/useMessageFormatter.js",
+      "story": false
+    },
+    {
+      "name": "useNumberFormatter",
+      "path": "chatwoot/app/javascript/shared/composables/useNumberFormatter.js",
+      "story": false
+    },
+    {
+      "name": "user-message",
+      "path": "novu/apps/dashboard/src/components/ai-sidekick/user-message.tsx",
+      "story": false
+    },
+    {
+      "name": "user-profile",
+      "path": "novu/apps/dashboard/src/components/user-profile.tsx",
+      "story": false
+    },
+    {
+      "name": "UserMessage",
+      "path": "chatwoot/app/javascript/superadmin_pages/components/playground/UserMessage.vue",
+      "story": false
+    },
+    {
+      "name": "UserMessage",
+      "path": "chatwoot/app/javascript/widget/components/UserMessage.vue",
+      "story": false
+    },
+    {
+      "name": "UserMessageBubble",
+      "path": "chatwoot/app/javascript/widget/components/UserMessageBubble.vue",
+      "story": false
+    },
+    {
+      "name": "UserProfilePicture",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/settings/profile/UserProfilePicture.vue",
+      "story": false
+    },
+    {
+      "name": "useSidebarKeyboardShortcuts",
+      "path": "chatwoot/app/javascript/dashboard/components-next/sidebar/useSidebarKeyboardShortcuts.js",
+      "story": false
+    },
+    {
+      "name": "useTransformKeys",
+      "path": "chatwoot/app/javascript/dashboard/composables/useTransformKeys.js",
+      "story": false
+    },
+    {
+      "name": "value-editor",
+      "path": "novu/apps/dashboard/src/components/conditions-editor/value-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "valueFormatter",
+      "path": "matrix-js-sdk/src/webrtc/stats/valueFormatter.ts",
+      "story": false
+    },
+    {
+      "name": "variable-editor",
+      "path": "novu/apps/dashboard/src/components/primitives/variable-editor.tsx",
+      "story": false
+    },
+    {
+      "name": "variable-list",
+      "path": "novu/apps/dashboard/src/components/variable/variable-list.tsx",
+      "story": false
+    },
+    {
+      "name": "variable-list",
+      "path": "novu/apps/dashboard/src/components/variables/variable-list.tsx",
+      "story": false
+    },
+    {
+      "name": "variable-list-upgrade-cta",
+      "path": "novu/apps/dashboard/src/components/variables/variable-list-upgrade-cta.tsx",
+      "story": false
+    },
+    {
+      "name": "variable-pill-widget",
+      "path": "novu/apps/dashboard/src/components/primitives/variable-plugin/variable-pill-widget.ts",
+      "story": false
+    },
+    {
+      "name": "VariableList",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/conversation/VariableList.vue",
+      "story": false
+    },
+    {
+      "name": "vercel-integration-form",
+      "path": "novu/apps/dashboard/src/components/vercel-integration-form.tsx",
+      "story": false
+    },
+    {
+      "name": "WebWidgetCreationStatus",
+      "path": "chatwoot/app/javascript/dashboard/routes/dashboard/onboarding/inbox-setup/WebWidgetCreationStatus.vue",
+      "story": false
+    },
+    {
+      "name": "welcome-sidebar",
+      "path": "novu/apps/dashboard/src/components/welcome/home/welcome-sidebar.tsx",
+      "story": false
+    },
+    {
+      "name": "WhatsAppCampaignDialog",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/WhatsAppCampaign/WhatsAppCampaignDialog.vue",
+      "story": false
+    },
+    {
+      "name": "WhatsAppCampaignForm",
+      "path": "chatwoot/app/javascript/dashboard/components-next/Campaigns/Pages/CampaignPage/WhatsAppCampaign/WhatsAppCampaignForm.vue",
+      "story": false
+    },
+    {
+      "name": "Widget",
+      "path": "chatwoot/app/javascript/dashboard/modules/widget-preview/components/Widget.vue",
+      "story": false
+    },
+    {
+      "name": "widget",
+      "path": "chatwoot/app/javascript/entrypoints/widget.js",
+      "story": false
+    },
+    {
+      "name": "WidgetAudioNotificationHelper",
+      "path": "chatwoot/app/javascript/widget/helpers/WidgetAudioNotificationHelper.js",
+      "story": false
+    },
+    {
+      "name": "WidgetBody",
+      "path": "chatwoot/app/javascript/dashboard/modules/widget-preview/components/WidgetBody.vue",
+      "story": false
+    },
+    {
+      "name": "widgetBusEvents",
+      "path": "chatwoot/app/javascript/widget/constants/widgetBusEvents.js",
+      "story": false
+    },
+    {
+      "name": "WidgetFooter",
+      "path": "chatwoot/app/javascript/dashboard/modules/widget-preview/components/WidgetFooter.vue",
+      "story": false
+    },
+    {
+      "name": "WidgetHead",
+      "path": "chatwoot/app/javascript/dashboard/modules/widget-preview/components/WidgetHead.vue",
+      "story": false
+    },
+    {
+      "name": "WootKeyShortcutModal",
+      "path": "chatwoot/app/javascript/dashboard/components/widgets/modal/WootKeyShortcutModal.vue",
+      "story": false
+    },
+    {
+      "name": "workflow-checklist",
+      "path": "novu/apps/dashboard/src/components/workflow-editor/workflow-checklist.tsx",
+      "story": false
+    },
+    {
+      "name": "workflow-editor-commands",
+      "path": "novu/apps/dashboard/src/components/command-palette/commands/workflow-editor-commands.tsx",
+      "story": false
+    },
+    {
+      "name": "workflow-hover-card",
+      "path": "novu/apps/dashboard/src/components/header-navigation/workflow-hover-card.tsx",
+      "story": false
+    },
+    {
+      "name": "workflow-list",
+      "path": "novu/apps/dashboard/src/components/workflow-list.tsx",
+      "story": false
+    },
+    {
+      "name": "workflow-list-empty",
+      "path": "novu/apps/dashboard/src/components/workflow-list-empty.tsx",
+      "story": false
+    },
+    {
+      "name": "workflow-trigger-inbox",
+      "path": "novu/apps/dashboard/src/components/icons/workflow-trigger-inbox.tsx",
+      "story": false
+    },
+    {
+      "name": "workflowsList",
+      "path": "novu/libs/internal-sdk/src/funcs/workflowsList.ts",
+      "story": false
+    },
+    {
+      "name": "workflowsList",
+      "path": "novu/libs/internal-sdk/src/react-query/workflowsList.ts",
+      "story": false
+    },
+    {
+      "name": "workflowsList.core",
+      "path": "novu/libs/internal-sdk/src/react-query/workflowsList.core.ts",
+      "story": false
+    },
+    {
+      "name": "YearInReviewModal",
+      "path": "chatwoot/app/javascript/dashboard/components-next/year-in-review/YearInReviewModal.vue",
+      "story": false
+    }
+  ]
+}
