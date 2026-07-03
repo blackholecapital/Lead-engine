@@ -1,0 +1,6 @@
+{
+  "id":"295a2be631af15f292aaa3e32f7f6605",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/RefreshWidget/RefreshWidget.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

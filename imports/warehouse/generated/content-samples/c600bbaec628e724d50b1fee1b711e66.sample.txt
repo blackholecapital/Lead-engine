@@ -1,0 +1,10 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-conditions-count.ts
+
+import { useMemo } from 'react';
+import { RQBJsonLogic } from 'react-querybuilder';
+
+import { countConditions } from '@/utils/conditions';
+
+export const useConditionsCount = (jsonLogic?: RQBJsonLogic) => {
+  return useMemo(() => countConditions(jsonLogic), [jsonLogic]);
+};

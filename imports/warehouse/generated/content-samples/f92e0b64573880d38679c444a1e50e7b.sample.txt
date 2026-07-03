@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/conditions-editor/value-editor.tsx
+
+import { useFormContext } from 'react-hook-form';
+import { useValueEditor, ValueEditorProps } from 'react-querybuilder';
+import type { HelpTextInfo } from '@/components/conditions-editor/field-type-editors';
+import { shouldUseRelativeDateEditor } from '@/components/conditions-editor/field-type-editors';
+import { HelpIcon } from '@/components/conditions-editor/help-icon';
+import { InputRoot, InputWrapper } from '@/components/primitives/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/primitives/select';
+import { ControlInput } from '@/components/workflow-editor/control-input';
+import { IsAllowedVariable, LiquidVariable } from '@/utils/parseStepVariables';
+
+type RelativeDateValue = {
+  amount: number | string;
+  unit: 'minutes' | 'hours' | 'days' | 'weeks' | 'months' | 'years';
+};
+
+type ExtendedContext = {
+  variables: LiquidVariable[];
+  isAllowedVariable: IsAllowedVariable;
+  getPlaceholder?: (fieldName: string, operator: string) => string;
+  getHelpText?: (fieldName: string, operator: string) => HelpTextInfo;
+};
+
+const TIME_UNITS = [
+  { value: 'minutes', label: 'minutes' },
+  { value: 'hours', label: 'hours' },
+  { value: 'days', label: 'days' },
+  { value: 'weeks', label: 'weeks' },
+  { value: 'months', label: 'months' },
+  { value: 'years', label: 'years' },
+] as const;
+
+type BaseEditorProps = {
+  value: string;
+  onChange: (newValue: string) => void;
+  placeholder: string;
+  variables: LiquidVariable[];
+  isAllowedVariable: IsAllowedVariable;
+  hasError: boolean;
+  helpText: HelpTextInfo | null;
+  errorMessage?: string;
+  disabled?: boolean;
+};
+
+export const ValueEditor = (props: ValueEditorProps) => {
+  const form = useFormContext();
+  const queryPath = 'query.rules.' + props.path.join('.rules.') + '.value';
+  const { error } = form.getFieldState(queryPath, form.formState);
+  const { variables = [], isAllowedVariable, getPlaceholder, getHelpText } = (props.context as ExtendedContext) ?? {};
+  const { value, handleOnChange, operator, field, disabled } = props;
+  const { valueAsArray, multiValueHandler } = useValueEditor(props);
+  const stringValue = typeof value === 'string' ? value : `${value}`;
+  const stringValueAsArray = valueAsArray.map((v) => (typeof v === 'string' ? v : `${v}`));
+
+  if (operator === 'null' || operator === 'notNull') {
+    return null;
+  }
+
+  const placeholder = getPlaceholder ? getPlaceholder(field, operator) : 'value';
+  const helpText = getHelpText ? getHelpText(field, operator) : null;
+  const hasError = !!error;
+  const isDisabled = !!disabled;
+
+  if (shouldUseRelativeDateEditor(operator)) {
+    return (
+      <RelativeDateEditor
+        value={stringValue}
+        onChange={handleOnChange}
+        variables={variables}
+        isAllowedVariable={isAllowedVariable || (() => true)}
+        hasError={hasError}
+        helpText={helpText}
+        errorMessage={error?.message}
+        disabled={isDisabled}
+      />
+    );
+  }
+
+  if (operator === 'between' || operator === 'notBetween') {
+    return (
+      <BetweenValueEditor
+        valueAsArray={stringValueAsArray}
+        multiValueHandler={multiValueHandler}
+        placeholder={placeholder}
+        variables={variables}
+        isAllowedVariable={isAllowedVariable}
+        hasError={hasError}
+        helpText={helpText}
+        errorMessage={error?.message}
+        disabled={isDisabled}
+      />
+    );
+  }
+
+  return (
+    <SingleValueEditor
+      value={stringValue}
+      onChange={handleOnChange}
+      placeholder={placeholder}
+      variables={variables}
+      isAllowedVariable={isAllowedVariable}

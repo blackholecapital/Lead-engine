@@ -1,0 +1,6 @@
+{
+  "id":"aabac3b1e57d3f3bcf46772a5b618aef",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/pieces-selector/approvals-tab-content.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

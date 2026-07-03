@@ -1,0 +1,9 @@
+{
+  "id":"fuzzysort",
+  "title":"Fuzzysort",
+  "category":"scoring",
+  "tags":["search","scoring","fuzzy"],
+  "source":"vendor-source/scoring/fuzzysort",
+  "status":"downloaded",
+  "tier":"candidate"
+}

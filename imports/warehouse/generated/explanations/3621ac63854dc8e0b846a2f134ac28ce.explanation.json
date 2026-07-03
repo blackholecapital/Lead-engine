@@ -1,0 +1,6 @@
+{
+  "id":"3621ac63854dc8e0b846a2f134ac28ce",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/findFirstParentContainer.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

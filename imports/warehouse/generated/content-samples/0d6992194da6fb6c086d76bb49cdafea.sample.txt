@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/form-builder/useShouldBeDisabledDueToPrefill.test.ts
+
+import type { Control } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
+import { describe, expect, vi, beforeEach, test } from "vitest";
+
+import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
+
+import { useShouldBeDisabledDueToPrefill } from "./useShouldBeDisabledDueToPrefill";
+
+vi.mock("@calcom/lib/hooks/useRouterQuery", () => ({
+  useRouterQuery: vi.fn(),
+}));
+
+// Mock `react-hook-form` module
+vi.mock("react-hook-form", async () => {
+  const actual: any = await vi.importActual("react-hook-form");
+  return {
+    ...actual,
+    useFormContext: vi.fn(),
+  };
+});
+
+const defaultField = {
+  name: "test-field",
+  type: "text" as const,
+};
+
+type FormState = {
+  dirtyFields: {
+    responses: Record<string, boolean>;
+  };
+};
+
+const buildFormState = (formState?: FormState) => {
+  formState = formState || {
+    dirtyFields: {
+      responses: {},
+    },
+  };
+  return {
+    ...formState,
+  };
+};
+
+const buildFormStateWithErrorForField = ({
+  fieldName,
+  formState,
+}: {
+  fieldName: string;
+  formState?: FormState;
+}) => {
+  return {
+    ...buildFormState(formState),
+    errors: {
+      responses: {
+        message: `{${fieldName}}Some error in the field`,
+      },
+    },
+  };
+};
+
+const buildFormStateWithNoErrors = (formState?: FormState) => {
+  return buildFormState(formState);
+};
+
+const getMockFormContext = ({
+  formState,
+  responses,
+}: {
+  formState: FormState;
+  responses: Record<string, string | string[]>;
+}) => {
+  return {
+    formState,
+    control: {} as Control,
+    getValues: () => ({
+      responses,
+    }),
+  };
+};
+
+function mockFormContext({ formState, responses }: { formState: any; responses: any }) {
+  (vi.mocked(useFormContext) as any).mockReturnValue(getMockFormContext({ formState, responses }));
+}
+
+function mockScenario({
+  formState,
+  responses,
+  searchParams,
+}: {
+  formState: any;
+  responses: any;
+  searchParams: any;
+}) {
+  mockFormContext({ formState, responses });
+  vi.mocked(useRouterQuery).mockReturnValue(searchParams);
+}
+
+describe("useShouldBeDisabledDueToPrefill", () => {
+  beforeEach(() => {
+    // Reset mocks before each test

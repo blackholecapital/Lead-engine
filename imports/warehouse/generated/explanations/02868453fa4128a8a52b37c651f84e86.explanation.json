@@ -1,0 +1,6 @@
+{
+  "id":"02868453fa4128a8a52b37c651f84e86",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/ResponsiveParameterList.unit.spec.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

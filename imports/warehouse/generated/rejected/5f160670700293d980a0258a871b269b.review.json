@@ -1,0 +1,13 @@
+{
+  "id": "5f160670700293d980a0258a871b269b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/tests/utils/environment-service.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "service",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

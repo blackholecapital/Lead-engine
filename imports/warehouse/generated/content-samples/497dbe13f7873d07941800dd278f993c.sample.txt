@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/details-sidebar.tsx
+
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { RiExpandUpDownLine } from 'react-icons/ri';
+import { Textarea } from '@/components/primitives/textarea';
+import { cn } from '@/utils/ui';
+
+type DetailsSidebarProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+type DetailsSidebarRowProps = {
+  label: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
+};
+
+type ExpandableDetailsTextareaProps = {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  onPersist?: () => Promise<void> | void;
+  onBeforeExpand?: () => void;
+  onExpandedChange?: (isExpanded: boolean) => void;
+  placeholder?: string;
+  maxLength?: number;
+  showCounter?: boolean;
+  disabled?: boolean;
+  isPersisting?: boolean;
+  spellCheck?: boolean;
+  textareaClassName?: string;
+};
+
+export function DetailsSidebar({ children, className }: DetailsSidebarProps) {
+  return <div className={cn('flex w-[300px] shrink-0 flex-col gap-2.5', className)}>{children}</div>;
+}
+
+export function DetailsSidebarCard({ children, className }: DetailsSidebarProps) {
+  return <div className={cn('bg-bg-weak flex flex-col rounded p-1 py-1.5', className)}>{children}</div>;
+}
+
+export function DetailsSidebarRow({ label, children, className }: DetailsSidebarRowProps) {
+  return (
+    <div className={cn('flex h-8 items-center justify-between px-1.5', className)}>
+      <span className="text-text-soft text-label-xs flex items-center gap-1 font-medium">{label}</span>
+      <div className="flex items-center gap-1.5">{children}</div>
+    </div>
+  );
+}
+
+export function ExpandableDetailsTextarea({
+  label,
+  value,
+  onChange,
+  onPersist,
+  onBeforeExpand,
+  onExpandedChange,
+  placeholder,
+  maxLength,
+  showCounter,
+  disabled,
+  isPersisting,
+  spellCheck,
+  textareaClassName,
+}: ExpandableDetailsTextareaProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+  const savingInitial = shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -4 };
+  const savingAnimate = shouldReduceMotion ? { opacity: 1 } : { opacity: 1, x: 0 };
+  const savingExit = shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -4 };
+
+  const setExpanded = useCallback(
+    (nextIsExpanded: boolean) => {
+      setIsExpanded(nextIsExpanded);
+      onExpandedChange?.(nextIsExpanded);
+    },
+    [onExpandedChange]
+  );
+
+  const persistAndCollapse = useCallback(() => {
+    void Promise.resolve(onPersist?.())
+      .then(() => {
+        setExpanded(false);
+      })
+      .catch(() => {});
+  }, [onPersist, setExpanded]);
+
+  const toggleExpanded = useCallback(() => {
+    if (isExpanded) {
+      if (isPersisting) {
+        return;
+      }
+
+      persistAndCollapse();
+
+      return;
+    }
+
+    onBeforeExpand?.();

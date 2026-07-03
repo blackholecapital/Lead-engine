@@ -1,0 +1,14 @@
+{
+  "id": "ec36a0387f41ad0c05abf46ecea43466",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/embedding/embedding-iframe-sdk/components/DashboardParametersBridge.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"0d42f9bca336d238a98b6870b5603fb1",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/containers/use-create-question.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

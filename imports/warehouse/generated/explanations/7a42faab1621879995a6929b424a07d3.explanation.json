@@ -1,0 +1,6 @@
+{
+  "id":"7a42faab1621879995a6929b424a07d3",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getRelatedCharts.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

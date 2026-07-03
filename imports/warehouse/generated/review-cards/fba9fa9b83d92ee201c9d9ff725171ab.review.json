@@ -1,0 +1,12 @@
+{
+  "id": "fba9fa9b83d92ee201c9d9ff725171ab",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-website/src/sections/AppPreview/Pages/Kanban/KanbanPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

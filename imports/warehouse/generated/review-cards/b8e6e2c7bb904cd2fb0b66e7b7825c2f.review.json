@@ -1,0 +1,12 @@
+{
+  "id": "b8e6e2c7bb904cd2fb0b66e7b7825c2f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/testing/react-package-tests/patches/next-js/page.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

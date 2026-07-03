@@ -1,0 +1,14 @@
+{
+  "id": "3f1a5c88a0da326db454a5093be9dd8d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/segment/segment-provider.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "provider",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"fdcdd1ae1f87446c7149a492c8d272fe",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/piece-properties/array-property-in-inline-item-mode.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

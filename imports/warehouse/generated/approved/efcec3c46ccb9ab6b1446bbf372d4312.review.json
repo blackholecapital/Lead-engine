@@ -1,0 +1,12 @@
+{
+  "id": "efcec3c46ccb9ab6b1446bbf372d4312",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/data-studio/library/metrics/pages/DataStudioMetricDependenciesPage/DataStudioMetricDependenciesPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

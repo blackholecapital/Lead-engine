@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/tailwind.config.ts
+
+import animate from 'tailwindcss-animate';
+
+export const borderRadii = {
+  4: '.25rem',
+  6: '.375rem',
+  8: '.5rem',
+  10: '.625rem',
+  12: '.75rem',
+  16: '1rem',
+  20: '1.25rem',
+  24: '1.5rem',
+  full: '999px',
+  lg: 'var(--radius)', // DEPRECATED
+  md: 'calc(var(--radius) - 2px)', // DEPRECATED
+  sm: 'calc(var(--radius) - 4px)', // DEPRECATED
+};
+
+export const texts = {
+  'title-h1': [
+    '3.5rem',
+    {
+      lineHeight: '4rem',
+      letterSpacing: '-0.035em',
+      fontWeight: '500',
+    },
+  ],
+  'title-h2': [
+    '3rem',
+    {
+      lineHeight: '3.5rem',
+      letterSpacing: '-0.035em',
+      fontWeight: '500',
+    },
+  ],
+  'title-h3': [
+    '2.5rem',
+    {
+      lineHeight: '3rem',
+      letterSpacing: '-0.035em',
+      fontWeight: '500',
+    },
+  ],
+  'title-h4': [
+    '2rem',
+    {
+      lineHeight: '2.5rem',
+      letterSpacing: '-0.01em',
+      fontWeight: '500',
+    },
+  ],
+  'title-h5': [
+    '1.5rem',
+    {
+      lineHeight: '2rem',
+      letterSpacing: '0em',
+      fontWeight: '500',
+    },
+  ],
+  'title-h6': [
+    '1.25rem',
+    {
+      lineHeight: '1.75rem',
+      letterSpacing: '0em',
+      fontWeight: '500',
+    },
+  ],
+  'label-xl': [
+    '1.5rem',
+    {
+      lineHeight: '2rem',
+      letterSpacing: '-0.0225em',
+      fontWeight: '500',
+    },
+  ],
+  'label-lg': [
+    '1.125rem',
+    {
+      lineHeight: '1.5rem',
+      letterSpacing: '-0.0225em',
+      fontWeight: '500',
+    },
+  ],
+  'label-md': [
+    '1rem',
+    {
+      lineHeight: '1.5rem',
+      letterSpacing: '-0.011em',
+      fontWeight: '500',
+    },
+  ],
+  'label-sm': [
+    '.875rem',
+    {
+      lineHeight: '1.25rem',
+      letterSpacing: '-0.00525em',
+      fontWeight: '500',
+    },
+  ],
+  'label-xs': [
+    '.75rem',

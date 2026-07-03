@@ -1,0 +1,11 @@
+{
+  "id": "9389f9b5a19098be518bb2fcb24a2bb8",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test/scenarios/dashboard-cards/duplicate-dashcards-tabs.cy.spec.js",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

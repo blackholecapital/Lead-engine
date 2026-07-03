@@ -1,0 +1,13 @@
+{
+  "id": "novu",
+  "label": "Novu",
+  "category": "comms",
+  "tags": [
+    "comms",
+    "email",
+    "sms",
+    "workflow",
+    "notification"
+  ],
+  "type": "asset"
+}

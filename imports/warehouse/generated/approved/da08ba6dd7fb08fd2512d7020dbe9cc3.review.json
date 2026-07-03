@@ -1,0 +1,12 @@
+{
+  "id": "da08ba6dd7fb08fd2512d7020dbe9cc3",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/support/helpers/api/addQuestionToDashboard.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,11 @@
+{
+  "id": "fuzzysort",
+  "title": "Fuzzysort",
+  "tags": [
+    "search",
+    "scoring",
+    "fuzzy"
+  ],
+  "category": "scoring",
+  "source": "vendor-source/scoring/fuzzysort"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"5125eb5c7398a7f4c1851a793edc35a5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/SliceHeaderControls/ViewResultsModalTrigger.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

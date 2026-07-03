@@ -1,0 +1,14 @@
+{
+  "id": "a7d9edbb7fb3ec110a551d706210a4e2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/components/metrics/SaveToDashboardDialog.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/ai-prompts/framework-prompts/angular-prompt.ts
+
+import { PromptConfig, replaceConfigVariables } from './types';
+
+const KITCHEN_SINK_INBOX_SNIPPET = `import { Component, OnInit } from '@angular/core';
+import { NovuService } from '../services/novu.service';
+import { environment } from '../environments/environment';
+
+@Component({
+  selector: 'app-notification-center',
+  template: \`
+    <!-- Ensure the environment variable is available -->
+    <div *ngIf="applicationIdentifier" id="novu-notification-center"></div>
+    <div *ngIf="!applicationIdentifier">
+      <p>NOVU_APP_IDENTIFIER is not defined in environment</p>
+    </div>
+  \`
+})
+export class NotificationCenterComponent implements OnInit {
+  applicationIdentifier = environment.novuAppIdentifier;
+  subscriberId = environment.novuSubscriberId;
+
+  // Backend configuration (for EU region use https://eu.api.novu.co and https://eu.ws.novu.co)
+  backendUrl = '';
+  socketUrl = '';
+
+  // Appearance configuration
+  appearance = {
+    // Base theme configuration
+    baseTheme: 'dark', // Or undefined for light theme
+
+    // Variables for global styling
+    variables: {
+      colorPrimary: '',
+      colorPrimaryForeground: '',
+      colorSecondary: '',
+      colorSecondaryForeground: '',
+      colorCounter: '',
+      colorCounterForeground: '',
+      colorBackground: '',
+      colorRing: '',
+      colorForeground: '',
+      colorNeutral: '',
+      colorShadow: '',
+
+      // Typography and Layout
+      fontSize: '',
+    },
+    elements: {
+      bellIcon: {
+        color: '',
+      },
+    },
+  };
+
+  // Layout configuration
+  placement = '';
+  placementOffset = {};
+
+  constructor(private novuService: NovuService) {}
+
+  async ngOnInit() {
+    if (!this.applicationIdentifier || !this.subscriberId) {
+      console.error('Required environment variables are not defined');
+      return;
+    }
+
+    await this.novuService.initialize({
+      backendUrl: this.backendUrl,
+      socketUrl: this.socketUrl,
+      appearance: this.appearance,
+      placement: this.placement,
+      placementOffset: this.placementOffset,
+    });
+
+    this.novuService.showNotificationCenter('novu-notification-center');
+  }
+}`;
+
+const ANGULAR_PROMPT = `You are an AI agent specialized in integrating the Novu Inbox component into Angular applications. Your primary goal is to seamlessly embed the Inbox component into existing UI structures while maintaining the host application's design patterns and functionality.
+
+### Primary Objectives:
+- **Service Integration**: Create an Angular service for Novu operations
+- **Appearance Customization**: Apply customization through the appearance configuration
+- **Pattern Respect**: Follow Angular dependency injection and component patterns
+
+### Optional Reference:
+- Consult https://docs.novu.co/platform/quickstart/angular for latest instructions if web access is available
+
+---
+
+## Context Analysis Requirements
+
+### Pre-Integration Assessment:
+Before starting the integration, analyze the host application to understand:
+
+**Project Structure Analysis**:
+- [ ] Package manager (pnpm, yarn, npm, bun)
+- [ ] Angular version and configuration
+- [ ] Existing authentication system (Auth0, Firebase, Supabase, custom)
+- [ ] UI framework/library (Angular Material, PrimeNG, Tailwind, etc.)
+- [ ] Existing component patterns and naming conventions

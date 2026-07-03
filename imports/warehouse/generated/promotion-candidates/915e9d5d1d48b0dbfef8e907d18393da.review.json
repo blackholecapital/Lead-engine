@@ -1,0 +1,13 @@
+{
+  "id": "915e9d5d1d48b0dbfef8e907d18393da",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/twenty-orm/repository/workspace-soft-delete-query-builder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

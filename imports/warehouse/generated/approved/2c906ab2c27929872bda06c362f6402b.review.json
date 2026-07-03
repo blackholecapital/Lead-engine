@@ -1,0 +1,13 @@
+{
+  "id": "2c906ab2c27929872bda06c362f6402b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/embedding-sdk-host-apps/next-15-pages-router-host-app/src/pages/interactive-dashboard.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

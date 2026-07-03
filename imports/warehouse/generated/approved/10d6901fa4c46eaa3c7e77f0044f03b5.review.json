@@ -1,0 +1,13 @@
+{
+  "id": "10d6901fa4c46eaa3c7e77f0044f03b5",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-query-builder/types/workspace-entity-duplicate-criteria.type.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

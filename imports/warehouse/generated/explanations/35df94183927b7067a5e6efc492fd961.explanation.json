@@ -1,0 +1,6 @@
+{
+  "id":"35df94183927b7067a5e6efc492fd961",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/chart-data/constants/extra-item-to-detect-too-many-groups.constant.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

@@ -1,0 +1,18 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/pages/variables.tsx
+
+import { AnimatedOutlet } from '@/components/animated-outlet';
+import { DashboardLayout } from '@/components/dashboard-layout';
+import { PageMeta } from '@/components/page-meta';
+import { VariableList } from '@/components/variables/variable-list';
+
+export const VariablesPage = () => {
+  return (
+    <>
+      <PageMeta title="Variables" />
+      <DashboardLayout headerStartItems={<h1 className="text-foreground-950">Variables</h1>}>
+        <VariableList />
+        <AnimatedOutlet />
+      </DashboardLayout>
+    </>
+  );
+};

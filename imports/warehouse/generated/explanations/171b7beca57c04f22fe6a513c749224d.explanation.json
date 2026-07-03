@@ -1,0 +1,6 @@
+{
+  "id":"171b7beca57c04f22fe6a513c749224d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/pieces-selector/pieces-card-list.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

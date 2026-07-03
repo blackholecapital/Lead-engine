@@ -1,0 +1,14 @@
+{
+  "id": "c0d63d30ee892a13c7a2a4fc4d100090",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test-component/scenarios/embedding-sdk/dashboard-click-behavior.cy.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

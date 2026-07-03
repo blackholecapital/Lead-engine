@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/subscribers/subscriber-autocomplete.tsx
+
+import { ISubscriberResponseDto } from '@novu/shared';
+import { AnimatePresence, motion } from 'motion/react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { IconType } from 'react-icons';
+import { RiSearchLine } from 'react-icons/ri';
+import { cn } from '@/utils/ui';
+import { Autocomplete, AutocompleteItem } from '../primitives/autocomplete';
+import { Avatar, AvatarFallback, AvatarImage } from '../primitives/avatar';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../primitives/select';
+import { SearchField, useSubscriberSearch } from './hooks/use-subscriber-search';
+
+interface SubscriberAutocompleteItem extends AutocompleteItem, ISubscriberResponseDto {
+  id: string;
+}
+
+type SubscriberAutocompleteProps = {
+  value: string;
+  onChange: (value: string) => void;
+  size?: 'xs' | 'sm' | 'md';
+  disabled?: boolean;
+  className?: string;
+  isLoading?: boolean;
+  onSubmit?: () => void;
+  onSelectSubscriber?: (subscriber: ISubscriberResponseDto) => void;
+  searchField?: SearchField;
+  onSearchFieldChange?: (field: SearchField) => void;
+  placeholder?: string;
+  trailingIcon?: IconType;
+};
+
+export function SubscriberAutocomplete({
+  value,
+  onChange,
+  size = 'xs',
+  disabled,
+  className,
+  isLoading: externalLoading,
+  onSubmit,
+  onSelectSubscriber,
+  searchField: externalSearchField,
+  onSearchFieldChange,
+  placeholder,
+  trailingIcon = RiSearchLine,
+}: SubscriberAutocompleteProps) {
+  const selectInteractionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Core state
+  const [internalSearchField, setInternalSearchField] = useState<SearchField>('subscriberId');
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+
+  // Use external search field if provided, otherwise use internal state
+  const searchField = externalSearchField || internalSearchField;
+
+  // Get search results
+  const { subscribers, isLoading, hasSearched } = useSubscriberSearch(value, searchField);
+  const combinedLoading = isLoading || externalLoading;
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (selectInteractionTimeoutRef.current) {
+        clearTimeout(selectInteractionTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!value?.length) {
+      // Only open the select field on first interaction
+      if (!hasInteracted) {
+        setIsSelectOpen(true);
+        setHasInteracted(true);
+      }
+    }
+  }, [value, hasInteracted]);
+
+  // Handle search field change
+  const handleSearchFieldChange = useCallback(
+    (value: string) => {
+      // Clear any existing timeout
+      if (selectInteractionTimeoutRef.current) {
+        clearTimeout(selectInteractionTimeoutRef.current);
+      }
+
+      const newSearchField = value as SearchField;
+
+      if (onSearchFieldChange) {
+        onSearchFieldChange(newSearchField);
+      } else {
+        setInternalSearchField(newSearchField);
+      }
+
+      // Clear input when changing search field
+      onChange('');
+    },
+    [onChange, onSearchFieldChange]
+  );
+
+  // Handle select open/close

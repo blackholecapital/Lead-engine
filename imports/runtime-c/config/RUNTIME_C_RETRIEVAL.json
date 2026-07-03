@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "engine": "lancedb",
+  "db_path": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/warehouse/retrieval/lancedb",
+  "table": "runtime_c_assets",
+  "top_k": 5,
+  "max_chars_per_hit": 6000,
+  "max_total_chars": 24000,
+  "sources": [
+    "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/factory/indexes",
+    "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/factory/maps/RESOURCE_MAP.md",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/qwen",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/registries",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/ASSET_TREE_MAP.md"
+  ]
+}

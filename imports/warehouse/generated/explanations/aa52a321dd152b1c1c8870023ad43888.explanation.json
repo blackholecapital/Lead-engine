@@ -1,0 +1,6 @@
+{
+  "id":"aa52a321dd152b1c1c8870023ad43888",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/query-hooks/dashboard-destroy-many.pre-query.hook.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

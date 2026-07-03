@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "id": "postiz",
+    "title": "Postiz",
+    "category": "marketing",
+    "tags": [
+      "social",
+      "marketing",
+      "publishing"
+    ],
+    "source": "vendor-source/marketing/postiz",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "postiz",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "postiz",
+    "label": "Postiz",
+    "category": "marketing",
+    "tags": [
+      "social",
+      "marketing",
+      "publishing"
+    ],
+    "type": "asset"
+  }
+}

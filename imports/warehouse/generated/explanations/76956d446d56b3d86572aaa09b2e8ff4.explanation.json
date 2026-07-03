@@ -1,0 +1,6 @@
+{
+  "id":"76956d446d56b3d86572aaa09b2e8ff4",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/utils/dashboard-graphql-api-exception-handler.util.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

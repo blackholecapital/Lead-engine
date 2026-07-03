@@ -1,0 +1,14 @@
+{
+  "id": "993999f733f94f7aa743da3faa9618ad",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/AIDashboardAnalysisSidebar/AIDashboardAnalysisSidebar.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

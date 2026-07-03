@@ -1,0 +1,12 @@
+{
+  "id": "890f9adb300fcd0eb57468f2eb9f0006",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/pages/settings/domains/SettingsSubdomainPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

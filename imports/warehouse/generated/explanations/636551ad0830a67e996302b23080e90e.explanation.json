@@ -1,0 +1,6 @@
+{
+  "id":"636551ad0830a67e996302b23080e90e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-resolver-builder/factories/destroy-one-resolver.factory.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

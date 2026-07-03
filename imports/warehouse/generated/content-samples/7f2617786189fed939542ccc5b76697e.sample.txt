@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/lib/test/builder.ts
+
+import getICalUID from "@calcom/emails/lib/getICalUID";
+import { WebhookVersion } from "@calcom/features/webhooks/lib/interface/IWebhookRepository";
+import type { Booking, BookingReference, EventType, Prisma, Webhook } from "@calcom/prisma/client";
+import { BookingStatus, CreationSource } from "@calcom/prisma/enums";
+import type { CalendarEvent, Person, VideoCallData } from "@calcom/types/Calendar";
+import { faker } from "@faker-js/faker";
+import type { TFunction } from "i18next";
+
+export const buildVideoCallData = (callData?: Partial<VideoCallData>): VideoCallData => {
+  return {
+    type: faker.helpers.arrayElement(["zoom_video", "stream_video"]),
+    id: faker.datatype.uuid(),
+    password: faker.internet.password(),
+    url: faker.internet.url(),
+    ...callData,
+  };
+};
+
+export const buildPerson = (person?: Partial<Person>): Person => {
+  return {
+    name: faker.name.firstName(),
+    email: faker.internet.email(),
+    timeZone: faker.address.timeZone(),
+    username: faker.internet.userName(),
+    id: faker.datatype.number(),
+    language: {
+      locale: faker.random.locale(),
+      translate: ((key: string) => key) as TFunction,
+    },
+    ...person,
+  };
+};
+
+export const buildBooking = (
+  booking?: Partial<Booking> & { references?: Partial<BookingReference>[] }
+): Booking & { references?: Partial<BookingReference>[]; attendees?: [] } => {
+  const uid = faker.datatype.uuid();
+  return {
+    id: faker.datatype.number(),
+    uid,
+    userId: null,
+    eventTypeId: null,
+    idempotencyKey: null,
+    userPrimaryEmail: null,
+    title: faker.lorem.sentence(),
+    description: faker.lorem.paragraph(),
+    customInputs: null,
+    startTime: faker.date.future(),
+    endTime: faker.date.future(),
+    location: null,
+    createdAt: new Date(),
+    updatedAt: null,
+    status: BookingStatus.ACCEPTED,
+    paid: false,
+    destinationCalendarId: null,
+    cancelledBy: null,
+    rescheduledBy: null,
+    cancellationReason: null,
+    reassignReason: null,
+    rejectionReason: null,
+    dynamicEventSlugRef: null,
+    dynamicGroupSlugRef: null,
+    rescheduled: null,
+    fromReschedule: null,
+    recurringEventId: null,
+    smsReminderNumber: null,
+    reassignById: null,
+    scheduledJobs: [],
+    metadata: null,
+    responses: null,
+    isRecorded: false,
+    iCalUID: getICalUID({ uid }),
+    iCalSequence: 0,
+    rating: null,
+    noShowHost: null,
+    ratingFeedback: null,
+    attendees: [],
+    oneTimePassword: null,
+    creationSource: CreationSource.WEBAPP,
+    ...booking,
+  };
+};
+
+export const buildEventType = (eventType?: Partial<EventType>): EventType => {
+  return {
+    id: faker.datatype.number(),
+    title: faker.lorem.sentence(),
+    slug: faker.lorem.slug(),
+    description: faker.lorem.paragraph(),
+    interfaceLanguage: null,
+    position: 1,
+    isInstantEvent: false,
+    instantMeetingParameters: [],
+    instantMeetingExpiryTimeOffsetInSeconds: 90,
+    instantMeetingScheduleId: null,
+    locations: null,
+    length: 15,
+    offsetStart: 0,
+    hidden: false,
+    userId: null,

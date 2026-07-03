@@ -1,0 +1,12 @@
+{
+  "id": "4fee4df0363e9bd7e651b30b36a755b1",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/DatasetManagementSection/DatasetMetadataStrengthIndicator/DatasetMetadataStrengthIndicator.unit.spec.js",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

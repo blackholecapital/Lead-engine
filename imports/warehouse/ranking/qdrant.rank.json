@@ -1,0 +1,14 @@
+{
+  "id": "qdrant",
+  "title": "Qdrant",
+  "category": "retrieval",
+  "ranking": {
+    "implementation": 95,
+    "reuse": 95,
+    "maturity": 95,
+    "retrieval": 95,
+    "graph": 95,
+    "vector": 95,
+    "final": 95
+  }
+}

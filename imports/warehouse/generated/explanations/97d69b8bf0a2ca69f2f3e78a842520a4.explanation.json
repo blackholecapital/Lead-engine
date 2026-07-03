@@ -1,0 +1,6 @@
+{
+  "id":"97d69b8bf0a2ca69f2f3e78a842520a4",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/Warnings.unit.spec.js",
+  "reasons":" builder-pattern,"
+}

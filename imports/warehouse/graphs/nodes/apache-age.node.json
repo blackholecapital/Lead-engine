@@ -1,0 +1,11 @@
+{
+  "id": "apache-age",
+  "label": "Apache AGE",
+  "category": "graph",
+  "tags": [
+    "graph",
+    "postgres",
+    "relationships"
+  ],
+  "type": "asset"
+}

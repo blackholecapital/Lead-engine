@@ -1,0 +1,6 @@
+{
+  "id":"9dac6209ee1e6391be1c004bcacb712f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardInfoSidebar/DashboardPublicLinkPopover/DashboardPublicLinkPopover.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "ff2c834f775049bb6d8bd3a6a9c88b62",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/http-logs/logs-table-skeleton-row.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"76c3ba2e8f2e7f07a5e79ae40819e19b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/QuestionDisplayToggle/QuestionDisplayToggle.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

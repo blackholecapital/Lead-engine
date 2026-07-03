@@ -1,0 +1,13 @@
+{
+  "id": "c3e3b2434bf95fea54275d66ed2544e8",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/pages/duplicate-layout-page.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

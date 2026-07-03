@@ -1,0 +1,6 @@
+{
+  "id":"c2dff775131d09d4b7fd950ea369dda2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/SummarizeSidebar/BreakoutColumnList/BreakoutColumnList.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

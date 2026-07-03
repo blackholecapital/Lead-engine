@@ -1,0 +1,14 @@
+{
+  "id": "postiz",
+  "title": "Postiz",
+  "category": "marketing",
+  "ranking": {
+    "implementation": 85,
+    "reuse": 85,
+    "maturity": 85,
+    "retrieval": 85,
+    "graph": 85,
+    "vector": 85,
+    "final": 85
+  }
+}

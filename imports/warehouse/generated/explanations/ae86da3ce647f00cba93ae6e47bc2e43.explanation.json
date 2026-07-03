@@ -1,0 +1,6 @@
+{
+  "id":"ae86da3ce647f00cba93ae6e47bc2e43",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-website/src/lib/seo/json-ld-builders.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

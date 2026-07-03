@@ -1,0 +1,6 @@
+{
+  "id":"d82d0d6f03b484ca6fadc2e8fde2909b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/visualizations/IFrameViz/index.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

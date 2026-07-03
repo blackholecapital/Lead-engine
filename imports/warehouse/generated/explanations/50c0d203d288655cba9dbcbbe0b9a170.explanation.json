@@ -1,0 +1,6 @@
+{
+  "id":"50c0d203d288655cba9dbcbbe0b9a170",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/widgets/large-widget-wrapper.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"b6539923778d9db2474d5893fb88ad95",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/SummarizeSidebar/AddAggregationButton/AddAggregationButton.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

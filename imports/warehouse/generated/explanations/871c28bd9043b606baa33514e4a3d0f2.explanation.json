@@ -1,0 +1,6 @@
+{
+  "id":"871c28bd9043b606baa33514e4a3d0f2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/state/step-form-state.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

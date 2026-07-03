@@ -1,0 +1,40 @@
+{
+  "asset": {
+    "id": "chatwoot",
+    "title": "Chatwoot",
+    "category": "comms",
+    "tags": [
+      "comms",
+      "crm",
+      "support",
+      "inbox"
+    ],
+    "source": "vendor-source/comms/chatwoot",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "chatwoot",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "chatwoot",
+    "label": "Chatwoot",
+    "category": "comms",
+    "tags": [
+      "comms",
+      "crm",
+      "support",
+      "inbox"
+    ],
+    "type": "asset"
+  }
+}

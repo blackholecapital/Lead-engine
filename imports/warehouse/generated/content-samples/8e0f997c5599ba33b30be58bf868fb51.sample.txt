@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/graph/use-net-value-chart-config.ts
+
+import type {
+  BrushComponentOption,
+  EChartsOption,
+  LineSeriesOption,
+  ToolboxComponentOption,
+  XAXisComponentOption,
+  YAXisComponentOption,
+} from 'echarts';
+import type { DataZoomComponentOption, GridComponentOption } from 'echarts/components';
+import type { ComputedRef, MaybeRefOrGetter } from 'vue';
+import type { NetValueZoomRange } from '@/modules/dashboard/graph/net-value-stats';
+import type { NetValueChartData } from '@/modules/dashboard/graph/types';
+import { useFrontendSettingsStore } from '@/modules/settings/use-frontend-settings-store';
+import { useGraph } from '@/modules/statistics/use-graph';
+
+interface AxisConfig {
+  xAxis: XAXisComponentOption;
+  yAxis: YAXisComponentOption;
+}
+
+interface UseNetValueChartConfigReturn {
+  chartOption: ComputedRef<EChartsOption>;
+}
+
+export function useNetValueChartConfig(
+  chartData: MaybeRefOrGetter<NetValueChartData>,
+  zoomRange: MaybeRefOrGetter<NetValueZoomRange | undefined> = () => undefined,
+): UseNetValueChartConfigReturn {
+  const data = computed<number[][]>(() => {
+    const { data, times } = toValue(chartData);
+    if (!(times?.length && data?.length)) {
+      return [];
+    }
+    const MILLISECONDS = 1000;
+    return times.map((epoch, index) => [
+      epoch * MILLISECONDS,
+      Number(data[index]),
+    ]);
+  });
+
+  const { graphZeroBased, showGraphRangeSelector } = storeToRefs(useFrontendSettingsStore());
+  const { baseColor, gradient } = useGraph();
+
+  const MS = 1000;
+
+  // Persist the active zoom across chart rebuilds (chartData refreshes every
+  // balance update). Without this, dataZoom rebuilds with no start/end and
+  // ECharts snaps the slider back to full range.
+  const zoomBounds = computed<{ startValue?: number; endValue?: number }>(() => {
+    const range = toValue(zoomRange);
+    if (!range)
+      return {};
+    return { endValue: range.end * MS, startValue: range.start * MS };
+  });
+
+  const createSliderZoomOptions = (): DataZoomComponentOption => ({
+    handleSize: 20,
+    height: 30,
+    rangeMode: ['value', 'value'],
+    realtime: true,
+    show: true,
+    showDetail: false,
+    type: 'slider',
+    zoomOnMouseWheel: true,
+    ...get(zoomBounds),
+  });
+
+  const createInsideDataZoom = (): DataZoomComponentOption => ({
+    moveOnMouseMove: false,
+    moveOnMouseWheel: false,
+    preventDefaultMouseMove: false,
+    rangeMode: ['value', 'value'],
+    showDetail: false,
+    type: 'inside',
+    zoomOnMouseWheel: true,
+    ...get(zoomBounds),
+  });
+
+  const createDataZoomConfig = (): DataZoomComponentOption[] => {
+    const dataZoomOptions: DataZoomComponentOption[] = [createInsideDataZoom()];
+
+    if (get(showGraphRangeSelector)) {
+      dataZoomOptions.unshift(createSliderZoomOptions());
+    }
+
+    return dataZoomOptions;
+  };
+
+  const createGridConfig = (): GridComponentOption => {
+    const bottom = get(showGraphRangeSelector) ? 56 : 16;
+    return {
+      bottom,
+      left: 16,
+      outerBounds: {
+        bottom,
+      },
+      right: 16,
+      top: 16,
+    };
+  };

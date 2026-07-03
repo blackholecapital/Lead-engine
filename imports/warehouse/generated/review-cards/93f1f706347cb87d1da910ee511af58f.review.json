@@ -1,0 +1,12 @@
+{
+  "id": "93f1f706347cb87d1da910ee511af58f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/data-studio/measures/pages/MeasureDetailPage/MeasureDetailPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

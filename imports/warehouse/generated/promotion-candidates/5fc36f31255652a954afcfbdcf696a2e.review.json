@@ -1,0 +1,14 @@
+{
+  "id": "5fc36f31255652a954afcfbdcf696a2e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/SavedQuestionHeaderButton/CollectionIcon.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

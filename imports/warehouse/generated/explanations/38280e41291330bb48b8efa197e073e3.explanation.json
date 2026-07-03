@@ -1,0 +1,6 @@
+{
+  "id":"38280e41291330bb48b8efa197e073e3",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getChartIdsFromLayout.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

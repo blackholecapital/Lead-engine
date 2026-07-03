@@ -1,0 +1,12 @@
+{
+  "id": "4bab600e0dacdb50104e9be46bf8845a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/packages/framework/src/resources/workflow/discover-custom-step-factory.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"35dab4b1c09c327759b7127cca37e0a4",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/findParentId.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

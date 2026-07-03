@@ -1,0 +1,6 @@
+{
+  "id":"3ca26eeecf9377ff033d87784e74c7c3",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/dnd/AddSliceDragPreview.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"19ca79c8a5bb2de23d6d8ba5e4713088",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/services/cache/key-builders/builder.base.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

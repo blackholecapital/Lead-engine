@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/subscribers/subscriber-row.tsx
+
+import { ISubscriberResponseDto, PermissionsEnum } from '@novu/shared';
+import { useQueryClient } from '@tanstack/react-query';
+import { ComponentProps, useState } from 'react';
+import { RiDeleteBin2Line, RiFileCopyLine, RiMore2Fill, RiPulseFill } from 'react-icons/ri';
+import { Link, useLocation } from 'react-router-dom';
+import { ExternalToast } from 'sonner';
+import { ConfirmationModal } from '@/components/confirmation-modal';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/primitives/avatar';
+import { CompactButton } from '@/components/primitives/button-compact';
+import { CopyButton } from '@/components/primitives/copy-button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/primitives/dropdown-menu';
+import { Skeleton } from '@/components/primitives/skeleton';
+import { ToastIcon } from '@/components/primitives/sonner';
+import { showToast } from '@/components/primitives/sonner-helpers';
+import { TableCell, TableRow } from '@/components/primitives/table';
+import { useSubscribersNavigate } from '@/components/subscribers/hooks/use-subscribers-navigate';
+import { getSubscriberTitle } from '@/components/subscribers/utils';
+import { TimeDisplayHoverCard } from '@/components/time-display-hover-card';
+import TruncatedText from '@/components/truncated-text';
+import { useEnvironment } from '@/context/environment/hooks';
+import { useDeleteSubscriber } from '@/hooks/use-delete-subscriber';
+import { formatDateSimple } from '@/utils/format-date';
+import { Protect } from '@/utils/protect';
+import { QueryKeys } from '@/utils/query-keys';
+import { buildRoute, ROUTES } from '@/utils/routes';
+import { cn } from '@/utils/ui';
+import { useSubscribersUrlState } from './hooks/use-subscribers-url-state';
+
+const toastOptions: ExternalToast = {
+  position: 'bottom-right',
+  classNames: {
+    toast: 'mb-4 right-0',
+  },
+};
+
+type SubscriberRowProps = {
+  subscriber: ISubscriberResponseDto;
+  subscribersCount: number;
+  firstTwoSubscribersInternalIds: string[];
+};
+
+type SubscriberLinkTableCellProps = ComponentProps<typeof TableCell> & {
+  to?: string;
+};
+
+const SubscriberTableCell = (props: SubscriberLinkTableCellProps) => {
+  const { children, className, to, ...rest } = props;
+
+  return (
+    <TableCell className={cn('group-hover:bg-neutral-alpha-50 text-text-sub relative', className)} {...rest}>
+      {to && (
+        <Link to={to} className="absolute inset-0" tabIndex={-1}>
+          <span className="sr-only">Edit subscriber</span>
+        </Link>
+      )}
+      {children}
+    </TableCell>
+  );
+};
+
+export const SubscriberRow = ({ subscriber, subscribersCount, firstTwoSubscribersInternalIds }: SubscriberRowProps) => {
+  const { currentEnvironment } = useEnvironment();
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const subscriberTitle = getSubscriberTitle(subscriber);
+  const queryClient = useQueryClient();
+  const location = useLocation();
+  const { navigateToSubscribersFirstPage } = useSubscribersNavigate();
+  const { handleNavigationAfterDelete } = useSubscribersUrlState();
+
+  const subscriberLink = `${buildRoute(ROUTES.EDIT_SUBSCRIBER, {
+    environmentSlug: currentEnvironment?.slug ?? '',
+    subscriberId: encodeURIComponent(subscriber.subscriberId),
+  })}${location.search}`;
+
+  const { deleteSubscriber, isPending: isDeleteSubscriberPending } = useDeleteSubscriber({
+    onSuccess: () => {
+      showToast({
+        children: () => (
+          <>
+            <ToastIcon variant="success" />
+            <span className="text-sm">
+              Deleted subscriber <span className="font-bold">{subscriberTitle}</span>.
+            </span>
+          </>
+        ),
+        options: toastOptions,
+      });
+    },
+    onError: () => {
+      showToast({
+        children: () => (
+          <>
+            <ToastIcon variant="error" />
+            <span className="text-sm">

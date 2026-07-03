@@ -1,0 +1,13 @@
+{
+  "id": "6515a4b002d1cd525d9d38b16b12cbd2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/tests/utils/integration-service.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "service",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

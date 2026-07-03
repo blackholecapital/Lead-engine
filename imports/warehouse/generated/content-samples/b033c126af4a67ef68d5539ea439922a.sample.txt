@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/better-auth/index.tsx
+
+import { MemberRoleEnum, PermissionsEnum } from '@novu/shared';
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '@/utils/routes';
+import { EE_AUTH_PROVIDER, IS_SELF_HOSTED } from '../../config';
+import { AuthContext, type BetterAuthOrganization, type BetterAuthUser } from './auth-context';
+import { authClient } from './client';
+import {
+  ForgotPassword as ForgotPasswordComponent,
+  InvitationAccept as InvitationAcceptComponent,
+  OrganizationCreate as OrganizationCreateComponent,
+  OrganizationList as OrganizationListComponent,
+  OrganizationSwitcher as OrganizationSwitcherComponent,
+  ResetPassword as ResetPasswordComponent,
+  SignIn as SignInComponent,
+  SignUp as SignUpComponent,
+  SSOSignIn as SSOSignInComponent,
+  TeamMembers as TeamMembersComponent,
+  UserButton as UserButtonComponent,
+  UserProfile as UserProfileComponent,
+  VerifyEmail as VerifyEmailComponent,
+} from './components';
+import { ROLE_PERMISSIONS } from './role-permissions';
+import { Show } from './show';
+import { useCursorAgentAutoLogin } from './use-cursor-agent-auto-login';
+
+export { Show };
+
+export function ClerkProvider({ children }: { children: React.ReactNode }) {
+  const { data: sessionData, isPending, refetch } = authClient.useSession();
+  const [organization, setOrganization] = useState<BetterAuthOrganization | undefined>(undefined);
+  const [memberRole, setMemberRole] = useState<MemberRoleEnum | null>(null);
+
+  const activeOrganizationId = sessionData?.session?.activeOrganizationId;
+  const currentUserId = sessionData?.user?.id;
+
+  const isOrgLoading = !!activeOrganizationId && !organization;
+
+  useEffect(() => {
+    const fetchOrganization = async () => {
+      if (activeOrganizationId && currentUserId) {
+        try {
+          const { data: fullOrgData } = await authClient.organization.getFullOrganization({
+            query: {
+              organizationId: activeOrganizationId,
+            },
+          });
+
+          if (fullOrgData) {
+            setOrganization({
+              id: fullOrgData.id,
+              name: fullOrgData.name,
+              slug: fullOrgData.slug,
+            });
+
+            const currentMember = (fullOrgData as any).members?.find((member: any) => member.userId === currentUserId);
+            if (currentMember?.role) {
+              setMemberRole(currentMember.role as MemberRoleEnum);
+            } else {
+              setMemberRole(null);
+            }
+          } else {
+            setOrganization(undefined);
+            setMemberRole(null);
+          }
+        } catch (error) {
+          console.error('Failed to fetch organization:', error);
+          setOrganization(undefined);
+          setMemberRole(null);
+        }
+      } else {
+        setOrganization(undefined);
+        setMemberRole(null);
+      }
+    };
+
+    fetchOrganization();
+  }, [activeOrganizationId, currentUserId]);
+
+  const refreshSession = useCallback(async () => {
+    await refetch();
+  }, [refetch]);
+
+  const signOut = useCallback(async () => {
+    await authClient.signOut();
+    localStorage.removeItem('better-auth-session-token');
+    window.location.href = ROUTES.SIGN_IN;
+  }, []);
+
+  const getToken = useCallback(async () => {
+    return localStorage.getItem('better-auth-session-token');
+  }, []);
+
+  const user: BetterAuthUser | null = sessionData?.user
+    ? {
+        id: sessionData.user.id,
+        email: sessionData.user.email,
+        name: sessionData.user.name,
+        image: sessionData.user.image || undefined,
+        emailVerified: sessionData.user.emailVerified,

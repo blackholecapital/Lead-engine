@@ -1,0 +1,21 @@
+module.exports = [
+{
+  languageOptions:{
+    ecmaVersion:"latest",
+    sourceType:"script",
+    globals:{
+      document:"readonly",
+      window:"readonly",
+      console:"readonly",
+      fetchReviewStatus:"readonly",
+      fetchMetrics:"readonly",
+      clearDebugOutput:"readonly"
+    }
+  },
+  rules:{
+    "no-unused-vars":"warn",
+    "no-undef":"warn",
+    "no-empty":"warn"
+  }
+}
+];

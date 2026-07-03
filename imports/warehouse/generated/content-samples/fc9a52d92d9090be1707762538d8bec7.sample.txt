@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/liquid-scope-analyzer.ts
+
+type Scope = {
+  start: number;
+  end: number;
+  variables: string[];
+  type: 'global' | 'for' | 'tablerow' | 'capture';
+};
+
+// Regex patterns for LiquidJS syntax
+const LIQUID_PATTERNS = {
+  // Variable assignment
+  assign: /{%-?\s*assign\s+(\w+)\s*=[^%]+-?%}/g,
+
+  // Loop constructs
+  for: /{%\s*for\s+(\w+)\s+in\s+[^%]+%}/g,
+  endFor: /{%\s*endfor\s*%}/g,
+  tablerow: /{%\s*tablerow\s+(\w+)\s+in\s+[^%]+%}/g,
+  endTablerow: /{%\s*endtablerow\s*%}/g,
+
+  // Capture blocks
+  capture: /{%\s*capture\s+(\w+)\s*%}/g,
+  endCapture: /{%\s*endcapture\s*%}/g,
+} as const;
+
+// Built-in Liquid loop object properties
+const FORLOOP_VARIABLES = [
+  'forloop',
+  'forloop.index',
+  'forloop.index0',
+  'forloop.first',
+  'forloop.last',
+  'forloop.length',
+  'forloop.rindex',
+  'forloop.rindex0',
+];
+
+const TABLEROWLOOP_VARIABLES = [
+  'tablerowloop',
+  'tablerowloop.index',
+  'tablerowloop.index0',
+  'tablerowloop.first',
+  'tablerowloop.last',
+  'tablerowloop.length',
+  'tablerowloop.col',
+  'tablerowloop.col0',
+  'tablerowloop.col_first',
+  'tablerowloop.col_last',
+  'tablerowloop.row',
+];
+
+/**
+ * Creates a new RegExp instance from a pattern object
+ */
+function createRegex(pattern: RegExp): RegExp {
+  return new RegExp(pattern.source, pattern.flags);
+}
+
+/**
+ * Checks if a variable is defined in the local LiquidJS context at a specific position
+ * @param content - The full content of the editor
+ * @param name - The variable name to check
+ * @param position - The position in the content where the variable is used
+ * @returns true if the variable is defined in a local scope at the given position
+ *
+ * Supports various LiquidJS constructs:
+ * - for loops with ranges: {% for i in (1..5) %}
+ * - for loops with collections: {% for product in collection.products %}
+ * - tablerow loops
+ * - capture blocks
+ * - assign statements
+ */
+export function isVariableInLocalContext(content: string, name: string, position: number): boolean {
+  // Extract the root variable name (e.g., "product" from "product.title")
+  const rootName = name.split('.')[0];
+
+  // Get all variables available at this position
+  const availableVariables = getVariablesAtPosition(content, position);
+
+  return availableVariables.includes(rootName) || availableVariables.includes(name);
+}
+
+/**
+ * Gets all variables available at a specific position in the content. Includes forloop and tablerowloop variables.
+ */
+function getVariablesAtPosition(content: string, position: number): string[] {
+  const availableVariables: string[] = [];
+  const seen = new Set<string>();
+
+  // Parse all scopes in the content
+  const allScopes = parseAllScopes(content);
+
+  // Find scopes that contain the position and collect their variables
+  for (const scope of allScopes) {
+    if (position >= scope.start && position <= scope.end) {
+      scope.variables.forEach((v) => {
+        if (!seen.has(v)) {
+          availableVariables.push(v);
+          seen.add(v);
+        }
+      });
+    }

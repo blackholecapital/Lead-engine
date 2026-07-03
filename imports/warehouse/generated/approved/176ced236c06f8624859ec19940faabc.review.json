@@ -1,0 +1,12 @@
+{
+  "id": "176ced236c06f8624859ec19940faabc",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-apps/community/github-connector/src/modules/github/page-layouts/github-dashboard.page-layout.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

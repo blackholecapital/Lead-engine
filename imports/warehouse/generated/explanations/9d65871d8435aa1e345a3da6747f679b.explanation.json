@@ -1,0 +1,6 @@
+{
+  "id":"9d65871d8435aa1e345a3da6747f679b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/actions/hydrate.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

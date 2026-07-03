@@ -1,0 +1,14 @@
+{
+  "id": "memgraph",
+  "title": "Memgraph",
+  "category": "graph",
+  "ranking": {
+    "implementation": 92,
+    "reuse": 92,
+    "maturity": 92,
+    "retrieval": 92,
+    "graph": 92,
+    "vector": 92,
+    "final": 92
+  }
+}

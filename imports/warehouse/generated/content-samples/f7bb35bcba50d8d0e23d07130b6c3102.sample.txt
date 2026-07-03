@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/variable/constants.ts
+
+import { Filters } from './types';
+
+const FILTERS: Filters[] = [
+  // Text Transformations
+  {
+    label: 'Uppercase',
+    value: 'upcase',
+    description: 'Convert text to uppercase.',
+    example: '"coffee" | upcase → COFFEE',
+    sampleValue: 'coffee',
+  },
+  {
+    label: 'Lowercase',
+    value: 'downcase',
+    description: 'Convert text to lowercase.',
+    example: '"PIZZA TIME!" | downcase → pizza time!',
+    sampleValue: 'PIZZA TIME!',
+  },
+  {
+    label: 'Capitalize',
+    value: 'capitalize',
+    description: 'Capitalize the first character.',
+    example: '"awesome sauce" | capitalize → Awesome sauce',
+    sampleValue: 'awesome sauce',
+  },
+  {
+    label: 'Strip HTML',
+    value: 'strip_html',
+    description: 'Remove all HTML tags from text.',
+    example: '"<div>🌟 sparkles 🌟</div>" | strip_html → 🌟 sparkles 🌟',
+    sampleValue: '<div>🌟 sparkles 🌟</div>',
+  },
+  {
+    label: 'Strip Newlines',
+    value: 'strip_newlines',
+    description: 'Remove all newline characters.',
+    example: '"dear friend,\\nhow are you?" | strip_newlines → dear friend, how are you?',
+    sampleValue: 'dear friend,\nhow are you?',
+  },
+  {
+    label: 'Escape',
+    value: 'escape',
+    description: 'Escape special characters.',
+    example: '"<super>mario</super>" | escape → &lt;super&gt;mario&lt;/super&gt;',
+    sampleValue: '<super>mario</super>',
+  },
+  {
+    label: 'Truncate',
+    value: 'truncate',
+    hasParam: true,
+    description: 'Truncate text to specified length.',
+    example: '"supercalifragilisticexpialidocious" | truncate: 10 → supercali...',
+    params: [{ label: 'Length', placeholder: 'Length (e.g. 20)', type: 'number' }],
+    sampleValue: 'supercalifragilisticexpialidocious',
+  },
+  {
+    label: 'Truncate Words',
+    value: 'truncatewords',
+    hasParam: true,
+    description: 'Truncate text to specified number of words.',
+    example: '"to infinity and beyond!" | truncatewords: 2 → to infinity...',
+    params: [{ label: 'Word count', type: 'number' }],
+    sampleValue: 'to infinity and beyond!',
+  },
+  {
+    label: 'Replace',
+    value: 'replace',
+    hasParam: true,
+    description: 'Replace all occurrences of a string.',
+    example: '"potato potato" | replace: "potato", "🥔" → 🥔 🥔',
+    params: [
+      { label: 'Search text', type: 'string' },
+      { label: 'Replace with', type: 'string' },
+    ],
+    sampleValue: 'Hello World',
+  },
+  {
+    label: 'Replace First',
+    value: 'replace_first',
+    hasParam: true,
+    description: 'Replace first occurrence of a string.',
+    example: '"bug bug" | replace_first: "bug", "🐛" → 🐛 bug',
+    params: [
+      { label: 'Search text', type: 'string' },
+      { label: 'Replace with', type: 'string' },
+    ],
+    sampleValue: 'Hello World',
+  },
+  {
+    label: 'Remove',
+    value: 'remove',
+    hasParam: true,
+    description: 'Remove all occurrences of a string.',
+    example: '"banana banana" | remove: "ana" → bn bn',
+    params: [{ label: 'Text to remove', type: 'string' }],
+    sampleValue: 'banana banana',
+  },
+  {
+    label: 'Remove First',
+    value: 'remove_first',

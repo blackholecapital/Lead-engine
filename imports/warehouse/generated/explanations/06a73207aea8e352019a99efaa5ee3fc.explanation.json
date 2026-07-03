@@ -1,0 +1,6 @@
+{
+  "id":"06a73207aea8e352019a99efaa5ee3fc",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/cypress-base/cypress/e2e/dashboard/shared_dashboard_functions.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

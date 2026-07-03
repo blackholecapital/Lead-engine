@@ -1,0 +1,6 @@
+{
+  "id":"e66196ef89f2afd139f61c5480036a95",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/documents/blocks/EmailLayout/EmailLayoutPropsSchema.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

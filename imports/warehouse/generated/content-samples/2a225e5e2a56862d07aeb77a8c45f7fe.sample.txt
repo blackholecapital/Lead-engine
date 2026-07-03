@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/schema-editor/schema-property-settings-popover.tsx
+
+import { forwardRef, useState } from 'react';
+import { Controller, type Path, useFormContext } from 'react-hook-form';
+import { RiDeleteBin2Line } from 'react-icons/ri';
+import { Button } from '@/components/primitives/button';
+import { FormControl, FormItem, FormLabel, FormMessage } from '@/components/primitives/form/form';
+import { Input, InputPure, InputRoot, InputWrapper } from '@/components/primitives/input';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/primitives/popover';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/primitives/select';
+import { Switch } from '@/components/primitives/switch';
+import { cn } from '@/utils/ui';
+import { Code2 } from '../icons/code-2';
+import { Separator } from '../primitives/separator';
+import { useSchemaPropertyType } from './hooks/use-schema-property-type';
+import type { JSONSchema7, JSONSchema7TypeName } from './json-schema';
+import type { VariableUsageInfo } from './utils/check-variable-usage';
+import type { SchemaEditorFormValues } from './utils/validation-schema';
+
+interface SchemaPropertySettingsPopoverProps {
+  definitionPath: string;
+  propertyKeyForDisplay: string;
+  isRequiredPath: string;
+  isNullablePath: string;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onDeleteProperty: () => void;
+  variableUsageInfo?: VariableUsageInfo;
+}
+
+function parseDefaultValue(value: string | undefined, type: JSONSchema7TypeName | 'enum' | undefined) {
+  if (value === undefined || value === null || value.trim() === '') {
+    return undefined;
+  }
+
+  const lowerValue = value.toLowerCase();
+
+  switch (type) {
+    case 'integer': {
+      const intValue = parseInt(value, 10);
+      return Number.isNaN(intValue) ? value : intValue;
+    }
+
+    case 'number': {
+      const floatValue = parseFloat(value);
+      return Number.isNaN(floatValue) ? value : floatValue;
+    }
+
+    case 'boolean':
+      if (lowerValue === 'true') return true;
+      if (lowerValue === 'false') return false;
+      return value;
+    case 'null':
+      return lowerValue === 'null' ? null : value;
+    case 'string':
+    default:
+      return value;
+  }
+}
+
+const NONE_FORMAT_VALUE = '_NONE_';
+
+const JSON_SCHEMA_FORMATS = [
+  NONE_FORMAT_VALUE,
+  'date-time',
+  'date',
+  'time',
+  'duration',
+  'email',
+  'hostname',
+  'ipv4',
+  'ipv6',
+  'uuid',
+  'uri',
+  'uri-reference',
+  'uri-template',
+  'json-pointer',
+  'relative-json-pointer',
+  'regex',
+];
+
+export const SchemaPropertySettingsPopover = forwardRef<HTMLDivElement, SchemaPropertySettingsPopoverProps>(
+  (props, ref) => {
+    const {
+      definitionPath,
+      propertyKeyForDisplay,
+      isRequiredPath,
+      isNullablePath,
+      open,
+      onOpenChange,
+      onDeleteProperty,
+      variableUsageInfo,
+    } = props;
+
+    const { control, watch } = useFormContext<SchemaEditorFormValues>();
+    const [showUsagePopover, setShowUsagePopover] = useState(false);
+
+    const currentDefinition = watch(definitionPath as Path<SchemaEditorFormValues>) as JSONSchema7 | undefined;
+    const currentType = useSchemaPropertyType(currentDefinition);
+
+    const handleApplyChanges = () => {
+      onOpenChange(false);

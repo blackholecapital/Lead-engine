@@ -1,0 +1,14 @@
+{
+  "id": "30c45c8fcf0b054770d945977ae4a10a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/common/components/MoveQuestionsIntoDashboardsModal/MoveQuestionsIntoDashboardsModal.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,11 @@
+{
+  "id": "77d9f0645889b88efc008e259f11c674",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test/scenarios/dashboard-filters/dashboard-filters-sql-location.cy.spec.js",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

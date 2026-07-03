@@ -1,0 +1,13 @@
+{
+  "id": "ee58c5431544ec2dbaa756d199e9a1dd",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/dnd/handleScroll/handleScroll.test.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

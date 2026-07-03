@@ -1,0 +1,6 @@
+{
+  "id":"7833a60874957ed4e0623e69c3e41e8d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/QuestionLastUpdated/QuestionLastUpdated.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

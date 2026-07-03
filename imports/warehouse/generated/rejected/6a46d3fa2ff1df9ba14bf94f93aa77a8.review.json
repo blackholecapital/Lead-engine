@@ -1,0 +1,13 @@
+{
+  "id": "6a46d3fa2ff1df9ba14bf94f93aa77a8",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getChartAndLabelComponentIdFromPath.test.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

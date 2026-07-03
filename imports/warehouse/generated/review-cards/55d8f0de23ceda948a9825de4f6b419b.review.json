@@ -1,0 +1,11 @@
+{
+  "id": "55d8f0de23ceda948a9825de4f6b419b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test/scenarios/dashboard-filters/dashboard-filters-nested.cy.spec.js",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

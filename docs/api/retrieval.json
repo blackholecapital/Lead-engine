@@ -1,0 +1,7 @@
+{
+  "status": "ONLINE",
+  "engine": "lancedb",
+  "manifests": 8,
+  "outputs": 4,
+  "db": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/warehouse/retrieval/lancedb"
+}

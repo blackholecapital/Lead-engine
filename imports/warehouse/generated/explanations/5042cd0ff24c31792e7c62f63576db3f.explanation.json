@@ -1,0 +1,6 @@
+{
+  "id":"5042cd0ff24c31792e7c62f63576db3f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/gridComponents/Divider/Divider.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

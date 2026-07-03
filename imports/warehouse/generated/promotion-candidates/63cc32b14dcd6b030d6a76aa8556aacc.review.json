@@ -1,0 +1,12 @@
+{
+  "id": "63cc32b14dcd6b030d6a76aa8556aacc",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/containers/AutomaticDashboardApp/analytics.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

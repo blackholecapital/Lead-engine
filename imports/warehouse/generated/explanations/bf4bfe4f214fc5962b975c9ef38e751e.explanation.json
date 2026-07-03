@@ -1,0 +1,6 @@
+{
+  "id":"bf4bfe4f214fc5962b975c9ef38e751e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getRevertedFilterScope.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

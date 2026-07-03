@@ -1,0 +1,12 @@
+{
+  "id": "ff31adc75ff5b6dae1eef78c9b509e0c",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/e2e/solid-router/scroll-restoration-sandbox-vite/src/routes/(tests)/lazy-with-loader-page.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

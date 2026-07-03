@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/layouts/layout-list.tsx
+
+import { ApiServiceLevelEnum, DirectionEnum } from '@novu/shared';
+import { HTMLAttributes } from 'react';
+import {
+  LayoutsFilter,
+  LayoutsSortableColumn,
+  LayoutsUrlState,
+  useLayoutsUrlState,
+} from '@/components/layouts/hooks/use-layouts-url-state';
+import { usePersistedPageSize } from '@/hooks/use-persisted-page-size';
+
+const LAYOUTS_TABLE_ID = 'layouts-list';
+
+import { LayoutListBlank } from '@/components/layouts/layout-list-blank';
+import { LayoutRow, LayoutRowSkeleton } from '@/components/layouts/layout-row';
+import { LayoutsFilters } from '@/components/layouts/layouts-filters';
+import { ListNoResults } from '@/components/list-no-results';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/primitives/table';
+import { TablePaginationFooter } from '@/components/primitives/table-pagination-footer';
+import { IS_SELF_HOSTED } from '@/config';
+import { useFetchLayouts } from '@/hooks/use-fetch-layouts';
+import { useFetchSubscription } from '@/hooks/use-fetch-subscription';
+import { cn } from '@/utils/ui';
+import { CreateLayoutButton } from './create-layout-btn';
+import { LayoutsListUpgradeCta } from './layouts-list-upgrade-cta';
+
+type LayoutListFiltersProps = HTMLAttributes<HTMLDivElement> &
+  Pick<LayoutsUrlState, 'filterValues' | 'handleFiltersChange' | 'resetFilters'> & {
+    isFetching?: boolean;
+  };
+
+const LayoutListWrapper = (props: LayoutListFiltersProps) => {
+  const { className, children, filterValues, handleFiltersChange, resetFilters, isFetching, ...rest } = props;
+
+  return (
+    <div className={cn('flex h-full flex-col', className)} {...rest}>
+      <div className="flex items-center justify-between">
+        <LayoutsFilters
+          onFiltersChange={handleFiltersChange}
+          filterValues={filterValues}
+          onReset={resetFilters}
+          isFetching={isFetching}
+          className="py-2.5"
+        />
+        <CreateLayoutButton disabled={isFetching} />
+      </div>
+      {children}
+    </div>
+  );
+};
+
+type LayoutListTableProps = HTMLAttributes<HTMLTableElement> & {
+  toggleSort: ReturnType<typeof useLayoutsUrlState>['toggleSort'];
+  orderBy: LayoutsSortableColumn;
+  orderDirection?: DirectionEnum;
+  paginationProps?: {
+    pageSize: number;
+    currentPageItemsCount: number;
+    onPreviousPage: () => void;
+    onNextPage: () => void;
+    onPageSizeChange: (pageSize: number) => void;
+    hasPreviousPage: boolean;
+    hasNextPage: boolean;
+    totalCount?: number;
+  };
+};
+
+const LayoutListTable = (props: LayoutListTableProps) => {
+  const { toggleSort, children, orderBy, orderDirection, paginationProps, ...rest } = props;
+
+  return (
+    <Table {...rest}>
+      <TableHeader>
+        <TableRow>
+          <TableHead
+            sortable
+            sortDirection={orderBy === 'name' ? orderDirection : false}
+            onSort={() => toggleSort('name')}
+          >
+            Layout
+          </TableHead>
+          <TableHead
+            sortable
+            sortDirection={orderBy === 'createdAt' ? orderDirection : false}
+            onSort={() => toggleSort('createdAt')}
+          >
+            Created at
+          </TableHead>
+          <TableHead
+            sortable
+            sortDirection={orderBy === 'updatedAt' ? orderDirection : false}
+            onSort={() => toggleSort('updatedAt')}
+          >

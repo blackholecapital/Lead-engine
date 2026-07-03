@@ -1,0 +1,14 @@
+{
+  "id": "7ab6717b8abaa6e8ca25fb485a6fdbbb",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/ai-sidekick/sidekick-toast.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

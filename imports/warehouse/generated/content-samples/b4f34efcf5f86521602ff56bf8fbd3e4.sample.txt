@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/environments/environments-list.tsx
+
+import {
+  type EnvironmentEnum,
+  EnvironmentTypeEnum,
+  type IEnvironment,
+  PermissionsEnum,
+  PROTECTED_ENVIRONMENTS,
+} from '@novu/shared';
+import { useMemo, useState } from 'react';
+import { RiDeleteBin2Line, RiInformation2Line, RiMore2Fill } from 'react-icons/ri';
+import { useEnvironment } from '@/context/environment/hooks';
+import { useDeleteEnvironment } from '@/hooks/use-environments';
+import { Protect } from '@/utils/protect';
+import { cn } from '@/utils/ui';
+import { Badge } from '../primitives/badge';
+import { CompactButton } from '../primitives/button-compact';
+import { CopyButton } from '../primitives/copy-button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '../primitives/dropdown-menu';
+import { EnvironmentBranchIcon } from '../primitives/environment-branch-icon';
+import { Skeleton } from '../primitives/skeleton';
+import { showErrorToast, showSuccessToast } from '../primitives/sonner-helpers';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../primitives/table';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../primitives/tooltip';
+import { TimeDisplayHoverCard } from '../time-display-hover-card';
+import TruncatedText from '../truncated-text';
+import { DeleteEnvironmentDialog } from './delete-environment-dialog';
+import { EditEnvironmentSheet } from './edit-environment-sheet';
+
+const EnvironmentRowSkeleton = () => (
+  <TableRow>
+    <TableCell>
+      <div className="flex items-center gap-2">
+        <Skeleton className="size-5 rounded-full" />
+        <Skeleton className="h-5 w-32" />
+      </div>
+    </TableCell>
+    <TableCell>
+      <Skeleton className="h-4 w-24" />
+    </TableCell>
+    <TableCell>
+      <Skeleton className="h-4 w-24" />
+    </TableCell>
+    <TableCell>
+      <Skeleton className="h-4 w-32" />
+    </TableCell>
+    <TableCell className="w-1">
+      <Skeleton className="size-8 rounded-md" />
+    </TableCell>
+  </TableRow>
+);
+
+const EnvironmentSectionHeader = () => (
+  <TableRow>
+    <TableCell colSpan={4} className="px-3 py-1 bg-bg-weak">
+      <div className="flex items-center gap-1 text-paragraph-2xs text-text-soft">
+        Live Environments
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <span className="inline-block cursor-help">
+              <RiInformation2Line className="size-3 text-foreground-400" />
+            </span>
+          </TooltipTrigger>
+          <TooltipContent className="max-w-xs">
+            Live environments are read only. Use them for staging, QA, previews. Great for safe reviews and testing!
+          </TooltipContent>
+        </Tooltip>
+      </div>
+    </TableCell>
+  </TableRow>
+);
+
+export function EnvironmentsList({ environments, isLoading }: { environments: IEnvironment[]; isLoading: boolean }) {
+  const { currentEnvironment } = useEnvironment();
+  const [editEnvironment, setEditEnvironment] = useState<IEnvironment>();
+  const [deleteEnvironment, setDeleteEnvironment] = useState<IEnvironment>();
+  const { mutateAsync: deleteEnvironmentAction, isPending: isDeletePending } = useDeleteEnvironment();
+
+  const groupedEnvironments = useMemo(() => {
+    const devEnvironments = environments.filter((env) => env.type === EnvironmentTypeEnum.DEV);
+    const liveEnvironments = environments.filter((env) => env.type === EnvironmentTypeEnum.PROD);
+
+    return { devEnvironments, liveEnvironments };
+  }, [environments]);
+
+  const onDeleteEnvironment = async () => {
+    if (!deleteEnvironment) return;
+
+    try {
+      await deleteEnvironmentAction({ environment: deleteEnvironment });
+      showSuccessToast('Environment deleted successfully');
+
+      setDeleteEnvironment(undefined);
+    } catch (e: unknown) {
+      const error = e as { response?: { data?: { message?: string | string[] } }; message?: string };

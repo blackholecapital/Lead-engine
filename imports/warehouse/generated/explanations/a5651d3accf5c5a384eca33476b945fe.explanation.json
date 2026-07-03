@@ -1,0 +1,6 @@
+{
+  "id":"a5651d3accf5c5a384eca33476b945fe",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardMoveModal.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

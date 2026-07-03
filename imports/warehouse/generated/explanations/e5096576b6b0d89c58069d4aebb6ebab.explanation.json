@@ -1,0 +1,6 @@
+{
+  "id":"e5096576b6b0d89c58069d4aebb6ebab",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/piece-properties/text-input-with-mentions/index.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

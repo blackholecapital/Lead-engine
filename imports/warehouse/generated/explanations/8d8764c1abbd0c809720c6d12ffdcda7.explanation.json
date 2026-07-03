@@ -1,0 +1,6 @@
+{
+  "id":"8d8764c1abbd0c809720c6d12ffdcda7",
+  "score":85,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/send-message/send-message-email.usecase.ts",
+  "reasons":" workflow-feature, typescript-source,"
+}

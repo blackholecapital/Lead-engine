@@ -1,0 +1,6 @@
+{
+  "id":"ac52e2eb656c7d8a1def821592b9fe3d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/utils/pathBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

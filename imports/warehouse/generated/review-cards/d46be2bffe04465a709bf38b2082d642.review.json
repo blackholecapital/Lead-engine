@@ -1,0 +1,14 @@
+{
+  "id": "d46be2bffe04465a709bf38b2082d642",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/feature-flags-provider.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "provider",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"9f3c7772a50f375c4dfc2a741bfc747f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/storages/gql-types.storage.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

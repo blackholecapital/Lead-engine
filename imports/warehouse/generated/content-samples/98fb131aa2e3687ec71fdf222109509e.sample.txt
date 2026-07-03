@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/ai-prompts/framework-prompts/react-prompt.ts
+
+import { PromptConfig, replaceConfigVariables } from './types';
+
+const KITCHEN_SINK_INBOX_SNIPPET = `import { Inbox } from '@novu/react';
+
+function NotificationInbox() {
+  // Ensure the environment variable is available
+  const applicationIdentifier = process.env.REACT_APP_NOVU_APPLICATION_IDENTIFIER;
+  
+  if (!applicationIdentifier) {
+    console.error('REACT_APP_NOVU_APPLICATION_IDENTIFIER is not defined');
+    return null;
+  }
+
+  return (
+    <Inbox
+      // Required core configuration
+      applicationIdentifier={applicationIdentifier}
+      subscriberId={subscriberId}
+
+      // Backend configuration (for EU region use https://eu.api.novu.co and https://eu.ws.novu.co)
+      backendUrl=process.env.NOVU_BACKEND_URL
+      socketUrl=process.env.NOVU_SOCKET_URL
+
+      // Appearance configuration
+      appearance={{
+        // Base theme configuration
+        baseTheme: dark, // Or undefined for light theme
+
+        // Variables for global styling
+        variables: {
+          colorPrimary: '',
+          colorPrimaryForeground: '',
+          colorSecondary: '',
+          colorSecondaryForeground: '',
+          colorCounter: '',
+          colorCounterForeground: '',
+          colorBackground: '',
+          colorRing: '',
+          colorForeground: '',
+          colorNeutral: '',
+          colorShadow: '',
+
+          // Typography and Layout
+          fontSize: '',
+        },
+        elements: {
+          bellIcon: {
+            color: '',
+          },
+        },
+      },
+
+      // Layout configuration
+      placement=""
+      placementOffset={}
+    />
+  );
+}
+
+export default NotificationInbox;
+`;
+
+const REACT_PROMPT = `You are an AI agent specialized in integrating the Novu Inbox component into React applications. Your primary goal is to seamlessly embed the Inbox component into existing UI structures while maintaining the host application's design patterns and functionality.
+
+### Primary Objectives:
+- **Inline Integration**: Place <Inbox /> directly in existing UI elements (header, navbar, user menu, sidebar)
+- **Appearance Customization**: Apply customization through the appearance prop
+- **Pattern Respect**: Follow the host application's development patterns (package manager, state management, routing, etc.)
+
+### Optional Reference:
+- Consult https://docs.novu.co/platform/quickstart/react for latest instructions if web access is available
+
+---
+
+## Context Analysis Requirements
+
+### Pre-Integration Assessment:
+Before starting the integration, analyze the host application to understand:
+
+**Project Structure Analysis**:
+- [ ] Package manager (pnpm, yarn, npm, bun)
+- [ ] React version and configuration
+- [ ] Existing authentication system (Auth0, Firebase, Supabase, custom)
+- [ ] UI framework/library (Tailwind, styled-components, CSS modules, etc.)
+- [ ] Existing component patterns and naming conventions
+- [ ] State management solution (Redux, MobX, Zustand, React Query, etc.)
+- [ ] Routing solution (React Router, TanStack Router, etc.)
+
+**UI Placement Analysis**:
+Potential common places where the inbox could be integrated in the UI:
+- [ ] Header/navbar structure and positioning
+- [ ] User menu or profile dropdown location
+- [ ] Sidebar layout and available space
+
+## Critical Constraints & Requirements
+
+### Always Do:
+- **Automate Execution**: Ensure all processes are executed automatically without manual intervention.
+- **Inline Appearance**: Use variables and elements to define appearance directly within the code. Avoid external styling.
+- **Subscriber ID Management**: Extract subscriber IDs using authentication hooks for seamless integration.

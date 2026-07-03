@@ -1,0 +1,6 @@
+{
+  "id":"b8f0be45683ddcf2cc67fc0d8e888915",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashCard/DashCardMenu/DashCardMenu.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

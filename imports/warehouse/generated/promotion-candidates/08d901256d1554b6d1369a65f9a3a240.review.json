@@ -1,0 +1,14 @@
+{
+  "id": "08d901256d1554b6d1369a65f9a3a240",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-view-filter-validator.service.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "service",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

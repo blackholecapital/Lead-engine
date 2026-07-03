@@ -1,0 +1,6 @@
+{
+  "id":"d06cd6b988964dd8cc9477566bee824d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/View/NotebookContainer/NotebookContainer.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

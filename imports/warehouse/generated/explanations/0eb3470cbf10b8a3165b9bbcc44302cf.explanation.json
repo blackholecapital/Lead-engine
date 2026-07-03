@@ -1,0 +1,6 @@
+{
+  "id":"0eb3470cbf10b8a3165b9bbcc44302cf",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/windmill/backend/windmill-worker/loader_builder.bun.js",
+  "reasons":" builder-pattern,"
+}

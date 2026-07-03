@@ -1,0 +1,13 @@
+{
+  "id": "5aa1be430f92f9d62e3aedcd7594a408",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/embedding-sdk-package/hooks/public/use-create-dashboard-api/use-create-dashboard-api.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

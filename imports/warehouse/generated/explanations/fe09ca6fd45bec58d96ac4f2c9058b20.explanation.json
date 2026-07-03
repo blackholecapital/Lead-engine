@@ -1,0 +1,6 @@
+{
+  "id":"fe09ca6fd45bec58d96ac4f2c9058b20",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/injectCustomCss.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

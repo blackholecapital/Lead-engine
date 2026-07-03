@@ -1,0 +1,6 @@
+{
+  "id":"88a1e2c1fe03495f22a570da4ad08b7f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/menu/MarkdownModeDropdown.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

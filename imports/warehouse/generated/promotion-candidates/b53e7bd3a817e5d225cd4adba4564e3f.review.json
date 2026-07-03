@@ -1,0 +1,12 @@
+{
+  "id": "b53e7bd3a817e5d225cd4adba4564e3f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/getConfiguration/sample/empty-email-message.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

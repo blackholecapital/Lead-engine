@@ -1,0 +1,6 @@
+{
+  "id":"1da72d620bd19af5468667eddb49c73a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/context-menu/canvas-context-menu.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

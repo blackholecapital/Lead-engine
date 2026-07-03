@@ -1,0 +1,6 @@
+{
+  "id":"63e3ee8fa7d1cc3c5e0aa09fbfeea0ad",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/SliceHeaderControls/index.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

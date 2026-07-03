@@ -1,0 +1,6 @@
+{
+  "id":"a6113bffc75feccf4b19d4da27dc594d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/components/editors/BorderValueEditor.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

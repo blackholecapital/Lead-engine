@@ -1,0 +1,6 @@
+{
+  "id":"5d1dbae7735c3becb4069e9acefff9a2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/presenters/v3/MetricDashboardPresenter.server.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

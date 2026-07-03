@@ -1,0 +1,6 @@
+{
+  "id":"1a7b66ffd2d97d2123d4c44a26593845",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/step-settings/code-settings/code-editor.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/main.tsx
+
+import '@novu/maily-core/style.css';
+import { PermissionsEnum } from '@novu/shared';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import './index.css';
+
+import { ConfigureWorkflow } from '@/components/workflow-editor/configure-workflow';
+import { EditStepConditions } from '@/components/workflow-editor/steps/conditions/edit-step-conditions';
+import { ConfigureStep } from '@/components/workflow-editor/steps/configure-step';
+
+import {
+  ActivityFeed,
+  AnalyticsPage,
+  ApiKeysPage,
+  CreateLayoutPage,
+  CreateWorkflowPage,
+  ErrorPage,
+  IntegrationsListPage,
+  InvitationAcceptPage,
+  LayoutsPage,
+  OrganizationListPage,
+  SettingsPage,
+  SignInPage,
+  SignUpPage,
+  SSOSignInPage,
+  TemplateModal,
+  TranslationsPage,
+  VerifyEmailPage,
+  WelcomePage,
+  WorkflowsPage,
+} from '@/pages';
+import { DuplicateWorkflowPage } from '@/pages/duplicate-workflow';
+import { EditStepTemplateV2Page } from '@/pages/edit-step-template-v2';
+import { Landing1SignUpPage } from '@/pages/landing-1-signup';
+import { SubscribersPage } from '@/pages/subscribers';
+import { TranslationSettingsPage } from '@/pages/translation-settings-page';
+import { WebhooksPage } from '@/pages/webhooks-page';
+import { ConnectSubscriberProvider } from './components/connect/connect-subscriber-provider';
+import { CreateIntegrationSidebar } from './components/integrations/components/create-integration-sidebar';
+import { UpdateIntegrationSidebar } from './components/integrations/components/update-integration-sidebar';
+import { ChannelPreferences } from './components/workflow-editor/channel-preferences';
+import { IS_ENTERPRISE, IS_SELF_HOSTED } from './config';
+import { FeatureFlagsProvider } from './context/feature-flags-provider';
+import { AgentDetailsPage } from './pages/agent-details';
+import { AgentSlackSetupPage } from './pages/agent-slack-setup-page';
+import { AgentTelegramMobileSetupPage } from './pages/agent-telegram-mobile-setup-page';
+import { AgentsPage } from './pages/agents';
+import { AgentsSetupPage } from './pages/agents-setup-page';
+import { CliAuthPage } from './pages/cli-auth';
+import { ConnectClaimPage } from './pages/connect-claim';
+import { ContextsPage } from './pages/contexts';
+import { CreateContextPage } from './pages/create-context';
+import { CreateSubscriberPage } from './pages/create-subscriber';
+import { CreateTopicPage } from './pages/create-topic';
+import { DomainDetailPage } from './pages/domain-detail';
+import { DomainsPage } from './pages/domains';
+import { DuplicateLayoutPage } from './pages/duplicate-layout-page';
+import { EditContextPage } from './pages/edit-context';
+import { EditLayoutPage } from './pages/edit-layout';
+import { EditSubscriberPage } from './pages/edit-subscriber-page';
+import { EditTopicPage } from './pages/edit-topic';
+import { EditTranslationPage } from './pages/edit-translation';
+import { EditWorkflowPage } from './pages/edit-workflow';
+import { EnvironmentsPage } from './pages/environments';
+import { ForgotPasswordPage } from './pages/forgot-password';
+import { InboxEmbedPage } from './pages/inbox-embed-page';
+import { InboxEmbedSuccessPage } from './pages/inbox-embed-success-page';
+import { InboxUsecasePage } from './pages/inbox-usecase-page';
+import { IntegrationStoreTelegramMobileSetupPage } from './pages/integration-store-telegram-mobile-setup-page';
+import { RedirectToLegacyStudioAuth } from './pages/redirect-to-legacy-studio-auth';
+import { ResetPasswordPage } from './pages/reset-password';
+import { TestWorkflowDrawerPage } from './pages/test-workflow-drawer-page';
+import { TestWorkflowRouteHandler } from './pages/test-workflow-route-handler';
+import { TopicsPage } from './pages/topics';
+import { UpsertVariablePage } from './pages/upsert-variable';
+import { UsecaseSelectPage } from './pages/usecase-select-page';
+import { VariablesPage } from './pages/variables';
+import { VercelIntegrationPage } from './pages/vercel-integration-page';
+import { AuthRoute, CatchAllRoute, DashboardRoute, ProtectedAuthRoute, RootRoute } from './routes';
+import { OnboardingParentRoute } from './routes/onboarding';
+import { ProtectedRoute } from './routes/protected-route';
+import { captureAgentTemplateIdFromUrl } from './utils/agent-template-identity';
+import { captureConnectClaimTokenFromUrl } from './utils/connect-claim-pending';
+import { ROUTES } from './utils/routes';
+import { initializeSentry } from './utils/sentry';
+import { overrideZodErrorMap } from './utils/validation';
+
+initializeSentry();
+overrideZodErrorMap();
+// Stash an incoming `?agentTemplateId=` before Clerk's auth redirects drop the query params.
+captureAgentTemplateIdFromUrl();
+// Stash an incoming connect claim token before Clerk's auth redirects drop the query params.
+captureConnectClaimTokenFromUrl();
+
+const router = createBrowserRouter([
+  {
+    element: <RootRoute />,
+    errorElement: <ErrorPage />,
+    children: [

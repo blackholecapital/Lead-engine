@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/status-badge.tsx
+
+// AlignUI StatusBadge v0.0.0
+
+import { Slot } from '@radix-ui/react-slot';
+import * as React from 'react';
+
+import type { PolymorphicComponentProps } from '@/utils/polymorphic';
+import { recursiveCloneChildren } from '@/utils/recursive-clone-children';
+import { tv, type VariantProps } from '@/utils/tv';
+
+const STATUS_BADGE_ROOT_NAME = 'StatusBadgeRoot';
+const STATUS_BADGE_ICON_NAME = 'StatusBadgeIcon';
+const STATUS_BADGE_DOT_NAME = 'StatusBadgeDot';
+
+export const statusBadgeVariants = tv({
+  slots: {
+    root: [
+      'inline-flex h-6 items-center justify-center gap-2 whitespace-nowrap rounded-md px-2 text-label-xs',
+      'has-[>.dot]:gap-1.5',
+    ],
+    icon: '-mx-1 size-4',
+    dot: [
+      // base
+      'dot -mx-1 flex size-4 items-center justify-center',
+      // before
+      'before:size-1.5 before:rounded-full before:bg-current',
+    ],
+  },
+  variants: {
+    variant: {
+      stroke: {
+        root: 'bg-bg-white text-text-sub ring-1 ring-inset ring-stroke-soft',
+      },
+      light: {},
+    },
+    status: {
+      completed: {
+        icon: 'text-success-base',
+        dot: 'text-success-base',
+      },
+      pending: {
+        icon: 'text-warning-base',
+        dot: 'text-warning-base',
+      },
+      failed: {
+        icon: 'text-error-base',
+        dot: 'text-error-base',
+      },
+      disabled: {
+        icon: 'text-faded-base',
+        dot: 'text-faded-base',
+      },
+    },
+  },
+  compoundVariants: [
+    {
+      variant: 'light',
+      status: 'completed',
+      class: {
+        root: 'bg-success-lighter text-success-base',
+      },
+    },
+    {
+      variant: 'light',
+      status: 'pending',
+      class: {
+        root: 'bg-warning-lighter text-warning-base',
+      },
+    },
+    {
+      variant: 'light',
+      status: 'failed',
+      class: {
+        root: 'bg-error-lighter text-error-base',
+      },
+    },
+    {
+      variant: 'light',
+      status: 'disabled',
+      class: {
+        root: 'bg-faded-lighter text-text-sub',
+      },
+    },
+  ],
+  defaultVariants: {
+    status: 'disabled',
+    variant: 'stroke',
+  },
+});
+
+type StatusBadgeSharedProps = VariantProps<typeof statusBadgeVariants>;
+
+type StatusBadgeRootProps = React.HTMLAttributes<HTMLDivElement> &
+  VariantProps<typeof statusBadgeVariants> & {
+    asChild?: boolean;
+  };
+
+const StatusBadgeRoot = React.forwardRef<HTMLDivElement, StatusBadgeRootProps>(
+  ({ asChild, children, variant, status, className, ...rest }, forwardedRef) => {
+    const uniqueId = React.useId();
+    const Component = asChild ? Slot : 'div';

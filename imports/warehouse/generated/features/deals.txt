@@ -1,0 +1,5 @@
+10|/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-apps/internal/twenty-partners/src/views/all-matched-deals.view.ts
+10|/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-apps/internal/twenty-partners/src/navigation-menu-items/partner-deals.navigation-menu-item.ts
+10|/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/pieces/community/teamleader/src/lib/actions/search-deals.ts
+10|/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/pieces/community/pipedrive/src/lib/actions/find-deals-associated-with-person.ts
+10|/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/pieces/community/ninjapipe/src/lib/actions/list-deals.ts

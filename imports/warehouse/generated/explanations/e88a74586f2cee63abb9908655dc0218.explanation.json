@@ -1,0 +1,6 @@
+{
+  "id":"e88a74586f2cee63abb9908655dc0218",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/helpers/inputs/BooleanInput.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

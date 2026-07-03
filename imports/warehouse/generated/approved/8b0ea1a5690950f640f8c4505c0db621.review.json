@@ -1,0 +1,12 @@
+{
+  "id": "8b0ea1a5690950f640f8c4505c0db621",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/.electron-builder.config.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

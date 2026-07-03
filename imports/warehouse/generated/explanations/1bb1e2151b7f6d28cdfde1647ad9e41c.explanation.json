@@ -1,0 +1,6 @@
+{
+  "id":"1bb1e2151b7f6d28cdfde1647ad9e41c",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/Dashboard/DashboardEmptyState/DashboardEmptyState.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

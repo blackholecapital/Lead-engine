@@ -1,0 +1,12 @@
+{
+  "id": "2200d4d6b9a94b9a0d5f8d81845db04b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/admin/permissions/pages/DatabasePermissionsPage/DatabasesPermissionsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

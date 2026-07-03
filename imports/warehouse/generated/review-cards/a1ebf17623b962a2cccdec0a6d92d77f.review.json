@@ -1,0 +1,12 @@
+{
+  "id": "a1ebf17623b962a2cccdec0a6d92d77f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/chart-data/constants/supported-date-granularity-for-gap-filling.type.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

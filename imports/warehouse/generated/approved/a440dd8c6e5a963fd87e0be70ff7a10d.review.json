@@ -1,0 +1,14 @@
+{
+  "id": "a440dd8c6e5a963fd87e0be70ff7a10d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/ai-sidekick/novu-copilot-panel.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

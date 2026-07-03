@@ -1,0 +1,14 @@
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/examples/react/search-validator-adapters/src/components/Content.tsx
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/examples/react/search-validator-adapters/src/components/Header.tsx
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/examples/react/search-validator-adapters/src/components/Search.tsx
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/examples/react/search-validator-adapters/src/components/Users.tsx
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/examples/solid/search-validator-adapters/src/components/Content.tsx
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/examples/solid/search-validator-adapters/src/components/Header.tsx
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/examples/solid/search-validator-adapters/src/components/Search.tsx
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/examples/solid/search-validator-adapters/src/components/Users.tsx
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/windmill/frontend/src/lib/components/copilot/chat/global/userDraftAdapter.ts
+/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/windmill/frontend/src/lib/components/copilot/chat/monaco-adapter.ts
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/api/src/app/environments-v2/usecases/sync-strategies/adapters/workflow-comparator.adapter.ts
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/api/src/app/environments-v2/usecases/sync-strategies/adapters/workflow-delete.adapter.ts
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/api/src/app/environments-v2/usecases/sync-strategies/adapters/workflow-repository.adapter.ts
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/api/src/app/environments-v2/usecases/sync-strategies/adapters/workflow-sync.adapter.ts

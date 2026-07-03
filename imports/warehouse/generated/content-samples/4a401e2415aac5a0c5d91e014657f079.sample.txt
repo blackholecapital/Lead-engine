@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/topics/create-topic-form.tsx
+
+import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
+import { slugify } from '@novu/shared';
+import { useEffect, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import { ExternalToast } from 'sonner';
+import { z } from 'zod';
+import { NovuApiError } from '@/api/api.client';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  FormRoot,
+} from '@/components/primitives/form/form';
+import { InlineToast } from '@/components/primitives/inline-toast';
+import { Input } from '@/components/primitives/input';
+import { Separator } from '@/components/primitives/separator';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { useCreateTopic } from '@/hooks/use-create-topic';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { TelemetryEvent } from '@/utils/telemetry';
+
+const toastOptions: ExternalToast = {
+  position: 'bottom-right',
+  classNames: {
+    toast: 'mb-4 right-0 pointer-events-none',
+  },
+};
+
+const TopicFormSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  key: z.string().min(1, 'Key is required'),
+});
+
+type CreateTopicFormProps = {
+  onSuccess?: () => void;
+  onError?: (error: Error) => void;
+  onSubmitStart?: () => void;
+};
+
+export const CreateTopicForm = (props: CreateTopicFormProps) => {
+  const { onSuccess, onError, onSubmitStart } = props;
+  const track = useTelemetry();
+  const [keyModifiedByUser, setKeyModifiedByUser] = useState(false);
+  const nameInputRef = useRef<HTMLInputElement>(null);
+
+  const { createTopic } = useCreateTopic({
+    onSuccess: () => {
+      showSuccessToast(`Topic created successfully`, undefined, toastOptions);
+      track(TelemetryEvent.TOPICS_PAGE_VISIT); // Using closest available event
+
+      if (onSuccess) {
+        onSuccess();
+      }
+    },
+    onError: (error) => {
+      // Check if it's a conflict error (topic already exists)
+      if (error instanceof NovuApiError && error.status === 409) {
+        // Set error on the key field specifically
+        form.setError('key', {
+          type: 'manual',
+          message: 'A topic with this key already exists',
+        });
+      }
+
+      const errorMessage = error instanceof Error ? error.message : 'Failed to create topic';
+      showErrorToast(errorMessage, undefined, toastOptions);
+
+      if (onError && error instanceof Error) {
+        onError(error);
+      }
+    },
+  });
+
+  const form = useForm({
+    defaultValues: {
+      name: '',
+      key: '',
+    },
+    resolver: standardSchemaResolver(TopicFormSchema),
+    shouldFocusError: false,
+    mode: 'onSubmit',
+    reValidateMode: 'onChange',
+  });
+
+  // Watch the name field and update the key field accordingly
+  const watchedName = form.watch('name');
+
+  useEffect(() => {
+    // Only auto-update the key if it hasn't been modified by the user
+    if (!keyModifiedByUser && watchedName) {
+      const slugifiedKey = slugify(watchedName);
+      form.setValue('key', slugifiedKey, { shouldValidate: true });
+    }
+  }, [watchedName, form, keyModifiedByUser]);
+
+  // Auto-focus the name input when the form is mounted

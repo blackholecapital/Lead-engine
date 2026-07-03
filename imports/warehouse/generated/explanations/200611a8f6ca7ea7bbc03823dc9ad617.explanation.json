@@ -1,0 +1,6 @@
+{
+  "id":"200611a8f6ca7ea7bbc03823dc9ad617",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/utils/isDashboardVirtualizationEnabled.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

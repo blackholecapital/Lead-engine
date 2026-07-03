@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/components/whatsapp-credentials-paste.tsx
+
+import { CredentialsKeyEnum } from '@novu/shared';
+import { type ClipboardEvent, useCallback, useMemo, useRef, useState } from 'react';
+import { type Control, type UseFormSetValue, useWatch } from 'react-hook-form';
+import { RiCheckLine, RiClipboardLine, RiCloseLine, RiEyeOffLine, RiInformationLine } from 'react-icons/ri';
+import { Button } from '@/components/primitives/button';
+import { Textarea } from '@/components/primitives/textarea';
+import { cn } from '@/utils/ui';
+import type { IntegrationFormData } from '../types';
+import {
+  getWhatsAppFieldDisplayName,
+  isLikelyWhatsAppCredentialsBlock,
+  type ParsedWhatsAppCredentials,
+  parseWhatsAppCredentialsBlock,
+  type WhatsAppCredentialField,
+} from './parse-whatsapp-credentials-block';
+
+const WHATSAPP_FIELDS: WhatsAppCredentialField[] = [
+  CredentialsKeyEnum.ApiToken,
+  CredentialsKeyEnum.phoneNumberIdentification,
+  CredentialsKeyEnum.businessAccountId,
+  CredentialsKeyEnum.SecretKey,
+];
+
+const API_SETUP_FIELDS: WhatsAppCredentialField[] = [
+  CredentialsKeyEnum.ApiToken,
+  CredentialsKeyEnum.phoneNumberIdentification,
+  CredentialsKeyEnum.businessAccountId,
+];
+
+const PREVIEW_IMAGE_SRC = '/images/agents/whatsapp-paste-comp.gif';
+
+type ApplyOutcome = {
+  filled: WhatsAppCredentialField[];
+  overwritten: WhatsAppCredentialField[];
+  invalid: WhatsAppCredentialField[];
+  masked: WhatsAppCredentialField[];
+};
+
+type WhatsAppCredentialsPasteProps = {
+  control: Control<IntegrationFormData>;
+  setValue: UseFormSetValue<IntegrationFormData>;
+  isReadOnly?: boolean;
+};
+
+/**
+ * Smart-paste affordance for the WhatsApp Business agent onboarding form.
+ *
+ * Recognizes the freeform text copied from Meta's "API Setup" page and routes
+ * the Access Token, Phone Number ID and WhatsApp Business Account ID into the
+ * existing react-hook-form state. App Secret is on a different page in Meta —
+ * the outcome message points users to it after a successful fill.
+ */
+export function WhatsAppCredentialsPaste({ control, setValue, isReadOnly }: WhatsAppCredentialsPasteProps) {
+  const credentials = useWatch({ control, name: 'credentials' });
+  const [outcome, setOutcome] = useState<ApplyOutcome | null>(null);
+  const [draft, setDraft] = useState('');
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isPreviewLoaded, setIsPreviewLoaded] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Synchronously mark the preview as loaded if the browser already has it
+  // cached when the <img> mounts (the `onLoad` event would otherwise race).
+  const handlePreviewRef = useCallback((node: HTMLImageElement | null) => {
+    if (node?.complete && node.naturalWidth > 0) {
+      setIsPreviewLoaded(true);
+    }
+  }, []);
+
+  const handlePreviewLoaded = useCallback(() => {
+    setIsPreviewLoaded(true);
+  }, []);
+
+  const apply = useCallback(
+    (parsed: ParsedWhatsAppCredentials): ApplyOutcome => {
+      const filled: WhatsAppCredentialField[] = [];
+      const overwritten: WhatsAppCredentialField[] = [];
+
+      for (const key of parsed.matched) {
+        const value = parsed.values[key];
+        if (value === undefined) continue;
+
+        const previous = credentials?.[key];
+        if (previous && previous !== value) {
+          overwritten.push(key);
+        }
+
+        setValue(`credentials.${key}`, value, {
+          shouldDirty: true,
+          shouldTouch: true,
+          shouldValidate: true,
+        });
+        filled.push(key);
+      }
+
+      return {
+        filled,
+        overwritten,
+        invalid: parsed.invalid,
+        masked: parsed.masked,
+      };

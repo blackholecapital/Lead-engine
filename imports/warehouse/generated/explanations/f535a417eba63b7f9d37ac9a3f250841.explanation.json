@@ -1,0 +1,6 @@
+{
+  "id":"f535a417eba63b7f9d37ac9a3f250841",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterBar/CrossFilters/styles.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

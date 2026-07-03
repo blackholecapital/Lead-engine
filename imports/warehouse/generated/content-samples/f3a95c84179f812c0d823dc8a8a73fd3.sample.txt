@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/tag-input.tsx
+
+import { Command } from 'cmdk';
+import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/primitives/command';
+import { Popover, PopoverAnchor, PopoverContent } from '@/components/primitives/popover';
+import { cn } from '@/utils/ui';
+import { Tag } from './tag';
+
+type TagInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'size'> & {
+  value: string[];
+  suggestions: string[];
+  onChange: (tags: string[]) => void;
+  size?: 'sm' | 'md' | 'xs';
+  hideTags?: boolean;
+  onAddTag?: (tag: string) => void;
+  hasError?: boolean;
+  popoverClassName?: string;
+  popoverSideOffset?: number;
+};
+
+const normalizeTag = (tag: string) => tag.trim().toLowerCase();
+
+const TagInput = forwardRef<HTMLInputElement, TagInputProps>((props, ref) => {
+  const {
+    className,
+    suggestions = [],
+    value = [],
+    onChange,
+    onBlur,
+    hideTags = false,
+    onAddTag,
+    size = 'xs',
+    hasError,
+    popoverClassName,
+    popoverSideOffset = 8,
+    ...rest
+  } = props;
+  const [tags, setTags] = useState<string[]>(Array.isArray(value) ? value : []);
+  const [inputValue, setInputValue] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const blurTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isClickingInputRef = useRef(false);
+
+  useEffect(() => {
+    if (Array.isArray(value)) {
+      setTags(value);
+    }
+  }, [value]);
+
+  useEffect(() => {
+    return () => {
+      if (blurTimeoutRef.current) {
+        clearTimeout(blurTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const normalizedValueTagSet = useMemo(() => {
+    const set = new Set<string>();
+    for (const t of value || []) {
+      const n = normalizeTag(t ?? '');
+      if (n) {
+        set.add(n);
+      }
+    }
+
+    return set;
+  }, [value]);
+
+  const normalizedSuggestionSet = useMemo(() => {
+    const set = new Set<string>();
+    for (const s of suggestions || []) {
+      const n = normalizeTag(s ?? '');
+      if (n) {
+        set.add(n);
+      }
+    }
+
+    return set;
+  }, [suggestions]);
+
+  const validSuggestions = useMemo(
+    () =>
+      (suggestions || []).filter((suggestion) => {
+        const n = normalizeTag(suggestion ?? '');
+
+        return n.length > 0 && !normalizedValueTagSet.has(n);
+      }),
+    [normalizedValueTagSet, suggestions]
+  );
+
+  const filteredSuggestions = useMemo(() => {
+    const trimmed = inputValue.trim();
+    if (!trimmed) return validSuggestions;
+    const searchLower = trimmed.toLowerCase();
+    return validSuggestions.filter((s) => s?.toLowerCase().includes(searchLower));
+  }, [inputValue, validSuggestions]);
+
+  const isNewTag = useMemo(() => {
+    const key = normalizeTag(inputValue);
+    if (!key) {

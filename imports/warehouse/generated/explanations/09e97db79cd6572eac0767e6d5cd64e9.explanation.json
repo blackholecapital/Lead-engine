@@ -1,0 +1,6 @@
+{
+  "id":"09e97db79cd6572eac0767e6d5cd64e9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/compute-field-input-type-options.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

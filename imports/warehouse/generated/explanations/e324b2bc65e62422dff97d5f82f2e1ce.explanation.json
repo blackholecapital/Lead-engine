@@ -1,0 +1,6 @@
+{
+  "id":"e324b2bc65e62422dff97d5f82f2e1ce",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/hooks/use-dashboard-url-query.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"a7dcc18c252a0b1a5d4bc5ae7979180d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/trpc/server/routers/viewer/eventTypes/usecases/EventGroupBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

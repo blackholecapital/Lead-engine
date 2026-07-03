@@ -1,0 +1,9 @@
+{
+  "id":"documenso",
+  "title":"Documenso",
+  "category":"documents",
+  "tags":["documents","esign","workflow"],
+  "source":"vendor-source/documents/documenso",
+  "status":"downloaded",
+  "tier":"candidate"
+}

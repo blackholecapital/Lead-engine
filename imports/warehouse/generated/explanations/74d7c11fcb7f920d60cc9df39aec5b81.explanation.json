@@ -1,0 +1,6 @@
+{
+  "id":"74d7c11fcb7f920d60cc9df39aec5b81",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/chart-data/utils/get-group-by-order-by.util.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

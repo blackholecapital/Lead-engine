@@ -1,0 +1,6 @@
+{
+  "id":"a483c40df493d1aeb5db39e5a20994e7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/components/SavedQuestionLeftSide/hooks.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

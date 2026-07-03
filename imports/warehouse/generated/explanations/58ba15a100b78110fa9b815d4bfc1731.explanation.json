@@ -1,0 +1,6 @@
+{
+  "id":"58ba15a100b78110fa9b815d4bfc1731",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FiltersConfigModal/DividerConfigForm.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

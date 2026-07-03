@@ -1,0 +1,11 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/tv.ts
+
+import { createTV } from 'tailwind-variants';
+
+import { twMergeConfig } from '@/utils/ui';
+
+export type { ClassValue, VariantProps } from 'tailwind-variants';
+
+export const tv = createTV({
+  twMergeConfig,
+});

@@ -1,0 +1,14 @@
+REPOSITORY                         TAG                    IMAGE ID      CREATED       SIZE
+docker.io/timescale/timescaledb    latest-pg16            a028add92493  4 weeks ago   1.45 GB
+docker.io/n8nio/n8n                latest                 74e6fb53c239  6 weeks ago   1.67 GB
+docker.io/library/redis            7                      abe89191aa1b  6 weeks ago   116 MB
+docker.io/library/postgres         16                     f40a5645a21f  6 weeks ago   458 MB
+docker.io/filebrowser/filebrowser  s6                     4113c78767be  6 weeks ago   105 MB
+docker.io/pgvector/pgvector        pg16                   be2dedd21573  6 weeks ago   446 MB
+localhost/podman-pause             4.9.4-rhel-1773765515  f4f2e8b8ac20  2 months ago  774 kB
+docker.io/library/mysql            8.0                    c62ad261f3b6  2 months ago  818 MB
+docker.io/library/node             20-alpine              11cedc39e663  2 months ago  138 MB
+docker.io/library/node             22-alpine              04a4709b55a8  2 months ago  165 MB
+docker.io/library/alpine           latest                 3cb067eab609  2 months ago  8.74 MB
+docker.io/apache/age               latest                 17b3e414c31c  4 months ago  492 MB
+quay.io/podman/hello               latest                 5dd467fce50b  2 years ago   787 kB

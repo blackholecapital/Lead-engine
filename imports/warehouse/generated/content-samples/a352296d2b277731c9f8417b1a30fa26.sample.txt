@@ -1,0 +1,13 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-is-agent-email-available.ts
+
+import { ApiServiceLevelEnum, FeatureNameEnum, getFeatureForTierAsBoolean } from '@novu/shared';
+import { useFetchSubscription } from '@/hooks/use-fetch-subscription';
+
+export function useIsAgentEmailAvailable(): boolean {
+  const { subscription } = useFetchSubscription();
+
+  return getFeatureForTierAsBoolean(
+    FeatureNameEnum.AGENT_EMAIL_INTEGRATION,
+    subscription?.apiServiceLevel ?? ApiServiceLevelEnum.FREE
+  );
+}

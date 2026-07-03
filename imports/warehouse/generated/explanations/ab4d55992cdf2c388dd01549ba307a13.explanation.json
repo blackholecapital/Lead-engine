@@ -1,0 +1,6 @@
+{
+  "id":"ab4d55992cdf2c388dd01549ba307a13",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/DashboardBuilder/DashboardContainer.tsx",
+  "reasons":" dashboard-feature, builder-pattern, react-component,"
+}

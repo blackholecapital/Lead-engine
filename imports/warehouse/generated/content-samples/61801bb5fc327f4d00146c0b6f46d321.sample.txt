@@ -1,0 +1,12 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/utils/channels.ts
+
+import { ChannelTypeEnum } from '@novu/shared';
+
+export const INTEGRATION_CHANNELS = [
+  ChannelTypeEnum.EMAIL,
+  ChannelTypeEnum.SMS,
+  ChannelTypeEnum.PUSH,
+  ChannelTypeEnum.CHAT,
+] as const;
+
+export type IntegrationChannel = (typeof INTEGRATION_CHANNELS)[number];

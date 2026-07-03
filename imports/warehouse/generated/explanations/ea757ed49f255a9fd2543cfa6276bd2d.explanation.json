@@ -1,0 +1,6 @@
+{
+  "id":"ea757ed49f255a9fd2543cfa6276bd2d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/flow-drag-layer.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

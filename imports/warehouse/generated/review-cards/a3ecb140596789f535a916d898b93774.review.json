@@ -1,0 +1,13 @@
+{
+  "id": "a3ecb140596789f535a916d898b93774",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/internal-sdk/src/models/components/syncedworkflowdto.ts",
+  "score": 85,
+  "suggested_tags": [
+    "component",
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

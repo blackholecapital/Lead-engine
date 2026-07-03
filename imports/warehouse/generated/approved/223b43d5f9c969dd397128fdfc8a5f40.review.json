@@ -1,0 +1,12 @@
+{
+  "id": "223b43d5f9c969dd397128fdfc8a5f40",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/graph/net-value-stats.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

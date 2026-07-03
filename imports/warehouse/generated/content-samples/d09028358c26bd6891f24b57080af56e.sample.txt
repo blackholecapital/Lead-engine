@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/apps/web/modules/form-builder/components/FormBuilderField.tsx
+
+import { ErrorMessage } from "@hookform/error-message";
+import type { TFunction } from "i18next";
+import { Controller, useFormContext } from "react-hook-form";
+import type { z } from "zod";
+
+import { useLocale } from "@calcom/lib/hooks/useLocale";
+import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
+import classNames from "@calcom/ui/classNames";
+import { InfoBadge } from "@calcom/ui/components/badge";
+import { Label } from "@calcom/ui/components/form";
+import { InfoIcon } from "@coss/ui/icons";
+
+import { Components, isValidValueProp } from "./Components";
+import { fieldTypesConfigMap } from "@calcom/features/form-builder/fieldTypes";
+import { fieldsThatSupportLabelAsSafeHtml } from "@calcom/features/form-builder/fieldsThatSupportLabelAsSafeHtml";
+import type { fieldsSchema } from "@calcom/features/form-builder/schema";
+import {
+  useShouldBeDisabledDueToPrefill,
+  getFieldNameFromErrorMessage,
+} from "@calcom/features/form-builder/useShouldBeDisabledDueToPrefill";
+import { getTranslatedConfig as getTranslatedVariantsConfig } from "@calcom/features/form-builder/utils/variantsConfig";
+
+// helper to render markdown label safely
+const renderLabel = (field: Partial<RhfFormField>) => {
+  if (field.labelAsSafeHtml) {
+    return (
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: Content is sanitized via markdownToSafeHTML
+      <span dangerouslySetInnerHTML={{ __html: markdownToSafeHTML(field.labelAsSafeHtml) }} />
+    );
+  }
+  return <span>{field.label}</span>;
+};
+
+type RhfForm = {
+  fields: z.infer<typeof fieldsSchema>;
+};
+
+type RhfFormFields = RhfForm["fields"];
+
+type RhfFormField = RhfFormFields[number];
+
+type ValueProps =
+  | {
+      value: string[];
+      setValue: (value: string[]) => void;
+    }
+  | {
+      value: string;
+      setValue: (value: string) => void;
+    }
+  | {
+      value: {
+        value: string;
+        optionValue: string;
+      };
+      setValue: (value: { value: string; optionValue: string }) => void;
+    }
+  | {
+      value: boolean;
+      setValue: (value: boolean) => void;
+    };
+
+export const FormBuilderField = ({
+  field,
+  readOnly,
+  className,
+  onValueChange,
+}: {
+  field: RhfFormFields[number];
+  readOnly: boolean;
+  className: string;
+  onValueChange?: (args: { name: string; value: unknown; prevValue: unknown }) => void;
+}) => {
+  const { t } = useLocale();
+  const { control, formState } = useFormContext();
+
+  const { hidden, placeholder, label, noLabel, translatedDefaultLabel } = getAndUpdateNormalizedValues(
+    field,
+    t
+  );
+
+  const shouldBeDisabled = useShouldBeDisabledDueToPrefill(field);
+  return (
+    <div data-fob-field-name={field.name} className={classNames(className, hidden ? "hidden" : "")}>
+      <Controller
+        control={control}
+        // Make it a variable
+        name={`responses.${field.name}`}
+        render={({ field: { value, onChange }, fieldState: { error } }) => {
+          const setAndNotify = (val: unknown) => {
+            onChange(val);
+            onValueChange?.({ name: field.name, value: val, prevValue: value });
+          };
+
+          return (
+            <div>
+              <ComponentForField
+                field={{ ...field, label, placeholder, hidden }}
+                value={value}
+                readOnly={readOnly || shouldBeDisabled}

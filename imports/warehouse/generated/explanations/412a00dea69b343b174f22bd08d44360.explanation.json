@@ -1,0 +1,6 @@
+{
+  "id":"412a00dea69b343b174f22bd08d44360",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/builders/page-layout-tab/workspace-migration-page-layout-tab-actions-builder.service.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

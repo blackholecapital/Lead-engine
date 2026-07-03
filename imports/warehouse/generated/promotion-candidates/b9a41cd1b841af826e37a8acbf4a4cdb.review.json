@@ -1,0 +1,14 @@
+{
+  "id": "b9a41cd1b841af826e37a8acbf4a4cdb",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/state/builder-state-provider.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "provider",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

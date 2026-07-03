@@ -1,0 +1,6 @@
+{
+  "id":"051f7f54eeed798e94ffded542340e78",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/DatasetEditor/DatasetFieldMetadataSidebar/MappedFieldPicker/MappedFieldPicker.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

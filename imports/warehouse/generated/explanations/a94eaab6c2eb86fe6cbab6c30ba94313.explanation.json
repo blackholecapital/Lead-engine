@@ -1,0 +1,6 @@
+{
+  "id":"a94eaab6c2eb86fe6cbab6c30ba94313",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/QuestionDownloadPopover/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

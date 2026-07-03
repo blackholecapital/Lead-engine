@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "id": "fusejs",
+    "title": "FuseJS",
+    "category": "scoring",
+    "tags": [
+      "search",
+      "fuzzy",
+      "ranking"
+    ],
+    "source": "vendor-source/scoring/fusejs",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "fusejs",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "fusejs",
+    "label": "FuseJS",
+    "category": "scoring",
+    "tags": [
+      "search",
+      "fuzzy",
+      "ranking"
+    ],
+    "type": "asset"
+  }
+}

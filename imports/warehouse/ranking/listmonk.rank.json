@@ -1,0 +1,14 @@
+{
+  "id": "listmonk",
+  "title": "Listmonk",
+  "category": "comms",
+  "ranking": {
+    "implementation": 90,
+    "reuse": 90,
+    "maturity": 90,
+    "retrieval": 90,
+    "graph": 90,
+    "vector": 90,
+    "final": 90
+  }
+}

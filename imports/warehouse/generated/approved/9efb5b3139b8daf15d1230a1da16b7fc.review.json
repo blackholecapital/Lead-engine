@@ -1,0 +1,12 @@
+{
+  "id": "9efb5b3139b8daf15d1230a1da16b7fc",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/usecases/create-workflow-v0/create-workflow.usecase.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

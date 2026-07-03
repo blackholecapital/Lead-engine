@@ -1,0 +1,10 @@
+{
+  "id": "qdrant",
+  "title": "Qdrant",
+  "tags": [
+    "vector",
+    "retrieval"
+  ],
+  "category": "retrieval",
+  "source": "vendor-source/retrieval/qdrant"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"548677e1bf3f880825176a1c54a49bbf",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/DatasetEditor/DatasetFieldMetadataSidebar/DatasetFieldMetadataSidebar.jsx",
+  "reasons":" builder-pattern,"
+}

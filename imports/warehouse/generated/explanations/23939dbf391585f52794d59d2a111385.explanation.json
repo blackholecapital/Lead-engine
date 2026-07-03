@@ -1,0 +1,6 @@
+{
+  "id":"23939dbf391585f52794d59d2a111385",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/AddLinkOrEmbedButton.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

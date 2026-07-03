@@ -1,0 +1,13 @@
+{
+  "id": "fce4a3b8a0846c8f6dd40380cde32d59",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/packages/eslint-plugin-start/src/rules/no-async-client-component/render-graph-builder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,14 @@
+{
+  "id": "01e444cd06efef8c73e7e29a6695b7ab",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/page-layout/widgets/standalone-rich-text/components/DashboardsBlockEditor.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

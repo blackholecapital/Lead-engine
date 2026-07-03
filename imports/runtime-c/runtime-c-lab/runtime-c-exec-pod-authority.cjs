@@ -1,0 +1,134 @@
+#!/usr/bin/env node
+const fs=require("fs");
+const path=require("path");
+const {spawnSync}=require("child_process");
+
+const [,,root,mode]=process.argv;
+const PREPARE_ONLY = mode === "--prepare-only";
+const VERIFY_ONLY = mode === "--verify-only";
+if(!root){
+  console.error("usage: runtime-c-exec-pod-authority.cjs <run_root>");
+  process.exit(2);
+}
+
+const FACT=process.env.RUNTIME_C_HOME || "/opt/eila-os/factory-xyz/runtime-c";
+const arch=JSON.parse(fs.readFileSync(path.join(FACT,"RUNTIME_C_ARCHITECTURE.json"),"utf8"));
+const full=JSON.parse(fs.readFileSync(path.join(root,"buildsheet.full.json"),"utf8"));
+const podId=String(full.pod || full.lane_cell_backend || "A").toUpperCase();
+
+const podDir=path.join(FACT,"pods",`pod-${podId.toLowerCase()}`);
+const cfgPath=path.join(podDir,"POD_CONFIG.json");
+if(!fs.existsSync(cfgPath)) throw new Error(`missing POD_CONFIG ${cfgPath}`);
+
+const cfg=JSON.parse(fs.readFileSync(cfgPath,"utf8"));
+const handoff=path.join(cfg.root,cfg.handoff);
+
+if(!fs.existsSync(handoff)) throw new Error(`missing handoff ${handoff}`);
+
+const runId=path.basename(root);
+const buildsheet=path.join(root,"buildsheet.full.json");
+
+fs.mkdirSync(cfg.workspace_root,{recursive:true});
+fs.mkdirSync(cfg.artifact_root,{recursive:true});
+
+fs.writeFileSync(path.join(root,"POD_AUTHORITY.json"),JSON.stringify({
+  status:"ACTIVE",
+  pod:podId,
+  config:cfgPath,
+  handoff,
+  workspace_root:cfg.workspace_root,
+  artifact_root:cfg.artifact_root,
+  base_url:cfg.base_url,
+  model:cfg.model,
+  started_at:new Date().toISOString()
+},null,2)+"\n");
+
+const env={
+  ...process.env,
+  RUNTIME_C_HOME:FACT,
+  RUNTIME_C_POD:podId,
+  RUNTIME_C_POD_ROOT:cfg.root,
+  RUNTIME_C_POD_CONFIG:cfgPath,
+  RUNTIME_C_ISLAND:cfg.root,
+  RUNTIME_C_ISLAND_RUNROOT:path.dirname(cfg.workspace_root),
+  PODMAN_ISLAND:cfg.root,
+  FACTORY67_RUNROOT:path.dirname(cfg.workspace_root),
+  RUNTIME_C_WORKSPACE_ROOT:cfg.workspace_root,
+  RUNTIME_C_ARTIFACT_ROOT:cfg.artifact_root,
+  OLLAMA_BASE_URL:cfg.base_url,
+  OLLAMA_MODEL:cfg.model,
+  EILA_OLLAMA_BASE:cfg.base_url,
+  EILA_FACTORY_LLM_MODEL:cfg.model,
+  FACTORY67_RULES:path.join(cfg.root,cfg.factory_rules),
+  FACTORY67_TOOLBELT:path.join(cfg.root,cfg.toolbelt)
+};
+
+const args = PREPARE_ONLY ? [buildsheet,runId,"--prepare-only"] : (VERIFY_ONLY ? [buildsheet,runId,"--verify-only"] : [buildsheet,runId]);
+const res=spawnSync(handoff,args,{
+  cwd:cfg.root,
+  env,
+  encoding:"utf8",
+  timeout:900000
+});
+
+fs.writeFileSync(path.join(root,"POD_AUTHORITY_STDOUT.log"),res.stdout||"");
+fs.writeFileSync(path.join(root,"POD_AUTHORITY_STDERR.log"),res.stderr||"");
+
+if(res.stdout) process.stdout.write(res.stdout);
+if(res.stderr) process.stderr.write(res.stderr);
+
+if(PREPARE_ONLY){
+  fs.writeFileSync(path.join(root,"POD_AUTHORITY_IMPORT.json"),JSON.stringify({
+    status: res.status===0 ? "PASS" : "FAIL",
+    pod:podId,
+    mode:"prepare-only",
+    exit_code:res.status,
+    signal:res.signal,
+    imported_output:false,
+    imported_proof:false,
+    imported_worker_packets:false,
+    completed_at:new Date().toISOString()
+  },null,2)+"\n");
+  if(res.status!==0) throw new Error(`POD_AUTHORITY_PREPARE_FAIL pod=${podId} exit=${res.status}`);
+  console.log(`PASS runtime-c-exec-pod-authority prepare-only ${podId}`);
+  process.exit(0);
+}
+
+const art=path.join(cfg.artifact_root,runId);
+
+function cpdir(src,dst){
+  if(!fs.existsSync(src)) return false;
+  fs.mkdirSync(dst,{recursive:true});
+  for(const name of fs.readdirSync(src)){
+    const s=path.join(src,name);
+    const d=path.join(dst,name);
+    const st=fs.statSync(s);
+    if(st.isDirectory()) cpdir(s,d);
+    else fs.copyFileSync(s,d);
+  }
+  return true;
+}
+
+const importedOutput=cpdir(path.join(art,"output"),path.join(root,"output"));
+const importedProof=cpdir(path.join(art,"proof"),path.join(root,"pod_proof"));
+const importedPackets=cpdir(path.join(art,"worker_packets"),path.join(root,"worker_packets"));
+
+const status = res.status===0 && importedOutput && importedProof ? "PASS" : "FAIL";
+
+fs.writeFileSync(path.join(root,"POD_AUTHORITY_IMPORT.json"),JSON.stringify({
+  status,
+  pod:podId,
+  exit_code:res.status,
+  signal:res.signal,
+  artifact_root:art,
+  imported_output:importedOutput,
+  imported_proof:importedProof,
+  imported_worker_packets:importedPackets,
+  completed_at:new Date().toISOString()
+},null,2)+"\n");
+
+if(status!=="PASS"){
+  throw new Error(`POD_AUTHORITY_FAIL pod=${podId} exit=${res.status} output=${importedOutput} proof=${importedProof}`);
+}
+
+console.log(`PASS runtime-c-exec-pod-authority ${podId}`);

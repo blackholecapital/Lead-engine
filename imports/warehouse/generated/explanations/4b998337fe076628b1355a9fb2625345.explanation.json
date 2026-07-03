@@ -1,0 +1,6 @@
+{
+  "id":"4b998337fe076628b1355a9fb2625345",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/SavedQuestionHeaderButton/SavedQuestionHeaderButton.unit.spec.js",
+  "reasons":" builder-pattern,"
+}

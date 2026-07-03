@@ -1,0 +1,13 @@
+{
+  "id": "a4401af2121084a73832a3893ef3100c",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/navigation-menu-item/edit/side-panel/components/SidePanelNewSidebarItemViewSystemPickerSubPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

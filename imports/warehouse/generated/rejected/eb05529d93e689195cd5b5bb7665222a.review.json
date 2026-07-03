@@ -1,0 +1,12 @@
+{
+  "id": "eb05529d93e689195cd5b5bb7665222a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/__mocks__/NativeQueryEditor.jsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

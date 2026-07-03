@@ -1,0 +1,6 @@
+{
+  "id":"c70ae62c7f723dc747a50f05ab09357e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/helpers/inputs/ColorInput/BaseColorInput.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

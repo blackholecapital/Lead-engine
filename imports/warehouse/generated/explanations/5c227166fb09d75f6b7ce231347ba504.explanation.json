@@ -1,0 +1,6 @@
+{
+  "id":"5c227166fb09d75f6b7ce231347ba504",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/documents/blocks/helpers/block-wrappers/TuneMenu.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

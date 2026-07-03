@@ -1,0 +1,6 @@
+{
+  "id":"0e34c5bfc7db7c0529ed51fbce6985fb",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/CancelEditButton.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

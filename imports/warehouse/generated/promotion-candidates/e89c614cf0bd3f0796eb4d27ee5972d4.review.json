@@ -1,0 +1,14 @@
+{
+  "id": "e89c614cf0bd3f0796eb4d27ee5972d4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/RefreshWidget/RefreshOption/RefreshOption.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

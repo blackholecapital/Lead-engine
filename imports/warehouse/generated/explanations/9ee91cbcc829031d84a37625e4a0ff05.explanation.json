@@ -1,0 +1,6 @@
+{
+  "id":"9ee91cbcc829031d84a37625e4a0ff05",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-types/input/float-filter.input-type.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

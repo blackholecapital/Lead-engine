@@ -1,0 +1,6 @@
+{
+  "id":"345a5215339b269c99e857d6b1b44c67",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterBar/useFilterOutlined.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"d1a5bd41aa7f87a2f4068d7d95dc26b5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/components/QuestionNotebookButton/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

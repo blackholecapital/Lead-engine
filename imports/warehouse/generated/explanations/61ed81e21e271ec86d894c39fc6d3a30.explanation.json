@@ -1,0 +1,6 @@
+{
+  "id":"61ed81e21e271ec86d894c39fc6d3a30",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/utils/validate-role-belongs-to-caller-application.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

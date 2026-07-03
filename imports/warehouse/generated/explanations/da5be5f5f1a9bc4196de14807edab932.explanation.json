@@ -1,0 +1,6 @@
+{
+  "id":"da5be5f5f1a9bc4196de14807edab932",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/pieces-selector/ai-tab-content/ai-actions-list.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

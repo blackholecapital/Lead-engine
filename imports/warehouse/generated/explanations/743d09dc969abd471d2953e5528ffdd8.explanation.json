@@ -1,0 +1,6 @@
+{
+  "id":"743d09dc969abd471d2953e5528ffdd8",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ToggleInspectorPanelButton.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

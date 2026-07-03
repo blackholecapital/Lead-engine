@@ -1,0 +1,12 @@
+{
+  "id": "496b77503713872258876f663d947c1e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/workspaces/pages/AdminConnectionInfoPage/AdminConnectionInfoPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

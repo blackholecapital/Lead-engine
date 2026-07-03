@@ -1,0 +1,12 @@
+{
+  "id": "68df7027f62adec034c23d0aa22f26fd",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/data-studio/measures/pages/MeasureRevisionHistoryPage/MeasureRevisionHistoryPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

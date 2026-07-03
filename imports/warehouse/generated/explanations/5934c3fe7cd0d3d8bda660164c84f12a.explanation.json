@@ -1,0 +1,6 @@
+{
+  "id":"5934c3fe7cd0d3d8bda660164c84f12a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/pieces-selector/piece-actions-or-triggers-list.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

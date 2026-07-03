@@ -1,0 +1,6 @@
+{
+  "id":"53dc26eed24b2290dafedfdd29a5282d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/embedding/embedding-iframe-sdk-setup/utils/is-question-or-dashboard-settings.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

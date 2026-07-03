@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/components/slack-credentials-paste.tsx
+
+import { CredentialsKeyEnum } from '@novu/shared';
+import { type ClipboardEvent, useCallback, useMemo, useRef, useState } from 'react';
+import { type Control, type UseFormSetValue, useWatch } from 'react-hook-form';
+import { RiCheckLine, RiClipboardLine, RiCloseLine, RiEyeOffLine, RiInformationLine } from 'react-icons/ri';
+import { Button } from '@/components/primitives/button';
+import { Textarea } from '@/components/primitives/textarea';
+import { cn } from '@/utils/ui';
+import type { IntegrationFormData } from '../types';
+import {
+  getSlackFieldDisplayName,
+  isLikelySlackCredentialsBlock,
+  type ParsedSlackCredentials,
+  parseSlackCredentialsBlock,
+  type SlackCredentialField,
+} from './parse-slack-credentials-block';
+
+const SLACK_FIELDS: SlackCredentialField[] = [
+  CredentialsKeyEnum.ApplicationId,
+  CredentialsKeyEnum.ClientId,
+  CredentialsKeyEnum.SecretKey,
+  CredentialsKeyEnum.SigningSecret,
+];
+
+const PREVIEW_GIF_SRC = '/images/agents/slack-credentials-preview.gif';
+
+type ApplyOutcome = {
+  filled: SlackCredentialField[];
+  overwritten: SlackCredentialField[];
+  invalid: SlackCredentialField[];
+  /** Fields whose Slack value was still masked behind dots when pasted. */
+  masked: SlackCredentialField[];
+  unknownLines: string[];
+};
+
+type SlackCredentialsPasteProps = {
+  control: Control<IntegrationFormData>;
+  setValue: UseFormSetValue<IntegrationFormData>;
+  isReadOnly?: boolean;
+};
+
+/**
+ * Smart-paste affordance for the Slack agent onboarding credentials form.
+ *
+ * Renders an inline tip card that recognizes the freeform "App Credentials"
+ * block from Slack's app settings page and routes the parsed fields back into
+ * the existing react-hook-form state. Clicking the card opens a paste box
+ * below; pasting straight into any individual credential field also works
+ * thanks to {@link useSlackCredentialsPasteFallback}.
+ */
+export function SlackCredentialsPaste({ control, setValue, isReadOnly }: SlackCredentialsPasteProps) {
+  const credentials = useWatch({ control, name: 'credentials' });
+  const [outcome, setOutcome] = useState<ApplyOutcome | null>(null);
+  const [draft, setDraft] = useState('');
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isPreviewLoaded, setIsPreviewLoaded] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Synchronously mark the preview as loaded if the browser already has it
+  // cached when the <img> mounts (the `onLoad` event would otherwise race).
+  const handlePreviewRef = useCallback((node: HTMLImageElement | null) => {
+    if (node?.complete && node.naturalWidth > 0) {
+      setIsPreviewLoaded(true);
+    }
+  }, []);
+
+  const handlePreviewLoaded = useCallback(() => {
+    setIsPreviewLoaded(true);
+  }, []);
+
+  const apply = useCallback(
+    (parsed: ParsedSlackCredentials): ApplyOutcome => {
+      const filled: SlackCredentialField[] = [];
+      const overwritten: SlackCredentialField[] = [];
+
+      for (const key of parsed.matched) {
+        const value = parsed.values[key];
+        if (value === undefined) continue;
+
+        const previous = credentials?.[key];
+        if (previous && previous !== value) {
+          overwritten.push(key);
+        }
+
+        setValue(`credentials.${key}`, value, {
+          shouldDirty: true,
+          shouldTouch: true,
+          shouldValidate: true,
+        });
+        filled.push(key);
+      }
+
+      return {
+        filled,
+        overwritten,
+        invalid: parsed.invalid,
+        masked: parsed.masked,
+        unknownLines: parsed.unknownLines,
+      };
+    },
+    [credentials, setValue]

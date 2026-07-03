@@ -1,0 +1,12 @@
+{
+  "id": "09833a1b1f7427229652ae7a5b6f1790",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/ai-controls/pages/MetabotFeatureAccessPage/MetabotFeatureAccessPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"3b8c16966470c3adbed947a0110e4a1f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/builders/command-menu-item/types/workspace-migration-command-menu-item-action.type.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "6236a16b055b7ba168d98154e7993d8a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/billing/contact-sales-button.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "billing",
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

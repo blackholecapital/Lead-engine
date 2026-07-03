@@ -1,0 +1,13 @@
+{
+  "id": "708f4bbc33bc7584ffe62f6fbd78bddf",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/components/hooks/use-sidebar-navigation-manager.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"c730b1f2a40237308ffd6a1083168484",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ExecutionTime/ExecutionTime.unit.spec.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,100 @@
+const fs=require("fs"), crypto=require("crypto"), lancedb=require("./node_modules/@lancedb/lancedb");
+
+const query=process.argv.slice(2).join(" ") || "create invoice from account contact quote";
+const cfg=JSON.parse(fs.readFileSync("factory/config/RUNTIME_C_RETRIEVAL.json","utf8"));
+
+
+const entityBoosts=[
+  ["invoice","AOS_Invoices"],
+  ["invoices","AOS_Invoices"],
+  ["quote","AOS_Quotes"],
+  ["quotes","AOS_Quotes"],
+  ["contract","AOS_Contracts"],
+  ["contracts","AOS_Contracts"],
+  ["account","Accounts"],
+  ["accounts","Accounts"],
+  ["contact","Contacts"],
+  ["contacts","Contacts"],
+  ["lead","Leads"],
+  ["leads","Leads"],
+  ["document","Documents"],
+  ["documents","Documents"],
+  ["email","EmailTemplates"],
+  ["template","AOS_PDF_Templates"],
+  ["pdf","AOS_PDF_Templates"],
+  ["workflow","AOW_WorkFlow"],
+  ["schedule","Schedulers"]
+];
+
+function queryEntityBoost(h,q){
+  let b=0;
+  const blob=[h.key,h.name,h.text,h.path].join(" ");
+  for(const [tok,entity] of entityBoosts){
+    if(q.toLowerCase().includes(tok) && blob.includes(entity)) b+=25;
+  }
+  return b;
+}
+
+const priority={
+  software_capability:120,
+  crm_document_template:90,
+  crm_workflow:85,
+  crm_form:80,
+  crm_field:70,
+  crm_relation:65,
+  crm_object:60,
+  golden_collection:45,
+  template_collection:40,
+  qwen_app:30,
+  clmm_extra_resource:500,
+  pdf_scraper_resource:520,
+  trading_extra_resource:420,
+  trading_resource:260,
+  clmm_app:120,
+  icon_collection:-999, golden_collection:-250
+};
+
+function hashVec(text,dims=384){
+  const v=new Array(dims).fill(0);
+  for(const tok of String(text).toLowerCase().split(/[^a-z0-9_]+/).filter(Boolean)){
+    const h=crypto.createHash("sha256").update(tok).digest();
+    v[h.readUInt32LE(0)%dims]+=(h[4]&1)?1:-1;
+  }
+  const n=Math.sqrt(v.reduce((a,b)=>a+b*b,0))||1;
+  return v.map(x=>x/n);
+}
+
+(async()=>{
+  const db=await lancedb.connect(cfg.db_path);
+  const t=await db.openTable("runtime_c_vectors_composer");
+  const raw=await t.search(hashVec(query)).limit(Number(process.env.RAW_K||160)).toArray();
+
+  const seen=new Set();
+  const hits=raw.map(h=>({
+    ...h,
+    final_score:(priority[h.kind]||0) + queryEntityBoost(h,query) - (Number(h._distance)||9)*20
+  }))
+  .sort((a,b)=>b.final_score-a.final_score)
+  .filter(h=>{
+    const key=["crm_field","crm_relation","crm_form","crm_document_template","crm_workflow","software_capability"].includes(h.kind)
+      ? h.key
+      : `${h.kind}:${h.repo || h.key}`;
+    if(seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  })
+  
+  .filter((h,_,arr)=>{
+    const max={clmm_extra_resource:40,pdf_scraper_resource:50,trading_extra_resource:40,trading_resource:20,clmm_app:12,software_capability:4,crm_document_template:10,crm_workflow:6,crm_form:4,crm_field:10,crm_relation:6,crm_object:4,qwen_app:2,template_collection:2,golden_collection:1,icon_collection:0,golden_collection:0,rest_json_array_item:0};
+    const n=arr.slice(0,arr.indexOf(h)+1).filter(x=>x.kind===h.kind).length;
+    return n <= (max[h.kind]||99);
+  })
+  .slice(0, Number(process.env.TOP_K||30));
+
+  console.log(JSON.stringify(hits.map(h=>({
+    score:Number(h.final_score.toFixed(3)),
+    dist:Number((h._distance||0).toFixed(3)),
+    kind:h.kind,key:h.key,repo:h.repo,domain:h.domain,
+    text:String(h.text||"")
+  })),null,2));
+})();

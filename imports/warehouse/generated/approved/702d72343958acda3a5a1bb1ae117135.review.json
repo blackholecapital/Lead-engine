@@ -1,0 +1,13 @@
+{
+  "id": "702d72343958acda3a5a1bb1ae117135",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/QuestionPicker/hooks/use-collections-with-tenants.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

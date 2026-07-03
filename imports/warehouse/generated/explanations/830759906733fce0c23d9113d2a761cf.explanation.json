@@ -1,0 +1,6 @@
+{
+  "id":"830759906733fce0c23d9113d2a761cf",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/PropertiesModal/hooks/useAccessOptions.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

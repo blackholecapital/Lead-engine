@@ -1,0 +1,13 @@
+{
+  "id": "f55f9ec724b1a62a1eb6f998d6b026dc",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-sdk/src/sdk/front-component/command/CommandOpenSidePanelPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

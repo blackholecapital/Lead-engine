@@ -1,0 +1,6 @@
+{
+  "id":"8713773b216ecbd71a711b1b140cdf04",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-view-filter-group-validator.service.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

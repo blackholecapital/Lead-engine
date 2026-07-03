@@ -1,0 +1,6 @@
+{
+  "id":"edb4ccb7b9cb3b9014bd69fc25ccea86",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NewDatasetModal/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

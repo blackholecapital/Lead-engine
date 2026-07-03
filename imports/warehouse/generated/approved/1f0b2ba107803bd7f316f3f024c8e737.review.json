@@ -1,0 +1,13 @@
+{
+  "id": "1f0b2ba107803bd7f316f3f024c8e737",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/audit_app/metabot-analytics/components/MetabotAnalyticsUpsellPage/MetabotAnalyticsUpsellPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

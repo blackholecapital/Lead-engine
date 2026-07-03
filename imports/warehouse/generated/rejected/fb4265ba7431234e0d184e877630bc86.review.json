@@ -1,0 +1,14 @@
+{
+  "id": "fb4265ba7431234e0d184e877630bc86",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/packages/router-generator/tests/generator/virtual/routes/db/dashboard-invoices.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "billing",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

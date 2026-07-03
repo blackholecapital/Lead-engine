@@ -1,0 +1,6 @@
+{
+  "id":"c0e3e05dc9c0a55f2ed1f7625f9a28d1",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-index-metadata-validator.service.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

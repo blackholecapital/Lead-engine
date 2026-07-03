@@ -1,0 +1,12 @@
+{
+  "id": "93826cc3f3f98c70752bbdf0da027409",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/liquidity-pools/use-pool-api.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

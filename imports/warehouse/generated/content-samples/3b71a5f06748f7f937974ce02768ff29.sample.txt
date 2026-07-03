@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/variables/variable-row.tsx
+
+import { IEnvironment, PermissionsEnum, SECRET_MASK } from '@novu/shared';
+import React, { useState } from 'react';
+import {
+  RiAlertLine,
+  RiArrowDownSLine,
+  RiArrowRightSLine,
+  RiCheckLine,
+  RiCornerDownRightLine,
+  RiDeleteBin2Line,
+  RiEditLine,
+  RiEyeLine,
+  RiEyeOffLine,
+  RiMore2Fill,
+} from 'react-icons/ri';
+import type { EnvironmentVariableResponseDto } from '@/api/environment-variables';
+import { CompactButton } from '@/components/primitives/button-compact';
+import { CopyButton } from '@/components/primitives/copy-button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/primitives/dropdown-menu';
+import { EnvironmentBranchIcon } from '@/components/primitives/environment-branch-icon';
+import { Skeleton } from '@/components/primitives/skeleton';
+import { TableCell, TableRow } from '@/components/primitives/table';
+import { TimeDisplayHoverCard } from '@/components/time-display-hover-card';
+import { useDeleteEnvironmentVariable } from '@/hooks/use-delete-environment-variable';
+import { formatDateSimple } from '@/utils/format-date';
+import { Protect } from '@/utils/protect';
+import { cn } from '@/utils/ui';
+import { DeleteVariableDialog } from './delete-variable-dialog';
+import { UpsertVariableDrawer } from './upsert-variable-drawer';
+
+type VariableRowProps = {
+  variable: EnvironmentVariableResponseDto;
+  currentEnvironment?: IEnvironment;
+  environments?: IEnvironment[];
+};
+
+type CellProps = React.TdHTMLAttributes<HTMLTableCellElement>;
+
+const VariableCell = ({ children, className, ...rest }: CellProps) => (
+  <TableCell className={cn('group-hover/row:bg-neutral-alpha-50 text-text-sub relative', className)} {...rest}>
+    {children}
+  </TableCell>
+);
+
+function CoverageBadge({ filledCount, totalCount }: { filledCount: number; totalCount: number }) {
+  const isFull = filledCount === totalCount;
+
+  return (
+    <span
+      className={cn(
+        'inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-xs font-medium',
+        isFull ? 'bg-success/10 text-success-600' : 'bg-warning/10 text-warning-600'
+      )}
+    >
+      {isFull ? <RiCheckLine className="size-3" /> : <RiAlertLine className="size-3" />}
+      {filledCount}/{totalCount}
+      {!isFull && ' SET'}
+    </span>
+  );
+}
+
+function EnvironmentSubRow({
+  variable,
+  environment,
+}: {
+  variable: EnvironmentVariableResponseDto;
+  environment: IEnvironment;
+}) {
+  const [isRevealed, setIsRevealed] = useState(false);
+  const envValue = variable.values.find((v) => v._environmentId === environment._id);
+  const displayValue = !isRevealed && envValue?.value ? SECRET_MASK : (envValue?.value ?? '');
+
+  return (
+    <TableRow className="bg-neutral-alpha-25 hover:bg-neutral-alpha-50">
+      <TableCell className="pl-8">
+        <div className="flex items-center gap-2">
+          <RiCornerDownRightLine className="text-text-disabled size-4 shrink-0" />
+          <EnvironmentBranchIcon environment={environment} size="sm" />
+          <span className="text-text-sub text-xs font-medium">{environment.name}</span>
+        </div>
+      </TableCell>
+      <TableCell>
+        {envValue ? (
+          <div className="flex items-center gap-1">
+            <span className="font-code text-text-strong max-w-[300px] truncate text-xs">{displayValue}</span>
+            <button
+              type="button"
+              className="text-text-sub hover:text-text-strong hover:bg-bg-weak inline-flex items-center justify-center rounded p-1 transition duration-200 ease-out"
+              onClick={() => setIsRevealed((prev) => !prev)}
+            >
+              {isRevealed ? <RiEyeOffLine className="size-4" /> : <RiEyeLine className="size-4" />}
+            </button>
+            <CopyButton valueToCopy={envValue?.value ?? ''} size="xs" className="p-1" />
+          </div>
+        ) : (

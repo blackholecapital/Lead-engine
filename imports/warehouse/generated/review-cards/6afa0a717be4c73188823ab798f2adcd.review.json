@@ -1,0 +1,14 @@
+{
+  "id": "6afa0a717be4c73188823ab798f2adcd",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/UndoRedoKeyListeners/UndoRedoKeyListeners.test.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

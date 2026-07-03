@@ -1,0 +1,9 @@
+{
+  "id":"postiz",
+  "title":"Postiz",
+  "category":"marketing",
+  "tags":["social","marketing","publishing"],
+  "source":"vendor-source/marketing/postiz",
+  "status":"downloaded",
+  "tier":"candidate"
+}

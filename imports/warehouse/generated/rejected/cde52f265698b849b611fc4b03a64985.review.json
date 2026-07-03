@@ -1,0 +1,12 @@
+{
+  "id": "cde52f265698b849b611fc4b03a64985",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/test/integration/metadata/suites/dashboard/utils/dashboard-graphql.util.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

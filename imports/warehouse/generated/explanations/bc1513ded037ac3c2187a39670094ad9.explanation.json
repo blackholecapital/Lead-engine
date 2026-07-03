@@ -1,0 +1,6 @@
+{
+  "id":"bc1513ded037ac3c2187a39670094ad9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/ResizableArea/ResizableArea.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

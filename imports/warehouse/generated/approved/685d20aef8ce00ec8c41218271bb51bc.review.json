@@ -1,0 +1,12 @@
+{
+  "id": "685d20aef8ce00ec8c41218271bb51bc",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/send-message/channel-endpoint-resolution/resolve-channel-endpoints.command.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

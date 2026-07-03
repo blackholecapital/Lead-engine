@@ -1,0 +1,14 @@
+{
+  "id": "d1c2a077fa16ad37b495a1da9170d076",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/components/ToggleNativeQueryPreview/ToggleNativeQueryPreview.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

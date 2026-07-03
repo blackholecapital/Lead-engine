@@ -1,0 +1,6 @@
+{
+  "id":"dd5c063046b4dfacaf3cd3cf3ad2d207",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/URLShortLinkButton/index.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

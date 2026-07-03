@@ -1,0 +1,6 @@
+{
+  "id":"8f337cd328c7b18f981e473534fa18dc",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/shouldWrapChildInRow.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

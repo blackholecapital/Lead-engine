@@ -1,0 +1,6 @@
+{
+  "id":"05ce74f6f1512c37a297d91f77024232",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getFilterScopeParentNodes.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

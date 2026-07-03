@@ -1,0 +1,14 @@
+{
+  "id": "documenso",
+  "title": "Documenso",
+  "category": "documents",
+  "ranking": {
+    "implementation": 87,
+    "reuse": 87,
+    "maturity": 87,
+    "retrieval": 87,
+    "graph": 87,
+    "vector": 87,
+    "final": 87
+  }
+}

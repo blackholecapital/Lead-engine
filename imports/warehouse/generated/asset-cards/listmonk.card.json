@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "id": "listmonk",
+    "title": "Listmonk",
+    "category": "comms",
+    "tags": [
+      "email",
+      "campaign",
+      "marketing"
+    ],
+    "source": "vendor-source/comms/listmonk",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "listmonk",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "listmonk",
+    "label": "Listmonk",
+    "category": "comms",
+    "tags": [
+      "email",
+      "campaign",
+      "marketing"
+    ],
+    "type": "asset"
+  }
+}

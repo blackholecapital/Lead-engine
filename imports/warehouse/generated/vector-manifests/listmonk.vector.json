@@ -1,0 +1,11 @@
+{
+  "id": "listmonk",
+  "title": "Listmonk",
+  "tags": [
+    "email",
+    "campaign",
+    "marketing"
+  ],
+  "category": "comms",
+  "source": "vendor-source/comms/listmonk"
+}

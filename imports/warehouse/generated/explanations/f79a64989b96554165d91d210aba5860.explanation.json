@@ -1,0 +1,6 @@
+{
+  "id":"f79a64989b96554165d91d210aba5860",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ParameterSettings/ParameterSettings.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

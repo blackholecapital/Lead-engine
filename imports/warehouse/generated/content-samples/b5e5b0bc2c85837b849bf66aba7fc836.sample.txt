@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/conversations/conversations-table.tsx
+
+import { AnimatePresence, motion } from 'motion/react';
+import { useEffect } from 'react';
+import { createSearchParams, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { ConversationFilters } from '@/api/conversations';
+import { Skeleton } from '@/components/primitives/skeleton';
+import { showErrorToast } from '@/components/primitives/sonner-helpers';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/primitives/table';
+import { TablePaginationFooter } from '@/components/primitives/table-pagination-footer';
+import { useFetchConversations } from '@/hooks/use-fetch-conversations';
+import { usePersistedPageSize } from '@/hooks/use-persisted-page-size';
+import { ConversationTableRow } from './conversation-table-row';
+import { ConversationsEmptyState } from './conversations-empty-state';
+
+const CONVERSATIONS_TABLE_ID = 'conversations-table';
+
+export type ConversationsTableProps = {
+  selectedConversationId: string | null;
+  onConversationSelect: (conversationId: string) => void;
+  filters?: ConversationFilters;
+  hasActiveFilters: boolean;
+  onClearFilters: () => void;
+  onListStateChange?: (hasConversations: boolean) => void;
+};
+
+export function ConversationsTable({
+  selectedConversationId,
+  onConversationSelect,
+  filters,
+  hasActiveFilters,
+  onClearFilters,
+  onListStateChange,
+}: ConversationsTableProps) {
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { pageSize, setPageSize } = usePersistedPageSize({
+    tableId: CONVERSATIONS_TABLE_ID,
+    defaultPageSize: 10,
+  });
+
+  const beforeCursor = searchParams.get('before') ?? undefined;
+  const afterCursor = beforeCursor ? undefined : (searchParams.get('after') ?? undefined);
+
+  const { conversations, next, previous, totalCount, totalCountCapped, isLoading, error } = useFetchConversations(
+    {
+      filters,
+      after: afterCursor,
+      before: beforeCursor,
+      limit: pageSize,
+    },
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
+
+  useEffect(() => {
+    if (error) {
+      showErrorToast(
+        error instanceof Error ? error.message : 'There was an error loading the conversations.',
+        'Failed to fetch conversations'
+      );
+    }
+  }, [error]);
+
+  useEffect(() => {
+    onListStateChange?.(!isLoading && conversations.length > 0);
+  }, [isLoading, conversations.length, onListStateChange]);
+
+  function handleNextPage() {
+    if (!next) {
+      return;
+    }
+
+    const newParams = createSearchParams(Object.fromEntries(searchParams));
+    newParams.delete('page');
+    newParams.delete('before');
+    newParams.set('after', next);
+    navigate(`${location.pathname}?${newParams}`);
+  }
+
+  function handlePreviousPage() {
+    if (!previous) {
+      return;
+    }
+
+    const newParams = createSearchParams(Object.fromEntries(searchParams));
+    newParams.delete('page');
+    newParams.delete('after');
+    newParams.set('before', previous);
+    navigate(`${location.pathname}?${newParams}`);
+  }
+

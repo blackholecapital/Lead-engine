@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/pages/api-keys.tsx
+
+import { PermissionsEnum } from '@novu/shared';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { RiEyeLine, RiEyeOffLine, RiLoopRightFill } from 'react-icons/ri';
+import { PageMeta } from '@/components/page-meta';
+import { Card, CardContent, CardHeader } from '@/components/primitives/card';
+import { CopyButton } from '@/components/primitives/copy-button';
+import { Form } from '@/components/primitives/form/form';
+import { Input } from '@/components/primitives/input';
+import { Skeleton } from '@/components/primitives/skeleton';
+import { ExternalLink } from '@/components/shared/external-link';
+import { useEnvironment } from '@/context/environment/hooks';
+import { getRegionConfig, useRegion } from '@/context/region';
+import { apiHostnameManager } from '@/utils/api-hostname-manager';
+import { DashboardLayout } from '../components/dashboard-layout';
+import { Button } from '../components/primitives/button';
+import { Container } from '../components/primitives/container';
+import { HelpTooltipIndicator } from '../components/primitives/help-tooltip-indicator';
+import { showErrorToast, showSuccessToast } from '../components/primitives/sonner-helpers';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../components/primitives/tooltip';
+import { RegenerateApiKeysDialog } from '../components/regenerate-api-keys-dialog';
+import { IS_SELF_HOSTED } from '../config';
+import { useFetchApiKeys, useRegenerateApiKeys } from '../hooks/use-fetch-api-keys';
+import { useHasPermission } from '../hooks/use-has-permission';
+
+// Convert https:// to wss:// for WebSocket URLs
+const getWebSocketUrl = (url: string) => {
+  if (!url) return url;
+  return url.replace(/^https:\/\//, 'wss://');
+};
+
+interface ApiKeysFormData {
+  apiKey: string;
+  environmentId: string;
+  identifier: string;
+}
+
+export function ApiKeysPage() {
+  const apiKeysQuery = useFetchApiKeys();
+  const { currentEnvironment } = useEnvironment();
+  const { selectedRegion } = useRegion();
+  const apiKeys = apiKeysQuery.data?.data;
+  const isLoading = apiKeysQuery.isLoading;
+  const [isRegenerateDialogOpen, setIsRegenerateDialogOpen] = useState(false);
+  const regenerateApiKeysMutation = useRegenerateApiKeys();
+  const has = useHasPermission();
+  const canRegenerateApiKeys = has({ permission: PermissionsEnum.API_KEY_WRITE });
+
+  const form = useForm<ApiKeysFormData>({
+    values: {
+      apiKey: apiKeys?.[0]?.key ?? '',
+      environmentId: currentEnvironment?._id ?? '',
+      identifier: currentEnvironment?.identifier ?? '',
+    },
+  });
+
+  const handleRegenerateKeys = async () => {
+    try {
+      await regenerateApiKeysMutation.mutateAsync();
+      showSuccessToast('API keys regenerated successfully');
+      setIsRegenerateDialogOpen(false);
+    } catch (e: any) {
+      const message = e?.message || 'Failed to regenerate API keys';
+      showErrorToast(message);
+    }
+  };
+
+  if (!currentEnvironment) {
+    return null;
+  }
+
+  // Use dynamic region from region selector
+  const region = getRegionConfig(selectedRegion)?.name || selectedRegion.toUpperCase();
+
+  return (
+    <>
+      <PageMeta title={`API Keys for ${currentEnvironment?.name} environment`} />
+      <DashboardLayout headerStartItems={<h1 className="text-foreground-950">API Keys</h1>}>
+        <Container className="flex w-full max-w-[800px] flex-col gap-6">
+          <Form {...form}>
+            <Card className="w-full overflow-hidden shadow-none">
+              <CardHeader>
+                {'<Inbox />'}
+                <p className="text-foreground-500 mt-1 text-xs font-normal">
+                  {'Use the public application identifier in Novu <Inbox />. '}
+                  <ExternalLink href="https://docs.novu.co/platform/inbox/overview" className="text-foreground-500">
+                    Learn more
+                  </ExternalLink>
+                </p>
+              </CardHeader>
+              <CardContent className="rounded-b-xl border-t bg-neutral-50 bg-white p-4">
+                <div className="space-y-4">
+                  <SettingField
+                    label="Application Identifier"
+                    tooltip={`This is unique for the ${currentEnvironment.name} environment.`}
+                    value={form.getValues('identifier')}
+                    isLoading={isLoading}
+                  />
+                </div>
+              </CardContent>

@@ -1,0 +1,14 @@
+{
+  "id": "d9676940d22e142d76f14193aaa9d0bf",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/NativeQueryEditorActionButtons/NativeQueryEditorActionButtons.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

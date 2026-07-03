@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/locale-select.tsx
+
+import { getAllLocales, getCommonLocales, getLocaleByIso } from '@novu/shared';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { RiArrowDownSLine, RiCheckLine, RiErrorWarningFill } from 'react-icons/ri';
+import { cn } from '@/utils/ui';
+import { FlagCircle, StackedFlagCircles } from '../flag-circle';
+import TruncatedText from '../truncated-text';
+import { Button, ButtonProps } from './button';
+import { Input } from './input';
+import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip';
+
+type BaseLocaleSelectProps = {
+  disabled?: boolean;
+  readOnly?: boolean;
+  placeholder?: string;
+  availableLocales?: string[];
+  className?: string;
+} & Omit<ButtonProps, 'onChange'>;
+
+type SingleSelectProps = BaseLocaleSelectProps & {
+  value?: string;
+  onChange: (val: string) => void;
+  multiSelect?: false;
+};
+
+type MultiSelectProps = BaseLocaleSelectProps & {
+  value?: string[];
+  onChange: (val: string[]) => void;
+  multiSelect: true;
+};
+
+type LocaleSelectProps = SingleSelectProps | MultiSelectProps;
+
+// Get most common locales for better performance from centralized registry
+const COMMON_LOCALES = getCommonLocales();
+
+// Shared hook for locale filtering logic
+function useLocaleFiltering(availableLocales?: string[], searchValue: string = '') {
+  const allLocales = getAllLocales();
+
+  const baseLocales = useMemo(() => {
+    if (availableLocales && availableLocales.length > 0) {
+      return allLocales.filter((locale) => availableLocales.includes(locale.langIso));
+    }
+
+    return allLocales;
+  }, [availableLocales, allLocales]);
+
+  const filteredLocales = useMemo(() => {
+    if (!searchValue.trim()) {
+      if (availableLocales && availableLocales.length > 0) {
+        return baseLocales.slice(0, 100);
+      }
+
+      const common = baseLocales.filter((locale) => COMMON_LOCALES.includes(locale.langIso));
+      const others = baseLocales.filter((locale) => !COMMON_LOCALES.includes(locale.langIso));
+      return [...common, ...others].slice(0, 100);
+    }
+
+    const search = searchValue.toLowerCase();
+    return baseLocales
+      .filter(
+        (locale) =>
+          locale.langIso.toLowerCase().includes(search) ||
+          locale.langName.toLowerCase().includes(search) ||
+          locale.name.toLowerCase().includes(search)
+      )
+      .slice(0, 100);
+  }, [searchValue, baseLocales, availableLocales]);
+
+  const showSearchLimitMessage =
+    searchValue &&
+    baseLocales.filter(
+      (locale) =>
+        locale.langIso.toLowerCase().includes(searchValue.toLowerCase()) ||
+        locale.langName.toLowerCase().includes(searchValue.toLowerCase()) ||
+        locale.name.toLowerCase().includes(searchValue.toLowerCase())
+    ).length > 100;
+
+  return { filteredLocales, showSearchLimitMessage };
+}
+
+// Single select trigger content
+function SingleSelectTrigger({ value, placeholder }: { value?: string; placeholder: string }) {
+  const currentLocale = getLocaleByIso(value || '');
+
+  return (
+    <div className="flex max-w-full flex-1 items-center gap-2 overflow-hidden">
+      {value && <FlagCircle locale={value} size="sm" />}
+      <span className="text-xs font-normal text-neutral-950">
+        {currentLocale ? (
+          <TruncatedText>
+            {currentLocale.langIso} - {currentLocale.langName}
+          </TruncatedText>
+        ) : value ? (
+          <TruncatedText>{value}</TruncatedText>
+        ) : (
+          <span className="text-neutral-400">{placeholder}</span>
+        )}
+      </span>
+    </div>

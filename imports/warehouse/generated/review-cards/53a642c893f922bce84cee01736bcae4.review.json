@@ -1,0 +1,14 @@
+{
+  "id": "53a642c893f922bce84cee01736bcae4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/opt-in-provider.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "provider",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

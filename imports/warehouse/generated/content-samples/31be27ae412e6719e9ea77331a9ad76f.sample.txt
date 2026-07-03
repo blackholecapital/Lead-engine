@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/subscribers/subscriber-overview-form.tsx
+
+import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
+import { SubscriberResponseDto } from '@novu/api/models/components';
+import { useQueryClient } from '@tanstack/react-query';
+import { loadLanguage } from '@uiw/codemirror-extensions-langs';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { RiDeleteBin2Line, RiMailLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import { ExternalToast } from 'sonner';
+import { z } from 'zod';
+import { LocaleSelect } from '@/components/primitives/locale-select';
+import { PhoneInput } from '@/components/primitives/phone-input';
+import { useSubscribersNavigate } from '@/components/subscribers/hooks/use-subscribers-navigate';
+import { useSubscribersUrlState } from '@/components/subscribers/hooks/use-subscribers-url-state';
+import { useDeleteSubscriber } from '@/hooks/use-delete-subscriber';
+import { useFetchSubscribers } from '@/hooks/use-fetch-subscribers';
+import { usePatchSubscriber } from '@/hooks/use-patch-subscriber';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { formatDateSimple } from '@/utils/format-date';
+import { QueryKeys } from '@/utils/query-keys';
+import { TelemetryEvent } from '@/utils/telemetry';
+import { cn } from '@/utils/ui';
+import { ConfirmationModal } from '../confirmation-modal';
+import { Avatar, AvatarFallback, AvatarImage } from '../primitives/avatar';
+import { Button } from '../primitives/button';
+import { CopyButton } from '../primitives/copy-button';
+import { Editor } from '../primitives/editor';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, FormRoot } from '../primitives/form/form';
+import { Input, InputRoot } from '../primitives/input';
+import { Separator } from '../primitives/separator';
+import { showErrorToast, showSuccessToast } from '../primitives/sonner-helpers';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../primitives/tooltip';
+import { SubscriberFormSchema } from './schema';
+import { TimezoneSelect } from './timezone-select';
+import { getSubscriberTitle } from './utils';
+
+const extensions = [loadLanguage('json')?.extension ?? []];
+const basicSetup = { lineNumbers: true, defaultKeymap: true };
+const toastOptions: ExternalToast = {
+  position: 'bottom-right',
+  classNames: {
+    toast: 'mb-4 right-0 pointer-events-none',
+  },
+};
+
+type SubscriberOverviewFormProps = {
+  subscriber: SubscriberResponseDto;
+  readOnly?: boolean;
+  onCloseDrawer?: () => void;
+  closeOnSave?: boolean;
+};
+
+const createDefaultSubscriberValues = (subscriber: SubscriberResponseDto) => ({
+  avatar: subscriber?.avatar ?? '',
+  email: subscriber.email || null,
+  phone: subscriber.phone ?? '',
+  firstName: subscriber.firstName ?? '',
+  lastName: subscriber.lastName ?? '',
+  locale: subscriber.locale ?? null,
+  timezone: subscriber.timezone ?? null,
+  data: JSON.stringify(subscriber.data, null, 2) ?? '',
+});
+
+export function SubscriberOverviewForm(props: SubscriberOverviewFormProps) {
+  const { subscriber, readOnly = false, onCloseDrawer, closeOnSave = false } = props;
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const track = useTelemetry();
+  const queryClient = useQueryClient();
+
+  const { navigateToSubscribersFirstPage, navigateToSubscribersCurrentPage } = useSubscribersNavigate();
+  const { filterValues, handleNavigationAfterDelete } = useSubscribersUrlState();
+  const { data } = useFetchSubscribers(filterValues, {
+    meta: { errorMessage: 'Issue fetching subscribers' },
+  });
+
+  const { deleteSubscriber, isPending: isDeleteSubscriberPending } = useDeleteSubscriber({
+    onSuccess: () => {
+      showSuccessToast(`Deleted subscriber: ${getSubscriberTitle(subscriber)}`, undefined, toastOptions);
+      track(TelemetryEvent.SUBSCRIBER_DELETED);
+      const isLastSubscriber = data?.data.length === 1;
+
+      if (onCloseDrawer) {
+        onCloseDrawer();
+      }
+
+      // let the delete modal close animation complete
+      setTimeout(() => {
+        if (isLastSubscriber) {
+          queryClient.invalidateQueries({
+            queryKey: [QueryKeys.fetchSubscribers],
+          });
+          navigateToSubscribersFirstPage();
+        } else {
+          const firstTwoSubscribersInternalIds = data?.data.slice(0, 2).map((s) => s._id as string) || [];
+          const subscribersCount = data?.data.length || 0;
+
+          const hasTwoSubscribersInternalIds = firstTwoSubscribersInternalIds.length === 2 && subscribersCount > 1;
+          const firstSubscriberInternalId = firstTwoSubscribersInternalIds[0] || '';
+          const isFirstSubscriberBeingDeleted = (subscriber as any)._id === firstSubscriberInternalId;
+          let afterCursor = firstSubscriberInternalId;

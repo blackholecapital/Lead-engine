@@ -1,0 +1,7 @@
+{
+  "kind": "js",
+  "source_db": "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/runtime_c_assets.sqlite",
+  "query": "js/ts/jsx/tsx files from asset DB",
+  "generated_at": 1780039380,
+  "runtime_c_root": "/opt/eila-os/factory-xyz/runtime-c"
+}

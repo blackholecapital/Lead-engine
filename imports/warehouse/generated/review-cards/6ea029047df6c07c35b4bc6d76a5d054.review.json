@@ -1,0 +1,12 @@
+{
+  "id": "6ea029047df6c07c35b4bc6d76a5d054",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/test/integration/metadata/suites/dashboard/utils/duplicate-one-dashboard.util.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

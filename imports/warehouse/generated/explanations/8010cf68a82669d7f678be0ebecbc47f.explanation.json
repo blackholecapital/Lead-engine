@@ -1,0 +1,6 @@
+{
+  "id":"8010cf68a82669d7f678be0ebecbc47f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/resizable/ResizableHandle.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

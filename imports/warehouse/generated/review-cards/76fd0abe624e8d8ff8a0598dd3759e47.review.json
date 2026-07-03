@@ -1,0 +1,12 @@
+{
+  "id": "76fd0abe624e8d8ff8a0598dd3759e47",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/usecases/get-workflow/get-workflow.command.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"1a9179d565a8fdf152d6bbc0685d0ae9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/piece-properties/dynamic-dropdown-piece-property.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

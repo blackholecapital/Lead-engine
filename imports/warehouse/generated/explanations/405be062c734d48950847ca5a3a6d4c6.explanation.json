@@ -1,0 +1,6 @@
+{
+  "id":"405be062c734d48950847ca5a3a6d4c6",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/VisibilityToggler/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

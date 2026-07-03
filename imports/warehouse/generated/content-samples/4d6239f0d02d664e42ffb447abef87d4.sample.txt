@@ -1,0 +1,18 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-verify-managed-credentials.ts
+
+import { useMutation } from '@tanstack/react-query';
+import {
+  type VerifyManagedCredentialsBody,
+  type VerifyManagedCredentialsResponse,
+  verifyManagedCredentials,
+} from '@/api/agents';
+import { requireEnvironment, useEnvironment } from '@/context/environment/hooks';
+
+export function useVerifyManagedCredentials() {
+  const { currentEnvironment } = useEnvironment();
+
+  return useMutation<VerifyManagedCredentialsResponse, Error, VerifyManagedCredentialsBody>({
+    mutationFn: (body) =>
+      verifyManagedCredentials(requireEnvironment(currentEnvironment, 'No environment selected'), body),
+  });
+}

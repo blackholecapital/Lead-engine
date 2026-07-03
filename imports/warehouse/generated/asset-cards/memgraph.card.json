@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "id": "memgraph",
+    "title": "Memgraph",
+    "category": "graph",
+    "tags": [
+      "graph",
+      "relationships",
+      "analytics"
+    ],
+    "source": "vendor-source/graph/memgraph",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "memgraph",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "memgraph",
+    "label": "Memgraph",
+    "category": "graph",
+    "tags": [
+      "graph",
+      "relationships",
+      "analytics"
+    ],
+    "type": "asset"
+  }
+}

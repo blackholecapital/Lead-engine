@@ -1,0 +1,6 @@
+{
+  "id":"d3f44fb4b90065d5494729a69c6e0f95",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/SummarizeSidebar/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

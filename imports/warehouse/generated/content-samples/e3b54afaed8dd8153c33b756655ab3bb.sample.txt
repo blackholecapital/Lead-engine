@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/subscribers/hooks/use-subscribers-url-state.ts
+
+import { DirectionEnum } from '@novu/shared';
+import { useQueryClient } from '@tanstack/react-query';
+import { useCallback, useMemo } from 'react';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useEnvironment } from '@/context/environment/hooks';
+import { getPersistedPageSize, usePersistedPageSize } from '@/hooks/use-persisted-page-size';
+import { QueryKeys } from '@/utils/query-keys';
+import { buildRoute, ROUTES } from '@/utils/routes';
+import { useDebounce } from '../../../hooks/use-debounce';
+
+const SUBSCRIBERS_TABLE_ID = 'subscribers-list';
+
+export type SubscribersSortableColumn = '_id' | 'updatedAt';
+export interface SubscribersFilter {
+  email?: string;
+  phone?: string;
+  name?: string;
+  subscriberId?: string;
+  limit?: number;
+  after?: string;
+  before?: string;
+  orderBy?: SubscribersSortableColumn;
+  orderDirection?: DirectionEnum;
+}
+
+export const defaultSubscribersFilter: Required<SubscribersFilter> = {
+  email: '',
+  phone: '',
+  name: '',
+  subscriberId: '',
+  limit: getPersistedPageSize(SUBSCRIBERS_TABLE_ID, 10),
+  after: '',
+  before: '',
+  orderBy: '_id',
+  orderDirection: DirectionEnum.DESC,
+};
+
+export interface SubscribersUrlState {
+  filterValues: SubscribersFilter;
+  handleFiltersChange: (data: SubscribersFilter) => void;
+  resetFilters: () => void;
+  toggleSort: (column: SubscribersSortableColumn) => void;
+  handleNext: () => void;
+  handlePrevious: () => void;
+  handleFirst: () => void;
+  handleNavigationAfterDelete: (afterCursor: string) => void;
+  handlePageSizeChange: (newSize: number) => void;
+}
+
+type UseSubscribersUrlStateProps = {
+  after?: string | null;
+  before?: string | null;
+  debounceMs?: number;
+};
+
+export function useSubscribersUrlState(props: UseSubscribersUrlStateProps = {}): SubscribersUrlState {
+  const { after, before, debounceMs = 300 } = props;
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
+  const { setPageSize: setPersistedPageSize } = usePersistedPageSize({
+    tableId: SUBSCRIBERS_TABLE_ID,
+    defaultPageSize: 10,
+  });
+  const { currentEnvironment } = useEnvironment();
+  const location = useLocation();
+  const filterValues = useMemo(
+    () => ({
+      email: searchParams.get('email') || '',
+      phone: searchParams.get('phone') || '',
+      name: searchParams.get('name') || '',
+      subscriberId: searchParams.get('subscriberId') || '',
+      limit: parseInt(searchParams.get('limit') || defaultSubscribersFilter.limit.toString(), 10),
+      after: searchParams.get('after') || '',
+      before: searchParams.get('before') || '',
+      orderBy: (searchParams.get('orderBy') as SubscribersSortableColumn) || defaultSubscribersFilter.orderBy,
+      orderDirection: (searchParams.get('orderDirection') as DirectionEnum) || DirectionEnum.DESC,
+      includeCursor: searchParams.get('includeCursor') || '',
+    }),
+    [searchParams]
+  );
+
+  const isUnderSubscribersPage = useMemo(() => {
+    const mainSubscribersRoute = buildRoute(ROUTES.SUBSCRIBERS, { environmentSlug: currentEnvironment?.slug ?? '' });
+    return location.pathname.startsWith(mainSubscribersRoute);
+  }, [location.pathname, currentEnvironment?.slug]);
+
+  const updateSearchParams = useCallback(
+    (data: SubscribersFilter) => {
+      const newParams = new URLSearchParams(searchParams.toString());
+
+      const resetPaginationFilterKeys: (keyof SubscribersFilter)[] = [
+        'phone',
+        'subscriberId',
+        'email',
+        'name',
+        'orderBy',
+        'orderDirection',
+        'limit',
+      ];

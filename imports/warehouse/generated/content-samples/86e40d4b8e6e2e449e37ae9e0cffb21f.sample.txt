@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/pages/agents.tsx
+
+import { FeatureFlagsKeysEnum } from '@novu/shared';
+import { CaretSortIcon } from '@radix-ui/react-icons';
+import { useMutation } from '@tanstack/react-query';
+import type { FormEvent, ReactElement } from 'react';
+import { useCallback, useEffect, useId, useMemo, useState } from 'react';
+import { RiArrowRightSLine, RiCheckLine, RiCloseLine, RiMailLine, RiMessage3Line, RiMoreLine } from 'react-icons/ri';
+import {
+  SiGithub,
+  SiGooglechat,
+  SiLinear,
+  SiMessenger,
+  SiMicrosoftteams,
+  SiTelegram,
+  SiWhatsapp,
+  SiZoom,
+} from 'react-icons/si';
+import { Navigate } from 'react-router-dom';
+import { NovuApiError, post } from '@/api/api.client';
+import { AgentsEmptyTeaser } from '@/components/agents/agents-empty-teaser';
+import { AgentsList } from '@/components/agents/agents-list';
+import { DashboardLayout } from '@/components/dashboard-layout';
+import { PageMeta } from '@/components/page-meta';
+import { IS_EU } from '@/config';
+import { Badge } from '@/components/primitives/badge';
+import { Button } from '@/components/primitives/button';
+import { CompactButton } from '@/components/primitives/button-compact';
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } from '@/components/primitives/dialog';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/primitives/popover';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/primitives/select';
+import { Separator } from '@/components/primitives/separator';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { DismissButton, Icon as TagIcon, Root as TagRoot } from '@/components/primitives/tag';
+import { Textarea } from '@/components/primitives/textarea';
+import { useFeatureFlag } from '@/hooks/use-feature-flag';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { ROUTES } from '@/utils/routes';
+import { TelemetryEvent } from '@/utils/telemetry';
+import { cn } from '@/utils/ui';
+
+const slackIcon = '/images/providers/light/square/slack.svg';
+const discordIcon = '/images/providers/light/square/discord.svg';
+
+const AGENT_RUN_OPTIONS = [
+  { value: 'building', label: "We're building one now" },
+  { value: 'production', label: 'We have an agent in production' },
+  { value: 'exploring', label: 'We are exploring use cases' },
+  { value: 'other', label: 'Other' },
+] as const;
+
+type AgentRunValue = (typeof AGENT_RUN_OPTIONS)[number]['value'];
+
+type ProviderId =
+  | 'whatsapp'
+  | 'telegram'
+  | 'email'
+  | 'zoom'
+  | 'linear'
+  | 'github'
+  | 'imessages'
+  | 'slack'
+  | 'ms-teams'
+  | 'google-chat'
+  | 'discord'
+  | 'fb-messenger'
+  | 'other';
+
+type ProviderDefinition = {
+  id: ProviderId;
+  label: string;
+  icon: ReactElement;
+};
+
+const PROVIDER_DEFINITIONS: ProviderDefinition[] = [
+  {
+    id: 'whatsapp',
+    label: 'Whatsapp',
+    icon: <SiWhatsapp className="size-4 shrink-0 text-[#25D366]" aria-hidden />,
+  },
+  { id: 'telegram', label: 'Telegram', icon: <SiTelegram className="size-4 shrink-0 text-[#229ED9]" aria-hidden /> },
+  { id: 'email', label: 'Email', icon: <RiMailLine className="size-4 shrink-0 text-text-sub" aria-hidden /> },
+  { id: 'zoom', label: 'Zoom', icon: <SiZoom className="size-4 shrink-0 text-[#0B5CFF]" aria-hidden /> },
+  { id: 'linear', label: 'Linear', icon: <SiLinear className="text-text-strong size-4 shrink-0" aria-hidden /> },
+  { id: 'github', label: 'GitHub', icon: <SiGithub className="text-text-strong size-4 shrink-0" aria-hidden /> },
+  {
+    id: 'imessages',
+    label: 'iMessages',
+    icon: <RiMessage3Line className="size-4 shrink-0 text-[#007AFF]" aria-hidden />,
+  },
+  { id: 'slack', label: 'Slack', icon: <img src={slackIcon} alt="" className="size-4" /> },
+  {
+    id: 'ms-teams',
+    label: 'MS Teams',
+    icon: <SiMicrosoftteams className="size-4 shrink-0 text-[#5059C9]" aria-hidden />,
+  },
+  {
+    id: 'google-chat',
+    label: 'Google Chat',
+    icon: <SiGooglechat className="size-4 shrink-0 text-[#00AC47]" aria-hidden />,
+  },
+  {

@@ -1,0 +1,6 @@
+{
+  "id":"24c64ae6f5e0cb0932481e3402a09830",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/caching/components/StrategyEditorForQuestionsAndDashboards/StrategyEditorForQuestionsAndDashboards.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

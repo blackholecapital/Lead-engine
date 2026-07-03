@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/better-auth/components/organization-dropdown.tsx
+
+import { AnimatePresence, motion } from 'motion/react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { RiAddCircleLine, RiArrowDownSLine, RiArrowRightSLine, RiLoader4Line } from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/primitives/avatar';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/primitives/dropdown-menu';
+import { showErrorToast } from '@/components/primitives/sonner-helpers';
+import { ROUTES } from '@/utils/routes';
+import { cn } from '@/utils/ui';
+import { useAuth, useClerk, useOrganization, useOrganizationList } from '../index';
+
+const SCROLL_THRESHOLD = 100;
+
+function getOrganizationInitials(name: string) {
+  return name
+    .trim()
+    .split(/\s+/)
+    .map((word) => word[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+}
+
+type OrganizationAvatarProps = {
+  imageUrl: string;
+  name: string;
+  size?: 'sm' | 'md';
+  showShimmer?: boolean;
+};
+
+function OrganizationAvatar({ imageUrl, name, size = 'sm', showShimmer = false }: OrganizationAvatarProps) {
+  const sizeClass = size === 'sm' ? 'size-6' : 'size-8';
+  const textSizeClass = size === 'sm' ? 'text-xs' : 'text-sm';
+
+  return (
+    <span className={cn('relative rounded-full', showShimmer && 'overflow-hidden', sizeClass)}>
+      <Avatar className={cn('rounded-full', sizeClass)}>
+        <AvatarImage src={imageUrl} alt={name} />
+        <AvatarFallback className={cn('bg-primary-base text-static-white', textSizeClass)}>
+          {getOrganizationInitials(name)}
+        </AvatarFallback>
+      </Avatar>
+      {showShimmer && (
+        <span className="absolute inset-0 -translate-x-full rotate-12 bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-[shimmer_0.8s_ease-in-out] pointer-events-none" />
+      )}
+    </span>
+  );
+}
+
+type OrganizationListItemProps = {
+  membership: any;
+  onSwitch: (id: string) => void;
+  isSwitching: boolean;
+  switchingToId: string | null;
+};
+
+function OrganizationListItem({ membership, onSwitch, isSwitching, switchingToId }: OrganizationListItemProps) {
+  const isCurrentlySwitching = isSwitching && switchingToId === membership.organization.id;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -4 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -4 }}
+      transition={{ duration: 0.15 }}
+    >
+      <DropdownMenuItem
+        className="group flex h-9 cursor-pointer items-center justify-start gap-2 rounded-sm border-0 px-2 text-sm focus:bg-accent"
+        onClick={() => onSwitch(membership.organization.id)}
+        disabled={isSwitching}
+      >
+        <OrganizationAvatar imageUrl={membership.organization.imageUrl} name={membership.organization.name} />
+
+        <span className="min-w-0 flex-1 truncate text-left text-foreground-950">{membership.organization.name}</span>
+
+        {isCurrentlySwitching ? (
+          <RiLoader4Line className="size-4 shrink-0 animate-spin text-foreground-600" />
+        ) : (
+          <RiArrowRightSLine className="size-4 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
+        )}
+      </DropdownMenuItem>
+    </motion.div>
+  );
+}
+
+export function OrganizationDropdown() {
+  const { organization: currentOrganization, isLoaded: isOrgLoaded } = useOrganization();
+  const { orgId } = useAuth();
+  const clerk = useClerk();
+  const navigate = useNavigate();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSwitching, setIsSwitching] = useState(false);
+  const [switchingToId, setSwitchingToId] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);

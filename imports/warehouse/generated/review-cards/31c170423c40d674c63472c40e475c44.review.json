@@ -1,0 +1,14 @@
+{
+  "id": "31c170423c40d674c63472c40e475c44",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/side-panel/pages/calendar-event/components/SidePanelCalendarEventPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "calendar",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

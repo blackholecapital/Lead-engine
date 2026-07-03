@@ -1,0 +1,12 @@
+{
+  "id": "2cd389c80e578ce798c41e11ac7c2a7d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/data-studio/glossary/pages/GlossaryPage/GlossaryPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

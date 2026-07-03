@@ -1,0 +1,6 @@
+{
+  "id":"662dc307c4447a2eda5e6f44b29e5c78",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/helpers/inputs/PaddingInput.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

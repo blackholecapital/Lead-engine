@@ -1,0 +1,6 @@
+{
+  "id":"0dc6de54b9f6dcc0ac12d4756556e7f8",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/support/helpers/api/createQuestionAndAddToDashboard.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

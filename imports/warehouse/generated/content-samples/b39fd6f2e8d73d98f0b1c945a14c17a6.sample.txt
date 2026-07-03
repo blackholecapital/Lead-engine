@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/liquidity-pools/use-pool-data-fetching.ts
+
+import type { TaskMeta } from '@/modules/core/tasks/types';
+import { Blockchain } from '@rotki/common';
+import { isEqual } from 'es-toolkit';
+import { useBlockchainAccountsStore } from '@/modules/accounts/use-blockchain-accounts-store';
+import { useAccountAddresses } from '@/modules/balances/blockchain/use-account-addresses';
+import { logger } from '@/modules/core/common/logging/logging';
+import { Module } from '@/modules/core/common/modules';
+import { Section, Status } from '@/modules/core/common/status';
+import { useNotifications } from '@/modules/core/notifications/use-notifications';
+import { TaskType } from '@/modules/core/tasks/task-type';
+import { isActionableFailure, useTaskHandler } from '@/modules/core/tasks/use-task-handler';
+import { useTaskStore } from '@/modules/core/tasks/use-task-store';
+import { usePremium } from '@/modules/premium/use-premium';
+import { useGeneralSettingsStore } from '@/modules/settings/use-general-settings-store';
+import { useStatusUpdater } from '@/modules/shell/sync-progress/use-status-updater';
+import { PoolBalances } from './types';
+import { usePoolApi } from './use-pool-api';
+import { usePoolBalancesStore } from './use-pool-balances-store';
+
+interface UsePoolDataFetchingReturn {
+  fetch: (refresh?: boolean) => Promise<void>;
+}
+
+export function usePoolDataFetching(): UsePoolDataFetchingReturn {
+  const { addresses } = useAccountAddresses();
+  const ethAddresses = computed<string[]>(() => get(addresses)[Blockchain.ETH] ?? []);
+
+  const { sushiswapPoolBalances, uniswapPoolBalances } = storeToRefs(usePoolBalancesStore());
+  const { recentlyAddedAddresses } = storeToRefs(useBlockchainAccountsStore());
+  const { activeModules } = storeToRefs(useGeneralSettingsStore());
+
+  const premium = usePremium();
+  const { t } = useI18n({ useScope: 'global' });
+
+  const { getSushiswapBalances, getUniswapV2Balances } = usePoolApi();
+  const { runTask } = useTaskHandler();
+  const { isTaskRunning } = useTaskStore();
+
+  function handleFailure(taskType: TaskType, outcome: { message: string; error?: unknown }, title: string, protocol: string): void {
+    logger.error(`action failure for task ${TaskType[taskType]}:`, outcome.error);
+    const { notifyError } = useNotifications();
+    notifyError(title, t('modules.dashboard.liquidity_pools.task.error_message', { message: outcome.message, protocol }));
+  }
+
+  async function retrieveUniswapV2Balances(refresh = false): Promise<void> {
+    if (!get(activeModules).includes(Module.UNISWAP))
+      return;
+
+    const { getStatus, setStatus } = useStatusUpdater(Section.POOLS_UNISWAP_V2);
+
+    if (isTaskRunning(TaskType.UNISWAP_V2_BALANCES) || (getStatus() === Status.LOADED && !refresh))
+      return;
+
+    setStatus(refresh ? Status.REFRESHING : Status.LOADING);
+
+    const title = t('modules.dashboard.liquidity_pools.task.title', { protocol: 'Uniswap V2' });
+    const outcome = await runTask<PoolBalances, TaskMeta>(
+      async () => getUniswapV2Balances(),
+      { type: TaskType.UNISWAP_V2_BALANCES, meta: { title }, guard: false },
+    );
+
+    if (outcome.success) {
+      set(uniswapPoolBalances, PoolBalances.parse(outcome.result));
+    }
+    else if (isActionableFailure(outcome)) {
+      handleFailure(TaskType.UNISWAP_V2_BALANCES, outcome, title, 'Uniswap V2');
+    }
+
+    setStatus(Status.LOADED);
+  }
+
+  async function retrieveSushiswapBalances(refresh = false): Promise<void> {
+    if (!get(activeModules).includes(Module.SUSHISWAP))
+      return;
+
+    const { getStatus, setStatus } = useStatusUpdater(Section.POOLS_SUSHISWAP);
+
+    if (isTaskRunning(TaskType.SUSHISWAP_BALANCES) || (getStatus() === Status.LOADED && !refresh))
+      return;
+
+    setStatus(refresh ? Status.REFRESHING : Status.LOADING);
+
+    const title = t('modules.dashboard.liquidity_pools.task.title', { protocol: 'Sushiswap' });
+    const outcome = await runTask<PoolBalances, TaskMeta>(
+      async () => getSushiswapBalances(),
+      { type: TaskType.SUSHISWAP_BALANCES, meta: { title }, guard: false },
+    );
+
+    if (outcome.success) {
+      set(sushiswapPoolBalances, PoolBalances.parse(outcome.result));
+    }
+    else if (isActionableFailure(outcome)) {
+      handleFailure(TaskType.SUSHISWAP_BALANCES, outcome, title, 'Sushiswap');
+    }
+
+    setStatus(Status.LOADED);
+  }
+
+  async function fetch(refresh = false): Promise<void> {
+    if (get(ethAddresses).length <= 0)

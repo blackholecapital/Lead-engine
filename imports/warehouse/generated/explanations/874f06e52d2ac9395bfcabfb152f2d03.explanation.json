@@ -1,0 +1,6 @@
+{
+  "id":"874f06e52d2ac9395bfcabfb152f2d03",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/logging/getLoadStatsPerTopLevelComponent.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

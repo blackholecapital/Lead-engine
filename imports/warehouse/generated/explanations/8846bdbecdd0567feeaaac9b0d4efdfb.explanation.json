@@ -1,0 +1,6 @@
+{
+  "id":"8846bdbecdd0567feeaaac9b0d4efdfb",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-versions/flow-versions-card.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

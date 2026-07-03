@@ -1,0 +1,6 @@
+{
+  "id":"586d8805bd46f45ece517e7236f3d320",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/packages/ag-grid-enterprise/src/rowGrouping/columnDropZones/rowGroupPanelBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

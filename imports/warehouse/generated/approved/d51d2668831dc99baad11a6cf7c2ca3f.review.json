@@ -1,0 +1,13 @@
+{
+  "id": "d51d2668831dc99baad11a6cf7c2ca3f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/routes/resources.orgs.$organizationSlug.projects.$projectParam.env.$envParam.dashboards.$dashboardId.widgets.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

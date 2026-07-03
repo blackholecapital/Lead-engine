@@ -1,0 +1,12 @@
+{
+  "id": "5d1dbae7735c3becb4069e9acefff9a2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/presenters/v3/MetricDashboardPresenter.server.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

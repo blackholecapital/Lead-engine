@@ -1,0 +1,6 @@
+{
+  "id":"4d78668f6d55533fa294bc7632680fde",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/OverwriteConfirm/index.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

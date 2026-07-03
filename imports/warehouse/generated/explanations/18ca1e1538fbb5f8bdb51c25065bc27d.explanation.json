@@ -1,0 +1,6 @@
+{
+  "id":"18ca1e1538fbb5f8bdb51c25065bc27d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/contexts/AutoRefreshContext.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

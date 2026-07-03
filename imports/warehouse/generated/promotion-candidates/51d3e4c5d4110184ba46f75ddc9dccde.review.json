@@ -1,0 +1,12 @@
+{
+  "id": "51d3e4c5d4110184ba46f75ddc9dccde",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/packages/start-plugin-core/src/start-manifest-plugin/manifestBuilder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"bf8aa1571c11cbb7ee2652e4bc9e506d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/enums/object-type-definition-kind.enum.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

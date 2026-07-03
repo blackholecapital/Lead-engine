@@ -1,0 +1,9 @@
+{
+  "id":"rotki",
+  "title":"Rotki",
+  "category":"treasury",
+  "tags":["treasury","defi","portfolio"],
+  "source":"vendor-source/treasury/rotki",
+  "status":"downloaded",
+  "tier":"candidate"
+}

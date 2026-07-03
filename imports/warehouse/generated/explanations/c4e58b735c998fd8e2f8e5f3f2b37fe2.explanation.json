@@ -1,0 +1,6 @@
+{
+  "id":"c4e58b735c998fd8e2f8e5f3f2b37fe2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-types/input/date-filter.input-type.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

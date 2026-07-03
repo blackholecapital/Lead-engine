@@ -1,0 +1,13 @@
+{
+  "id": "f5afe05a5e1b248a4ac8bf9cf6c394ce",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/translation-plugin/plugin-view.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

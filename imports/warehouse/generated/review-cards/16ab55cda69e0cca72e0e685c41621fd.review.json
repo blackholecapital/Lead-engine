@@ -1,0 +1,13 @@
+{
+  "id": "16ab55cda69e0cca72e0e685c41621fd",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/packages/router-generator/tests/generator/nested-route-groups-with-layouts-before-physical/routes/(group-b)/_layout-b/dashboard.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

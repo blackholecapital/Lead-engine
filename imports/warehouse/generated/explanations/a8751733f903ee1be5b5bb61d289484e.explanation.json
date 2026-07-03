@@ -1,0 +1,6 @@
+{
+  "id":"a8751733f903ee1be5b5bb61d289484e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardSubscriptionsSidebar/AddEditSidebar/CaveatMessage/CaveatMessage.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

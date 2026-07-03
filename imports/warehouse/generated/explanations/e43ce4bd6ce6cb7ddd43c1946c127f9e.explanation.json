@@ -1,0 +1,6 @@
+{
+  "id":"e43ce4bd6ce6cb7ddd43c1946c127f9e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/SummarizeSidebar/AddAggregationButton/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "9e982f479de7661c7c3e5233b934c7a4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/data-studio/upsells/pages/DependenciesUpsellPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

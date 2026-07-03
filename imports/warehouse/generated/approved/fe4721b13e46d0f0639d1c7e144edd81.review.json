@@ -1,0 +1,12 @@
+{
+  "id": "fe4721b13e46d0f0639d1c7e144edd81",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/marketing/postiz/apps/orchestrator/src/workflows/send.email.workflow.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/conditions-editor/variable-select.tsx
+
+import React, { HTMLAttributes, useMemo, useRef, useState } from 'react';
+
+import { InputPure, InputRoot, InputWrapper } from '@/components/primitives/input';
+import { Popover, PopoverAnchor, PopoverContent } from '@/components/primitives/popover';
+import { VariableList, VariableListRef } from '@/components/variable/variable-list';
+import { AUTOCOMPLETE_PASSWORD_MANAGERS_OFF } from '@/utils/constants';
+import { cn } from '@/utils/ui';
+
+type VariableSelectProps = Omit<HTMLAttributes<HTMLDivElement>, 'onChange' | 'defaultValue'> & {
+  disabled?: boolean;
+  value?: string;
+  defaultValue?: string;
+  options: Array<{ label: string; value: string }>;
+  onChange: (value: string) => void;
+  onInputChange?: (value: string) => void;
+  leftIcon?: React.ReactNode;
+  title?: string;
+  placeholder?: string;
+  error?: string;
+  emptyState?: React.ReactNode;
+  isClearable?: boolean;
+};
+
+/**
+ * A searchable dropdown component for selecting variables with keyboard navigation support.
+ *
+ * Features:
+ * - Filterable options list
+ * - Keyboard navigation (↑/↓ arrows)
+ * - Auto-creation of new options when typing custom values
+ * - Visual feedback for selected items
+ * - Support for custom left icon
+ * - Empty state when no variables are available
+ */
+export const VariableSelect = (props: VariableSelectProps) => {
+  const {
+    className,
+    disabled,
+    value,
+    options,
+    onChange,
+    onInputChange,
+    leftIcon,
+    title = 'Variables',
+    error,
+    placeholder,
+    emptyState,
+    isClearable = false,
+    defaultValue,
+    ...rest
+  } = props;
+  const [inputValue, setInputValue] = useState(value ?? defaultValue ?? '');
+  const [filterValue, setFilterValue] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const variablesListRef = useRef<VariableListRef>(null);
+
+  const filteredOptions = useMemo(() => {
+    if (!filterValue) {
+      return options;
+    }
+
+    return options.filter((option) => option.value?.toLocaleLowerCase().includes(filterValue.toLocaleLowerCase()));
+  }, [options, filterValue]);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const onInputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value.trim();
+
+    if (newValue !== inputValue) {
+      setInputValue(newValue);
+      setFilterValue(newValue);
+      onInputChange?.(newValue);
+    }
+  };
+
+  const onInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    setIsOpen(true);
+
+    if (e.key === 'ArrowDown') {
+      variablesListRef.current?.next();
+      e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+      variablesListRef.current?.prev();
+      e.preventDefault();
+    } else if (e.key === 'Enter') {
+      variablesListRef.current?.select();
+    }
+  };
+
+  const onSelect = (newValue: string) => {
+    setIsOpen(false);
+    setFilterValue('');
+    setInputValue(newValue);
+    onChange(newValue);
+  };
+
+  const onOpen = () => {
+    setIsOpen(true);
+    inputRef.current?.focus();
+  };

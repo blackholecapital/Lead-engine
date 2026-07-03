@@ -1,0 +1,6 @@
+{
+  "id":"a2430dc4eb25ffe5bb4a6c3c3f412877",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/ImpossibleToCreateModelModal/ImpossibleToCreateModelModal.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

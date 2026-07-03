@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/webhooks/lib/factory/versioned/v2021-10-20/BookingPayloadBuilder.ts
+
+import { getUTCOffsetByTimezone } from "@calcom/lib/dayjs";
+import { BookingStatus, WebhookTriggerEvents } from "@calcom/prisma/enums";
+import type { CalEventResponses } from "@calcom/types/Calendar";
+import type { BookingWebhookEventDTO } from "../../../dto/types";
+import {
+  BaseBookingPayloadBuilder,
+  type BookingExtraDataMap,
+  type BookingPayloadParams,
+} from "../../base/BaseBookingPayloadBuilder";
+import type { WebhookPayload } from "../../types";
+import type { V20211020BookingEventPayload } from "./types";
+
+/** Default labels for system booking fields (form-builder / E2E expectation) */
+const SYSTEM_FIELD_DEFAULT_LABELS: Record<string, string> = {
+  name: "your_name",
+  email: "email_address",
+};
+
+/**
+ * Normalize responses so system fields use default labels when label equals field name.
+ * getCalEventResponses uses field name as label when bookingFields is missing; E2E expects default labels.
+ */
+function normalizeResponses(responses: CalEventResponses | null | undefined): CalEventResponses | undefined {
+  if (!responses || typeof responses !== "object") return undefined;
+  const out: CalEventResponses = {};
+  for (const [name, entry] of Object.entries(responses)) {
+    if (!entry || typeof entry !== "object") continue;
+    const defaultLabel = SYSTEM_FIELD_DEFAULT_LABELS[name];
+    const label =
+      defaultLabel && (entry.label === name || entry.label === undefined)
+        ? defaultLabel
+        : (entry.label ?? name);
+    out[name] = { ...entry, label };
+  }
+  return out;
+}
+
+/** Derive firstName/lastName from name for legacy payload parity (attendees[].firstName, attendees[].lastName). */
+function nameToFirstAndLast(name: string): { firstName: string; lastName: string } {
+  const trimmed = (name ?? "").trim();
+  if (!trimmed) return { firstName: "", lastName: "" };
+  const firstSpace = trimmed.indexOf(" ");
+  if (firstSpace === -1) return { firstName: trimmed, lastName: "" };
+  return {
+    firstName: trimmed.slice(0, firstSpace),
+    lastName: trimmed.slice(firstSpace + 1).trim(),
+  };
+}
+
+/**
+ * Booking payload builder for webhook version 2021-10-20.
+ *
+ * This is the initial webhook payload format. It includes:
+ * - Full CalendarEvent data spread into payload
+ * - UTC offset calculations for organizer and attendees
+ * - Event type metadata (title, description, price, etc.)
+ * - Trigger-specific extra fields (cancellation reason, reschedule info, etc.)
+ */
+export class BookingPayloadBuilder extends BaseBookingPayloadBuilder {
+  /**
+   * Build the complete booking webhook payload for v2021-10-20.
+   */
+  build(dto: BookingWebhookEventDTO): WebhookPayload {
+    switch (dto.triggerEvent) {
+      case WebhookTriggerEvents.BOOKING_CREATED:
+        return this.buildBookingPayload({
+          booking: dto.booking,
+          eventType: dto.eventType,
+          evt: dto.evt,
+          status: BookingStatus.ACCEPTED,
+          triggerEvent: dto.triggerEvent,
+          createdAt: dto.createdAt,
+        });
+
+      case WebhookTriggerEvents.BOOKING_CANCELLED:
+        return this.buildBookingPayload({
+          booking: dto.booking,
+          eventType: dto.eventType,
+          evt: dto.evt,
+          status: BookingStatus.CANCELLED,
+          triggerEvent: dto.triggerEvent,
+          createdAt: dto.createdAt,
+          extra: {
+            cancelledBy: dto.cancelledBy,
+            cancellationReason: dto.cancellationReason,
+            requestReschedule: dto.requestReschedule ?? false,
+          },
+        });
+
+      case WebhookTriggerEvents.BOOKING_REQUESTED:
+        return this.buildBookingPayload({
+          booking: dto.booking,
+          eventType: dto.eventType,
+          evt: dto.evt,
+          status: BookingStatus.PENDING,
+          triggerEvent: dto.triggerEvent,
+          createdAt: dto.createdAt,
+          extra: {
+            metadata: (dto.metadata ?? {}) as { [key: string]: string | number | boolean | null },
+          },

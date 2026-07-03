@@ -1,0 +1,6 @@
+{
+  "id":"44a2b2fdd2f6a29fb91ab4d93279eb36",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/plugins/plugin-chart-echarts/src/utils/treeBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"4bb700ad9b7117ad72e88375469746f4",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/apps/web/modules/form-builder/components/Components.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

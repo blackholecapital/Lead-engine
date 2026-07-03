@@ -1,0 +1,12 @@
+{
+  "id": "ed8b4cd8186f1e0308605c1c19197b12",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/update-job-status/update-job-status.usecase.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

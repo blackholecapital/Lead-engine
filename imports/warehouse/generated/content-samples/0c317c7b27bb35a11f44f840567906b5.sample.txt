@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/framework-guides.instructions.tsx
+
+import { RiAngularjsFill, RiJavascriptFill, RiNextjsFill, RiReactjsFill, RiRemixRunFill } from 'react-icons/ri';
+import { API_HOSTNAME, IS_EU } from '@/config';
+import { apiHostnameManager } from '@/utils/api-hostname-manager';
+import { Language } from '../primitives/code-block';
+import { getFrameworkPrompt } from './ai-prompts/simple-prompt-getter';
+
+export interface Framework {
+  name: string;
+  icon: JSX.Element;
+  selected?: boolean;
+  installSteps: InstallationStep[];
+}
+
+export interface InstallationStep {
+  title: string;
+  description: string;
+  code?: string;
+  codeLanguage: Language;
+  codeTitle?: string;
+  tip?: {
+    title?: string;
+    description: string | React.ReactNode;
+  };
+  buttonText?: string;
+  buttonAction?: () => void;
+  copyText?: string;
+  applicationIdentifier?: string;
+  subscriberId?: string;
+}
+
+const isDefaultApi = API_HOSTNAME === 'https://api.novu.co';
+const currentWebSocketHostname = apiHostnameManager.getWebSocketHostname();
+const isDefaultWs = currentWebSocketHostname === 'https://ws.novu.co';
+
+// Convert https:// to wss:// for WebSocket URLs
+const getWebSocketUrl = (url: string) => {
+  if (!url) return url;
+  return url.replace(/^https:\/\//, 'wss://');
+};
+
+const websocketUrl = getWebSocketUrl(currentWebSocketHostname);
+
+// Shared helpers to minimize duplication
+const cliFlags = `${isDefaultApi && IS_EU ? ' --region=eu' : ''}${!isDefaultApi ? ` --backendUrl ${API_HOSTNAME}` : ''}${!isDefaultWs ? ` --socketUrl ${currentWebSocketHostname}` : ''}`;
+
+function optionalAttrProps(indent: string): string {
+  return `${!isDefaultApi ? `\n${indent}${`backendUrl="${API_HOSTNAME}"`}` : ''}${!isDefaultWs ? `\n${indent}${`socketUrl="${websocketUrl}"`}` : ''}`;
+}
+
+function optionalObjectProps(indent: string): string {
+  return `${!isDefaultApi ? `\n${indent}${`backendUrl: '${API_HOSTNAME}',`}` : ''}${!isDefaultWs ? `\n${indent}${`socketUrl: '${websocketUrl}',`}` : ''}`;
+}
+
+function stepsByMethod(
+  installationMethod: 'cli' | 'manual' | 'ai-assist',
+  manualSteps: InstallationStep[],
+  frameworkName?: string,
+  applicationIdentifier?: string,
+  subscriberId?: string
+): InstallationStep[] {
+  if (installationMethod === 'cli') return [commonCLIInstallStep()];
+  if (installationMethod === 'ai-assist') {
+    return [
+      commonAIAssistInstallStep(
+        frameworkName || '',
+        applicationIdentifier || 'YOUR_APPLICATION_IDENTIFIER',
+        subscriberId || 'YOUR_SUBSCRIBER_ID'
+      ),
+    ];
+  }
+  return manualSteps;
+}
+
+const customizationTip = {
+  title: 'Tip:',
+  description: (
+    <>
+      You can customize your inbox to match your app theme,{' '}
+      <a
+        href="https://docs.novu.co/platform/inbox/configuration/styling"
+        target="_blank"
+        className="underline"
+        rel="noopener"
+      >
+        learn more
+      </a>
+      .
+    </>
+  ),
+};
+
+const commonInstallStep = (packageName: string): InstallationStep => ({
+  title: 'Install the package',
+  description: `${packageName} is the package that powers the notification center.`,
+  code: `npm install ${packageName}`,
+  codeLanguage: 'shell',
+  codeTitle: 'Terminal',
+});
+
+const commonCLIInstallStep = (): InstallationStep => ({

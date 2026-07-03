@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/in-app-action-dropdown.tsx
+
+import merge from 'lodash.merge';
+import { ComponentProps } from 'react';
+import { useFormContext, useWatch } from 'react-hook-form';
+import { RiEdit2Line, RiExpandUpDownLine, RiForbid2Line } from 'react-icons/ri';
+import { Button } from '@/components/primitives/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/primitives/dropdown-menu';
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  FormMessagePure,
+} from '@/components/primitives/form/form';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/primitives/popover';
+import { Separator } from '@/components/primitives/separator';
+import { ControlInput } from '@/components/workflow-editor/control-input';
+import { URLInput } from '@/components/workflow-editor/url-input';
+import { useWorkflow } from '@/components/workflow-editor/workflow-provider';
+import { useParseVariables } from '@/hooks/use-parse-variables';
+import { inboxButtonVariants } from '@/utils/inbox';
+import { cn } from '@/utils/ui';
+import { urlTargetTypes } from '@/utils/url';
+import { CompactButton } from './primitives/button-compact';
+import { InputRoot } from './primitives/input';
+
+const primaryActionKey = 'primaryAction';
+const secondaryActionKey = 'secondaryAction';
+
+export const InAppActionDropdown = ({ onMenuItemClick }: { onMenuItemClick?: () => void }) => {
+  const { control, setValue, getFieldState } = useFormContext();
+
+  const primaryAction = useWatch({ control, name: primaryActionKey });
+  const secondaryAction = useWatch({ control, name: secondaryActionKey });
+  const primaryActionLabel = getFieldState(`${primaryActionKey}.label`);
+  const primaryActionRedirectUrl = getFieldState(`${primaryActionKey}.redirect.url`);
+  const secondaryActionLabel = getFieldState(`${secondaryActionKey}.label`);
+  const secondaryActionRedirectUrl = getFieldState(`${secondaryActionKey}.redirect.url`);
+  const error =
+    primaryActionLabel.error ||
+    primaryActionRedirectUrl.error ||
+    secondaryActionLabel.error ||
+    secondaryActionRedirectUrl.error;
+
+  return (
+    <>
+      <DropdownMenu modal={false}>
+        <div className={cn('mt-3 flex items-center gap-1')}>
+          <div className="border-neutral-alpha-200 shadow-input relative flex min-h-10 w-full flex-wrap items-center justify-end gap-1 rounded-md border bg-white p-1">
+            {!primaryAction && !secondaryAction && (
+              <Button
+                variant="secondary"
+                mode="outline"
+                size="2xs"
+                className={inboxButtonVariants({
+                  variant: 'secondary',
+                  className: 'border border-dashed shadow-none ring-0',
+                })}
+                trailingIcon={RiForbid2Line}
+                tabIndex={-1}
+              >
+                No action
+              </Button>
+            )}
+            {primaryAction && (
+              <ConfigureActionPopover title="Primary action" asChild fields={{ actionKey: primaryActionKey }}>
+                <button
+                  className={inboxButtonVariants({
+                    variant: 'default',
+                    className: 'z-10 h-6 min-w-16 max-w-48 truncate',
+                  })}
+                >
+                  {primaryAction.label || 'Primary action'}
+                </button>
+              </ConfigureActionPopover>
+            )}
+            {secondaryAction && (
+              <ConfigureActionPopover title="Secondary action" asChild fields={{ actionKey: secondaryActionKey }}>
+                <button
+                  className={inboxButtonVariants({
+                    variant: 'secondary',
+                    className: 'z-10 h-6 min-w-16 max-w-48 truncate',
+                  })}
+                >
+                  {secondaryAction.label || 'Secondary action'}
+                </button>
+              </ConfigureActionPopover>
+            )}
+            <DropdownMenuTrigger className="absolute size-full" tabIndex={-1} />
+          </div>
+          <DropdownMenuTrigger asChild>
+            <CompactButton
+              icon={RiExpandUpDownLine}
+              size="lg"
+              variant="ghost"

@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/domains/domain-routing.tsx
+
+import { DomainRouteTypeEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { useQuery } from '@tanstack/react-query';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { Fragment, forwardRef, useEffect, useId, useImperativeHandle, useState } from 'react';
+import {
+  RiAddLine,
+  RiCheckLine,
+  RiCloseLine,
+  RiMore2Fill,
+  RiRobot2Line,
+  RiSendPlaneLine,
+  RiWebhookLine,
+} from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import { listAgents } from '@/api/agents';
+import { NovuApiError } from '@/api/api.client';
+import type { DomainResponse, DomainRouteResponse, TestDomainRouteResponse } from '@/api/domains';
+import { Badge } from '@/components/primitives/badge';
+import { Button } from '@/components/primitives/button';
+import { CompactButton } from '@/components/primitives/button-compact';
+import { Checkbox } from '@/components/primitives/checkbox';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/primitives/dialog';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/primitives/dropdown-menu';
+import { Input } from '@/components/primitives/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/primitives/select';
+import { showErrorToast } from '@/components/primitives/sonner-helpers';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/primitives/table';
+import { Textarea } from '@/components/primitives/textarea';
+import { useEnvironment } from '@/context/environment/hooks';
+import {
+  useCreateDomainRoute,
+  useDeleteDomainRoute,
+  useFetchDomainRoute,
+  useFetchDomainRoutes,
+  useUpdateDomainRoute,
+} from '@/hooks/use-domain-routes';
+import { useFeatureFlag } from '@/hooks/use-feature-flag';
+import { useTestDomainRoute } from '@/hooks/use-test-domain-route';
+import { parseDomainMetadataJson } from '@/utils/domain-metadata';
+import { buildRoute, ROUTES } from '@/utils/routes';
+import { RoutingEmptyIllustration } from './routing-empty-illustration';
+
+type RouteFormState = {
+  address: string;
+  agentId: string;
+  type: DomainRouteTypeEnum;
+  dataJson: string;
+};
+
+const DEFAULT_ROUTE_FORM: RouteFormState = {
+  address: '',
+  agentId: '',
+  type: DomainRouteTypeEnum.AGENT,
+  dataJson: '{}',
+};
+
+function getRouteErrorMessage(error: unknown, fallback: string): string {
+  if (error instanceof NovuApiError) {
+    return error.message || fallback;
+  }
+
+  return fallback;
+}
+
+type DomainRoutingProps = {
+  domain: DomainResponse;
+  canWrite?: boolean;
+};
+
+export type DomainRoutingHandle = {
+  startAdding: () => void;
+};
+
+function useAgents() {
+  const { currentEnvironment } = useEnvironment();
+
+  return useQuery({
+    queryKey: ['fetchAgents', currentEnvironment?._id],
+    queryFn: () =>
+      listAgents({
+        // biome-ignore lint/style/noNonNullAssertion: enabled guard ensures currentEnvironment is defined
+        environment: currentEnvironment!,
+        limit: 50,
+      }),
+    enabled: !!currentEnvironment,
+    select: (data) => data.data,
+  });
+}

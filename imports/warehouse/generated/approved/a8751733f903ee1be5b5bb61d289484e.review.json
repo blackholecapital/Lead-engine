@@ -1,0 +1,14 @@
+{
+  "id": "a8751733f903ee1be5b5bb61d289484e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardSubscriptionsSidebar/AddEditSidebar/CaveatMessage/CaveatMessage.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

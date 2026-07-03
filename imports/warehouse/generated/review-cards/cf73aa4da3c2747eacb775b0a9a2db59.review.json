@@ -1,0 +1,14 @@
+{
+  "id": "cf73aa4da3c2747eacb775b0a9a2db59",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/page-layout/widgets/components/__stories__/DashboardWidgetPlaceholder.stories.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

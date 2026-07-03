@@ -1,0 +1,6 @@
+{
+  "id":"010b3a1cf80afae5e310bf8492f7559f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/components/ViewTitleHeaderRightSide/QuestionSharingMenu/QuestionSharingMenu.unit.spec.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

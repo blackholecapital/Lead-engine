@@ -1,0 +1,15 @@
+{
+  "id": "7083d88a52fce5c7cfecc65b82639cc2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/BuilderComponentPane/index.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,3 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/schema-editor/json-schema.ts
+
+export type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';

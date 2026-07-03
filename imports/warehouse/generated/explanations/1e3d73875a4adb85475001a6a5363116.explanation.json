@@ -1,0 +1,6 @@
+{
+  "id":"1e3d73875a4adb85475001a6a5363116",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-types/scalars/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

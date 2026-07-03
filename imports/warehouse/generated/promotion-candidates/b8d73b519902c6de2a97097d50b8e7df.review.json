@@ -1,0 +1,12 @@
+{
+  "id": "b8d73b519902c6de2a97097d50b8e7df",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/ViewTitleHeader.unit.spec.js",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

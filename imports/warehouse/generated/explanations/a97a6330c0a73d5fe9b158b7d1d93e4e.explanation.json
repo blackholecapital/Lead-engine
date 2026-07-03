@@ -1,0 +1,6 @@
+{
+  "id":"a97a6330c0a73d5fe9b158b7d1d93e4e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/resizable/ResizableContainer.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

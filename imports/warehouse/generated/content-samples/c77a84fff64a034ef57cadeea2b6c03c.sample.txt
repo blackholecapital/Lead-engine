@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/promotional/coming-soon-banner.tsx
+
+import { AnimatePresence, motion } from 'motion/react';
+import { useCallback, useRef, useState } from 'react';
+import { RiCloseFill } from 'react-icons/ri';
+import { toast } from 'sonner';
+import { ToggleGroup, ToggleGroupItem } from '@/components/primitives/toggle-group';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { TelemetryEvent } from '@/utils/telemetry';
+import { CompactButton } from '../primitives/button-compact';
+import { Card, CardContent } from '../primitives/card';
+
+interface PromotionalBannerContent {
+  emoji?: string;
+  title: string;
+  description: string;
+  feedbackQuestion?: string;
+  telemetryEvent: TelemetryEvent;
+}
+
+interface UsePromotionalBannerProps {
+  onReactionSelect?: (reaction: Reaction) => void;
+  onDismiss?: () => void;
+  content: PromotionalBannerContent;
+}
+
+const REACTIONS = [
+  { value: '100', emoji: '💯' },
+  { value: 'ok', emoji: '👌' },
+  { value: 'thinking', emoji: '🤔' },
+  { value: 'thumbs_down', emoji: '👎' },
+] as const;
+
+const ANIMATION_CONFIG = {
+  banner: {
+    initial: { opacity: 0, y: 20, scale: 0.95 },
+    animate: { opacity: 1, y: 0, scale: 1 },
+    exit: { opacity: 0, y: 10, scale: 0.95 },
+    transition: { duration: 0.2 },
+  },
+  content: {
+    initial: { opacity: 0, x: -10 },
+    animate: { opacity: 1, x: 0 },
+    transition: { delay: 0.1 },
+  },
+};
+
+type Reaction = (typeof REACTIONS)[number]['value'];
+
+interface UsePromotionalBannerResult {
+  show: () => void;
+  hide: () => void;
+}
+
+export function usePromotionalBanner(props: UsePromotionalBannerProps): UsePromotionalBannerResult {
+  const toastId = useRef<string | number | null>(null);
+  const track = useTelemetry();
+
+  const hide = useCallback(() => {
+    if (toastId.current) {
+      track(('Banner Hidden ' + props.content.telemetryEvent) as TelemetryEvent, {
+        title: props.content.title,
+        question: props.content.feedbackQuestion,
+      });
+
+      toast.dismiss(toastId.current);
+      toastId.current = null;
+    }
+  }, []);
+
+  const show = useCallback(() => {
+    if (toastId.current) return;
+
+    track(('Banner Viewed ' + props.content.telemetryEvent) as TelemetryEvent, {
+      title: props.content.title,
+      question: props.content.feedbackQuestion,
+    });
+
+    const id = toast.custom(
+      (id) => (
+        <PromotionalBannerContent
+          onDismiss={() => {
+            toast.dismiss(id);
+            toastId.current = null;
+            props.onDismiss?.();
+          }}
+          onReactionSelect={props.onReactionSelect}
+          content={props.content}
+        />
+      ),
+      {
+        duration: Infinity,
+        position: 'bottom-right',
+      }
+    );
+
+    toastId.current = id;
+  }, [props]);
+
+  return { show, hide };
+}
+

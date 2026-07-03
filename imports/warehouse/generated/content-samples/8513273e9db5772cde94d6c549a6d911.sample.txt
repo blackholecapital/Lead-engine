@@ -1,0 +1,7 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/visually-hidden.tsx
+
+import * as VisuallyHiddenAll from '@radix-ui/react-visually-hidden';
+
+const VisuallyHidden = VisuallyHiddenAll.Root;
+
+export { VisuallyHidden };

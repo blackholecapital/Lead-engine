@@ -1,0 +1,12 @@
+{
+  "id": "0ed7882b0f9aa423f211fedcfd1783cd",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/dependencies/pages/DependencyGraphPage/DependencyGraphPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

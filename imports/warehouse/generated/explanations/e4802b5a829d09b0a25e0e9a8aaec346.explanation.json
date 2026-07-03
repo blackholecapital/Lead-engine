@@ -1,0 +1,6 @@
+{
+  "id":"e4802b5a829d09b0a25e0e9a8aaec346",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/menu/BackgroundStyleDropdown.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "48c6f3ac9cc4213b33dbd9d895ea5943",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/QuestionInfoSidebar/QuestionPublicLinkPopover/QuestionPublicLinkPopover.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,13 @@
+{
+  "id": "e780642a19ce9a1b7ed634fe752c9ee5",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/agents/create-agent-fields/managed-integration-credentials.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

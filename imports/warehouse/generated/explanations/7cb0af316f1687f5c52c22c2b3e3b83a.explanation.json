@@ -1,0 +1,6 @@
+{
+  "id":"7cb0af316f1687f5c52c22c2b3e3b83a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-types/scalars/ts-vector.scalar.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

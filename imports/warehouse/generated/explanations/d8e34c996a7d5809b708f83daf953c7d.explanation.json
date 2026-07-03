@@ -1,0 +1,6 @@
+{
+  "id":"d8e34c996a7d5809b708f83daf953c7d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getSliceHeaderTooltip.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

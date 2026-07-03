@@ -1,0 +1,12 @@
+{
+  "id": "87cbc8584e1ade2af691c7e85eda02e3",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/test/integration/metadata/suites/dashboard/successful-dashboard-updated-at-sync.integration-spec.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,10 @@
+test
+tests
+spec
+i18n
+translation
+locale
+mock
+fixture
+storybook
+stories

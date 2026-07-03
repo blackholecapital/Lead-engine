@@ -1,0 +1,6 @@
+{
+  "id":"e2926e90c6761d0ee7901260d6ab0479",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FiltersConfigModal/hooks/useItemStateManager.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

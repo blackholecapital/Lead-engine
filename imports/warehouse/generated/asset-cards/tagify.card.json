@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "id": "tagify",
+    "title": "Tagify",
+    "category": "tagging",
+    "tags": [
+      "tagging",
+      "ui",
+      "search"
+    ],
+    "source": "vendor-source/tagging/tagify",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "tagify",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "tagify",
+    "label": "Tagify",
+    "category": "tagging",
+    "tags": [
+      "tagging",
+      "ui",
+      "search"
+    ],
+    "type": "asset"
+  }
+}

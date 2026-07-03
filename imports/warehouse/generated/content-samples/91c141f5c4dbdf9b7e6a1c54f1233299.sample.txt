@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/components/integration-settings.tsx
+
+import {
+  ChannelTypeEnum,
+  ChatProviderIdEnum,
+  CredentialsKeyEnum,
+  IIntegration,
+  IProviderConfig,
+  PermissionsEnum,
+  slackConfig,
+} from '@novu/shared';
+import { useEffect, useMemo } from 'react';
+import { useForm, useWatch } from 'react-hook-form';
+import { RiInputField } from 'react-icons/ri';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/primitives/accordion';
+import { Form, FormRoot } from '@/components/primitives/form/form';
+import { Label } from '@/components/primitives/label';
+import { useEnvironment } from '@/context/environment/hooks';
+import { Protect } from '@/utils/protect';
+import { ROUTES } from '@/utils/routes';
+import { cn } from '../../../utils/ui';
+import { InlineToast } from '../../primitives/inline-toast';
+import { EnvironmentDropdown } from '../../side-navigation/environment-dropdown';
+import { CredentialSection } from './credential-section';
+import { GeneralSettings } from './integration-general-settings';
+import { SlackCredentialsPaste } from './slack-credentials-paste';
+import { TelegramCredentialsPaste, type TelegramCredentialsPasteMobileSetup } from './telegram-credentials-paste';
+import { useSlackCredentialsPasteFallback } from './use-slack-credentials-paste-fallback';
+import { useWhatsAppCredentialsPasteFallback } from './use-whatsapp-credentials-paste-fallback';
+import { isDemoIntegration } from './utils/helpers';
+import { WhatsAppCredentialsPaste } from './whatsapp-credentials-paste';
+import { WhatsAppCredentialsValidator } from './whatsapp-credentials-validator';
+
+type IntegrationFormData = {
+  name: string;
+  identifier: string;
+  credentials: Record<string, string>;
+  configurations: Record<string, string>;
+  active: boolean;
+  check: boolean;
+  primary: boolean;
+  environmentId: string;
+};
+
+type IntegrationConfigurationProps = {
+  provider: IProviderConfig;
+  integration?: IIntegration;
+  onSubmit: (data: IntegrationFormData) => void;
+  mode: 'create' | 'update';
+  isChannelSupportPrimary?: boolean;
+  hasOtherProviders?: boolean;
+  isReadOnly?: boolean;
+  agentOnboarding?: boolean;
+  /** Agent identifier — only set during the agent-onboarding flow. */
+  agentIdentifier?: string;
+  /** Quickstart test subscriber for Telegram mobile `/start` deep links. */
+  testSubscriberId?: string | null;
+  onFormStateChange?: (formState: { isValid: boolean; errors: Record<string, unknown>; isDirty: boolean }) => void;
+};
+
+function generateSlug(name: string): string {
+  return name
+    ?.toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+export function IntegrationSettings({
+  provider,
+  integration,
+  onSubmit,
+  mode,
+  isChannelSupportPrimary,
+  hasOtherProviders,
+  isReadOnly,
+  agentOnboarding,
+  agentIdentifier,
+  testSubscriberId,
+  onFormStateChange,
+}: IntegrationConfigurationProps) {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const { currentEnvironment, environments } = useEnvironment();
+
+  const form = useForm<IntegrationFormData>({
+    mode: 'all',
+    reValidateMode: 'onChange',
+    defaultValues: integration
+      ? {
+          name: integration.name,
+          identifier: integration.identifier,
+          active: integration.active,
+          primary: integration.primary ?? false,
+          credentials: integration.credentials as Record<string, string>,
+          configurations: integration.configurations as Record<string, string>,
+          environmentId: integration._environmentId,
+        }
+      : {
+          name: provider?.displayName ?? '',

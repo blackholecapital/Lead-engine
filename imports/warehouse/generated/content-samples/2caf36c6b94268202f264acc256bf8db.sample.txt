@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/connect/onboarding-session.ts
+
+import {
+  AGENTS_STEP_COUNT,
+  ONBOARDING_STEP_DELAY_MS,
+  PLATFORM_STEP_COUNT,
+  type OnboardingLoaderVariant,
+} from '@/components/onboarding/onboarding-loader';
+
+export const ONBOARDING_PROVISIONING_KEY = 'novu.onboarding.provisioning';
+/** Legacy Connect-only flag — still read for in-flight sessions. */
+export const CONNECT_PROVISIONING_KEY = 'novu.connect.provisioning';
+export const CONNECT_PROVISION_QUERY = 'provision';
+
+const PROVISIONING_CHANGE_EVENT = 'novu.onboarding.provisioning-change';
+
+type ProvisioningPayload = {
+  variant: OnboardingLoaderVariant;
+  startedAt: number;
+};
+
+export function notifyOnboardingProvisioningChange(): void {
+  if (typeof window === 'undefined') return;
+
+  window.dispatchEvent(new Event(PROVISIONING_CHANGE_EVENT));
+}
+
+export function subscribeOnboardingProvisioningChange(listener: () => void): () => void {
+  if (typeof window === 'undefined') {
+    return () => undefined;
+  }
+
+  window.addEventListener(PROVISIONING_CHANGE_EVENT, listener);
+
+  return () => window.removeEventListener(PROVISIONING_CHANGE_EVENT, listener);
+}
+
+/** @deprecated Use `subscribeOnboardingProvisioningChange`. */
+export const subscribeConnectProvisioningChange = subscribeOnboardingProvisioningChange;
+
+/** @deprecated Use `notifyOnboardingProvisioningChange`. */
+export const notifyConnectProvisioningChange = notifyOnboardingProvisioningChange;
+
+// `connect` is the legacy name for the agents-flavored loader; map it forward to `agents`.
+function normalizeVariant(variant: string | undefined): OnboardingLoaderVariant | null {
+  if (variant === 'platform') {
+    return 'platform';
+  }
+
+  if (variant === 'agents' || variant === 'connect') {
+    return 'agents';
+  }
+
+  return null;
+}
+
+function readProvisioningPayload(): ProvisioningPayload | null {
+  if (typeof window === 'undefined') return null;
+
+  try {
+    const raw = sessionStorage.getItem(ONBOARDING_PROVISIONING_KEY);
+
+    if (raw) {
+      const parsed = JSON.parse(raw) as Partial<ProvisioningPayload> & { variant?: string };
+      const variant = normalizeVariant(parsed.variant);
+
+      if (variant) {
+        return {
+          variant,
+          startedAt: typeof parsed.startedAt === 'number' ? parsed.startedAt : Date.now(),
+        };
+      }
+    }
+
+    if (sessionStorage.getItem(CONNECT_PROVISIONING_KEY) === '1') {
+      return { variant: 'agents', startedAt: Date.now() };
+    }
+  } catch {
+    // sessionStorage unavailable or malformed payload
+  }
+
+  return null;
+}
+
+export function beginOnboardingProvisioning(variant: OnboardingLoaderVariant): void {
+  if (typeof window === 'undefined') return;
+
+  try {
+    const payload: ProvisioningPayload = { variant, startedAt: Date.now() };
+    sessionStorage.setItem(ONBOARDING_PROVISIONING_KEY, JSON.stringify(payload));
+    sessionStorage.removeItem(CONNECT_PROVISIONING_KEY);
+    notifyOnboardingProvisioningChange();
+  } catch {
+    // sessionStorage unavailable
+  }
+}
+
+export function beginAgentsProvisioning(): void {
+  beginOnboardingProvisioning('agents');
+}
+
+export function beginPlatformProvisioning(): void {

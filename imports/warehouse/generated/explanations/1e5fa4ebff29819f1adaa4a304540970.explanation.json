@@ -1,0 +1,6 @@
+{
+  "id":"1e5fa4ebff29819f1adaa4a304540970",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/chart-type-selector/ChartTypeList/ChartTypeList.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "4ca018130862ec64881cce77795ea958",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/test-step/test-trigger-section/trigger-event-utils.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "calendar",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

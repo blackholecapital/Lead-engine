@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/http-logs/api-traces-content.tsx
+
+import { RiCheckboxCircleFill, RiErrorWarningFill, RiLoader4Fill, RiTimeFill } from 'react-icons/ri';
+import { useFetchRequestTraces } from '@/hooks/use-fetch-request-traces';
+import type { ApiTrace, RequestLog } from '../../types/logs';
+import { formatDateSimple } from '../../utils/format-date';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '../primitives/hover-card';
+import { Skeleton } from '../primitives/skeleton';
+import { StatusBadge, StatusBadgeIcon } from '../primitives/status-badge';
+import { TimeDisplayHoverCard } from '../time-display-hover-card';
+
+type ApiTracesContentProps = {
+  log: RequestLog;
+};
+
+function mapTraceStatusToBadgeStatus(traceStatus: ApiTrace['status']) {
+  switch (traceStatus) {
+    case 'success':
+      return 'completed';
+    case 'error':
+      return 'failed';
+    case 'warning':
+      return 'pending';
+    case 'pending':
+      return 'pending';
+    default:
+      return 'disabled';
+  }
+}
+
+function getStatusIcon(status: ApiTrace['status']) {
+  switch (status) {
+    case 'success':
+      return RiCheckboxCircleFill;
+    case 'error':
+      return RiErrorWarningFill;
+    case 'warning':
+      return RiTimeFill;
+    case 'pending':
+      return RiLoader4Fill;
+    default:
+      return RiCheckboxCircleFill;
+  }
+}
+
+function formatRawData(rawData: string): string {
+  try {
+    return JSON.stringify(JSON.parse(rawData), null, 2);
+  } catch {
+    return rawData;
+  }
+}
+
+function TraceEventSkeleton() {
+  return (
+    <div className="flex items-center gap-2 w-full h-6">
+      <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white shadow-xs">
+        <Skeleton className="h-4 w-4 rounded-full" />
+      </div>
+      <div className="flex-1">
+        <div className="bg-white rounded flex items-center justify-between">
+          <div className="flex items-center gap-1.5">
+            <div>
+              <Skeleton className="h-4 w-32" />
+            </div>
+          </div>
+          <div>
+            <Skeleton className="h-3 w-20" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TraceEvent({ trace }: { trace: ApiTrace }) {
+  const badgeStatus = mapTraceStatusToBadgeStatus(trace.status);
+  const StatusIcon = getStatusIcon(trace.status);
+  const hasMessage = Boolean(trace.message?.trim());
+  const hasRawData = Boolean(trace.rawData?.trim());
+  const hasHoverContent = hasMessage || hasRawData;
+
+  return (
+    <div className="flex items-center gap-2 w-full h-6">
+      <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white shadow-xs">
+        <StatusBadge variant="stroke" status={badgeStatus} className="h-4 w-4 border-0 px-0 ring-0">
+          <StatusBadgeIcon as={StatusIcon} />
+        </StatusBadge>
+      </div>
+      <div className="flex-1">
+        <div className="bg-white rounded flex items-center justify-between">
+          <div className="flex items-center gap-1.5">
+            <div>
+              {hasHoverContent ? (
+                <HoverCard openDelay={200}>
+                  <HoverCardTrigger asChild>
+                    <p className="text-label-xs font-medium text-text-sub whitespace-pre border-b border-dotted border-text-sub cursor-help">
+                      {trace.title}
+                    </p>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-96 max-h-80 overflow-auto">
+                    <div className="space-y-2">

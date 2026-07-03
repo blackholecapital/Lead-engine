@@ -1,0 +1,6 @@
+{
+  "id":"110947f141b6515702a7a7acf74bfa80",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/embedding-sdk-ee/notifications/DashboardSubscriptionsButton.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

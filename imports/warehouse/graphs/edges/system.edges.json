@@ -1,0 +1,9 @@
+[
+  {"from":"tracer-ai","to":"runtime-c"},
+  {"from":"runtime-c","to":"review-center"},
+  {"from":"runtime-c","to":"temp-resource-bundles"},
+  {"from":"lancedb","to":"tracer-core"},
+  {"from":"qdrant","to":"tracer-core"},
+  {"from":"memgraph","to":"tracer-graph"},
+  {"from":"apache-age","to":"tracer-graph"}
+]

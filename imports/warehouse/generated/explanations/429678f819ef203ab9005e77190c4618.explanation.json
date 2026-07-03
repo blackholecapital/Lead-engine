@@ -1,0 +1,6 @@
+{
+  "id":"429678f819ef203ab9005e77190c4618",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/run-details/flow-step-input-output.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

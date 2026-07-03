@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/autocomplete.tsx
+
+import { useCallback, useId, useRef, useState } from 'react';
+import { IconType } from 'react-icons';
+import { RiArrowDownLine, RiArrowUpLine, RiLoader4Line, RiSearchLine } from 'react-icons/ri';
+import { cn } from '@/utils/ui';
+import { EnterLineIcon } from '../icons/enter-line';
+import { Command, CommandEmpty, CommandGroup, CommandItem, CommandList } from './command';
+import { Input } from './input';
+import { Popover, PopoverContent, PopoverTrigger } from './popover';
+import { Separator } from './separator';
+
+export interface AutocompleteItem {
+  id: string;
+  [key: string]: unknown;
+}
+
+export interface AutocompleteProps<T extends AutocompleteItem> {
+  value: string;
+  onChange: (value: string) => void;
+  items: T[];
+  isLoading?: boolean;
+  hasSearched?: boolean;
+  onSelectItem?: (item: T) => void;
+  size?: 'xs' | 'sm' | 'md';
+  disabled?: boolean;
+  className?: string;
+  placeholder?: string;
+  trailingIcon?: IconType;
+  leadingNode?: React.ReactNode;
+  minSearchLength?: number;
+  emptyStateTitle?: string;
+  emptyStateDescription?: string;
+  sectionTitle?: string;
+  renderItem: (item: T, index: number, isHighlighted: boolean) => React.ReactNode;
+  onSubmit?: () => void;
+}
+
+export function Autocomplete<T extends AutocompleteItem>({
+  value,
+  onChange,
+  items,
+  isLoading = false,
+  hasSearched = false,
+  onSelectItem,
+  size = 'xs',
+  disabled,
+  className,
+  placeholder = 'Search...',
+  trailingIcon = RiSearchLine,
+  leadingNode,
+  minSearchLength = 2,
+  emptyStateTitle = 'No results found',
+  emptyStateDescription = 'Try a different search term',
+  sectionTitle = 'Results',
+  renderItem,
+  onSubmit,
+}: AutocompleteProps<T>) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [open, setOpen] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState(-1);
+
+  // Generate unique IDs for accessibility
+  const id = useId();
+  const listboxId = `${id}-listbox`;
+  const labelId = `${id}-label`;
+
+  // Check if there are search results
+  const hasResults = items.length > 0;
+  const showDropdown = open && value.length >= minSearchLength;
+
+  // Form submission handler
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (open && hasResults && highlightedIndex >= 0) {
+      // Select highlighted item
+      const selectedItem = items[highlightedIndex];
+      onChange(selectedItem.id);
+
+      if (onSelectItem) {
+        onSelectItem(selectedItem);
+      }
+
+      setOpen(false);
+
+      // Ensure input maintains focus after submission
+      requestAnimationFrame(() => {
+        inputRef.current?.focus();
+      });
+    } else if (onSubmit) {
+      // Custom submit callback
+      onSubmit();
+    }
+  };
+
+  // Input change handler
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    onChange(newValue);
+

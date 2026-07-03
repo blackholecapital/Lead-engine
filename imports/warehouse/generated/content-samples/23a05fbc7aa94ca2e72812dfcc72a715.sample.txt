@@ -1,0 +1,11 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/topics/types.ts
+
+export interface Topic {
+  _id: string;
+  _environmentId: string;
+  _organizationId: string;
+  key: string;
+  name: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
