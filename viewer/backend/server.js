@@ -7,6 +7,7 @@ const app=express();
 app.use(cors());
 
 require("./routes/runtime")(app);
+require("./routes/assets")(app);
 require("./routes/retrieval")(app);
 require("./routes/indexes")(app);
 require("./routes/storage")(app);
