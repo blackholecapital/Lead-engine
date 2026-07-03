@@ -10,19 +10,33 @@ const MAP={
   node:"graphs/nodes"
 };
 
+function load(dir,prefix){
+    try{
+        const full=path.join(ROOT,dir);
+        const file=fs.readdirSync(full).find(f=>f.startsWith(prefix+"."));
+        if(!file) return null;
+
+        return {
+            file,
+            data:JSON.parse(
+                fs.readFileSync(path.join(full,file),"utf8")
+            )
+        };
+    }catch{
+        return null;
+    }
+}
+
 module.exports=app=>app.get("/api/related/:asset",(req,res)=>{
 
-  const asset=req.params.asset;
-  const out={id:asset};
+    const id=req.params.asset;
 
-  for(const [type,dir] of Object.entries(MAP)){
-    try{
-      const full=path.join(ROOT,dir);
-      const match=fs.readdirSync(full).find(f=>f.startsWith(asset+"."));
-      if(match) out[type]=match;
-    }catch(e){}
-  }
-
-  res.json(out);
+    res.json({
+        id,
+        vector:load(MAP.vector,id),
+        rank:load(MAP.rank,id),
+        score:load(MAP.score,id),
+        node:load(MAP.node,id)
+    });
 
 });
