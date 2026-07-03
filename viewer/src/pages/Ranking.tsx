@@ -1,9 +1,8 @@
-import Explorer from "../components/Explorer";
+import AssetWorkbench from "../components/AssetWorkbench";
 import {getRanking} from "../api/runtime";
 
-export default function Ranking(){
-return (
-<Explorer
+export default ()=>(
+<AssetWorkbench
 title="Ranking"
 queryKey="ranking"
 queryFn={getRanking}
@@ -12,4 +11,3 @@ countField="count"
 inspectType="rank"
 />
 );
-}
