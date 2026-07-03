@@ -1,0 +1,6 @@
+{
+  "id":"2acbbf9ddf4bbc867230bbe41b396778",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/create-gql-enum-filter-type.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

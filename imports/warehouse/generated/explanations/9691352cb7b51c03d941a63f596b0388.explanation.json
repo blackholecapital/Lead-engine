@@ -1,0 +1,6 @@
+{
+  "id":"9691352cb7b51c03d941a63f596b0388",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/DatasetEditor/DatasetFieldMetadataSidebar/DatasetFieldMetadataFkTargetPicker.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"3d525a958471702ee5a4f3d3abb1f994",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/exceptions/workspace-graphql-schema.exception.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

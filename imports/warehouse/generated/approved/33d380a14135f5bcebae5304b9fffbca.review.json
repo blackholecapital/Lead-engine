@@ -1,0 +1,12 @@
+{
+  "id": "33d380a14135f5bcebae5304b9fffbca",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/dal/src/repositories/workflow-override/workflow-override.schema.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

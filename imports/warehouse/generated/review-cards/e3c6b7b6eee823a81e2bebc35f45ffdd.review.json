@@ -1,0 +1,13 @@
+{
+  "id": "e3c6b7b6eee823a81e2bebc35f45ffdd",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/notifications/src/workflows/usage-report/email.tsx",
+  "score": 85,
+  "suggested_tags": [
+    "react",
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

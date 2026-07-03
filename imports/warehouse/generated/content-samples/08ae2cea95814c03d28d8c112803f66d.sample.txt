@@ -1,0 +1,6 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/auth/hooks.ts
+
+import { createContextHook } from '@/utils/context';
+import { AuthContext } from './auth-context';
+
+export const useAuth = createContextHook(AuthContext);

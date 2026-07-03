@@ -1,0 +1,6 @@
+{
+  "id":"9384d6f855721ccd64092750dedce07e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/caching/components/DashboardAndQuestionCachingTab.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

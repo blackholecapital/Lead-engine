@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/code-snippets.ts
+
+import { API_HOSTNAME, IS_EU, IS_SELF_HOSTED } from '@/config';
+import { apiHostnameManager } from '@/utils/api-hostname-manager';
+
+export type CodeSnippet = {
+  identifier: string;
+  to: Record<string, unknown>;
+  payload: string;
+  secretKey?: string;
+};
+
+export type TriggerCurlCommandOptions = {
+  workflowId: string;
+  to: unknown;
+  payload: string | Record<string, unknown>;
+  apiKey: string;
+  baseUrl?: string;
+  addDashboardSource?: boolean;
+  context?: Record<string, unknown>;
+};
+
+const SECRET_KEY_ENV_KEY = 'NOVU_SECRET_KEY';
+
+const safeParsePayload = (payload: string) => {
+  try {
+    return JSON.parse(payload);
+  } catch {
+    return {};
+  }
+};
+
+export const createNodeJsSnippet = ({ identifier, to, payload, secretKey }: CodeSnippet) => {
+  const renderedSecretKey = secretKey ? `'${secretKey}'` : `process.env.${SECRET_KEY_ENV_KEY}`;
+  let serverConfig = '';
+
+  if (IS_EU) {
+    serverConfig = `,\n  serverIdx: 1`;
+  } else if (IS_SELF_HOSTED) {
+    serverConfig = `,\n  serverURL: '${API_HOSTNAME}'`;
+  }
+
+  return `import { Novu } from '@novu/api'; 
+
+const novu = new Novu({ 
+  secretKey: ${renderedSecretKey}${serverConfig}
+});
+
+novu.trigger(${JSON.stringify(
+    {
+      workflowId: identifier,
+      to,
+      payload: safeParsePayload(payload),
+    },
+    null,
+    2
+  )
+    .replace(/"([^"]+)":/g, '$1:')
+    .replace(/"/g, "'")});
+`;
+};
+
+export const createCurlSnippet = ({ identifier, to, payload, secretKey = SECRET_KEY_ENV_KEY }: CodeSnippet) => {
+  return `curl -X POST '${API_HOSTNAME}/v1/events/trigger' \\
+  -H 'Authorization: ApiKey ${secretKey}' \\
+  -H 'Content-Type: application/json' \\
+  -d '${JSON.stringify(
+    {
+      name: identifier,
+      to,
+      payload: safeParsePayload(payload),
+    },
+    null,
+    2
+  )}'`;
+};
+
+const createTriggerRequestBody = ({
+  workflowId,
+  to,
+  payload,
+  addDashboardSource = true,
+  context,
+}: Omit<TriggerCurlCommandOptions, 'apiKey' | 'baseUrl'>) => {
+  let parsedPayload = {};
+
+  try {
+    parsedPayload = typeof payload === 'string' ? JSON.parse(payload) : payload;
+  } catch {
+    parsedPayload = {};
+  }
+
+  return {
+    name: workflowId,
+    to,
+    payload: addDashboardSource ? { ...parsedPayload, __source: 'dashboard' } : parsedPayload,
+    context,
+  };
+};
+
+export const generateTriggerCurlCommand = ({
+  workflowId,

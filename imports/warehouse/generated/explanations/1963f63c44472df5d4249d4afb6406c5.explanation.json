@@ -1,0 +1,6 @@
+{
+  "id":"1963f63c44472df5d4249d4afb6406c5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/components/general/Card.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

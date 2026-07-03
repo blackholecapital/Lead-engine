@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/progress/use-history-query-progress.ts
+
+import type { ComputedRef } from 'vue';
+import type { CommonQueryProgressData, HistoryQueryProgressType } from '@/modules/dashboard/progress/types';
+import { get } from '@vueuse/shared';
+import {
+  type HistoryEventsQueryData,
+  HistoryEventsQueryStatus,
+  TransactionsQueryStatus,
+} from '@/modules/core/messaging/types';
+import { useEventsQueryStatusStore } from '@/modules/history/use-events-query-status-store';
+import { type TxQueryStatusData, useTxQueryStatusStore } from '@/modules/history/use-tx-query-status-store';
+
+interface HistoryQueryProgressOperationData {
+  type: HistoryQueryProgressType;
+  address?: string;
+  chain?: string;
+  location?: string;
+  name?: string;
+  status: string;
+}
+
+export interface HistoryQueryProgress extends CommonQueryProgressData<HistoryQueryProgressOperationData> {}
+
+interface UseHistoryQueryProgressReturn {
+  progress: ComputedRef<HistoryQueryProgress | undefined>;
+}
+
+function getTransactionStatusDescription(status: TransactionsQueryStatus, t: ReturnType<typeof useI18n>['t']): string {
+  const statusDescriptions: Record<TransactionsQueryStatus, string> = {
+    [TransactionsQueryStatus.ACCOUNT_CHANGE]: t('dashboard.history_query_indicator.transaction_status.querying_transactions_started'),
+    [TransactionsQueryStatus.CANCELLED]: t('dashboard.history_query_indicator.transaction_status.cancelled'),
+    [TransactionsQueryStatus.DECODING_TRANSACTIONS_FINISHED]: t('dashboard.history_query_indicator.transaction_status.decoding_transactions_finished'),
+    [TransactionsQueryStatus.DECODING_TRANSACTIONS_STARTED]: t('dashboard.history_query_indicator.transaction_status.decoding_transactions_started'),
+    [TransactionsQueryStatus.QUERYING_EVM_TOKENS_TRANSACTIONS]: t('dashboard.history_query_indicator.transaction_status.querying_evm_tokens_transactions'),
+    [TransactionsQueryStatus.QUERYING_INTERNAL_TRANSACTIONS]: t('dashboard.history_query_indicator.transaction_status.querying_internal_transactions'),
+    [TransactionsQueryStatus.QUERYING_TRANSACTIONS]: t('dashboard.history_query_indicator.transaction_status.querying_transactions'),
+    [TransactionsQueryStatus.QUERYING_TRANSACTIONS_FINISHED]: t('dashboard.history_query_indicator.transaction_status.querying_transactions_finished'),
+    [TransactionsQueryStatus.QUERYING_TRANSACTIONS_STARTED]: t('dashboard.history_query_indicator.transaction_status.querying_transactions_started'),
+  };
+
+  return statusDescriptions[status] || t('dashboard.history_query_indicator.transaction_status.default');
+}
+
+function getEventStatusDescription(status: HistoryEventsQueryStatus, t: ReturnType<typeof useI18n>['t']): string {
+  const statusDescriptions: Record<HistoryEventsQueryStatus, string> = {
+    [HistoryEventsQueryStatus.CANCELLED]: t('dashboard.history_query_indicator.event_status.cancelled'),
+    [HistoryEventsQueryStatus.QUERYING_EVENTS_FINISHED]: t('dashboard.history_query_indicator.event_status.querying_events_finished'),
+    [HistoryEventsQueryStatus.QUERYING_EVENTS_STARTED]: t('dashboard.history_query_indicator.event_status.querying_events_started'),
+    [HistoryEventsQueryStatus.QUERYING_EVENTS_STATUS_UPDATE]: t('dashboard.history_query_indicator.event_status.querying_events_status_update'),
+  };
+
+  return statusDescriptions[status] || t('dashboard.history_query_indicator.event_status.default');
+}
+
+interface TransactionProgressData {
+  currentOperation: string;
+  currentOperationData: HistoryQueryProgressOperationData;
+}
+
+interface EventProgressData {
+  currentOperation: string;
+  currentOperationData: HistoryQueryProgressOperationData;
+}
+
+function isTransactionActive(status: TxQueryStatusData): boolean {
+  if (status.status === TransactionsQueryStatus.CANCELLED)
+    return false;
+
+  if (status.subtype === 'bitcoin') {
+    return status.status !== TransactionsQueryStatus.DECODING_TRANSACTIONS_FINISHED;
+  }
+  return status.status !== TransactionsQueryStatus.QUERYING_TRANSACTIONS_FINISHED;
+}
+
+function isTransactionFinished(status: TxQueryStatusData): boolean {
+  if (status.status === TransactionsQueryStatus.CANCELLED)
+    return true;
+
+  if (status.subtype === 'bitcoin') {
+    return status.status === TransactionsQueryStatus.DECODING_TRANSACTIONS_FINISHED;
+  }
+  return status.status === TransactionsQueryStatus.QUERYING_TRANSACTIONS_FINISHED;
+}
+
+function createTransactionProgress(
+  activeTxStatus: TxQueryStatusData,
+  t: ReturnType<typeof useI18n>['t'],
+): TransactionProgressData {
+  const statusDesc = getTransactionStatusDescription(activeTxStatus.status, t);
+
+  return {
+    currentOperation: statusDesc,
+    currentOperationData: {
+      address: activeTxStatus.address,
+      chain: activeTxStatus.chain,
+      status: statusDesc,
+      type: 'transaction',
+    },
+  };
+}
+

@@ -1,0 +1,6 @@
+{
+  "id":"2e4d74c889ab150591f8a2d5068e346c",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/nodes/note-node/note-tools.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

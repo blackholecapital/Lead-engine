@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/conversations/conversation-timeline.tsx
+
+import { Fragment, useId, useMemo, useState } from 'react';
+import {
+  RiCheckboxCircleFill,
+  RiExpandUpDownLine,
+  RiReplyLine,
+  RiRobot2Line,
+  RiRouteFill,
+  RiShareForwardLine,
+} from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import { ConversationActivityDto } from '@/api/conversations';
+import { MarkdownText } from '@/components/primitives/markdown-text';
+import { Skeleton } from '@/components/primitives/skeleton';
+import { useEnvironment } from '@/context/environment/hooks';
+import { getProviderSquareIconFileName } from '@/utils/provider-square-icon';
+import { buildRoute, ROUTES } from '@/utils/routes';
+import { cn } from '@/utils/ui';
+import { ConversationStatusBadge } from './conversation-status-badge';
+import { SubscriberFallbackAvatar } from './subscriber-fallback-avatar';
+import { ToolProgressCard } from './tool-progress-card';
+
+type ConversationTimelineProps = {
+  activities: ConversationActivityDto[];
+  isLoading: boolean;
+  totalCount: number;
+  conversationStatus?: string;
+};
+
+const ATTACHMENT_ONLY_PREVIEW = '[Attachment]';
+
+function getActivityContent(activity: ConversationActivityDto): string {
+  if (activity.content.trim().length > 0) {
+    return activity.content;
+  }
+
+  if (activity.richContent?.attachments?.length) {
+    return ATTACHMENT_ONLY_PREVIEW;
+  }
+
+  return '';
+}
+
+function formatActivityTimestamp(dateStr: string | undefined): string {
+  if (!dateStr?.trim()) {
+    return '—';
+  }
+
+  const d = new Date(dateStr);
+
+  if (Number.isNaN(d.getTime())) {
+    return '—';
+  }
+
+  const day = String(d.getDate()).padStart(2, '0');
+  const month = d.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+  const year = String(d.getFullYear()).slice(2);
+  const time = d.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+
+  return `${day} ${month} ${year}, ${time}`;
+}
+
+function TimelineDivider() {
+  return (
+    <div className="px-[18px]">
+      <div className="border-stroke-soft h-2 border-l" />
+    </div>
+  );
+}
+
+function SenderHeader({ activity }: { activity: ConversationActivityDto }) {
+  const isAgent = activity.senderType === 'agent';
+  const name = activity.senderName ?? activity.senderId;
+
+  return (
+    <div className="flex items-center gap-1">
+      <div className="bg-bg-weak flex h-5 items-center rounded p-0.5">
+        <RiCheckboxCircleFill className="text-success-base size-4" />
+      </div>
+      <div
+        className={cn(
+          'flex max-w-[150px] items-center gap-1 rounded border px-1 py-0.5',
+          isAgent ? 'border-stroke-soft bg-white' : 'border-stroke-soft bg-bg-weak'
+        )}
+      >
+        {isAgent ? (
+          <RiRobot2Line className="text-text-sub size-4 shrink-0" />
+        ) : (
+          <SubscriberFallbackAvatar className="size-4" />
+        )}
+        <span className="text-text-sub text-label-xs min-w-0 truncate font-medium">{name}</span>
+      </div>
+      {isAgent && (
+        <div className="border-stroke-soft flex items-center rounded border bg-white px-1 py-0.5">
+          <RiRobot2Line className="text-text-soft size-4" />
+        </div>
+      )}
+    </div>
+  );
+}
+

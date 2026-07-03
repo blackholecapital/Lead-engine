@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/editor.tsx
+
+import { type TagStyle } from '@codemirror/language';
+import { tags as t } from '@lezer/highlight';
+import createTheme from '@uiw/codemirror-themes';
+import {
+  default as CodeMirror,
+  EditorView,
+  ReactCodeMirrorProps,
+  type ReactCodeMirrorRef,
+} from '@uiw/react-codemirror';
+import { cva } from 'class-variance-authority';
+import React, { useCallback, useMemo } from 'react';
+import { flushSync } from 'react-dom';
+import {
+  autocompleteFooter,
+  autocompleteHeader,
+  codeIcon,
+  digestIcon,
+  functionIcon,
+  keyIcon,
+} from '@/components/primitives/constants';
+import { useDataRef } from '@/hooks/use-data-ref';
+
+const variants = cva('h-full w-full flex-1 [&>.cm-focused]:outline-hidden!', {
+  variants: {
+    size: {
+      md: 'text-sm',
+      sm: 'text-xs',
+      '2xs': 'text-xs',
+      '3xs': 'text-xs',
+    },
+  },
+  defaultVariants: {
+    size: 'sm',
+  },
+});
+
+const baseTheme = (options: { multiline?: boolean }) =>
+  EditorView.baseTheme({
+    '&light': {
+      backgroundColor: 'transparent',
+    },
+    ...(options.multiline
+      ? {}
+      : {
+          '.cm-scroller': {
+            overflow: 'hidden',
+          },
+        }),
+    '.cm-line span.cm-matchingBracket': {
+      backgroundColor: 'hsl(var(--highlighted) / 0.1)',
+    },
+    // important to show the cursor at the beginning of the line
+    '.cm-line': {
+      marginLeft: '1px',
+      lineHeight: '20px',
+    },
+    'div.cm-content': {
+      padding: 0,
+    },
+    'div.cm-gutters': {
+      backgroundColor: 'transparent',
+      borderRight: 'none',
+      color: 'hsl(var(--foreground-400))',
+    },
+    '.cm-placeholder': {
+      fontWeight: 'normal',
+    },
+    '.cm-tooltip-autocomplete .cm-completionIcon-variable, .cm-tooltip-autocomplete .cm-completionIcon-local, .cm-tooltip-autocomplete .cm-completionIcon-property':
+      {
+        '&:before': {
+          content: 'Suggestions',
+        },
+        '&:after': {
+          content: "''",
+          height: '16px',
+          width: '16px',
+          display: 'block',
+          backgroundRepeat: 'no-repeat',
+          backgroundImage: `url('${functionIcon}')`,
+        },
+      },
+    '.cm-tooltip-autocomplete .cm-completionIcon-type': {
+      '&:before': {
+        content: 'Suggestions',
+      },
+      '&:after': {
+        content: "''",
+        height: '14px',
+        width: '14px',
+        display: 'block',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: `url('${codeIcon}')`,
+        backgroundPosition: 'center',
+      },
+    },
+    '.cm-tooltip-autocomplete .cm-completionIcon-keyword': {
+      '&:before': {
+        content: 'Suggestions',
+      },
+      '&:after': {

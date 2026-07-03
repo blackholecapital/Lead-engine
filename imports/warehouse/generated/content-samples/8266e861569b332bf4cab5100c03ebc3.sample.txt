@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/CalendarEventBuilder.ts
+
+import process from "node:process";
+import { ALL_APPS } from "@calcom/app-store/utils";
+import { getAssignmentReasonCategory } from "@calcom/features/bookings/lib/getAssignmentReasonCategory";
+import { getCalEventResponses } from "@calcom/features/bookings/lib/getCalEventResponses";
+import type { BookingRepository } from "@calcom/features/bookings/repositories/BookingRepository";
+import {
+  type EventTypeBrandingData,
+  getEventTypeService,
+} from "@calcom/features/eventtypes/di/EventTypeService.container";
+import { getTranslation } from "@calcom/i18n/server";
+import { parseRecurringEvent } from "@calcom/lib/isRecurringEvent";
+import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
+import type {
+  Attendee,
+  BookingReference,
+  BookingSeat,
+  DestinationCalendar,
+  Prisma,
+  User,
+} from "@calcom/prisma/client";
+import type { SchedulingType } from "@calcom/prisma/enums";
+import { bookingResponses as bookingResponsesSchema } from "@calcom/prisma/zod-utils";
+import type { AppsStatus, CalEventResponses, CalendarEvent, Person } from "@calcom/types/Calendar";
+import type { VideoCallData } from "@calcom/types/VideoApiAdapter";
+import type { TFunction } from "i18next";
+
+const getBookerBaseUrl = async (_orgSlug?: string | number | null): Promise<string> =>
+  process.env.NEXT_PUBLIC_WEBAPP_URL || "https://app.cal.com";
+
+type CalendarEventRequiredFields = Required<
+  Pick<CalendarEvent, "startTime" | "endTime" | "type" | "bookerUrl" | "title" | "organizer" | "attendees">
+>;
+type CalendarEventBuilderInit = CalendarEventRequiredFields & Partial<CalendarEvent>;
+const APP_TYPE_TO_NAME_MAP = new Map<string, string>(ALL_APPS.map((app) => [app.type, app.name]));
+
+async function _buildPersonFromUser(
+  user: Pick<User, "id" | "name" | "locale" | "username" | "email" | "timeFormat" | "timeZone">
+) {
+  const translate = await getTranslation(user.locale ?? "en", "common");
+  return {
+    id: user.id,
+    name: user.name || "Nameless",
+    email: user.email,
+    username: user.username || undefined,
+    timeZone: user.timeZone,
+    language: { translate, locale: user.locale ?? "en" },
+    timeFormat: getTimeFormatStringFromUserTimeFormat(user.timeFormat),
+  } satisfies Person;
+}
+
+async function _buildPersonFromAttendee(
+  attendee: Pick<Attendee, "locale" | "name" | "timeZone" | "email" | "phoneNumber"> & {
+    bookingSeat: Pick<
+      BookingSeat,
+      "id" | "referenceUid" | "bookingId" | "metadata" | "data" | "attendeeId"
+    > | null;
+  }
+) {
+  const translate = await getTranslation(attendee.locale ?? "en", "common");
+
+  return {
+    name: attendee.name ?? "",
+    email: attendee.email,
+    timeZone: attendee.timeZone,
+    language: { translate, locale: attendee.locale ?? "en" },
+    phoneNumber: attendee.phoneNumber,
+    bookingSeat: attendee.bookingSeat,
+  } satisfies Person;
+}
+
+export type BuiltCalendarEvent = Omit<CalendarEvent, "bookerUrl"> & { bookerUrl: string };
+export type BookingForCalEventBuilder = NonNullable<
+  Awaited<ReturnType<BookingRepository["getBookingForCalEventBuilder"]>>
+>;
+export type BookingMetaOptions = {
+  conferenceCredentialId?: number;
+  platformClientId?: string;
+  platformRescheduleUrl?: string;
+  platformCancelUrl?: string;
+  platformBookingUrl?: string;
+};
+
+export class CalendarEventBuilder {
+  private event: CalendarEventBuilderInit;
+
+  constructor(existingEvent: CalendarEventBuilderInit) {
+    this.event = existingEvent;
+  }
+
+  static fromEvent(event: CalendarEventBuilderInit) {
+    return new CalendarEventBuilder(event);
+  }
+
+  /**
+   * Builds a CalendarEventBuilder instance from a booking.
+   */
+  static async fromBooking(
+    booking: BookingForCalEventBuilder,
+    meta: BookingMetaOptions = {}
+  ): Promise<CalendarEventBuilder> {

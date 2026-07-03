@@ -1,0 +1,6 @@
+{
+  "id":"cb9e6141f78b32f50985cb4a50e92d2b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/chart-data/utils/build-group-by-field-object.util.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

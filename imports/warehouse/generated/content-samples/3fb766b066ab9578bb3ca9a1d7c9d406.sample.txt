@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/framework-guides.tsx
+
+import { motion } from 'motion/react';
+import { useState } from 'react';
+import { RiSparklingLine } from 'react-icons/ri';
+import { useTelemetry } from '../../hooks/use-telemetry';
+import { TelemetryEvent } from '../../utils/telemetry';
+import { CodeBlock, Language } from '../primitives/code-block';
+import { InlineToast } from '../primitives/inline-toast';
+import { Tabs, TabsList, TabsTrigger } from '../primitives/tabs';
+import { Framework, InstallationStep } from './framework-guides.instructions';
+
+type PackageManager = 'npm' | 'pnpm' | 'yarn';
+
+const stepAnimation = (index: number) => ({
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: {
+    duration: 0.3,
+    delay: index * 0.15,
+    ease: 'easeOut',
+  },
+});
+
+const numberAnimation = (index: number) => ({
+  initial: { scale: 0, opacity: 0 },
+  animate: { scale: 1, opacity: 1 },
+  transition: {
+    duration: 0.2,
+    delay: index * 0.15 + 0.1,
+    ease: 'easeOut',
+  },
+});
+
+const codeBlockAnimation = (index: number) => ({
+  initial: { opacity: 0, y: 10 },
+  animate: { opacity: 1, y: 0 },
+  transition: {
+    duration: 0.3,
+    delay: index * 0.15 + 0.2,
+    ease: 'easeOut',
+  },
+});
+
+function StepNumber({ index }: { index: number }) {
+  return (
+    <motion.div
+      {...numberAnimation(index)}
+      className="absolute -left-[47px] flex h-7 w-7 items-center justify-center rounded-full border border-neutral-200 p-[2px]"
+    >
+      <div className="flex h-full w-full items-center justify-center rounded-full bg-neutral-100">
+        <span className="text-sm font-medium text-neutral-950">{index + 1}</span>
+      </div>
+    </motion.div>
+  );
+}
+
+function StepContent({
+  title,
+  description,
+  tip,
+  packageManager,
+  onPackageManagerChange,
+  isInstallStep,
+  extra,
+}: {
+  title: string;
+  description: string;
+  tip?: InstallationStep['tip'];
+  packageManager?: PackageManager;
+  onPackageManagerChange?: (manager: PackageManager) => void;
+  isInstallStep?: boolean;
+  extra?: React.ReactNode;
+}) {
+  const track = useTelemetry();
+
+  const handlePackageManagerChange = (value: string) => {
+    track(TelemetryEvent.INBOX_CUSTOMIZATION_CHANGED, { packageManager: value });
+    onPackageManagerChange?.(value as PackageManager);
+  };
+
+  return (
+    <div className="flex w-[344px] max-w-md flex-col gap-3">
+      <div className="flex flex-col gap-2">
+        <span className="text-sm font-medium">{title}</span>
+        {isInstallStep && packageManager && onPackageManagerChange && (
+          <Tabs defaultValue={packageManager} value={packageManager} onValueChange={handlePackageManagerChange}>
+            <TabsList className="inline-flex items-center gap-2 bg-transparent p-0">
+              <TabsTrigger
+                value="npm"
+                className="relative text-xs font-medium text-[#525866] transition-colors hover:text-[#dd2476] data-[state=active]:text-[#dd2476]"
+              >
+                npm
+              </TabsTrigger>
+              <TabsTrigger
+                value="yarn"
+                className="relative text-xs font-medium text-[#525866] transition-colors hover:text-[#dd2476] data-[state=active]:text-[#dd2476]"
+              >
+                yarn
+              </TabsTrigger>
+              <TabsTrigger
+                value="pnpm"

@@ -1,0 +1,6 @@
+{
+  "id":"a053533f21283b76025266f238632a3f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/state/cursor-position-context.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

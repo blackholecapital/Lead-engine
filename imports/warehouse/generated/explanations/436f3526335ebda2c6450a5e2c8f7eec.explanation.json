@@ -1,0 +1,6 @@
+{
+  "id":"436f3526335ebda2c6450a5e2c8f7eec",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/components/presets/PresetSelector.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

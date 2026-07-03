@@ -1,0 +1,6 @@
+{
+  "id":"772d5452ff4bfe7acf178b205eda02d7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/QuestionInfoSidebar/QuestionPublicLinkPopover/QuestionPublicLinkPopover.unit.spec.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

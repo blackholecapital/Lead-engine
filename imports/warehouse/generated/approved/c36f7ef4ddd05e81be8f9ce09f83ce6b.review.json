@@ -1,0 +1,13 @@
+{
+  "id": "c36f7ef4ddd05e81be8f9ce09f83ce6b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/security_center/components/SecurityCenterPage/SecurityCenterPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

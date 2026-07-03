@@ -1,0 +1,11 @@
+{
+  "id": "5ca6dfb6397eabb25bfe913bdf4f7daf",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test/scenarios/actions/actions-on-dashboards.cy.spec.js",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

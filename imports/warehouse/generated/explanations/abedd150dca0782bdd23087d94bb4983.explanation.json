@@ -1,0 +1,6 @@
+{
+  "id":"abedd150dca0782bdd23087d94bb4983",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/containers/SliceAdder.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

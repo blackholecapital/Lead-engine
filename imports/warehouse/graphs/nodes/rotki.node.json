@@ -1,0 +1,11 @@
+{
+  "id": "rotki",
+  "label": "Rotki",
+  "category": "treasury",
+  "tags": [
+    "treasury",
+    "defi",
+    "portfolio"
+  ],
+  "type": "asset"
+}

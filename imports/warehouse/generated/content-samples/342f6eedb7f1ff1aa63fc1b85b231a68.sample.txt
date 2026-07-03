@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/retrieval/lancedb/docs/src/js/classes/PermutationBuilder.md
+
+[**@lancedb/lancedb**](../README.md) • **Docs**
+
+***
+
+[@lancedb/lancedb](../globals.md) / PermutationBuilder
+
+# Class: PermutationBuilder
+
+A PermutationBuilder for creating data permutations with splits, shuffling, and filtering.
+
+This class provides a TypeScript wrapper around the native Rust PermutationBuilder,
+offering methods to configure data splits, shuffling, and filtering before executing
+the permutation to create a new table.
+
+## Methods
+
+### execute()
+
+```ts
+execute(): Promise<Table>
+```
+
+Execute the permutation and create the destination table.
+
+#### Returns
+
+`Promise`&lt;[`Table`](Table.md)&gt;
+
+A Promise that resolves to the new Table instance
+
+#### Example
+
+```ts
+const permutationTable = await builder.execute();
+console.log(`Created table: ${permutationTable.name}`);
+```
+
+***
+
+### filter()
+
+```ts
+filter(filter): PermutationBuilder
+```
+
+Configure filtering for the permutation.
+
+#### Parameters
+
+* **filter**: `string`
+    SQL filter expression
+
+#### Returns
+
+[`PermutationBuilder`](PermutationBuilder.md)
+
+A new PermutationBuilder instance
+
+#### Example
+
+```ts
+builder.filter("age > 18 AND status = 'active'");
+```
+
+***
+
+### persist()
+
+```ts
+persist(connection, tableName): PermutationBuilder
+```
+
+Configure the permutation to be persisted.
+
+#### Parameters
+
+* **connection**: [`Connection`](Connection.md)
+    The connection to persist the permutation to
+
+* **tableName**: `string`
+    The name of the table to create
+
+#### Returns
+
+[`PermutationBuilder`](PermutationBuilder.md)
+
+A new PermutationBuilder instance
+
+#### Example
+
+```ts
+builder.persist(connection, "permutation_table");
+```
+
+***
+
+### shuffle()
+
+```ts
+shuffle(options): PermutationBuilder

@@ -1,0 +1,14 @@
+{
+  "id": "cal-com",
+  "title": "Cal.com",
+  "category": "workspace",
+  "ranking": {
+    "implementation": 88,
+    "reuse": 88,
+    "maturity": 88,
+    "retrieval": 88,
+    "graph": 88,
+    "vector": 88,
+    "final": 88
+  }
+}

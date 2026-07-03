@@ -1,0 +1,13 @@
+{
+  "id": "33a76119d359abcd84717af26e37cd46",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/embedding-sdk-bundle/hooks/private/use-normalize-guest-embed-question-or-dashboard-component-props.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

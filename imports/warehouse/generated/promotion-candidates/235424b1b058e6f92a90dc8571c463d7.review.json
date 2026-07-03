@@ -1,0 +1,13 @@
+{
+  "id": "235424b1b058e6f92a90dc8571c463d7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/admin/tools/components/TaskDetailsPage/TaskDetailsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

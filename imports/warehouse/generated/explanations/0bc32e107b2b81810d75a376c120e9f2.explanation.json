@@ -1,0 +1,6 @@
+{
+  "id":"0bc32e107b2b81810d75a376c120e9f2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/dashboards/graphql/queries/findOnePageLayout.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

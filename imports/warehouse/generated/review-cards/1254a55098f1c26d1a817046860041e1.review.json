@@ -1,0 +1,12 @@
+{
+  "id": "1254a55098f1c26d1a817046860041e1",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/docker/config/grafana/provisioning/dashboards/nodejs-runtime.json",
+  "score": 95,
+  "suggested_tags": [
+    "config",
+    "dashboard"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

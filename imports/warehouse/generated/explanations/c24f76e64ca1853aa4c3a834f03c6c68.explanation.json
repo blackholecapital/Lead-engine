@@ -1,0 +1,6 @@
+{
+  "id":"c24f76e64ca1853aa4c3a834f03c6c68",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/DatasetEditor/constants.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

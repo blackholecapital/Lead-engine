@@ -1,0 +1,12 @@
+{
+  "id": "94ee8b8b6f6bf10458ddc6caf41b3d59",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/hooks/use-is-parameter-panel-sticky.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/form/faceted-filter/facated-form-filter.tsx
+
+import { PlusCircle } from 'lucide-react';
+import * as React from 'react';
+import { cn } from '../../../../utils/ui';
+import { Button } from '../../button';
+import { Popover, PopoverContent, PopoverTrigger } from '../../popover';
+import { FilterBadge } from './components/filter-badge';
+import { MultiFilterContent } from './components/multi-filter-content';
+import { SingleFilterContent } from './components/single-filter-content';
+import { TextFilterContent } from './components/text-filter-content';
+import { STYLES } from './styles';
+import { FacetedFilterProps } from './types';
+
+export function FacetedFormFilter({
+  title,
+  type = 'multi',
+  size = 'default',
+  options = [],
+  selected = [],
+  onSelect,
+  value = '',
+  onChange,
+  placeholder,
+  open,
+  onOpenChange,
+  icon: Icon,
+  hideTitle = false,
+  hidePlusIcon = false,
+  hideSearch = false,
+  hideClear = false,
+  className,
+  trailingNode,
+  disabled,
+  searchQuery: controlledSearchQuery,
+  onSearchQueryChange,
+  isLoading = false,
+}: FacetedFilterProps) {
+  const [internalSearchQuery, setInternalSearchQuery] = React.useState('');
+  const inputRef = React.useRef<HTMLInputElement | null>(null);
+
+  const isSearchControlled = controlledSearchQuery !== undefined && onSearchQueryChange !== undefined;
+  const searchQuery = isSearchControlled ? controlledSearchQuery : internalSearchQuery;
+  const setSearchQuery = isSearchControlled ? onSearchQueryChange : setInternalSearchQuery;
+
+  const selectedValues = React.useMemo(() => new Set(selected), [selected]);
+  const currentValue = React.useMemo(() => value, [value]);
+  const sizes = STYLES.size[size];
+
+  const filteredOptions = React.useMemo(() => {
+    if (!searchQuery) return options;
+    return options.filter((option) => option.label.toLowerCase().includes(searchQuery.toLowerCase()));
+  }, [options, searchQuery]);
+
+  React.useEffect(() => {
+    if (open && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [open]);
+
+  const handleSelect = (selectedValue: string) => {
+    if (type === 'single') {
+      onSelect?.([selectedValue]);
+      return;
+    }
+
+    const newSelectedValues = new Set(selectedValues);
+
+    if (newSelectedValues.has(selectedValue)) {
+      newSelectedValues.delete(selectedValue);
+    } else {
+      newSelectedValues.add(selectedValue);
+    }
+
+    onSelect?.(Array.from(newSelectedValues));
+  };
+
+  const handleClear = () => {
+    if (type === 'text') {
+      onChange?.('');
+    } else {
+      onSelect?.([]);
+    }
+
+    setSearchQuery('');
+  };
+
+  const renderTriggerContent = () => {
+    if (type === 'text' && currentValue) {
+      return <FilterBadge content={currentValue} size={size} />;
+    }
+
+    if (selectedValues.size === 0) return null;
+
+    const selectedCount = selectedValues.size;
+    const selectedItems = options.filter((option) => selectedValues.has(option.value));
+
+    return (
+      <>
+        <div className="lg:hidden">
+          <FilterBadge content={selectedCount} size={size} />
+        </div>

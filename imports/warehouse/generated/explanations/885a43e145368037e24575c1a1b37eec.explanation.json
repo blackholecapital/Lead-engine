@@ -1,0 +1,6 @@
+{
+  "id":"885a43e145368037e24575c1a1b37eec",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/hooks/use-notebook-screen-size.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

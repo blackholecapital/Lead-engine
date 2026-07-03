@@ -1,0 +1,13 @@
+{
+  "id": "65823c7c43e8da21f6873b393aab6a5d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/metabot/tests/query-builder-code-edit.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

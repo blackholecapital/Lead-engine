@@ -1,0 +1,6 @@
+{
+  "id":"b29b2c7a32bd7a93adce1ee11559daf0",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/settings/roles/role-permissions/object-level-permissions/record-level-permissions/components/SettingsRolePermissionsObjectLevelRecordLevelPermissionFilterBuilder.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

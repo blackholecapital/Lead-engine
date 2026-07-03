@@ -1,0 +1,6 @@
+{
+  "id":"201665f816a6bb3fd4dd05f26664dc4b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getEmptyLayout.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

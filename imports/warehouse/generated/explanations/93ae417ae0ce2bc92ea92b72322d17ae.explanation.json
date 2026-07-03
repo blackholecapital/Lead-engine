@@ -1,0 +1,6 @@
+{
+  "id":"93ae417ae0ce2bc92ea92b72322d17ae",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/charts/getEffectiveExtraFilters.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

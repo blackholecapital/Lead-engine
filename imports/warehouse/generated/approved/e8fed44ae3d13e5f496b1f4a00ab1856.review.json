@@ -1,0 +1,14 @@
+{
+  "id": "e8fed44ae3d13e5f496b1f4a00ab1856",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/agents/create-agent-fields/aws-claude-credentials-fields.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

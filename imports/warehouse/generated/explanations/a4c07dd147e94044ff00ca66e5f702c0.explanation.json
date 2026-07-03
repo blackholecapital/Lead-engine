@@ -1,0 +1,6 @@
+{
+  "id":"a4c07dd147e94044ff00ca66e5f702c0",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/AddHeadingOrTextButton.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

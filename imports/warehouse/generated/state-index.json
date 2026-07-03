@@ -1,0 +1,122 @@
+[
+  {
+    "id": "apache-age",
+    "title": "Apache AGE",
+    "category": "graph",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "cal-com",
+    "title": "Cal.com",
+    "category": "workspace",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "chatwoot",
+    "title": "Chatwoot",
+    "category": "comms",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "documenso",
+    "title": "Documenso",
+    "category": "documents",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "flexsearch",
+    "title": "FlexSearch",
+    "category": "scoring",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "fusejs",
+    "title": "FuseJS",
+    "category": "scoring",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "fuzzysort",
+    "title": "Fuzzysort",
+    "category": "scoring",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "lancedb",
+    "title": "LanceDB",
+    "category": "retrieval",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "listmonk",
+    "title": "Listmonk",
+    "category": "comms",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "memgraph",
+    "title": "Memgraph",
+    "category": "graph",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "novu",
+    "title": "Novu",
+    "category": "comms",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "postiz",
+    "title": "Postiz",
+    "category": "marketing",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "qdrant",
+    "title": "Qdrant",
+    "category": "retrieval",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "rotki",
+    "title": "Rotki",
+    "category": "treasury",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  },
+  {
+    "id": "tagify",
+    "title": "Tagify",
+    "category": "tagging",
+    "tier": "candidate",
+    "status": "downloaded",
+    "state": "candidate"
+  }
+]

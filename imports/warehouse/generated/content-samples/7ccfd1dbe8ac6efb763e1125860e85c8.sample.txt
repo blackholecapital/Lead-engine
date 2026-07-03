@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/maily/views/variable-view.tsx
+
+import type { Editor as TiptapEditor } from '@tiptap/core';
+import { NodeViewProps } from '@tiptap/core';
+import { NodeViewWrapper } from '@tiptap/react';
+import { JSONSchema7 } from 'json-schema';
+import { useCallback, useMemo, useState } from 'react';
+import { VariableFrom } from '@/components/maily/types';
+import { EditVariablePopover } from '@/components/variable/edit-variable-popover';
+import { useVariableValidation } from '@/components/variable/hooks/use-variable-validation';
+import { validateEnhancedDigestFilters } from '@/components/variable/utils';
+import { DIGEST_VARIABLES_ENUM, getDynamicDigestVariable } from '@/components/variable/utils/digest-variables';
+import { VariablePill } from '@/components/variable/variable-pill';
+import { parseVariable } from '@/utils/liquid';
+import { IsAllowedVariable, LiquidVariable } from '@/utils/parseStepVariables';
+import { resolveRepeatBlockAlias } from '../repeat-block-aliases';
+
+interface ParsedVariableData {
+  name: string;
+  filtersArray: string[];
+  fullLiquidExpression: string;
+  issues: ReturnType<typeof validateEnhancedDigestFilters> | null;
+}
+
+function parseVariableWithFallback(variable: string, fallbackName?: string, digestStepId?: string): ParsedVariableData {
+  const parsedVariable = parseVariable(variable);
+
+  if (!parsedVariable?.filtersArray) {
+    const safeName = fallbackName || '';
+    return {
+      name: safeName,
+      fullLiquidExpression: `{{${safeName}}}`,
+      filtersArray: [],
+      issues: null,
+    };
+  }
+
+  let issue: ReturnType<typeof validateEnhancedDigestFilters> = null;
+  const { value } = getDynamicDigestVariable({
+    type: DIGEST_VARIABLES_ENUM.SENTENCE_SUMMARY,
+    digestStepName: digestStepId,
+  });
+
+  if (value && value.split('|')[0].trim() === parsedVariable.name) {
+    issue = validateEnhancedDigestFilters(parsedVariable.filtersArray);
+  }
+
+  return {
+    name: parsedVariable.name,
+    filtersArray: parsedVariable.filtersArray,
+    fullLiquidExpression: parsedVariable.fullLiquidExpression,
+    issues: issue,
+  };
+}
+
+function createLiquidVariable(fullLiquidExpression: string, aliasFor?: string | null): LiquidVariable {
+  return {
+    name: fullLiquidExpression,
+    aliasFor: aliasFor || undefined,
+  };
+}
+
+// Component for TipTap editor nodes (inline variables in content)
+export function NodeVariablePill(
+  props: NodeViewProps & {
+    digestStepName?: string;
+    variables: LiquidVariable[];
+    isAllowedVariable: IsAllowedVariable;
+    children?: React.ReactNode;
+    isPayloadSchemaEnabled?: boolean;
+    getSchemaPropertyByKey?: (keyPath: string) => JSONSchema7 | undefined;
+    openSchemaDrawer?: (variableName: string) => void;
+    handleCreateNewVariable?: (variableName: string) => void;
+  }
+) {
+  const {
+    node,
+    updateAttributes,
+    editor,
+    isAllowedVariable,
+    deleteNode,
+    variables,
+    children,
+    digestStepName,
+    isPayloadSchemaEnabled = false,
+    getSchemaPropertyByKey = () => undefined,
+    openSchemaDrawer = () => {},
+    handleCreateNewVariable = () => {},
+  } = props;
+  const { id, aliasFor } = node.attrs;
+  const [variableValue, setVariableValue] = useState(`{{${id}}}`);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const parsedData = useMemo(
+    () => parseVariableWithFallback(variableValue, undefined, digestStepName),
+    [variableValue, digestStepName]
+  );
+
+  const variable = useMemo(
+    () => createLiquidVariable(parsedData.fullLiquidExpression, aliasFor),
+    [parsedData.fullLiquidExpression, aliasFor]
+  );

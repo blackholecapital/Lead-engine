@@ -1,0 +1,12 @@
+{
+  "id": "123d9f5adaad41af609672d161df0279",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/page-layout/widgets/graph/constants/DashboardAggregateOperationRatio.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"f1917fab6c8dd9b055ce01a1fb268fcf",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/AutoRefreshIndicator/index.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

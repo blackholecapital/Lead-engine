@@ -1,0 +1,15 @@
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/chatwoot
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/documents/documenso
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/graph/apache-age
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/graph/memgraph
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/marketing/postiz
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/retrieval/lancedb
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/retrieval/qdrant
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/scoring/flexsearch
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/scoring/fusejs
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/scoring/fuzzysort
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/tagging/tagify
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki
+/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com

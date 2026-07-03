@@ -1,0 +1,6 @@
+{
+  "id":"47b0f20d9807ba00137b114455ee0a60",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/reducers.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

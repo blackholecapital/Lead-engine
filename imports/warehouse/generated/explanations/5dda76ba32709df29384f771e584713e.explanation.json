@@ -1,0 +1,6 @@
+{
+  "id":"5dda76ba32709df29384f771e584713e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/DataSourceSelectors/DataSourceSelectors.jsx",
+  "reasons":" builder-pattern,"
+}

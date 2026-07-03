@@ -1,0 +1,6 @@
+{
+  "id":"01a5ed67b5f418ac92dcddc255b55ad1",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/webhooks/lib/factory/base/BaseMeetingPayloadBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

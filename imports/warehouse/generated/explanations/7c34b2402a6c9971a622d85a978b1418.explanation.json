@@ -1,0 +1,6 @@
+{
+  "id":"7c34b2402a6c9971a622d85a978b1418",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/packages/ag-grid-enterprise/src/advancedFilter/builder/addDropdownComp.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

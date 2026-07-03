@@ -1,0 +1,11 @@
+{
+  "id": "642757b6d1a3e1f470a3dd3652c0670d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test/scenarios/dashboard-filters/shared/dashboard-filters-sql-text-category.js",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

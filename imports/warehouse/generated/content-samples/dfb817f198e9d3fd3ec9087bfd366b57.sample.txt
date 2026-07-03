@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/schema-editor/components/array-section.tsx
+
+import { memo, useCallback, useMemo } from 'react';
+import { type Control, Path, useFieldArray, useWatch } from 'react-hook-form';
+import { RiAddLine } from 'react-icons/ri';
+import { v4 as uuidv4 } from 'uuid';
+
+import { Button } from '@/components/primitives/button';
+import { Label } from '@/components/primitives/label';
+import { cn } from '@/utils/ui';
+import { MAX_NESTING_DEPTH } from '../constants';
+import { useSchemaPropertyType } from '../hooks/use-schema-property-type';
+import type { JSONSchema7 } from '../json-schema';
+import { SchemaPropertyRow } from '../schema-property-row';
+import type { VariableUsageInfo } from '../utils/check-variable-usage';
+import { newProperty } from '../utils/json-helpers';
+import { getMarginClassPx } from '../utils/ui-helpers';
+import type { PropertyListItem, SchemaEditorFormValues } from '../utils/validation-schema';
+import { PropertyTypeSelector } from './property-type-selector';
+
+interface ArrayItemPropertyProps {
+  className?: string;
+  itemNestedIndex: number;
+  itemPropertiesListPath: string;
+  control: Control<any>;
+  onRemove: () => void;
+  arrayItemPath: string;
+  onCheckVariableUsage?: (keyName: string, parentPath: string) => VariableUsageInfo;
+  depth: number;
+  readOnly?: boolean;
+}
+
+const ArrayItemProperty = memo<ArrayItemPropertyProps>(function ArrayItemProperty({
+  className,
+  itemNestedIndex,
+  itemPropertiesListPath,
+  control,
+  onRemove,
+  arrayItemPath,
+  onCheckVariableUsage,
+  depth,
+  readOnly = false,
+}) {
+  const itemNestedItem = useWatch({
+    control,
+    name: `${itemPropertiesListPath}.${itemNestedIndex}`,
+  }) as PropertyListItem;
+
+  const itemVariableUsageInfo = useMemo(() => {
+    const itemKeyName = itemNestedItem?.keyName;
+    return onCheckVariableUsage && itemKeyName ? onCheckVariableUsage(itemKeyName, arrayItemPath) : undefined;
+  }, [onCheckVariableUsage, itemNestedItem?.keyName, arrayItemPath]);
+
+  return (
+    <SchemaPropertyRow
+      className={className}
+      control={control}
+      index={itemNestedIndex}
+      pathPrefix={`${itemPropertiesListPath}.${itemNestedIndex}` as Path<SchemaEditorFormValues>}
+      onDeleteProperty={onRemove}
+      indentationLevel={0}
+      parentPath={arrayItemPath}
+      variableUsageInfo={itemVariableUsageInfo}
+      onCheckVariableUsage={onCheckVariableUsage}
+      depth={depth + 1}
+      readOnly={readOnly}
+    />
+  );
+});
+
+interface ArraySectionProps {
+  itemSchemaObjectPath: string;
+  itemPropertiesListPath: string;
+  control: Control<any>;
+  setValue: any;
+  getValues: any;
+  indentationLevel: number;
+  currentFullPath: string;
+  onCheckVariableUsage?: (keyName: string, parentPath: string) => VariableUsageInfo;
+  depth: number;
+  readOnly?: boolean;
+}
+
+export const ArraySection = memo<ArraySectionProps>(function ArraySection({
+  itemSchemaObjectPath,
+  itemPropertiesListPath,
+  control,
+  setValue,
+  getValues,
+  indentationLevel,
+  currentFullPath,
+  onCheckVariableUsage,
+  depth,
+  readOnly = false,
+}) {
+  const itemSchemaObject = useWatch({ control, name: itemSchemaObjectPath }) as JSONSchema7 | undefined;
+  const itemType = useSchemaPropertyType(itemSchemaObject);
+  const itemIsObject = itemType === 'object';
+
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: itemIsObject ? itemPropertiesListPath : `_unused_array_item_object_path_`,

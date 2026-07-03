@@ -1,0 +1,12 @@
+{
+  "id": "e00bebcc397091e3fb4e9670277ca7fb",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/pieces/community/ai/src/lib/actions/agents/agent-output-builder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

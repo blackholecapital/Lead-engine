@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/ai-prompts/framework-prompts/vue-prompt.ts
+
+import { PromptConfig, replaceConfigVariables } from './types';
+
+const KITCHEN_SINK_INBOX_SNIPPET = `<template>
+  <div>
+    <!-- Ensure the environment variable is available -->
+    <div v-if="applicationIdentifier" id="novu-notification-center"></div>
+    <div v-else>
+      <p>VITE_NOVU_APP_IDENTIFIER is not defined</p>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { onMounted, ref } from 'vue';
+import { Novu } from '@novu/js';
+
+// Core configuration
+const applicationIdentifier = import.meta.env.VITE_NOVU_APP_IDENTIFIER;
+const subscriberId = import.meta.env.VITE_NOVU_SUBSCRIBER_ID;
+
+// Backend configuration (for EU region use https://eu.api.novu.co and https://eu.ws.novu.co)
+const backendUrl = '';
+const socketUrl = '';
+
+// Appearance configuration
+const appearance = {
+  // Base theme configuration
+  baseTheme: 'dark', // Or undefined for light theme
+
+  // Variables for global styling
+  variables: {
+    colorPrimary: '',
+    colorPrimaryForeground: '',
+    colorSecondary: '',
+    colorSecondaryForeground: '',
+    colorCounter: '',
+    colorCounterForeground: '',
+    colorBackground: '',
+    colorRing: '',
+    colorForeground: '',
+    colorNeutral: '',
+    colorShadow: '',
+
+    // Typography and Layout
+    fontSize: '',
+  },
+  elements: {
+    bellIcon: {
+      color: '',
+    },
+  },
+};
+
+// Layout configuration
+const placement = '';
+const placementOffset = {};
+
+const novu = ref<Novu | null>(null);
+const isInitialized = ref(false);
+
+onMounted(async () => {
+  if (!applicationIdentifier || !subscriberId) return;
+
+  novu.value = new Novu(applicationIdentifier, {
+    backendUrl,
+    socketUrl,
+  });
+
+  await novu.value.init();
+  
+  novu.value.showNotificationCenter('#novu-notification-center', {
+    subscriberId,
+    appearance,
+    placement,
+    placementOffset,
+  });
+
+  isInitialized.value = true;
+});
+</script>`;
+
+const VUE_PROMPT = `You are an AI agent specialized in integrating the Novu Inbox component into Vue applications. Your primary goal is to seamlessly embed the Inbox component into existing UI structures while maintaining the host application's design patterns and functionality.
+
+### Primary Objectives:
+- **Composable Integration**: Create a Vue composable for Novu operations
+- **Appearance Customization**: Apply customization through the appearance configuration
+- **Pattern Respect**: Follow Vue 3 Composition API patterns and best practices
+
+### Optional Reference:
+- Consult https://docs.novu.co/platform/quickstart/vue for latest instructions if web access is available
+
+---
+
+## Context Analysis Requirements
+
+### Pre-Integration Assessment:
+Before starting the integration, analyze the host application to understand:
+
+**Project Structure Analysis**:
+- [ ] Package manager (pnpm, yarn, npm, bun)

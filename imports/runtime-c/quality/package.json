@@ -1,0 +1,17 @@
+{
+  "name": "quality",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^10.4.0",
+    "htmlhint": "^1.9.2",
+    "stylelint": "^17.12.0"
+  }
+}

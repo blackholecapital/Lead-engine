@@ -1,0 +1,6 @@
+{
+  "id":"3369a298e827927918431624c1577822",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/services/routeBuilders/dashboardBuilder.ts",
+  "reasons":" dashboard-feature, builder-pattern, typescript-source,"
+}

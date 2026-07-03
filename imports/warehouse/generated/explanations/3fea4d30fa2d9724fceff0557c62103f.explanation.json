@@ -1,0 +1,6 @@
+{
+  "id":"3fea4d30fa2d9724fceff0557c62103f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/lib/builders/CalendarEvent/class.ts",
+  "reasons":" calendar-feature, builder-pattern, typescript-source,"
+}

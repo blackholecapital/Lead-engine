@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/input.tsx
+
+import { Slot } from '@radix-ui/react-slot';
+import * as React from 'react';
+import { IconType } from 'react-icons';
+import type { PolymorphicComponentProps } from '@/utils/polymorphic';
+import { recursiveCloneChildren } from '@/utils/recursive-clone-children';
+import { tv, type VariantProps } from '@/utils/tv';
+import { AUTOCOMPLETE_PASSWORD_MANAGERS_OFF } from '../../utils/constants';
+
+const INPUT_ROOT_NAME = 'InputRoot';
+const INPUT_WRAPPER_NAME = 'InputWrapper';
+const INPUT_EL_NAME = 'InputEl';
+const INPUT_ICON_NAME = 'InputIcon';
+const INPUT_AFFIX_NAME = 'InputAffixButton';
+const INPUT_INLINE_AFFIX_NAME = 'InputInlineAffixButton';
+
+export const inputVariants = tv({
+  slots: {
+    root: [
+      // base
+      'ring-stroke-soft',
+      'group relative flex w-full overflow-hidden bg-bg-white text-text-strong shadow-xs',
+      'transition duration-200 ease-out',
+      'divide-x divide-stroke-soft',
+      // before
+      'before:absolute before:inset-0 before:ring-1 before:ring-inset before:ring-stroke-soft',
+      'before:pointer-events-none before:rounded-[inherit]',
+      'before:transition before:duration-200 before:ease-out',
+      // hover
+      'hover:shadow-none',
+      // focus
+      'has-[input:focus]:border-stroke-soft has-[input:focus]:ring-stroke-soft/50 has-[input:focus]:ring-[3px]',
+      'focus-within:border-stroke-soft focus-within:ring-stroke-soft/50 focus-within:ring-[3px]',
+      // disabled
+      'has-[input:disabled]:shadow-none',
+      // aria-invalid
+      'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
+    ],
+    wrapper: [
+      // base
+      'group/input-wrapper flex w-full cursor-text items-center bg-bg-white',
+      'transition duration-200 ease-out',
+      // hover
+      'hover:[&:not(&:has(input:focus))]:bg-bg-weak',
+      // disabled
+      'has-[input:disabled]:pointer-events-none has-[input:disabled]:bg-bg-weak',
+    ],
+    input: [
+      // base
+      'w-full bg-transparent bg-none text-paragraph-sm text-text-strong outline-hidden',
+      'transition duration-200 ease-out',
+      // horizontal scroll with fade gradient
+      'overflow-x-auto scrollbar-thin',
+      'mask-[linear-gradient(to_right,black_calc(100%-1.5rem),transparent)]',
+      'mask-size-[100%_100%]',
+      'mask-no-repeat',
+      // placeholder
+      'placeholder:select-none placeholder:text-text-soft placeholder:transition placeholder:duration-200 placeholder:ease-out',
+      // hover placeholder
+      'group-hover/input-wrapper:placeholder:text-text-sub',
+      // focus
+      'focus:outline-hidden',
+      // focus placeholder
+      'group-has-[input:focus]:placeholder:text-text-sub',
+      // disabled
+      'disabled:text-text-disabled disabled:placeholder:text-text-disabled',
+    ],
+    icon: [
+      // base
+      'flex size-5 shrink-0 select-none items-center justify-center',
+      'transition duration-200 ease-out',
+      // placeholder state
+      'group-has-placeholder-shown:text-text-soft',
+      // filled state
+      'text-text-sub',
+      // hover
+      'group-hover/input-wrapper:group-has-placeholder-shown:text-text-sub',
+      // focus
+      'group-has-[input:focus]/input-wrapper:group-has-placeholder-shown:text-text-sub',
+      // disabled
+      'group-has-[input:disabled]/input-wrapper:text-text-disabled',
+    ],
+    affix: [
+      // base
+      'shrink-0 bg-bg-white text-paragraph-sm text-text-sub',
+      'flex items-center justify-center truncate',
+      'transition duration-200 ease-out',
+      // placeholder state
+      'group-has-placeholder-shown:text-text-soft',
+      // focus state
+      'group-has-[input:focus]:group-has-placeholder-shown:text-text-sub',
+    ],
+    inlineAffix: [
+      // base
+      'text-paragraph-sm text-text-sub',
+      // placeholder state
+      'group-has-placeholder-shown:text-text-soft',
+      // focus state
+      'group-has-[input:focus]:group-has-placeholder-shown:text-text-sub',
+    ],
+  },

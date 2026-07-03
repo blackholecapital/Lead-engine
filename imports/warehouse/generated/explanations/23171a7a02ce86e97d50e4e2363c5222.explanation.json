@@ -1,0 +1,6 @@
+{
+  "id":"23171a7a02ce86e97d50e4e2363c5222",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/DatasetEditor/DatasetFieldMetadataSidebar/DatasetFieldMetadataSemanticTypePicker.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

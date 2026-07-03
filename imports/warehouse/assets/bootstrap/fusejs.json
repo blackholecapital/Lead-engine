@@ -1,0 +1,9 @@
+{
+  "id":"fusejs",
+  "title":"FuseJS",
+  "category":"scoring",
+  "tags":["search","fuzzy","ranking"],
+  "source":"vendor-source/scoring/fusejs",
+  "status":"downloaded",
+  "tier":"candidate"
+}

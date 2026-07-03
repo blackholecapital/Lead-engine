@@ -1,0 +1,6 @@
+{
+  "id":"cce195655178c359e5a0a77ef0cdc5b4",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterBar/CrossFilters/ScopingModal/constants.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

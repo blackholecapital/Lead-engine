@@ -1,0 +1,14 @@
+{
+  "id": "68dea4e659ed5a4e341e3e3a6e8b759e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/filterscope/renderFilterScopeTreeNodes.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

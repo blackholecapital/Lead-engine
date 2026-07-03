@@ -1,0 +1,13 @@
+{
+  "id": "1637baddcb2fc9f44910aebfa15dbed2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/packages/router-generator/tests/generator/regex-tokens-inline/routes/dashboard.home-page.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

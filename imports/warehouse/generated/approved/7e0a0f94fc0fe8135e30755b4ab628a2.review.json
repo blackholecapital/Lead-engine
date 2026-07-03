@@ -1,0 +1,12 @@
+{
+  "id": "7e0a0f94fc0fe8135e30755b4ab628a2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/admin/embedding/embedding-hub/EmbeddingHubAdminSettingsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

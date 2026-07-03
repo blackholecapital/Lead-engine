@@ -1,0 +1,12 @@
+{
+  "id": "84abd89457f644ca41ed299ea9a490c3",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/usecases/upsert-preferences/upsert-workflow-preferences.command.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"d98b91dd8237bc458a63f94bd2df1b3b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/builders/view-filter/workspace-migration-view-filter-actions-builder.service.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

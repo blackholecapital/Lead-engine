@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/button.tsx
+
+import { Slot, Slottable } from '@radix-ui/react-slot';
+import * as React from 'react';
+import { IconType } from 'react-icons';
+import { RiArrowRightSLine, RiLoader4Line } from 'react-icons/ri';
+
+import type { PolymorphicComponentProps } from '@/utils/polymorphic';
+import { recursiveCloneChildren } from '@/utils/recursive-clone-children';
+import { tv, type VariantProps } from '@/utils/tv';
+import { cn } from '@/utils/ui';
+
+const BUTTON_ROOT_NAME = 'ButtonRoot';
+const BUTTON_ICON_NAME = 'ButtonIcon';
+
+export const buttonVariants = tv({
+  slots: {
+    root: [
+      // base
+      'group select-none relative inline-flex items-center justify-center whitespace-nowrap outline-hidden cursor-pointer disabled:cursor-default',
+      'transition duration-200 ease-out',
+      // focus
+      'focus:outline-hidden',
+      // disabled
+      'disabled:pointer-events-none [&:disabled:not(.loading)]:bg-bg-weak [&:disabled:not(.loading)]:text-text-disabled [&:disabled:not(.loading)]:ring-transparent',
+    ],
+    icon: [
+      // base
+      'flex size-5 shrink-0 items-center justify-center transition-transform duration-200',
+      'group-hover:[&.arrow-right-hover-animation]:translate-x-0.5',
+    ],
+  },
+  variants: {
+    variant: {
+      primary: {},
+      secondary: {},
+      error: {},
+    },
+    mode: {
+      filled: {},
+      outline: {
+        root: 'border',
+      },
+      lighter: {
+        root: 'ring-1 ring-inset',
+      },
+      ghost: {
+        root: 'ring-1 ring-inset',
+      },
+      gradient: {
+        root: '',
+      },
+    },
+    size: {
+      md: {
+        root: 'h-10 gap-3 rounded-10 px-3.5 text-label-sm',
+        icon: '',
+      },
+      sm: {
+        root: 'h-9 gap-3 rounded-lg px-3 text-label-sm',
+        icon: '',
+      },
+      xs: {
+        root: 'h-8 gap-2.5 rounded-lg px-3 text-label-xs',
+        icon: 'size-4',
+      },
+      '2xs': {
+        root: 'h-7 gap-2.5 rounded-lg px-2 text-label-xs',
+        icon: 'size-4',
+      },
+    },
+  },
+  compoundVariants: [
+    // #region variant=primary
+    {
+      variant: 'primary',
+      mode: 'filled',
+      class: {
+        root: [
+          // base
+          'bg-primary-base text-static-white',
+          // hover
+          'hover:bg-primary-darker',
+          // focus
+          'focus-visible:shadow-button-primary-focus',
+        ],
+      },
+    },
+    {
+      variant: 'primary',
+      mode: 'outline',
+      class: {
+        root: [
+          // base
+          'bg-bg-white text-primary-base ring-primary-base',
+          // hover
+          'hover:bg-primary-alpha-10 hover:ring-transparent',
+          // focus
+          'focus-visible:shadow-button-primary-focus',
+        ],
+      },
+    },

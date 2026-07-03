@@ -1,0 +1,6 @@
+{
+  "id":"b8213f05027fcb61445d90ebc64f65f0",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/dnd/dragDroppableConfig.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

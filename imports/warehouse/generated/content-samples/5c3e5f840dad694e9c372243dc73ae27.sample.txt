@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/components/parse-slack-credentials-block.ts
+
+import { CredentialsKeyEnum } from '@novu/shared';
+
+export type SlackCredentialField =
+  | CredentialsKeyEnum.ApplicationId
+  | CredentialsKeyEnum.ClientId
+  | CredentialsKeyEnum.SecretKey
+  | CredentialsKeyEnum.SigningSecret;
+
+type SlackFieldShape = {
+  key: SlackCredentialField;
+  label: string;
+  /** Aliases Slack has used historically; matched case-insensitively. */
+  aliases?: string[];
+  /** Validates the parsed value shape. Used for inline confidence hints. */
+  matches?: RegExp;
+};
+
+const SLACK_FIELDS: SlackFieldShape[] = [
+  {
+    key: CredentialsKeyEnum.ApplicationId,
+    label: 'App ID',
+    matches: /^A[A-Z0-9]{8,}$/,
+  },
+  {
+    key: CredentialsKeyEnum.ClientId,
+    label: 'Client ID',
+    matches: /^\d+\.\d+$/,
+  },
+  {
+    key: CredentialsKeyEnum.SecretKey,
+    label: 'Client Secret',
+    matches: /^[a-f0-9]{32,}$/i,
+  },
+  {
+    key: CredentialsKeyEnum.SigningSecret,
+    label: 'Signing Secret',
+    matches: /^[a-f0-9]{32,}$/i,
+  },
+];
+
+const NOISE_LINES = new Set([
+  'app credentials',
+  'date of app creation',
+  "you'll need to send this secret along with your client id when making your oauth.v2.access request.",
+  'slack signs the requests we send you using this secret. confirm that each request comes from slack by verifying its unique signature.',
+]);
+
+/**
+ * Slack masks secrets in its UI as a row of bullet glyphs. We need to recognize
+ * the most common ones so the parser can flag them instead of pushing the dots
+ * into the form. Covers •, ●, ·, ∙, ◦, ∘, ⚫, ⚪ and `*`.
+ */
+const MASK_CHAR_REGEX = /^[\u2022\u25CF\u00B7\u2219\u25E6\u2218\u26AB\u26AA*]+$/;
+
+function isMaskedValue(value: string): boolean {
+  const stripped = value.replace(/\s+/g, '');
+  if (stripped.length < 3) {
+    return false;
+  }
+
+  return MASK_CHAR_REGEX.test(stripped);
+}
+
+export type ParsedSlackCredentials = {
+  values: Partial<Record<SlackCredentialField, string>>;
+  matched: SlackCredentialField[];
+  invalid: SlackCredentialField[];
+  /** Labels we recognized but whose value was masked (e.g. `••••••••`). */
+  masked: SlackCredentialField[];
+  unknownLines: string[];
+};
+
+/**
+ * Parse the "App Credentials" block copied from a Slack app settings page.
+ *
+ * The block is a freeform mix of section headers and label/value pairs. Slack's
+ * format is stable enough to parse with a per-field label regex, but tolerant
+ * to label aliases, mid-line copy artefacts, and the surrounding marketing copy.
+ */
+export function parseSlackCredentialsBlock(input: string): ParsedSlackCredentials {
+  const result: ParsedSlackCredentials = {
+    values: {},
+    matched: [],
+    invalid: [],
+    masked: [],
+    unknownLines: [],
+  };
+
+  if (!input.trim()) {
+    return result;
+  }
+
+  const lines = input
+    .replace(/\r\n?/g, '\n')
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];

@@ -1,0 +1,6 @@
+{
+  "id":"0a9cd274719a009e98415a9f5b37d1d6",
+  "score":85,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/usecases/update-workflow-v0/update-workflow.command.ts",
+  "reasons":" workflow-feature, typescript-source,"
+}

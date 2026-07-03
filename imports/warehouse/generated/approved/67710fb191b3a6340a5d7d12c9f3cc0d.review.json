@@ -1,0 +1,14 @@
+{
+  "id": "67710fb191b3a6340a5d7d12c9f3cc0d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/metadata-modules/ai/ai-chat/services/system-prompt-builder.service.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "service",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

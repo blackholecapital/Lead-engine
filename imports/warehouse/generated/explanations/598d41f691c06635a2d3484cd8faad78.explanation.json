@@ -1,0 +1,6 @@
+{
+  "id":"598d41f691c06635a2d3484cd8faad78",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/packages/ag-grid-community/src/interfaces/iAdvancedFilterBuilderParams.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

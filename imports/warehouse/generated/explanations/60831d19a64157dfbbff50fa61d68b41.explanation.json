@@ -1,0 +1,6 @@
+{
+  "id":"60831d19a64157dfbbff50fa61d68b41",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/webhooks/lib/factory/versioned/v2021-10-20/BookingPayloadBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

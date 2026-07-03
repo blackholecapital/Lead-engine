@@ -1,0 +1,12 @@
+{
+  "id": "06dbf6f082ba87c3bca0086b6d1497d9",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/internal-sdk/src/models/operations/workflowcontrollerduplicateworkflow.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

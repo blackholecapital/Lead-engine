@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/inbox-connected-guide.tsx
+
+import { IEnvironment } from '@novu/shared';
+import { useEffect, useMemo } from 'react';
+import { RiCheckboxCircleFill, RiLoader3Line } from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom';
+import { useFetchApiKeys } from '@/hooks/use-fetch-api-keys';
+import { useFirstTriggerDetection } from '@/hooks/use-first-trigger-detection';
+import { usePageVisitTimestamp } from '@/hooks/use-page-visit-timestamp';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { type CodeSnippet, createCurlSnippet } from '@/utils/code-snippets';
+import { TelemetryEvent } from '@/utils/telemetry';
+import { ONBOARDING_DEMO_WORKFLOW_ID } from '../../config';
+import { useInitDemoWorkflow } from '../../hooks/use-init-demo-workflow';
+import { ROUTES } from '../../utils/routes';
+import { Button } from '../primitives/button';
+import { CodeBlock } from '../primitives/code-block';
+import { ToastIcon } from '../primitives/sonner';
+import { showErrorToast, showToast } from '../primitives/sonner-helpers';
+
+type InboxConnectedGuideProps = {
+  subscriberId: string;
+  environment: IEnvironment;
+};
+
+function generateCurlSnippet(userId: string, apiKey: string): string {
+  if (!apiKey) {
+    throw new Error('API key not found');
+  }
+
+  if (!userId || !userId.trim()) {
+    throw new Error('User ID not found');
+  }
+
+  const snippetProps: CodeSnippet = {
+    identifier: ONBOARDING_DEMO_WORKFLOW_ID,
+    to: { subscriberId: userId },
+    payload: '{}',
+    secretKey: apiKey,
+  };
+
+  return createCurlSnippet(snippetProps);
+}
+
+function WorkflowIntegrationSteps({ userId, apiKey }: { userId: string; apiKey: string }) {
+  const curl = useMemo(() => generateCurlSnippet(userId, apiKey), [userId, apiKey]);
+
+  return (
+    <div className="mt-5 w-full min-w-0">
+      <CodeBlock code={curl} language="shell" title="Terminal" />
+    </div>
+  );
+}
+
+function showStatusToast(variant: 'success' | 'error', message: string) {
+  showToast({
+    children: () => (
+      <>
+        <ToastIcon variant={variant} />
+        <span className="text-sm">{message}</span>
+      </>
+    ),
+    options: {
+      position: 'bottom-center',
+      style: {
+        left: '50%',
+        transform: 'translateX(-50%)',
+      },
+    },
+  });
+}
+
+export function InboxConnectedGuide({ subscriberId, environment }: InboxConnectedGuideProps) {
+  const navigate = useNavigate();
+  const telemetry = useTelemetry();
+  useInitDemoWorkflow(environment);
+  const apiKeysQuery = useFetchApiKeys();
+  const apiKeys = apiKeysQuery.data?.data ?? [];
+  const apiKey = apiKeys[0]?.key ?? '';
+  const hasValidApiKey = !apiKeysQuery.isLoading && !apiKeysQuery.error && apiKey;
+
+  // Track page visit timestamp (created when component mounts)
+  const visitTimestamp = usePageVisitTimestamp();
+
+  // First trigger detection - uses the page visit timestamp
+  const {
+    hasDetectedFirstTrigger,
+    isWaitingForTrigger,
+    startWaiting,
+    isLoading: isTriggerDetectionLoading,
+    error: triggerDetectionError,
+    isError: isTriggerDetectionError,
+    workflowsError,
+    isWorkflowsError,
+  } = useFirstTriggerDetection({
+    enabled: true,
+    firstVisitTimestamp: visitTimestamp,
+    onFirstTriggerDetected: () => {
+      showStatusToast('success', 'API trigger detected');
+    },
+  });
+

@@ -1,0 +1,6 @@
+{
+  "id":"bccec183f9f59ba3d68a537dfe8545fb",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/chart-data/services/bar-chart-data.service.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

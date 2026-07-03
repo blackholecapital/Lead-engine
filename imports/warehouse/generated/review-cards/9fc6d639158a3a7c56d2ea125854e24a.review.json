@@ -1,0 +1,14 @@
+{
+  "id": "9fc6d639158a3a7c56d2ea125854e24a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/components/project-layout/project-dashboard-page-header.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

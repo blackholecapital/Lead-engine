@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/onboarding/claude-agent-preview-illustration.tsx
+
+import {
+  ChatProviderIdEnum,
+  CLAUDE_BUILTIN_TOOLS,
+  ClaudeBuiltinTool,
+  CONVERSATIONAL_PROVIDERS,
+  EmailProviderIdEnum,
+  getMcpIconPath,
+} from '@novu/shared';
+import { AnimatePresence, motion } from 'motion/react';
+import { useMemo, useState } from 'react';
+import { RiFileCodeLine } from 'react-icons/ri';
+import { AwsIcon } from '@/components/icons/aws';
+import { ProviderIcon } from '@/components/integrations/components/provider-icon';
+import { LogoCircle } from '../icons/logo-circle';
+import { AnthropicAsteriskIcon } from './agent-flow-illustration-shared';
+import { AgentUsecasePreviewIllustration } from './agent-usecase-preview-illustration';
+
+export type ManagedConnectorKind = 'anthropic' | 'aws';
+
+/**
+ * Connector kinds renderable by {@link AgentCard}. Custom-code (self-hosted) agents reuse the
+ * card with a trimmed-down look: no status badge and no MCPs/Tools/Instructions sections, since
+ * those are wired up in the user's own code rather than a managed runtime.
+ */
+export type AgentCardConnectorKind = ManagedConnectorKind | 'custom';
+
+export type ManagedAgentPreviewStatus = 'idle' | 'connecting' | 'connected';
+
+type ClaudeAgentPreviewProps = {
+  connector: ManagedConnectorKind;
+  isDemoCredential: boolean;
+  status: ManagedAgentPreviewStatus;
+  /**
+   * Whether the agent has been provisioned on the backend. While the connect-phase form is
+   * still being filled in (or its submission is in flight), this is `false` and the channels
+   * section is rendered with a "placeholder" dimmed look. Flips to `true` once the agent
+   * record exists, at which point the channels card lights up and per-channel state takes over.
+   */
+  agentCreated: boolean;
+  name?: string;
+  description?: string;
+  instructions?: string;
+  mcpServers: ReadonlyArray<string>;
+  tools: ReadonlyArray<string>;
+  /**
+   * Provider id (from `ChatProviderIdEnum`/`EmailProviderIdEnum`) the user picked from the
+   * provider cards in the details phase. When set, the matching channel card lights up; if
+   * the provider isn't part of the base list it gets appended dynamically.
+   */
+  selectedProviderId?: string;
+  /**
+   * Provider ids whose integration is actually linked + connected to the agent. Each gets a
+   * green CONNECTED pill; any id outside the base list is appended dynamically. Both selected
+   * and connected ids are deduplicated against the base list while preserving insertion order.
+   */
+  connectedProviderIds?: ReadonlyArray<string>;
+};
+
+const TRANSITION = { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const };
+
+// Figma frame is 400px wide. We render at the same fidelity so the design lands pixel-for-pixel
+// once the OnboardingShell centers it in the 40% right panel.
+const FRAME_WIDTH = 400;
+
+function ClaudeAgentPreviewIllustration({
+  connector,
+  isDemoCredential,
+  status,
+  agentCreated,
+  name,
+  description,
+  instructions,
+  mcpServers,
+  tools,
+  selectedProviderId,
+  connectedProviderIds,
+}: ClaudeAgentPreviewProps) {
+  const hasContent = Boolean(name) || mcpServers.length > 0 || tools.length > 0 || Boolean(instructions);
+  const displayName = name?.trim() || 'Generate agent...';
+  const displayDescription =
+    description?.trim() ||
+    (hasContent
+      ? undefined
+      : connector === 'aws'
+        ? 'Generate an agent via Novu Copilot and provision it on AWS Claude.'
+        : 'Generate an agent via Novu Copilot and provision it in Claude via Novu.');
+  const isCardDimmed = !agentCreated;
+
+  return (
+    <div className="flex flex-col items-stretch" style={{ width: FRAME_WIDTH, fontFamily: 'Inter' }}>
+      <AgentCard
+        connector={connector}
+        isDemoCredential={isDemoCredential}
+        status={status}
+        agentCreated={agentCreated}
+        displayName={displayName}
+        isPlaceholderName={!name?.trim()}
+        description={displayDescription}
+        instructions={instructions}
+        mcpServers={mcpServers}

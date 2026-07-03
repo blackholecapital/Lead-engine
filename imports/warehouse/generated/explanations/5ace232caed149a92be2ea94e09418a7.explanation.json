@@ -1,0 +1,6 @@
+{
+  "id":"5ace232caed149a92be2ea94e09418a7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getChartIdsInFilterScope.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

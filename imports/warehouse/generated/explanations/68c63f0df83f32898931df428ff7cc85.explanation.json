@@ -1,0 +1,6 @@
+{
+  "id":"68c63f0df83f32898931df428ff7cc85",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/public/containers/PublicOrEmbeddedDashboard/PublicOrEmbeddedDashboardView.stories.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "31974a4eaf0fcd57509ced0a9a1a3f9d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test-component/scenarios/embedding-sdk/sdk-dashboard-controlled-parameters.cy.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

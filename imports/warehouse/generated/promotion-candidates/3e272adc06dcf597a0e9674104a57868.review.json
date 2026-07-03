@@ -1,0 +1,12 @@
+{
+  "id": "3e272adc06dcf597a0e9674104a57868",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/data-studio/library/snippets/pages/EditSnippetPage/EditSnippetPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

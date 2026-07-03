@@ -1,0 +1,12 @@
+{
+  "id": "9546016e267cbab7c92ccedf722e8105",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/metrics/pages/MetricOverviewPage/MetricOverviewPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,14 @@
+{
+  "id": "5d04e909deefdab28d6c89711380d09a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/identity-provider.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "provider",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

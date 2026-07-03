@@ -1,0 +1,6 @@
+{
+  "id":"bd13bd1523c91795b8d3eb9dd9a37fd2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/widgets/selection-chevron-button.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

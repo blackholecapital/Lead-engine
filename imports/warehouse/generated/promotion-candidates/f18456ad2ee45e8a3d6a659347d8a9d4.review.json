@@ -1,0 +1,12 @@
+{
+  "id": "f18456ad2ee45e8a3d6a659347d8a9d4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/View/StructuredQueryRightSidebar/StructuredQueryRightSidebar.jsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

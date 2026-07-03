@@ -1,0 +1,6 @@
+{
+  "id":"b54ae61d6a1ed45d914e0cc79f3c567d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/compute-composite-field-type-options.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

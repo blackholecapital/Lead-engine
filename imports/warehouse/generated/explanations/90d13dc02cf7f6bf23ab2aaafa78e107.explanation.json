@@ -1,0 +1,6 @@
+{
+  "id":"90d13dc02cf7f6bf23ab2aaafa78e107",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/RefreshIndicator.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

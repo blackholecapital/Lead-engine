@@ -1,0 +1,6 @@
+{
+  "id":"2477cc647616076470cc5d4a9afa902e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/containers/QueryBuilder.unsaved-changes-warning.unit.spec.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

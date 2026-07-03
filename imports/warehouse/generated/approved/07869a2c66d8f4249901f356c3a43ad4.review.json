@@ -1,0 +1,12 @@
+{
+  "id": "07869a2c66d8f4249901f356c3a43ad4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/dashboards/graphql/fragments/pageLayoutWidgetFragment.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

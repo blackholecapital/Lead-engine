@@ -1,0 +1,14 @@
+{
+  "id": "de2d7f13dc4f31a5bf1b5e10e1b5f8d2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/translations/translation-drawer/translation-drawer.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,12 @@
+{
+  "id": "d5dd6ebb0d7326bf2734833e8c6b2c29",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/notifications/src/workflows/usage-report/usage-report.workflow.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

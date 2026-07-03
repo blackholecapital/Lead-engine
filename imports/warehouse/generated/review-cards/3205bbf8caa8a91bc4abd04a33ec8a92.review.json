@@ -1,0 +1,14 @@
+{
+  "id": "3205bbf8caa8a91bc4abd04a33ec8a92",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ClickBehaviorSidebar/LinkOptions/LinkedEntityPicker/LinkedEntityPicker.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

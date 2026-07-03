@@ -1,0 +1,6 @@
+{
+  "id":"710a7de77c12082b39b262b9f8bce17d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/index.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

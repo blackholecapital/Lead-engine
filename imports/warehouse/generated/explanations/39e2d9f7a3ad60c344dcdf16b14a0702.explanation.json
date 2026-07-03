@@ -1,0 +1,6 @@
+{
+  "id":"39e2d9f7a3ad60c344dcdf16b14a0702",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-types/input/boolean-filter.input-type.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

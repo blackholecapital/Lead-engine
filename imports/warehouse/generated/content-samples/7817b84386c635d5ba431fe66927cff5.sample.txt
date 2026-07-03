@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/home/welcome-banner.tsx
+
+import { SVGProps, useId } from 'react';
+import type { IconType } from 'react-icons';
+import { RiArrowRightSLine, RiArrowRightUpLine } from 'react-icons/ri';
+import { Button } from '../../primitives/button';
+
+export type WelcomeBannerProps = {
+  badgeLabel: string;
+  badgeIcon: IconType;
+  /** Tailwind text color class for the badge (controls icon + label tint). */
+  badgeColorClassName: string;
+  /** Tailwind background tint class for the badge pill. */
+  badgeBackgroundClassName: string;
+  title: string;
+  description: string;
+  ctaLabel: string;
+  onCtaClick: () => void;
+  learnMore?: { onClick: () => void };
+};
+
+const BackgroundSvg = (props: SVGProps<SVGSVGElement>) => {
+  const uid = useId();
+  const id = (name: string) => `${uid}-${name}`;
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 790 116" preserveAspectRatio="none" {...props}>
+      <g filter={`url(#${id('a')})`} opacity=".4">
+        <g clipPath={`url(#${id('b')})`}>
+          <path fill="#fff" d="M0-50h790v170H0z" />
+          <g filter={`url(#${id('c')})`} opacity=".1">
+            <ellipse
+              cx="159.754"
+              cy="67.234"
+              fill="#ffba33"
+              rx="159.754"
+              ry="67.234"
+              transform="matrix(.96907 .2468 -.6364 .77136 182.556 44.563)"
+            />
+          </g>
+          <g filter={`url(#${id('d')})`} opacity=".1">
+            <ellipse
+              cx="292.491"
+              cy="100.85"
+              fill="#ff006a"
+              rx="292.491"
+              ry="100.85"
+              transform="matrix(.96907 .2468 -.6364 .77136 224.028 -66.844)"
+            />
+          </g>
+          <g filter={`url(#${id('e')})`} opacity=".1">
+            <ellipse
+              cx="286.618"
+              cy="117.249"
+              fill="#e300bd"
+              rx="286.618"
+              ry="117.249"
+              transform="matrix(.96907 .2468 -.6364 .77136 357.87 -148.062)"
+            />
+          </g>
+          <path fill={`url(#${id('f')})`} d="M0-31h811v275H0z" />
+        </g>
+      </g>
+      <defs>
+        <filter
+          id={id('a')}
+          width="804"
+          height="184"
+          x="-7"
+          y="-57"
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur result="effect1_foregroundBlur_8136_186653" stdDeviation="3.5" />
+        </filter>
+        <filter
+          id={id('c')}
+          width="376.474"
+          height="185.457"
+          x="106.344"
+          y="43.123"
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur result="effect1_foregroundBlur_8136_186653" stdDeviation="13.79" />
+        </filter>
+        <filter
+          id={id('d')}
+          width="636.524"
+          height="267.418"
+          x="125.028"
+          y="-50.572"
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur result="effect1_foregroundBlur_8136_186653" stdDeviation="13.79" />

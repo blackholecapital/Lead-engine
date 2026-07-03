@@ -1,0 +1,6 @@
+{
+  "id":"ba2d8840a2d92cb5931bbcb47773e0c5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/EmptyState.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

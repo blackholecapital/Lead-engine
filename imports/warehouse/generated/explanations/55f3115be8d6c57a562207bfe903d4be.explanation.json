@@ -1,0 +1,6 @@
+{
+  "id":"55f3115be8d6c57a562207bfe903d4be",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/server/api/src/app/mcp/mcp-server-builder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

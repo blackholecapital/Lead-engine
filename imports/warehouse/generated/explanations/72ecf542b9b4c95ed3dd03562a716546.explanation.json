@@ -1,0 +1,6 @@
+{
+  "id":"72ecf542b9b4c95ed3dd03562a716546",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/View/NativeQueryRightSidebar/NativeQueryRightSidebar.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

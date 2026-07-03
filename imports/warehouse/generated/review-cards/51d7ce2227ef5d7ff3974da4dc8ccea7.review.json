@@ -1,0 +1,15 @@
+{
+  "id": "51d7ce2227ef5d7ff3974da4dc8ccea7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/billing/plans-row.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "billing",
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

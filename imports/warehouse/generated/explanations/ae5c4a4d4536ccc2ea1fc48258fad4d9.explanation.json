@@ -1,0 +1,6 @@
+{
+  "id":"ae5c4a4d4536ccc2ea1fc48258fad4d9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/step-settings/update-piece-version-dialog/upgrade-piece-version-dialog.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

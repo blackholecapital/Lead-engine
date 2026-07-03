@@ -1,0 +1,24 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/progress/types.ts
+
+import type { TaskType } from '@/modules/core/tasks/task-type';
+
+export type BalanceQueryProgressType = TaskType.FETCH_DETECTED_TOKENS | TaskType.QUERY_BLOCKCHAIN_BALANCES;
+
+export interface BalanceQueryQueueItem {
+  id: string;
+  type: BalanceQueryProgressType;
+  chain: string;
+  address?: string;
+  status: 'pending' | 'running' | 'completed';
+  addedAt: number;
+}
+
+export interface CommonQueryProgressData<T> {
+  currentStep: number;
+  totalSteps: number;
+  percentage: number;
+  currentOperation: string | null;
+  currentOperationData: T | null;
+}
+
+export type HistoryQueryProgressType = 'transaction' | 'event';

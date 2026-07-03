@@ -1,0 +1,13 @@
+{
+  "id": "fc429c914a99c386d7c624418f0623b2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/pages/DashboardList/DashboardList.cardview.test.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

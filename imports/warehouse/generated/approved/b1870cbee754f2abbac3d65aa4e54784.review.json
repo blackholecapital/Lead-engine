@@ -1,0 +1,12 @@
+{
+  "id": "b1870cbee754f2abbac3d65aa4e54784",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/webhooks/lib/factory/versioned/v2021-10-20/OOOPayloadBuilder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"c221c0e87cd77316dba93bef3fa7bf07",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ClickMappings/ClickMappingsTargetWithoutSource.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/lib/builders/CalendarEvent/builder.ts
+
+import short from "short-uuid";
+import { v5 as uuidv5 } from "uuid";
+
+import dayjs from "@calcom/dayjs";
+import { getRescheduleLink } from "@calcom/lib/CalEventParser";
+import { getTranslation } from "@calcom/i18n/server";
+import prisma from "@calcom/prisma";
+import type { Prisma } from "@calcom/prisma/client";
+import type { CalendarEvent } from "@calcom/types/Calendar";
+
+import { CalendarEventClass } from "./class";
+
+const translator = short();
+const userSelect = {
+  id: true,
+  email: true,
+  name: true,
+  username: true,
+  timeZone: true,
+  credentials: true,
+  bufferTime: true,
+  destinationCalendar: true,
+  locale: true,
+} satisfies Prisma.UserSelect;
+
+// Single source of truth for user type
+type User = Prisma.UserGetPayload<{ select: typeof userSelect }>;
+
+// Base fields that are common between attendees and team members
+interface PersonAttendeeCommonFields {
+  id: number;
+  email: string;
+  name: string | null;
+  locale: string | null;
+  timeZone: string;
+  username: string | null;
+}
+
+// Team members extend the common fields with language
+interface TeamMember extends PersonAttendeeCommonFields {
+  language: {
+    translate: any;
+    locale: string;
+  };
+}
+
+// Add type for event type users that matches Prisma schema
+type EventTypeUser = Prisma.UserGetPayload<{
+  select: typeof userSelect;
+}>;
+
+interface ICalendarEventBuilder {
+  calendarEvent: CalendarEventClass;
+  eventType: Awaited<ReturnType<CalendarEventBuilder["getEventFromEventId"]>>;
+  users: User[];
+  attendeesList: PersonAttendeeCommonFields[];
+  teamMembers: TeamMember[];
+  rescheduleLink: string;
+}
+
+export class CalendarEventBuilder implements ICalendarEventBuilder {
+  calendarEvent!: CalendarEventClass;
+  eventType!: ICalendarEventBuilder["eventType"];
+  users!: ICalendarEventBuilder["users"];
+  attendeesList: ICalendarEventBuilder["attendeesList"] = [];
+  teamMembers: ICalendarEventBuilder["teamMembers"] = [];
+  rescheduleLink!: string;
+
+  constructor() {
+    this.reset();
+  }
+
+  private reset() {
+    this.calendarEvent = new CalendarEventClass();
+  }
+
+  public init(initProps: CalendarEventClass) {
+    this.calendarEvent = new CalendarEventClass(initProps);
+  }
+
+  public setEventType(eventType: ICalendarEventBuilder["eventType"]) {
+    this.eventType = eventType;
+  }
+
+  public async buildEventObjectFromInnerClass(eventId: number) {
+    const resultEvent = await this.getEventFromEventId(eventId);
+    if (resultEvent) {
+      this.eventType = resultEvent;
+    }
+  }
+
+  public async buildUsersFromInnerClass() {
+    if (!this.eventType) {
+      throw new Error("exec BuildEventObjectFromInnerClass before calling this function");
+    }
+    const users = this.eventType.users;
+
+    /* If this event was pre-relationship migration */
+    if (!users.length && this.eventType.userId) {
+      const eventTypeUser = await this.getUserById(this.eventType.userId);

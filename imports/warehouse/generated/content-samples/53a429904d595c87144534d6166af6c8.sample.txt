@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/vercel-integration-form.tsx
+
+import { useState } from 'react';
+import { useFieldArray, useForm } from 'react-hook-form';
+import { RiAddLine } from 'react-icons/ri';
+
+import type { GetVercelConfigurationDetails } from '@/api/partner-integrations';
+import { Button } from '@/components/primitives/button';
+import { Form, FormRoot } from '@/components/primitives/form/form';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/primitives/select';
+import { useUpdateVercelIntegration } from '@/hooks/use-update-vercel-integration';
+import { Delete } from './icons/delete';
+import { MultiSelect } from './primitives/multi-select';
+
+export type ProjectLinkFormValues = {
+  projectLinkState: GetVercelConfigurationDetails[];
+};
+
+type Option = {
+  value: string;
+  label: string;
+};
+
+export const VercelIntegrationForm = ({
+  vercelIntegrationDetails,
+  organizations,
+  projects,
+  configurationId,
+  next,
+  currentOrganizationId,
+}: {
+  vercelIntegrationDetails?: GetVercelConfigurationDetails[];
+  organizations: Option[];
+  projects: Option[];
+  configurationId: string | null;
+  next: string | null;
+  currentOrganizationId: string;
+}) => {
+  const [projectRowCount, setProjectRowCount] = useState(1);
+  const form = useForm<ProjectLinkFormValues>({
+    defaultValues: {
+      projectLinkState: vercelIntegrationDetails ?? [
+        {
+          projectIds: [],
+          organizationId: currentOrganizationId,
+        },
+      ],
+    },
+  });
+  const { fields, append, remove, update } = useFieldArray({
+    control: form.control,
+    name: 'projectLinkState',
+  });
+
+  const { mutate: updateVercelIntegration, isPending: isUpdateVercelIntegrationPending } = useUpdateVercelIntegration({
+    next,
+  });
+
+  const onSubmit = (data: ProjectLinkFormValues) => {
+    const payload = data.projectLinkState.reduce<Record<string, string[]>>((prev, curr) => {
+      const { organizationId, projectIds } = curr;
+      prev[organizationId] = projectIds;
+
+      return prev;
+    }, {});
+
+    if (configurationId) {
+      updateVercelIntegration({
+        data: payload,
+        configurationId,
+      });
+    }
+  };
+
+  const addRow = () => {
+    setProjectRowCount((prev) => prev + 1);
+    append({
+      organizationId: '',
+      projectIds: [],
+    });
+  };
+
+  const removeRow = (rowIndex: number) => {
+    remove(rowIndex);
+    setProjectRowCount((prev) => prev - 1);
+  };
+
+  const updateRow = (rowIndex: number, value: GetVercelConfigurationDetails) => {
+    update(rowIndex, value);
+  };
+
+  const isDisabledLinkMore = projectRowCount >= organizations.length || !!fields.find((el) => el.organizationId === '');
+
+  return (
+    <Form {...form}>
+      <FormRoot
+        autoComplete="off"
+        noValidate
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col"
+        id="link-vercel-projects"
+      >

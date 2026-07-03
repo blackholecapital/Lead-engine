@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/CalendarEventBuilder.test.ts
+
+import dayjs from "@calcom/dayjs";
+import type { BookingForCalEventBuilder } from "@calcom/features/CalendarEventBuilder";
+import { CalendarEventBuilder } from "@calcom/features/CalendarEventBuilder";
+import { TimeFormat } from "@calcom/lib/timeFormat";
+import type { CalendarEvent, Person } from "@calcom/types/Calendar";
+import type { TFunction } from "i18next";
+import { describe, expect, it, vi } from "vitest";
+
+vi.mock("@calcom/i18n/server", () => ({
+  getTranslation: vi.fn(async () => vi.fn(() => "translated")),
+}));
+
+vi.mock("@calcom/features/bookings/lib/getCalEventResponses", () => ({
+  getCalEventResponses: vi.fn(() => ({
+    responses: {
+      name: { label: "your_name", value: "Test User", isHidden: false },
+      email: { label: "email_address", value: "test@example.com", isHidden: false },
+    },
+    userFieldsResponses: {},
+  })),
+}));
+
+vi.mock("@calcom/prisma", () => ({
+  default: {},
+  prisma: {},
+}));
+
+describe("CalendarEventBuilder", () => {
+  const mockTranslate = vi.fn(() => "foo") as TFunction;
+  const mockStartTime = dayjs().add(1, "day").format();
+  const mockEndTime = dayjs().add(1, "day").add(30, "minutes").format();
+  const defaultOrganizer = {
+    id: 123,
+    name: "Organizer",
+    email: "organizer@example.com",
+    timeZone: "America/New_York",
+    language: {
+      translate: mockTranslate,
+      locale: "en",
+    },
+  };
+  const defaultAttendees = [
+    {
+      name: "Attendee",
+      email: "attendee@example.com",
+      timeZone: "Europe/London",
+      language: {
+        translate: mockTranslate,
+        locale: "en",
+      },
+    },
+  ];
+  const createBuilder = (overrides: Partial<CalendarEvent> = {}) =>
+    new CalendarEventBuilder({
+      bookerUrl: "https://cal.com/user/test-slug",
+      title: "Test Event",
+      startTime: mockStartTime,
+      endTime: mockEndTime,
+      type: "test-slug",
+      organizer: defaultOrganizer,
+      attendees: defaultAttendees,
+      ...overrides,
+    });
+
+  it("should create a basic calendar event", () => {
+    const event = createBuilder({ additionalNotes: "Some notes" })
+      .withEventType({
+        description: "Test description",
+        id: 123,
+      })
+      .build();
+
+    expect(event).not.toBeNull();
+    if (event) {
+      expect(event.bookerUrl).toBe("https://cal.com/user/test-slug");
+      expect(event.title).toBe("Test Event");
+      expect(event.startTime).toBe(mockStartTime);
+      expect(event.endTime).toBe(mockEndTime);
+      expect(event.additionalNotes).toBe("Some notes");
+    }
+  });
+
+  it("should create an event with event type details", () => {
+    const event = createBuilder()
+      .withEventType({
+        description: "Test description",
+        id: 123,
+        hideCalendarNotes: true,
+        hideCalendarEventDetails: false,
+      })
+      .build();
+
+    expect(event).not.toBeNull();
+    if (event) {
+      expect(event.type).toBe("test-slug");
+      expect(event.description).toBe("Test description");
+      expect(event.eventTypeId).toBe(123);
+      expect(event.hideCalendarNotes).toBe(true);
+      expect(event.hideCalendarEventDetails).toBe(false);
+    }

@@ -1,0 +1,12 @@
+{
+  "id": "fc8c1863d5a530f67953cbc70d7e32ea",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/internal-sdk/src/react-query/workflowsStepsRetrieve.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/webhooks/lib/factory/versioned/PayloadBuilderFactory.test.ts
+
+import { describe, it, expect, beforeEach } from "vitest";
+import { WebhookTriggerEvents } from "@calcom/prisma/enums";
+
+import type { BookingWebhookEventDTO } from "../../dto/types";
+import { PayloadBuilderFactory, type PayloadBuilderSet } from "./PayloadBuilderFactory";
+import * as V2021_10_20 from "./v2021-10-20";
+import { WebhookVersion as WebhookVersionEnum } from "../../interface/IWebhookRepository";
+
+describe("PayloadBuilderFactory", () => {
+  let factory: PayloadBuilderFactory;
+  let defaultBuilders: PayloadBuilderSet;
+
+  beforeEach(() => {
+    defaultBuilders = {
+      booking: new V2021_10_20.BookingPayloadBuilder(),
+      ooo: new V2021_10_20.OOOPayloadBuilder(),
+      recording: new V2021_10_20.RecordingPayloadBuilder(),
+      meeting: new V2021_10_20.MeetingPayloadBuilder(),
+    };
+
+    factory = new PayloadBuilderFactory(WebhookVersionEnum.V_2021_10_20, defaultBuilders);
+  });
+
+  describe("Constructor", () => {
+    it("should initialize with default version and builders", () => {
+      expect(factory).toBeInstanceOf(PayloadBuilderFactory);
+      expect(factory.getRegisteredVersions()).toContain(WebhookVersionEnum.V_2021_10_20);
+    });
+
+    it("should enforce required parameters at compile-time", () => {
+      // TypeScript ensures parameters are provided - no runtime check needed
+      expect(factory).toBeDefined();
+      expect(factory.getRegisteredVersions()).toHaveLength(1);
+    });
+  });
+
+  describe("Version Registration", () => {
+    it("should register new version with complete builder set", () => {
+      const newVersionBuilders: PayloadBuilderSet = {
+        booking: new V2021_10_20.BookingPayloadBuilder(),
+        ooo: new V2021_10_20.OOOPayloadBuilder(),
+        recording: new V2021_10_20.RecordingPayloadBuilder(),
+        meeting: new V2021_10_20.MeetingPayloadBuilder(),
+      };
+
+      factory.registerVersion("2024-12-01", newVersionBuilders);
+
+      expect(factory.getRegisteredVersions()).toContain("2024-12-01");
+      expect(factory.getRegisteredVersions()).toHaveLength(2);
+    });
+
+    it("should allow overwriting existing version", () => {
+      const newBuilders: PayloadBuilderSet = {
+        booking: new V2021_10_20.BookingPayloadBuilder(),
+        ooo: new V2021_10_20.OOOPayloadBuilder(),
+        recording: new V2021_10_20.RecordingPayloadBuilder(),
+        meeting: new V2021_10_20.MeetingPayloadBuilder(),
+      };
+
+      factory.registerVersion(WebhookVersionEnum.V_2021_10_20, newBuilders);
+
+      expect(factory.getRegisteredVersions()).toHaveLength(1);
+    });
+  });
+
+  describe("Builder Routing", () => {
+    it("should route booking events to booking builder", () => {
+      const bookingTriggers = [
+        WebhookTriggerEvents.BOOKING_CREATED,
+        WebhookTriggerEvents.BOOKING_CANCELLED,
+        WebhookTriggerEvents.BOOKING_REQUESTED,
+        WebhookTriggerEvents.BOOKING_RESCHEDULED,
+        WebhookTriggerEvents.BOOKING_REJECTED,
+        WebhookTriggerEvents.BOOKING_PAID,
+        WebhookTriggerEvents.BOOKING_PAYMENT_INITIATED,
+        WebhookTriggerEvents.BOOKING_NO_SHOW_UPDATED,
+      ];
+
+      bookingTriggers.forEach((trigger) => {
+        const builder = factory.getBuilder(WebhookVersionEnum.V_2021_10_20, trigger);
+        expect(builder).toBe(defaultBuilders.booking);
+      });
+    });
+
+    it("should route OOO events to OOO builder", () => {
+      const builder = factory.getBuilder(WebhookVersionEnum.V_2021_10_20, WebhookTriggerEvents.OOO_CREATED);
+      expect(builder).toBe(defaultBuilders.ooo);
+    });
+
+    it("should route recording events to recording builder", () => {
+      const recordingTriggers = [
+        WebhookTriggerEvents.RECORDING_READY,
+        WebhookTriggerEvents.RECORDING_TRANSCRIPTION_GENERATED,
+      ];
+
+      recordingTriggers.forEach((trigger) => {
+        const builder = factory.getBuilder(WebhookVersionEnum.V_2021_10_20, trigger);
+        expect(builder).toBe(defaultBuilders.recording);
+      });
+    });

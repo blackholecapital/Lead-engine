@@ -1,0 +1,15 @@
+{
+  "id": "863ad16bd8db84d30ccf35a501530e6e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/core-modules/billing/services/__test__/utils/mock-builders.util.ts",
+  "score": 95,
+  "suggested_tags": [
+    "billing",
+    "builder",
+    "engine",
+    "service",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

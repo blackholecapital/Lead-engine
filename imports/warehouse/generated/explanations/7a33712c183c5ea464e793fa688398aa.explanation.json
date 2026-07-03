@@ -1,0 +1,6 @@
+{
+  "id":"7a33712c183c5ea464e793fa688398aa",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/piece-properties/auto-form-field-wrapper.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

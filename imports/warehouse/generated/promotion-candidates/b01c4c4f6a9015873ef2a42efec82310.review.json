@@ -1,0 +1,12 @@
+{
+  "id": "b01c4c4f6a9015873ef2a42efec82310",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/api/src/app/agents/managed-runtime/tool-approval/approval-card.builder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

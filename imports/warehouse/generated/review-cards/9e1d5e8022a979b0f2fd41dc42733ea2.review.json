@@ -1,0 +1,13 @@
+{
+  "id": "9e1d5e8022a979b0f2fd41dc42733ea2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-website/src/sections/LegalDocument/components/LegalDocumentPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

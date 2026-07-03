@@ -1,0 +1,12 @@
+{
+  "id": "adcc6977163cb289aa72b405d11ac4e2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/utils/dashboard-graphql-api-exception.filter.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

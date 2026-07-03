@@ -1,0 +1,6 @@
+{
+  "id":"3bd77766da913ba81ae4ecc3a6b08c5c",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/services/routeBuilders/apiBuilder.server.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

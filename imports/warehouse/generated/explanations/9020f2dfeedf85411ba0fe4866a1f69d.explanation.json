@@ -1,0 +1,6 @@
+{
+  "id":"9020f2dfeedf85411ba0fe4866a1f69d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/containers/CopyDashboardForm.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

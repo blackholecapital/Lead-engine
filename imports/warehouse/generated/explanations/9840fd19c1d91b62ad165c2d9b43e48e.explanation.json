@@ -1,0 +1,6 @@
+{
+  "id":"9840fd19c1d91b62ad165c2d9b43e48e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ParameterLinkedFilters/ParameterLinkedFilters.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

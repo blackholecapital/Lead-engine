@@ -1,0 +1,6 @@
+{
+  "id":"d60a50fa88bdb0c8595205a3e0db68b2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/DashboardHeaderButtonRow/DashboardSharingMenu/DashboardSharingMenu.enterprise.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

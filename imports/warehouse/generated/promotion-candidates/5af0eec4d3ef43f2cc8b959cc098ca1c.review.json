@@ -1,0 +1,12 @@
+{
+  "id": "5af0eec4d3ef43f2cc8b959cc098ca1c",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/dashboards/hooks/useDuplicateDashboard.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

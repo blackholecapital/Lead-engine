@@ -1,0 +1,12 @@
+{
+  "id": "d0669bc96739c6cf5995b9b879c45108",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/replacement/pages/MigrateModelsPage/MigrateModelsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

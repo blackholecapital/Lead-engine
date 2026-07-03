@@ -1,0 +1,6 @@
+{
+  "id":"97298316c092c9affb6b6d81f4fe41ef",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/AutoRefreshStatus/StatusIndicatorDot.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

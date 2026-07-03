@@ -1,0 +1,13 @@
+{
+  "id": "2bb19f4fcb3f69559475b89f9b3feb8e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/test-step/test-sample-data-viewer.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

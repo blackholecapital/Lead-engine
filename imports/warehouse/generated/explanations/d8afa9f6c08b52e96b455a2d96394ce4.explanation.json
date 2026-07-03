@@ -1,0 +1,6 @@
+{
+  "id":"d8afa9f6c08b52e96b455a2d96394ce4",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/components/AdHocQuestionDescription/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"141050963d8b752b931e424691989bd7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/common/components/MoveQuestionsIntoDashboardsModal/ConfirmMoveDashboardQuestionCandidatesModal.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

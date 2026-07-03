@@ -1,0 +1,6 @@
+{
+  "id":"b39a413d0c62e6e81798a7d5bc82ede1",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardSubscriptionsSidebar/AddEditSidebar/AddEditEmailSidebar.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

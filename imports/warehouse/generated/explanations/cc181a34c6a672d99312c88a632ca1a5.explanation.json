@@ -1,0 +1,6 @@
+{
+  "id":"cc181a34c6a672d99312c88a632ca1a5",
+  "score":85,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/send-message/digest/get-digest-events.usecase.ts",
+  "reasons":" workflow-feature, typescript-source,"
+}

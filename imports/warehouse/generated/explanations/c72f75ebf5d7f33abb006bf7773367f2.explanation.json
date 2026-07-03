@@ -1,0 +1,6 @@
+{
+  "id":"c72f75ebf5d7f33abb006bf7773367f2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/DatasetEditor/DatasetFieldMetadataSidebar/MappedFieldPicker/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

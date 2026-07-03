@@ -1,0 +1,6 @@
+{
+  "id":"06259acdd93ceba0e26825354e91de7a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/SavedQuestionIntroModal.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

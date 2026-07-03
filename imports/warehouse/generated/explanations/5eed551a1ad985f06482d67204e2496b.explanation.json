@@ -1,0 +1,6 @@
+{
+  "id":"5eed551a1ad985f06482d67204e2496b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/routes/api.v1.query.dashboards._index.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

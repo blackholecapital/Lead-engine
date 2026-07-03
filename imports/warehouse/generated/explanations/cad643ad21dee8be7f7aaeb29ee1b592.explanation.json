@@ -1,0 +1,6 @@
+{
+  "id":"cad643ad21dee8be7f7aaeb29ee1b592",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterCard/TypeRow.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

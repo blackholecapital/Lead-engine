@@ -1,0 +1,6 @@
+{
+  "id":"9e7ffb79ff2fb53fbd3c7985d1b0589c",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/query-hooks/dashboard-create-many.pre-query.hook.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

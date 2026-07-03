@@ -1,0 +1,6 @@
+{
+  "id":"5fc36f31255652a954afcfbdcf696a2e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/SavedQuestionHeaderButton/CollectionIcon.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

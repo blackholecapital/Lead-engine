@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/http-logs/logs-detail-content.tsx
+
+import { useState } from 'react';
+import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
+import { TimeDisplayHoverCard } from '@/components/time-display-hover-card';
+import { formatDateSimple } from '@/utils/format-date';
+import { RequestLog, RequestLogSource } from '../../types/logs';
+import { CopyButton } from '../primitives/copy-button';
+import { Separator } from '../primitives/separator';
+import { EditableJsonViewer } from '../workflow-editor/steps/shared/editable-json-viewer/editable-json-viewer';
+import { HttpStatusBadge } from './http-status-badge';
+import { TransactionIdDisplay } from './transaction-id-display';
+
+type LogsDetailContentProps = {
+  log: RequestLog;
+};
+
+function JsonDisplay({ content }: { content: string | object }) {
+  let jsonData;
+
+  try {
+    if (typeof content === 'string') {
+      if (content.trim() === '' || content.trim() === '{}') {
+        jsonData = {};
+      } else {
+        jsonData = JSON.parse(content);
+      }
+    } else {
+      jsonData = content;
+    }
+  } catch {
+    jsonData = typeof content === 'string' ? content : content;
+  }
+
+  return (
+    <EditableJsonViewer
+      value={jsonData}
+      onChange={() => {}} // Read-only mode
+      className="max-h-none min-h-0 border-none bg-transparent"
+      isReadOnly={true}
+    />
+  );
+}
+
+export function CollapsibleSection({
+  title,
+  content,
+  isExpanded,
+  onToggle,
+}: {
+  title: string;
+  content: string | object;
+  isExpanded: boolean;
+  onToggle: () => void;
+}) {
+  const [isContentExpanded, setIsContentExpanded] = useState(false);
+  const [contentRef, setContentRef] = useState<HTMLDivElement | null>(null);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+
+  const textToCopy = typeof content === 'string' ? content : JSON.stringify(content, null, 2);
+
+  // Check if content is overflowing when expanded
+  const checkOverflow = (element: HTMLDivElement | null) => {
+    if (element) {
+      setIsOverflowing(element.scrollHeight > 90);
+    }
+  };
+
+  const handleContentRef = (element: HTMLDivElement | null) => {
+    setContentRef(element);
+
+    if (element) {
+      // Use setTimeout to ensure content is rendered
+      setTimeout(() => checkOverflow(element), 0);
+    }
+  };
+
+  return (
+    <div className="border-stroke-soft overflow-auto rounded-md border bg-white">
+      <div
+        className="border-stroke-soft py-0.25 flex h-[30px] cursor-pointer items-center justify-between px-2"
+        onClick={onToggle}
+      >
+        <span className="text-text-sub font-mono text-xs font-medium tracking-[-0.24px]">{title}</span>
+        <div className="flex items-center gap-0.5">
+          <CopyButton valueToCopy={textToCopy} className="text-text-soft size-7 p-1" size="2xs" />
+          <button className="rounded p-1 hover:bg-neutral-100">
+            <RiArrowUpSLine
+              className={`size-3.5 text-neutral-400 transition-transform ${!isExpanded ? 'rotate-180' : ''}`}
+            />
+          </button>
+        </div>
+      </div>
+
+      {isExpanded && (
+        <div className="relative">
+          <div
+            ref={handleContentRef}
+            className={`border-stroke-soft bg-bg-weak [&_.jer-editor-container]:px-4.5 overflow-y-auto border-t transition-all duration-300 [&_.jer-editor-container]:py-1 ${
+              isContentExpanded ? 'max-h-none' : 'h-[90px]'
+            }`}
+          >

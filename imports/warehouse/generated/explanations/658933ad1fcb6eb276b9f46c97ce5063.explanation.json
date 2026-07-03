@@ -1,0 +1,6 @@
+{
+  "id":"658933ad1fcb6eb276b9f46c97ce5063",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ActionViz/ExplainerText/ExplainerText.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "19ca79c8a5bb2de23d6d8ba5e4713088",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/services/cache/key-builders/builder.base.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "service",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

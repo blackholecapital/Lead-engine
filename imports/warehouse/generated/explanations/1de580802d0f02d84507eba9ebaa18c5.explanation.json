@@ -1,0 +1,6 @@
+{
+  "id":"1de580802d0f02d84507eba9ebaa18c5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/ChartTypeSidebar/ChartTypeSidebar.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

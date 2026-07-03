@@ -1,0 +1,9 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/skeleton.tsx
+
+import { cn } from '@/utils/ui';
+
+function Skeleton({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn('bg-neutral-alpha-100 animate-pulse rounded-md', className)} {...props} />;
+}
+
+export { Skeleton };

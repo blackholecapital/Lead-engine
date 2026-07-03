@@ -1,0 +1,6 @@
+{
+  "id":"4c0d5feb233831794bb20e3654e9989a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/redux/store/dashboard.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

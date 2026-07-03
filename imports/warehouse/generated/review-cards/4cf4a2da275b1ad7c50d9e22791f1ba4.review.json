@@ -1,0 +1,13 @@
+{
+  "id": "4cf4a2da275b1ad7c50d9e22791f1ba4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/side-panel/pages/page-layout/components/SidePanelFieldsLayoutSubPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

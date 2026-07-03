@@ -1,0 +1,6 @@
+{
+  "id":"4082a1ca76b5d08b8c8896a5a3778d88",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-is-payload-schema-enabled.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

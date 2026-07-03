@@ -1,0 +1,12 @@
+{
+  "id": "b25c18c7c0778ac2d2fbd637c456f5a1",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/transforms/pages/JobEmptyPage/JobEmptyPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

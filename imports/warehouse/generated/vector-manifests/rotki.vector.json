@@ -1,0 +1,11 @@
+{
+  "id": "rotki",
+  "title": "Rotki",
+  "tags": [
+    "treasury",
+    "defi",
+    "portfolio"
+  ],
+  "category": "treasury",
+  "source": "vendor-source/treasury/rotki"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"2f43844edc1e7186ee71f58ef08d69fa",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/compute-stored-gql-type-key-utils/compute-object-metadata-input-type.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

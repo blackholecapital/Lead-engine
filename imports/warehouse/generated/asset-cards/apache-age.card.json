@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "id": "apache-age",
+    "title": "Apache AGE",
+    "category": "graph",
+    "tags": [
+      "graph",
+      "postgres",
+      "relationships"
+    ],
+    "source": "vendor-source/graph/apache-age",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "apache-age",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "apache-age",
+    "label": "Apache AGE",
+    "category": "graph",
+    "tags": [
+      "graph",
+      "postgres",
+      "relationships"
+    ],
+    "type": "asset"
+  }
+}

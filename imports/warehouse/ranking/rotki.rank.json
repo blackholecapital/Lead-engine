@@ -1,0 +1,14 @@
+{
+  "id": "rotki",
+  "title": "Rotki",
+  "category": "treasury",
+  "ranking": {
+    "implementation": 84,
+    "reuse": 84,
+    "maturity": 84,
+    "retrieval": 84,
+    "graph": 84,
+    "vector": 84,
+    "final": 84
+  }
+}

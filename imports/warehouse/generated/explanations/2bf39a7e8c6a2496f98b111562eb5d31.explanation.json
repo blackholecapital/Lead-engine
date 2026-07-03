@@ -1,0 +1,6 @@
+{
+  "id":"2bf39a7e8c6a2496f98b111562eb5d31",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/RefreshIntervalModal.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

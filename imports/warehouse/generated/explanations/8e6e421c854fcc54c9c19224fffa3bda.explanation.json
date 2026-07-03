@@ -1,0 +1,6 @@
+{
+  "id":"8e6e421c854fcc54c9c19224fffa3bda",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/internal-sdk/src/models/components/builderfieldtypeenum.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

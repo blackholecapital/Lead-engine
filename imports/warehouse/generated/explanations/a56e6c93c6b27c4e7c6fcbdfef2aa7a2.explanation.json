@@ -1,0 +1,6 @@
+{
+  "id":"a56e6c93c6b27c4e7c6fcbdfef2aa7a2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/components/FilterHeaderButton.unit.spec.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

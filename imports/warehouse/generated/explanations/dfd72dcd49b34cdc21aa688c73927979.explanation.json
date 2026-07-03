@@ -1,0 +1,6 @@
+{
+  "id":"dfd72dcd49b34cdc21aa688c73927979",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/documents/blocks/helpers/EditorChildrenIds/AddBlockMenu/PlaceholderButton.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

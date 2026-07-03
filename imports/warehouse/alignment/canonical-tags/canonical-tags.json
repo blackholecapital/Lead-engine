@@ -1,0 +1,20 @@
+{
+  "customer":"contacts",
+  "customers":"contacts",
+  "people":"contacts",
+  "lead":"deals",
+  "leads":"deals",
+  "lead-management":"deals",
+  "customer-management":"crm",
+  "invoice":"billing",
+  "invoices":"billing",
+  "payment":"billing",
+  "payments":"billing",
+  "doc":"documents",
+  "docs":"documents",
+  "signature":"esign",
+  "signatures":"esign",
+  "schedule":"calendar",
+  "scheduling":"calendar",
+  "booking":"calendar"
+}

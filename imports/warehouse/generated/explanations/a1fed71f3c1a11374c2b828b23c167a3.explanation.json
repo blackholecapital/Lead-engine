@@ -1,0 +1,6 @@
+{
+  "id":"a1fed71f3c1a11374c2b828b23c167a3",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/TimelineSidebar/TimelineSidebar.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

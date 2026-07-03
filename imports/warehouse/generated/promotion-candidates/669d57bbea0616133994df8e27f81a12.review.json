@@ -1,0 +1,12 @@
+{
+  "id": "669d57bbea0616133994df8e27f81a12",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/docs/developer_docs_versioned_docs/version-6.1.0/api/check-favorited-dashboards-for-current-user.RequestSchema.json",
+  "score": 95,
+  "suggested_tags": [
+    "config",
+    "dashboard"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

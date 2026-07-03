@@ -1,0 +1,13 @@
+{
+  "id": "267e1e4fc4680c2e36cf9fd675dfc482",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/routes/platform/infra/event-destinations/lib/handler-flow-builder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "calendar",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

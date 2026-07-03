@@ -1,0 +1,6 @@
+{
+  "id":"96093f694559b9bcb5bfd38dd65fda9f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/DatasetEditor/DatasetEditor.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

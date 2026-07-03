@@ -1,0 +1,42 @@
+{
+  "asset": {
+    "id": "novu",
+    "title": "Novu",
+    "category": "comms",
+    "tags": [
+      "comms",
+      "email",
+      "sms",
+      "workflow",
+      "notification"
+    ],
+    "source": "vendor-source/comms/novu",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "novu",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "novu",
+    "label": "Novu",
+    "category": "comms",
+    "tags": [
+      "comms",
+      "email",
+      "sms",
+      "workflow",
+      "notification"
+    ],
+    "type": "asset"
+  }
+}

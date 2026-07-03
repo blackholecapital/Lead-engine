@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/maily/blocks/cards.tsx
+
+import { BlockItem } from '@novu/maily-core/blocks';
+import { CardBlocks } from '@/components/icons/cards-blocks';
+import { HorizontalCardWithImage } from '@/components/icons/horizontal-card-with-image';
+import { InformationCardWithLogo } from '@/components/icons/information-card-with-logo';
+import { ParagraphWithImage } from '@/components/icons/paragraph-with-image';
+import { Badge } from '@/components/primitives/badge';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { TelemetryEvent } from '@/utils/telemetry';
+import { BlockCustomPreview } from './block-custom-preview';
+
+const createHorizontalCardWithCta: (props: { track: ReturnType<typeof useTelemetry> }) => BlockItem = (props) => {
+  const { track } = props;
+
+  return {
+    title: 'Horizontal card with image',
+    description: 'Card: Horizontal information card with CTA',
+    searchTerms: ['logo', 'text', 'image', 'horizontal', 'card'],
+    preview: () => (
+      <BlockCustomPreview
+        src="/images/email-editor/horizontal-card-with-image-preview.webp"
+        alt="Cards"
+        description="Card: Horizontal information card with CTA"
+      />
+    ),
+    icon: <HorizontalCardWithImage className="size-4" />,
+    command: ({ editor, range }) => {
+      track(TelemetryEvent.CARD_BLOCK_ADDED, {
+        type: 'card',
+      });
+
+      editor
+        .chain()
+        .deleteRange(range)
+        .insertContent({
+          type: 'columns',
+          attrs: { showIfKey: null, gap: 18 },
+          content: [
+            {
+              type: 'column',
+              attrs: {
+                width: 'auto',
+              },
+              content: [
+                {
+                  type: 'image',
+                  attrs: {
+                    src: 'https://prod-novu-app-bucket.s3.us-east-1.amazonaws.com/assets/email-editor/header-hero-image.webp',
+                    alt: null,
+                    title: null,
+                    alignment: 'center',
+                    externalLink: null,
+                    isExternalLinkVariable: false,
+                    isSrcVariable: false,
+                    showIfKey: null,
+                    height: '208',
+                    width: '282',
+                    borderRadius: 8,
+                    lockAspectRatio: false,
+                  },
+                },
+              ],
+            },
+            {
+              type: 'column',
+              attrs: {
+                width: 'auto',
+              },
+              content: [
+                {
+                  type: 'paragraph',
+                  attrs: { textAlign: null, showIfKey: null },
+                  content: [
+                    {
+                      type: 'text',
+                      marks: [{ type: 'bold' }],
+                      text: 'Multi-Environment support',
+                    },
+                  ],
+                },
+                { type: 'spacer', attrs: { height: 8, showIfKey: null } },
+                {
+                  type: 'paragraph',
+                  attrs: { textAlign: null, showIfKey: null },
+                  content: [
+                    {
+                      type: 'text',
+                      text: "Novu's Multi-Environment Support introduces a structured, secure, and efficient way to handle your notification workflows at every stage.",
+                    },
+                  ],
+                },
+                { type: 'spacer', attrs: { height: 32, showIfKey: null } },
+                {
+                  type: 'button',
+                  attrs: {
+                    text: 'Learn more',
+                    isTextVariable: false,
+                    isUrlVariable: false,
+                    alignment: 'right',
+                    variant: 'filled',
+                    borderRadius: 'smooth',

@@ -1,0 +1,6 @@
+{
+  "id":"c95641334f991313aa4c7cef945969ef",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/get-available-aggregations-from-object-fields.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

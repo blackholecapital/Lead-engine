@@ -1,0 +1,6 @@
+{
+  "id":"5f6f4f6ad143ec3c394a1b71be721edf",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/compute-stored-gql-type-key-utils/compute-enum-field-gql-type-key.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

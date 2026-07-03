@@ -1,0 +1,6 @@
+{
+  "id":"cf8a712702a3aced0312347c305383fe",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/gridComponents/new/NewColumn.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

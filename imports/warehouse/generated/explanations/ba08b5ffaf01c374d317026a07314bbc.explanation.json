@@ -1,0 +1,6 @@
+{
+  "id":"ba08b5ffaf01c374d317026a07314bbc",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/windmill/frontend/src/lib/components/graph/graphBuilder.svelte.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "66842cbaf7d881e8884b9763050bdb2e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/features/alerts/buildErrorTooltipMessage.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

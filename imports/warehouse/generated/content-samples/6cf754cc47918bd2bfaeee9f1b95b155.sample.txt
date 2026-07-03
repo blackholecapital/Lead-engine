@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/components/credential-section.tsx
+
+import { CredentialsKeyEnum, IConfigCredential } from '@novu/shared';
+import { ReactNode } from 'react';
+import { Control, ControllerFieldState, ControllerRenderProps } from 'react-hook-form';
+import { CopyButton } from '@/components/primitives/copy-button';
+import { Input } from '@/components/primitives/input';
+import { SecretInput } from '@/components/primitives/secret-input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/primitives/select';
+import { Switch } from '@/components/primitives/switch';
+import { Textarea } from '@/components/primitives/textarea';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/primitives/tooltip';
+import { useEnvironment } from '../../../context/environment/hooks';
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+  FormLabel as PrimitiveFormLabel,
+} from '../../primitives/form/form';
+import { InlineToast } from '../../primitives/inline-toast';
+import { IntegrationFormData } from '../types';
+import { DescriptionWithLinks } from './description-with-links';
+
+const SECURE_CREDENTIALS = [
+  CredentialsKeyEnum.ApiKey,
+  CredentialsKeyEnum.ApiToken,
+  CredentialsKeyEnum.SecretKey,
+  CredentialsKeyEnum.Token,
+  CredentialsKeyEnum.Password,
+  CredentialsKeyEnum.ServiceAccount,
+  CredentialsKeyEnum.SigningSecret,
+];
+
+function FormLabel({ credential, tooltip }: { credential: IConfigCredential; tooltip?: ReactNode }) {
+  return (
+    <PrimitiveFormLabel
+      htmlFor={credential.key}
+      required={credential.required}
+      optional={!credential.required}
+      tooltip={tooltip}
+    >
+      {credential.displayName}
+    </PrimitiveFormLabel>
+  );
+}
+
+function SwitchInput({
+  credential,
+  field,
+  isReadOnly,
+  isDisabledWithSwitch,
+  disabledSwitchMessage,
+  tooltip,
+}: {
+  credential: IConfigCredential;
+  field: ControllerRenderProps<IntegrationFormData>;
+  isReadOnly?: boolean;
+  isDisabledWithSwitch?: boolean;
+  disabledSwitchMessage?: string;
+  tooltip?: ReactNode;
+}) {
+  return (
+    <div className="flex items-center justify-between gap-2">
+      <FormLabel credential={credential} tooltip={tooltip} />
+      <FormControl>
+        {isDisabledWithSwitch && disabledSwitchMessage ? (
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Switch
+                id={credential.key}
+                checked={Boolean(field.value)}
+                onCheckedChange={field.onChange}
+                disabled={isReadOnly || isDisabledWithSwitch}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{disabledSwitchMessage}</p>
+            </TooltipContent>
+          </Tooltip>
+        ) : (
+          <Switch
+            id={credential.key}
+            checked={Boolean(field.value)}
+            onCheckedChange={field.onChange}
+            disabled={isReadOnly || isDisabledWithSwitch}
+          />
+        )}
+      </FormControl>
+    </div>
+  );
+}
+
+const NULL_DROPDOWN_VALUE = '__null__';
+
+function toSelectValue(value: string | null | undefined): string {
+  if (value === null || value === undefined || value === '') return NULL_DROPDOWN_VALUE;
+
+  return value;
+}
+
+function fromSelectValue(value: string): string {

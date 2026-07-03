@@ -1,0 +1,12 @@
+{
+  "id": "001cb83208b3ac98c179a21ce05c0456",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/support/helpers/api/createNativeQuestionAndDashboard.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

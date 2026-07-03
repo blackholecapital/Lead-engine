@@ -1,0 +1,6 @@
+{
+  "id":"f4e3e94e94940bb09225d2b3bce034ca",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterCard/TooltipWithTruncation.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

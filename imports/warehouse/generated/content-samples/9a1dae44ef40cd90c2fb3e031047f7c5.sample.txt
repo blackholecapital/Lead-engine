@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/self-hosted/components.tsx
+
+/** biome-ignore-all lint/correctness/useUniqueElementIds: expected */
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '../../components/primitives/button';
+import { Input } from '../../components/primitives/input';
+import { API_HOSTNAME } from '../../config';
+
+const JWT_STORAGE_KEY = 'self-hosted-jwt';
+
+export function OrganizationList() {
+  return <></>;
+}
+
+export function OrganizationProfile() {
+  return <></>;
+}
+
+export function UserProfile() {
+  return <></>;
+}
+
+export function SignIn() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setError(null);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(`${API_HOSTNAME}/v1/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Login failed');
+      }
+
+      if (data.data.token) {
+        localStorage.setItem(JWT_STORAGE_KEY, data.data.token);
+        (window as any).Clerk = { ...((window as any).Clerk || {}), loggedIn: true };
+        navigate('/');
+      } else {
+        throw new Error('No token received');
+      }
+    } catch (e: any) {
+      setError(e.message || 'An unexpected error occurred.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="mx-auto w-full max-w-md pt-12">
+      <h2 className="mb-6 text-center text-xl font-semibold">Sign In</h2>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <label htmlFor="email" className="mb-1 block text-sm font-medium text-gray-700">
+            Email
+          </label>
+          <Input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            placeholder="user@example.com"
+            required
+            className="w-full"
+          />
+        </div>
+        <div>
+          <label htmlFor="password" className="mb-1 block text-sm font-medium text-gray-700">
+            Password
+          </label>
+          <Input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+            placeholder="Password"
+            required
+            className="w-full"
+          />
+        </div>
+        {error && <p className="text-sm text-red-600">{error}</p>}
+        <Button type="submit" disabled={isLoading} variant="primary" mode="filled" className="w-full">
+          {isLoading ? 'Signing In...' : 'Sign In'}
+        </Button>
+        <p className="mt-4 text-center text-sm text-gray-600">
+          Don&apos;t have an account?{' '}

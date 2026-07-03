@@ -1,0 +1,6 @@
+{
+  "id":"75909ff7c529eb8f2afd06f490200279",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/metabot/components/MetabotQueryBuilder/MetabotQueryBuilder.unit.spec.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

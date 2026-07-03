@@ -1,0 +1,9 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/parse-page-param.ts
+
+export function parsePageParam(param: string | null): number {
+  if (!param) return 0;
+
+  const parsed = Number.parseInt(param, 10);
+
+  return Math.max(0, parsed || 0);
+}

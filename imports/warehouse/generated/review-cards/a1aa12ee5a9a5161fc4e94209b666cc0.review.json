@@ -1,0 +1,12 @@
+{
+  "id": "a1aa12ee5a9a5161fc4e94209b666cc0",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/references/realtime-streams/src/app/approval/[runId]/page.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

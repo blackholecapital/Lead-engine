@@ -1,0 +1,13 @@
+{
+  "id": "ae5c4a4d4536ccc2ea1fc48258fad4d9",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/step-settings/update-piece-version-dialog/upgrade-piece-version-dialog.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

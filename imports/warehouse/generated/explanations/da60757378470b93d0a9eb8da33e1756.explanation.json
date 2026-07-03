@@ -1,0 +1,6 @@
+{
+  "id":"da60757378470b93d0a9eb8da33e1756",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-types/scalars/date.scalar.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "d5c915d8510ef6f2f39b579b7ca9aef1",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/shared/src/lib/ee/audit-events/mock-event-builder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "calendar",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

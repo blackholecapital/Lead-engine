@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/variable-plugin/variable-pill-widget.ts
+
+import { WidgetType } from '@uiw/react-codemirror';
+import { CSSProperties } from 'react';
+import { getFirstFilterAndItsArgs, validateEnhancedDigestFilters } from '@/components/variable/utils';
+
+export const DEFAULT_VARIABLE_PILL_HEIGHT = 18;
+
+export class VariablePillWidget extends WidgetType {
+  private clickHandler: (e: MouseEvent) => void;
+  private tooltipElement: HTMLElement | null = null;
+
+  constructor(
+    private variableName: string,
+    private fullVariableName: string,
+    private start: number,
+    private end: number,
+    private filters: string[],
+    private onSelect?: (value: string, from: number, to: number) => void,
+    private isDigestEventsVariable?: (variableName: string) => boolean,
+    private isNotInSchema: boolean = false,
+    private errorMessage?: string
+  ) {
+    super();
+
+    this.clickHandler = (e: MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // setTimeout is used to defer the selection until after CodeMirror's own click handling
+      // This prevents race conditions where our selection might be immediately cleared by the editor
+      setTimeout(() => {
+        this.onSelect?.(this.fullVariableName, this.start, this.end);
+      }, 0);
+    };
+  }
+
+  getDisplayVariableName(): string {
+    if (!this.variableName) return '';
+    const variableParts = this.variableName.split('.');
+
+    return variableParts.length >= 3 ? '..' + variableParts.slice(-2).join('.') : this.variableName;
+  }
+
+  createBeforeStyles(): CSSProperties {
+    return {
+      width: 'calc(1rem - 2px)',
+      minWidth: 'calc(1rem - 2px)',
+      height: 'calc(1rem - 2px)',
+      backgroundImage: this.isNotInSchema ? `url("/images/error-warning-line.svg")` : `url("/images/code.svg")`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'contain',
+      color: this.isNotInSchema ? 'hsl(var(--error-base))' : undefined,
+    };
+  }
+
+  createAfterStyles(): CSSProperties {
+    return {
+      width: '0.275em',
+      height: '0.275em',
+      backgroundColor: 'hsl(var(--feature-base))',
+      borderRadius: '100%',
+      marginLeft: '3px',
+    };
+  }
+
+  createPillStyles(): CSSProperties {
+    return {
+      backgroundColor: 'hsl(var(--bg-white))',
+      color: 'inherit',
+      border: '1px solid hsl(var(--stroke-soft))',
+      borderRadius: 'var(--radius)',
+      gap: '0.25rem',
+      padding: '1px 6px',
+      margin: '0',
+      fontFamily: 'var(--font-code)',
+      display: 'inline-flex',
+      alignItems: 'center',
+      height: `${DEFAULT_VARIABLE_PILL_HEIGHT}px`,
+      lineHeight: 'inherit',
+      fontSize: 'max(12px, calc(1em - 3px))',
+      cursor: 'pointer',
+      position: 'relative',
+      verticalAlign: 'middle',
+      fontWeight: '500',
+      boxSizing: 'border-box',
+    };
+  }
+
+  createContentStyles(): CSSProperties {
+    return {
+      lineHeight: '1.2',
+      color: 'hsl(var(--text-sub))',
+      maxWidth: '24ch',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+
+      // @ts-expect-error
+      '-webkit-font-smoothing': 'antialiased',
+      '-moz-osx-font-smoothing': 'grayscale',

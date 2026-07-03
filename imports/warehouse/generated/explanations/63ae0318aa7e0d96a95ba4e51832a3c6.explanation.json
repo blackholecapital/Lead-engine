@@ -1,0 +1,6 @@
+{
+  "id":"63ae0318aa7e0d96a95ba4e51832a3c6",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/components/editors/ColorValueEditor.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

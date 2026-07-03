@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/form-builder/schema.ts
+
+import { fieldSchema, fieldTypeEnum, variantsConfigSchema } from "@calcom/prisma/zod-utils";
+import { z } from "zod";
+import { fieldTypesConfigMap } from "./fieldTypes";
+import { preprocessNameFieldDataWithVariant } from "./utils";
+import { getConfig as getVariantsConfig } from "./utils/variantsConfig";
+
+const nonEmptyString = () => z.string().refine((value: string) => value.trim().length > 0);
+
+type FieldTypeSchemaConfig<TInput = unknown, TPreprocessedOutput = unknown> = {
+  preprocess: (data: {
+    field: z.infer<typeof fieldSchema>;
+    response: TInput;
+    isPartialSchema: boolean;
+  }) => TPreprocessedOutput;
+  superRefine: (data: {
+    field: z.infer<typeof fieldSchema>;
+    response: TPreprocessedOutput;
+    isPartialSchema: boolean;
+    ctx: FieldZodCtx;
+    m: (key: string, options?: Record<string, unknown>) => string;
+  }) => void;
+};
+
+function defineFieldSchema<TInput, TOutput>(
+  config: FieldTypeSchemaConfig<TInput, TOutput>
+): FieldTypeSchemaConfig<TInput, TOutput> {
+  return config;
+}
+
+export type ALL_VIEWS = "ALL_VIEWS";
+
+// It is the config that is specific to a type and doesn't make sense in all fields individually. Any field with the type will automatically inherit this config.
+// This allows making changes to the UI without having to make changes to the existing stored configs
+export const fieldTypeConfigSchema = z
+  .object({
+    label: z.string(),
+    value: fieldTypeEnum,
+    isTextType: z.boolean().default(false).optional(),
+    systemOnly: z.boolean().default(false).optional(),
+    needsOptions: z.boolean().default(false).optional(),
+    supportsLengthCheck: z
+      .object({
+        maxLength: z.number(),
+      })
+      .optional(),
+    supportsPricing: z.boolean().default(false).optional(),
+    optionsSupportPricing: z.boolean().default(false).optional(),
+    propsType: z.enum([
+      "text",
+      "textList",
+      "select",
+      "multiselect",
+      "boolean",
+      "objectiveWithInput",
+      "variants",
+    ]),
+    // It is the config that can tweak what an existing or a new field shows in the App UI or booker UI.
+    variantsConfig: z
+      .object({
+        /**
+         * This is the default variant that will be used when a new field is created.
+         */
+        defaultVariant: z.string(),
+
+        /**
+         *  Used only when there are 2 variants, so that UI can be simplified by showing a switch(with this label) instead of a Select
+         */
+        toggleLabel: z.string().optional(),
+        variants: z.record(
+          z.object({
+            /**
+             * That's how the variant would be labelled in App UI. This label represents the field in booking questions' list
+             * Supports translation
+             */
+            label: z.string(),
+            fieldsMap: z.record(
+              z.object({
+                /**
+                 * Supports translation
+                 */
+                defaultLabel: z.string().optional(),
+                /**
+                 * Supports translation
+                 */
+                defaultPlaceholder: z.string().optional(),
+                /**
+                 * Decides if a variant field's required property can be changed or not
+                 */
+                canChangeRequirability: z.boolean().default(true).optional(),
+              })
+            ),
+          })
+        ),
+        /**
+         * This is the default configuration for the field.
+         */
+        defaultValue: variantsConfigSchema.optional(),
+      })
+      .optional(),
+  })

@@ -1,0 +1,13 @@
+{
+  "id": "49eb6087b6b88dbf0d09a400632ca96f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/audit_app/metabot-analytics/components/ConversationsPage/ConversationsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

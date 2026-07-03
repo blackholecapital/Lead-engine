@@ -1,0 +1,6 @@
+{
+  "id":"c082873b3de4f547df31b263ba52d935",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/AddCardSidebar/AddCardSidebar.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

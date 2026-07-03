@@ -1,0 +1,14 @@
+{
+  "id": "b3d678259667b0402a85a8ea330bddcd",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/embedding/embedding-hub/components/SetupPermissionsAndTenantsPage/MoveDashboardStepContent.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

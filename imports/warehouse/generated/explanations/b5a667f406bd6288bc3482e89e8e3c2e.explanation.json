@@ -1,0 +1,6 @@
+{
+  "id":"b5a667f406bd6288bc3482e89e8e3c2e",
+  "score":85,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/subscriber-job-bound/subscriber-job-bound.command.ts",
+  "reasons":" workflow-feature, typescript-source,"
+}

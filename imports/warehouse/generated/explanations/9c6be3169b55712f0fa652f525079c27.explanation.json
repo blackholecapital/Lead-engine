@@ -1,0 +1,6 @@
+{
+  "id":"9c6be3169b55712f0fa652f525079c27",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/filterscope/FilterFieldTree.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

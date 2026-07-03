@@ -1,0 +1,6 @@
+{
+  "id":"6bf4d2552794e0facb047f6548ad0c8e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewFooter/CenterViewFooterButtonGroup.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

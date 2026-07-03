@@ -1,0 +1,13 @@
+{
+  "id": "4da2cb877a48bbec292370f69dbbc2cb",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/side-panel/pages/rich-text-page/components/SidePanelEditRichTextPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ad3a87de7b50cef4c2d2b78631b128d8",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/common/components/upsells/UpsellEmbedHomepage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,36 @@
+{
+  "asset": {
+    "id": "qdrant",
+    "title": "Qdrant",
+    "category": "retrieval",
+    "tags": [
+      "vector",
+      "retrieval"
+    ],
+    "source": "vendor-source/retrieval/qdrant",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "qdrant",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "qdrant",
+    "label": "Qdrant",
+    "category": "retrieval",
+    "tags": [
+      "vector",
+      "retrieval"
+    ],
+    "type": "asset"
+  }
+}

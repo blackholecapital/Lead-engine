@@ -1,0 +1,6 @@
+{
+  "id":"41c1ad779fb2d091abd6c59b0865cda8",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/visualizations/LinkViz/EntityDisplay.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

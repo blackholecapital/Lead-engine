@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/button-link.tsx
+
+// AlignUI LinkButton v0.0.0
+
+import { Slot, Slottable } from '@radix-ui/react-slot';
+import * as React from 'react';
+import { IconType } from 'react-icons';
+import { PolymorphicComponentProps } from '@/utils/polymorphic';
+import { recursiveCloneChildren } from '@/utils/recursive-clone-children';
+import { tv, type VariantProps } from '@/utils/tv';
+
+const LINK_BUTTON_ROOT_NAME = 'LinkButtonRoot';
+const LINK_BUTTON_ICON_NAME = 'LinkButtonIcon';
+
+export const linkButtonVariants = tv({
+  slots: {
+    root: [
+      // base
+      'group inline-flex items-center justify-center whitespace-nowrap outline-hidden',
+      'transition duration-200 ease-out',
+      'underline decoration-transparent underline-offset-[3px]',
+      // hover
+      'hover:decoration-current',
+      // focus
+      'focus:outline-hidden focus-visible:underline',
+      // disabled
+      'disabled:pointer-events-none disabled:text-text-disabled disabled:no-underline',
+    ],
+    icon: 'shrink-0',
+  },
+  variants: {
+    variant: {
+      gray: {
+        root: [
+          // base
+          'text-text-sub',
+          // focus
+          'focus-visible:text-text-strong',
+        ],
+      },
+      black: {
+        root: 'text-text-strong',
+      },
+      primary: {
+        root: [
+          // base
+          'text-primary-base',
+          // hover
+          'hover:text-primary-darker',
+        ],
+      },
+      error: {
+        root: [
+          // base
+          'text-error-base',
+          // hover
+          'hover:text-red',
+        ],
+      },
+      modifiable: {},
+    },
+    size: {
+      md: {
+        root: 'h-5 gap-1 text-paragraph-sm',
+        icon: 'size-5',
+      },
+      sm: {
+        root: 'h-4 gap-1 text-paragraph-xs',
+        icon: 'size-4',
+      },
+    },
+    underline: {
+      true: {
+        root: 'decoration-current',
+      },
+    },
+  },
+  defaultVariants: {
+    variant: 'gray',
+    size: 'md',
+  },
+});
+
+type LinkButtonSharedProps = VariantProps<typeof linkButtonVariants>;
+
+type LinkButtonProps = VariantProps<typeof linkButtonVariants> &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    asChild?: boolean;
+  };
+
+const LinkButtonRoot = React.forwardRef<HTMLButtonElement, LinkButtonProps>(
+  ({ asChild, children, variant, size, underline, className, ...rest }, forwardedRef) => {
+    const uniqueId = React.useId();
+    const Component = asChild ? Slot : 'button';
+    const { root } = linkButtonVariants({ variant, size, underline });
+
+    const sharedProps: LinkButtonSharedProps = {
+      variant,
+      size,
+    };
+
+    const extendedChildren = recursiveCloneChildren(

@@ -1,0 +1,7 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/connect-subscriber-id.ts
+
+export {
+  buildAgentConnectionIdentifier,
+  buildConnectSubscriberId,
+  CONNECT_SUBSCRIBER_PREFIX,
+} from '@novu/shared';

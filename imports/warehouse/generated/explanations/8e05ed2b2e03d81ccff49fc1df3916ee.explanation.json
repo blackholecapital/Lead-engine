@@ -1,0 +1,6 @@
+{
+  "id":"8e05ed2b2e03d81ccff49fc1df3916ee",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/AddSectionButton/index.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

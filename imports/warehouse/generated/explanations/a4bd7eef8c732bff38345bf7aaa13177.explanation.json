@@ -1,0 +1,6 @@
+{
+  "id":"a4bd7eef8c732bff38345bf7aaa13177",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterBar/FilterControls/GroupByFilterCard.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

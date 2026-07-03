@@ -1,0 +1,6 @@
+{
+  "id":"375e1121dcaa2d941da361406f6d42bc",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/MissingChart.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"ee210eaaaf72b41dba4964fdb8dc020b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/tools/delete-dashboard-widget.tool.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

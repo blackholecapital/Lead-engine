@@ -1,0 +1,6 @@
+{
+  "id":"abc950f0880b98d148c908939fd524f3",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/nodes/loop-return-node.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

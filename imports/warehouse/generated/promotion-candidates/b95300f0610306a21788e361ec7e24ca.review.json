@@ -1,0 +1,12 @@
+{
+  "id": "b95300f0610306a21788e361ec7e24ca",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/packages/ag-grid-enterprise/src/aiToolkit/schemaBuilder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

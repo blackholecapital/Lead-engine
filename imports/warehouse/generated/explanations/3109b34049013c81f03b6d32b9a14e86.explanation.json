@@ -1,0 +1,6 @@
+{
+  "id":"3109b34049013c81f03b6d32b9a14e86",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/widgets/minimap.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

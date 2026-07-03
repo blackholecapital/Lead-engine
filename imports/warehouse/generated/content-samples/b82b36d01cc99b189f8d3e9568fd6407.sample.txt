@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/components/telegram-credentials-paste.tsx
+
+import { CredentialsKeyEnum } from '@novu/shared';
+import { useCallback, useState } from 'react';
+import { type Control, type UseFormSetValue, useWatch } from 'react-hook-form';
+import { RiCheckLine, RiCloseLine, RiInformationLine } from 'react-icons/ri';
+import {
+  AgentTelegramMobileSetupCard,
+  IntegrationStoreTelegramMobileSetupCard,
+} from '@/components/agents/telegram-mobile-setup-card';
+import { Label } from '@/components/primitives/label';
+import { Textarea } from '@/components/primitives/textarea';
+import { parseBotFatherMessage } from '@/utils/telegram-bot-token';
+import { cn } from '@/utils/ui';
+import type { IntegrationFormData } from '../types';
+
+type ApplyOutcome = { token: string | null; botUsername: string | null; recognized: boolean };
+
+/**
+ * Discriminated union that picks which mobile-setup wrapper to render.
+ * - `agent`: existing agent + integration → the consumed link writes credentials
+ *   onto the existing integration via the agent-scoped public endpoint.
+ * - `integration-store`: no agent or integration yet → the consumed link creates
+ *   a new Telegram integration via the integration-store public endpoint.
+ */
+export type TelegramCredentialsPasteMobileSetup =
+  | { kind: 'agent'; agentIdentifier: string; integrationId: string; testSubscriberId?: string | null }
+  | { kind: 'integration-store' };
+
+type TelegramCredentialsPasteProps = {
+  control: Control<IntegrationFormData>;
+  setValue: UseFormSetValue<IntegrationFormData>;
+  isReadOnly?: boolean;
+  /**
+   * When set, renders an inline mobile-setup QR card under the BotFather paste
+   * field so the user can finish configuration from their phone. The QR card
+   * is hidden the moment the form has an `apiToken` value (typed, pasted, or
+   * pre-filled from an existing integration), which also unmounts the link
+   * `useQuery` and stops issuing setup links.
+   */
+  mobileSetup?: TelegramCredentialsPasteMobileSetup;
+};
+
+/**
+ * Smart-paste affordance for the Telegram agent onboarding credentials form.
+ *
+ * Renders a labeled textarea. When the user pastes (or types) the full
+ * BotFather confirmation message, it extracts the HTTP API token automatically
+ * — no button click needed. The token is written directly into the
+ * react-hook-form `apiToken` credential field.
+ */
+export function TelegramCredentialsPaste({
+  control,
+  setValue,
+  isReadOnly,
+  mobileSetup,
+}: TelegramCredentialsPasteProps) {
+  const credentials = useWatch({ control, name: 'credentials' });
+  const [outcome, setOutcome] = useState<ApplyOutcome | null>(null);
+  const [draft, setDraft] = useState('');
+
+  const apply = useCallback(
+    (text: string): ApplyOutcome => {
+      const { token, botUsername } = parseBotFatherMessage(text);
+
+      if (!token && !botUsername) {
+        return { token: null, botUsername: null, recognized: false };
+      }
+
+      if (token && credentials?.apiToken !== token) {
+        setValue(`credentials.${CredentialsKeyEnum.ApiToken}`, token, {
+          shouldDirty: true,
+          shouldTouch: true,
+          shouldValidate: true,
+        });
+      }
+
+      return { token, botUsername, recognized: true };
+    },
+    [credentials, setValue]
+  );
+
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const text = event.target.value;
+      setDraft(text);
+
+      const { token } = parseBotFatherMessage(text);
+
+      if (token) {
+        setOutcome(apply(text));
+      } else {
+        setOutcome(null);
+      }
+    },
+    [apply]
+  );
+
+  const handlePaste = useCallback(
+    (event: React.ClipboardEvent<HTMLTextAreaElement>) => {
+      event.preventDefault();
+      const text = event.clipboardData.getData('text/plain');

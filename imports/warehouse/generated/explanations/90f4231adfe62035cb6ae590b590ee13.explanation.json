@@ -1,0 +1,6 @@
+{
+  "id":"90f4231adfe62035cb6ae590b590ee13",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/account/notifications/components/NotificationCard/DashboardNotificationCard.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

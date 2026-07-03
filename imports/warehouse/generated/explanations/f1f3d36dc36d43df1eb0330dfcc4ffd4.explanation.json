@@ -1,0 +1,6 @@
+{
+  "id":"f1f3d36dc36d43df1eb0330dfcc4ffd4",
+  "score":85,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/packages/shared/src/dto/workflows/create-workflow-deprecated.dto.ts",
+  "reasons":" workflow-feature, typescript-source,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"6f29ab8467306be48eda2df3647f0f3e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardSubscriptionsSidebar/get-supported-cards-for-subscriptions.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

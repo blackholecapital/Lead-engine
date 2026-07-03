@@ -1,0 +1,433 @@
+#!/usr/bin/env node
+console.log("RUNNER_STARTED")
+const fs=require("fs"), cp=require("child_process"), path=require("path");
+const [,,simple,outRootArg]=process.argv;
+if(!simple){console.error("usage: runtime-c-runner.cjs <simple.json> [run_root]");process.exit(2);}
+
+const ROOT=process.env.RUNTIME_C_HOME || path.resolve(__dirname,"../..");
+const LAB=path.join(ROOT,"tools/runtime-c-lab");
+const run=(cmd,args=[],stdio="inherit")=>cp.execFileSync(cmd,args,{stdio});
+const tool=(name,args=[])=>run(path.join(LAB,name),args);
+
+const ts=new Date().toISOString().replace(/[-:]/g,"").replace(/\..+/,"Z");
+const s=JSON.parse(fs.readFileSync(simple,"utf8"));
+const slug=s.job_name || (s.title||"runtime-c").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const root=outRootArg || path.join(ROOT,"sandbox/runs",`${slug}-${ts}`);
+fs.mkdirSync(root,{recursive:true});
+fs.mkdirSync(path.join(root,"output"),{recursive:true});
+fs.mkdirSync(path.join(root,"stream"),{recursive:true});
+
+const eventLog=path.join(root,"EVENT_LOG.jsonl");
+const emit=(event,extra={})=>fs.appendFileSync(eventLog,JSON.stringify({ts:new Date().toISOString(),event,...extra})+"\n");
+
+function checkpointTPS(label){
+  try{
+    tool("runtime-c-write-telemetry.cjs",[root]);
+    tool("runtime-c-write-tps.cjs",[root]);
+    const md=path.join(root,"TPS_REPORT.md"), txt=path.join(root,"TPS_REPORT.txt");
+    if(fs.existsSync(md)) fs.copyFileSync(md,txt);
+    emit("TPS_CHECKPOINT",{status:"PASS",label});
+  }catch(e){ emit("TPS_CHECKPOINT",{status:"WARN",label,error:String(e.message||e)}); }
+}
+
+
+function assertPromptClean(lane){
+  const f=path.join(root,`PROMPT_${lane}.json`);
+  if(!fs.existsSync(f)) throw new Error(`PROMPT_MISSING_${lane}`);
+  const p=JSON.parse(fs.readFileSync(f,"utf8"));
+  const task=String(p.task||"");
+  if(task.includes("undefined")) throw new Error(`PROMPT_UNDEFINED_${lane}`);
+  if(["WA","WB","WC"].includes(lane) && !task.includes("OBJECTIVE")) throw new Error(`PROMPT_OBJECTIVE_MISSING_${lane}`);
+}
+
+function finalizeRun(full,report){
+  checkpointTPS("finalize-start");
+  tool("runtime-c-write-sql-event.cjs",[root]);
+  tool("runtime-c-verify-run.cjs",[root]);
+  fs.writeFileSync(path.join(root,"RUN_STATE.json"),JSON.stringify({
+    status:"PASS",state:"COMPLETE",root,full,
+    coverage_report:report,
+    tps:path.join(root,"TPS_REPORT.md"),
+    completed_at:new Date().toISOString()
+  },null,2)+"\n");
+  emit("RUN_DONE",{status:"PASS",state:"COMPLETE",tps:path.join(root,"TPS_REPORT.md")});
+  tool("runtime-c-write-index.cjs",[]);
+  console.log(JSON.stringify({status:"PASS",state:"COMPLETE",root,full,coverage_report:report,tps:path.join(root,"TPS_REPORT.md")},null,2));
+}
+
+emit("RUN_CREATED",{status:"ACTIVE",root,job_name:slug,pod:(s.pod||s.lane_cell_backend||"A")});
+fs.writeFileSync(path.join(root,"RUN_STATE.json"),JSON.stringify({status:"ACTIVE",state:"RUNNING",root,created_at:new Date().toISOString()},null,2)+"\n");
+checkpointTPS("run-created");
+try{tool("runtime-c-write-index.cjs",[]);}catch{}
+
+const full=path.join(root,"buildsheet.full.json");
+tool("runtime-c-simple-compiler.cjs",[simple,full]);
+const fullJson=JSON.parse(fs.readFileSync(full,"utf8"));
+
+try{
+  tool("runtime-c-context-enricher.cjs",[root]);
+  emit("CONTEXT_ENRICHED",{status:"PASS"});
+}catch(e){
+  emit("CONTEXT_ENRICHED",{status:"WARN",error:String(e.message||e)});
+}
+
+
+const workflow=fullJson.mode || s.mode || "initial_build";
+const backend="real";
+const laneAdapter=path.join(LAB,"runtime-c-lane-real.cjs");
+
+emit("BUILDSHEET_COMPILED",{status:"PASS",full,workflow});
+run("node",[path.join(LAB,"runtime-c-image-context-bridge.cjs"),root]);
+emit("IMAGE_CONTEXT_BRIDGE",{status:"PASS"});
+if(fullJson.inherits_from?.enabled){
+  tool("runtime-c-restore-parent-output.cjs",[root]);
+  emit("PARENT_OUTPUT_RESTORED",{status:"PASS",parent_pass:fullJson.inherits_from.parent_pass,parent_slug:fullJson.inherits_from.parent_slug});
+}
+tool("runtime-c-resolve-pod.cjs",[root]);
+emit("POD_RESOLVED",{status:"PASS",pod:(s.pod||s.lane_cell_backend||"A")});
+emit("RUN_MODE_SELECTED",{status:"PASS",workflow,backend,lane_adapter:laneAdapter});
+
+emit("PHASE_START",{phase:"WORKSPACE_PREP",status:"ACTIVE"});
+run("node",[path.join(LAB,"runtime-c-exec-pod-authority.cjs"),root,"--prepare-only"]);
+const runId=path.basename(root);
+const ws=path.join(ROOT,"sandbox/workspaces",runId);
+fs.copyFileSync(full,path.join(ws,"buildsheet.full.json"));
+fs.copyFileSync(path.join(root,"POD_RESOLUTION.json"),path.join(ws,"POD_RESOLUTION.json"));
+emit("PHASE_DONE",{phase:"WORKSPACE_PREP",status:"PASS",workspace:ws});
+
+emit("PHASE_START",{phase:"REAL_LANES",status:"ACTIVE",workspace:ws});
+
+function sleep(ms){ Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,ms); }
+function waitFor(rel,label,timeoutMs=1000*60*20){
+  const target=path.join(ws,rel);
+  const start=Date.now();
+  while(!fs.existsSync(target)){
+    if(Date.now()-start > timeoutMs) throw new Error(`WAIT_TIMEOUT_${label}_${rel}`);
+    sleep(1000);
+  }
+}
+
+function copyLaneArtifacts(L){
+  for (const f of [`PROMPT_${L}.json`,`LLM_RECEIPT_${L}.json`]) {
+    const src=path.join(ws,f), dst=path.join(root,f);
+    if(fs.existsSync(src)) fs.copyFileSync(src,dst);
+  }
+  const streamSrc=path.join(ws,"stream",`${L}.jsonl`);
+  const streamDst=path.join(root,"stream",`${L}.jsonl`);
+  if(fs.existsSync(streamSrc)){
+    fs.mkdirSync(path.dirname(streamDst),{recursive:true});
+    fs.copyFileSync(streamSrc,streamDst);
+  }
+}
+
+function appendLaneEvents(L){
+  const wsEventLog=path.join(ws,"EVENT_LOG.jsonl");
+  if(!fs.existsSync(wsEventLog)) return;
+  const laneEvents=fs.readFileSync(wsEventLog,"utf8")
+    .split(/\n+/)
+    .filter(Boolean)
+    .filter(raw=>{
+      try{
+        const e=JSON.parse(raw);
+        return e.lane===L && ["LANE_START","LANE_DONE","LANE_CONTEXT","LANE_FAIL","LOCAL_LANE_DONE"].includes(e.event);
+      }catch{return false;}
+    });
+  if(laneEvents.length) fs.appendFileSync(eventLog,laneEvents.join("\n")+"\n");
+}
+
+function runRealLane(L){
+  emit("STAGGERED_LANE_DISPATCH",{status:"ACTIVE",lane:L});
+  run("node",[laneAdapter,L,ws]);
+  copyLaneArtifacts(L);
+  appendLaneEvents(L);
+}
+
+function writeLocalLane(L,outRel,title,lines){
+  const log=path.join(ws,"EVENT_LOG.jsonl");
+  const out=path.join(ws,outRel);
+  fs.mkdirSync(path.dirname(out),{recursive:true});
+
+  fs.appendFileSync(log,JSON.stringify({ts:new Date().toISOString(),event:"LANE_START",lane:L,status:"ACTIVE",local:true})+"\n");
+  fs.writeFileSync(out,`# ${title}\n\n${lines.join("\n")}\n`);
+  fs.writeFileSync(path.join(ws,`LLM_RECEIPT_${L}.json`),JSON.stringify({
+    status:"PASS",
+    local:true,
+    lane:L,
+    model:"local-validator",
+    base:"none",
+    output:outRel
+  },null,2)+"\n");
+  fs.appendFileSync(log,JSON.stringify({ts:new Date().toISOString(),event:"LOCAL_LANE_DONE",lane:L,status:"PASS",out:outRel})+"\n");
+
+  copyLaneArtifacts(L);
+  appendLaneEvents(L);
+}
+
+function localDEF(){
+  const html=fs.readFileSync(path.join(ws,"output/fragments/WA.html"),"utf8");
+  const css=fs.readFileSync(path.join(ws,"output/fragments/WB.css"),"utf8");
+  const js=fs.readFileSync(path.join(ws,"output/fragments/WC.js"),"utf8");
+
+  const sectionCount=(html.match(/<section\b/gi)||[]).length;
+  const interactionCount=(html.match(/<button\b|<a\b|<form\b|<input\b|<select\b/gi)||[]).length;
+  const cssBytes=Buffer.byteLength(css);
+  const jsBytes=Buffer.byteLength(js);
+  const placeholderRisk=/lorem|placeholder|sample|demo|tbd|coming soon/i.test(html+css+js);
+
+  writeLocalLane("WD","output/PRODUCT_MANIFEST.md","PRODUCT_MANIFEST",[
+    `- product: ${String(fullJson.title||s.title||slug)}`,
+    `- sections: ${sectionCount}`,
+    `- interactions: ${interactionCount}`,
+    `- css_bytes: ${cssBytes}`,
+    `- js_bytes: ${jsBytes}`,
+    `- placeholder_risk: ${placeholderRisk ? "YES" : "NO"}`
+  ]);
+
+  writeLocalLane("WE","output/REGRESSION_PROOF.md","REGRESSION_PROOF",[
+    `- objective_coverage: ${sectionCount>=9 && interactionCount>=5 ? "PASS" : "REVIEW"}`,
+    `- placeholders: ${placeholderRisk ? "FAIL" : "PASS"}`,
+    `- html_exists: PASS`,
+    `- css_exists: ${cssBytes>0 ? "PASS" : "FAIL"}`,
+    `- js_exists: ${jsBytes>0 ? "PASS" : "FAIL"}`
+  ]);
+
+  writeLocalLane("WF","output/OPERATOR_REVIEW_CARD.md","OPERATOR_REVIEW_CARD",[
+    `## Release_Status`,
+    `- status: ${placeholderRisk ? "NEEDS_REPAIR" : "READY"}`,
+    `- reason: local artifact review completed`,
+    ``,
+    `## Scores`,
+    `- visual_quality_0_10: ${cssBytes>1200 ? 8 : 6}`,
+    `- interaction_readiness_0_10: ${interactionCount>=5 && jsBytes>300 ? 8 : 6}`,
+    ``,
+    `## Recommended_Repairs`,
+    `- repair: ${placeholderRisk ? "remove placeholder/dummy content" : "none critical"}`
+  ]);
+}
+
+runRealLane("WA");
+waitFor("output/fragments/WA.html","WA_HTML");
+sleep(Number(process.env.RUNTIME_C_STAGGER_DELAY_MS||1500));
+
+runRealLane("WB");
+waitFor("output/fragments/WB.css","WB_CSS");
+sleep(Number(process.env.RUNTIME_C_STAGGER_DELAY_MS||1500));
+
+runRealLane("WC");
+waitFor("output/fragments/WC.js","WC_JS");
+
+localDEF();
+
+const wsFullEventLog=path.join(ws,"EVENT_LOG.jsonl");
+if(fs.existsSync(wsFullEventLog)){
+  fs.appendFileSync(eventLog,fs.readFileSync(wsFullEventLog,"utf8"));
+}
+emit("PHASE_DONE",{phase:"REAL_LANES",status:"PASS",workspace:ws});
+
+emit("PHASE_START",{phase:"COMPOSE_FRAGMENTS",status:"ACTIVE",workspace:ws});
+run("node",[path.join(LAB,"runtime-c-compose.cjs"),ws]);
+fs.rmSync(path.join(root,"output"),{recursive:true,force:true});
+cp.execFileSync("cp",["-a",path.join(ws,"output"),path.join(root,"output")]);
+emit("PHASE_DONE",{phase:"COMPOSE_FRAGMENTS",status:"PASS",workspace:ws});
+
+emit("PHASE_START",{phase:"VISUAL_POLISH",status:"ACTIVE"});
+run("node",[path.join(LAB,"runtime-c-visual-polish.cjs"),root]);
+emit("PHASE_DONE",{phase:"VISUAL_POLISH",status:"PASS"});
+
+emit("PHASE_START",{phase:"MULTIPAGE_SEED",status:"ACTIVE"});
+run("node",[path.join(LAB,"runtime-c-multipage-seed.cjs"),root]);
+emit("PHASE_DONE",{phase:"MULTIPAGE_SEED",status:"PASS"});
+
+emit("PHASE_START",{phase:"ROUTE_SPLITTER",status:"ACTIVE"});
+run("node",[path.join(LAB,"runtime-c-route-splitter.cjs"),root]);
+emit("PHASE_DONE",{phase:"ROUTE_SPLITTER",status:"PASS"});
+
+emit("PHASE_START",{phase:"PAGE_REGISTRY",status:"ACTIVE"});
+run("node",[path.join(LAB,"runtime-c-page-registry.cjs"),root]);
+emit("PHASE_DONE",{phase:"PAGE_REGISTRY",status:"PASS"});
+
+emit("PHASE_START",{phase:"ROUTE_JS_SANITIZER",status:"ACTIVE"});
+run("node",[path.join(LAB,"runtime-c-route-js-sanitizer.cjs"),root]);
+emit("PHASE_DONE",{phase:"ROUTE_JS_SANITIZER",status:"PASS"});
+
+emit("PHASE_START",{phase:"ROUTE_GATE",status:"ACTIVE"});
+run("node",[path.join(LAB,"runtime-c-route-gate.cjs"),root]);
+emit("PHASE_DONE",{phase:"ROUTE_GATE",status:"PASS"});
+
+emit("PHASE_START",{phase:"ROUTE_CONTEXT",status:"ACTIVE"});
+run("node",[path.join(LAB,"runtime-c-route-context.cjs"),root]);
+emit("PHASE_DONE",{phase:"ROUTE_CONTEXT",status:"PASS"});
+
+emit("PHASE_START",{phase:"ASTRO_EXPORT",status:"ACTIVE"});
+run("node",[path.join(LAB,"runtime-c-astro-export.cjs"),root]);
+emit("PHASE_DONE",{phase:"ASTRO_EXPORT",status:"PASS"});
+
+emit("PHASE_START",{phase:"POD_AUTHORITY",status:"ACTIVE"});
+try{
+  run("node",[path.join(LAB,"runtime-c-exec-pod-authority.cjs"),root,"--verify-only"]);
+  const imp=JSON.parse(fs.readFileSync(path.join(root,"POD_AUTHORITY_IMPORT.json"),"utf8"));
+  emit("POD_AUTHORITY_DONE",{
+    status:imp.status,
+    pod:imp.pod,
+    imported_output:!!imp.imported_output,
+    imported_proof:!!imp.imported_proof,
+    imported_worker_packets:!!imp.imported_worker_packets,
+    artifact_root:imp.artifact_root
+  });
+}catch(e){
+  const err=String(e.message||e);
+  emit("POD_AUTHORITY_DONE",{status:"FAIL",error:err});
+  fs.writeFileSync(path.join(root,"RUN_STATE.json"),JSON.stringify({
+    status:"FAIL",
+    state:"POD_AUTHORITY_FAIL",
+    root,
+    failed_at:new Date().toISOString(),
+    error:err
+  },null,2)+"\n");
+  checkpointTPS("pod-authority-fail");
+  tool("runtime-c-write-index.cjs",[]);
+  process.exit(1);
+}
+emit("PHASE_DONE",{phase:"POD_AUTHORITY",status:"PASS"});
+checkpointTPS("pod-authority-done");
+
+
+const mf=path.join(root,"output","CLASS_MANIFEST.json");
+if(!fs.existsSync(mf)) throw new Error("WA_MANIFEST_MISSING");
+const classes=JSON.parse(fs.readFileSync(mf,"utf8"));
+if(!classes.classes||!classes.classes.length){
+  emit("REPAIR_CLASS_EXTRACT",{status:"ACTIVE"});
+  run("node",[path.join(LAB,"runtime-c-extract-classes.cjs"),root]);
+}
+
+emit("PHASE_START",{phase:"POD_OUTPUT_VALIDATE",status:"ACTIVE"});
+
+try{
+  process.chdir(root);
+  run("node",[path.join(LAB,"runtime-c-compose.cjs"),root]);
+  process.chdir(LAB);
+  emit("PAGE_COMPOSED",{status:"PASS"});
+    run("node",[path.join(LAB,"runtime-c-route-splitter.cjs"),root]);
+    run("node",[path.join(LAB,"runtime-c-page-registry.cjs"),root]);
+    run("node",[path.join(LAB,"runtime-c-route-js-sanitizer.cjs"),root]);
+    run("node",[path.join(LAB,"runtime-c-route-gate.cjs"),root]);
+    run("node",[path.join(LAB,"runtime-c-route-context.cjs"),root]);
+}catch(e){
+  emit("PAGE_COMPOSED",{status:"WARN",error:String(e.message||e)});
+}
+
+try{
+  run("node",[path.join(LAB,"runtime-c-regression-gate.cjs"),root]);
+  emit("REGRESSION_GATE",{status:"PASS"});
+}catch(e){
+  emit("REGRESSION_GATE",{status:"FAIL",error:String(e.message||e)});
+  throw e;
+}
+
+emit("PHASE_DONE",{phase:"POD_OUTPUT_VALIDATE",status:"PASS"});
+checkpointTPS("dependent-done");
+
+try{
+  run("node",[path.join(LAB,"runtime-c-css-parse-check.cjs"),path.join(root,"output","styles.css")]);
+}catch(e){
+  checkpointTPS("css-parse-fail");
+  fs.writeFileSync(path.join(root,"RUN_STATE.json"),JSON.stringify({status:"FAIL",state:"CSS_PARSE_FAIL",root,failed_at:new Date().toISOString(),error:String(e.message||e)},null,2)+"\n");
+  emit("RUN_DONE",{status:"FAIL",state:"CSS_PARSE_FAIL",error:String(e.message||e)});
+  tool("runtime-c-write-index.cjs",[]);
+  process.exit(1);
+}
+const report=path.join(root,"CLASS_COVERAGE_GATE.json");
+tool("runtime-c-class-contract-check.cjs",[path.join(root,"output"),report,full]);
+try{
+  tool("runtime-c-run-policy.sh",[report]);
+  emit("RUN_POLICY",{status:"PASS"});
+}catch(e){
+  emit("RUN_POLICY",{status:"FAIL",error:String(e.message||e)});
+  fs.writeFileSync(path.join(root,"RUN_STATE.json"),JSON.stringify({status:"FAIL",state:"RUN_POLICY_FAIL",root,failed_at:new Date().toISOString(),error:String(e.message||e)},null,2)+"\n");
+  throw e;
+}
+checkpointTPS("policy-pass");
+try{
+  run("node",["--check",path.join(root,"output","app.js")]);
+  emit("JS_SYNTAX_CHECK",{status:"PASS"});
+}catch(e){
+  emit("JS_SYNTAX_CHECK",{status:"FAIL",error:String(e.message||e)});
+  fs.writeFileSync(path.join(root,"RUN_STATE.json"),JSON.stringify({status:"FAIL",state:"JS_SYNTAX_FAIL",root,failed_at:new Date().toISOString(),error:String(e.message||e)},null,2)+"\n");
+  throw e;
+}
+  try{
+    run("node",[path.join(LAB,"runtime-c-quality-gate.cjs"),root]);
+    emit("QUALITY_GATE",{status:"PASS"});
+  }catch(e){
+    emit("QUALITY_GATE",{status:"FAIL",error:String(e.message||e)});
+    throw e;
+  }
+
+finalizeRun(full,report);
+
+run(
+  "node",
+  [path.join(LAB,"runtime-c-finalize-merge.cjs"),root]
+);
+
+run(
+  "node",
+  [path.join(LAB,"runtime-c-core7-review.cjs"),root]
+);
+
+emit("CORE7_COMPLETE",{status:"PASS"});
+
+run(
+  "node",
+  [path.join(LAB,"runtime-c-promote-family.cjs"),root]
+);
+
+emit("PROMOTED_BASE_UPDATED",{status:"PASS"});
+try{
+  const lineagePath=path.join(root,"TEMPORAL_LINEAGE.json");
+  const fullObj=JSON.parse(fs.readFileSync(full,"utf8"));
+  const state={
+    status:"PASS",
+    run_id:path.basename(root),
+    family:fullObj.family||fullObj.product_slug||null,
+    pass:fullObj.pass||null,
+    mode:fullObj.mode||fullObj.workflow||null,
+    parent_run_id:fullObj.parent_context?.source_run_id||fullObj.inherits_from?.parent_run_id||null,
+    parent_output:fullObj.parent_context?.source_output||null,
+    output:path.join(root,"output"),
+    fragments:path.join(root,"output","fragments"),
+    promoted_at:new Date().toISOString(),
+    artifacts:{
+      html:"output/index.html",
+      css:"output/styles.css",
+      js:"output/app.js",
+      manifest:"output/CLASS_MANIFEST.json"
+    }
+  };
+  fs.writeFileSync(lineagePath,JSON.stringify(state,null,2)+"\n");
+  emit("TEMPORAL_LINEAGE_WRITTEN",{status:"PASS",lineage:lineagePath});
+}catch(e){
+  emit("TEMPORAL_LINEAGE_WRITTEN",{status:"WARN",error:String(e.message||e)});
+}
+
+try{
+  run("node",[path.join(LAB,"runtime-c-write-metrics.cjs"),root]);
+  emit("METRICS_WRITTEN",{status:"PASS"});
+}catch(e){
+  emit("METRICS_WRITTEN",{status:"WARN",error:String(e.message||e)});
+}
+
+run(
+  "node",
+  [path.join(LAB,"runtime-c-publish-artifact-data.cjs")]
+);
+
+run(
+  "node",
+  [path.join(LAB,"runtime-c-write-metrics.cjs"),root]
+);
+
+emit("PROMOTED_BASE_UPDATED",{status:"PASS"});
+
+tool("runtime-c-write-index.cjs",[]);
+

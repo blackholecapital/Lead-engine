@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/badge.tsx
+
+// AlignUI Badge v0.0.0
+
+import { Slot } from '@radix-ui/react-slot';
+import { motion } from 'motion/react';
+import * as React from 'react';
+
+import type { PolymorphicComponentProps } from '@/utils/polymorphic';
+import { recursiveCloneChildren } from '@/utils/recursive-clone-children';
+import { tv, type VariantProps } from '@/utils/tv';
+import { cn } from '@/utils/ui';
+
+const BADGE_ROOT_NAME = 'BadgeRoot';
+const BADGE_ICON_NAME = 'BadgeIcon';
+const BADGE_DOT_NAME = 'BadgeDot';
+
+export const badgeVariants = tv({
+  slots: {
+    root: 'inline-flex items-center justify-center rounded-full leading-none transition duration-200 ease-out',
+    icon: 'shrink-0',
+    dot: [
+      // base
+      'dot',
+      'flex items-center justify-center',
+      // before
+      'before:size-1 before:rounded-full before:bg-current',
+    ],
+  },
+  variants: {
+    size: {
+      sm: {
+        root: 'h-4 gap-1.5 px-2 text-subheading-2xs has-[>.dot]:gap-2',
+        icon: '-mx-1 size-3',
+        dot: '-mx-2 size-4',
+      },
+      md: {
+        root: 'h-5 gap-1.5 px-2 text-label-xs',
+        icon: '-mx-1 size-4',
+        dot: '-mx-1.5 size-4',
+      },
+    },
+    variant: {
+      filled: {
+        root: 'text-static-white',
+      },
+      light: {},
+      lighter: {},
+      stroke: {
+        root: 'ring-1 ring-inset ring-current',
+      },
+    },
+    color: {
+      gray: {},
+      blue: {},
+      orange: {},
+      red: {},
+      green: {},
+      yellow: {},
+      purple: {},
+      sky: {},
+      pink: {},
+      teal: {},
+    },
+    disabled: {
+      true: {
+        root: 'pointer-events-none',
+      },
+    },
+    square: {
+      true: {},
+    },
+  },
+  compoundVariants: [
+    //#region variant=filled
+    {
+      variant: 'filled',
+      color: 'gray',
+      class: {
+        root: 'bg-faded-base',
+      },
+    },
+    {
+      variant: 'filled',
+      color: 'blue',
+      class: {
+        root: 'bg-information-base',
+      },
+    },
+    {
+      variant: 'filled',
+      color: 'orange',
+      class: {
+        root: 'bg-warning-base',
+      },
+    },
+    {
+      variant: 'filled',
+      color: 'red',
+      class: {
+        root: 'bg-error-base',
+      },

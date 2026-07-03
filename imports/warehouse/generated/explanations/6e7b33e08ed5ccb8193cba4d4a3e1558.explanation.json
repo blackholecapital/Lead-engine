@@ -1,0 +1,6 @@
+{
+  "id":"6e7b33e08ed5ccb8193cba4d4a3e1558",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/hooks/useAutoRefreshTabPause.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

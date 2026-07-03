@@ -1,0 +1,6 @@
+{
+  "id":"9365e312179c1d1425a7f9537a3a4077",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/QuestionInfoSidebar/components/SidesheetCardWithFields.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

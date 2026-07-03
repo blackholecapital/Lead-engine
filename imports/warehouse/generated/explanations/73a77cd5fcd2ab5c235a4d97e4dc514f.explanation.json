@@ -1,0 +1,6 @@
+{
+  "id":"73a77cd5fcd2ab5c235a4d97e4dc514f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ActionViz/Action.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

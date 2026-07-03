@@ -1,0 +1,15 @@
+{"id":"apache-age","title":"Apache AGE","category":"graph","tags":["graph","postgres","relationships"],"source":"vendor-source/graph/apache-age","status":"downloaded","tier":"candidate"}
+{"id":"cal-com","title":"Cal.com","category":"workspace","tags":["calendar","workspace","booking"],"source":"vendor-source/workspace/cal-com","status":"downloaded","tier":"candidate"}
+{"id":"chatwoot","title":"Chatwoot","category":"comms","tags":["comms","crm","support","inbox"],"source":"vendor-source/comms/chatwoot","status":"downloaded","tier":"candidate"}
+{"id":"documenso","title":"Documenso","category":"documents","tags":["documents","esign","workflow"],"source":"vendor-source/documents/documenso","status":"downloaded","tier":"candidate"}
+{"id":"flexsearch","title":"FlexSearch","category":"scoring","tags":["search","ranking","retrieval"],"source":"vendor-source/scoring/flexsearch","status":"downloaded","tier":"candidate"}
+{"id":"fusejs","title":"FuseJS","category":"scoring","tags":["search","fuzzy","ranking"],"source":"vendor-source/scoring/fusejs","status":"downloaded","tier":"candidate"}
+{"id":"fuzzysort","title":"Fuzzysort","category":"scoring","tags":["search","scoring","fuzzy"],"source":"vendor-source/scoring/fuzzysort","status":"downloaded","tier":"candidate"}
+{"id":"lancedb","title":"LanceDB","category":"retrieval","tags":["vector","retrieval"],"source":"vendor-source/retrieval/lancedb","status":"downloaded","tier":"candidate"}
+{"id":"listmonk","title":"Listmonk","category":"comms","tags":["email","campaign","marketing"],"source":"vendor-source/comms/listmonk","status":"downloaded","tier":"candidate"}
+{"id":"memgraph","title":"Memgraph","category":"graph","tags":["graph","relationships","analytics"],"source":"vendor-source/graph/memgraph","status":"downloaded","tier":"candidate"}
+{"id":"novu","title":"Novu","category":"comms","tags":["comms","email","sms","workflow","notification"],"source":"vendor-source/comms/novu","status":"downloaded","tier":"candidate"}
+{"id":"postiz","title":"Postiz","category":"marketing","tags":["social","marketing","publishing"],"source":"vendor-source/marketing/postiz","status":"downloaded","tier":"candidate"}
+{"id":"qdrant","title":"Qdrant","category":"retrieval","tags":["vector","retrieval"],"source":"vendor-source/retrieval/qdrant","status":"downloaded","tier":"candidate"}
+{"id":"rotki","title":"Rotki","category":"treasury","tags":["treasury","defi","portfolio"],"source":"vendor-source/treasury/rotki","status":"downloaded","tier":"candidate"}
+{"id":"tagify","title":"Tagify","category":"tagging","tags":["tagging","ui","search"],"source":"vendor-source/tagging/tagify","status":"downloaded","tier":"candidate"}

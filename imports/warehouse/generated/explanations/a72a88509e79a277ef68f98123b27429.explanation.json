@@ -1,0 +1,6 @@
+{
+  "id":"a72a88509e79a277ef68f98123b27429",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/pieces/community/iloveapi/src/lib/triggers/signature-builder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

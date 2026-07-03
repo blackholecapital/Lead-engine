@@ -1,0 +1,12 @@
+{
+  "id": "bbf0577bec7c5780558efc6e5aea2b22",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase-types/api/mocks/automagic-dashboards.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "warehouse",
+  "root": "/mnt/eila-hot-sidecar/runtime-c-assets",
+  "top_dirs": [
+    "/mnt/eila-hot-sidecar/runtime-c-assets/admin-frameworks",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/crm-platforms",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/css-frameworks",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/dashboard-patterns",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/dashboard-templates",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/design-systems",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/icons",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/indexes",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/photos",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/reference",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/registries",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/svg",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/templates",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/ui",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/ui-primitives",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/workflow-platforms"
+  ],
+  "tree_map": "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/ASSET_TREE_MAP.md",
+  "generated_at": 1780039380,
+  "runtime_c_root": "/opt/eila-os/factory-xyz/runtime-c"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "a7dcc18c252a0b1a5d4bc5ae7979180d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/trpc/server/routers/viewer/eventTypes/usecases/EventGroupBuilder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "calendar",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"428312d9160397bd2956cb6900403c14",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/step-settings/agent-settings/piece-tool-dialog.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

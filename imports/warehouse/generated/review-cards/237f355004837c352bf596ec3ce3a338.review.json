@@ -1,0 +1,12 @@
+{
+  "id": "237f355004837c352bf596ec3ce3a338",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/cypress-base/cypress/fixtures/dashboards.json",
+  "score": 95,
+  "suggested_tags": [
+    "config",
+    "dashboard"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

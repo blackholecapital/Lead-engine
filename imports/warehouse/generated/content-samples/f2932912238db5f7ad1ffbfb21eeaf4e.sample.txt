@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-activity-url-state.ts
+
+import { ChannelTypeEnum, SeverityLevelEnum } from '@novu/shared';
+import { useCallback, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { ActivityFilters } from '@/api/activity';
+import { DEFAULT_DATE_RANGE } from '@/components/activity/constants';
+import { ActivityFiltersData, ActivityUrlState } from '@/types/activity';
+
+function parseFilters(searchParams: URLSearchParams): ActivityFilters {
+  const result: ActivityFilters = {};
+
+  const channels = searchParams.get('channels')?.split(',').filter(Boolean);
+
+  if (channels?.length) {
+    result.channels = channels as ChannelTypeEnum[];
+  }
+
+  const workflows = searchParams.get('workflows')?.split(',').filter(Boolean);
+
+  if (workflows?.length) {
+    result.workflows = workflows;
+  }
+
+  const transactionId = searchParams.get('transactionId');
+  const transactionIds = searchParams.getAll('transactionId');
+
+  if (transactionIds.length > 1) {
+    result.transactionId = transactionIds.join(',');
+  } else if (transactionId) {
+    result.transactionId = transactionId;
+  }
+
+  const subscriberId = searchParams.get('subscriberId');
+
+  if (subscriberId) {
+    result.subscriberId = subscriberId;
+  }
+
+  const topicKey = searchParams.get('topicKey');
+
+  if (topicKey) {
+    result.topicKey = topicKey;
+  }
+
+  const subscriptionId = searchParams.get('subscriptionId');
+
+  if (subscriptionId) {
+    result.subscriptionId = subscriptionId;
+  }
+
+  const dateRange = searchParams.get('dateRange');
+  result.dateRange = dateRange || DEFAULT_DATE_RANGE;
+
+  const severity = searchParams.get('severity')?.split(',').filter(Boolean);
+  if (severity?.length) {
+    result.severity = severity as SeverityLevelEnum[];
+  }
+
+  const contextKeys = searchParams.getAll('contextKeys');
+
+  if (contextKeys.length > 0) {
+    result.contextKeys = contextKeys;
+  }
+
+  return result;
+}
+
+function parseFilterValues(searchParams: URLSearchParams): ActivityFiltersData {
+  const transactionIds = searchParams.getAll('transactionId');
+
+  return {
+    dateRange: searchParams.get('dateRange') || DEFAULT_DATE_RANGE,
+    channels: (searchParams.get('channels')?.split(',').filter(Boolean) as ChannelTypeEnum[]) || [],
+    workflows: searchParams.get('workflows')?.split(',').filter(Boolean) || [],
+    transactionId: transactionIds.length > 0 ? transactionIds.join(', ') : '',
+    subscriberId: searchParams.get('subscriberId') || '',
+    topicKey: searchParams.get('topicKey') || '',
+    subscriptionId: searchParams.get('subscriptionId') || '',
+    severity: (searchParams.get('severity')?.split(',').filter(Boolean) as SeverityLevelEnum[]) || [],
+    contextKeys: searchParams.getAll('contextKeys'),
+  };
+}
+
+export function useActivityUrlState(): ActivityUrlState & {
+  handleActivitySelect: (activityItemId: string) => void;
+  handleFiltersChange: (data: ActivityFiltersData) => void;
+} {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activityItemId = searchParams.get('activityItemId');
+
+  const handleActivitySelect = useCallback(
+    (newActivityItemId: string) => {
+      const newParams = new URLSearchParams(searchParams);
+
+      if (newActivityItemId === activityItemId) {
+        newParams.delete('activityItemId');
+      } else {
+        newParams.set('activityItemId', newActivityItemId);
+      }
+
+      setSearchParams(newParams, { replace: true });

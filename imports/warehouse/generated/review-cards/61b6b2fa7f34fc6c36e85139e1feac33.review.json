@@ -1,0 +1,12 @@
+{
+  "id": "61b6b2fa7f34fc6c36e85139e1feac33",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/spec/fixtures/mockDashboardFormData.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

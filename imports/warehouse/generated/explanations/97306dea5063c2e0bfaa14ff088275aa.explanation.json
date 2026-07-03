@@ -1,0 +1,6 @@
+{
+  "id":"97306dea5063c2e0bfaa14ff088275aa",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/NativeVariablesButton/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

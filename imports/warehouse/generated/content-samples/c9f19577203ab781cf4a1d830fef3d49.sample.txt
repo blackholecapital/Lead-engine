@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/translation-plugin/autocomplete.ts
+
+import { Completion, CompletionContext, CompletionSource } from '@codemirror/autocomplete';
+import { TRANSLATION_DELIMITER_CLOSE, TRANSLATION_TRIGGER_CHARACTER } from '@novu/shared';
+import { EditorView } from '@uiw/react-codemirror';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { NewTranslationKeyPreview } from '@/components/workflow-editor/steps/email/translations/new-translation-key-preview';
+import { TranslationAutocompleteConfig, TranslationCompletionOption, TranslationKey } from '@/types/translations';
+import { isInsideVariableContext } from './utils';
+
+/**
+ * Create a DOM element to render the info panel in Codemirror.
+ */
+const createInfoPanel = ({ component }: { component: React.ReactNode }) => {
+  const dom = document.createElement('div');
+  createRoot(dom).render(component);
+  return dom;
+};
+
+function createCompletionOption(
+  name: string,
+  type: 'translation' | 'new-translation-key',
+  searchText: string,
+  displayLabel?: string
+): TranslationCompletionOption {
+  const boost = type === 'translation' && name.toLowerCase().startsWith(searchText.toLowerCase()) ? 2 : 1;
+  return { label: name, type, boost, displayLabel: displayLabel || name };
+}
+
+function findMatchingKeys(searchText: string, translationKeys: TranslationKey[]): TranslationCompletionOption[] {
+  if (!searchText) {
+    return translationKeys.map((key) => createCompletionOption(key.name, 'translation', ''));
+  }
+
+  return translationKeys
+    .filter((key) => key.name.toLowerCase().includes(searchText.toLowerCase()))
+    .map((key) => createCompletionOption(key.name, 'translation', searchText));
+}
+
+function createNewKeySuggestion(
+  searchText: string,
+  existingKeys: string[],
+  hasCreateHandler: boolean,
+  onCreateNewTranslationKey?: (translationKey: string) => Promise<void>
+): TranslationCompletionOption | null {
+  const trimmedSearch = searchText.trim();
+  if (!trimmedSearch || !hasCreateHandler) return null;
+
+  const keyExists = existingKeys.some((key) => key.toLowerCase() === trimmedSearch.toLowerCase());
+  if (keyExists) return null;
+
+  const option = createCompletionOption(
+    trimmedSearch,
+    'new-translation-key',
+    trimmedSearch,
+    `Create "${trimmedSearch}"`
+  );
+
+  // Add info panel with preview
+  return {
+    ...option,
+    info: () => {
+      const dom = createInfoPanel({
+        component: React.createElement(NewTranslationKeyPreview, {
+          onCreateClick: () => {
+            onCreateNewTranslationKey?.(trimmedSearch);
+          },
+        }),
+      });
+      return {
+        dom,
+        destroy: () => {
+          dom.remove();
+        },
+      };
+    },
+  };
+}
+
+function createApplyFunction(translationOption: TranslationCompletionOption, config: TranslationAutocompleteConfig) {
+  return (view: EditorView, completion: Completion, from: number, to: number): boolean => {
+    const { onTranslationSelect, onCreateNewTranslationKey } = config;
+    const selectedValue = translationOption.label;
+    const isNewKey = translationOption.type === 'new-translation-key';
+
+    if (isNewKey && onCreateNewTranslationKey) {
+      onCreateNewTranslationKey(selectedValue).catch((error) => {
+        console.error('Failed to create translation key:', error);
+      });
+    }
+
+    const content = view.state.doc.toString();
+    const beforeCursor = content.slice(0, from);
+    const afterCursor = content.slice(to);
+
+    const needsOpening = !beforeCursor.endsWith(TRANSLATION_TRIGGER_CHARACTER);
+    const needsClosing = !afterCursor.startsWith(TRANSLATION_DELIMITER_CLOSE);
+
+    const wrappedValue = `${needsOpening ? TRANSLATION_TRIGGER_CHARACTER : ''}${selectedValue}${needsClosing ? TRANSLATION_DELIMITER_CLOSE : ''}`;
+    const finalCursorPos = from + wrappedValue.length + (needsClosing ? 0 : 2);
+

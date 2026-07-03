@@ -1,0 +1,11 @@
+{
+  "id": "tagify",
+  "label": "Tagify",
+  "category": "tagging",
+  "tags": [
+    "tagging",
+    "ui",
+    "search"
+  ],
+  "type": "asset"
+}

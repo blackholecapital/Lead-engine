@@ -1,0 +1,11 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/auth.ts
+
+declare namespace Clerk {
+  export const session: {
+    getToken: () => Promise<string | null>;
+  };
+}
+
+export async function getToken(): Promise<string> {
+  return (await Clerk.session?.getToken()) || '';
+}

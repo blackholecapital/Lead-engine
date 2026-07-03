@@ -1,0 +1,6 @@
+{
+  "id":"a5ab3622844267cce0df554c517a3367",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/step-settings/code-settings/add-npm-dialog.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/translations/translation-row.tsx
+
+import { TranslationGroupDto } from '@novu/api/models/components';
+import { EnvironmentTypeEnum, PermissionsEnum } from '@novu/shared';
+import { ComponentProps, useCallback } from 'react';
+import { RiDeleteBin2Line, RiLayout5Line, RiMore2Fill, RiRouteFill } from 'react-icons/ri';
+import { useNavigate, useParams } from 'react-router-dom';
+import { StackedFlagCircles } from '@/components/flag-circle';
+import { CompactButton } from '@/components/primitives/button-compact';
+import { CopyButton } from '@/components/primitives/copy-button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/primitives/dropdown-menu';
+import { Skeleton } from '@/components/primitives/skeleton';
+import { TableCell, TableRow } from '@/components/primitives/table';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@/components/primitives/tooltip';
+import { TimeDisplayHoverCard } from '@/components/time-display-hover-card';
+import TruncatedText from '@/components/truncated-text';
+import { useEnvironment } from '@/context/environment/hooks';
+import { useHasPermission } from '@/hooks/use-has-permission';
+import { formatDateSimple } from '@/utils/format-date';
+import { buildRoute, ROUTES } from '@/utils/routes';
+import { cn } from '@/utils/ui';
+import { LocalizationResourceEnum } from '../../types/translations';
+import { TranslationStatus } from './translation-status';
+
+type TranslationTableCellProps = ComponentProps<typeof TableCell>;
+
+function TranslationTableCell({ className, children, ...props }: TranslationTableCellProps) {
+  return (
+    <TableCell className={cn('group-hover:bg-neutral-alpha-50 text-text-sub relative', className)} {...props}>
+      {children}
+      <span className="sr-only">Edit translation</span>
+    </TableCell>
+  );
+}
+
+type ResourceInfoProps = {
+  resourceId: string;
+  resourceType: LocalizationResourceEnum;
+  resourceName: string;
+};
+
+function ResourceInfo({ resourceId, resourceType, resourceName }: ResourceInfoProps) {
+  return (
+    <div className="flex items-center gap-2">
+      <Tooltip delayDuration={300}>
+        <TooltipTrigger>
+          {resourceType === LocalizationResourceEnum.WORKFLOW ? (
+            <RiRouteFill className="text-feature size-4" />
+          ) : (
+            <RiLayout5Line className="text-feature size-4" />
+          )}
+        </TooltipTrigger>
+        <TooltipPortal>
+          <TooltipContent>
+            <span className="font-medium">
+              {resourceType === LocalizationResourceEnum.WORKFLOW ? 'Workflow Translation' : 'Layout Translation'}
+            </span>
+          </TooltipContent>
+        </TooltipPortal>
+      </Tooltip>
+      <div>
+        <div className="flex items-center gap-1">
+          <TruncatedText className="max-w-[32ch]">{resourceName}</TruncatedText>
+        </div>
+        <div className="flex items-center gap-1 transition-opacity duration-200">
+          <TruncatedText className="text-foreground-400 font-code block max-w-[40ch] text-xs">
+            {resourceId}
+          </TruncatedText>
+          <CopyButton
+            className="z-10 flex size-2 p-0 px-1 opacity-0 group-hover:opacity-100"
+            valueToCopy={resourceId}
+            size="2xs"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type TranslationActionsMenuProps = {
+  onGoToWorkflow: (e: React.MouseEvent) => void;
+  onStopPropagation: (e: React.MouseEvent) => void;
+  onDeleteClick: (e: React.MouseEvent) => void;
+  canWrite: boolean;
+  isDevEnvironment: boolean;
+};
+
+function TranslationActionsMenu({
+  onGoToWorkflow,
+  onStopPropagation,
+  onDeleteClick,
+  canWrite,
+  isDevEnvironment,
+}: TranslationActionsMenuProps) {
+  const canDelete = canWrite && isDevEnvironment;
+

@@ -1,0 +1,11 @@
+{
+  "id": "c381861e735b1e66c7737da3b1455813",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/spec/fixtures/mockDashboardState.js",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

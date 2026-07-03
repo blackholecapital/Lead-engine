@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "id": "fuzzysort",
+    "title": "Fuzzysort",
+    "category": "scoring",
+    "tags": [
+      "search",
+      "scoring",
+      "fuzzy"
+    ],
+    "source": "vendor-source/scoring/fuzzysort",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "fuzzysort",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "fuzzysort",
+    "label": "Fuzzysort",
+    "category": "scoring",
+    "tags": [
+      "search",
+      "scoring",
+      "fuzzy"
+    ],
+    "type": "asset"
+  }
+}

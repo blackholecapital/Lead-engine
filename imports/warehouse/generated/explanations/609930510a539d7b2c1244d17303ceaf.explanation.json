@@ -1,0 +1,6 @@
+{
+  "id":"609930510a539d7b2c1244d17303ceaf",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/vite-env.d.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

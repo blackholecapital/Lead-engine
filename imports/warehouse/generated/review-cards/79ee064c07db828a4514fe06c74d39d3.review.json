@@ -1,0 +1,14 @@
+{
+  "id": "79ee064c07db828a4514fe06c74d39d3",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/components/Datasource/components/DatasourceEditor/components/DashboardLinksExternal/DashboardLinksExternal.test.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

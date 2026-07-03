@@ -1,0 +1,6 @@
+{
+  "id":"84417bdec81cdcd329f3300db25573b6",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/chart-data/constants/graph-default-date-granularity.constant.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

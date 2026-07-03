@@ -1,0 +1,6 @@
+{
+  "id":"d2e9ec9236061a1539d6cac572df186b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getFilterScopeNodesTree.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

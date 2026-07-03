@@ -1,0 +1,6 @@
+{
+  "id":"7f6596badba88d2a8f69004e3d0b1e02",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/CollapsibleDashboardParameterList/CollapsibleDashboardParameterList.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

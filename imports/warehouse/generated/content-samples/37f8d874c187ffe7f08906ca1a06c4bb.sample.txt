@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/cli-auth-pending.ts
+
+import { readClerkRedirectUrlParam } from '@/utils/product-auth-urls';
+import { ROUTES } from '@/utils/routes';
+
+const STORAGE_KEY = 'pendingCliAuth';
+
+const DEVICE_CODE_PATTERN = /^[A-Za-z0-9_-]{16,128}$/;
+
+export type PendingCliAuth = {
+  deviceCode: string;
+  name: string | null;
+};
+
+function isValidDeviceCode(deviceCode: string | null | undefined): deviceCode is string {
+  if (!deviceCode) {
+    return false;
+  }
+
+  return DEVICE_CODE_PATTERN.test(deviceCode);
+}
+
+export function isCliAuthPath(pathname: string): boolean {
+  return pathname === ROUTES.CLI_AUTH;
+}
+
+export function isCliAuthReturnUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url, typeof window !== 'undefined' ? window.location.origin : 'http://local');
+
+    return isCliAuthPath(parsed.pathname);
+  } catch {
+    return false;
+  }
+}
+
+export function parseCliAuthFromUrl(url: string): Pick<PendingCliAuth, 'deviceCode' | 'name'> | null {
+  try {
+    const parsed = new URL(url, typeof window !== 'undefined' ? window.location.origin : 'http://local');
+
+    if (!isCliAuthPath(parsed.pathname)) {
+      return null;
+    }
+
+    const deviceCode = parsed.searchParams.get('device_code');
+
+    if (!isValidDeviceCode(deviceCode)) {
+      return null;
+    }
+
+    return {
+      deviceCode,
+      name: parsed.searchParams.get('name'),
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function storePendingCliAuthFromPath(pathname: string, search = ''): boolean {
+  if (!isCliAuthPath(pathname)) {
+    return false;
+  }
+
+  const parsed = parseCliAuthFromUrl(`${pathname}${search}`);
+
+  if (!parsed) {
+    return false;
+  }
+
+  storePendingCliAuth(parsed.deviceCode, parsed.name);
+
+  return true;
+}
+
+export function storePendingCliAuth(deviceCode: string, name: string | null): void {
+  if (typeof window === 'undefined' || !isValidDeviceCode(deviceCode)) {
+    return;
+  }
+
+  const pending: PendingCliAuth = {
+    deviceCode,
+    name,
+  };
+
+  sessionStorage.setItem(STORAGE_KEY, JSON.stringify(pending));
+}
+
+export function readPendingCliAuth(): PendingCliAuth | null {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  try {
+    const raw = sessionStorage.getItem(STORAGE_KEY);
+
+    if (!raw) {
+      return null;
+    }
+
+    const parsed = JSON.parse(raw) as Partial<PendingCliAuth>;
+

@@ -1,0 +1,6 @@
+{
+  "id":"90df41adbd2128eac060f5beb34f8511",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/View/ViewRightSidebarContainer/ViewRightSidebarContainer.jsx",
+  "reasons":" builder-pattern,"
+}

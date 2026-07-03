@@ -1,0 +1,6 @@
+{
+  "id":"40a17d4a5d3b4ee45bf945ff7371ece8",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/data-studio/query-builder/components/DataStudioToolbarButton/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

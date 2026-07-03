@@ -1,0 +1,13 @@
+{
+  "id": "9814c1ec7008ef70bbf708ecfc1a0c9e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/notifications/NotificationsActionsMenu/DashboardSubscriptionMenuItem.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

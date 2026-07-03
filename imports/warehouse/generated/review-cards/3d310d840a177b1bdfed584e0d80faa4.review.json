@@ -1,0 +1,12 @@
+{
+  "id": "3d310d840a177b1bdfed584e0d80faa4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/application_permissions/pages/ApplicationPermissionsPage/ApplicationPermissionsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

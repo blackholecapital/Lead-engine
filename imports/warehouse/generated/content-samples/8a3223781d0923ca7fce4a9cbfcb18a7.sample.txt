@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/layouts/layout-editor-settings-drawer.tsx
+
+/** biome-ignore-all lint/correctness/useUniqueElementIds: working correctly */
+
+import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
+import { EnvironmentTypeEnum, PermissionsEnum, ResourceOriginEnum } from '@novu/shared';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import { formatDistanceToNow } from 'date-fns';
+import { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { RiDeleteBin2Line, RiSettings4Line } from 'react-icons/ri';
+import { useBlocker, useNavigate } from 'react-router-dom';
+import { ExternalToast } from 'sonner';
+import { z } from 'zod';
+import { Button } from '@/components/primitives/button';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  FormRoot,
+} from '@/components/primitives/form/form';
+import { Input } from '@/components/primitives/input';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetMain,
+  SheetTitle,
+} from '@/components/primitives/sheet';
+import { showErrorToast, showSuccessToast, showToast } from '@/components/primitives/sonner-helpers';
+import { UnsavedChangesAlertDialog } from '@/components/unsaved-changes-alert-dialog';
+import { useEnvironment } from '@/context/environment/hooks';
+import { useBeforeUnload } from '@/hooks/use-before-unload';
+import { useDeleteLayout } from '@/hooks/use-delete-layout';
+import { useUpdateLayout } from '@/hooks/use-update-layout';
+import { LocalizationResourceEnum } from '@/types/translations';
+import { buildRoute, ROUTES } from '@/utils/routes';
+import { cn } from '@/utils/ui';
+import { CopyButton } from '../primitives/copy-button';
+import { PermissionButton } from '../primitives/permission-button';
+import { Separator } from '../primitives/separator';
+import { ToastIcon } from '../primitives/sonner';
+import TruncatedText from '../truncated-text';
+import { TranslationToggleSection } from '../workflow-editor/translation-toggle-section';
+import { DeleteLayoutDialog } from './delete-layout-dialog';
+import { useLayoutEditor } from './layout-editor-provider';
+import { layoutSchema } from './schema';
+
+type LayoutSettingsFormData = z.infer<typeof layoutSchema>;
+
+const toastOptions: ExternalToast = {
+  position: 'bottom-right',
+  classNames: {
+    toast: 'mb-4 right-0 pointer-events-none',
+  },
+};
+
+type LayoutEditorSettingsDrawerProps = {
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+};
+
+export const LayoutEditorSettingsDrawer = forwardRef<HTMLDivElement, LayoutEditorSettingsDrawerProps>(
+  ({ isOpen, onOpenChange }, forwardedRef) => {
+    const navigate = useNavigate();
+    const { layout } = useLayoutEditor();
+    const { currentEnvironment } = useEnvironment();
+    const [showUnsavedDialog, setShowUnsavedDialog] = useState(false);
+    const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+    const [pendingAction, setPendingAction] = useState<(() => void) | null>(null);
+    const isReadOnly =
+      layout?.origin === ResourceOriginEnum.EXTERNAL || currentEnvironment?.type !== EnvironmentTypeEnum.DEV;
+
+    const form = useForm({
+      resolver: standardSchemaResolver(layoutSchema),
+      defaultValues: {
+        name: layout?.name || '',
+        layoutId: layout?.layoutId || '',
+        isTranslationEnabled: layout?.isTranslationEnabled || false,
+      },
+    });
+
+    const wasOpenRef = useRef(false);
+    useEffect(() => {
+      if (isOpen && !wasOpenRef.current && layout) {
+        form.reset({
+          name: layout.name || '',
+          layoutId: layout.layoutId || '',
+          isTranslationEnabled: layout.isTranslationEnabled || false,
+        });
+      }
+      wasOpenRef.current = isOpen;
+    }, [isOpen, layout, form]);
+
+    const hasUnsavedChanges = form.formState.isDirty;
+
+    useBeforeUnload(hasUnsavedChanges);

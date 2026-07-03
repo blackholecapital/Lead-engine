@@ -1,0 +1,13 @@
+{
+  "id": "a0fc130c9767c6a2401503a248724207",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/side-panel/pages/page-layout/components/record-table-settings/SidePanelRecordTableFieldsSubPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

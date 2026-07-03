@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/schema.ts
+
+import { JSONSchemaDefinition, JSONSchemaDto, UiSchema } from '@novu/shared';
+import * as z from 'zod';
+import { capitalize } from './string';
+
+export type ZodValue =
+  | z.ZodObject
+  | z.ZodString
+  | z.ZodNumber
+  | z.ZodNullable<z.ZodType>
+  | z.ZodDefault<z.ZodType>
+  | z.ZodEnum
+  | z.ZodOptional<z.ZodType>
+  | z.ZodBoolean
+  | z.ZodAny
+  | z.ZodUnion
+  | z.ZodType;
+
+const handleStringFormat = ({ value, key, format }: { value: z.ZodString; key: string; format: string }) => {
+  if (format === 'email') {
+    return z.email();
+  } else if (format === 'uri') {
+    return value
+      .transform((val) => (val === '' ? undefined : val))
+      .refine((val) => !val || z.url().safeParse(val).success, {
+        message: `${capitalize(key)} must be a valid URI`,
+      });
+  }
+
+  return value;
+};
+
+const handleStringPattern = ({ value, key, pattern }: { value: z.ZodString; key: string; pattern: string }) => {
+  return value
+    .transform((val) => (val === '' ? undefined : val))
+    .refine((val) => !val || z.string().regex(new RegExp(pattern)).safeParse(val).success, {
+      message: `${capitalize(key)} must be a valid value`,
+    });
+};
+
+const handleStringType = ({
+  key,
+  requiredFields,
+  jsonSchema,
+}: {
+  key: string;
+  requiredFields: Readonly<Array<string>>;
+  jsonSchema: JSONSchemaDto;
+}) => {
+  const { format, pattern, enum: enumValues, default: defaultValue, minLength } = jsonSchema;
+  const isRequired = requiredFields.includes(key);
+
+  let stringValue: z.ZodType = z.string();
+
+  if (format) {
+    stringValue = handleStringFormat({
+      value: stringValue as z.ZodString,
+      key,
+      format,
+    }) as z.ZodType;
+  } else if (pattern) {
+    stringValue = handleStringPattern({
+      value: stringValue as z.ZodString,
+      key,
+      pattern,
+    }) as z.ZodType;
+  } else if (enumValues) {
+    stringValue = z.enum(enumValues as [string, ...string[]]);
+  } else if (isRequired || minLength) {
+    stringValue = (stringValue as z.ZodString).min(minLength ?? 1);
+  }
+
+  if (defaultValue) {
+    stringValue = stringValue.default(defaultValue as string);
+  }
+
+  return stringValue;
+};
+
+const handleNumberType = ({ jsonSchema }: { jsonSchema: JSONSchemaDto }) => {
+  const { default: defaultValue, minimum, maximum } = jsonSchema;
+  let numberValue: z.ZodNumber | z.ZodDefault<z.ZodNumber> = z.number();
+
+  if (typeof minimum === 'number') {
+    numberValue = numberValue.min(minimum);
+  }
+
+  if (typeof maximum === 'number') {
+    numberValue = numberValue.max(maximum);
+  }
+
+  if (defaultValue !== undefined) {
+    numberValue = numberValue.default(defaultValue as number);
+  }
+
+  return numberValue;
+};
+
+const getZodValueByType = (jsonSchema: JSONSchemaDefinition, key: string): ZodValue => {
+  if (typeof jsonSchema !== 'object') {
+    return z.any();

@@ -1,0 +1,6 @@
+{
+  "id":"75eed7cd560dd33768be7cd716cfc94f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/helpers/inputs/ColumnWidthsInput.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "lancedb",
+  "title": "LanceDB",
+  "tags": [
+    "vector",
+    "retrieval"
+  ],
+  "category": "retrieval",
+  "source": "vendor-source/retrieval/lancedb"
+}

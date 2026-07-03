@@ -1,0 +1,6 @@
+{
+  "id":"b8d73b519902c6de2a97097d50b8e7df",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/ViewTitleHeader.unit.spec.js",
+  "reasons":" builder-pattern,"
+}

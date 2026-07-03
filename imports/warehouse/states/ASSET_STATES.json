@@ -1,0 +1,11 @@
+{
+  "states": [
+    "candidate",
+    "review",
+    "approved",
+    "golden",
+    "deprecated",
+    "archived"
+  ],
+  "default": "candidate"
+}

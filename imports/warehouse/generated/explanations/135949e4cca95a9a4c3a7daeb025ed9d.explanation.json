@@ -1,0 +1,6 @@
+{
+  "id":"135949e4cca95a9a4c3a7daeb025ed9d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/helpers/inputs/raw/RawSliderInput.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"61c4f4c4005e8d5ae60e13ec26a4c991",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/AddQuestionButton.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

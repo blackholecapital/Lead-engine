@@ -1,0 +1,9 @@
+{
+  "id":"lancedb",
+  "title":"LanceDB",
+  "category":"retrieval",
+  "tags":["vector","retrieval"],
+  "source":"vendor-source/retrieval/lancedb",
+  "status":"downloaded",
+  "tier":"candidate"
+}

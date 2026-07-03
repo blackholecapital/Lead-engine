@@ -1,0 +1,6 @@
+{
+  "id":"a1605f371988d0dc458e65ce60184260",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewFooter/LeftViewFooterButtonGroup.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

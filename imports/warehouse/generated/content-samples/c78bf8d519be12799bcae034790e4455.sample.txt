@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/translations/translations-filters.tsx
+
+import { DEFAULT_LOCALE, EnvironmentTypeEnum, PermissionsEnum } from '@novu/shared';
+import { AnimatePresence, motion } from 'motion/react';
+import { HTMLAttributes, useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import {
+  RiCheckLine,
+  RiCloseLine,
+  RiDownload2Line,
+  RiLoader4Line,
+  RiSettingsLine,
+  RiUpload2Line,
+} from 'react-icons/ri';
+import { useNavigate, useParams } from 'react-router-dom';
+import { TranslationsFilter } from '@/api/translations';
+import { FlagCircle } from '@/components/flag-circle';
+import { Button } from '@/components/primitives/button';
+import { FacetedFormFilter } from '@/components/primitives/form/faceted-filter/facated-form-filter';
+import { Form, FormField, FormItem, FormRoot } from '@/components/primitives/form/form';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/primitives/tooltip';
+import { useEnvironment } from '@/context/environment/hooks';
+import { useExportMasterJson } from '@/hooks/use-export-master-json';
+import { useFetchOrganizationSettings } from '@/hooks/use-fetch-organization-settings';
+import { useHasPermission } from '@/hooks/use-has-permission';
+import { useUploadMasterJson } from '@/hooks/use-upload-master-json';
+import { buildRoute, ROUTES } from '@/utils/routes';
+import { cn } from '@/utils/ui';
+import { defaultTranslationsFilter } from './hooks/use-translations-url-state';
+
+type SearchFilterProps = {
+  value: string;
+  onChange: (value: string) => void;
+};
+
+function SearchFilter({ value, onChange }: SearchFilterProps) {
+  return (
+    <FacetedFormFilter
+      type="text"
+      size="small"
+      title="Search"
+      value={value}
+      onChange={onChange}
+      placeholder="Search translations..."
+    />
+  );
+}
+
+type FilterResetButtonProps = {
+  isVisible: boolean;
+  isFetching?: boolean;
+  onReset: () => void;
+};
+
+function FilterResetButton({ isVisible, isFetching, onReset }: FilterResetButtonProps) {
+  if (!isVisible) return null;
+
+  return (
+    <div className="flex items-center gap-1">
+      <Button variant="secondary" mode="ghost" size="2xs" onClick={onReset}>
+        Reset
+      </Button>
+      {isFetching && <RiLoader4Line className="h-3 w-3 animate-spin text-neutral-400" />}
+    </div>
+  );
+}
+
+type DefaultLocaleButtonProps = {
+  locale: string;
+  onClick: () => void;
+};
+
+function DefaultLocaleButton({ locale, onClick }: DefaultLocaleButtonProps) {
+  return (
+    <button
+      type="button"
+      className="group flex h-8 items-center overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 text-xs hover:bg-neutral-50 focus:bg-neutral-100"
+      onClick={onClick}
+    >
+      <span className="px-3 py-2">Default language</span>
+      <span className="flex items-center gap-2 border-l border-neutral-200 bg-white p-2 font-medium text-neutral-700 group-hover:bg-neutral-50">
+        <FlagCircle locale={locale} size="sm" />
+        {locale}
+      </span>
+    </button>
+  );
+}
+
+function AnimatedImportButton({
+  isPending,
+  isSuccess,
+  isError,
+  disabled,
+  onClick,
+}: {
+  isPending?: boolean;
+  isSuccess?: boolean;
+  isError?: boolean;
+  disabled?: boolean;
+  onClick?: () => void;
+}) {
+  const [showResult, setShowResult] = useState(false);

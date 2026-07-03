@@ -1,0 +1,6 @@
+{
+  "id":"38378151e25f316ce30ca0c234c4dd84",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterBar/Vertical.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

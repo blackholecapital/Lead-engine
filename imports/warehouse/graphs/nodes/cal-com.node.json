@@ -1,0 +1,11 @@
+{
+  "id": "cal-com",
+  "label": "Cal.com",
+  "category": "workspace",
+  "tags": [
+    "calendar",
+    "workspace",
+    "booking"
+  ],
+  "type": "asset"
+}

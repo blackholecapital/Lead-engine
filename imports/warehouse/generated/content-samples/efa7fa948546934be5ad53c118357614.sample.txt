@@ -1,0 +1,15 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/conditions-editor/types.ts
+
+import { BaseOption, Path, RuleGroupTypeAny, RuleType } from 'react-querybuilder';
+
+export interface ConditionsEditorContextType {
+  removeRuleOrGroup: (path: Path) => void;
+  cloneRuleOrGroup: (ruleOrGroup: RuleGroupTypeAny | RuleType, path?: Path) => void;
+  getParentGroup: (id?: string) => RuleGroupTypeAny | null;
+}
+
+export interface VariablesListProps {
+  options: Array<BaseOption<string>>;
+  onSelect: (value: string) => void;
+  value?: string;
+}

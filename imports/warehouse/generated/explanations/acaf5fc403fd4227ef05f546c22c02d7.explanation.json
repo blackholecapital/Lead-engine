@@ -1,0 +1,6 @@
+{
+  "id":"acaf5fc403fd4227ef05f546c22c02d7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/edges/add-button.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

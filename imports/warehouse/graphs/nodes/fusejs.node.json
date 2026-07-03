@@ -1,0 +1,11 @@
+{
+  "id": "fusejs",
+  "label": "FuseJS",
+  "category": "scoring",
+  "tags": [
+    "search",
+    "fuzzy",
+    "ranking"
+  ],
+  "type": "asset"
+}

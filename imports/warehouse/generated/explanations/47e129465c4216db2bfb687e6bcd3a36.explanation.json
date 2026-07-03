@@ -1,0 +1,6 @@
+{
+  "id":"47e129465c4216db2bfb687e6bcd3a36",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ClickBehaviorSidebar/TableClickBehaviorView/TableClickBehaviorView.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

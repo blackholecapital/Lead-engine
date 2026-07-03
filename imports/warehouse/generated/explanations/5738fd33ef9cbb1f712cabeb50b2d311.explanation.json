@@ -1,0 +1,6 @@
+{
+  "id":"5738fd33ef9cbb1f712cabeb50b2d311",
+  "score":85,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/services/queues/workflow-queue.service.ts",
+  "reasons":" workflow-feature, typescript-source,"
+}

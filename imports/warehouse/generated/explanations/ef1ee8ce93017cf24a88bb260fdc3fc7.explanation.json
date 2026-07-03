@@ -1,0 +1,6 @@
+{
+  "id":"ef1ee8ce93017cf24a88bb260fdc3fc7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/routes/resources.orgs.$organizationSlug.projects.$projectParam.env.$envParam.dashboards.create.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

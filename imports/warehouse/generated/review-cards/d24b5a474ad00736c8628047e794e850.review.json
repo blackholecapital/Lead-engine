@@ -1,0 +1,14 @@
+{
+  "id": "d24b5a474ad00736c8628047e794e850",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/data-studio/query-builder/components/DataStudioToolbarButton/DataStudioToolbarButton.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

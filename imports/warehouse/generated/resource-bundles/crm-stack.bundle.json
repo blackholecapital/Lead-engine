@@ -1,0 +1,164 @@
+{
+  "bundle_name": "crm-stack",
+  "created_at": 1781824355.727781,
+  "assets": [
+    {
+      "asset": {
+        "id": "cal-com",
+        "title": "Cal.com",
+        "category": "workspace",
+        "tags": [
+          "calendar",
+          "workspace",
+          "booking"
+        ],
+        "source": "vendor-source/workspace/cal-com",
+        "status": "downloaded",
+        "tier": "candidate"
+      },
+      "score": {
+        "asset": "cal-com",
+        "implementation": 70,
+        "visual": 70,
+        "reuse": 70,
+        "completeness": 70,
+        "production": 70,
+        "vector": 70,
+        "retrieval": 70,
+        "graph": 70,
+        "final_score": 70
+      },
+      "graph": {
+        "id": "cal-com",
+        "label": "Cal.com",
+        "category": "workspace",
+        "tags": [
+          "calendar",
+          "workspace",
+          "booking"
+        ],
+        "type": "asset"
+      }
+    },
+    {
+      "asset": {
+        "id": "chatwoot",
+        "title": "Chatwoot",
+        "category": "comms",
+        "tags": [
+          "comms",
+          "crm",
+          "support",
+          "inbox"
+        ],
+        "source": "vendor-source/comms/chatwoot",
+        "status": "downloaded",
+        "tier": "candidate"
+      },
+      "score": {
+        "asset": "chatwoot",
+        "implementation": 70,
+        "visual": 70,
+        "reuse": 70,
+        "completeness": 70,
+        "production": 70,
+        "vector": 70,
+        "retrieval": 70,
+        "graph": 70,
+        "final_score": 70
+      },
+      "graph": {
+        "id": "chatwoot",
+        "label": "Chatwoot",
+        "category": "comms",
+        "tags": [
+          "comms",
+          "crm",
+          "support",
+          "inbox"
+        ],
+        "type": "asset"
+      }
+    },
+    {
+      "asset": {
+        "id": "novu",
+        "title": "Novu",
+        "category": "comms",
+        "tags": [
+          "comms",
+          "email",
+          "sms",
+          "workflow",
+          "notification"
+        ],
+        "source": "vendor-source/comms/novu",
+        "status": "downloaded",
+        "tier": "candidate"
+      },
+      "score": {
+        "asset": "novu",
+        "implementation": 70,
+        "visual": 70,
+        "reuse": 70,
+        "completeness": 70,
+        "production": 70,
+        "vector": 70,
+        "retrieval": 70,
+        "graph": 70,
+        "final_score": 70
+      },
+      "graph": {
+        "id": "novu",
+        "label": "Novu",
+        "category": "comms",
+        "tags": [
+          "comms",
+          "email",
+          "sms",
+          "workflow",
+          "notification"
+        ],
+        "type": "asset"
+      }
+    },
+    {
+      "asset": {
+        "id": "postiz",
+        "title": "Postiz",
+        "category": "marketing",
+        "tags": [
+          "social",
+          "marketing",
+          "publishing"
+        ],
+        "source": "vendor-source/marketing/postiz",
+        "status": "downloaded",
+        "tier": "candidate"
+      },
+      "score": {
+        "asset": "postiz",
+        "implementation": 70,
+        "visual": 70,
+        "reuse": 70,
+        "completeness": 70,
+        "production": 70,
+        "vector": 70,
+        "retrieval": 70,
+        "graph": 70,
+        "final_score": 70
+      },
+      "graph": {
+        "id": "postiz",
+        "label": "Postiz",
+        "category": "marketing",
+        "tags": [
+          "social",
+          "marketing",
+          "publishing"
+        ],
+        "type": "asset"
+      }
+    }
+  ]
+}

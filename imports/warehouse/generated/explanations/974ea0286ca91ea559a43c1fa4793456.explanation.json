@@ -1,0 +1,6 @@
+{
+  "id":"974ea0286ca91ea559a43c1fa4793456",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/nodes/step-node/step-drag-overlay.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

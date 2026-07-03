@@ -1,0 +1,6 @@
+{
+  "id":"1c6cdbc15842f727f7b37d5e0399e9e7",
+  "score":90,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/data-studio/segments/pages/PublishedTableSegmentDependenciesPage/PublishedTableSegmentDependenciesPage.tsx",
+  "reasons":" react-component,"
+}

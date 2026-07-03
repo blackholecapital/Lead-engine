@@ -1,0 +1,6 @@
+{
+  "id":"779b72976c31d30b301594a282f15756",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/QuestionInfoSidebar/components/ToggleFullList.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

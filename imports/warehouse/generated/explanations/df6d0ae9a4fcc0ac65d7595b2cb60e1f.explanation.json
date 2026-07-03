@@ -1,0 +1,6 @@
+{
+  "id":"df6d0ae9a4fcc0ac65d7595b2cb60e1f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/utils/validate-agent-name-uniqueness.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,14 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/types/global.ts
+
+import type { NewDashboardOptInStatusEnum } from '@novu/shared';
+
+declare global {
+  interface UserUnsafeMetadata {
+    dismissed_changelogs?: string[];
+    newDashboardFirstVisit?: boolean;
+    hideGettingStarted?: boolean;
+    workflowChecklistClosed?: boolean;
+    workflowChecklistCompleted?: boolean;
+    newDashboardOptInStatus?: NewDashboardOptInStatusEnum;
+  }
+}

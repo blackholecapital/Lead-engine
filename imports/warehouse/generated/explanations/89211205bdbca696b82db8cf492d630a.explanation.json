@@ -1,0 +1,6 @@
+{
+  "id":"89211205bdbca696b82db8cf492d630a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/DividerSidebarPanel.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

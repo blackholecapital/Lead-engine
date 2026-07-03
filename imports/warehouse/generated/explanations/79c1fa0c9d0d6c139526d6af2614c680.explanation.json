@@ -1,0 +1,6 @@
+{
+  "id":"79c1fa0c9d0d6c139526d6af2614c680",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterCard/ScopeRow.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

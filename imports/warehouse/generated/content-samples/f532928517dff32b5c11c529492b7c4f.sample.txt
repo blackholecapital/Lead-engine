@@ -1,0 +1,7 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/graph/types.ts
+
+import type { NetValue } from '@rotki/common';
+
+export interface NetValueChartData extends NetValue {
+  snapshotCount: number;
+}

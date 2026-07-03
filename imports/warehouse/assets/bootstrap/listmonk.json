@@ -1,0 +1,9 @@
+{
+  "id":"listmonk",
+  "title":"Listmonk",
+  "category":"comms",
+  "tags":["email","campaign","marketing"],
+  "source":"vendor-source/comms/listmonk",
+  "status":"downloaded",
+  "tier":"candidate"
+}

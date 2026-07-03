@@ -1,0 +1,12 @@
+{
+  "id": "3bacb7a5ef73711147bcc341cf0fb964",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/transforms/pages/EnableTransformsPage/EnableTransformsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

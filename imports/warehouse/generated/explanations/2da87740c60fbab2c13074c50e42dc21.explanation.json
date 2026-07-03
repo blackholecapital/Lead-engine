@@ -1,0 +1,6 @@
+{
+  "id":"2da87740c60fbab2c13074c50e42dc21",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/interfaces/param-metadata.interface.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

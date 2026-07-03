@@ -1,0 +1,6 @@
+{
+  "id":"da7c8903c27c5434984db27f1340a428",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/playwright/pages/DashboardPage.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

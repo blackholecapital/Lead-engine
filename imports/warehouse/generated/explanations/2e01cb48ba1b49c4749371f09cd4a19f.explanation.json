@@ -1,0 +1,6 @@
+{
+  "id":"2e01cb48ba1b49c4749371f09cd4a19f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/chart-data/utils/get-field-metadata.util.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

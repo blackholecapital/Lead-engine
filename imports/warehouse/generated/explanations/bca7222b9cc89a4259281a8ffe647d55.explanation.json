@@ -1,0 +1,6 @@
+{
+  "id":"bca7222b9cc89a4259281a8ffe647d55",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/FullscreenToggle.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,7 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/escape-key-manager/priority.ts
+
+export enum EscapeKeyManagerPriority {
+  NONE = 0,
+  SHEET = 100,
+  POPOVER = 200,
+}

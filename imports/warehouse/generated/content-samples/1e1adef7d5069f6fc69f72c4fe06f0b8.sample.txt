@@ -1,0 +1,10 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/variable-plugin/utils.ts
+
+export function isTypingVariable(content: string, pos: number): boolean {
+  const beforeCursor = content.slice(0, pos);
+  const afterCursor = content.slice(pos);
+  const lastOpenBrackets = beforeCursor.lastIndexOf('{{');
+  const nextCloseBrackets = afterCursor.indexOf('}}');
+
+  return lastOpenBrackets !== -1 && (nextCloseBrackets === -1 || beforeCursor.indexOf('}}', lastOpenBrackets) === -1);
+}

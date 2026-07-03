@@ -1,0 +1,6 @@
+{
+  "id":"117e106f63f1d4b0933f804711dd5581",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/index.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

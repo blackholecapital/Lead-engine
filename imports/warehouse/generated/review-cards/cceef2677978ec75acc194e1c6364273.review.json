@@ -1,0 +1,12 @@
+{
+  "id": "cceef2677978ec75acc194e1c6364273",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/references/nextjs-realtime/src/app/realtime/page.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

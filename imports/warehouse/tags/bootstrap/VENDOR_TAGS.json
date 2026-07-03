@@ -1,0 +1,16 @@
+{
+  "novu":["comms","email","sms","workflow","notification"],
+  "chatwoot":["comms","crm","support","inbox"],
+  "listmonk":["email","campaign","marketing"],
+  "postiz":["social","marketing","publishing"],
+  "cal-com":["calendar","workspace","booking"],
+  "documenso":["documents","esign","workflow"],
+  "rotki":["treasury","defi","portfolio"],
+  "lancedb":["vector","retrieval"],
+  "qdrant":["vector","retrieval"],
+  "memgraph":["graph","relationships"],
+  "apache-age":["graph","postgres"],
+  "tagify":["tagging","ui"],
+  "flexsearch":["search","ranking"],
+  "fuzzysort":["search","scoring"]
+}

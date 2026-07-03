@@ -1,0 +1,6 @@
+{
+  "id":"4d490d034e3aa431218ff957ea9d1c97",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/analytics.js",
+  "reasons":" builder-pattern,"
+}

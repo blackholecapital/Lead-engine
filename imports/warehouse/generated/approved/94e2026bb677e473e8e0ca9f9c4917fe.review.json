@@ -1,0 +1,14 @@
+{
+  "id": "94e2026bb677e473e8e0ca9f9c4917fe",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/containers/QueryBuilder.beforeunload-events.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "calendar",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

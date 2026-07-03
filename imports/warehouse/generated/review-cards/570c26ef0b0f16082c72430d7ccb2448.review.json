@@ -1,0 +1,12 @@
+{
+  "id": "570c26ef0b0f16082c72430d7ccb2448",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/test/auth-dashboard.e2e.full.test.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

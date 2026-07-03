@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/button-group.tsx
+
+import { Slot } from '@radix-ui/react-slot';
+import * as React from 'react';
+
+import { PolymorphicComponentProps } from '@/utils/polymorphic';
+import { recursiveCloneChildren } from '@/utils/recursive-clone-children';
+import { tv, type VariantProps } from '@/utils/tv';
+import { cn } from '@/utils/ui';
+
+const BUTTON_GROUP_ROOT_NAME = 'ButtonGroupRoot';
+const BUTTON_GROUP_ITEM_NAME = 'ButtonGroupItem';
+const BUTTON_GROUP_ICON_NAME = 'ButtonGroupIcon';
+
+export const buttonGroupVariants = tv({
+  slots: {
+    root: 'flex -space-x-[1.5px]',
+    item: [
+      // base
+      'group relative flex items-center justify-center whitespace-nowrap bg-bg-white text-center text-text-sub outline-hidden',
+      'border border-stroke-soft',
+      'transition duration-200 ease-out',
+      // hover
+      'hover:bg-bg-weak',
+      // focus
+      'focus:bg-bg-weak focus:outline-hidden',
+      // active
+      'data-[state=on]:bg-bg-weak',
+      'data-[state=on]:text-text-strong',
+      // disabled
+      'disabled:pointer-events-none disabled:bg-bg-weak',
+      'disabled:text-text-disabled',
+    ],
+    icon: 'shrink-0',
+  },
+  variants: {
+    size: {
+      sm: {
+        item: [
+          // base
+          'h-9 gap-4 px-4 text-label-sm',
+          // radius
+          'first:rounded-l-lg last:rounded-r-lg',
+        ],
+        icon: [
+          // base
+          '-mx-2 size-5',
+        ],
+      },
+      xs: {
+        item: [
+          // base
+          'h-8 gap-3.5 px-3.5 text-label-sm',
+          // radius
+          'first:rounded-l-lg last:rounded-r-lg',
+        ],
+        icon: [
+          // base
+          '-mx-2 size-5',
+        ],
+      },
+      '2xs': {
+        item: [
+          // base
+          'h-6 gap-3 px-3 text-label-xs',
+          // radius
+          'first:rounded-l-md last:rounded-r-md',
+        ],
+        icon: [
+          // base
+          '-mx-2 size-4',
+        ],
+      },
+    },
+  },
+  defaultVariants: {
+    size: 'sm',
+  },
+});
+
+type ButtonGroupSharedProps = VariantProps<typeof buttonGroupVariants>;
+
+type ButtonGroupRootProps = VariantProps<typeof buttonGroupVariants> &
+  React.HTMLAttributes<HTMLDivElement> & {
+    asChild?: boolean;
+  };
+
+const ButtonGroupRoot = React.forwardRef<HTMLDivElement, ButtonGroupRootProps>(
+  ({ asChild, children, className, size, ...rest }, forwardedRef) => {
+    const uniqueId = React.useId();
+    const Component = asChild ? Slot : 'div';
+    const { root } = buttonGroupVariants({ size });
+
+    const sharedProps: ButtonGroupSharedProps = {
+      size,
+    };
+
+    const extendedChildren = recursiveCloneChildren(
+      children as React.ReactElement[],
+      sharedProps,
+      [BUTTON_GROUP_ITEM_NAME, BUTTON_GROUP_ICON_NAME],
+      uniqueId,

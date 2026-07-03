@@ -1,0 +1,6 @@
+{
+  "id":"c30a1628aaa5c4bc30391cc7a9b580c1",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-resolver-builder/interfaces/workspace-resolver-builder-factory.interface.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

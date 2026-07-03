@@ -1,0 +1,6 @@
+{
+  "id":"460ea2600c1afc206e802541928c32ed",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/http-logs/logs-detail-empty.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,10 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-is-payload-schema-enabled.ts
+
+import { ResourceOriginEnum } from '@novu/shared';
+import { useWorkflow } from '@/components/workflow-editor/workflow-provider';
+
+export function useIsPayloadSchemaEnabled(): boolean {
+  const { workflow } = useWorkflow();
+
+  return workflow?.payloadSchema != null && workflow.origin === ResourceOriginEnum.NOVU_CLOUD;
+}

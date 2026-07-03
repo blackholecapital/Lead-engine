@@ -1,0 +1,13 @@
+{
+  "id": "a0864e41bca580c2a4e4c2d42918f37f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/graph/use-net-value-event-handlers.ts",
+  "score": 95,
+  "suggested_tags": [
+    "calendar",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

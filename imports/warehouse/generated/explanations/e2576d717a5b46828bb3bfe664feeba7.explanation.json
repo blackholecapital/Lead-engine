@@ -1,0 +1,6 @@
+{
+  "id":"e2576d717a5b46828bb3bfe664feeba7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/snapshots/composables/use-snapshot-asset-price.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

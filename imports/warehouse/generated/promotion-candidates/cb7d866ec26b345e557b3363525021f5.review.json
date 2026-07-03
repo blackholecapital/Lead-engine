@@ -1,0 +1,13 @@
+{
+  "id": "cb7d866ec26b345e557b3363525021f5",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/twenty-standard-application/utils/view/compute-standard-dashboard-views.util.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "engine",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

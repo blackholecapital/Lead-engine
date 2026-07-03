@@ -1,0 +1,6 @@
+{
+  "id":"ffb16d427051ac7625931e54256c711e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/routes/root-route-error-fallback.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

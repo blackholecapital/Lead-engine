@@ -1,0 +1,6 @@
+{
+  "id":"b1746eaf37b6a5b7ddd5f6b24951b5e6",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/SummarizeSidebar/SummarizeContent/SummarizeAggregationItemList.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

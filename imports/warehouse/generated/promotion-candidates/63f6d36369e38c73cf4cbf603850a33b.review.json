@@ -1,0 +1,13 @@
+{
+  "id": "63f6d36369e38c73cf4cbf603850a33b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/e2e/react-start/css-inline/src/routes/app/dashboard/details.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

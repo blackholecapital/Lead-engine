@@ -1,0 +1,6 @@
+{
+  "id":"98f460cf9988899e9b473055972de99c",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-types/input/raw-json-filter.input-type.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}
