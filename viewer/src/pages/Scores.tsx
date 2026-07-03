@@ -1,9 +1,8 @@
-import Explorer from "../components/Explorer";
+import AssetWorkbench from "../components/AssetWorkbench";
 import {getScores} from "../api/runtime";
 
-export default function Scores(){
-return (
-<Explorer
+export default ()=>(
+<AssetWorkbench
 title="Scores"
 queryKey="scores"
 queryFn={getScores}
@@ -12,4 +11,3 @@ countField="count"
 inspectType="score"
 />
 );
-}
