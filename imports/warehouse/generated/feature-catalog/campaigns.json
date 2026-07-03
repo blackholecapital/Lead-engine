@@ -1,0 +1,18 @@
+{
+  "id": "campaigns",
+  "features": {
+    "conversation": [],
+    "contacts": [],
+    "calendar": [
+      {
+        "name": "job-scheduler",
+        "path": "bullmq/src/classes/job-scheduler.ts",
+        "story": false
+      }
+    ],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

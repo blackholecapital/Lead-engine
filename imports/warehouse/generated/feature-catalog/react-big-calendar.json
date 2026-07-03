@@ -1,0 +1,34 @@
+{
+  "id": "react-big-calendar",
+  "features": {
+    "conversation": [
+      {
+        "name": "messages.stories",
+        "path": "stories/props/messages.stories.js",
+        "story": true
+      }
+    ],
+    "contacts": [],
+    "calendar": [
+      {
+        "name": "Calendar",
+        "path": "src/Calendar.js",
+        "story": false
+      },
+      {
+        "name": "Calendar.stories",
+        "path": "stories/Calendar.stories.js",
+        "story": true
+      },
+      {
+        "name": "CalendarContext",
+        "path": "src/CalendarContext.js",
+        "story": false
+      }
+    ],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

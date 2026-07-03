@@ -1,0 +1,12 @@
+{
+  "id": "dayjs",
+  "features": {
+    "conversation": [],
+    "contacts": [],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "listmonk",
+  "features": {
+    "conversation": [],
+    "contacts": [
+      {
+        "name": "UserProfile",
+        "path": "frontend/src/views/UserProfile.vue",
+        "story": false
+      }
+    ],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [
+      {
+        "name": "Dashboard",
+        "path": "frontend/src/views/Dashboard.vue",
+        "story": false
+      }
+    ],
+    "settings": [
+      {
+        "name": "performance",
+        "path": "frontend/src/views/settings/performance.vue",
+        "story": false
+      }
+    ],
+    "editor": [
+      {
+        "name": "CodeEditor",
+        "path": "frontend/src/components/CodeEditor.vue",
+        "story": false
+      },
+      {
+        "name": "Editor",
+        "path": "frontend/src/components/Editor.vue",
+        "story": false
+      },
+      {
+        "name": "editor",
+        "path": "frontend/src/components/editor.js",
+        "story": false
+      },
+      {
+        "name": "editor-theme",
+        "path": "frontend/src/components/editor-theme.js",
+        "story": false
+      },
+      {
+        "name": "RichtextEditor",
+        "path": "frontend/src/components/RichtextEditor.vue",
+        "story": false
+      },
+      {
+        "name": "TemplateForm",
+        "path": "frontend/src/views/TemplateForm.vue",
+        "story": false
+      },
+      {
+        "name": "VisualEditor",
+        "path": "frontend/src/components/VisualEditor.vue",
+        "story": false
+      }
+    ]
+  }
+}

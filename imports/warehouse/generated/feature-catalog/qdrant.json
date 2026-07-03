@@ -1,0 +1,12 @@
+{
+  "id": "qdrant",
+  "features": {
+    "conversation": [],
+    "contacts": [],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

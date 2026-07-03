@@ -1,0 +1,12 @@
+{
+  "id": "memgraph",
+  "features": {
+    "conversation": [],
+    "contacts": [],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

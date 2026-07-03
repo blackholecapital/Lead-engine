@@ -1,0 +1,12 @@
+{
+  "id": "date-fns",
+  "features": {
+    "conversation": [],
+    "contacts": [],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

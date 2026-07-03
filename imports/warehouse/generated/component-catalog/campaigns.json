@@ -1,0 +1,27 @@
+{
+  "id": "campaigns",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/comms/campaigns",
+  "count": 4,
+  "components": [
+    {
+      "name": "commandTransform",
+      "path": "bullmq/scripts/commandTransform.js",
+      "story": false
+    },
+    {
+      "name": "formatAttributes",
+      "path": "mjml/packages/mjml-core/src/helpers/formatAttributes.js",
+      "story": false
+    },
+    {
+      "name": "formatHtml",
+      "path": "mjml/packages/mjml-core/src/helpers/formatHtml.js",
+      "story": false
+    },
+    {
+      "name": "job-scheduler",
+      "path": "bullmq/src/classes/job-scheduler.ts",
+      "story": false
+    }
+  ]
+}

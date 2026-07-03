@@ -1,0 +1,18 @@
+{
+  "id": "flexsearch",
+  "features": {
+    "conversation": [],
+    "contacts": [
+      {
+        "name": "profiler",
+        "path": "src/profiler.js",
+        "story": false
+      }
+    ],
+    "calendar": [],
+    "automation": [],
+    "dashboard": [],
+    "settings": [],
+    "editor": []
+  }
+}

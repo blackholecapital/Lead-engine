@@ -1,0 +1,97 @@
+{
+  "id": "listmonk",
+  "root": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk",
+  "count": 18,
+  "components": [
+    {
+      "name": "CodeEditor",
+      "path": "frontend/src/components/CodeEditor.vue",
+      "story": false
+    },
+    {
+      "name": "Dashboard",
+      "path": "frontend/src/views/Dashboard.vue",
+      "story": false
+    },
+    {
+      "name": "Editor",
+      "path": "frontend/src/components/Editor.vue",
+      "story": false
+    },
+    {
+      "name": "editor",
+      "path": "frontend/src/components/editor.js",
+      "story": false
+    },
+    {
+      "name": "editor-theme",
+      "path": "frontend/src/components/editor-theme.js",
+      "story": false
+    },
+    {
+      "name": "Forms",
+      "path": "frontend/src/views/Forms.vue",
+      "story": false
+    },
+    {
+      "name": "ListForm",
+      "path": "frontend/src/views/ListForm.vue",
+      "story": false
+    },
+    {
+      "name": "Lists",
+      "path": "frontend/src/views/Lists.vue",
+      "story": false
+    },
+    {
+      "name": "ListSelector",
+      "path": "frontend/src/components/ListSelector.vue",
+      "story": false
+    },
+    {
+      "name": "performance",
+      "path": "frontend/src/views/settings/performance.vue",
+      "story": false
+    },
+    {
+      "name": "RichtextEditor",
+      "path": "frontend/src/components/RichtextEditor.vue",
+      "story": false
+    },
+    {
+      "name": "RoleForm",
+      "path": "frontend/src/views/RoleForm.vue",
+      "story": false
+    },
+    {
+      "name": "SubscriberBulkList",
+      "path": "frontend/src/views/SubscriberBulkList.vue",
+      "story": false
+    },
+    {
+      "name": "SubscriberForm",
+      "path": "frontend/src/views/SubscriberForm.vue",
+      "story": false
+    },
+    {
+      "name": "TemplateForm",
+      "path": "frontend/src/views/TemplateForm.vue",
+      "story": false
+    },
+    {
+      "name": "UserForm",
+      "path": "frontend/src/views/UserForm.vue",
+      "story": false
+    },
+    {
+      "name": "UserProfile",
+      "path": "frontend/src/views/UserProfile.vue",
+      "story": false
+    },
+    {
+      "name": "VisualEditor",
+      "path": "frontend/src/components/VisualEditor.vue",
+      "story": false
+    }
+  ]
+}

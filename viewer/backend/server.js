@@ -8,6 +8,10 @@ app.use(cors());
 
 require("./routes/runtime")(app);
 require("./routes/assets")(app);
+require("./routes/browser")(app);
+require("./routes/browser-image")(app);
+require("./routes/component")(app);
+require("./routes/screens")(app);
 require("./routes/retrieval")(app);
 require("./routes/indexes")(app);
 require("./routes/storage")(app);
