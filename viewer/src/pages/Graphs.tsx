@@ -1,11 +1,11 @@
 import {useQuery} from "@tanstack/react-query";
-import {getIndexes} from "../api/runtime";
+import {getGraphs} from "../api/runtime";
 
 export default function Indexes(){
 
 const {data,isLoading}=useQuery({
-queryKey:["indexes"],
-queryFn:getIndexes,
+queryKey:["graphs"],
+queryFn:getGraphs,
 refetchInterval:3000
 });
 
@@ -14,7 +14,7 @@ if(isLoading) return <h2>Loading Indexes...</h2>;
 return(
 <div>
 
-<h1>Indexes</h1>
+<h1>Relationship Graph</h1>
 
 <div className="dashboard-grid">
 
@@ -24,8 +24,8 @@ return(
 </div>
 
 <div className="panel">
-<h3>Registry Rows</h3>
-<p>{data.rows}</p>
+<h3>Graph Nodes</h3>
+<p>{data.nodes}</p>
 </div>
 
 </div>
