@@ -1,0 +1,11 @@
+{
+  "id": "cal-com",
+  "title": "Cal.com",
+  "tags": [
+    "calendar",
+    "workspace",
+    "booking"
+  ],
+  "category": "workspace",
+  "source": "vendor-source/workspace/cal-com"
+}

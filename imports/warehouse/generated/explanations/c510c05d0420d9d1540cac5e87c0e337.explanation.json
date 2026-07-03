@@ -1,0 +1,6 @@
+{
+  "id":"c510c05d0420d9d1540cac5e87c0e337",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/step-settings/router-settings/branches-list.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

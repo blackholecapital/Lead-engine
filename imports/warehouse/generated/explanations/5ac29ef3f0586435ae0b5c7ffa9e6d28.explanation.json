@@ -1,0 +1,6 @@
+{
+  "id":"5ac29ef3f0586435ae0b5c7ffa9e6d28",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterBar/CrossFilters/ScopingModal/ScopingModal.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

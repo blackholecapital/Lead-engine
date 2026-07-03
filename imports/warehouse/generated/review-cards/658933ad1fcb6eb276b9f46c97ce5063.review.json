@@ -1,0 +1,14 @@
+{
+  "id": "658933ad1fcb6eb276b9f46c97ce5063",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ActionViz/ExplainerText/ExplainerText.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

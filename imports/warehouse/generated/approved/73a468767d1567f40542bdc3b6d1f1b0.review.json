@@ -1,0 +1,14 @@
+{
+  "id": "73a468767d1567f40542bdc3b6d1f1b0",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/ExportAsPdfButton.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,9 @@
+{
+  "id":"flexsearch",
+  "title":"FlexSearch",
+  "category":"scoring",
+  "tags":["search","ranking","retrieval"],
+  "source":"vendor-source/scoring/flexsearch",
+  "status":"downloaded",
+  "tier":"candidate"
+}

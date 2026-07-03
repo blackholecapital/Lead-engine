@@ -1,0 +1,11 @@
+{
+  "id": "memgraph",
+  "label": "Memgraph",
+  "category": "graph",
+  "tags": [
+    "graph",
+    "relationships",
+    "analytics"
+  ],
+  "type": "asset"
+}

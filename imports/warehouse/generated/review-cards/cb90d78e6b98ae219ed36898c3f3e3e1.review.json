@@ -1,0 +1,14 @@
+{
+  "id": "cb90d78e6b98ae219ed36898c3f3e3e1",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/components/general/ErrorBoundary.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

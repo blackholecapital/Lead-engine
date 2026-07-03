@@ -1,0 +1,12 @@
+{
+  "id": "55ac30cfa46fa65112ce4e385602b1ad",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-create-environment-variable.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

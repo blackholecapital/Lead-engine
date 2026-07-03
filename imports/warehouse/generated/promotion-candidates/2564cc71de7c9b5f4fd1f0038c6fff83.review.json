@@ -1,0 +1,13 @@
+{
+  "id": "2564cc71de7c9b5f4fd1f0038c6fff83",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/agents/is-channel-ready-for-bridge.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

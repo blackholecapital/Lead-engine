@@ -1,0 +1,14 @@
+{
+  "id": "81d0ca2c955a4e2ed85595a420281b98",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FiltersConfigModal/FilterConfigPane.test.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"48e793c460ddf772551c02a77ed1caa5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-resolver-builder/factories/delete-many-resolver.factory.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

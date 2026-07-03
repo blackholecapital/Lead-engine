@@ -1,0 +1,6 @@
+{
+  "id":"eff42a7db1089c32957f06a4115fd2fb",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getChartAndLabelComponentIdFromPath.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

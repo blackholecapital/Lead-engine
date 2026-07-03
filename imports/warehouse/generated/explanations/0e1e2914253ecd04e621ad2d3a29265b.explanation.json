@@ -1,0 +1,6 @@
+{
+  "id":"0e1e2914253ecd04e621ad2d3a29265b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/DataReferenceButton/DataReferenceButton.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

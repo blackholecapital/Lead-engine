@@ -1,0 +1,6 @@
+{
+  "id":"9013142c38a4e8a1f784e362a9d4adf0",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/actions/auto-wire-parameters/utils.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

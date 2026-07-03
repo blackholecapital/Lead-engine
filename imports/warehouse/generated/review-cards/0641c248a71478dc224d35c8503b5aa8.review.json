@@ -1,0 +1,14 @@
+{
+  "id": "0641c248a71478dc224d35c8503b5aa8",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashCard/DashCardVisualization.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

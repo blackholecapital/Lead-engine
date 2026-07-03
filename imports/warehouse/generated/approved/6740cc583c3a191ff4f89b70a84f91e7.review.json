@@ -1,0 +1,13 @@
+{
+  "id": "6740cc583c3a191ff4f89b70a84f91e7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/helpers/style-inputs/SingleStylePropertyPanel.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

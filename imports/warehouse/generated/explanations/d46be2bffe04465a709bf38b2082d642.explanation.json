@@ -1,0 +1,6 @@
+{
+  "id":"d46be2bffe04465a709bf38b2082d642",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/feature-flags-provider.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

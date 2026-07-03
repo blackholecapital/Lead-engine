@@ -1,0 +1,14 @@
+{
+  "id": "0fac8d0e1b23e49e57a033df7194362e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/variable/components/variable-preview.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

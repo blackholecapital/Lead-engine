@@ -1,0 +1,12 @@
+{
+  "id": "75fe95bdedf10e7df4b9e744f98ee0a2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/packages/cli-v3/src/mcp/tools/dashboards.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

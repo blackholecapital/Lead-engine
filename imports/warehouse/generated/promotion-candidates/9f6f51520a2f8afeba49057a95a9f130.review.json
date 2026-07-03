@@ -1,0 +1,13 @@
+{
+  "id": "9f6f51520a2f8afeba49057a95a9f130",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/grid/utils.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

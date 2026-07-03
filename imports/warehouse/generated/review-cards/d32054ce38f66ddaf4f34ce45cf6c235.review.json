@@ -1,0 +1,14 @@
+{
+  "id": "d32054ce38f66ddaf4f34ce45cf6c235",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/subscribers/subscriptions/subscription-item.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

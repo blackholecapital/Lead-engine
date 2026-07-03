@@ -1,0 +1,13 @@
+{
+  "id": "e2926e90c6761d0ee7901260d6ab0479",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FiltersConfigModal/hooks/useItemStateManager.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

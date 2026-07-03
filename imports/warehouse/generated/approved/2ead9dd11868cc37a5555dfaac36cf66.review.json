@@ -1,0 +1,14 @@
+{
+  "id": "2ead9dd11868cc37a5555dfaac36cf66",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/icons/email-footer.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

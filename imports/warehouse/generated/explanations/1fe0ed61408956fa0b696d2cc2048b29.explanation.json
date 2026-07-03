@@ -1,0 +1,6 @@
+{
+  "id":"1fe0ed61408956fa0b696d2cc2048b29",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/components/editors/LengthValueEditor.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"1048891be48e8da342200d4bde9b1b40",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/lib/LinkBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

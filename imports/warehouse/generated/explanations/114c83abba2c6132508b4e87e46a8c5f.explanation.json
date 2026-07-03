@@ -1,0 +1,6 @@
+{
+  "id":"114c83abba2c6132508b4e87e46a8c5f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-resolver-builder/constants/connection-method-names.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

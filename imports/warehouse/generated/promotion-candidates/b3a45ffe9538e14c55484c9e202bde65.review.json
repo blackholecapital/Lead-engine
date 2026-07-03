@@ -1,0 +1,12 @@
+{
+  "id": "b3a45ffe9538e14c55484c9e202bde65",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-validate-whatsapp-token.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

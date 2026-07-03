@@ -1,0 +1,13 @@
+{
+  "id": "b70f52bea314a42d904986d31b333db6",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashCard/DashCardMenu/utils.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"47045c531000d99f8d450c2d174b3d18",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-object-permission-validator.service.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

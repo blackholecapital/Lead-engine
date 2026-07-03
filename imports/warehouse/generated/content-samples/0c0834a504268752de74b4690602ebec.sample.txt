@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/better-auth/components/sign-up.tsx
+
+import { useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Button } from '@/components/primitives/button';
+import { Input } from '@/components/primitives/input';
+import { ROUTES } from '@/utils/routes';
+import { authClient } from '../client';
+import { useAuth } from '../index';
+
+function extractInvitationIdFromRedirect(redirectUrl: string | null): string | null {
+  if (!redirectUrl) return null;
+
+  try {
+    const decodedRedirect = decodeURIComponent(redirectUrl);
+    const url = new URL(decodedRedirect, window.location.origin);
+
+    if (url.pathname === ROUTES.INVITATION_ACCEPT) {
+      return url.searchParams.get('id');
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+export function SignUp() {
+  const { refreshSession } = useAuth();
+
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [passwordError, setPasswordError] = useState<string | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const redirectUrl = searchParams.get('redirect');
+  const pendingInvitationId =
+    extractInvitationIdFromRedirect(redirectUrl) || sessionStorage.getItem('pendingInvitationId');
+  const hasInvitation = !!pendingInvitationId;
+
+  const validatePassword = (password: string) => {
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSpecialChar = /[#?!@$%^&*()-]/.test(password);
+    const isLengthValid = password.length >= 8 && password.length <= 64;
+
+    if (!isLengthValid) {
+      return 'Password must be between 8 and 64 characters';
+    }
+
+    if (!hasUpperCase) {
+      return 'Password must contain at least one uppercase letter';
+    }
+
+    if (!hasLowerCase) {
+      return 'Password must contain at least one lowercase letter';
+    }
+
+    if (!hasNumber) {
+      return 'Password must contain at least one number';
+    }
+
+    if (!hasSpecialChar) {
+      return 'Password must contain at least one special character (#?!@$%^&*()-)';
+    }
+
+    return null;
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setError(null);
+    setPasswordError(null);
+    setIsLoading(true);
+    setIsSubmitted(true);
+
+    const passwordValidationError = validatePassword(password);
+
+    if (passwordValidationError) {
+      setPasswordError(passwordValidationError);
+      setIsLoading(false);
+
+      return;
+    }
+
+    try {
+      const { data: signUpData, error: signUpError } = await authClient.signUp.email({
+        email,
+        password,
+        name: `${firstName} ${lastName}`.trim(),
+        callbackURL: window.location.origin + ROUTES.SIGN_IN,
+      });
+
+      if (signUpError) {
+        throw new Error(signUpError.message || 'Sign up failed');

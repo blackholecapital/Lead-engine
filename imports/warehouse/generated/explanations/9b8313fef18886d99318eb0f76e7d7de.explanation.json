@@ -1,0 +1,6 @@
+{
+  "id":"9b8313fef18886d99318eb0f76e7d7de",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/containers/DashboardApp/use-slow-card-notification.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

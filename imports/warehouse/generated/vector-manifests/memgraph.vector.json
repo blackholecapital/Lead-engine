@@ -1,0 +1,11 @@
+{
+  "id": "memgraph",
+  "title": "Memgraph",
+  "tags": [
+    "graph",
+    "relationships",
+    "analytics"
+  ],
+  "category": "graph",
+  "source": "vendor-source/graph/memgraph"
+}

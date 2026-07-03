@@ -1,0 +1,6 @@
+{
+  "id":"549bbf4c706a8477be57a718085a60bb",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/workspace-migration-builder-validators.module.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

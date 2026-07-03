@@ -1,0 +1,14 @@
+{
+  "id": "c6406a544f8b403b1ca06abcab40c299",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/page-layout/widgets/standalone-rich-text/components/DashboardColorIcon.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

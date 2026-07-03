@@ -1,0 +1,13 @@
+{
+  "id": "3bf2aedd883bb8a5a7ba250e31afa4a7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashCard/DashCardParameterMapper/DisabledNativeCardHelpText/index.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

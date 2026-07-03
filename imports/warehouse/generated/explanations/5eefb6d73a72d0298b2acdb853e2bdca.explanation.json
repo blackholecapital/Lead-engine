@@ -1,0 +1,6 @@
+{
+  "id":"5eefb6d73a72d0298b2acdb853e2bdca",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/hooks/useRealTimeDashboard.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

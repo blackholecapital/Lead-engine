@@ -1,0 +1,14 @@
+{
+  "id": "1e5fa4ebff29819f1adaa4a304540970",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/chart-type-selector/ChartTypeList/ChartTypeList.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

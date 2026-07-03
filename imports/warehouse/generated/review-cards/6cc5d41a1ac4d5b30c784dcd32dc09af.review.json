@@ -1,0 +1,13 @@
+{
+  "id": "6cc5d41a1ac4d5b30c784dcd32dc09af",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/containers/ArchiveDashboardModal.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,12 @@
+{
+  "id": "d950b61448bca6d8b7a6b4a58b56cec9",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-delete-subscriber.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

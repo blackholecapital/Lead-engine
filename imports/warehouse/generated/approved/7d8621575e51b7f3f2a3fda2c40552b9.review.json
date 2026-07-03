@@ -1,0 +1,14 @@
+{
+  "id": "7d8621575e51b7f3f2a3fda2c40552b9",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/DashboardHeaderButtonRow/action-buttons.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

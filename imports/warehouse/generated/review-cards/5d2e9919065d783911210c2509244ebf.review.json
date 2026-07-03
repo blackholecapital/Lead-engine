@@ -1,0 +1,13 @@
+{
+  "id": "5d2e9919065d783911210c2509244ebf",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/packages/router-generator/tests/generator/virtual-config-file-named-export/routes/db/dashboard.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

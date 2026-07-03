@@ -1,0 +1,14 @@
+{
+  "id": "60e9335390164f2ef787db377f0025a1",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/ee-auth-provider.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "provider",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

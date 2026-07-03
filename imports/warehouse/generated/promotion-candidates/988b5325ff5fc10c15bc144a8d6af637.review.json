@@ -1,0 +1,14 @@
+{
+  "id": "988b5325ff5fc10c15bc144a8d6af637",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/menu/HoverMenu.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

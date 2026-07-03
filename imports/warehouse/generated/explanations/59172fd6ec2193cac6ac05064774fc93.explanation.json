@@ -1,0 +1,6 @@
+{
+  "id":"59172fd6ec2193cac6ac05064774fc93",
+  "score":90,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/dependencies/pages/DependencyDiagnosticsPage/DependencyDiagnosticsPage.tsx",
+  "reasons":" react-component,"
+}

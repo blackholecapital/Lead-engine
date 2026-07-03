@@ -1,0 +1,14 @@
+{
+  "id": "0ff03aed6b8ba2b910a54763bea8b9b7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/ObjectDetailSidesheet.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

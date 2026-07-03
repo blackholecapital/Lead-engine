@@ -1,0 +1,6 @@
+{
+  "id":"4f6f6376ec43751107382f227af190a0",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getOverwriteItems.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

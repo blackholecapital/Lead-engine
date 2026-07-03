@@ -1,0 +1,6 @@
+{
+  "id":"2550381a9198fde9ca91615dcc5bcafb",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/command-palette/hooks/use-command-registry.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

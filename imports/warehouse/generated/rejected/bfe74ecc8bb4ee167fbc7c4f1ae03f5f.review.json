@@ -1,0 +1,14 @@
+{
+  "id": "bfe74ecc8bb4ee167fbc7c4f1ae03f5f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/explore/components/DataTablesPane/test/ResultsPaneOnDashboard.test.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

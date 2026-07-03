@@ -1,0 +1,12 @@
+{
+  "id": "4e4c9f413b4799c5bb84602b8534cf9a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test/scenarios/dashboard-filters-matrix/helpers/matrix-helpers.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

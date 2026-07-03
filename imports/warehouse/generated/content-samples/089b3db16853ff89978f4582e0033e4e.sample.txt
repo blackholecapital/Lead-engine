@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/schema-editor/use-schema-form.ts
+
+import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
+import { useCallback, useEffect } from 'react';
+import { useFieldArray, useForm } from 'react-hook-form';
+import { MAX_NESTING_DEPTH } from './constants';
+import type { JSONSchema7, JSONSchema7TypeName } from './json-schema';
+import type { SchemaFormPath, UseSchemaFormProps, UseSchemaFormReturn } from './types';
+import {
+  convertPropertyListToSchema,
+  convertSchemaToPropertyList,
+  createPropertyItem,
+  editorSchema,
+  findOrCreatePropertyPath,
+  type PropertyData,
+  type PropertyListItem,
+  parsePropertyPath,
+  propertyExists,
+  type SchemaEditorFormValues,
+} from './utils';
+
+const defaultFormValues: SchemaEditorFormValues = {
+  propertyList: [],
+};
+
+const DEBOUNCE_DELAY = 300;
+
+export function useSchemaForm({ initialSchema, onChange, onValidityChange }: UseSchemaFormProps): UseSchemaFormReturn {
+  const initialTransformedValues: SchemaEditorFormValues = {
+    propertyList: initialSchema?.properties
+      ? convertSchemaToPropertyList(initialSchema.properties, initialSchema.required)
+      : defaultFormValues.propertyList,
+  };
+
+  const methods = useForm<SchemaEditorFormValues>({
+    defaultValues: initialTransformedValues,
+    resolver: standardSchemaResolver(editorSchema),
+    mode: 'onBlur',
+    reValidateMode: 'onChange',
+  });
+
+  const { control, watch, formState, getValues, setValue } = methods;
+
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'propertyList',
+    keyName: 'fieldId',
+  });
+
+  // Sync form validity state
+  useEffect(() => {
+    onValidityChange?.(formState.isValid);
+  }, [formState.isValid, onValidityChange]);
+
+  // Watch for changes and sync with parent
+  useEffect(() => {
+    let debounceTimer: NodeJS.Timeout;
+
+    const subscription = watch((value) => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        if (onChange && value.propertyList) {
+          const outputSchema = createSchemaFromPropertyList(value.propertyList as PropertyListItem[]);
+          onChange(outputSchema);
+        }
+      }, DEBOUNCE_DELAY);
+    });
+
+    return () => {
+      clearTimeout(debounceTimer);
+      subscription.unsubscribe();
+    };
+  }, [watch, onChange]);
+
+  const addProperty = useCallback(
+    (propertyDataFromArg?: Partial<PropertyListItem>, typeFromArg?: JSONSchema7TypeName) => {
+      const defaultType = typeFromArg || 'string';
+
+      // Handle root level property addition
+      if (!propertyDataFromArg?.keyName) {
+        appendRootProperty(propertyDataFromArg, defaultType, append);
+        return;
+      }
+
+      // Handle nested property addition
+      const pathInfo = parsePropertyPath(propertyDataFromArg.keyName);
+
+      if (!pathInfo) {
+        return;
+      }
+
+      // Check nesting depth
+      if (pathInfo.parentPath.length >= MAX_NESTING_DEPTH) {
+        console.warn(
+          `Cannot add property at depth ${pathInfo.parentPath.length + 1}. Maximum nesting depth is ${MAX_NESTING_DEPTH}.`
+        );
+        return;
+      }
+
+      if (pathInfo.parentPath.length === 0) {
+        // Add to root level
+        addRootLevelProperty(propertyDataFromArg, defaultType, pathInfo.keyName, getValues, append);

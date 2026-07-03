@@ -1,0 +1,14 @@
+{
+  "id": "6152edfe8f64afedcf56c1e09ae2d2a7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/SummarizeSidebar/AggregationItem/AggregationItem.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

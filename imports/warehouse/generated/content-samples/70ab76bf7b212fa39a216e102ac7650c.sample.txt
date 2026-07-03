@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/parseStepVariables.ts
+
+import { Completion } from '@codemirror/autocomplete';
+import type { JSONSchemaDefinition } from '@novu/shared';
+import { JSONSchema7 } from 'json-schema';
+import { isAllowedAlias } from '@/components/maily/repeat-block-aliases';
+import { SYSTEM_VARIABLE_DEFINITIONS } from '@/components/variables/system-variable-definitions';
+import {
+  DIGEST_VARIABLES,
+  DIGEST_VARIABLES_ENUM,
+  getDynamicDigestVariable,
+} from '../components/variable/utils/digest-variables';
+import { isNamespaceOnlyVariable } from './liquid';
+
+function normalizeArrayNotation(path: string): string {
+  return path.replace(/\[(\d+)\]/g, '.$1');
+}
+
+export interface LiquidVariable {
+  type?: 'variable' | 'digest' | 'new-variable' | 'local';
+  name: string;
+  boost?: number;
+  info?: Completion['info'];
+  displayLabel?: string;
+  aliasFor?: string | null;
+  isNewSuggestion?: boolean;
+}
+
+export type FieldDataType = 'string' | 'number' | 'boolean' | 'date' | 'datetime' | 'array' | 'object';
+
+export interface EnhancedLiquidVariable extends LiquidVariable {
+  dataType: FieldDataType;
+  format?: string;
+  inputType?: string;
+}
+
+export type IsAllowedVariable = (variable: LiquidVariable) => boolean;
+export type IsArbitraryNamespace = (path: string) => boolean;
+
+export interface ParsedVariables {
+  primitives: LiquidVariable[];
+  arrays: LiquidVariable[];
+  variables: LiquidVariable[];
+  namespaces: LiquidVariable[];
+  isAllowedVariable: IsAllowedVariable;
+}
+
+export interface EnhancedParsedVariables extends ParsedVariables {
+  enhancedVariables: EnhancedLiquidVariable[];
+}
+
+function mapJsonSchemaTypeToFieldType(schemaProperty: JSONSchemaDefinition | JSONSchema7): FieldDataType {
+  if (typeof schemaProperty === 'boolean') return 'string';
+
+  const { type, format } = schemaProperty;
+
+  switch (type) {
+    case 'string':
+      if (format === 'date') return 'date';
+      if (format === 'date-time') return 'datetime';
+      return 'string';
+    case 'number':
+    case 'integer':
+      return 'number';
+    case 'boolean':
+      return 'boolean';
+    case 'array':
+      return 'array';
+    case 'object':
+      return 'object';
+    default:
+      return 'string';
+  }
+}
+
+function getInputTypeFromSchema(schemaProperty: JSONSchemaDefinition | JSONSchema7): string {
+  if (typeof schemaProperty === 'boolean') return 'text';
+
+  const { type, format } = schemaProperty;
+
+  switch (type) {
+    case 'number':
+    case 'integer':
+      return 'number';
+    case 'string':
+      if (format === 'date') return 'date';
+      if (format === 'date-time') return 'datetime-local';
+      if (format === 'email') return 'email';
+      return 'text';
+    default:
+      return 'text';
+  }
+}
+
+export function parseStepVariables(
+  schema: JSONSchemaDefinition | JSONSchema7,
+  { digestStepId, isPayloadSchemaEnabled }: { digestStepId?: string; isPayloadSchemaEnabled?: boolean }
+): EnhancedParsedVariables {
+  const result: ParsedVariables = {
+    primitives: [],
+    arrays: [],
+    variables: [],

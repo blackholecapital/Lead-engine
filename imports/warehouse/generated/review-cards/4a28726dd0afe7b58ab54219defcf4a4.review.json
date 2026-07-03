@@ -1,0 +1,12 @@
+{
+  "id": "4a28726dd0afe7b58ab54219defcf4a4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/dtos/workflow/workflow-list-response.dto.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

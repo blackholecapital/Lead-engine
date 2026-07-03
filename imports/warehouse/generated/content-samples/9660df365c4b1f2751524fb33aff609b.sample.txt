@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/onboarding/connect-agent/connect-agent-form.tsx
+
+import { AgentRuntimeProviderIdEnum, type IIntegration } from '@novu/shared';
+import { AnimatePresence, motion } from 'motion/react';
+import type { ReactNode } from 'react';
+import { RiArrowRightSLine, RiCloseLine, RiInformation2Line, RiLoopLeftLine } from 'react-icons/ri';
+import { isDemoManagedClaudeIntegrationSelected } from '@/components/agents/connectors/claude-managed-integrations';
+import {
+  ConnectorIntegrationDropdown,
+  type ConnectorIntegrationStatus,
+} from '@/components/agents/connectors/connector-integration-dropdown';
+import { type ConnectorOption, getConnectorById } from '@/components/agents/connectors/connector-options';
+import {
+  type AgentTemplate,
+  ConfigureCredentialsSection,
+  type CreateAgentFormErrors,
+  ExistingAgentFields,
+  ScratchAgentFields,
+  type VerifyStatus,
+} from '@/components/agents/create-agent-fields';
+import { SetupStep } from '@/components/agents/setup-guide-primitives';
+import { BroomSparkle } from '@/components/icons/broom-sparkle';
+import { Button } from '@/components/primitives/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/primitives/tooltip';
+import { cn } from '@/utils/ui';
+import { AgentSuggestionPills } from './agent-suggestion-pills';
+import type { ConnectorId } from './connector-options';
+import { GenerationStatus, type GenerationStep } from './generation-status';
+import { PromptInput } from './prompt-input';
+import { TemplateDropdown, type TemplateSelection } from './template-dropdown';
+
+export type AgentGenerationMode = 'prompt' | 'manual' | 'existing';
+
+export type AgentGenerationBindings = {
+  mode: AgentGenerationMode;
+  onModeChange: (next: AgentGenerationMode) => void;
+  prompt: string;
+  onPromptChange: (next: string) => void;
+  promptError?: string;
+  suggestions: AgentTemplate[];
+  onSelectSuggestion: (suggestion: AgentTemplate) => void;
+  /** Regenerates the suggestion pills on the server. When omitted, the regenerate button is hidden. */
+  onRegenerateSuggestions?: () => void;
+  /** When true, the pills show a loading skeleton and the regenerate button is disabled. */
+  isRegeneratingSuggestions?: boolean;
+  textareaRef?: React.Ref<HTMLTextAreaElement>;
+  /**
+   * When true, the prompt textarea becomes read-only and the rotating status animation +
+   * Cancel button are rendered below it.
+   */
+  isGenerating?: boolean;
+  generationSteps?: ReadonlyArray<GenerationStep>;
+  onCancelGeneration?: () => void;
+  /**
+   * When true, the Cancel button stays visible during the generating state but is
+   * disabled. Use after the LLM call has settled and the agent is being provisioned.
+   */
+  isCancelDisabled?: boolean;
+};
+
+type ConnectAgentFormProps = {
+  connectorId: ConnectorId;
+  isClaudeSelected: boolean;
+  /**
+   * When true, the connector runs on the Custom Scaffold (self-hosted) runtime. We collapse the
+   * second setup step into a plain manual form (no AI prompt UI, no template dropdown, no
+   * suggestion pills) so teams writing their own runtime see exactly the inputs they need.
+   */
+  isScratchRuntime: boolean;
+  apiKey: string;
+  externalWorkspaceId: string;
+  region: string;
+
+  templateSelection: TemplateSelection;
+  isExistingMode: boolean;
+  isScratchMode: boolean;
+  showExistingOption: boolean;
+  existingOptionIcon?: ReactNode;
+
+  name: string;
+  identifier: string;
+  instructions: string;
+  isIdentifierTouched: boolean;
+
+  externalAgentId: string;
+  externalEnvironmentId: string;
+
+  errors: CreateAgentFormErrors;
+
+  /**
+   * When true, every input/dropdown renders disabled. The component still calls the change
+   * handlers for completeness, but consumers should provide noop handlers in this mode.
+   */
+  disabled?: boolean;
+
+  // Integration / credentials state
+  integrations: IIntegration[] | undefined;
+  selectedIntegrationId?: string;
+  dropdownStatus?: ConnectorIntegrationStatus;
+  showSavedBadge?: boolean;
+  credentialsPanelVisible: boolean;
+  credentialsPanelExpanded: boolean;

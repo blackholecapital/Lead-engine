@@ -1,0 +1,12 @@
+{
+  "id": "0274fb5f7e24776fc9ad861a24422078",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/tools/update-dashboard-widget.tool.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

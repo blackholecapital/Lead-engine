@@ -1,0 +1,14 @@
+{
+  "id": "25ee06004cb27c04d775d5a8f4b03711",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/components/editors/CssValueEditor.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

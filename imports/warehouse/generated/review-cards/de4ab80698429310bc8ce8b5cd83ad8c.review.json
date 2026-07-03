@@ -1,0 +1,14 @@
+{
+  "id": "de4ab80698429310bc8ce8b5cd83ad8c",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/components/QuestionFiltersHeader/QuestionFiltersHeader.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

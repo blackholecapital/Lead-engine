@@ -1,0 +1,12 @@
+{
+  "id": "4afca0d09e9ddeddc187f012544bb18e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/graph/memgraph/tests/stress/ha/docker/deployment/grafana/provisioning/dashboards/memgraph_ha.json",
+  "score": 95,
+  "suggested_tags": [
+    "config",
+    "dashboard"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

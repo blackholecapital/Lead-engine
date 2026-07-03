@@ -1,0 +1,6 @@
+{
+  "id":"97b6d52803e0e34226323c64bae381eb",
+  "score":85,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/send-message/digest/index.ts",
+  "reasons":" workflow-feature, typescript-source,"
+}

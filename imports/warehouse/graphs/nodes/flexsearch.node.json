@@ -1,0 +1,11 @@
+{
+  "id": "flexsearch",
+  "label": "FlexSearch",
+  "category": "scoring",
+  "tags": [
+    "search",
+    "ranking",
+    "retrieval"
+  ],
+  "type": "asset"
+}

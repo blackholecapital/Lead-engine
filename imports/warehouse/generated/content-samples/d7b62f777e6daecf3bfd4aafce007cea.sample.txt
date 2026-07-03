@@ -1,0 +1,7 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/auth/auth-context.tsx
+
+import React from 'react';
+import { AuthContextValue } from './types';
+
+export const AuthContext = React.createContext<AuthContextValue>({} as AuthContextValue);
+AuthContext.displayName = 'AuthContext';

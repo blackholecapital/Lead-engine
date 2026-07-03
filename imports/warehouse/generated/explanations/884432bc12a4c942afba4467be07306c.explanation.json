@@ -1,0 +1,6 @@
+{
+  "id":"884432bc12a4c942afba4467be07306c",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-query-builder/utils/get-field-arguments-by-key.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

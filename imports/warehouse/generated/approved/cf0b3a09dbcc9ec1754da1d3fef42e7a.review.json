@@ -1,0 +1,12 @@
+{
+  "id": "cf0b3a09dbcc9ec1754da1d3fef42e7a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/transforms/pages/JobListPage/JobListPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

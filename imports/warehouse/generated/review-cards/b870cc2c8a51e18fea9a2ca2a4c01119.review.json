@@ -1,0 +1,12 @@
+{
+  "id": "b870cc2c8a51e18fea9a2ca2a4c01119",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/tools/types/dashboard-tool-dependencies.type.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,12 @@
+{
+  "id": "8c7ffa2fa12521e3d82bb9690208f1d7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/snapshots/lib/snapshot-location-balance.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

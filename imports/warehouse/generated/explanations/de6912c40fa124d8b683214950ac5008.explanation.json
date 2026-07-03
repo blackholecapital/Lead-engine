@@ -1,0 +1,6 @@
+{
+  "id":"de6912c40fa124d8b683214950ac5008",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/widgets/run-info-widget.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

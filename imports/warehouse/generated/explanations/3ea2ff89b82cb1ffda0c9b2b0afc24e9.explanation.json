@@ -1,0 +1,6 @@
+{
+  "id":"3ea2ff89b82cb1ffda0c9b2b0afc24e9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashCard/DashCardParameterMapper/DisabledNativeCardHelpText/DisabledNativeCardHelpTextComponents.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

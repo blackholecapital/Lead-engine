@@ -1,0 +1,14 @@
+{
+  "id": "a4c07dd147e94044ff00ca66e5f702c0",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/AddHeadingOrTextButton.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

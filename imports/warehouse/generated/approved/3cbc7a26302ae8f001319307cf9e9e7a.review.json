@@ -1,0 +1,14 @@
+{
+  "id": "3cbc7a26302ae8f001319307cf9e9e7a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/Header/useHeaderActionsDropdownMenu.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

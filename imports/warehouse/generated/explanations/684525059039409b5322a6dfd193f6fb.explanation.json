@@ -1,0 +1,6 @@
+{
+  "id":"684525059039409b5322a6dfd193f6fb",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/clean-entity-name.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

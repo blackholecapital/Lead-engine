@@ -1,0 +1,14 @@
+{
+  "id": "a658cec1fcf85b76d1ae7a70c92dcbb4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/DashboardHeaderButtonRow/DashboardSharingMenu/tests/setup.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

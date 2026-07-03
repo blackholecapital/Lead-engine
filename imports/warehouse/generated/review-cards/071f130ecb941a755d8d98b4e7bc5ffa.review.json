@@ -1,0 +1,13 @@
+{
+  "id": "071f130ecb941a755d8d98b4e7bc5ffa",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/is-field-metadata-relation-or-morph-relation.utils.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

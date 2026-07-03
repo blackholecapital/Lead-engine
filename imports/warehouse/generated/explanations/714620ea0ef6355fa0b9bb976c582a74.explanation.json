@@ -1,0 +1,6 @@
+{
+  "id":"714620ea0ef6355fa0b9bb976c582a74",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/utils/validate-role-label-uniqueness.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

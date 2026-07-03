@@ -1,0 +1,6 @@
+{
+  "id":"d3926abe45b3b2502926acf84906dd5a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/public/containers/PublicOrEmbeddedDashboard/PublicOrEmbeddedDashboardPage/index.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

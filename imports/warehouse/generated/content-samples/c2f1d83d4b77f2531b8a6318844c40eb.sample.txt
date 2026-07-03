@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/header-navigation/support-drawer-constants.ts
+
+import { useMemo } from 'react';
+import {
+  RiBuildingLine,
+  RiCodeLine,
+  RiGlobalLine,
+  RiHashtag,
+  RiKey2Line,
+  RiLayoutGridLine,
+  RiMailLine,
+  RiRouteFill,
+  RiSettings3Line,
+  RiStore3Line,
+  RiTranslate2,
+  RiUserLine,
+} from 'react-icons/ri';
+import { useLocation } from 'react-router-dom';
+import { Bell, NovuIcon } from '@/components/icons';
+
+export const DRAWER_WIDTH_DEFAULT = 350;
+export const DRAWER_WIDTH_EXPANDED = 700;
+
+const DOCS_BASE_URL = 'https://docs.novu.co';
+const UTM_SUFFIX = '?utm_campaign=support_drawer';
+
+export const BOOK_DEMO_URL = `https://cal.com/team/novu/intro${UTM_SUFFIX}`;
+export const CHANGELOG_URL = `https://go.novu.co/changelog${UTM_SUFFIX}`;
+export const ROADMAP_URL = `https://roadmap.novu.co/roadmap${UTM_SUFFIX}`;
+
+export function docsUrl(path = '') {
+  const [basePath, hash] = path.split('#');
+  const url = `${DOCS_BASE_URL}${basePath}${UTM_SUFFIX}`;
+
+  return hash ? `${url}#${hash}` : url;
+}
+
+export function toEmbedUrl(url: string) {
+  const [baseWithParams, hash] = url.split('#');
+  const embedUrl = `${baseWithParams}&full=true`;
+
+  return hash ? `${embedUrl}#${hash}` : embedUrl;
+}
+
+export type SuggestionItem = {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+  url: string;
+};
+
+const DEFAULT_SUGGESTIONS: SuggestionItem[] = [
+  {
+    icon: RiRouteFill,
+    title: 'Understand Novu',
+    description: 'Learn what Novu is and how it simplifies notification delivery across channels.',
+    url: docsUrl('/platform/what-is-novu'),
+  },
+  {
+    icon: RiCodeLine,
+    title: 'Introduction to Inbox',
+    description: 'Build an in-app notification center that keeps your users engaged.',
+    url: docsUrl('/platform/inbox/overview'),
+  },
+];
+
+type RouteContext =
+  | 'workflows'
+  | 'workflowEditor'
+  | 'subscribers'
+  | 'integrations'
+  | 'apiKeys'
+  | 'activity'
+  | 'analytics'
+  | 'topics'
+  | 'webhooks'
+  | 'layouts'
+  | 'translations'
+  | 'settings'
+  | 'environments'
+  | 'contexts'
+  | 'default';
+
+const CONTEXTUAL_SUGGESTIONS: Record<RouteContext, SuggestionItem[]> = {
+  workflows: [
+    {
+      icon: RiRouteFill,
+      title: 'Creating workflows',
+      description: 'Learn how to create and configure notification workflows.',
+      url: docsUrl('/platform/workflow/overview'),
+    },
+    {
+      icon: RiCodeLine,
+      title: 'Using variables',
+      description: 'Say hello with {{firstName}}. Personal, but scalable.',
+      url: docsUrl('/framework/controls#using-variables'),
+    },
+  ],
+  workflowEditor: [
+    {
+      icon: RiRouteFill,
+      title: 'Understand workflow editor',

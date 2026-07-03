@@ -1,0 +1,14 @@
+{
+  "id": "20cfdd6d581fd47be98335318a9ed086",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/embedding-sdk-bundle/components/public/CreateDashboardModal/CreateDashboardModal.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

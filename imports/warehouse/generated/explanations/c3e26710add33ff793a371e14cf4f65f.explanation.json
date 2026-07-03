@@ -1,0 +1,6 @@
+{
+  "id":"c3e26710add33ff793a371e14cf4f65f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/RightClickPopover/RightClickPopover.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

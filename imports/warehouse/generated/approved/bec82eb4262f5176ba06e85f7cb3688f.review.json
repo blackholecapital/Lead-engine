@@ -1,0 +1,12 @@
+{
+  "id": "bec82eb4262f5176ba06e85f7cb3688f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/packages/shared/src/dto/workflows/preview-step-response.dto.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

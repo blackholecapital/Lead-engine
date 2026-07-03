@@ -1,0 +1,13 @@
+{
+  "id": "b8914d3a8b03cb2c719d699e8369b3ee",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/nodes/step-node/step-node-name.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

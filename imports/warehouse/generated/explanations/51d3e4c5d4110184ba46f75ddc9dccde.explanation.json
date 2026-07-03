@@ -1,0 +1,6 @@
+{
+  "id":"51d3e4c5d4110184ba46f75ddc9dccde",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/tanstack-router/packages/start-plugin-core/src/start-manifest-plugin/manifestBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

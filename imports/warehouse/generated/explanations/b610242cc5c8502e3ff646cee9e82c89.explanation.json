@@ -1,0 +1,6 @@
+{
+  "id":"b610242cc5c8502e3ff646cee9e82c89",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/internal-packages/clickhouse/src/client/queryBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

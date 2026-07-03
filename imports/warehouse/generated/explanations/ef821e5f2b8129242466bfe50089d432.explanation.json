@@ -1,0 +1,6 @@
+{
+  "id":"ef821e5f2b8129242466bfe50089d432",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/hooks/useTabVisibility.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

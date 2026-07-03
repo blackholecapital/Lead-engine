@@ -1,0 +1,14 @@
+{
+  "id": "2eb9dbae03cc60041fdf75c31d416b97",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/EmbeddedModal/EmbeddedModal.test.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

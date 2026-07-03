@@ -1,0 +1,14 @@
+{
+  "id": "607e77d5d1cd4689f7eacf9d0b8ca467",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/subscribers/preferences/day-schedule-copy.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

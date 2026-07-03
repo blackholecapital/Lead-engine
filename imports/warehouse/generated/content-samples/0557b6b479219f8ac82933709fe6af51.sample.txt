@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/hooks/use-link-agent-integration.ts
+
+import { ChannelTypeEnum, EmailProviderIdEnum, type IIntegration, PROVIDER_ID_TO_CHANNEL_MAP } from '@novu/shared';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useCallback, useRef, useState } from 'react';
+import {
+  type AgentIntegrationLink,
+  addAgentIntegration,
+  getAgentDetailQueryKey,
+  getAgentIntegrationsQueryKey,
+  removeAgentIntegration,
+} from '@/api/agents';
+import { NovuApiError } from '@/api/api.client';
+import { createIntegration, deleteIntegration } from '@/api/integrations';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { requireEnvironment, useEnvironment } from '@/context/environment/hooks';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { QueryKeys } from '@/utils/query-keys';
+import { TelemetryEvent } from '@/utils/telemetry';
+
+type LinkProviderItem = {
+  providerId: string;
+  displayName: string;
+  /** When set, link this existing integration instead of creating a new one. */
+  integration?: IIntegration;
+  /** Override the name used when creating a new integration (defaults to providerId-based fallback). */
+  newIntegrationName?: string;
+};
+
+type UseLinkAgentIntegrationOptions = {
+  agentIdentifier: string;
+  /** Already-linked integration ids — selecting one of these skips the link API call. */
+  linkedIntegrationIds?: Set<string>;
+  /**
+   * Existing agent-integration links. Required when `replaceExisting` is enabled so the hook
+   * can remove the previous links after the new link succeeds.
+   */
+  existingLinks?: AgentIntegrationLink[];
+  /**
+   * When true, after a successful link the hook removes every other agent-integration link
+   * from `existingLinks`. Integrations provisioned by this hook during the session are also
+   * deleted; pre-existing integrations are only unlinked. Used for single-select pickers like
+   * the onboarding provider cards.
+   */
+  replaceExisting?: boolean;
+  /** Called after a successful link with the resolved integration. */
+  onLinked?: (providerId: string, integration: IIntegration) => void;
+};
+
+type UseLinkAgentIntegrationResult = {
+  /** Identifier of the in-flight item, or null. Callers use this to render per-row spinners. */
+  pendingItemKey: string | null;
+  /** Returns true while any link operation is running. */
+  isBusy: boolean;
+  /** Invokes the link flow. `itemKey` is reflected back via `pendingItemKey`. */
+  linkProvider: (item: LinkProviderItem, itemKey: string) => Promise<IIntegration | undefined>;
+};
+
+function isAlreadyLinkedToAgentConflict(err: unknown): boolean {
+  if (!(err instanceof NovuApiError) || err.status !== 409) {
+    return false;
+  }
+
+  return err.message.includes('already linked');
+}
+
+export function useLinkAgentIntegration({
+  agentIdentifier,
+  linkedIntegrationIds,
+  existingLinks,
+  replaceExisting,
+  onLinked,
+}: UseLinkAgentIntegrationOptions): UseLinkAgentIntegrationResult {
+  const { currentEnvironment } = useEnvironment();
+  const queryClient = useQueryClient();
+  const track = useTelemetry();
+
+  const [pendingItemKey, setPendingItemKey] = useState<string | null>(null);
+  /** Integrations created by this hook instance — safe to delete when switching providers. */
+  const createdIntegrationIdsRef = useRef(new Set<string>());
+
+  const addAgentIntegrationMutation = useMutation({
+    mutationFn: async (body: { integrationIdentifier?: string; providerId?: string }) => {
+      const environment = requireEnvironment(currentEnvironment, 'No environment selected');
+
+      return addAgentIntegration(environment, agentIdentifier, body);
+    },
+  });
+
+  const createIntegrationMutation = useMutation({
+    mutationFn: async (vars: { providerId: string; name: string }) => {
+      const environment = requireEnvironment(currentEnvironment, 'No environment selected');
+      const channel = PROVIDER_ID_TO_CHANNEL_MAP[vars.providerId];
+
+      if (channel == null) {
+        throw new Error(`Unknown channel for provider ${vars.providerId}`);
+      }
+
+      const response = await createIntegration(
+        {
+          providerId: vars.providerId,
+          channel,

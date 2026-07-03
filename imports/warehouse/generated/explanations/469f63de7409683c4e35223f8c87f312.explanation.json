@@ -1,0 +1,6 @@
+{
+  "id":"469f63de7409683c4e35223f8c87f312",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/visualizations/IFrameViz/IFrameViz.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

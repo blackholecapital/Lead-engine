@@ -1,0 +1,14 @@
+{
+  "id": "ee131ee2bf81bf5a99f8ee7102cab964",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/caching/components/StrategyEditorForQuestionsAndDashboards/utils.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

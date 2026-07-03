@@ -1,0 +1,6 @@
+{
+  "id":"e5e794ef3903ea508a362f84684e36bd",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/constants.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

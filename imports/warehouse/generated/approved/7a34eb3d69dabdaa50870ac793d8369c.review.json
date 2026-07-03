@@ -1,0 +1,14 @@
+{
+  "id": "7a34eb3d69dabdaa50870ac793d8369c",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/VisibilityToggler/VisibilityToggler.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

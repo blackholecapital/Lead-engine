@@ -1,0 +1,6 @@
+{
+  "id":"96169b1536da563219642ae73ed342fb",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/VisibilityToggler/VisibilityToggler.unit.spec.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "7e99c02c19b468292068b16af03b5dff",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/cypress-base/cypress/e2e/dashboard/editmode.test.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

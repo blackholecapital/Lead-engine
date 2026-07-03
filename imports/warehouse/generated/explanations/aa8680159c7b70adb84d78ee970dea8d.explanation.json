@@ -1,0 +1,6 @@
+{
+  "id":"aa8680159c7b70adb84d78ee970dea8d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/piece-properties/action-error-handling.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

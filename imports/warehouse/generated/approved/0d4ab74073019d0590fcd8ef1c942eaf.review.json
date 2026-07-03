@@ -1,0 +1,12 @@
+{
+  "id": "0d4ab74073019d0590fcd8ef1c942eaf",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/public/containers/PublicOrEmbeddedDashboard/types.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

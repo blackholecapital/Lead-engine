@@ -1,0 +1,13 @@
+{
+  "id": "201d727fcb819c2efdb6290d866344b7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/public/containers/PublicOrEmbeddedDashboard/PublicOrEmbeddedDashboardPage/tests/PublicOrEmbeddedDashboardPage.enterprise.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

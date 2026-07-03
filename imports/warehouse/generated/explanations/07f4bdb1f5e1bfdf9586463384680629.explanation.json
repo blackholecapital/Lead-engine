@@ -1,0 +1,6 @@
+{
+  "id":"07f4bdb1f5e1bfdf9586463384680629",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FiltersConfigModal/transformers/index.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

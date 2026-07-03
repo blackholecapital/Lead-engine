@@ -1,0 +1,13 @@
+{
+  "id": "5c7a2c885493c4e0318d8377fe12868b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/TimelineSidebar/index.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

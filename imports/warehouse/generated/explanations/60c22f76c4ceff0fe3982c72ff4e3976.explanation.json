@@ -1,0 +1,6 @@
+{
+  "id":"60c22f76c4ceff0fe3982c72ff4e3976",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/documents/blocks/helpers/TStyle.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

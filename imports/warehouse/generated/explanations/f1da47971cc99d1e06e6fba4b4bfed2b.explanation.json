@@ -1,0 +1,6 @@
+{
+  "id":"f1da47971cc99d1e06e6fba4b4bfed2b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/componentIsResizable.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

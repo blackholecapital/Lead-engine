@@ -1,0 +1,11 @@
+{
+  "id": "31f8c00980b5da1a5c4708a601b74727",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test/scenarios/dashboard-filters/shared/dashboard-filters-sql-number.js",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

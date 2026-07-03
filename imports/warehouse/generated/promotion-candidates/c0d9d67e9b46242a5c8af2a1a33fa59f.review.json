@@ -1,0 +1,15 @@
+{
+  "id": "c0d9d67e9b46242a5c8af2a1a33fa59f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/ai-drawer/ai-drawer-provider.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "provider",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,14 @@
+{
+  "id": "280bd2dc2365868604255847b5ffe60a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/View/NotebookContainer/NotebookNativePreview.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,12 @@
+{
+  "id": "6daa397e53144c51eb5e0c593b7a7f62",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/data-studio/segments/pages/PublishedTableSegmentDetailPage/PublishedTableSegmentDetailPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

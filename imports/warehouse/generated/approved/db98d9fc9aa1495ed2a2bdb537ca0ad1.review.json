@@ -1,0 +1,12 @@
+{
+  "id": "db98d9fc9aa1495ed2a2bdb537ca0ad1",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/getSelectedChartIdForFilterScopeTree.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

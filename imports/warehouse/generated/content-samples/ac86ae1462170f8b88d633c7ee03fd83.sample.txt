@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/translation-plugin/pill-widget.ts
+
+import { WidgetType } from '@uiw/react-codemirror';
+import { CSSProperties, createElement } from 'react';
+import { createRoot } from 'react-dom/client';
+import { RiErrorWarningLine } from 'react-icons/ri';
+import { TranslateVariableIcon } from '@/components/icons/translate-variable';
+import { formatDisplayKey } from './utils';
+
+export const TRANSLATION_PILL_HEIGHT = 18;
+
+export class TranslationPillWidget extends WidgetType {
+  private clickHandler: (e: MouseEvent) => void;
+  private tooltipElement: HTMLElement | null = null;
+
+  constructor(
+    private translationKey: string,
+    private fullExpression: string,
+    private from: number,
+    private to: number,
+    private onSelect?: (translationKey: string, from: number, to: number) => void,
+    private hasError: boolean = false,
+    private errorMessage?: string
+  ) {
+    super();
+
+    this.clickHandler = (e: MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      setTimeout(() => {
+        this.onSelect?.(this.translationKey, this.from, this.to);
+      }, 0);
+    };
+  }
+
+  private createPillStyles(): CSSProperties {
+    return {
+      backgroundColor: 'hsl(var(--bg-white))',
+      color: 'inherit',
+      border: '1px solid hsl(var(--stroke-soft))',
+      borderRadius: 'var(--radius)',
+      gap: '0.25rem',
+      padding: '1px 6px',
+      margin: '0',
+      fontFamily: 'var(--font-code)',
+      display: 'inline-flex',
+      alignItems: 'center',
+      height: `${TRANSLATION_PILL_HEIGHT}px`,
+      lineHeight: 'inherit',
+      fontSize: 'max(12px, calc(1em - 3px))',
+      cursor: 'pointer',
+      position: 'relative',
+      verticalAlign: 'middle',
+      fontWeight: '500',
+      boxSizing: 'border-box',
+    };
+  }
+
+  private createIconStyles(): CSSProperties {
+    return {
+      width: 'calc(1rem - 2px)',
+      minWidth: 'calc(1rem - 2px)',
+      height: 'calc(1rem - 2px)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    };
+  }
+
+  private createContentStyles(): CSSProperties {
+    return {
+      lineHeight: '1.2',
+      color: 'hsl(var(--text-sub))',
+      maxWidth: '24ch',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+    };
+  }
+
+  toDOM() {
+    const span = document.createElement('span');
+    span.className = 'cm-translation-pill';
+
+    const icon = document.createElement('span');
+    const content = document.createElement('span');
+
+    Object.assign(span.style, this.createPillStyles());
+    Object.assign(icon.style, this.createIconStyles());
+    Object.assign(content.style, this.createContentStyles());
+
+    const displayKey = formatDisplayKey(this.translationKey);
+    content.textContent = displayKey;
+    content.title =
+      this.hasError && this.errorMessage
+        ? `${this.translationKey}\n\nError: ${this.errorMessage}`
+        : this.translationKey;
+
+    span.setAttribute('data-translation-key', this.translationKey);

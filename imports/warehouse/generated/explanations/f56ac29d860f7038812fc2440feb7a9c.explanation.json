@@ -1,0 +1,6 @@
+{
+  "id":"f56ac29d860f7038812fc2440feb7a9c",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/Header/useHeaderAutoRefresh.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

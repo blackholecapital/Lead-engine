@@ -1,0 +1,14 @@
+{
+  "id": "39b317989b7a71a66492b5424c2ae209",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/menu/ShareMenuItems/ShareMenuItems.test.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

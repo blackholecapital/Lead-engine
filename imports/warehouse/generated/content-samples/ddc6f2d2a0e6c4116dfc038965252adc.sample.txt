@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/pages/cli-auth.tsx
+
+import { useClerk, useAuth as useClerkAuth, useUser } from '@clerk/react';
+import { FeatureFlagsKeysEnum, PermissionsEnum } from '@novu/shared';
+import { AnimatePresence, motion } from 'motion/react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { RiArrowRightSLine, RiCheckLine, RiCommandLine, RiLockLine } from 'react-icons/ri';
+import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
+import { approveCliDeviceSession } from '@/api/cli-auth';
+import { AuthLayout } from '@/components/auth-layout';
+import { PageMeta } from '@/components/page-meta';
+import { Button } from '@/components/primitives/button';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { EnvironmentProvider } from '@/context/environment/environment-provider';
+import { useEnvironment } from '@/context/environment/hooks';
+import { useSegment } from '@/context/segment';
+import { useFeatureFlag } from '@/hooks/use-feature-flag';
+import { useFetchApiKeys } from '@/hooks/use-fetch-api-keys';
+import { useHasPermission } from '@/hooks/use-has-permission';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { clearPendingCliAuth, storePendingCliAuth } from '@/utils/cli-auth-pending';
+import { persistCliOnboardingSessionId, readActiveCliOnboardingSessionId } from '@/utils/cli-onboarding-identity';
+import { clearConnectProvisioning } from '@/utils/connect';
+import { readOnboardingSessionId } from '@/utils/onboarding-session-id';
+import { buildRoute, ROUTES } from '@/utils/routes';
+import { TelemetryEvent } from '@/utils/telemetry';
+
+function isValidDeviceCode(deviceCode: string | null): deviceCode is string {
+  if (!deviceCode) return false;
+
+  return /^[A-Za-z0-9_-]{16,128}$/.test(deviceCode);
+}
+
+export const CliAuthPage = () => {
+  const { isLoaded, isSignedIn } = useClerkAuth();
+  const [searchParams] = useSearchParams();
+  const segment = useSegment();
+  const deviceCode = searchParams.get('device_code');
+  const callerName = searchParams.get('name');
+  const onboardingSessionId = readOnboardingSessionId(searchParams);
+
+  useEffect(() => {
+    if (isValidDeviceCode(deviceCode)) {
+      storePendingCliAuth(deviceCode, callerName);
+    }
+  }, [deviceCode, callerName]);
+
+  useEffect(() => {
+    if (!onboardingSessionId) return;
+
+    persistCliOnboardingSessionId(onboardingSessionId);
+    segment.setAnonymousId(onboardingSessionId);
+  }, [onboardingSessionId, segment]);
+
+  useEffect(() => {
+    clearConnectProvisioning();
+  }, []);
+
+  if (!isLoaded) {
+    return null;
+  }
+
+  if (!isSignedIn) {
+    const search = window.location.search;
+    const redirectUrl = `${ROUTES.CLI_AUTH}${search}`;
+    const signInUrl = `${ROUTES.SIGN_IN}?redirect_url=${encodeURIComponent(redirectUrl)}`;
+
+    return <Navigate to={signInUrl} replace />;
+  }
+
+  return (
+    <AuthLayout>
+      <EnvironmentProvider>
+        <PageMeta title="Authorize Novu CLI" />
+        <CliAuthContent />
+      </EnvironmentProvider>
+    </AuthLayout>
+  );
+};
+
+function CliAuthContent() {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const telemetry = useTelemetry();
+  const clerk = useClerk();
+  const { user } = useUser();
+  const { currentEnvironment, environments, switchEnvironment, areEnvironmentsInitialLoading } = useEnvironment();
+  const apiKeysQuery = useFetchApiKeys();
+  const has = useHasPermission();
+  const isLlmGatewayEnabled = useFeatureFlag(FeatureFlagsKeysEnum.IS_LLM_GATEWAY_ENABLED);
+  const [isAuthorizing, setIsAuthorizing] = useState(false);
+  const [didAuthorize, setDidAuthorize] = useState(false);
+
+  const deviceCode = searchParams.get('device_code');
+  const callerName = searchParams.get('name');
+  const onboardingSessionId = readActiveCliOnboardingSessionId(readOnboardingSessionId(searchParams));
+  const deviceCodeOk = isValidDeviceCode(deviceCode);
+  const canReadApiKeys = has({ permission: PermissionsEnum.API_KEY_READ });
+
+  const isConnect = callerName === 'novu-connect';
+  const callerDisplayName = isConnect ? 'Novu Connect' : 'Novu Wizard';
+  const signedInEmail = user?.primaryEmailAddress?.emailAddress;

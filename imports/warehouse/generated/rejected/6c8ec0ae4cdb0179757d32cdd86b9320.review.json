@@ -1,0 +1,12 @@
+{
+  "id": "6c8ec0ae4cdb0179757d32cdd86b9320",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/redux/store/mocks/dashboard.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

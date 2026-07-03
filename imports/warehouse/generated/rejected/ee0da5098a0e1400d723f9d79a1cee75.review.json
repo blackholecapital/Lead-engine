@@ -1,0 +1,12 @@
+{
+  "id": "ee0da5098a0e1400d723f9d79a1cee75",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/analytics-mock-data.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"f627c7f35434362099fdd94c5d03bcff",
+  "score":85,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/send-message/channel-endpoint-resolution/resolve-channel-endpoints.usecase.ts",
+  "reasons":" workflow-feature, typescript-source,"
+}

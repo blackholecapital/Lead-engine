@@ -1,0 +1,12 @@
+{
+  "id": "3ce5cd37df4ee4fcf169e0c7fdbb43ce",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/charts/useAllChartIds.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

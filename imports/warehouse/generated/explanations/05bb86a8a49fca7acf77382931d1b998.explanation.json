@@ -1,0 +1,6 @@
+{
+  "id":"05bb86a8a49fca7acf77382931d1b998",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/ResizableArea/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

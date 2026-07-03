@@ -1,0 +1,13 @@
+{
+  "id": "874f06e52d2ac9395bfcabfb152f2d03",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/logging/getLoadStatsPerTopLevelComponent.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

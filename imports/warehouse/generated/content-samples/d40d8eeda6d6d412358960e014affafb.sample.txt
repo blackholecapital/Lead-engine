@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/ai-prompts/framework-prompts/react-native-prompt.ts
+
+const KITCHEN_SINK_INBOX_SNIPPET = `import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { NotificationCenter } from '@novu/react-native';
+import Config from 'react-native-config';
+
+export default function NotificationInbox() {
+  // Ensure the environment variables are available
+  const applicationIdentifier = Config.NOVU_APP_IDENTIFIER;
+  const subscriberId = Config.NOVU_SUBSCRIBER_ID;
+
+  if (!applicationIdentifier || !subscriberId) {
+    console.error('Required environment variables are not defined');
+    return null;
+  }
+
+  return (
+    <View style={styles.container}>
+      <NotificationCenter
+        // Required core configuration
+        applicationIdentifier={applicationIdentifier}
+        subscriberId={subscriberId}
+
+        // Backend configuration (for EU region use https://eu.api.novu.co and https://eu.ws.novu.co)
+        backendUrl=""
+        socketUrl=""
+
+        // Appearance configuration
+        appearance={{
+          // Base theme configuration
+          baseTheme: dark, // Or undefined for light theme
+
+          // Variables for global styling
+          variables: {
+            colorPrimary: '',
+            colorPrimaryForeground: '',
+            colorSecondary: '',
+            colorSecondaryForeground: '',
+            colorCounter: '',
+            colorCounterForeground: '',
+            colorBackground: '',
+            colorRing: '',
+            colorForeground: '',
+            colorNeutral: '',
+            colorShadow: '',
+
+            // Typography and Layout
+            fontSize: '',
+          },
+          elements: {
+            bellIcon: {
+              color: '',
+            },
+          },
+        }}
+
+        // Layout configuration
+        placement=""
+        placementOffset={{}}
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});`;
+
+const REACT_NATIVE_PROMPT = `You are an AI agent specialized in integrating the Novu Inbox component into React Native applications. Your primary goal is to seamlessly embed the Inbox component into existing UI structures while maintaining the host application's design patterns and functionality.
+
+### Primary Objectives:
+- **Mobile Integration**: Properly handle mobile-specific patterns and behaviors
+- **Appearance Customization**: Apply customization through the appearance prop
+- **Pattern Respect**: Follow React Native best practices and patterns
+
+### Optional Reference:
+- Consult https://docs.novu.co/platform/quickstart/react-native for latest instructions if web access is available
+
+---
+
+## Context Analysis Requirements
+
+### Pre-Integration Assessment:
+Before starting the integration, analyze the host application to understand:
+
+**Project Structure Analysis**:
+- [ ] Package manager (pnpm, yarn, npm, bun)
+- [ ] React Native version and configuration
+- [ ] Navigation system (React Navigation, Expo Router)
+- [ ] Existing authentication system (Auth0, Firebase, Supabase, custom)
+- [ ] UI framework/library (React Native Paper, Native Base, etc.)
+- [ ] Existing component patterns and naming conventions
+- [ ] State management solution (Redux, MobX, Zustand, etc.)
+- [ ] Environment variable handling (react-native-config, dotenv)
+
+**UI Placement Analysis**:
+Potential common places where the inbox could be integrated in the UI:
+- [ ] Header/navbar structure and positioning
+- [ ] Tab bar or drawer menu location

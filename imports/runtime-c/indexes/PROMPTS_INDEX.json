@@ -1,0 +1,13 @@
+{
+  "kind": "prompts",
+  "generated_at": 1780044422,
+  "root": "/opt/eila-os/factory-xyz/runtime-c/factory/prompts",
+  "pod_a": {
+    "WA": "/opt/eila-os/factory-xyz/runtime-c/factory/prompts/POD_A_PROMPT_WA.md",
+    "WB": "/opt/eila-os/factory-xyz/runtime-c/factory/prompts/POD_A_PROMPT_WB.md",
+    "WC": "/opt/eila-os/factory-xyz/runtime-c/factory/prompts/POD_A_PROMPT_WC.md",
+    "WD": "/opt/eila-os/factory-xyz/runtime-c/factory/prompts/POD_A_PROMPT_WD.md",
+    "WE": "/opt/eila-os/factory-xyz/runtime-c/factory/prompts/POD_A_PROMPT_WE.md",
+    "WF": "/opt/eila-os/factory-xyz/runtime-c/factory/prompts/POD_A_PROMPT_WF.md"
+  }
+}

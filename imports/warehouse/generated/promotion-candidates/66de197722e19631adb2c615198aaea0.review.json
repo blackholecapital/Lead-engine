@@ -1,0 +1,13 @@
+{
+  "id": "66de197722e19631adb2c615198aaea0",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/get-number-scalar-type.util.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"1bb2fec64f0ea6b9376b1f273ff5381a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/actions/zoom.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

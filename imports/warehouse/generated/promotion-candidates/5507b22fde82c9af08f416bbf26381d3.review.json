@@ -1,0 +1,12 @@
+{
+  "id": "5507b22fde82c9af08f416bbf26381d3",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/cli-onboarding-identity.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

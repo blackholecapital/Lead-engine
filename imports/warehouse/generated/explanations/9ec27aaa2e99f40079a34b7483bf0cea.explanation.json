@@ -1,0 +1,6 @@
+{
+  "id":"9ec27aaa2e99f40079a34b7483bf0cea",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/RefreshFrequency/index.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

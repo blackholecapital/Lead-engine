@@ -1,0 +1,153 @@
+[
+  {
+    "id": "apache-age",
+    "title": "Apache AGE",
+    "tags": [
+      "graph",
+      "postgres",
+      "relationships"
+    ],
+    "category": "graph"
+  },
+  {
+    "id": "cal-com",
+    "title": "Cal.com",
+    "tags": [
+      "calendar",
+      "workspace",
+      "booking"
+    ],
+    "category": "workspace"
+  },
+  {
+    "id": "chatwoot",
+    "title": "Chatwoot",
+    "tags": [
+      "comms",
+      "crm",
+      "support",
+      "inbox"
+    ],
+    "category": "comms"
+  },
+  {
+    "id": "documenso",
+    "title": "Documenso",
+    "tags": [
+      "documents",
+      "esign",
+      "workflow"
+    ],
+    "category": "documents"
+  },
+  {
+    "id": "flexsearch",
+    "title": "FlexSearch",
+    "tags": [
+      "search",
+      "ranking",
+      "retrieval"
+    ],
+    "category": "scoring"
+  },
+  {
+    "id": "fusejs",
+    "title": "FuseJS",
+    "tags": [
+      "search",
+      "fuzzy",
+      "ranking"
+    ],
+    "category": "scoring"
+  },
+  {
+    "id": "fuzzysort",
+    "title": "Fuzzysort",
+    "tags": [
+      "search",
+      "scoring",
+      "fuzzy"
+    ],
+    "category": "scoring"
+  },
+  {
+    "id": "lancedb",
+    "title": "LanceDB",
+    "tags": [
+      "vector",
+      "retrieval"
+    ],
+    "category": "retrieval"
+  },
+  {
+    "id": "listmonk",
+    "title": "Listmonk",
+    "tags": [
+      "email",
+      "campaign",
+      "marketing"
+    ],
+    "category": "comms"
+  },
+  {
+    "id": "memgraph",
+    "title": "Memgraph",
+    "tags": [
+      "graph",
+      "relationships",
+      "analytics"
+    ],
+    "category": "graph"
+  },
+  {
+    "id": "novu",
+    "title": "Novu",
+    "tags": [
+      "comms",
+      "email",
+      "sms",
+      "workflow",
+      "notification"
+    ],
+    "category": "comms"
+  },
+  {
+    "id": "postiz",
+    "title": "Postiz",
+    "tags": [
+      "social",
+      "marketing",
+      "publishing"
+    ],
+    "category": "marketing"
+  },
+  {
+    "id": "qdrant",
+    "title": "Qdrant",
+    "tags": [
+      "vector",
+      "retrieval"
+    ],
+    "category": "retrieval"
+  },
+  {
+    "id": "rotki",
+    "title": "Rotki",
+    "tags": [
+      "treasury",
+      "defi",
+      "portfolio"
+    ],
+    "category": "treasury"
+  },
+  {
+    "id": "tagify",
+    "title": "Tagify",
+    "tags": [
+      "tagging",
+      "ui",
+      "search"
+    ],
+    "category": "tagging"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "id":"81b8edc2241155b1cf680fa44db38ee9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-type-generators/object-types/aggregation-type.generator.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

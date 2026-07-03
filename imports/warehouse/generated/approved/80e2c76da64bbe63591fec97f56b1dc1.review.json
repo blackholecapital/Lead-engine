@@ -1,0 +1,13 @@
+{
+  "id": "80e2c76da64bbe63591fec97f56b1dc1",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-type-generators/input-types/update-input/composite-field-metadata-update-gql-input-type.generator.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

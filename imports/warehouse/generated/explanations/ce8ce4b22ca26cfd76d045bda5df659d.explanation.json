@@ -1,0 +1,6 @@
+{
+  "id":"ce8ce4b22ca26cfd76d045bda5df659d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ActionViz/ActionParameterMapping.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

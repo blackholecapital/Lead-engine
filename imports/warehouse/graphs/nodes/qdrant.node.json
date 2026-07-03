@@ -1,0 +1,10 @@
+{
+  "id": "qdrant",
+  "label": "Qdrant",
+  "category": "retrieval",
+  "tags": [
+    "vector",
+    "retrieval"
+  ],
+  "type": "asset"
+}

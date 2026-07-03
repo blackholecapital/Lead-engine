@@ -1,0 +1,6 @@
+{
+  "id":"decfb666c6fc5219dfb3157fe3c229b7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/types/universal-flat-entity-validation-result.type.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

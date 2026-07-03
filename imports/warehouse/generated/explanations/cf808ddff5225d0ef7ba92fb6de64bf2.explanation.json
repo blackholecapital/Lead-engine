@@ -1,0 +1,6 @@
+{
+  "id":"cf808ddff5225d0ef7ba92fb6de64bf2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/command-menu-item/engine-command/record/single-record/dashboard/components/EditDashboardSingleRecordCommand.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

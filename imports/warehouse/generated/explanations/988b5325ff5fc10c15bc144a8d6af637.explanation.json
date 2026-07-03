@@ -1,0 +1,6 @@
+{
+  "id":"988b5325ff5fc10c15bc144a8d6af637",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/menu/HoverMenu.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

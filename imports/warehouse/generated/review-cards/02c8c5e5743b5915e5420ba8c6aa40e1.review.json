@@ -1,0 +1,14 @@
+{
+  "id": "02c8c5e5743b5915e5420ba8c6aa40e1",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/builders/logic-function/workspace-migration-logic-function-actions-builder.service.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "service",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

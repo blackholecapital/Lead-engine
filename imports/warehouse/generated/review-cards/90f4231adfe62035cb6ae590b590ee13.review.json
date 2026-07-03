@@ -1,0 +1,14 @@
+{
+  "id": "90f4231adfe62035cb6ae590b590ee13",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/account/notifications/components/NotificationCard/DashboardNotificationCard.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

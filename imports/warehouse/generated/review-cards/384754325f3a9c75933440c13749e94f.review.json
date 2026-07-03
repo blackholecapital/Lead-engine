@@ -1,0 +1,14 @@
+{
+  "id": "384754325f3a9c75933440c13749e94f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/DatasetEditor/DatasetEditorSettingsSidebar/DatasetEditorSettingsSidebar.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

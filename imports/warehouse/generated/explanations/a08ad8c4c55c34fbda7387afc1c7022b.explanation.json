@@ -1,0 +1,6 @@
+{
+  "id":"a08ad8c4c55c34fbda7387afc1c7022b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/get-resolver-args.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"da198042b22a2bea493db0966ce73ea9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/chart-type-selector/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

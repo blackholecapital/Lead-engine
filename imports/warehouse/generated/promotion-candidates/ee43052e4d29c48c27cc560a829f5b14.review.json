@@ -1,0 +1,14 @@
+{
+  "id": "ee43052e4d29c48c27cc560a829f5b14",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/QuestionDownloadPopover/QuestionDownloadPopover.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,12 @@
+{
+  "id": "f5916c43da83d6816bf94e66cf8a62ea",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/actions/auto-wire-parameters/toasts.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

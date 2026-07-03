@@ -1,0 +1,14 @@
+{
+  "id": "573e70e42e8a7df2d5fd94b142a07bf7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterBar/CrossFilters/ScopingModal/ScopingTreePanel.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

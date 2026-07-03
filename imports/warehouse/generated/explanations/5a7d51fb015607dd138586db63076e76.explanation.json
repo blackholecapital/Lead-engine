@@ -1,0 +1,6 @@
+{
+  "id":"5a7d51fb015607dd138586db63076e76",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FiltersConfigModal/FiltersConfigForm/RemovedFilter.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

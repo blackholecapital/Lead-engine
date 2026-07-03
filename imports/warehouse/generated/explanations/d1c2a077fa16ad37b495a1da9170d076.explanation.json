@@ -1,0 +1,6 @@
+{
+  "id":"d1c2a077fa16ad37b495a1da9170d076",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/components/ToggleNativeQueryPreview/ToggleNativeQueryPreview.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

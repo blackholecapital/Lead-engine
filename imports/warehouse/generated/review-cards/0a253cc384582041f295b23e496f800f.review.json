@@ -1,0 +1,12 @@
+{
+  "id": "0a253cc384582041f295b23e496f800f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/workspaces/pages/WorkspacePage/WorkspacePage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

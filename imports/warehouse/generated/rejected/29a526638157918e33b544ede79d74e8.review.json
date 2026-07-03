@@ -1,0 +1,14 @@
+{
+  "id": "29a526638157918e33b544ede79d74e8",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/common/components/Pickers/EntityPicker/components/test/NewDashboardDialog.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

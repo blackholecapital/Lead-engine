@@ -1,0 +1,6 @@
+{
+  "id":"715ee6d08eee72ea8c91dc80f3eef9fa",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/collections/containers/FormCollectionAndDashboardPicker/FormCollectionAndDashboardPicker.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

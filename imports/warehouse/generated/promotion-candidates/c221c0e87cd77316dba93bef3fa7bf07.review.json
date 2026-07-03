@@ -1,0 +1,14 @@
+{
+  "id": "c221c0e87cd77316dba93bef3fa7bf07",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ClickMappings/ClickMappingsTargetWithoutSource.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,13 @@
+{
+  "id": "cfc97e00cb47b8c7489a11da1d0cb062",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/embedding/embedding-hub/components/SetupSsoPage/SetupSsoPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

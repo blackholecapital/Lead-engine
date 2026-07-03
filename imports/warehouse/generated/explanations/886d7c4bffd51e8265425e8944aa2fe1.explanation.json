@@ -1,0 +1,6 @@
+{
+  "id":"886d7c4bffd51e8265425e8944aa2fe1",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/apply-type-options-for-output-type.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

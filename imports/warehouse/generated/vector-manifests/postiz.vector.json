@@ -1,0 +1,11 @@
+{
+  "id": "postiz",
+  "title": "Postiz",
+  "tags": [
+    "social",
+    "marketing",
+    "publishing"
+  ],
+  "category": "marketing",
+  "source": "vendor-source/marketing/postiz"
+}

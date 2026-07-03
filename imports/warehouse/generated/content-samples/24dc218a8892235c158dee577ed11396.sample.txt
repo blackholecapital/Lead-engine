@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/layouts/layout-editor-provider.tsx
+
+/** biome-ignore-all lint/correctness/useUniqueElementIds: working correctly */
+
+import {
+  ContentIssueEnum,
+  ContextPayload,
+  DEFAULT_LOCALE,
+  EmailControlsDto,
+  GeneratePreviewResponseDto,
+  LayoutResponseDto,
+  ResourceOriginEnum,
+  RuntimeIssue,
+  SubscriberDto,
+} from '@novu/shared';
+import { createContext, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useBlocker, useLocation } from 'react-router-dom';
+import { ExternalToast } from 'sonner';
+import { NovuApiError } from '@/api/api.client';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { useEnvironment } from '@/context/environment/hooks';
+import { useBeforeUnload } from '@/hooks/use-before-unload';
+import { useDebounce } from '@/hooks/use-debounce';
+import { useDefaultSubscriberData } from '@/hooks/use-default-subscriber-data';
+import { useLayoutPreview } from '@/hooks/use-layout-preview';
+import { usePreviewContext } from '@/hooks/use-preview-context';
+import { UpdateLayoutParameters, useUpdateLayout } from '@/hooks/use-update-layout';
+import { createContextHook } from '@/utils/context';
+import { getLayoutControlsDefaultValues } from '@/utils/default-values';
+import { parse } from '@/utils/json';
+import { useFetchOrganizationSettings } from '../../hooks/use-fetch-organization-settings';
+import { Form, FormRoot } from '../primitives/form/form';
+import { UnsavedChangesAlertDialog } from '../unsaved-changes-alert-dialog';
+import { flattenIssues, getFirstErrorMessage } from '../workflow-editor/step-utils';
+import { usePersistedPreviewContext } from '../workflow-editor/steps/hooks/use-persisted-preview-context';
+import { EnvData } from '../workflow-editor/steps/types/preview-context.types';
+
+type ParsedData = { subscriber: Partial<SubscriberDto>; context: ContextPayload; env: EnvData };
+
+function parseJsonValue(value: string): ParsedData {
+  try {
+    const parsed = JSON.parse(value || '{}');
+    return {
+      subscriber: parsed.subscriber || {},
+      context: parsed.context || {},
+      env: parsed.env || {},
+    };
+  } catch {
+    return {
+      subscriber: {},
+      context: {},
+      env: {},
+    };
+  }
+}
+
+function usePrevious<T>(value: T): T | undefined {
+  const ref = useRef<T | undefined>(undefined);
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
+
+function useLocaleSynchronization({
+  selectedLocale,
+  subscriberLocale,
+  isOrgSettingsLoading,
+  hasSubscriberData,
+  updatePreviewSection,
+  onLocaleChange,
+  previewContext,
+}: {
+  selectedLocale?: string;
+  subscriberLocale?: string;
+  isOrgSettingsLoading: boolean;
+  hasSubscriberData: boolean;
+  updatePreviewSection: (section: 'subscriber', data: ParsedData['subscriber']) => void;
+  onLocaleChange?: (locale: string) => void;
+  previewContext: ParsedData;
+}) {
+  const prevSelectedLocale = usePrevious(selectedLocale);
+  const prevSubscriberLocale = usePrevious(subscriberLocale);
+
+  useEffect(() => {
+    if (isOrgSettingsLoading || !selectedLocale || !hasSubscriberData) {
+      return;
+    }
+
+    const selectedLocaleChanged = selectedLocale !== prevSelectedLocale;
+    const subscriberLocaleChanged = subscriberLocale !== prevSubscriberLocale;
+
+    if (selectedLocaleChanged && selectedLocale !== subscriberLocale) {
+      updatePreviewSection('subscriber', {
+        ...previewContext.subscriber,
+        locale: selectedLocale,
+      });
+    } else if (subscriberLocaleChanged && subscriberLocale && subscriberLocale !== selectedLocale && onLocaleChange) {
+      onLocaleChange(subscriberLocale);
+    }
+  }, [

@@ -1,0 +1,13 @@
+{
+  "id": "3c700cba9f44a1c474128e13f4f13cb6",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-resolver-builder/factories/restore-many-resolver.factory.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

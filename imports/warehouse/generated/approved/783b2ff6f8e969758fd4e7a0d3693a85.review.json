@@ -1,0 +1,13 @@
+{
+  "id": "783b2ff6f8e969758fd4e7a0d3693a85",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/data-selector/index.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

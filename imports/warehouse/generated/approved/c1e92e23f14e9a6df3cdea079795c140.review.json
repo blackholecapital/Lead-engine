@@ -1,0 +1,14 @@
+{
+  "id": "c1e92e23f14e9a6df3cdea079795c140",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ClickBehaviorSidebar/TypeSelector/TypeSelector.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

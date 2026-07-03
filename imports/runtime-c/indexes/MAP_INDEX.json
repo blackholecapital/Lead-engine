@@ -1,0 +1,17 @@
+{
+  "runtime_c_root": "/opt/eila-os/factory-xyz/runtime-c",
+  "asset_root": "/mnt/eila-hot-sidecar/runtime-c-assets",
+  "maps": {
+    "filesystem": "/opt/eila-os/factory-xyz/runtime-c/factory/maps/FILESYSTEM_MAP.md",
+    "workspace": "/opt/eila-os/factory-xyz/runtime-c/factory/maps/WORKSPACE_MAP.md",
+    "resources": "/opt/eila-os/factory-xyz/runtime-c/factory/maps/RESOURCE_MAP.md",
+    "output_contract": "/opt/eila-os/factory-xyz/runtime-c/factory/maps/OUTPUT_CONTRACT.md",
+    "retention_policy": "/opt/eila-os/factory-xyz/runtime-c/factory/maps/RETENTION_POLICY.md"
+  },
+  "asset_indexes": {
+    "tree_map": "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/ASSET_TREE_MAP.md",
+    "sqlite": "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/runtime_c_assets.sqlite",
+    "qwen_system": "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/qwen/QWEN_INDEX_SYSTEM.md",
+    "qwen_top_roots": "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/qwen/QWEN_TOP_ROOTS.txt"
+  }
+}

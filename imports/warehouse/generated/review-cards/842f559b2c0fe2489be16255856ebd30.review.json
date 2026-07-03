@@ -1,0 +1,13 @@
+{
+  "id": "842f559b2c0fe2489be16255856ebd30",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardInfoSidebar/DashboardEntityIdCard/index.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

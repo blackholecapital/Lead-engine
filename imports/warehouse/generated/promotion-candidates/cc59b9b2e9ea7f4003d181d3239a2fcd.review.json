@@ -1,0 +1,12 @@
+{
+  "id": "cc59b9b2e9ea7f4003d181d3239a2fcd",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/treasury/rotki/frontend/app/src/modules/dashboard/snapshots.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"153deff516cb415524f1fbf217a893de",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/actions/core/pivot-table.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

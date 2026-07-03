@@ -1,0 +1,13 @@
+{
+  "id": "b02cc7fe7a626ddf87699faf40a68bb9",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/variable/utils/get-variable-error-message.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

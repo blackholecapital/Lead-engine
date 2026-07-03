@@ -1,0 +1,6 @@
+{
+  "id":"4328698ac1e74643402ec7a47cbe5277",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/hooks/use-sync-url-parameters.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

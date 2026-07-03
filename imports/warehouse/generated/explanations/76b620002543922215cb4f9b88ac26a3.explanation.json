@@ -1,0 +1,6 @@
+{
+  "id":"76b620002543922215cb4f9b88ac26a3",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/SummarizeSidebar/SummarizeSidebar.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

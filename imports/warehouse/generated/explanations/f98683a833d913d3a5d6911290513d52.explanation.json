@@ -1,0 +1,6 @@
+{
+  "id":"f98683a833d913d3a5d6911290513d52",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-role-validator.service.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

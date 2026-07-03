@@ -1,0 +1,6 @@
+{
+  "id":"3031e4fd96624647d8015c1c367b671d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/graphql-type-generators/orphaned-types.generator.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

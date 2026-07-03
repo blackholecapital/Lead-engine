@@ -1,0 +1,6 @@
+{
+  "id":"8333b9a8cc90c7e82358e12f89f1c902",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/isValidChild.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

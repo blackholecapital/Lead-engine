@@ -1,0 +1,14 @@
+{
+  "id": "031e3ae8da9a3145d26d636c7dc1ca17",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/layouts/layouts-list-upgrade-cta.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

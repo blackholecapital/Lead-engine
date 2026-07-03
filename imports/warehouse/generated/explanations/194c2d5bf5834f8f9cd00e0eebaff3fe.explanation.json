@@ -1,0 +1,6 @@
+{
+  "id":"194c2d5bf5834f8f9cd00e0eebaff3fe",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/nodes/step-node/step-node-logo.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

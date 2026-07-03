@@ -1,0 +1,14 @@
+{
+  "id": "cf8d7edfa27651de2c5c8b92af94514d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ClickBehaviorSidebar/TableClickBehaviorView/Column.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

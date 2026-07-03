@@ -1,0 +1,6 @@
+{
+  "id":"01dc5aaac3f4d0ce9ef37ab7db636e26",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/DatasetManagementSection/DatasetMetadataStrengthIndicator/DatasetMetadataStrengthIndicator.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

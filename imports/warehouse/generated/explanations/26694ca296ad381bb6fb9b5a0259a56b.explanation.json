@@ -1,0 +1,6 @@
+{
+  "id":"26694ca296ad381bb6fb9b5a0259a56b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/windmill/frontend/src/lib/components/scriptBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "59cfb2979c5087fcdb400b4e79bd6e23",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/admin/settings/components/SettingsPages/LocalizationSettingsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

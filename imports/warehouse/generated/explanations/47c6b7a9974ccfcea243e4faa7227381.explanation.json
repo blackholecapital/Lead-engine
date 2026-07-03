@@ -1,0 +1,6 @@
+{
+  "id":"47c6b7a9974ccfcea243e4faa7227381",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/metrics-viewer/utils/definition-builder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

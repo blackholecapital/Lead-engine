@@ -1,0 +1,14 @@
+{
+  "id": "b9015006b16d8cf1a6faa30c54d6108a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/QuestionTimelineWidget/QuestionTimelineWidget.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

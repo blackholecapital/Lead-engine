@@ -1,0 +1,6 @@
+{
+  "id":"3491050c157fd3a5d6d13cd485ed6e88",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/api/src/app/channel-connections/usecases/ensure-connect-dashboard-subscriber.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

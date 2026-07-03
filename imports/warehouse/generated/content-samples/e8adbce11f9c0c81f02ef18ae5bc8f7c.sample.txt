@@ -1,0 +1,17 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/types/conversation.ts
+
+import { ConversationFilters } from '@/api/conversations';
+
+export type ConversationFiltersData = {
+  dateRange: string;
+  subscriberId: string;
+  agentId: string;
+  provider: string[];
+  conversationId: string;
+};
+
+export type ConversationUrlState = {
+  conversationItemId: string | null;
+  filters: ConversationFilters;
+  filterValues: ConversationFiltersData;
+};

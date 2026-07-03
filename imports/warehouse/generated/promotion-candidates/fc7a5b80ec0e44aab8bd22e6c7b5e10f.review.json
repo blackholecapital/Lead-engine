@@ -1,0 +1,12 @@
+{
+  "id": "fc7a5b80ec0e44aab8bd22e6c7b5e10f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/api-response-normalizer.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

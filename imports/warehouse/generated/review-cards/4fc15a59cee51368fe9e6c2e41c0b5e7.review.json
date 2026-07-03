@@ -1,0 +1,12 @@
+{
+  "id": "4fc15a59cee51368fe9e6c2e41c0b5e7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/chart-data/utils/sort-by-manual-order.util.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

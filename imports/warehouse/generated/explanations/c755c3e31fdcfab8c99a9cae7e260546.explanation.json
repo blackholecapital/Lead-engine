@@ -1,0 +1,6 @@
+{
+  "id":"c755c3e31fdcfab8c99a9cae7e260546",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/actions/sliceEntities.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

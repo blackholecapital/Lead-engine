@@ -1,0 +1,14 @@
+{
+  "id": "tagify",
+  "title": "Tagify",
+  "category": "tagging",
+  "ranking": {
+    "implementation": 82,
+    "reuse": 82,
+    "maturity": 82,
+    "retrieval": 82,
+    "graph": 82,
+    "vector": 82,
+    "final": 82
+  }
+}

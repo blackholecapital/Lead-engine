@@ -1,0 +1,12 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/maily/types.ts
+
+export enum VariableFrom {
+  // variable coming from bubble menu (e.g. 'showIf')
+  Bubble = 'bubble-variable',
+  // variable coming from repeat block 'each' input
+  RepeatEachKey = 'repeat-variable',
+  // all the other variables
+  Content = 'content-variable',
+  // variables inside Button component
+  Button = 'button-variable',
+}

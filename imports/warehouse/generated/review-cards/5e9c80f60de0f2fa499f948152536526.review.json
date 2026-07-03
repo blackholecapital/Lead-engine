@@ -1,0 +1,12 @@
+{
+  "id": "5e9c80f60de0f2fa499f948152536526",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/update-job-status/set-job-as.command.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,471 @@
+{
+  "schema_version": "factory67.runtime_c.tool_manifest.v1",
+  "status": "PASS",
+  "lab": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab",
+  "tool_count": 77,
+  "tools": [
+    {
+      "file": "RUNTIME_C_STAGE_MATRIX.md",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/RUNTIME_C_STAGE_MATRIX.md",
+      "bytes": 674,
+      "sha256": "90e1df76adcff1d6bf2804b24ef6bdbdadcb8f56340fcd53a241fe4d3a47d89e"
+    },
+    {
+      "file": "runtime-c-astro-export.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-astro-export.cjs",
+      "bytes": 1648,
+      "sha256": "10d1c39e6ad52ce094c98207a093d60c644054e5af4c8221f54bd82ff866f673"
+    },
+    {
+      "file": "runtime-c-bulk-cycle.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-bulk-cycle.cjs",
+      "bytes": 412,
+      "sha256": "b8b3ad2f91bce6a83a3b4b71c6cae0e11791696d5e3f94e7090af5e5b348c273"
+    },
+    {
+      "file": "runtime-c-bulk-scheduler.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-bulk-scheduler.cjs",
+      "bytes": 2654,
+      "sha256": "17b87120da1d6696936c9a630f53963b085f451886fea033a29619ae9cd9b6fd"
+    },
+    {
+      "file": "runtime-c-bulk-tracker.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-bulk-tracker.cjs",
+      "bytes": 1412,
+      "sha256": "e8d27f3db6d1d3d914fe964270f1de39e1478d3c056eb6203f0a915cb8bdd4b2"
+    },
+    {
+      "file": "runtime-c-class-contract-check.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-class-contract-check.cjs",
+      "bytes": 3394,
+      "sha256": "b76e1ae484a44698f206f0bc3ff82adcfb68a995701ae6cf2c61d3e930f1daa3"
+    },
+    {
+      "file": "runtime-c-compare-runs.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-compare-runs.cjs",
+      "bytes": 903,
+      "sha256": "f5dfd7634d9b6fe5e429443b396091723ed6039378f6a1dd7bf649a99b757898"
+    },
+    {
+      "file": "runtime-c-compose.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-compose.cjs",
+      "bytes": 2387,
+      "sha256": "c2fd904ce627dbfc295a506fef1f7985aa84c1f55e50336d11e730d4a780a8f7"
+    },
+    {
+      "file": "runtime-c-context-enricher.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-context-enricher.cjs",
+      "bytes": 5679,
+      "sha256": "10bb82dd057f0f4873f642229f0a6766472f8ea3c0981070d71ad56e3abe0bdc"
+    },
+    {
+      "file": "runtime-c-core7-review.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-core7-review.cjs",
+      "bytes": 1280,
+      "sha256": "5b4806c747967f5d2cafc3e4f696f4cc3fea46a6b02a72ee973e7eb7bcc2eaa1"
+    },
+    {
+      "file": "runtime-c-css-parse-check.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-css-parse-check.cjs",
+      "bytes": 517,
+      "sha256": "eac5ead6a3b758299b98c9e7309c9c005070404d6c8b1b9908e0faf730c77787"
+    },
+    {
+      "file": "runtime-c-exec-pod-authority.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-exec-pod-authority.cjs",
+      "bytes": 4525,
+      "sha256": "584a6b6be6388192a1e9a5ec3d4bd0205367155e7803acb6b1497bd1a3ecdf22"
+    },
+    {
+      "file": "runtime-c-exec-pod-command.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-exec-pod-command.cjs",
+      "bytes": 1800,
+      "sha256": "88dbf9f525d50719f3422a2fddb73bf52767110880e1da68a3ef793ff6031049"
+    },
+    {
+      "file": "runtime-c-export.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-export.cjs",
+      "bytes": 699,
+      "sha256": "3044987a75855d3e3d2a0ef701899addfbd15090797ecf09e569631bc2cd66a4"
+    },
+    {
+      "file": "runtime-c-extract-classes.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-extract-classes.cjs",
+      "bytes": 891,
+      "sha256": "b2a7a93fd4f340e9a3a6387dd2726a439465694cc8673ff52f207c9d909ac91a"
+    },
+    {
+      "file": "runtime-c-finalize-merge.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-finalize-merge.cjs",
+      "bytes": 3532,
+      "sha256": "4762552b2c537dce99105eba48d9a24764a14f55847ac06634a3d48d2a931297"
+    },
+    {
+      "file": "runtime-c-handoff-watch.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-handoff-watch.cjs",
+      "bytes": 3605,
+      "sha256": "6487e533f2066be94bd00fc031e0fc6645a632078ba376f9271d6bbe2ce904dd"
+    },
+    {
+      "file": "runtime-c-image-context-bridge.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-image-context-bridge.cjs",
+      "bytes": 1309,
+      "sha256": "09e0ec99f953e46a402b59c72ab4942afaa31413e0518ce62776287e6a862af6"
+    },
+    {
+      "file": "runtime-c-lane-real.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-lane-real.cjs",
+      "bytes": 8534,
+      "sha256": "689383cb71ea4d31bf27b3cce095f56ec5e6407811cbd5665194efeabdca6fee"
+    },
+    {
+      "file": "runtime-c-local-cpu-adapter.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-local-cpu-adapter.cjs",
+      "bytes": 432,
+      "sha256": "b32011d65c2048718f2a09aa8fa423368fcfe34bf10d513653efc530589b68b7"
+    },
+    {
+      "file": "runtime-c-local-policy-check.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-local-policy-check.cjs",
+      "bytes": 1243,
+      "sha256": "33ec629e8f9329d7ab66e2366c26c1d1ec99b4bfaf486a2fa64fec78f3149cf1"
+    },
+    {
+      "file": "runtime-c-multipage-seed.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-multipage-seed.cjs",
+      "bytes": 2441,
+      "sha256": "f2c1ae181ac59a6f39dc954d4dabb5c085a14547ff3b702e7b56a9fd1181ace4"
+    },
+    {
+      "file": "runtime-c-mutation-check.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-mutation-check.cjs",
+      "bytes": 817,
+      "sha256": "cf1d372eb54b4da4332509a86afd6ecefa09f4bab24bdd839b5c861977335120"
+    },
+    {
+      "file": "runtime-c-page-registry.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-page-registry.cjs",
+      "bytes": 2087,
+      "sha256": "20c8eb6379a4e74cadeb9cc420b06fb5e09d15ad3908351694c4f67b728fc45a"
+    },
+    {
+      "file": "runtime-c-patch-buildsheet.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-patch-buildsheet.cjs",
+      "bytes": 4889,
+      "sha256": "0c047508063fe5ee6fc637173726fdb8ad14c251136382c92a1354c680b2fe4c"
+    },
+    {
+      "file": "runtime-c-persist-fragments.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-persist-fragments.cjs",
+      "bytes": 1438,
+      "sha256": "3fcbcf77eb78f823b8b3f9e1eb939eac7fccbdcad1e74b6fe697c46b0894c155"
+    },
+    {
+      "file": "runtime-c-pod-a-island-adapter.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-pod-a-island-adapter.cjs",
+      "bytes": 2663,
+      "sha256": "be88e8936ce0575ce38298aefe290195b0884a7340da624a61e1bf5de82e043a"
+    },
+    {
+      "file": "runtime-c-pods.json",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-pods.json",
+      "bytes": 543,
+      "sha256": "e72880477db2072e3a8cdfc77180f9c1b178f32c53717dc8a1e140257cdee718"
+    },
+    {
+      "file": "runtime-c-promote-family.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-promote-family.cjs",
+      "bytes": 4370,
+      "sha256": "d3f576f46b866e12bee339047c05b59248d580afaffce13d62a145764590b2fb"
+    },
+    {
+      "file": "runtime-c-publish-from-base.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-publish-from-base.cjs",
+      "bytes": 1817,
+      "sha256": "fd34a5d7f69821ce5b241a0f97561503d0444e18fea3b5a88ec8e8c767207028"
+    },
+    {
+      "file": "runtime-c-publish-full-repo.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-publish-full-repo.cjs",
+      "bytes": 2121,
+      "sha256": "053d432ec768d5c24277907b78aa3b03108acbcd5dff0e2e7d0fc1ead3e887c4"
+    },
+    {
+      "file": "runtime-c-quality-gate.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-quality-gate.cjs",
+      "bytes": 2346,
+      "sha256": "be7a26a1c5ed09d8944a158b4207f22fa1c4588d1aa12354aef1a40d01cb93a3"
+    },
+    {
+      "file": "runtime-c-queue-janitor.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-queue-janitor.cjs",
+      "bytes": 1955,
+      "sha256": "1452e95ddafa867ba7a270c97ff716572c26b88bc5f56c98e58c3957a16c61df"
+    },
+    {
+      "file": "runtime-c-regression-gate.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-regression-gate.cjs",
+      "bytes": 2254,
+      "sha256": "6056631f1ecda393bf496461770bfa86dbe4b38db52053cb64672820e36d1a1b"
+    },
+    {
+      "file": "runtime-c-repair-loop.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-repair-loop.cjs",
+      "bytes": 790,
+      "sha256": "dfc40c962c39f1602a294fd26f9b535181feee7f2181a1ff835a078538424d49"
+    },
+    {
+      "file": "runtime-c-resolve-pod-command.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-resolve-pod-command.cjs",
+      "bytes": 930,
+      "sha256": "964f04e9fce69cf37ddeb9af734c7d644bb575a343eea4d0f5a458b7b39a4131"
+    },
+    {
+      "file": "runtime-c-resolve-pod.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-resolve-pod.cjs",
+      "bytes": 838,
+      "sha256": "eb8f572b2fa1a5ffb9888d36c7beb987c688b77c36b4bc3f9f7293c026673dbf"
+    },
+    {
+      "file": "runtime-c-restore-parent-output.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-restore-parent-output.cjs",
+      "bytes": 1166,
+      "sha256": "67f1bd0b46288f8a4e747132cba40a62e4ed930923bc90716f6cfdb9999d4782"
+    },
+    {
+      "file": "runtime-c-route-asset-parity.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-route-asset-parity.cjs",
+      "bytes": 1670,
+      "sha256": "53725fa85639e2d5f6f39cbfb87a573096993f586235e1af3c51d415d2f970c2"
+    },
+    {
+      "file": "runtime-c-route-context.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-route-context.cjs",
+      "bytes": 934,
+      "sha256": "8e31b0e82436c41977a21d7463552f79dea25a30915d281d09e0cd87cf4ddaad"
+    },
+    {
+      "file": "runtime-c-route-gate.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-route-gate.cjs",
+      "bytes": 1657,
+      "sha256": "a97e4e6f755a5ab155973bd2c51729ecbcf04d49cf24fe2186f4739411a82378"
+    },
+    {
+      "file": "runtime-c-route-js-sanitizer.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-route-js-sanitizer.cjs",
+      "bytes": 1097,
+      "sha256": "033bf478f9d3a25b556f8463685cfb471716b53898e5c71e67e270445929b8fc"
+    },
+    {
+      "file": "runtime-c-route-splitter.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-route-splitter.cjs",
+      "bytes": 2285,
+      "sha256": "79bdf52bb30793b9b7d214a9e9385b05c3668a94c40d414c6f6a4d28b02feb5a"
+    },
+    {
+      "file": "runtime-c-run-policy.sh",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-run-policy.sh",
+      "bytes": 653,
+      "sha256": "2793c08216b5b54dab4e81355fa4b132698b7e1f0cdbcc983d83a1df2848f3cc"
+    },
+    {
+      "file": "runtime-c-runner.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-runner.cjs",
+      "bytes": 13411,
+      "sha256": "3d32afff6aaa0bb6e25f6b57c70b12af37309e2a053fcde47c061542b388c439"
+    },
+    {
+      "file": "runtime-c-save-restore.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-save-restore.cjs",
+      "bytes": 721,
+      "sha256": "a1a7f82e6fd1281c3b576a003a3fe6246859e60f8242d94e5bc92e3a763b4792"
+    },
+    {
+      "file": "runtime-c-simple-compiler.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-simple-compiler.cjs",
+      "bytes": 13546,
+      "sha256": "79387fa736505bb4706702db823fc26f280e0c8b031c986ab7f9ea4c7e9a7646"
+    },
+    {
+      "file": "runtime-c-stagger-plan.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-stagger-plan.cjs",
+      "bytes": 1451,
+      "sha256": "d948bfdab0d484638d891da5f5e39ad4263a7cac85e0c3e66a9dc637f9e2ef67"
+    },
+    {
+      "file": "runtime-c-stream-append.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-stream-append.cjs",
+      "bytes": 660,
+      "sha256": "104594af6f8711a53b6742dc96963844ca0697506e1c0c981d5961d05e400dc0"
+    },
+    {
+      "file": "runtime-c-stream-handoff-watch.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-stream-handoff-watch.cjs",
+      "bytes": 1170,
+      "sha256": "d46e1f8ae57906f82dff104fc45d9d2495d9882285187e88c8865ff97c5eefb8"
+    },
+    {
+      "file": "runtime-c-stream-status.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-stream-status.cjs",
+      "bytes": 959,
+      "sha256": "0d5afe342eec79829f362b910e209429523d9f39bce212d2ac3b00340a9b7be0"
+    },
+    {
+      "file": "runtime-c-streaming-orchestrator.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-streaming-orchestrator.cjs",
+      "bytes": 2235,
+      "sha256": "80f23066358bee6e2602872602e91595e6f189b9be64ab74e6d254cd7c4ca4a8"
+    },
+    {
+      "file": "runtime-c-submit-buildsheet.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-submit-buildsheet.cjs",
+      "bytes": 2552,
+      "sha256": "32370518303b2bf2b578deaac3722ad3b55b69cc3ad1eb146e7b8086d553f2cf"
+    },
+    {
+      "file": "runtime-c-submit-server.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-submit-server.cjs",
+      "bytes": 11808,
+      "sha256": "edb75f2b9c8673f4a54c81535984790433cd59768260bc4046b4f201d145c8d9"
+    },
+    {
+      "file": "runtime-c-verify-execute-dry.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-verify-execute-dry.cjs",
+      "bytes": 1016,
+      "sha256": "7b7b0df7607912af913549dfc665becf9bff9bf15f00b036cf601a9543c43efd"
+    },
+    {
+      "file": "runtime-c-verify-pods.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-verify-pods.cjs",
+      "bytes": 1153,
+      "sha256": "ef78f0cce0e841dd93110156c09d8135e5c6bf2d67c9ff7190d895f5483a5b3b"
+    },
+    {
+      "file": "runtime-c-verify-prompt-ready.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-verify-prompt-ready.cjs",
+      "bytes": 848,
+      "sha256": "cc20cbbaca8674da7a15fc265da09e0a17741ed5783830f61dea07462cb8cb3f"
+    },
+    {
+      "file": "runtime-c-verify-run.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-verify-run.cjs",
+      "bytes": 1032,
+      "sha256": "d2660433e6ca1a3b1de1268b45ea2a0b31aca7c12ba410f7d9f80038767a3e90"
+    },
+    {
+      "file": "runtime-c-verify-wa-artifacts.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-verify-wa-artifacts.cjs",
+      "bytes": 1302,
+      "sha256": "1a59ecbd9449bf95a06abc0ba5294e4e86158364df784c0aecb60300722cd287"
+    },
+    {
+      "file": "runtime-c-visual-polish.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-visual-polish.cjs",
+      "bytes": 2974,
+      "sha256": "a7c319bb579f09e30a39a6f8e565b3ad985d953dc5487e269fb8e89d1e65c16b"
+    },
+    {
+      "file": "runtime-c-wb-break-css.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-wb-break-css.cjs",
+      "bytes": 531,
+      "sha256": "93aecf0e924299bf385e8ee6dbe4bb33d70fa9ac0e479ed7ad8652fdb9ff51cb"
+    },
+    {
+      "file": "runtime-c-wb-repair-css.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-wb-repair-css.cjs",
+      "bytes": 845,
+      "sha256": "2ec256e02f16896133c9406e64098195801806586f0caf139d27366102cd4ac1"
+    },
+    {
+      "file": "runtime-c-write-debug-bundle.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-debug-bundle.cjs",
+      "bytes": 614,
+      "sha256": "02618afa33f9911fc33e0080791ef0fce59d0905cdbe9a90378c73a6e10577aa"
+    },
+    {
+      "file": "runtime-c-write-execute-dry-report.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-execute-dry-report.cjs",
+      "bytes": 1011,
+      "sha256": "6753d29d8e617ef0d1702345c7d55416b5506cba992fd35f1c3d19d8e832a830"
+    },
+    {
+      "file": "runtime-c-write-freeze-card.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-freeze-card.cjs",
+      "bytes": 749,
+      "sha256": "0ca388717852193435b6af932f4a0754e975d43f00da2e0c006e9a20253b26b0"
+    },
+    {
+      "file": "runtime-c-write-index.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-index.cjs",
+      "bytes": 4171,
+      "sha256": "5f43b2dfd6b3883c7abdeb7ce221a3ea61c1c08ed059d415db4ec28872880b59"
+    },
+    {
+      "file": "runtime-c-write-metrics.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-metrics.cjs",
+      "bytes": 522,
+      "sha256": "c91e796d1399346f39d15f3512e853c147203f7d3be75b4b4d65eb30cacc86e2"
+    },
+    {
+      "file": "runtime-c-write-prompt-ready-report.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-prompt-ready-report.cjs",
+      "bytes": 1124,
+      "sha256": "f3c1d7f1842604cf2d78ae02dc206714c5557bb6269f1a25a4f35ede22bfa6fd"
+    },
+    {
+      "file": "runtime-c-write-repair-smoke-report.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-repair-smoke-report.cjs",
+      "bytes": 1047,
+      "sha256": "7b0c8de6d26b10f9ea3c9025664efb47f8feb4bca466498af1fd7be305b87eb2"
+    },
+    {
+      "file": "runtime-c-write-sql-event.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-sql-event.cjs",
+      "bytes": 1535,
+      "sha256": "51b66f50052e219ac1949ec2f6465bbad1c4335972934ecd875b622e0006bd80"
+    },
+    {
+      "file": "runtime-c-write-stage-matrix.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-stage-matrix.cjs",
+      "bytes": 1077,
+      "sha256": "318204d8ca17809e30c8ce07341f8de58e6bf3da4fc0ad555caec31eaf074c9c"
+    },
+    {
+      "file": "runtime-c-write-streaming-report.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-streaming-report.cjs",
+      "bytes": 1345,
+      "sha256": "fb8e680fcdd61c2b0fffad48b25d3d0408a4babc0a176f217955d867c686bef8"
+    },
+    {
+      "file": "runtime-c-write-telemetry.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-telemetry.cjs",
+      "bytes": 2459,
+      "sha256": "266d203680a0947d97fe3ed17bd5d5cd14417878367bee72122d64094d3c8a19"
+    },
+    {
+      "file": "runtime-c-write-tool-manifest.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-tool-manifest.cjs",
+      "bytes": 832,
+      "sha256": "5b0222e8093e3b08f08c9443158bdc73d0e7ccbf92bd301618ae50fb10640538"
+    },
+    {
+      "file": "runtime-c-write-tps.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-tps.cjs",
+      "bytes": 3782,
+      "sha256": "b8be588510dcb7879ae67f327e24588ab3e03942ec11074ae9f7e662f75f7169"
+    },
+    {
+      "file": "runtime-c-write-ui-artifact-index.cjs",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/runtime-c-write-ui-artifact-index.cjs",
+      "bytes": 1718,
+      "sha256": "5490c14559c71ab24ceec190649d7d895ab33afe02cecc80cde1e47f86c71dd4"
+    },
+    {
+      "file": "start-runtime-c-handoff-watch.sh",
+      "path": "/opt/eila-os/factory-xyz/runtime-c/tools/runtime-c-lab/start-runtime-c-handoff-watch.sh",
+      "bytes": 601,
+      "sha256": "e8c63a325fb863a0c2fba5c628af2c7ec2f170b3afb7fc251439c4cd68d6af53"
+    }
+  ],
+  "generated_at": "2026-05-28T22:14:19.190Z"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"4b622b499da2f41646eab1a2ce0c49b9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/analytics/charts/flickering-grid.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

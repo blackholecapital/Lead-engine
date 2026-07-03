@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/better-auth/components/user-profile.tsx
+
+import * as React from 'react';
+import { useState } from 'react';
+import {
+  RiEdit2Line,
+  RiLoader4Line,
+  RiLockPasswordLine,
+  RiMailLine,
+  RiShieldKeyholeLine,
+  RiUser3Line,
+} from 'react-icons/ri';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/primitives/avatar';
+import { Button } from '@/components/primitives/button';
+import { Input } from '@/components/primitives/input';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { authClient } from '../client';
+import { useAuth, useUser } from '../index';
+
+function getUserInitials(name: string): string {
+  return name
+    .trim()
+    .split(/\s+/)
+    .map((word) => word[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+}
+
+function ProfileSection() {
+  const { user } = useUser();
+  const { refreshSession } = useAuth();
+  const [isEditingName, setIsEditingName] = useState(false);
+  const [name, setName] = useState(user?.fullName || '');
+  const [isUpdatingName, setIsUpdatingName] = useState(false);
+
+  const [isEditingEmail, setIsEditingEmail] = useState(false);
+  const [email, setEmail] = useState(user?.primaryEmailAddress?.emailAddress || '');
+  const [isUpdatingEmail, setIsUpdatingEmail] = useState(false);
+
+  const handleUpdateName = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || name === user?.fullName) {
+      setIsEditingName(false);
+
+      return;
+    }
+
+    setIsUpdatingName(true);
+    try {
+      const { error } = await authClient.updateUser({
+        name: name.trim(),
+      });
+
+      if (error) {
+        throw new Error(error.message || 'Failed to update name');
+      }
+
+      await refreshSession();
+      showSuccessToast('Name updated successfully', 'Profile Updated');
+      setIsEditingName(false);
+    } catch (e: any) {
+      console.error('Failed to update name:', e);
+      showErrorToast(e.message || 'Failed to update name', 'Update Error');
+      setName(user?.fullName || '');
+    } finally {
+      setIsUpdatingName(false);
+    }
+  };
+
+  const handleUpdateEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim() || email === user?.primaryEmailAddress?.emailAddress) {
+      setIsEditingEmail(false);
+
+      return;
+    }
+
+    setIsUpdatingEmail(true);
+    try {
+      const { error } = await authClient.changeEmail({
+        newEmail: email.trim(),
+        callbackURL: window.location.origin + '/settings/account',
+      });
+
+      if (error) {
+        throw new Error(error.message || 'Failed to change email');
+      }
+
+      showSuccessToast(
+        'Verification email sent. Please check your new email address to confirm the change.',
+        'Email Change Initiated'
+      );
+      setIsEditingEmail(false);
+    } catch (e: any) {
+      console.error('Failed to change email:', e);
+      showErrorToast(e.message || 'Failed to change email', 'Update Error');
+      setEmail(user?.primaryEmailAddress?.emailAddress || '');
+    } finally {
+      setIsUpdatingEmail(false);
+    }
+  };

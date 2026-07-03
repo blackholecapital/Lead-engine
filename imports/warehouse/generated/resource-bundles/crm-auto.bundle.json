@@ -1,0 +1,48 @@
+{
+  "bundle_name": "crm-auto",
+  "source": "tag-query",
+  "assets": [
+    {
+      "id": "cal-com",
+      "title": "Cal.com",
+      "tags": [
+        "calendar",
+        "workspace",
+        "booking"
+      ],
+      "category": "workspace"
+    },
+    {
+      "id": "listmonk",
+      "title": "Listmonk",
+      "tags": [
+        "email",
+        "campaign",
+        "marketing"
+      ],
+      "category": "comms"
+    },
+    {
+      "id": "novu",
+      "title": "Novu",
+      "tags": [
+        "comms",
+        "email",
+        "sms",
+        "workflow",
+        "notification"
+      ],
+      "category": "comms"
+    },
+    {
+      "id": "postiz",
+      "title": "Postiz",
+      "tags": [
+        "social",
+        "marketing",
+        "publishing"
+      ],
+      "category": "marketing"
+    }
+  ]
+}

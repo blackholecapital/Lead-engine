@@ -1,0 +1,6 @@
+{
+  "id":"d9fc7737333218ace463eb7ebb41980a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/webhooks/lib/factory/base/BaseOOOPayloadBuilder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

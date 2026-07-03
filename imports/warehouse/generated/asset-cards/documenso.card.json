@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "id": "documenso",
+    "title": "Documenso",
+    "category": "documents",
+    "tags": [
+      "documents",
+      "esign",
+      "workflow"
+    ],
+    "source": "vendor-source/documents/documenso",
+    "status": "downloaded",
+    "tier": "candidate"
+  },
+  "score": {
+    "asset": "documenso",
+    "implementation": 70,
+    "visual": 70,
+    "reuse": 70,
+    "completeness": 70,
+    "production": 70,
+    "vector": 70,
+    "retrieval": 70,
+    "graph": 70,
+    "final_score": 70
+  },
+  "graph": {
+    "id": "documenso",
+    "label": "Documenso",
+    "category": "documents",
+    "tags": [
+      "documents",
+      "esign",
+      "workflow"
+    ],
+    "type": "asset"
+  }
+}

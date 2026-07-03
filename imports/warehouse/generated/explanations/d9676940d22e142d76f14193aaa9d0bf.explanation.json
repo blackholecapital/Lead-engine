@@ -1,0 +1,6 @@
+{
+  "id":"d9676940d22e142d76f14193aaa9d0bf",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/NativeQueryEditorActionButtons/NativeQueryEditorActionButtons.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

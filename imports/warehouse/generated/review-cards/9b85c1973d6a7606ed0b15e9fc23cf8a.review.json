@@ -1,0 +1,14 @@
+{
+  "id": "9b85c1973d6a7606ed0b15e9fc23cf8a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/analytics/charts/interaction-trend-chart.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

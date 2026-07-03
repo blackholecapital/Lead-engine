@@ -1,0 +1,13 @@
+{
+  "id": "58fa26befc87f595e04c0d2d318a21da",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/components/parse-whatsapp-credentials-block.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

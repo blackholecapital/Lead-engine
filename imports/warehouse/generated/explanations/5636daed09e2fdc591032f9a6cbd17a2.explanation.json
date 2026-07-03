@@ -1,0 +1,6 @@
+{
+  "id":"5636daed09e2fdc591032f9a6cbd17a2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/utils/serialize-default-value.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

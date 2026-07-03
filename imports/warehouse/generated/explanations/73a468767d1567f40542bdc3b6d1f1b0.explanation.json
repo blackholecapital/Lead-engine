@@ -1,0 +1,6 @@
+{
+  "id":"73a468767d1567f40542bdc3b6d1f1b0",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/ExportAsPdfButton.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

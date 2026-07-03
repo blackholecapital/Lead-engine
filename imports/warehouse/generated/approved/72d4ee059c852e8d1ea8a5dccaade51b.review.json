@@ -1,0 +1,12 @@
+{
+  "id": "72d4ee059c852e8d1ea8a5dccaade51b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/dtos/workflow/step.response.dto.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

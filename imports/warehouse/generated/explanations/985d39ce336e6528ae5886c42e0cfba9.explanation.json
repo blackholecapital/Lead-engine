@@ -1,0 +1,6 @@
+{
+  "id":"985d39ce336e6528ae5886c42e0cfba9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/helpers/inputs/FontWeightInput.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

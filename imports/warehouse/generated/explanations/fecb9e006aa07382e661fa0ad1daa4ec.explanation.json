@@ -1,0 +1,6 @@
+{
+  "id":"fecb9e006aa07382e661fa0ad1daa4ec",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/exceptions/workspace-migration-builder-exception.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

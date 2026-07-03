@@ -1,0 +1,13 @@
+{
+  "id": "95a0b3b8a0348bf3d7bf2ba9673a3214",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/integrations/components/use-whatsapp-credentials-paste-fallback.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

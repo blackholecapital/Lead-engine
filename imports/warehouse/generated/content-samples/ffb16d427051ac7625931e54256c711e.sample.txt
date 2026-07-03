@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/routes/root-route-error-fallback.tsx
+
+import { BookOpen, Mail, RefreshCw } from 'lucide-react';
+import { motion, useReducedMotion } from 'motion/react';
+import { useMemo } from 'react';
+import { Button } from '@/components/primitives/button';
+import { CopyButton } from '@/components/primitives/copy-button';
+import { TooltipProvider } from '@/components/primitives/tooltip';
+import { IS_SELF_HOSTED, SUPPORT_EMAIL } from '@/config';
+import { cn } from '@/utils/ui';
+
+const SELF_HOSTED_DOCS_URL =
+  'https://docs.novu.co/community/run-in-local-machine?utm_source=dashboard&utm_medium=app_error';
+
+/** Matches legacy ErrorBoundary copy in root route (self-hosted ops). */
+const SELF_HOSTED_ERROR_GUIDANCE =
+  'Please check your application logs or try refreshing the page. If the issue persists, consider restarting your Novu services.';
+
+/** Matches legacy ErrorBoundary copy in root route (cloud support). */
+const CLOUD_ERROR_GUIDANCE =
+  'Please try refreshing the page. If the problem continues, you can contact our support team with the event ID below for assistance.';
+
+type RootRouteErrorFallbackProps = {
+  error: unknown;
+  eventId?: string;
+};
+
+const ONE_LINER_MAX = 140;
+
+function errorOneLiner(error: unknown): string {
+  if (error instanceof Error) {
+    const line = error.message.split('\n')[0]?.trim();
+
+    if (line) {
+      return line.length > ONE_LINER_MAX ? `${line.slice(0, ONE_LINER_MAX)}…` : line;
+    }
+
+    return error.name || 'Error';
+  }
+
+  if (typeof error === 'string') {
+    const line = error.trim();
+
+    return line.length > ONE_LINER_MAX ? `${line.slice(0, ONE_LINER_MAX)}…` : line;
+  }
+
+  return 'Something threw outside of expected types.';
+}
+
+function currentLocationPath() {
+  if (typeof window === 'undefined') {
+    return '/';
+  }
+
+  return `${window.location.pathname}${window.location.search}` || '/';
+}
+
+function buildSupportSnippet(path: string, eventId: string | undefined, summary: string) {
+  const payload: Record<string, string> = {
+    path,
+    message: summary,
+  };
+
+  if (eventId) {
+    payload.eventId = eventId;
+  }
+
+  return JSON.stringify(payload, null, 2);
+}
+
+function buildSupportMailto(path: string, eventId: string | undefined, summary: string) {
+  const lines = [
+    'Dashboard client error',
+    '',
+    `path: ${path}`,
+    eventId ? `eventId: ${eventId}` : null,
+    `message: ${summary}`,
+    '',
+    '(attach anything else that helps reproduce)',
+  ].filter((line): line is string => line != null);
+
+  const subject = encodeURIComponent(`[dashboard] error at ${path}`);
+  const body = encodeURIComponent(lines.join('\n'));
+
+  return `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
+}
+
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.24 + i * 0.11,
+      duration: 0.48,
+      ease: easeOut,
+    },
+  }),
+};
+

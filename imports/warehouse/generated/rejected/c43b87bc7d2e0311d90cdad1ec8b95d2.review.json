@@ -1,0 +1,11 @@
+{
+  "id": "c43b87bc7d2e0311d90cdad1ec8b95d2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test/scenarios/dashboard-cards/dashboard-card-undo.cy.spec.js",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

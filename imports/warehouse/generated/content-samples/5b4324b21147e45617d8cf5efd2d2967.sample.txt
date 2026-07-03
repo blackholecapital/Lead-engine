@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/topics/topic-overview-form.tsx
+
+import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
+import { useQueryClient } from '@tanstack/react-query';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { RiDeleteBin2Line } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import { ExternalToast } from 'sonner';
+import { z } from 'zod';
+import { deleteTopic, updateTopic } from '@/api/topics';
+import { Button } from '@/components/primitives/button';
+import { Card, CardContent } from '@/components/primitives/card';
+import { CopyButton } from '@/components/primitives/copy-button';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  FormRoot,
+} from '@/components/primitives/form/form';
+import { Input } from '@/components/primitives/input';
+import { Separator } from '@/components/primitives/separator';
+import { Skeleton } from '@/components/primitives/skeleton';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { TimeDisplayHoverCard } from '@/components/time-display-hover-card';
+import { useTopicsNavigate } from '@/components/topics/hooks/use-topics-navigate';
+import { useEnvironment } from '@/context/environment/hooks';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { formatDateSimple } from '@/utils/format-date';
+import { QueryKeys } from '@/utils/query-keys';
+import { TelemetryEvent } from '@/utils/telemetry';
+import { cn } from '@/utils/ui';
+import { ConfirmationModal } from '../confirmation-modal';
+import { Topic } from './types';
+
+const TopicFormSchema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  key: z.string().min(1, 'Key is required'),
+});
+
+const toastOptions: ExternalToast = {
+  position: 'bottom-right',
+  classNames: {
+    toast: 'mb-4 right-0 pointer-events-none',
+  },
+};
+
+interface TopicOverviewFormProps {
+  topic: Topic;
+  readOnly?: boolean;
+}
+
+export function TopicOverviewForm({ topic, readOnly = false }: TopicOverviewFormProps) {
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const track = useTelemetry();
+  const { currentEnvironment } = useEnvironment();
+  const queryClient = useQueryClient();
+  const { navigateToTopicsPage } = useTopicsNavigate();
+
+  const form = useForm({
+    defaultValues: {
+      name: topic.name,
+      key: topic.key,
+    },
+    resolver: standardSchemaResolver(TopicFormSchema),
+    shouldFocusError: false,
+  });
+
+  useEffect(() => {
+    if (topic) {
+      form.reset({
+        name: topic.name,
+        key: topic.key,
+      });
+    }
+  }, [topic, form]);
+
+  const onSubmit = async (formData: z.infer<typeof TopicFormSchema>) => {
+    if (!currentEnvironment) return;
+
+    const dirtyFields = form.formState.dirtyFields;
+    const dirtyPayload = Object.keys(dirtyFields).reduce<Partial<typeof formData>>((acc, key) => {
+      const typedKey = key as keyof typeof formData;
+      return { ...acc, [typedKey]: formData[typedKey].trim() };
+    }, {});
+
+    if (!Object.keys(dirtyPayload).length) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await updateTopic({
+        environment: currentEnvironment,
+        topicKey: topic.key,
+        topic: dirtyPayload,

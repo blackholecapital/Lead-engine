@@ -1,0 +1,12 @@
+{
+  "id": "3eb514703571664784a2b0c3f74a49b6",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/packages/shared/src/entities/workflow-run/delivery-lifecycle-status.enum.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

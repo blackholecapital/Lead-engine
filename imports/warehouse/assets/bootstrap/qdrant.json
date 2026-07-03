@@ -1,0 +1,9 @@
+{
+  "id":"qdrant",
+  "title":"Qdrant",
+  "category":"retrieval",
+  "tags":["vector","retrieval"],
+  "source":"vendor-source/retrieval/qdrant",
+  "status":"downloaded",
+  "tier":"candidate"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "15ec0f2a2917256402ed78a8e00b7ea8",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/Dashboard/DashboardEmptyState/DashboardEmptyState.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

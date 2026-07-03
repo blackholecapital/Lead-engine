@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/apps/web/modules/event-types/components/tabs/advanced/FormBuilder.tsx
+
+import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { useEffect, useState } from "react";
+import type { SubmitHandler, UseFormReturn } from "react-hook-form";
+import { Controller, useFieldArray, useForm, useFormContext } from "react-hook-form";
+import type { z } from "zod";
+import { ZodError } from "zod";
+
+import { useIsPlatform } from "@calcom/atoms/hooks/useIsPlatform";
+import { Dialog } from "@calcom/features/components/controlled-dialog";
+import { LearnMoreLink } from "@calcom/features/eventtypes/components/LearnMoreLink";
+import { getCurrencySymbol } from "@calcom/lib/currencyConversions";
+import { useLocale } from "@calcom/lib/hooks/useLocale";
+import { md } from "@calcom/lib/markdownIt";
+import { markdownToSafeHTMLClient } from "@calcom/lib/markdownToSafeHTMLClient";
+import turndown from "@calcom/lib/turndownService";
+import { excludeOrRequireEmailSchema } from "@calcom/prisma/zod-utils";
+import classNames from "@calcom/ui/classNames";
+import { Badge } from "@calcom/ui/components/badge";
+import { Button } from "@calcom/ui/components/button";
+import { DialogContent, DialogFooter, DialogHeader, DialogClose } from "@calcom/ui/components/dialog";
+import { Editor } from "@calcom/ui/components/editor";
+import { ToggleGroup } from "@calcom/ui/components/form";
+import {
+  Switch,
+  CheckboxField,
+  SelectField,
+  Form,
+  Input,
+  InputField,
+  Label,
+} from "@calcom/ui/components/form";
+import { ArrowDownIcon, ArrowUpIcon, MailIcon, PhoneIcon } from "@coss/ui/icons";
+import { showToast } from "@calcom/ui/components/toast";
+
+import { fieldTypesConfigMap } from "@calcom/features/form-builder/fieldTypes";
+import { fieldsThatSupportLabelAsSafeHtml } from "@calcom/features/form-builder/fieldsThatSupportLabelAsSafeHtml";
+import type { fieldsSchema } from "@calcom/features/form-builder/schema";
+import { getFieldIdentifier } from "@calcom/features/form-builder/utils/getFieldIdentifier";
+import { getConfig as getVariantsConfig } from "@calcom/features/form-builder/utils/variantsConfig";
+
+type RhfForm = {
+  fields: z.infer<typeof fieldsSchema>;
+};
+
+type RhfFormFields = RhfForm["fields"];
+
+type RhfFormField = RhfFormFields[number];
+
+type DataStore = {
+  options: Record<
+    string,
+    {
+      source: { label: string };
+      value: { label: string; value: string; inputPlaceholder?: string }[];
+    }
+  >;
+};
+
+function getCurrentFieldType(fieldForm: UseFormReturn<RhfFormField>) {
+  return fieldTypesConfigMap[fieldForm.watch("type") || "text"];
+}
+
+const getLocationFieldType = (field: RhfFormField) => {
+  const baseFieldType = fieldTypesConfigMap[field.type];
+
+  if (field.name === "location") {
+    return { ...baseFieldType, label: "Location" };
+  }
+
+  return baseFieldType;
+};
+
+function isWhitespaceOnly(val: unknown): boolean {
+  return typeof val === "string" && val.length > 0 && val.trim().length === 0;
+}
+
+function hasWhitespaceOnlyLabel(data: RhfFormField): boolean {
+  if (isWhitespaceOnly(data.label)) return true;
+  const variants = data.variantsConfig?.variants;
+  if (!variants) return false;
+  for (const variant of Object.values(variants)) {
+    const fields = variant?.fields ?? [];
+    for (const f of fields) {
+      if (isWhitespaceOnly(f?.label)) return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * It works with a react-hook-form only.
+ * `formProp` specifies the name of the property in the react-hook-form that has the fields. This is where fields would be updated.
+ */
+export const FormBuilder = function FormBuilder({
+  title,
+  description,
+  addFieldLabel,
+  formProp,
+  disabled,
+  LockedIcon,

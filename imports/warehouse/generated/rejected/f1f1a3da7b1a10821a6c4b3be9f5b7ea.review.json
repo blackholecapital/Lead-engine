@@ -1,0 +1,14 @@
+{
+  "id": "f1f1a3da7b1a10821a6c4b3be9f5b7ea",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/translations/translation-list-upgrade-cta.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

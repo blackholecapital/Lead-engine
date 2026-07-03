@@ -1,0 +1,14 @@
+{
+  "id": "691a1d769e1d8b913ec461ee1537e110",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/inbox-framework-guide/framework-grid.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

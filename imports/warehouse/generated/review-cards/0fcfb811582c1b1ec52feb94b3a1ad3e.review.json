@@ -1,0 +1,12 @@
+{
+  "id": "0fcfb811582c1b1ec52feb94b3a1ad3e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/actions/query-updates.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"c78d48fffee0e8759d5f9060058180c9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/updateComponentParentsList.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

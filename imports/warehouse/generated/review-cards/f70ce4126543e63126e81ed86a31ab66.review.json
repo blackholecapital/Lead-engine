@@ -1,0 +1,14 @@
+{
+  "id": "f70ce4126543e63126e81ed86a31ab66",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/agents/agent-integration-guides/generic-agent-integration-guide.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

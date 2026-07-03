@@ -1,0 +1,13 @@
+{
+  "id": "1893febb216d602b2dbf23a20e320e14",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/admin/settings/components/SettingsPages/SlackSettingsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

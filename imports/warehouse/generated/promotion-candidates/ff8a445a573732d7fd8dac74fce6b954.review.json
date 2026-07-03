@@ -1,0 +1,13 @@
+{
+  "id": "ff8a445a573732d7fd8dac74fce6b954",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/AvatarSidebarPanel.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

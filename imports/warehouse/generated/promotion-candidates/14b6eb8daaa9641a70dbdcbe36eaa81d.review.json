@@ -1,0 +1,12 @@
+{
+  "id": "14b6eb8daaa9641a70dbdcbe36eaa81d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/ui/feedback/snack-bar-manager/utils/buildErrorAction.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

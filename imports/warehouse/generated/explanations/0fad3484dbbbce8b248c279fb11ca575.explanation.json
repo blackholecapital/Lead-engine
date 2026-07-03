@@ -1,0 +1,6 @@
+{
+  "id":"0fad3484dbbbce8b248c279fb11ca575",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/widgets/above-trigger-button.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

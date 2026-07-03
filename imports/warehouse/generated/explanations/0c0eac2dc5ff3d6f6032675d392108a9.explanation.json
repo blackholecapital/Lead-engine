@@ -1,0 +1,6 @@
+{
+  "id":"0c0eac2dc5ff3d6f6032675d392108a9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/embedding-sdk-bundle/components/public/CreateDashboardModal/CreateDashboardModal.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

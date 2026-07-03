@@ -1,0 +1,6 @@
+{
+  "id":"a2a8ccc861eaa23fd3424984049e4402",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/AutoRefreshStatus/StatusTooltipContent.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

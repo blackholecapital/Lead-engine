@@ -1,0 +1,6 @@
+{
+  "id":"e5b393fb5ae191a59f40d4562f268d23",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/logging/childChartsDidLoad.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

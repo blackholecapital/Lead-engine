@@ -1,0 +1,381 @@
+#!/usr/bin/env node
+const http=require("http"), fs=require("fs"), path=require("path"), cp=require("child_process");
+const HOST=process.env.RUNTIME_C_SUBMIT_HOST || "127.0.0.1";
+const PORT=Number(process.env.RUNTIME_C_SUBMIT_PORT || 8767);
+const base="/mnt/eila-hot-sidecar/factory-xyz/runtime-c";
+const inbox=base+"/runtime-c-submit-inbox", queue=base+"/runtime-c-submit-queue";
+const RUNTIME_C_HOME=process.env.RUNTIME_C_HOME||"/mnt/eila-hot-sidecar/factory-xyz/runtime-c";
+const runs=process.env.RUNTIME_C_RUNS||`${RUNTIME_C_HOME}/sandbox/runs`;
+const submit=base+"/tools/runtime-c-lab/runtime-c-submit-buildsheet.cjs", runner=base+"/tools/runtime-c-lab/runtime-c-runner.cjs", writeIndex=base+"/tools/runtime-c-lab/runtime-c-write-index.cjs";
+for(const d of [inbox,queue,runs]) fs.mkdirSync(d,{recursive:true});
+const send=(res,c,o)=>{res.writeHead(c,{"content-type":"application/json","access-control-allow-origin":"*","access-control-allow-methods":"GET,POST,OPTIONS","access-control-allow-headers":"content-type"});res.end(JSON.stringify(o,null,2)+"\n")};
+
+const activePod=(pod)=>{try{
+ const out=require("child_process").execFileSync("pgrep",["-af","runtime-c-runner|runtime-c-lane-real"],{encoding:"utf8"});
+ const P=String(pod||"A").toUpperCase();
+ return out.split("\n").some(line =>
+   line.includes(`"pod":"${P}"`) ||
+   line.includes(`"lane_cell_backend":"${P}"`) ||
+   line.includes(`WAITING_FOR_POD_${P}`)
+ );
+}catch{return false}};
+
+const body=req=>new Promise((ok,fail)=>{let b="";req.on("data",c=>b+=c);req.on("end",()=>ok(b));req.on("error",fail)});
+const activeGlobal=()=>{try{
+  return fs.readdirSync(runs,{withFileTypes:true})
+    .filter(d=>d.isDirectory())
+    .some(d=>{
+      const f=path.join(runs,d.name,"RUN_STATE.json");
+      if(!fs.existsSync(f)) return false;
+      try{
+        const j=JSON.parse(fs.readFileSync(f,"utf8"));
+        if(!(j.status==="ACTIVE" && j.state==="RUNNING")) return false;
+
+const pid=j.pid;
+if(!pid) return false;
+
+try{
+  process.kill(pid,0);
+  return true;
+}catch{
+  return false;
+}
+      }catch{return false}
+    });
+}catch{return false}};
+const runningRoots=new Set();
+
+
+function resolvePassPolicy(parsed){
+  const fs=require("fs");
+  const path=require("path");
+
+  const runsRoot=process.env.RUNTIME_C_RUNS||"/mnt/eila-hot-sidecar/factory-xyz/runtime-c/sandbox/runs";
+  const family=String(parsed.family||parsed.product_slug||parsed.job_name||parsed.title||"").trim();
+  const requestedPass=parsed.pass ?? null;
+  const mode=String(parsed.mode||parsed.workflow||"initial_build");
+
+  if(!family) throw new Error("PASS_POLICY_MISSING_FAMILY");
+
+  parsed.family=family;
+  parsed.product_slug=parsed.product_slug||family;
+
+  if(mode!=="iteration_pass"){
+    parsed.pass=1;
+    parsed.requested_pass=requestedPass;
+    parsed.parent=null;
+    parsed.parent_context=null;
+    parsed.inherits_from=false;
+    parsed.pass_policy={
+      enforced_at:"submit_ingestion",
+      mode,
+      requested_pass:requestedPass,
+      resolved_pass:1,
+      parent_run_id:null,
+      parent_pass:null
+    };
+    return parsed;
+  }
+
+  const passed=[];
+  for(const name of fs.readdirSync(runsRoot).filter(x=>x.startsWith(family+"-")).sort()){
+    const root=path.join(runsRoot,name);
+    let st={}, bs={};
+    try{ st=JSON.parse(fs.readFileSync(path.join(root,"RUN_STATE.json"),"utf8")); }catch{}
+    try{ bs=JSON.parse(fs.readFileSync(path.join(root,"buildsheet.full.json"),"utf8")); }catch{}
+    const pass=Number(bs.pass||st.pass||0);
+    const fam=String(bs.family||bs.product_slug||st.product_slug||"");
+    if(fam===family && st.status==="PASS" && st.state==="COMPLETE" && pass>0){
+      passed.push({name,root,pass,output:path.join(root,"output")});
+    }
+  }
+
+  passed.sort((a,b)=>a.pass-b.pass || a.name.localeCompare(b.name));
+  const parent=passed.at(-1);
+  if(!parent) throw new Error("ITERATION_PASS_REQUIRES_COMPLETED_PASS_PARENT");
+
+  const resolvedPass=parent.pass+1;
+
+  parsed.pass=resolvedPass;
+  parsed.requested_pass=requestedPass;
+
+  parsed.parent={
+    run_id:parent.name,
+    pass:parent.pass,
+    root:parent.root,
+    output:parent.output
+  };
+
+  parsed.parent_context={
+    required:true,
+    source_run_id:parent.name,
+    source_output:parent.output
+  };
+
+  parsed.inherits_from={
+    enabled:true,
+    parent_pass:parent.pass,
+    parent_slug:family,
+    parent_run_id:parent.name,
+    parent_run_root:parent.root,
+    parent_output_path:parent.output
+  };
+
+  parsed.pass_policy={
+    enforced_at:"submit_ingestion",
+    mode,
+    requested_pass:requestedPass,
+    resolved_pass:resolvedPass,
+    parent_pass:parent.pass,
+    parent_run_id:parent.name
+  };
+
+  return parsed;
+}
+
+const slugOf=x=>(x.product_slug||x.job_name||x.title||"").toString().replace(/[^a-zA-Z0-9._-]+/g,"-").replace(/^-+|-+$/g,"").slice(0,80);
+
+function quarantineSubmit(file,reason){
+  const qdir="/mnt/eila-hot-sidecar/factory-xyz/runtime-c/quarantine/submit-rejects";
+  fs.mkdirSync(qdir,{recursive:true});
+  const dest=path.join(qdir,Date.now()+"-"+reason+"-"+path.basename(file));
+  try{ fs.renameSync(file,dest); }
+  catch{ try{ fs.copyFileSync(file,dest); fs.unlinkSync(file); }catch{} }
+  console.log("QUARANTINE_SUBMIT",reason,file,dest);
+}
+function publish(root,status,state,pod){fs.mkdirSync(root,{recursive:true});fs.writeFileSync(path.join(root,"RUN_STATE.json"),JSON.stringify({status,state,root,pod:pod||null,created_at:new Date().toISOString()},null,2)+"\n");try{
+console.log("SPAWN_START",arguments);
+cp.execFileSync("node",
+[writeIndex],{stdio:"inherit"})}catch{}}
+function spawn(staged,root){
+ if(runningRoots.has(root)){
+   console.log("DUPLICATE_RUN_BLOCKED",root);
+   return;
+ }
+ runningRoots.add(root);
+
+ const env={...process.env,RUNTIME_C_MODE:"real",RUNTIME_C_REAL_STAGE:"qwen3_artifact",RUNTIME_C_ALLOW_REAL_EXEC:"1",RUNTIME_C_FIXED_ROOT:root};
+ const simple=staged;
+ const proc=cp.spawn("node",[runner,simple,root],{env,detached:true,stdio:"inherit"});
+ proc.on("exit",()=>runningRoots.delete(root));
+ proc.on("error",()=>runningRoots.delete(root));
+ proc.unref();
+ const state=path.join(root,"RUN_STATE.json");
+ const j=JSON.parse(fs.readFileSync(state,"utf8"));
+ j.pid=proc.pid;
+ fs.writeFileSync(state,JSON.stringify(j,null,2)+"\n");
+}
+function drain(){
+ try{
+  // per-pod drain: do not block unrelated pods
+  const q=fs.readdirSync(queue).filter(f=>f.endsWith(".json")).sort()[0];
+  if(!q) return;
+
+  const staged=path.join(queue,q);
+  const st=fs.statSync(staged);
+
+  if(st.size < 200){
+    console.log("SKIP_PARTIAL",staged,st.size);
+    quarantineSubmit(staged,"partial");
+    return;
+  }
+
+  const ageMs=Date.now()-st.mtimeMs;
+  const maxAgeMs=1000*60*20;
+
+  if(ageMs > maxAgeMs){
+    console.log("SKIP_STALE",staged,Math.round(ageMs/1000)+"s");
+    quarantineSubmit(staged,"stale");
+    return;
+  }
+
+  const meta=JSON.parse(fs.readFileSync(staged,"utf8"));
+
+  if(meta.run_root && fs.existsSync(meta.run_root)){
+    let rs={};
+    try{
+      rs=JSON.parse(fs.readFileSync(path.join(meta.run_root,"RUN_STATE.json"),"utf8"));
+    }catch{}
+    const queuedOk = rs.status==="QUEUED" || String(rs.state||"").startsWith("WAITING_FOR_POD_");
+    if(!queuedOk){
+      console.log("SKIP_DUP_ROOT",staged,meta.run_root);
+      quarantineSubmit(staged,"dup-root");
+      return;
+    }
+  }
+
+  console.log("DRAIN_CLAIM", q, meta.run_root);
+
+  publish(meta.run_root,"ACTIVE","RUNNING",(meta.pod||meta.lane_cell_backend||"A"));
+  const inboxFile=path.join(inbox,path.basename(staged));
+  fs.renameSync(staged,inboxFile);
+
+  const doneDir=inbox+"/done";
+  fs.mkdirSync(doneDir,{recursive:true});
+  const doneFile=path.join(doneDir,path.basename(inboxFile));
+  if(fs.existsSync(inboxFile)){
+    fs.renameSync(inboxFile,doneFile);
+  }
+
+  spawn(doneFile,meta.run_root,meta);
+
+
+  console.log("DRAIN_SPAWNED", meta.run_root);
+ }catch(e){
+  console.error("DRAIN_FAIL", e.stack||e.message);
+ }
+}
+
+function reapDead(){
+ for(const d of fs.readdirSync(runs,{withFileTypes:true}).filter(x=>x.isDirectory())){
+  const root=path.join(runs,d.name);
+  const f=path.join(root,"RUN_STATE.json");
+  if(!fs.existsSync(f)) continue;
+  let j;
+  try{ j=JSON.parse(fs.readFileSync(f,"utf8")); }catch{ continue; }
+  if(!(j.status==="ACTIVE" && j.state==="RUNNING")) continue;
+  if(j.pid){
+   try{ process.kill(j.pid,0); continue; }catch{}
+  }
+
+  // Trust live process command lines by run root before declaring worker exited.
+  try {
+    const out=require("child_process").execFileSync("pgrep",["-af","runtime-c-runner|runtime-c-lane-real"],{encoding:"utf8"});
+    if(out.split(/\n/).some(line => line.includes(root) || line.includes(path.join(base,"sandbox/workspaces",path.basename(root))))) {
+      fs.appendFileSync(path.join(root,"EVENT_LOG.jsonl"), JSON.stringify({
+        ts:new Date().toISOString(),
+        event:"WORKER_EXITED_IGNORED",
+        status:"PASS",
+        reason:"live_proc_for_root",
+        pid:j.pid||null
+      })+"\n");
+      continue;
+    }
+  } catch {}
+
+  // Detached runner may outlive /proc pid visibility; workspace lane log is source of truth.
+  try {
+    const ws = path.join(base, "sandbox/workspaces", path.basename(root));
+    const wl = path.join(ws, "EVENT_LOG.jsonl");
+    if (fs.existsSync(wl)) {
+      const lines = fs.readFileSync(wl, "utf8").trim().split(/\n+/).slice(-20);
+      const last = lines.map(x => { try { return JSON.parse(x); } catch { return null; } }).filter(Boolean).pop();
+      if (last && last.event === "LANE_START") {
+        fs.appendFileSync(path.join(root,"EVENT_LOG.jsonl"), JSON.stringify({
+          ts:new Date().toISOString(),
+          event:"WORKER_EXITED_IGNORED",
+          status:"PASS",
+          reason:"workspace_lane_active",
+          lane:last.lane,
+          pid:j.pid||null
+        })+"\n");
+        continue;
+      }
+    }
+  } catch {}
+  const logFile=path.join(root,"EVENT_LOG.jsonl");
+
+  let events=[];
+  try{
+    events=fs.readFileSync(logFile,"utf8")
+      .split(/\n/)
+      .filter(Boolean)
+      .map(x=>JSON.parse(x));
+  }catch{}
+
+  const alreadyComplete=events.some(e =>
+      (e.event==="RUN_DONE" && e.status==="PASS")
+   || (e.event==="PROMOTED_BASE_UPDATED" && e.status==="PASS")
+   || (e.state==="COMPLETE")
+  );
+
+  if(alreadyComplete){
+    continue;
+  }
+
+  const ts=new Date().toISOString();
+
+  if(alreadyComplete){
+    j.status="PASS";
+    j.state="COMPLETE";
+
+    fs.appendFileSync(logFile,JSON.stringify({
+      ts,
+      event:"WORKER_EXITED_IGNORED",
+      status:"PASS",
+      reason:"already_complete",
+      pid:j.pid||null
+    })+"\n");
+
+  }else{
+    j.status="FAIL";
+    j.state="WORKER_EXITED";
+    j.completed_at=ts;
+
+    fs.writeFileSync(f,JSON.stringify(j,null,2)+"\n");
+
+    fs.appendFileSync(logFile,JSON.stringify({
+      ts,
+      event:"RUN_DONE",
+      status:"FAIL",
+      state:"WORKER_EXITED",
+      pid:j.pid||null
+    })+"\n");
+  }
+  try{cp.execFileSync("node",[base+"/tools/runtime-c-lab/runtime-c-write-tps.cjs",root],{stdio:"inherit"});}catch{}
+  try{cp.execFileSync("node",[writeIndex],{stdio:"inherit"});}catch{}
+ }
+}
+
+setInterval(reapDead,3000);
+setInterval(drain,5000);
+http.createServer(async(req,res)=>{try{
+ if(req.method==="OPTIONS")return send(res,200,{ok:true});
+ if(req.method==="GET"&&req.url==="/health")return send(res,200,{ok:true,runtime:"C"});
+
+ if(req.method==="POST"&&req.url==="/kill"){
+  const parsed=JSON.parse(await body(req));
+  const run=String(parsed.run_id||"").replace(/[^a-zA-Z0-9._:-]/g,"");
+  if(!run)return send(res,400,{ok:false,error:"missing run_id"});
+  const root=path.join(runs,run);
+  try{cp.execFileSync("pkill",["-f",run],{stdio:"inherit"});}catch{}
+  fs.mkdirSync(root,{recursive:true});
+  const completed_at=new Date().toISOString();
+  fs.writeFileSync(path.join(root,"RUN_STATE.json"),JSON.stringify({
+    status:"FAIL",
+    state:"OPERATOR_KILLED",
+    root,
+    completed_at
+  },null,2)+"\n");
+  fs.appendFileSync(path.join(root,"EVENT_LOG.jsonl"),JSON.stringify({
+    ts:completed_at,
+    event:"RUN_DONE",
+    status:"FAIL",
+    state:"OPERATOR_KILLED"
+  })+"\n");
+  try{cp.execFileSync("node",[base+"/tools/runtime-c-lab/runtime-c-write-tps.cjs",root],{stdio:"inherit"});}catch{}
+  try{cp.execFileSync("node",[base+"/tools/runtime-c-lab/runtime-c-write-index.cjs"],{stdio:"inherit"});}catch{}
+  return send(res,200,{ok:true,run_id:run,status:"FAIL",state:"OPERATOR_KILLED"});
+ }
+
+ 
+if(req.method!=="POST"||req.url!=="/submit")return send(res,404,{ok:false});
+
+ const parsed=JSON.parse(await body(req)); const slug=slugOf(parsed);
+ if(!slug) return send(res,400,{ok:false,blocked:true,error:"missing product_slug/job_name/title"});
+ if(slug==="runtime-c-ui") return send(res,403,{ok:false,blocked:true,error:"runtime-c-ui auto-submit disabled"});
+ const ts=new Date().toISOString().replace(/[-:]/g,"").replace(/\.\d+Z$/,"Z");
+ const runRoot=`${runs}/${slug}-${ts}`;
+const staged=path.join(queue,`${slug}-${ts}.json`);
+ parsed.product_slug=parsed.product_slug||slug; parsed.job_name=parsed.job_name||slug;
+ const family=parsed.family||parsed.product_slug;
+ const prior=fs.readdirSync(runs).filter(x=>x.startsWith(family+"-")).sort();
+ parsed.pass=prior.length+1;
+ if(parsed.pass>1){ parsed.mode="iteration_pass"; parsed.family=family; }
+ const policyParsed=resolvePassPolicy(parsed);
+fs.writeFileSync(staged,JSON.stringify({...policyParsed,run_root:runRoot},null,2)+"\n");
+ if(activePod(parsed.lane_cell_backend||parsed.pod||"A")){publish(runRoot,"QUEUED",`WAITING_FOR_POD_${parsed.lane_cell_backend||parsed.pod||"A"}`);return send(res,202,{ok:true,status:"QUEUED",root:runRoot,staged});}
+ publish(runRoot,"QUEUED",`WAITING_FOR_POD_${parsed.lane_cell_backend||"A"}`,parsed.lane_cell_backend||parsed.pod||"A");
+drain();
+return send(res,202,{ok:true,status:"ACCEPTED",root:runRoot,staged});
+}catch(e){return send(res,500,{ok:false,error:e.message})}}).listen(PORT,HOST,()=>console.log(`PASS runtime-c-submit-server http://${HOST}:${PORT}`));

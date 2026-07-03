@@ -1,0 +1,6 @@
+{
+  "id":"541c3ee8b7dd4bc702ac0b580cf731c8",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterBar/CrossFilters/CrossFilterTag.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

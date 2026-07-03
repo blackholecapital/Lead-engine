@@ -1,0 +1,6 @@
+{
+  "id":"e3e6a24c746ba148a96b9522cfcc3313",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/QuestionActivityTimeline.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

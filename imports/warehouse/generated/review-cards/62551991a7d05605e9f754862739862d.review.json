@@ -1,0 +1,12 @@
+{
+  "id": "62551991a7d05605e9f754862739862d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/api/src/app/environments-v2/usecases/sync-strategies/builders/diff-result.builder.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

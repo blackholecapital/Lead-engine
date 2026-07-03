@@ -1,0 +1,6 @@
+{
+  "id":"b5778a5c3bfa209bc850e610757a1c01",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/v3/remoteImageBuilder.server.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

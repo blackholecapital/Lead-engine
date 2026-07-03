@@ -1,0 +1,14 @@
+{
+  "id": "0d7d5ace7873b005875845c9097dbbec",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/QuestionInfoSidebar/tests/enterprise.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

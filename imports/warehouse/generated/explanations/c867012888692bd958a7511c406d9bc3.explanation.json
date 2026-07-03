@@ -1,0 +1,6 @@
+{
+  "id":"c867012888692bd958a7511c406d9bc3",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/match-participant/utils/add-person-email-filters-to-query-builder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

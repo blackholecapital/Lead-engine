@@ -1,0 +1,14 @@
+{
+  "id": "b8c56c9a21f44bd174776c2861d4851c",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/ModelCacheManagementSection/ModelCacheManagementSection.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

@@ -1,0 +1,11 @@
+{
+  "id": "fusejs",
+  "title": "FuseJS",
+  "tags": [
+    "search",
+    "fuzzy",
+    "ranking"
+  ],
+  "category": "scoring",
+  "source": "vendor-source/scoring/fusejs"
+}

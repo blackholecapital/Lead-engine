@@ -1,0 +1,6 @@
+{
+  "id":"e2e2ddd72748a0921ba55393cccfb6b5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ActionViz/ActionButtonView.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

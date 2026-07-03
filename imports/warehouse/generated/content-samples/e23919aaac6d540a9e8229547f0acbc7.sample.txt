@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/better-auth/components/sign-in.tsx
+
+import { useId, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/primitives/button';
+import { Input } from '@/components/primitives/input';
+import { IS_ENTERPRISE } from '@/config';
+import { ROUTES } from '@/utils/routes';
+import { authClient } from '../client';
+
+export function SignIn() {
+  const navigate = useNavigate();
+  const emailId = useId();
+  const passwordId = useId();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showResendVerification, setShowResendVerification] = useState(false);
+  const [isResending, setIsResending] = useState(false);
+
+  const handleResendVerification = async () => {
+    setIsResending(true);
+    setError(null);
+
+    try {
+      await authClient.sendVerificationEmail({
+        email,
+        callbackURL: window.location.origin + ROUTES.SIGN_IN,
+      });
+
+      setError('Verification email sent! Please check your inbox.');
+      setShowResendVerification(false);
+    } catch (e: any) {
+      setError(e.message || 'Failed to send verification email.');
+    } finally {
+      setIsResending(false);
+    }
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setError(null);
+    setShowResendVerification(false);
+    setIsLoading(true);
+
+    try {
+      const { data, error: authError } = await authClient.signIn.email({
+        email,
+        password,
+      });
+
+      if (authError) {
+        if (authError.status === 403) {
+          setShowResendVerification(true);
+          throw new Error('Please verify your email address before signing in.');
+        }
+
+        throw new Error(authError.message || 'Sign in failed');
+      }
+
+      if (!data?.token || !data?.user) {
+        throw new Error('Sign in failed');
+      }
+
+      localStorage.setItem('better-auth-session-token', data.token);
+
+      const pendingInvitationId = sessionStorage.getItem('pendingInvitationId');
+
+      if (pendingInvitationId) {
+        window.location.href = `${ROUTES.INVITATION_ACCEPT}?id=${pendingInvitationId}`;
+
+        return;
+      }
+
+      window.location.href = ROUTES.SIGNUP_ORGANIZATION_LIST;
+    } catch (e: any) {
+      setError(e.message || 'An unexpected error occurred.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="mx-auto w-full max-w-md pt-12">
+      <h2 className="mb-6 text-center text-xl font-semibold">Sign In</h2>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <label htmlFor={emailId} className="mb-1 block text-sm font-medium text-foreground-700">
+            Email
+          </label>
+          <Input
+            type="email"
+            id={emailId}
+            value={email}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            placeholder="user@example.com"
+            required
+            className="w-full"
+          />
+        </div>
+        <div>

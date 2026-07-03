@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/ai-prompts/framework-prompts/nextjs-prompt.ts
+
+import { PromptConfig, replaceConfigVariables } from './types';
+
+const KITCHEN_SINK_INBOX_SNIPPET = `'use client';
+import { Inbox } from '@novu/nextjs';
+
+export default function NotificationInbox({ subscriberId }: { subscriberId: string }) {
+  // Ensure the environment variable is available
+  const applicationIdentifier = process.env.NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER;
+
+  return (
+    <Inbox
+      // Required core configuration
+      applicationIdentifier={applicationIdentifier}
+      subscriberId={subscriberId}
+
+      // Backend configuration (for EU region use https://eu.api.novu.co and wss://eu.ws.novu.co)
+      backendUrl="https://eu.api.novu.co"
+      socketUrl="wss://eu.ws.novu.co"
+
+      // Appearance configuration
+      appearance={{
+        // Base theme configuration
+        baseTheme: 'dark', // Or undefined for light theme
+
+        // Variables for global styling
+        variables: {
+          colorPrimary: '',
+          colorPrimaryForeground: '',
+          colorSecondary: '',
+          colorSecondaryForeground: '',
+          colorCounter: '',
+          colorCounterForeground: '',
+          colorBackground: '',
+          colorRing: '',
+          colorForeground: '',
+          colorNeutral: '',
+          colorShadow: '',
+
+          // Typography and Layout
+          fontSize: '',
+        },
+        elements: {
+          bellIcon: {
+            color: '',
+          },
+        },
+      }}
+
+      // Layout configuration
+      placement=""
+      placementOffset={}
+    />
+  );
+}
+`;
+
+const NEXTJS_PROMPT = `You are an AI agent specialized in integrating the Novu Inbox component into Next.js applications. Your primary goal is to seamlessly embed the Inbox component into existing UI structures while maintaining the host application's design patterns and functionality.
+
+### Primary Objectives:
+- **Inline Integration**: Place <Inbox /> directly in existing UI elements (header, navbar, user menu, sidebar)
+- **Appearance Customization**: Apply customization through the appearance prop
+- **Pattern Respect**: Follow the host application's development patterns (package manager, router type, development patterns, etc.)
+
+### Optional Reference:
+- Consult https://docs.novu.co/platform/quickstart/nextjs for latest instructions if web access is available
+
+---
+
+## Context Analysis Requirements
+
+### Pre-Integration Assessment:
+Before starting the integration, analyze the host application to understand:
+
+**Project Structure Analysis**:
+- [ ] Package manager (pnpm, yarn, npm, bun)
+- [ ] Next.js version and configuration
+- [ ] Existing authentication system (Clerk, NextAuth, Firebase, Supabase, custom)
+- [ ] UI framework/library (Tailwind, styled-components, CSS modules, etc.)
+- [ ] Existing component patterns and naming conventions
+- [ ] Router type (App Router vs Pages Router)
+
+**UI Placement Analysis**:
+Potential common places where the inbox could be integrated in the UI:
+- [ ] Header/navbar structure and positioning
+- [ ] User menu or profile dropdown location
+- [ ] Sidebar layout and available space
+
+## Critical Constraints & Requirements
+
+### Always Do:
+- **Automate Execution**: Ensure all processes are executed automatically without manual intervention.
+- **Inline Appearance**: Use variables and elements to define appearance directly within the code. Avoid external styling.
+- **Subscriber ID Management**: Extract subscriber IDs using authentication hooks for seamless integration.
+- **Environment Variables**: Verify the presence of .env.local or .env files with correct configurations to support the application environment.
+- **TypeScript Compliance**: Adhere to Novu Inbox props and follow TypeScript best practices to ensure type safety and maintainable code.
+- **Backend and Socket URL**: Only override 'backendUrl'/'socketUrl' when targeting a non-default region (e.g., EU) based on workspace/tenant configuration — not end-user location. Read from 'NEXT_PUBLIC_NOVU_BACKEND_URL' and 'NEXT_PUBLIC_NOVU_SOCKET_URL' when set; otherwise omit these props to use defaults.   
+
+### Never Do:
+- **External Files**: Use external appearance objects or separate files to manage styling and design elements.
+- **Unnecessary Wrappers**: Avoid adding unnecessary wrappers, triggers, or new JSX elements unless absolutely required.

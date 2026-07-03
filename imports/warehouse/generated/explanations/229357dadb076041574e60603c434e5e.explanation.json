@@ -1,0 +1,6 @@
+{
+  "id":"229357dadb076041574e60603c434e5e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/QuestionRowCount/index.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

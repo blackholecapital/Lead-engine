@@ -1,0 +1,12 @@
+{
+  "id": "b241dc7b425bdf182c422cf8bb960d1e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/send-message/throttle/throttle.usecase.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

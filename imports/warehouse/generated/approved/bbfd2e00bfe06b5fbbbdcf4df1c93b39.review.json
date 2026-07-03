@@ -1,0 +1,13 @@
+{
+  "id": "bbfd2e00bfe06b5fbbbdcf4df1c93b39",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/collections/containers/FormCollectionAndDashboardPicker/FormCollectionAndDashboardPicker.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

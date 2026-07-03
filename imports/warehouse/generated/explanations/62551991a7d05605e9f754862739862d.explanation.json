@@ -1,0 +1,6 @@
+{
+  "id":"62551991a7d05605e9f754862739862d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/api/src/app/environments-v2/usecases/sync-strategies/builders/diff-result.builder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

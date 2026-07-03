@@ -1,0 +1,13 @@
+{
+  "id": "39e6966ff2206c72a354655a1c2ccdb5",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/SummarizeSidebar/BreakoutColumnList/BreakoutColumnListItem/index.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

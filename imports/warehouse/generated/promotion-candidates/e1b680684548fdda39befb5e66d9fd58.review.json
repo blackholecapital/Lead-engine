@@ -1,0 +1,13 @@
+{
+  "id": "e1b680684548fdda39befb5e66d9fd58",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/tools/services/dashboard-tool.workspace-service.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "service",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

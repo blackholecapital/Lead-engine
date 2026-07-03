@@ -1,0 +1,13 @@
+{
+  "id": "fa9d0580b54d038652e17618995d7929",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/side-panel/pages/ai-chat-threads/components/SidePanelAiChatThreadsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

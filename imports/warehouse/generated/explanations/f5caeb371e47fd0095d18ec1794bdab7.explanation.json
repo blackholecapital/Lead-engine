@@ -1,0 +1,6 @@
+{
+  "id":"f5caeb371e47fd0095d18ec1794bdab7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/AddSliceCard/AddSliceCard.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

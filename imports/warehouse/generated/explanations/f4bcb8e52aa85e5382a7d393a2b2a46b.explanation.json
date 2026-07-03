@@ -1,0 +1,6 @@
+{
+  "id":"f4bcb8e52aa85e5382a7d393a2b2a46b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/utils/get-aggregation-items.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

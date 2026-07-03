@@ -1,0 +1,13 @@
+{
+  "id": "00651781b2245d3e3df16091c5f177f9",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/twenty-standard-application/utils/page-layout/standard-flat-page-layout-builders.constant.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

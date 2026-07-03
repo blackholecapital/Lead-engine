@@ -1,0 +1,6 @@
+{
+  "id":"08b827984d10679b5047e087af5db0ab",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/components/general/GridPreview.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

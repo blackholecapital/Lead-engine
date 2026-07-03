@@ -1,0 +1,6 @@
+{
+  "id":"1b6ffc22da0b85dd18552cc4f64d63b3",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/ViewHeader/components/QuestionActions/QuestionActions.unit.spec.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

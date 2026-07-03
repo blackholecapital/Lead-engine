@@ -1,0 +1,17 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/environment/environment-context.tsx
+
+import type { IEnvironment } from '@novu/shared';
+import React from 'react';
+
+export type EnvironmentContextValue = {
+  currentEnvironment?: IEnvironment;
+  environments?: IEnvironment[];
+  areEnvironmentsInitialLoading: boolean;
+  readOnly: boolean;
+  switchEnvironment: (newEnvironmentSlug?: string) => void;
+  setBridgeUrl: (url: string) => void;
+  oppositeEnvironment: IEnvironment | null;
+};
+
+export const EnvironmentContext = React.createContext<EnvironmentContextValue>({} as EnvironmentContextValue);
+EnvironmentContext.displayName = 'EnvironmentContext';

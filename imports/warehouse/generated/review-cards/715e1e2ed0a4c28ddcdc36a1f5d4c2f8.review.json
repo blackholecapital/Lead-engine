@@ -1,0 +1,14 @@
+{
+  "id": "715e1e2ed0a4c28ddcdc36a1f5d4c2f8",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/variable/components/digest-count-summary-preview.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

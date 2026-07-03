@@ -1,0 +1,12 @@
+{
+  "id": "54b75bea9287e1b6da2f205ab7b9ba84",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/query-hooks/dashboard-query-hook.module.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

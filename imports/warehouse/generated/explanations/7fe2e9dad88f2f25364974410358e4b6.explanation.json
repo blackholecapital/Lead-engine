@@ -1,0 +1,6 @@
+{
+  "id":"7fe2e9dad88f2f25364974410358e4b6",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/QueryModals/QueryModals.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

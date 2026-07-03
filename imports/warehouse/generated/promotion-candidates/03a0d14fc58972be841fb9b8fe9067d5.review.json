@@ -1,0 +1,13 @@
+{
+  "id": "03a0d14fc58972be841fb9b8fe9067d5",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/schema-editor/types/schema-form.types.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

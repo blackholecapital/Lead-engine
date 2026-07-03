@@ -1,0 +1,6 @@
+{
+  "id":"72320ee76c0f0f5c30328b9a42b704af",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/NativeQueryEditor/NativeQueryEditor.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

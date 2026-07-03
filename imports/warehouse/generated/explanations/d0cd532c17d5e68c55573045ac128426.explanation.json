@@ -1,0 +1,6 @@
+{
+  "id":"d0cd532c17d5e68c55573045ac128426",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ParameterSettings/MoveParameterMenu/MoveParameterMenu.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

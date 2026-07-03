@@ -1,0 +1,13 @@
+{
+  "id": "fbefc538a67bb93bd8d6a0637beda753",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/pages/integrations-list-page.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

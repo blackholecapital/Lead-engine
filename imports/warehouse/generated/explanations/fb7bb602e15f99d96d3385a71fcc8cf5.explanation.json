@@ -1,0 +1,6 @@
+{
+  "id":"fb7bb602e15f99d96d3385a71fcc8cf5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/ModelCacheManagementSection/ModelCacheManagementSection.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"e0ac3baf842ed0059b751ea9c764e52e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/enums/gql-input-type-definition-kind.enum.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

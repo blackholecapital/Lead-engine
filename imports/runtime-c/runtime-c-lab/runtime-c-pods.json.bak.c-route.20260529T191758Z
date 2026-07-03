@@ -1,0 +1,31 @@
+{
+  "pods": {
+    "A": {
+      "id": "A",
+      "backend": "A",
+      "status": "READY",
+      "resource": "home-server-i7-50gb",
+      "base_url": "http://100.105.163.20:11435",
+      "model": "qwen3:8b",
+      "command": "qwen3:8b"
+    },
+    "B": {
+      "id": "B",
+      "backend": "B",
+      "status": "READY",
+      "resource": "warehouse-rx6800",
+      "base_url": "http://100.105.163.20:11434",
+      "model": "qwen2.5-coder:32b",
+      "command": "qwen2.5-coder:32b"
+    },
+    "C": {
+      "id": "C",
+      "backend": "C",
+      "status": "READY",
+      "resource": "blackhole-local",
+      "base_url": "http://127.0.0.1:11434",
+      "model": "qwen2.5-coder:14b",
+      "command": "qwen2.5-coder:14b"
+    }
+  }
+}

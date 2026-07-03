@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/better-auth/components/team-members.tsx
+
+import { MemberRoleEnum, PermissionsEnum } from '@novu/shared';
+import { AnimatePresence, motion } from 'motion/react';
+import { useCallback, useEffect, useId, useState } from 'react';
+import {
+  RiAddCircleLine,
+  RiArrowDownSLine,
+  RiCheckLine,
+  RiCloseLine,
+  RiDeleteBinLine,
+  RiLoader4Line,
+  RiUserAddLine,
+} from 'react-icons/ri';
+import { Avatar, AvatarFallback } from '@/components/primitives/avatar';
+import { Button } from '@/components/primitives/button';
+import { Input } from '@/components/primitives/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/primitives/select';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { authClient } from '../client';
+import { useAuth, useOrganization, useUser } from '../index';
+
+function getInitials(name: string): string {
+  return name
+    .trim()
+    .split(/\s+/)
+    .map((word) => word[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+}
+
+type Member = {
+  id: string;
+  userId: string;
+  role: string;
+  createdAt: Date;
+  user: {
+    id: string;
+    name: string;
+    email: string;
+    image?: string;
+  };
+};
+
+type Invitation = {
+  id: string;
+  email: string;
+  role: string;
+  status: string;
+  expiresAt: Date;
+  createdAt: Date;
+};
+
+type OrganizationData = {
+  id: string;
+  name: string;
+  slug: string;
+  members: Member[];
+  invitations?: Invitation[];
+};
+
+function MemberListItem({
+  member,
+  currentUserId,
+  onRemove,
+  isRemoving,
+  canManageMembers,
+}: {
+  member: Member;
+  currentUserId: string;
+  onRemove: (memberId: string) => void;
+  isRemoving: boolean;
+  canManageMembers: boolean;
+}) {
+  const isCurrentUser = member.userId === currentUserId;
+  const isOwner = member.role === MemberRoleEnum.OWNER;
+
+  const getRoleLabel = (role: string) => {
+    switch (role) {
+      case MemberRoleEnum.OWNER:
+        return 'Owner';
+      case MemberRoleEnum.ADMIN:
+        return 'Admin';
+      case MemberRoleEnum.AUTHOR:
+        return 'Author';
+      case MemberRoleEnum.VIEWER:
+        return 'Viewer';
+      default:
+        return role.replace('org:', '').charAt(0).toUpperCase() + role.replace('org:', '').slice(1);
+    }
+  };
+
+  const getRoleBadgeStyle = (role: string) => {
+    switch (role) {
+      case MemberRoleEnum.OWNER:
+        return 'bg-primary-100 text-primary-700';
+      case MemberRoleEnum.ADMIN:
+        return 'bg-blue-100 text-blue-700';
+      case MemberRoleEnum.AUTHOR:
+        return 'bg-purple-100 text-purple-700';
+      case MemberRoleEnum.VIEWER:

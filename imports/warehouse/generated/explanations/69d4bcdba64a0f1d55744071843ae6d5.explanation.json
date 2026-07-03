@@ -1,0 +1,6 @@
+{
+  "id":"69d4bcdba64a0f1d55744071843ae6d5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/actions/url.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

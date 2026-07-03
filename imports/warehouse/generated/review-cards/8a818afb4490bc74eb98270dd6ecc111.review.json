@@ -1,0 +1,13 @@
+{
+  "id": "8a818afb4490bc74eb98270dd6ecc111",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/admin/settings/components/SettingsPages/PublicSharingSettingsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

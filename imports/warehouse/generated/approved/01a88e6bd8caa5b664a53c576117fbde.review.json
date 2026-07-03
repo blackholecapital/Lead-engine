@@ -1,0 +1,15 @@
+{
+  "id": "01a88e6bd8caa5b664a53c576117fbde",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/page-layout/components/DashboardPageLayoutEditModeProvider.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "provider",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

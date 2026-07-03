@@ -1,0 +1,6 @@
+{
+  "id":"d4940d664079813eb975dafd4ddb81ba",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FiltersConfigModal/NewItemDropdown.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

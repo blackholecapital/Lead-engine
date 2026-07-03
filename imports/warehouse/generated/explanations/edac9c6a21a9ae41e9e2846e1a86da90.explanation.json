@@ -1,0 +1,6 @@
+{
+  "id":"edac9c6a21a9ae41e9e2846e1a86da90",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ClickBehaviorSidebar/LinkOptions/LinkedEntityPicker/LinkedEntityPicker.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

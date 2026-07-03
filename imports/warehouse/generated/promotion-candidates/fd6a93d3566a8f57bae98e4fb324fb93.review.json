@@ -1,0 +1,13 @@
+{
+  "id": "fd6a93d3566a8f57bae98e4fb324fb93",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/services/dashboardPreferences.server.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "service",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

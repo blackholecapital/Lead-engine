@@ -1,0 +1,6 @@
+{
+  "id":"089f76b9b96494193e9b6070e9476cb2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-role-permission-flag-validator.service.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"4cf704cbe8cf1e80396f15abe068d5c9",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/sidebars/ChartSettingsSidebar.unit.spec.js",
+  "reasons":" builder-pattern,"
+}

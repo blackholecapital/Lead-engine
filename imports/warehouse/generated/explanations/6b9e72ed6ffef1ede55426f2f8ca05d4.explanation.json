@@ -1,0 +1,6 @@
+{
+  "id":"6b9e72ed6ffef1ede55426f2f8ca05d4",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/form-builder/fieldTypes.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

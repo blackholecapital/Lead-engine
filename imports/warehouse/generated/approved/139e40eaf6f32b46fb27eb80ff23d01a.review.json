@@ -1,0 +1,13 @@
+{
+  "id": "139e40eaf6f32b46fb27eb80ff23d01a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/services/workflow-data.container.ts",
+  "score": 85,
+  "suggested_tags": [
+    "service",
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

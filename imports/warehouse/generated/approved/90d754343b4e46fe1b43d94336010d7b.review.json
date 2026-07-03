@@ -1,0 +1,14 @@
+{
+  "id": "90d754343b4e46fe1b43d94336010d7b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/AddFilterParameterMenu/AddFilterParameterMenu.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

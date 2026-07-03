@@ -1,0 +1,9 @@
+{
+  "id":"tagify",
+  "title":"Tagify",
+  "category":"tagging",
+  "tags":["tagging","ui","search"],
+  "source":"vendor-source/tagging/tagify",
+  "status":"downloaded",
+  "tier":"candidate"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"fc71dd1a191a8d8f7298bdadccbaf5af",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/DatasetEditor/DatasetQueryEditor.jsx",
+  "reasons":" builder-pattern,"
+}

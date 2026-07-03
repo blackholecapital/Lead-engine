@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/contexts/create-context-form.tsx
+
+import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
+import { loadLanguage } from '@uiw/codemirror-extensions-langs';
+import { useEffect, useId, useRef } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import { ExternalToast } from 'sonner';
+import { z } from 'zod';
+import { NovuApiError } from '@/api/api.client';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  FormRoot,
+} from '@/components/primitives/form/form';
+import { InlineToast } from '@/components/primitives/inline-toast';
+import { Input, InputRoot } from '@/components/primitives/input';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { useCreateContext } from '@/hooks/use-create-context';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { TelemetryEvent } from '@/utils/telemetry';
+import { Editor } from '../primitives/editor';
+import { CreateContextFormSchema } from './schema';
+
+const toastOptions: ExternalToast = {
+  position: 'bottom-right',
+  classNames: {
+    toast: 'mb-4 right-0 pointer-events-none',
+  },
+};
+
+const extensions = [loadLanguage('json')?.extension ?? []];
+const basicSetup = { lineNumbers: true, defaultKeymap: true };
+
+type CreateContextFormProps = {
+  onSuccess?: () => void;
+  onError?: (error: Error) => void;
+  onSubmitStart?: () => void;
+  formId?: string;
+};
+
+export const CreateContextForm = (props: CreateContextFormProps) => {
+  const { onSuccess, onError, onSubmitStart, formId: providedFormId } = props;
+  const track = useTelemetry();
+  const idInputRef = useRef<HTMLInputElement>(null);
+  const generatedFormId = useId();
+  const formId = providedFormId ?? generatedFormId;
+
+  const { createContext } = useCreateContext({
+    onSuccess: () => {
+      showSuccessToast(`Context created successfully`, undefined, toastOptions);
+      track(TelemetryEvent.CONTEXTS_PAGE_VISIT);
+      onSuccess?.();
+    },
+    onError: (error) => {
+      if (error instanceof NovuApiError && error.status === 409) {
+        form.setError('id', {
+          type: 'manual',
+          message: 'A context with this ID and type already exists',
+        });
+      } else {
+        const errorMessage = error instanceof Error ? error.message : 'Failed to create context';
+        showErrorToast(errorMessage, undefined, toastOptions);
+      }
+
+      onError?.(error instanceof Error ? error : new Error('Unknown error'));
+    },
+  });
+
+  const form = useForm({
+    defaultValues: {
+      id: '',
+      type: '',
+      data: '',
+    },
+    resolver: standardSchemaResolver(CreateContextFormSchema),
+    shouldFocusError: false,
+    mode: 'onSubmit',
+    reValidateMode: 'onChange',
+  });
+
+  useEffect(() => {
+    if (idInputRef.current) {
+      idInputRef.current.focus();
+    }
+  }, []);
+
+  const onSubmit = async (formData: z.infer<typeof CreateContextFormSchema>) => {
+    onSubmitStart?.();
+
+    const parsedData = formData.data ? JSON.parse(formData.data) : {};
+
+    await createContext({
+      type: formData.type.trim(),
+      id: formData.id.trim(),
+      ...(parsedData && Object.keys(parsedData).length > 0 ? { data: parsedData } : {}),
+    });
+  };

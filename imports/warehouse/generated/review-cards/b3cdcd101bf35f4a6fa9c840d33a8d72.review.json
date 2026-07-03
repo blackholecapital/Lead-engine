@@ -1,0 +1,14 @@
+{
+  "id": "b3cdcd101bf35f4a6fa9c840d33a8d72",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/embedding-sdk-package/components/public/dashboard/StaticDashboard/StaticDashboard.stories.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

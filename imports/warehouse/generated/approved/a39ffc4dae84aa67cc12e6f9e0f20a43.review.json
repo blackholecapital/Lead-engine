@@ -1,0 +1,12 @@
+{
+  "id": "a39ffc4dae84aa67cc12e6f9e0f20a43",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/docs/developer_docs_versioned_docs/version-6.1.0/api/update-native-filters-configuration-for-a-dashboard.RequestSchema.json",
+  "score": 95,
+  "suggested_tags": [
+    "config",
+    "dashboard"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

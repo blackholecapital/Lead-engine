@@ -1,0 +1,6 @@
+{
+  "id":"2f517488ad97b8f2de83d94effe1a513",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/DashboardHeader/buttons/CopyAnalyticsDashboardButton.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

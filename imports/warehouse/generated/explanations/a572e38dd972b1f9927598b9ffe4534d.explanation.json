@@ -1,0 +1,6 @@
+{
+  "id":"a572e38dd972b1f9927598b9ffe4534d",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/SyncedParametersList.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

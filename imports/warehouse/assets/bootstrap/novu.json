@@ -1,0 +1,9 @@
+{
+  "id":"novu",
+  "title":"Novu",
+  "category":"comms",
+  "tags":["comms","email","sms","workflow","notification"],
+  "source":"vendor-source/comms/novu",
+  "status":"downloaded",
+  "tier":"candidate"
+}

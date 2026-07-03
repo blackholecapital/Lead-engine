@@ -1,0 +1,6 @@
+{
+  "id":"93773a8c478b62b9001481a12e747310",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/dependencyGraph.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "fuzzysort",
+  "title": "Fuzzysort",
+  "category": "scoring",
+  "ranking": {
+    "implementation": 80,
+    "reuse": 80,
+    "maturity": 80,
+    "retrieval": 80,
+    "graph": 80,
+    "vector": 80,
+    "final": 80
+  }
+}

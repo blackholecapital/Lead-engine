@@ -1,0 +1,12 @@
+{
+  "id": "e9dc955b83dcd64bae94f72b9538b091",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/usecases/update-workflow-v0/index.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

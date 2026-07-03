@@ -1,0 +1,157 @@
+#!/usr/bin/env node
+const fs = require("fs");
+const path = require("path");
+const lancedb = require("@lancedb/lancedb");
+
+const RC = "/mnt/eila-hot-sidecar/factory-xyz/runtime-c";
+const CFG = JSON.parse(fs.readFileSync(path.join(RC, "factory/config/RUNTIME_C_RETRIEVAL.json"), "utf8"));
+
+function arg(name, fallback = "") {
+  const i = process.argv.indexOf(`--${name}`);
+  return i >= 0 ? process.argv[i + 1] : fallback;
+}
+
+function tokens(s) {
+  return String(s || "")
+    .toLowerCase()
+    .split(/[^a-z0-9_@./-]+/)
+    .filter(t => t.length > 2);
+}
+
+function score(row, qTokens) {
+  const hay = tokens([
+    row.key, row.name, row.repo, row.path, row.domain,
+    row.tags_text, row.deps_text, row.text
+  ].join(" "));
+
+  let overlap = 0;
+  for (const t of hay) if (qTokens.has(t)) overlap++;
+
+  const tagOverlap = tokens(row.tags_text || "").filter(t => qTokens.has(t)).length;
+  const appBoost = Math.min(Number(row.app_score || 0), 200) * 0.5;
+  const kindBoost =
+    row.kind === "qwen_app" ? 20 :
+    row.kind === "react_admin_example" ? 14 :
+    row.kind === "supabase_example" ? 14 :
+    row.kind === "qwen_domain_app" ? 10 :
+    0;
+
+  const manifestPenalty =
+    /QWEN_TOP_ROOTS|QWEN_INDEX_SYSTEM|FACTORY_INDEX|MAP_INDEX|RETRIEVAL_CORPUS_INDEX|RUNTIME_C_RETRIEVAL/i.test(row.path || "")
+      ? -100
+      : 0;
+
+  const wantsWeb3 = ["web3","clmm","vfat","uniswap","aerodrome","slipstream","algebra"].some(t=>qTokens.has(t));
+  const wantsIcons = ["icon","icons","material","dashboard","ui","settings","search","map","analytics"].some(t=>qTokens.has(t));
+  const nonWeb3Penalty = !wantsWeb3 && row.kind === "clmm_app" ? -220 : 0;
+  const web3Boost = wantsWeb3 && row.kind === "clmm_app" ? 120 : 0;
+  const web3DomainBoost = wantsWeb3 && row.domain === "web3" ? 80 : 0;
+  const iconBoost = wantsIcons && row.kind === "icon_collection" ? 140 : 0;
+  return overlap + tagOverlap * 20 + appBoost + kindBoost + manifestPenalty + web3Boost + web3DomainBoost + iconBoost + nonWeb3Penalty;
+}
+
+async function main() {
+  const startedAt = Date.now();
+  const objective = arg("objective", "").trim();
+  const lane = arg("lane", "WA").trim();
+  const runId = arg("run-id", new Date().toISOString().replace(/[:.]/g, "-"));
+  const topK = Number(arg("top-k", CFG.top_k || 5));
+
+  if (!objective) {
+    console.error("usage: runtime-c-retrieve-context-lancedb.cjs --objective <text> [--lane WA|WB|WC] [--run-id ID] [--top-k N]");
+    process.exit(2);
+  }
+
+  const runDir = path.join(RC, "sandbox/runs", runId, "retrieval");
+  fs.mkdirSync(runDir, { recursive: true });
+
+  const db = await lancedb.connect(CFG.db_path);
+  const table = await db.openTable(CFG.table);
+
+  const rows = await table
+    .query()
+    .where("kind IN ('qwen_app', 'qwen_domain_app', 'react_admin_example', 'supabase_example', 'clmm_app', 'icon_collection', 'template_collection', 'golden_collection', 'crm_object', 'crm_relation', 'crm_field', 'crm_form', 'crm_document_template', 'crm_workflow')")
+    .limit(50000)
+    .toArray();
+
+  const qTokens = new Set(tokens(`${objective} ${lane}`));
+  const seen = new Set();
+
+  const priority = { golden_collection:35, template_collection:55, qwen_app:60, qwen_domain_app:50, react_admin_example:40, supabase_example:40, icon_collection:45, clmm_app:60, crm_object:100, crm_relation:55, crm_field:95, crm_form:95, crm_document_template:100, crm_workflow:90 };
+  const hits = rows
+    .map(r => ({ ...r, score: score(r, qTokens) + (priority[r.kind] || 0) }))
+    .filter(r => r.score > 0).filter(r => r.repo)
+    .sort((a, b) => b.score - a.score)
+    .filter(r => {
+      const key=["crm_object","crm_relation","crm_field"].includes(r.kind)?(r.key||r.path||r.id):(((r.repo||"").split("/").slice(0,2).join("/"))||r.path||r.id);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, topK);
+
+  let total = 0;
+  const sections = [];
+  for (const h of hits) {
+    const body = String(h.text || "").slice(0, CFG.max_chars_per_hit || 6000);
+    if (total >= (CFG.max_total_chars || 24000)) break;
+    const allowed = Math.min(body.length, (CFG.max_total_chars || 24000) - total);
+    const chunk = body.slice(0, allowed);
+    total += chunk.length;
+
+    sections.push([
+      `## Hit: ${h.key || h.name}`,
+      ``,
+      `- score: ${h.score}`,
+      `- kind: ${h.kind}`,
+      `- path: ${h.path}`,
+      `- repo: ${h.repo || ""}`,
+      `- tags: ${h.tags_text || h.tags || ""}`,
+      `- app_score: ${h.app_score || 0}`,
+      ``,
+      "```text",
+      chunk,
+      "```",
+      ""
+    ].join("\n"));
+  }
+
+  const query = {
+    objective,
+    lane,
+    top_k: topK,
+    run_id: runId,
+    generated_at: new Date().toISOString(),
+    engine: "lancedb_metadata_ranked",
+    retrieval_ms: Date.now() - startedAt,
+    candidate_rows: rows.length,
+    hit_kinds: hits.reduce((m, h) => {
+      m[h.kind] = (m[h.kind] || 0) + 1;
+      return m;
+    }, {})
+  };
+
+  fs.writeFileSync(path.join(runDir, "RETRIEVAL_QUERY.json"), JSON.stringify(query, null, 2));
+  fs.writeFileSync(path.join(runDir, "RETRIEVAL_HITS.json"), JSON.stringify(hits, null, 2));
+  fs.writeFileSync(path.join(runDir, "QWEN_CONTEXT_BUNDLE.md"), [
+    "# Qwen Context Bundle",
+    "",
+    `Objective: ${objective}`,
+    `Lane: ${lane}`,
+    "Engine: lancedb_metadata_ranked",
+    "",
+    ...sections
+  ].join("\n"));
+
+  console.log(JSON.stringify({
+    run_id: runId,
+    run_dir: runDir,
+    hits: hits.length,
+    context_bundle: path.join(runDir, "QWEN_CONTEXT_BUNDLE.md")
+  }, null, 2));
+}
+
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});

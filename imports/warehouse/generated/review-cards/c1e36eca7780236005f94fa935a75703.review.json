@@ -1,0 +1,13 @@
+{
+  "id": "c1e36eca7780236005f94fa935a75703",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/internal-sdk/src/models/components/workflowpreferencerequestdto.ts",
+  "score": 85,
+  "suggested_tags": [
+    "component",
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

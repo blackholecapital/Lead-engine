@@ -1,0 +1,6 @@
+{
+  "id":"827b3284c482ec97bad23df02eae26ce",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/isInDifferentFilterScopes.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

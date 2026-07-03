@@ -1,0 +1,6 @@
+{
+  "id":"93b612ad8bd204b63e0f6f387097a67e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/documents/blocks/helpers/EditorChildrenIds/AddBlockMenu/DividerButton.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

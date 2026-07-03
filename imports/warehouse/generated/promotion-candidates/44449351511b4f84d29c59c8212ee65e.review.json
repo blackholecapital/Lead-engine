@@ -1,0 +1,13 @@
+{
+  "id": "44449351511b4f84d29c59c8212ee65e",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/twenty-standard-application/utils/page-layout-widget/compute-my-first-dashboard-widgets.util.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "engine",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

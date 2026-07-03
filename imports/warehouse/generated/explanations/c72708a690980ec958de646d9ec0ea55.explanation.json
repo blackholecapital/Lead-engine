@@ -1,0 +1,6 @@
+{
+  "id":"c72708a690980ec958de646d9ec0ea55",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/tools/utils/build-resolved-group-by.util.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

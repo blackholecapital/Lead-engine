@@ -1,0 +1,6 @@
+{
+  "id":"1ec1723cb086865abf7df57af64b99f4",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/metabase-enterprise/caching/components/StrategyEditorForQuestionsAndDashboards/TableRowForCacheableItem.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

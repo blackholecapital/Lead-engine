@@ -1,0 +1,13 @@
+{
+  "id": "18ca1e1538fbb5f8bdb51c25065bc27d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/contexts/AutoRefreshContext.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

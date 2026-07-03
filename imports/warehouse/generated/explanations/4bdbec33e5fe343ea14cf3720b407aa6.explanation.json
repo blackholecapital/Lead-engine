@@ -1,0 +1,6 @@
+{
+  "id":"4bdbec33e5fe343ea14cf3720b407aa6",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/gridComponents/Chart/Chart.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

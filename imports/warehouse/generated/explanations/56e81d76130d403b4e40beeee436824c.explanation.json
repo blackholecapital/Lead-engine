@@ -1,0 +1,6 @@
+{
+  "id":"56e81d76130d403b4e40beeee436824c",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/controllers/dashboard.controller.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

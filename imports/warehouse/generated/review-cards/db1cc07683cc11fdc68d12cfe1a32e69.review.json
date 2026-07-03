@@ -1,0 +1,13 @@
+{
+  "id": "db1cc07683cc11fdc68d12cfe1a32e69",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/step-settings/branch-settings/branch-condition-group.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

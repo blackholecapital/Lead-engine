@@ -1,0 +1,22 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/types/activity.ts
+
+import { ChannelTypeEnum, SeverityLevelEnum } from '@novu/shared';
+import { ActivityFilters } from '@/api/activity';
+
+export type ActivityFiltersData = {
+  dateRange: string;
+  channels: ChannelTypeEnum[];
+  workflows: string[];
+  transactionId: string;
+  subscriberId: string;
+  topicKey: string;
+  subscriptionId: string;
+  severity: SeverityLevelEnum[];
+  contextKeys: string[];
+};
+
+export type ActivityUrlState = {
+  activityItemId: string | null;
+  filters: ActivityFilters;
+  filterValues: ActivityFiltersData;
+};

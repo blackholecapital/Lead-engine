@@ -1,0 +1,12 @@
+{
+  "id": "f1f3d36dc36d43df1eb0330dfcc4ffd4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/packages/shared/src/dto/workflows/create-workflow-deprecated.dto.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

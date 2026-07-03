@@ -1,0 +1,14 @@
+{
+  "id": "0b63cd7c88ec6cafebd1b646dbf0d22f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/test/__support__/custom-viz-fixtures/CalendarHeatmap.dashboard.stories.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "calendar",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

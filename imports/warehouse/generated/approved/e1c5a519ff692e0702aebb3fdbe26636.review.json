@@ -1,0 +1,13 @@
+{
+  "id": "e1c5a519ff692e0702aebb3fdbe26636",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-website/src/sections/Feature/visuals/DashboardVisual.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

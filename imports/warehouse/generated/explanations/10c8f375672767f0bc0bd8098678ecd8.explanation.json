@@ -1,0 +1,6 @@
+{
+  "id":"10c8f375672767f0bc0bd8098678ecd8",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/state/canvas-state.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

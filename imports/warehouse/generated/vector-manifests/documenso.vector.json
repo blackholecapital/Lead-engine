@@ -1,0 +1,11 @@
+{
+  "id": "documenso",
+  "title": "Documenso",
+  "tags": [
+    "documents",
+    "esign",
+    "workflow"
+  ],
+  "category": "documents",
+  "source": "vendor-source/documents/documenso"
+}

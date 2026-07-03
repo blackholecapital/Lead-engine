@@ -1,0 +1,13 @@
+{
+  "id": "f03f0b76ab389afd5fddf8d80590daeb",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/App/InspectorDrawer/ConfigurationPanel/input-panels/helpers/inputs/TextAlignInput.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

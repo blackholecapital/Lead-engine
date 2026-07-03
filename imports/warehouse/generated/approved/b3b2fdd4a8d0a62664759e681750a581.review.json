@@ -1,0 +1,12 @@
+{
+  "id": "b3b2fdd4a8d0a62664759e681750a581",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/usecases/get-workflow-with-preferences/get-workflow-with-preferences.command.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

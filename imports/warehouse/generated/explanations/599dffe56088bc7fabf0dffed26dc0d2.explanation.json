@@ -1,0 +1,6 @@
+{
+  "id":"599dffe56088bc7fabf0dffed26dc0d2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/components/nativeFilters/FilterBar/FilterControls/FilterControls.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "019b069bd5f35f90069d09362498c372",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/test/integration/metadata/suites/dashboard/successful-dashboard-to-page-layout-sync.integration-spec.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

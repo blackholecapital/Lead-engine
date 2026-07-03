@@ -1,0 +1,13 @@
+{
+  "id": "novu",
+  "title": "Novu",
+  "tags": [
+    "comms",
+    "email",
+    "sms",
+    "workflow",
+    "notification"
+  ],
+  "category": "comms",
+  "source": "vendor-source/comms/novu"
+}

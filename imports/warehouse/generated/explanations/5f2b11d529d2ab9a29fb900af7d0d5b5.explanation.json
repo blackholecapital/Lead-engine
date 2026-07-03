@@ -1,0 +1,6 @@
+{
+  "id":"5f2b11d529d2ab9a29fb900af7d0d5b5",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/model/ParamModel.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

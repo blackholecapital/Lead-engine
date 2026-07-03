@@ -1,0 +1,9 @@
+{
+  "id":"memgraph",
+  "title":"Memgraph",
+  "category":"graph",
+  "tags":["graph","relationships","analytics"],
+  "source":"vendor-source/graph/memgraph",
+  "status":"downloaded",
+  "tier":"candidate"
+}

@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/workspace/cal-com/packages/features/form-builder/testUtils.ts
+
+import { fireEvent, waitFor, screen, within } from "@testing-library/react";
+import { vi } from "vitest";
+
+import { getBookingFieldsWithSystemFields } from "@calcom/features/bookings/lib/getBookingFields";
+
+export interface FieldProps {
+  fieldType: string;
+  identifier: string;
+  label: string;
+  price?: number;
+  options?: { label: string; value: string; price?: number }[];
+}
+
+export const mockProps = {
+  formProp: "fields",
+  title: "FormBuilder Title",
+  description: "FormBuilder Description",
+  addFieldLabel: "Add Field",
+  disabled: false,
+  LockedIcon: false,
+  dataStore: { options: {} },
+};
+
+export const getLocationBookingField = () => {
+  const bookingFields = getBookingFieldsWithSystemFields({
+    bookingFields: [],
+    disableGuests: false,
+    disableBookingTitle: false,
+    customInputs: [],
+    metadata: {},
+  });
+
+  const locationBookingField = bookingFields.find((field) => field.name === "location");
+  if (!locationBookingField) {
+    throw new Error("location booking field not found");
+  }
+  return locationBookingField;
+};
+
+export const setMockMatchMedia = () => {
+  Object.defineProperty(window, "matchMedia", {
+    value: vi.fn().mockImplementation((query) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    })),
+  });
+};
+
+export const setMockIntersectionObserver = () => {
+  Object.defineProperty(window, "IntersectionObserver", {
+    value: vi.fn().mockImplementation(() => ({
+      observe: vi.fn(),
+      unobserve: vi.fn(),
+      disconnect: vi.fn(),
+      takeRecords: vi.fn(() => []),
+    })),
+  });
+};
+
+type TestingLibraryElement = ReturnType<typeof within>;
+
+const getFieldDomElementInTheList = ({ identifier }: { identifier: string }) => {
+  return screen.getByTestId(`field-${identifier}`);
+};
+
+const queryFieldDomElementInTheList = ({ identifier }: { identifier: string }) => {
+  return screen.queryByTestId(`field-${identifier}`);
+};
+
+const getFieldInTheList = ({ identifier }: { identifier: string }) => {
+  const domElement = getFieldDomElementInTheList({ identifier });
+  return within(domElement);
+};
+
+const getEditDialogForm = () => {
+  const formBuilder = document.getElementById("form-builder");
+  if (!formBuilder) {
+    throw new Error("Form Builder not found");
+  }
+  return within(formBuilder);
+};
+
+export const pageObject = {
+  openAddFieldDialog: () => {
+    fireEvent.click(screen.getByTestId("add-field"));
+    return getEditDialogForm();
+  },
+  openEditFieldDialog: ({ identifier }: { identifier: string }) => {
+    fireEvent.click(getFieldInTheList({ identifier }).getByTestId("edit-field-action"));
+    return getEditDialogForm();
+  },
+  dialog: {
+    isFieldShowingAsRequired: ({ dialog }: { dialog: TestingLibraryElement }) => {
+      const checkbox = dialog.getByTestId("field-required") as HTMLInputElement;
+      return checkbox.checked;
+    },

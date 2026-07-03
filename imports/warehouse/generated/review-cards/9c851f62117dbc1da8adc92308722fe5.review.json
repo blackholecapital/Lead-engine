@@ -1,0 +1,12 @@
+{
+  "id": "9c851f62117dbc1da8adc92308722fe5",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/common/hooks/use-is-at-homepage-dashboard.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

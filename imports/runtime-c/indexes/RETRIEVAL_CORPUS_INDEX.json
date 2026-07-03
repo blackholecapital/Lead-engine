@@ -1,0 +1,22 @@
+{
+  "kind": "runtime_c_retrieval_corpus_index",
+  "version": 1,
+  "engine": "lancedb",
+  "db_location": "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/warehouse/retrieval/lancedb",
+  "source_manifests": [
+    "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/factory/indexes/FACTORY_INDEX.json",
+    "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/factory/indexes/MAP_INDEX.json",
+    "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/factory/indexes/QWEN_INDEX.json",
+    "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/factory/indexes/QWEN_BUNDLES_INDEX.json",
+    "/mnt/eila-hot-sidecar/factory-xyz/runtime-c/factory/maps/RESOURCE_MAP.md",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/qwen",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/registries",
+    "/mnt/eila-hot-sidecar/runtime-c-assets/indexes/ASSET_TREE_MAP.md"
+  ],
+  "outputs": [
+    "sandbox/runs/<RUN_ID>/retrieval/RETRIEVAL_QUERY.json",
+    "sandbox/runs/<RUN_ID>/retrieval/RETRIEVAL_HITS.json",
+    "sandbox/runs/<RUN_ID>/retrieval/QWEN_CONTEXT_BUNDLE.md",
+    "sandbox/runs/<RUN_ID>/retrieval/RETRIEVAL_REPORT.md"
+  ]
+}

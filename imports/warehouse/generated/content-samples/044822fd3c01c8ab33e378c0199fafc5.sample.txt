@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/variable/components/reorder-filter-item.tsx
+
+import { Code2, GripVertical } from 'lucide-react';
+import { Reorder, useDragControls, useMotionValue } from 'motion/react';
+import { ComponentProps, useMemo, useRef } from 'react';
+import { RiCloseLine, RiQuestionLine } from 'react-icons/ri';
+import { VariableSelect } from '@/components/conditions-editor/variable-select';
+import { buttonVariants } from '@/components/primitives/button';
+import { Input } from '@/components/primitives/input';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/primitives/tooltip';
+import { LiquidVariable } from '@/utils/parseStepVariables';
+import { cn } from '@/utils/ui';
+import { getFilters } from '../constants';
+import { FilterWithParam } from '../types';
+import { validateEnhancedDigestFilters } from '../utils';
+
+const preventClick = (e: React.MouseEvent) => {
+  e.stopPropagation();
+  e.preventDefault();
+};
+
+type ReorderFilterItemProps = ComponentProps<typeof Reorder.Item<FilterWithParam>> & {
+  index: number;
+  isLast: boolean;
+  variableName: string;
+  variables: LiquidVariable[];
+  onRemove: (value: string) => void;
+  onParamChange: (index: number, params: string[]) => void;
+};
+
+export const ReorderFilterItem = (props: ReorderFilterItemProps) => {
+  const controls = useDragControls();
+  const x = useMotionValue(0);
+  const { index, isLast, onRemove, onParamChange, value, variableName, variables, ...rest } = props;
+  const liquidFilters = useMemo(() => getFilters(), []);
+  const itemRef = useRef<HTMLDivElement>(null);
+
+  const filterDef = liquidFilters.find((t) => t.value === value.value);
+  const hasParams = filterDef?.hasParam && filterDef.params;
+
+  const isDigestStepEventsVariable = useMemo(() => {
+    if (variableName.match(/^steps\..+\.events$/)) {
+      return true;
+    }
+
+    return false;
+  }, [variableName]);
+
+  const options = useMemo(() => {
+    // if it's digest step events variable then fill the options with the payload variables
+    if (isDigestStepEventsVariable) {
+      return variables.filter((v) => v.name.startsWith('payload')).map((v) => ({ label: v.name, value: v.name }));
+    }
+
+    return [];
+  }, [isDigestStepEventsVariable, variables]);
+
+  const toSentenceIssue = useMemo(() => {
+    const hasToSentence = filterDef?.value === 'toSentence';
+
+    if (isDigestStepEventsVariable && hasToSentence && value.params && value.params?.length > 0) {
+      const variableWithParams = `${value.value}: ${value.params.join(', ')}`;
+
+      const issues = validateEnhancedDigestFilters([variableWithParams]);
+
+      return issues;
+    }
+
+    return null;
+  }, [filterDef?.value, isDigestStepEventsVariable, value.params, value.value]);
+
+  return (
+    <Reorder.Item
+      ref={itemRef}
+      value={value}
+      className="bg-bg-weak group mb-0 flex flex-col items-center gap-1.5 rounded-md p-1"
+      whileDrag={{ scale: 1.02 }}
+      transition={{
+        type: 'keyframes',
+        duration: 0.15,
+        ease: [0.32, 0.72, 0, 1],
+      }}
+      style={{ x }}
+      dragListener={false}
+      dragControls={controls}
+      onDragStart={() => {
+        if (itemRef.current) {
+          const height = itemRef.current.getBoundingClientRect().height;
+          itemRef.current.style.minHeight = `${height}px`;
+        }
+      }}
+      onDragEnd={() => {
+        // reset the x position to 0 to avoid the item from being dragged out of the container
+        x.set(0);
+
+        if (itemRef.current) {
+          itemRef.current.style.minHeight = '';
+        }
+      }}
+      layout="position"
+      {...rest}
+    >

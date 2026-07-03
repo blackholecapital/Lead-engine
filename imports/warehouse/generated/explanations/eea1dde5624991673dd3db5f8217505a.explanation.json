@@ -1,0 +1,6 @@
+{
+  "id":"eea1dde5624991673dd3db5f8217505a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/hooks/use-breakout-query-handlers.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

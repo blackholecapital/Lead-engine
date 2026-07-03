@@ -1,0 +1,14 @@
+{
+  "id": "221db1e7d967dba7b467bceaca87a399",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/billing/features-config.ts",
+  "score": 95,
+  "suggested_tags": [
+    "billing",
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

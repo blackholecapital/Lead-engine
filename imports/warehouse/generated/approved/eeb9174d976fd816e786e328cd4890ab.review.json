@@ -1,0 +1,12 @@
+{
+  "id": "eeb9174d976fd816e786e328cd4890ab",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/libs/application-generic/src/dtos/workflow/controls/email-control.dto.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"a109e5d903c01bff04e47de235b8b62c",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/listmonk/frontend/email-builder/src/documents/blocks/ColumnsContainer/ColumnsContainerPropsSchema.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

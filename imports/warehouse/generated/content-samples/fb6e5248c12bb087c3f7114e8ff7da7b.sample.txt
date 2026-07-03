@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/onboarding/connect-agent/connect-agent-step.tsx
+
+import {
+  filterDemoConfigurableMcpIds,
+  type IIntegration,
+  IntegrationKindEnum,
+  isProviderManagedMcp,
+  slugify,
+} from '@novu/shared';
+import { useQueryClient } from '@tanstack/react-query';
+import type { FormEvent } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { RiArrowRightSLine } from 'react-icons/ri';
+import type { AgentResponse, GeneratedManagedAgent } from '@/api/agents';
+import { NovuApiError } from '@/api/api.client';
+import { AgentPreviewSkeleton } from '@/components/agents/agent-preview-skeleton';
+import {
+  getClaudeManagedAgentIntegrations,
+  isDemoManagedClaudeIntegrationSelected,
+} from '@/components/agents/connectors/claude-managed-integrations';
+import { type ConnectorIntegrationStatus } from '@/components/agents/connectors/connector-integration-dropdown';
+import { type ConnectorOption } from '@/components/agents/connectors/connector-options';
+import {
+  type AgentTemplate,
+  buildManagedIntegrationCredentials,
+  buildVerifyCredentialsPayload,
+  buildVerifyFingerprint,
+  type CreateAgentForm,
+  type CreateAgentFormErrors,
+  findAgentTemplateById,
+  hasCompleteManagedCredentials,
+  hasFormErrors,
+  type ManagedAgentRuntimeOverrides,
+  type RuntimeType,
+  type VerifyStatus,
+  validateCreateAgentForm,
+  validateManagedCredentialFields,
+} from '@/components/agents/create-agent-fields';
+import { AGENT_TEMPLATES as DEFAULT_AGENT_TEMPLATES } from '@/components/connect/dashboard/agent-templates';
+import { ClaudeIcon } from '@/components/icons/claude';
+import { Button } from '@/components/primitives/button';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { useEnvironment } from '@/context/environment/hooks';
+import { useAgentSuggestions } from '@/hooks/use-agent-suggestions';
+import { useAgentTemplates } from '@/hooks/use-agent-templates';
+import { useCreateAgentMutation } from '@/hooks/use-create-agent-mutation';
+import { useCreateIntegration } from '@/hooks/use-create-integration';
+import { useFetchIntegrations } from '@/hooks/use-fetch-integrations';
+import { GenerationCancelledError, useGenerateManagedAgent } from '@/hooks/use-generate-managed-agent';
+import { useManagedClaudeCredentialsFlow } from '@/hooks/use-managed-claude-credentials-flow';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { useVerifyManagedCredentials } from '@/hooks/use-verify-managed-credentials';
+import { clearPersistedAgentTemplateId } from '@/utils/agent-template-identity';
+import { QueryKeys } from '@/utils/query-keys';
+import { TelemetryEvent } from '@/utils/telemetry';
+import type { AgentGenerationMode } from './connect-agent-form';
+import { ConnectAgentForm } from './connect-agent-form';
+import { type ConnectSummary } from './connect-summary';
+import { CONNECTOR_OPTIONS, type ConnectorId, getConnectorById } from './connector-options';
+import type { GenerationStep } from './generation-status';
+import type { TemplateSelection } from './template-dropdown';
+
+const GENERATION_STEPS: ReadonlyArray<GenerationStep> = [
+  { id: 'spinning', text: 'Spinning up a fresh agent' },
+  { id: 'coffee', text: 'Sipping a little bit of coffee' },
+  { id: 'system-prompt', text: 'Crafting the system prompt' },
+  { id: 'tools', text: 'Picking the right tools' },
+  { id: 'mcp', text: 'Wiring up MCP servers' },
+  { id: 'skills', text: 'Selecting starter skills' },
+  { id: 'agent', text: 'Generating your agent' },
+];
+
+export type { ConnectSummary } from './connect-summary';
+
+const DEFAULT_CONNECTOR: ConnectorId = 'claude';
+
+function resolveRuntime(connectorId: ConnectorId): RuntimeType {
+  const runtime = getConnectorById(connectorId)?.runtime;
+
+  return runtime ?? 'scratch';
+}
+
+function pickInitialConnector(isManagedEnabled: boolean): ConnectorId {
+  if (isManagedEnabled) return DEFAULT_CONNECTOR;
+
+  const fallback = CONNECTOR_OPTIONS.find((o) => !o.comingSoon && o.runtime === 'scratch');
+
+  return (fallback?.id ?? 'custom-scaffold') as ConnectorId;
+}
+
+function dropdownStatusFor(verify: VerifyStatus, hasIntegration: boolean): ConnectorIntegrationStatus {
+  if (hasIntegration || verify === 'valid') return 'valid';
+  if (verify === 'invalid') return 'missing';
+
+  return 'idle';
+}
+
+/**
+ * Snapshot of the connect-phase form values that drives the right-side preview illustration
+ * for managed Claude connectors. Includes everything the illustration needs to render the
+ * agent card without having to introspect any of the form's internal state.
+ */

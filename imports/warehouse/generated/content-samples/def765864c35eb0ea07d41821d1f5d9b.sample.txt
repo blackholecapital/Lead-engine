@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/maily/maily-config.tsx
+
+import {
+  BlockGroupItem,
+  BlockItem,
+  blockquote,
+  bulletList,
+  button,
+  columns,
+  divider,
+  hardBreak,
+  heading1,
+  heading2,
+  heading3,
+  image,
+  inlineImage,
+  orderedList,
+  repeat,
+  section,
+  spacer,
+  text,
+} from '@novu/maily-core/blocks';
+import {
+  ButtonExtension,
+  getSlashCommandSuggestions,
+  getVariableSuggestions,
+  HTMLCodeBlockExtension,
+  ImageExtension,
+  InlineImageExtension,
+  LinkExtension,
+  ButtonAttributes as MailyButtonAttributes,
+  ImageAttributes as MailyImageAttributes,
+  InlineImageAttributes as MailyInlineImageAttributes,
+  LinkAttributes as MailyLinkAttributes,
+  LogoAttributes as MailyLogoAttributes,
+  RepeatExtension,
+  SlashCommandExtension,
+  searchSlashCommands,
+  Variable,
+  VariableExtension,
+  Variables,
+} from '@novu/maily-core/extensions';
+import {
+  LAYOUT_CONTENT_VARIABLE,
+  StepResponseDto,
+  TRANSLATION_NAMESPACE_SEPARATOR,
+  TRANSLATION_TRIGGER_CHARACTER,
+} from '@novu/shared';
+import type { AnyExtension, Editor, NodeViewProps, Editor as TiptapEditor } from '@tiptap/core';
+import { ReactNodeViewRenderer } from '@tiptap/react';
+import { ForwardRefExoticComponent, useMemo } from 'react';
+import { createCards } from '@/components/maily//blocks/cards';
+import { createDigestBlock } from '@/components/maily//blocks/digest';
+import { createFooters } from '@/components/maily/blocks/footers';
+import { createHeaders } from '@/components/maily/blocks/headers';
+import { createHtmlCodeBlock } from '@/components/maily/blocks/html';
+import { ForView } from '@/components/maily/views/for-view';
+import { HTMLCodeBlockView } from '@/components/maily/views/html-view';
+import { useDataRef } from '@/hooks/use-data-ref';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { LocalizationResourceEnum, TranslationKey } from '@/types/translations';
+import { IsAllowedVariable, LiquidVariable, ParsedVariables } from '@/utils/parseStepVariables';
+import { useCreateTranslationExtension } from '../workflow-editor/steps/email/translations';
+import { TranslationValueInputComponent } from '../workflow-editor/steps/email/translations/edit-translation-popover/edit-translation-popover';
+import { isInsideRepeatBlock, resolveRepeatBlockAlias } from './repeat-block-aliases';
+import { CalculateVariablesProps, insertVariableToEditor } from './variables';
+
+const VARIABLE_TRIGGER_CHARACTER = '{{';
+
+type BlockType =
+  | 'blockquote'
+  | 'bulletList'
+  | 'button'
+  | 'columns'
+  | 'divider'
+  | 'hardBreak'
+  | 'heading1'
+  | 'heading2'
+  | 'heading3'
+  | 'image'
+  | 'inlineImage'
+  | 'orderedList'
+  | 'repeat'
+  | 'section'
+  | 'spacer'
+  | 'text'
+  | 'cards'
+  | 'headers'
+  | 'footers'
+  | 'digest'
+  | 'htmlCodeBlock';
+
+export type BlockConfig = {
+  highlights: {
+    enabled: boolean;
+    title: string;
+    blocks: Array<{
+      type: BlockType;
+      enabled: boolean;
+      order: number;
+    }>;
+  };

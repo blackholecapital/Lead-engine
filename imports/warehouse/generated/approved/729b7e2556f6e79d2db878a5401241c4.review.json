@@ -1,0 +1,13 @@
+{
+  "id": "729b7e2556f6e79d2db878a5401241c4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/visualizations/LinkViz/EntityDisplay.styled.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

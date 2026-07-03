@@ -1,0 +1,13 @@
+{
+  "id": "c2f1d83d4b77f2531b8a6318844c40eb",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/header-navigation/support-drawer-constants.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

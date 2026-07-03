@@ -1,0 +1,6 @@
+{
+  "id":"e59682c9e828a2f2958958300c16df6e",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/public/containers/PublicOrEmbeddedDashboard/PublicOrEmbeddedDashboardView-card-filters.stories.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

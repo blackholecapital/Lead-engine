@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/contexts/context-overview.tsx
+
+import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
+import { GetContextResponseDto } from '@novu/api/models/components';
+import { ContextId, ContextType } from '@novu/shared';
+import { loadLanguage } from '@uiw/codemirror-extensions-langs';
+import { useId, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { RiDeleteBin2Line } from 'react-icons/ri';
+import { ExternalToast } from 'sonner';
+import { z } from 'zod';
+import { useContextsNavigate } from '@/components/contexts/hooks/use-contexts-navigate';
+import { EditContextFormSchema } from '@/components/contexts/schema';
+import { Button } from '@/components/primitives/button';
+import { CopyButton } from '@/components/primitives/copy-button';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  FormRoot,
+} from '@/components/primitives/form/form';
+import { Input, InputRoot } from '@/components/primitives/input';
+import { Separator } from '@/components/primitives/separator';
+import { Skeleton } from '@/components/primitives/skeleton';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { TimeDisplayHoverCard } from '@/components/time-display-hover-card';
+import { useDeleteContext } from '@/hooks/use-delete-context';
+import { useFetchContext } from '@/hooks/use-fetch-context';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { useUpdateContext } from '@/hooks/use-update-context';
+import { formatDateSimple } from '@/utils/format-date';
+import { TelemetryEvent } from '@/utils/telemetry';
+import { ConfirmationModal } from '../confirmation-modal';
+import { Editor } from '../primitives/editor';
+
+const toastOptions: ExternalToast = {
+  position: 'bottom-right',
+  classNames: {
+    toast: 'mb-4 right-0 pointer-events-none',
+  },
+};
+
+const extensions = [loadLanguage('json')?.extension ?? []];
+const basicSetup = { lineNumbers: true, defaultKeymap: true };
+
+type ContextOverviewProps = {
+  type: ContextType;
+  id: ContextId;
+  readOnly?: boolean;
+};
+
+const ContextNotFound = () => {
+  return (
+    <div className="mt-[100px] flex h-full w-full flex-col items-center justify-center gap-6">
+      <div className="flex flex-col items-center gap-2 text-center">
+        <h3 className="text-lg font-semibold">Context Not Found</h3>
+        <p className="text-text-soft text-paragraph-sm max-w-[60ch]">
+          The context you are looking for does not exist or has been deleted.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export const ContextOverviewSkeleton = () => {
+  return (
+    <div className="flex flex-col gap-6 p-6">
+      <div className="space-y-4">
+        <div>
+          <Skeleton className="mb-2 h-4 w-20" />
+          <Skeleton className="h-9 w-full" />
+        </div>
+        <div>
+          <Skeleton className="mb-2 h-4 w-16" />
+          <Skeleton className="h-9 w-full" />
+        </div>
+        <div>
+          <Skeleton className="mb-2 h-4 w-24" />
+          <Skeleton className="h-9 w-full" />
+        </div>
+        <div>
+          <Skeleton className="mb-2 h-4 w-32" />
+          <Skeleton className="h-36 w-full" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ContextOverviewForm = ({ context, readOnly }: { context: GetContextResponseDto; readOnly: boolean }) => {
+  const track = useTelemetry();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const formId = useId();
+  const { navigateToContextsPage } = useContextsNavigate();
+
+  const { updateContext, isPending: isUpdating } = useUpdateContext({
+    onSuccess: () => {
+      showSuccessToast(`Context updated successfully`, undefined, toastOptions);

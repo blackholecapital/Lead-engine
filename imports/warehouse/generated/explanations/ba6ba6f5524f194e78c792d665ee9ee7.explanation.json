@@ -1,0 +1,6 @@
+{
+  "id":"ba6ba6f5524f194e78c792d665ee9ee7",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/hooks/useCurrentTime.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

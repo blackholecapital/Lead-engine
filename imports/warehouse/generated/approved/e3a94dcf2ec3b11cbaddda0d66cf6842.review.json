@@ -1,0 +1,14 @@
+{
+  "id": "e3a94dcf2ec3b11cbaddda0d66cf6842",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/services/routeBuilders/dashboardBuilder.server.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "dashboard",
+    "service",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

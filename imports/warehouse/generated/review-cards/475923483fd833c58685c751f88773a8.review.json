@@ -1,0 +1,15 @@
+{
+  "id": "475923483fd833c58685c751f88773a8",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/command-menu-item/engine-command/record/single-record/dashboard/components/CancelDashboardSingleRecordCommand.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "engine",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

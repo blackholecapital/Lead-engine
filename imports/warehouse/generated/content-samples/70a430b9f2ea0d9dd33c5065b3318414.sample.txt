@@ -1,0 +1,14 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/context/escape-key-manager/escape-key-context.tsx
+
+import { createContext } from 'react';
+import { EscapeKeyManagerPriority } from './priority';
+
+export type EscapeKeyManagerContextType = {
+  registerEscapeHandler: (id: string, handler: () => void, priority?: EscapeKeyManagerPriority) => void;
+  unregisterEscapeHandler: (id: string) => void;
+};
+
+export const EscapeKeyManagerContext = createContext<EscapeKeyManagerContextType>({
+  registerEscapeHandler: () => {},
+  unregisterEscapeHandler: () => {},
+});

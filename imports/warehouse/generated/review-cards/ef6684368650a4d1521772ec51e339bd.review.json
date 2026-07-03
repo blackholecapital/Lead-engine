@@ -1,0 +1,11 @@
+{
+  "id": "ef6684368650a4d1521772ec51e339bd",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/test/scenarios/dashboard-filters/dashboard-chained-filters.cy.spec.js",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

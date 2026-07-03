@@ -1,0 +1,12 @@
+{
+  "id": "f1324f0707eb5e099b5a20f76eddfed4",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/modules/dashboard/chart-data/dtos/inputs/bar-chart-data.input.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

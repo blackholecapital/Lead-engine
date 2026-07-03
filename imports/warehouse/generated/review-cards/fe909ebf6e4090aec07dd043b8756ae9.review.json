@@ -1,0 +1,15 @@
+{
+  "id": "fe909ebf6e4090aec07dd043b8756ae9",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-front-component-validator.service.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "engine",
+    "service",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

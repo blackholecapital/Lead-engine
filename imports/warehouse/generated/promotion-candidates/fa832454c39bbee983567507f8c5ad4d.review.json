@@ -1,0 +1,14 @@
+{
+  "id": "fa832454c39bbee983567507f8c5ad4d",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/billing/use-plan-upgrade-click.ts",
+  "score": 95,
+  "suggested_tags": [
+    "billing",
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

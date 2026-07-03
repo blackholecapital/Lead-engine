@@ -1,0 +1,12 @@
+{
+  "id": "f367fd33e7e67461e4168d36f4585731",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/packages/shared/src/dto/workflows/get-list-query-params.ts",
+  "score": 85,
+  "suggested_tags": [
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

@@ -1,0 +1,6 @@
+{
+  "id":"dd78847b32de629418645fd8a2175d37",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/utils/sentry.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "e481b314819049d6aff9046a3a892aa9",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/packages/superset-ui-core/src/query/types/Dashboard.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

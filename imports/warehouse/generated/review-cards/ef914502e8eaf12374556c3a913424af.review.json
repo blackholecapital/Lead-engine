@@ -1,0 +1,13 @@
+{
+  "id": "ef914502e8eaf12374556c3a913424af",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/primitives/form/faceted-filter/hooks/use-keyboard-navigation.ts",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

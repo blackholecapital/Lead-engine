@@ -1,0 +1,13 @@
+{
+  "id": "110947f141b6515702a7a7acf74bfa80",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/enterprise/frontend/src/embedding-sdk-ee/notifications/DashboardSubscriptionsButton.unit.spec.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

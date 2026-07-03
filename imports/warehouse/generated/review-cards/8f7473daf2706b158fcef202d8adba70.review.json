@@ -1,0 +1,12 @@
+{
+  "id": "8f7473daf2706b158fcef202d8adba70",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/data-studio/segments/pages/DataModelNewSegmentPage/DataModelNewSegmentPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

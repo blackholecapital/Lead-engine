@@ -1,0 +1,6 @@
+{
+  "id":"8a768372e8f2562d6db5c623e978f2a2",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/edges/router-end-edge.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

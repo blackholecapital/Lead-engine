@@ -1,0 +1,6 @@
+{
+  "id":"c3f3051b24e97f236dc0d7196b463185",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-schema-builder/utils/compute-stored-gql-type-key-utils/compute-composite-field-object-type-key.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

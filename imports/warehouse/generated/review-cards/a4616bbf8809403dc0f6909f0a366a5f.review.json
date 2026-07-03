@@ -1,0 +1,14 @@
+{
+  "id": "a4616bbf8809403dc0f6909f0a366a5f",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-front/src/modules/side-panel/pages/page-layout/components/dashboard/SidePanelDashboardChartSettings.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

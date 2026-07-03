@@ -1,0 +1,14 @@
+{
+  "id": "0cbde99b6e5a1d8552bf3b94347a15e3",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/SavedQuestionHeaderButton/SavedQuestionHeaderButton.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

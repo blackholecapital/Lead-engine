@@ -1,0 +1,497 @@
+#!/usr/bin/env node
+const fs=require("fs");
+const path=require("path");
+
+const input=process.argv[2];
+const output=process.argv[3];
+
+if(!input||!output){
+  console.error("usage: runtime-c-simple-compiler.cjs <simple.json> <full.json>");
+  process.exit(2);
+}
+
+const s=JSON.parse(fs.readFileSync(input,"utf8"));
+const objective_delta=String(s.objective_delta||s.objective||"");
+
+function fail(error, extra={}){
+  console.error(JSON.stringify({ok:false,error,...extra},null,2));
+  process.exit(1);
+}
+
+for(const k of ["mode","pass","objective","job_name","title","pod","lane_cell_backend"]){
+  if(s[k]===undefined||s[k]===null||String(s[k]).trim()===""){
+    fail("MISSING_REQUIRED_FIELD",{field:k});
+  }
+}
+
+const mode=String(s.mode);
+const pass=Number(s.pass);
+const family=String(s.family||s.product_slug||s.job_name||s.title);
+const pod=String(s.pod).toUpperCase();
+const backend=String(s.lane_cell_backend).toUpperCase();
+const objective=String(s.objective).replace(/\s+/g," ").trim();
+
+if(mode==="iteration_pass"){
+  if(!s.parent_context?.source_output){
+    fail("MISSING_PARENT_CONTEXT",{mode,pass,family});
+  }
+  for(const f of ["index.html","styles.css","app.js"]){
+    const p=path.join(s.parent_context.source_output,f);
+    if(!fs.existsSync(p)){
+      fail("PARENT_FILE_MISSING",{file:p});
+    }
+  }
+}
+
+
+const BASE_WORKER_PROMPT = `
+You are a Runtime-C production worker.
+
+Runtime-C builds software artifacts, interfaces, tools, apps, sites, dashboards, documents, automations, and product outputs. Do not assume the artifact is only a website unless the objective says so.
+
+GLOBAL RULES:
+- Before generating, use local references when present:
+  .runtime-c-assets/reference/dashboard-crm-reference.md
+  .runtime-c-assets/reference/design-token-reference.md
+  .runtime-c-assets/reference/worker-inspection-reference.md
+- Follow the exact business/product title.
+- Follow the objective exactly.
+- Produce only your assigned lane artifact.
+- Do not recreate another lane's work.
+- No placeholders, lorem ipsum, fake demo filler, or generic sample content.
+- No fake people/products such as Jane Doe, John Smith, Album One, Artist One, Vinyl 1.
+- No fake external image references.
+- No external assets unless the objective explicitly permits them.
+- Preserve parent output during improvement/iteration passes.
+- Use concrete, product-specific details.
+`;
+
+function passModeContract(mode){
+  if(mode==="iteration_pass"){
+    return `
+PASS MODE:
+This is an improvement/enrichment pass.
+You must preserve the parent artifact.
+You may add, refine, or enrich.
+Do not restart from scratch.
+Do not remove existing working features unless explicitly instructed.
+Treat the objective delta as additive unless it clearly says replacement.
+`;
+  }
+
+  return `
+PASS MODE:
+This is an initial creation pass.
+Create the first complete product foundation.
+Establish stable structure, names, sections, selectors, metadata, and interaction surfaces for later lanes and future passes.
+`;
+}
+
+function laneContract(laneRole){
+  if(laneRole==="HTML"){
+    return `
+LANE ROLE: WA / STRUCTURE PRODUCER
+
+Your job:
+- Create the primary structural artifact for the requested product.
+- If the objective is a web/interface artifact, produce rich semantic HTML.
+- If the objective implies another software artifact, produce the closest structural/interface artifact expected by Runtime-C.
+- Establish the canonical section/component registry through IDs/classes.
+- Create interaction surfaces for later behavior work.
+- Do not include CSS or JS.
+
+Required for web/interface outputs:
+- At least 9 meaningful sections using actual <section> elements.
+- At least 5 interaction surfaces such as buttons, forms, filters, toggles, tabs, quick-add controls, row actions, navigation controls, or settings controls.
+- Include real interaction controls appropriate to the requested product type; include forms only when the objective benefits from user input.
+- Use realistic seeded data. Never use John Smith, Jane Doe, Lead 1, Lead 2, placeholder, sample, lorem, demo, TBD, coming soon, or filler text anywhere, including labels, attributes, placeholders, comments, or IDs/classes.
+- Use plausible domain-specific entities, records, statuses, timelines, labels, and workflows.
+- Stable IDs and classes.
+- Specific product/business content with concrete named records, realistic labels, and no generic filler.
+- Structure suitable for WB styling and WC behavior.
+
+Registry responsibility:
+- Your HTML classes and IDs become the source of truth for CLASS_MANIFEST.json.
+`;
+  }
+
+  if(laneRole==="CSS"){
+    return `
+LANE ROLE: WB / VISUAL IMPLEMENTATION PRODUCER
+
+Your job:
+- Consume WA output as source of truth.
+- Read the current HTML and CLASS_MANIFEST when provided by the lane runtime.
+- Style the existing structure richly.
+- Do not recreate HTML.
+- Do not invent unrelated features.
+- Do not ignore WA classes/sections.
+- Create production-quality visual system.
+
+Required:
+- Style every major WA section.
+- Use selectors that actually exist in WA output.
+- Provide responsive mobile/tablet/desktop layout.
+- Add rich visual hierarchy, spacing, cards, forms, buttons, states, and polish.
+- Must define a :root design-token system.
+- Must include tokens: --color-bg, --color-surface, --color-primary, --color-accent, --color-text, --color-muted, --color-border, --space-1, --space-2, --space-3, --radius-sm, --radius-md, --shadow-sm or --shadow-card, --font-base.
+- Must use var(--...) token references at least 12 times.
+- Create premium production visual density appropriate to the artifact: refined layout rhythm, panels/cards where useful, readable hierarchy, polished controls, meaningful states, and responsive behavior.
+- No huge empty gray regions.
+- No orphan CSS systems disconnected from WA.
+- No external assets unless explicitly permitted.
+`;
+  }
+
+  if(laneRole==="JS"){
+    return `
+LANE ROLE: WC / BEHAVIOR AND INTEGRATION PRODUCER
+
+Your job:
+- Consume WA + WB as source of truth.
+- Observe the combined structure and styling.
+- Add behavior only for controls that exist.
+- Do not recreate HTML.
+- Do not rewrite CSS.
+- Do not invent unrelated product features.
+- Use objective only as reference for intended behavior.
+
+Required:
+- Defensive DOM checks before every event binding.
+- At least 4 interaction groups when controls exist.
+- Event handlers for real controls.
+- Form handling, toggles, filters, tabs, menu behavior, quick-add flows, row selection, detail panel updates, pipeline/card interactions, or stateful interactions when present.
+- Do not bind to nonexistent selectors.
+- No network calls unless explicitly requested.
+- No external libraries.
+`;
+  }
+
+  if(laneRole==="PRODUCT_MANIFEST"){
+    return `
+LANE ROLE: WD / PRODUCT MANIFEST INSPECTOR
+
+Your job:
+- Inspect WA/WB/WC outputs.
+- Output a strict product manifest, not an essay.
+- Do not interpret WD as a product concept.
+- Do not generate HTML, CSS, or JS.
+
+Required output format:
+# PRODUCT_MANIFEST
+## Product
+- title:
+- artifact_type:
+- objective_match:
+
+## Pages_Sections
+- section:
+- purpose:
+
+## Components
+- component:
+- selector_or_id:
+- purpose:
+
+## Data_Entities
+- entity:
+- fields:
+
+## Interactions
+- interaction:
+- trigger:
+- expected_behavior:
+
+## Missing_Or_Weak
+- issue:
+- severity:
+`;
+  }
+
+  if(laneRole==="REGRESSION_PROOF"){
+    return `
+LANE ROLE: WE / REGRESSION AND PRESERVATION INSPECTOR
+
+Your job:
+- Inspect generated artifacts and parent context if present.
+- Output strict regression proof, not an essay.
+- Do not interpret WE as a product concept.
+- Do not generate HTML, CSS, or JS.
+- Check placeholders, generic content, missing title, broken coordination, missing interactions, low specificity, and preservation.
+
+Required output format:
+# REGRESSION_PROOF
+## Verdict
+- status: PASS|WARN|FAIL
+- reason:
+
+## Preservation
+- parent_context_present:
+- removed_sections:
+- removed_ids_or_classes:
+
+## Objective_Coverage
+- covered:
+- missing:
+
+## Quality_Risks
+- risk:
+- severity:
+
+## Banned_Content_Check
+- found_terms:
+
+## Interaction_Check
+- controls_found:
+- handlers_found:
+- concerns:
+`;
+  }
+
+  if(laneRole==="OPERATOR_REVIEW_CARD"){
+    return `
+LANE ROLE: WF / OPERATOR RELEASE REVIEWER
+
+Your job:
+- Inspect final product from operator/release perspective.
+- Output strict operator review, not an essay.
+- Do not interpret WF as a product concept.
+- Do not generate HTML, CSS, or JS.
+
+Required output format:
+# OPERATOR_REVIEW_CARD
+## Scores
+- visual_quality_0_10:
+- ux_readiness_0_10:
+- crm_usefulness_0_10:
+- interaction_readiness_0_10:
+- resale_modularity_0_10:
+
+## Release_Status
+- status: READY|NEEDS_REPAIR|BLOCKED
+- reason:
+
+## Manual_Review_Checklist
+- item:
+
+## Recommended_Repairs
+- repair:
+- priority:
+`;
+  }
+
+  return `
+LANE ROLE:
+Unknown lane. Follow objective and produce only assigned artifact.
+`;
+}
+
+function workerBootstrap(laneRole){
+  const root="/opt/eila-os/factory-xyz/runtime-c";
+  const common=[
+    `${root}/factory/manuals/00_FACTORY_MANUAL_V6_7_C.md`,
+    `${root}/factory/manuals/02_WORKER_MANUAL_V6_7_C.md`,
+    `${root}/factory/indexes/FACTORY_INDEX.json`
+  ];
+
+  const lane={
+    HTML:{worker:"Worker A",files:[`${root}/factory/manuals/WA_HTML_WORKER.md`,`${root}/factory/indexes/HTML_INDEX.json`]},
+    CSS:{worker:"Worker B",files:[`${root}/factory/manuals/WB_CSS_WORKER.md`,`${root}/factory/indexes/CSS_INDEX.json`]},
+    JS:{worker:"Worker C",files:[`${root}/factory/manuals/WC_JS_WORKER.md`,`${root}/factory/indexes/JS_INDEX.json`]},
+    PRODUCT_MANIFEST:{worker:"Worker D",files:[`${root}/factory/manuals/WD_PRODUCT_MANIFEST_WORKER.md`,`${root}/factory/indexes/ASSETS_INDEX.json`,`${root}/factory/indexes/TEMPLATES_INDEX.json`]},
+    REGRESSION_PROOF:{worker:"Worker E",files:[`${root}/factory/manuals/WE_REGRESSION_PROOF_WORKER.md`,`${root}/factory/indexes/PODS_INDEX.json`,`${root}/factory/indexes/OUTPUT_CONTRACT_INDEX.json`]},
+    OPERATOR_REVIEW_CARD:{worker:"Worker F",files:[`${root}/factory/manuals/WF_OPERATOR_REVIEW_WORKER.md`,`${root}/factory/indexes/MAP_INDEX.json`,`${root}/factory/indexes/OUTPUT_CONTRACT_INDEX.json`]}
+  }[laneRole];
+
+  const files=[...common,...(lane?.files||[])];
+
+  return `You are ${lane?.worker || "a Runtime-C worker"}.
+
+Read before beginning work:
+${files.map(f=>`- ${f}`).join("\n")}
+
+Existing compiler prompt begins below.
+`;
+}
+
+function laneTask(mode, laneRole, objective, objectiveDelta, parentPath, businessTitle){
+  const header=workerBootstrap(laneRole);
+  const objectiveText = mode==="iteration_pass" ? objectiveDelta : objective;
+
+  const parentBlock = mode==="iteration_pass"
+    ? `
+PARENT CONTEXT:
+${parentPath}
+
+PRESERVATION REQUIREMENTS:
+Load and preserve parent output.
+Keep existing structure, IDs, classes, behavior, content, and working features unless objective delta explicitly says to replace them.
+`
+    : "";
+
+  return `
+${header}
+
+${BASE_WORKER_PROMPT}
+
+PRODUCT TITLE:
+${businessTitle}
+
+${passModeContract(mode)}
+
+${parentBlock}
+
+OBJECTIVE:
+${objectiveText}
+
+${laneContract(laneRole)}
+
+OUTPUT:
+Return only the artifact required for lane ${laneRole}.
+`.trim();
+}
+
+
+const full={
+  schema:"runtime-c.v2",
+  compiled_schema:"runtime-c.full.compact.v1",
+  mode,
+  workflow:mode,
+
+  job_name:String(s.job_name),
+  title:String(s.title),
+  family,
+  product_slug:family,
+
+  pass,
+  pod,
+  lane_cell_backend:backend,
+
+  objective_delta:objective,
+
+  inherits_from:mode==="iteration_pass" ? {
+    enabled:true,
+    parent_pass:s.inherits_from?.parent_pass ?? pass-1,
+    parent_run_id:s.inherits_from?.parent_run_id || s.parent_context?.source_run_id || null
+  } : {
+    enabled:false
+  },
+
+  parent_context:mode==="iteration_pass" ? {
+    required:true,
+    source_run_id:s.parent_context.source_run_id,
+    source_output:s.parent_context.source_output,
+    required_files:["index.html","styles.css","app.js"],
+    restore_before_workers:true
+  } : null,
+
+  pass_policy:s.pass_policy ? {
+    requested_pass:s.pass_policy.requested_pass,
+    resolved_pass:s.pass_policy.resolved_pass,
+    parent_pass:s.pass_policy.parent_pass
+  } : null,
+
+  workers:{
+    WA:{
+      enabled:true,
+      role:"worker",
+      lane_claim:"A",
+      lane_id:"A",
+      task:laneTask(
+mode,
+"HTML",
+s.objective||objective_delta||"",
+objective_delta||"",
+s.parent_context?.source_output||"",
+String(s.title||s.job_name||family)
+),
+      allowed_paths:["output/fragments/WA.html","output/CLASS_MANIFEST.json"],
+      expected_artifacts:["output/fragments/WA.html","output/CLASS_MANIFEST.json"],
+      outputs:["output/fragments/WA.html","output/CLASS_MANIFEST.json"]
+    },
+    WB:{
+      enabled:true,
+      role:"worker",
+      lane_claim:"B",
+      lane_id:"B",
+      task:laneTask(
+mode,
+"CSS",
+s.objective||objective_delta||"",
+objective_delta||"",
+s.parent_context?.source_output||"",
+String(s.title||s.job_name||family)
+),
+      allowed_paths:["output/fragments/WB.css","output/CSS_COVERAGE_REPORT.json"],
+      expected_artifacts:["output/fragments/WB.css","output/CSS_COVERAGE_REPORT.json"],
+      outputs:["output/fragments/WB.css","output/CSS_COVERAGE_REPORT.json"]
+    },
+    WC:{
+      enabled:true,
+      role:"worker",
+      lane_claim:"C",
+      lane_id:"C",
+      task:laneTask(
+mode,
+"JS",
+s.objective||objective_delta||"",
+objective_delta||"",
+s.parent_context?.source_output||"",
+String(s.title||s.job_name||family)
+),
+      allowed_paths:["output/fragments/WC.js"],
+      expected_artifacts:["output/fragments/WC.js"],
+      outputs:["output/fragments/WC.js"]
+    },
+    WD:{
+      enabled:true,
+      role:"worker",
+      lane_claim:"D",
+      lane_id:"D",
+      task:laneTask(mode,"PRODUCT_MANIFEST",s.objective||objective_delta||"",objective_delta||"",s.parent_context?.source_output||"",String(s.title||s.job_name||family)),
+      outputs:["output/PRODUCT_MANIFEST.md"]
+    },
+    WE:{
+      enabled:true,
+      role:"worker",
+      lane_claim:"E",
+      lane_id:"E",
+      task:laneTask(mode,"REGRESSION_PROOF",s.objective||objective_delta||"",objective_delta||"",s.parent_context?.source_output||"",String(s.title||s.job_name||family)),
+      outputs:["output/REGRESSION_PROOF.md"]
+    },
+    WF:{
+      enabled:true,
+      role:"worker",
+      lane_claim:"F",
+      lane_id:"F",
+      task:laneTask(mode,"OPERATOR_REVIEW_CARD",s.objective||objective_delta||"",objective_delta||"",s.parent_context?.source_output||"",String(s.title||s.job_name||family)),
+      outputs:["output/OPERATOR_REVIEW_CARD.md"]
+    }
+  },
+
+  required_artifacts:[
+    "output/index.html",
+    "output/styles.css",
+    "output/app.js",
+    "output/CLASS_MANIFEST.json",
+    "output/CSS_COVERAGE_REPORT.json",
+    "output/PRODUCT_MANIFEST.md",
+    "output/REGRESSION_PROOF.md",
+    "output/OPERATOR_REVIEW_CARD.md"
+  ],
+
+  execution_config:{
+    mode:"staggered",
+    parallel_streams:["WA","WB","WC","WD","WE","WF"],
+    max_parallel_workers:6
+  },
+
+  completion_signal:{required:true},
+  tps_report:{required:true},
+  factory_version:"V6.7"
+};
+
+fs.mkdirSync(path.dirname(output),{recursive:true});
+fs.writeFileSync(output,JSON.stringify(full,null,2)+"\n");
+
+console.log("PASS runtime-c-simple-compiler compact",output);

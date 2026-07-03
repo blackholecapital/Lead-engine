@@ -1,0 +1,6 @@
+{
+  "id":"3bcbc240b53447af982f75dd93abb9b1",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/PreviewQueryButton/PreviewQueryButton.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

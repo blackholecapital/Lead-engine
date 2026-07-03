@@ -1,0 +1,13 @@
+{
+  "id": "aa4ef148f3b0013c3b2abe0d8d1fb7c9",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/admin/settings/components/SettingsPages/CloudSettingsPage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

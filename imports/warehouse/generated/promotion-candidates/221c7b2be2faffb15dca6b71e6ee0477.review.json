@@ -1,0 +1,13 @@
+{
+  "id": "221c7b2be2faffb15dca6b71e6ee0477",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/pages/integration-store-telegram-mobile-setup-page.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

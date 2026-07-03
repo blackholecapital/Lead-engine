@@ -1,0 +1,14 @@
+{
+  "id": "54b96f6f4477520c73093fe7db2a9475",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/components/ClickBehaviorSidebar/ClickBehaviorSidebarHeader/ClickBehaviorSidebarHeader.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "component",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

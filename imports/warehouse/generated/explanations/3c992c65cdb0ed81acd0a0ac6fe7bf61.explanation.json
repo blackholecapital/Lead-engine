@@ -1,0 +1,6 @@
+{
+  "id":"3c992c65cdb0ed81acd0a0ac6fe7bf61",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/types/base-universal-create-workspace-migration-action.type.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

@@ -1,0 +1,6 @@
+{
+  "id":"365e71944dbb2a69a749eb843d457001",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/dashboard/util/dropOverflowsParent.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

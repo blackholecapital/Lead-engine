@@ -1,0 +1,12 @@
+{
+  "id": "267fdb958af7bfe28a2d1c08bab6d723",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/hooks/use-default-query-aggregation.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

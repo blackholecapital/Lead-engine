@@ -1,0 +1,6 @@
+{
+  "id":"4252f1183902baed47eeddb2c4387ad4",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/trigger-dev/apps/webapp/app/presenters/v3/BuiltInDashboards.server.ts",
+  "reasons":" dashboard-feature, typescript-source,"
+}

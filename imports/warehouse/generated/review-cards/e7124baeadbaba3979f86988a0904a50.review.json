@@ -1,0 +1,12 @@
+{
+  "id": "e7124baeadbaba3979f86988a0904a50",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/e2e/support/helpers/api/addOrUpdateDashboardCard.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

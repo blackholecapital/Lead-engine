@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/welcome/ai-prompts/framework-prompts/remix-prompt.ts
+
+import { PromptConfig, replaceConfigVariables } from './types';
+
+const KITCHEN_SINK_INBOX_SNIPPET = `import { useLoaderData, Outlet } from '@remix-run/react';
+import { Inbox } from '@novu/react';
+import type { LoaderFunction } from '@remix-run/node';
+
+// Ensure the environment variables are available
+export const loader: LoaderFunction = async () => {
+  const applicationIdentifier = process.env.NOVU_APP_IDENTIFIER;
+  const subscriberId = process.env.NOVU_SUBSCRIBER_ID;
+
+  if (!applicationIdentifier || !subscriberId) {
+    throw new Error('Required environment variables are not defined');
+  }
+
+  return { applicationIdentifier, subscriberId };
+};
+
+export default function NotificationInbox() {
+  const { applicationIdentifier, subscriberId } = useLoaderData<typeof loader>();
+
+  return (
+    <Inbox
+      // Required core configuration
+      applicationIdentifier={applicationIdentifier}
+      subscriberId={subscriberId}
+
+      // Backend configuration (for EU region use https://eu.api.novu.co and https://eu.ws.novu.co)
+      backendUrl=""
+      socketUrl=""
+
+      // Appearance configuration
+      appearance={{
+        // Base theme configuration
+        baseTheme: dark, // Or undefined for light theme
+
+        // Variables for global styling
+        variables: {
+          colorPrimary: '',
+          colorPrimaryForeground: '',
+          colorSecondary: '',
+          colorSecondaryForeground: '',
+          colorCounter: '',
+          colorCounterForeground: '',
+          colorBackground: '',
+          colorRing: '',
+          colorForeground: '',
+          colorNeutral: '',
+          colorShadow: '',
+
+          // Typography and Layout
+          fontSize: '',
+        },
+        elements: {
+          bellIcon: {
+            color: '',
+          },
+        },
+      },
+
+      // Layout configuration
+      placement="bottom"
+      placementOffset={0}
+    />
+  );
+}`;
+
+const REMIX_PROMPT = `You are an AI agent specialized in integrating the Novu Inbox component into Remix applications. Your primary goal is to seamlessly embed the Inbox component into existing UI structures while maintaining the host application's design patterns and functionality.
+
+### Primary Objectives:
+- **Server-Side Integration**: Properly handle server-side rendering and hydration
+- **Appearance Customization**: Apply customization through the appearance prop
+- **Pattern Respect**: Follow Remix patterns for data loading and routing
+
+### Optional Reference:
+- Consult https://docs.novu.co/platform/quickstart/remix for latest instructions if web access is available
+
+---
+
+## Context Analysis Requirements
+
+### Pre-Integration Assessment:
+Before starting the integration, analyze the host application to understand:
+
+**Project Structure Analysis**:
+- [ ] Package manager (pnpm, yarn, npm, bun)
+- [ ] Remix version and configuration
+- [ ] Existing authentication system (Auth0, Firebase, Supabase, custom)
+- [ ] UI framework/library (Tailwind, styled-components, CSS modules, etc.)
+- [ ] Existing component patterns and naming conventions
+- [ ] State management approach (loaders, actions, context)
+- [ ] Routing structure (nested routes, resource routes)
+
+**UI Placement Analysis**:
+Potential common places where the inbox could be integrated in the UI:
+- [ ] Header/navbar structure and positioning
+- [ ] User menu or profile dropdown location
+- [ ] Sidebar layout and available space
+
+## Critical Constraints & Requirements

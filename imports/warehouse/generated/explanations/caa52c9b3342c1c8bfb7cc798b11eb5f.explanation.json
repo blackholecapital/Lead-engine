@@ -1,0 +1,6 @@
+{
+  "id":"caa52c9b3342c1c8bfb7cc798b11eb5f",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/core-modules/logic-function/logic-function-drivers/utils/copy-builder.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

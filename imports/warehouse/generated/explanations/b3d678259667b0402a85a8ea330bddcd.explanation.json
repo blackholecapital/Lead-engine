@@ -1,0 +1,6 @@
+{
+  "id":"b3d678259667b0402a85a8ea330bddcd",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/embedding/embedding-hub/components/SetupPermissionsAndTenantsPage/MoveDashboardStepContent.unit.spec.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

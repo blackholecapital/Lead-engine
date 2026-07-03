@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/contexts/context-list.tsx
+
+import { DirectionEnum, PermissionsEnum } from '@novu/shared';
+import { HTMLAttributes, useEffect } from 'react';
+import { RiAddCircleLine } from 'react-icons/ri';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/primitives/table';
+import { TablePaginationFooter } from '@/components/primitives/table-pagination-footer';
+import { useFetchContexts } from '@/hooks/use-fetch-contexts';
+import { cn } from '@/utils/ui';
+import { ListNoResults } from '../list-no-results';
+import { PermissionButton } from '../primitives/permission-button';
+import { ContextListBlank } from './context-list-blank';
+import { ContextRow, ContextRowSkeleton } from './context-row';
+import { ContextsFilters } from './contexts-filters';
+import { useContextsNavigate } from './hooks/use-contexts-navigate';
+import { ContextsSortableColumn, ContextsUrlState, useContextsUrlState } from './hooks/use-contexts-url-state';
+
+type ContextListProps = HTMLAttributes<HTMLDivElement>;
+
+const ContextListWrapper = ({
+  className,
+  children,
+  filterValues,
+  handleFiltersChange,
+  resetFilters,
+  isLoading,
+  isFetching,
+  hasData,
+  areFiltersApplied,
+  showEmptyState,
+  ...rest
+}: ContextListFiltersProps & { hasData?: boolean; areFiltersApplied?: boolean; showEmptyState?: boolean }) => {
+  return (
+    <div className={cn('flex h-full flex-col', showEmptyState && 'h-[calc(100vh-100px)]', className)} {...rest}>
+      <div className="flex items-center justify-between">
+        {isLoading || hasData || areFiltersApplied ? (
+          <ContextsFilters
+            onFiltersChange={handleFiltersChange}
+            filterValues={filterValues}
+            onReset={resetFilters}
+            isLoading={isLoading}
+            isFetching={isFetching}
+            className="py-2.5"
+          />
+        ) : (
+          <div />
+        )}
+        {!showEmptyState && <CreateContextButton />}
+      </div>
+      {children}
+    </div>
+  );
+};
+
+const ContextListTable = ({
+  children,
+  orderBy,
+  orderDirection,
+  toggleSort,
+  paginationProps,
+  ...rest
+}: ContextListTableProps) => {
+  return (
+    <Table {...rest}>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Type</TableHead>
+          <TableHead>ID</TableHead>
+          <TableHead
+            sortable
+            sortDirection={orderBy === 'createdAt' ? orderDirection : false}
+            onSort={() => toggleSort('createdAt')}
+          >
+            Created at
+          </TableHead>
+          <TableHead
+            sortable
+            sortDirection={orderBy === 'updatedAt' ? orderDirection : false}
+            onSort={() => toggleSort('updatedAt')}
+          >
+            Updated at
+          </TableHead>
+          <TableHead />
+        </TableRow>
+      </TableHeader>
+      <TableBody>{children}</TableBody>
+      {paginationProps && (
+        <TableFooter>
+          <TableRow>
+            <TableCell colSpan={5} className="p-0">
+              <TablePaginationFooter
+                pageSize={paginationProps.limit}
+                currentPageItemsCount={paginationProps.currentItemsCount}
+                onPreviousPage={paginationProps.onPrevious}

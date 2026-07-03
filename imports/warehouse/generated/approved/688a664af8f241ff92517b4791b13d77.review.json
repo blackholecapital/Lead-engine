@@ -1,0 +1,13 @@
+{
+  "id": "688a664af8f241ff92517b4791b13d77",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/docs/src/components/databases/DatabasePage.tsx",
+  "score": 90,
+  "suggested_tags": [
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

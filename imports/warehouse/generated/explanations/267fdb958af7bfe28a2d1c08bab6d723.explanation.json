@@ -1,0 +1,6 @@
+{
+  "id":"267fdb958af7bfe28a2d1c08bab6d723",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/hooks/use-default-query-aggregation.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

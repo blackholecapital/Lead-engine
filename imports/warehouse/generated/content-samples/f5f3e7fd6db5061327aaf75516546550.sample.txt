@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/components/variable/edit-variable-popover.tsx
+
+import { ReactNode, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
+import {
+  RiArrowRightUpLine,
+  RiDeleteBin2Line,
+  RiErrorWarningLine,
+  RiListView,
+  RiQuestionLine,
+  RiSearchLine,
+} from 'react-icons/ri';
+import { LinkButton } from '@/components/primitives/button-link';
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from '@/components/primitives/command';
+import { FormControl, FormItem, FormMessagePure } from '@/components/primitives/form/form';
+import { Input, InputPure, InputRoot, InputWrapper } from '@/components/primitives/input';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/primitives/popover';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/primitives/tooltip';
+import type { JSONSchema7 } from '@/components/schema-editor/json-schema';
+import { useEscapeKeyManager } from '@/context/escape-key-manager/hooks';
+import { EscapeKeyManagerPriority } from '@/context/escape-key-manager/priority';
+import { useTelemetry } from '@/hooks/use-telemetry';
+import { IsAllowedVariable, LiquidVariable } from '@/utils/parseStepVariables';
+import { TelemetryEvent } from '@/utils/telemetry';
+import { Code2 } from '../icons/code-2';
+import { Button } from '../primitives/button';
+import { Separator } from '../primitives/separator';
+import { FilterItem } from './components/filter-item';
+import { ReorderFiltersGroup } from './components/reorder-filters-group';
+import { useFilterManager } from './hooks/use-filter-manager';
+import { useSuggestedFilters } from './hooks/use-suggested-filters';
+import { useVariableParser } from './hooks/use-variable-parser';
+import { useVariableValidation } from './hooks/use-variable-validation';
+import type { Filters, FilterWithParam } from './types';
+import { formatLiquidVariable } from './utils';
+
+// Helper functions
+const calculateAliasFor = (name: string, parsedAliasRoot: string): string => {
+  const variableRest = name.split('.').slice(1).join('.');
+  const normalizedVariableRest = variableRest.startsWith('.') ? variableRest.substring(1) : variableRest;
+  let aliasFor =
+    parsedAliasRoot && normalizedVariableRest ? `${parsedAliasRoot}.${normalizedVariableRest}` : parsedAliasRoot;
+
+  if (name.trim() === '') {
+    aliasFor = '';
+  }
+
+  return aliasFor;
+};
+
+type EditVariablePopoverProps = {
+  isPayloadSchemaEnabled: boolean;
+  variables: LiquidVariable[];
+  children: ReactNode;
+  open: boolean;
+  variable?: LiquidVariable;
+  onOpenChange: (open: boolean, newValue: string) => void;
+  onUpdate: (newValue: string) => void;
+  isAllowedVariable: IsAllowedVariable;
+  onDeleteClick: () => void;
+  getSchemaPropertyByKey: (keyPath: string) => JSONSchema7 | undefined;
+  onManageSchemaClick?: (variableName: string) => void;
+  onAddToSchemaClick?: (variableName: string) => void;
+};
+
+export const EditVariablePopover = ({
+  isPayloadSchemaEnabled,
+  variables,
+  children,
+  open,
+  onOpenChange,
+  variable,
+  onUpdate,
+  isAllowedVariable,
+  onDeleteClick,
+  getSchemaPropertyByKey,
+  onManageSchemaClick,
+  onAddToSchemaClick,
+}: EditVariablePopoverProps) => {
+  const { parsedName, parsedAliasForRoot, parsedDefaultValue, parsedFilters } = useVariableParser(
+    variable?.name || '',
+    variable?.aliasFor || ''
+  );
+
+  const id = useId();
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const track = useTelemetry();
+
+  const [name, setName] = useState(parsedName);
+  const [defaultVal, setDefaultVal] = useState(parsedDefaultValue);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isCommandOpen, setIsCommandOpen] = useState(false);
+  const [filters, setFilters] = useState<FilterWithParam[]>(parsedFilters || []);
+
+  const aliasFor = useMemo(() => calculateAliasFor(name, parsedAliasForRoot), [name, parsedAliasForRoot]);

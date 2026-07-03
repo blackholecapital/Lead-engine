@@ -1,0 +1,6 @@
+{
+  "id":"be0852a5e04ad35c864ae4f32569b96b",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/graphql/workspace-query-builder/utils/stringify-without-key-quote.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

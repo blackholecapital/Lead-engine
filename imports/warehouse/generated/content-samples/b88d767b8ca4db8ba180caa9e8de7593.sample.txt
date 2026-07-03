@@ -1,0 +1,102 @@
+FILE: /opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/dashboard/src/pages/domain-detail.tsx
+
+import { DomainStatusEnum, FeatureFlagsKeysEnum, PermissionsEnum } from '@novu/shared';
+import { formatDistanceToNow } from 'date-fns';
+import { motion, useReducedMotion } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
+import ReactConfetti from 'react-confetti';
+import { createPortal } from 'react-dom';
+import type { IconType } from 'react-icons';
+import {
+  RiAddLine,
+  RiArrowLeftSLine,
+  RiEarthLine,
+  RiInformationLine,
+  RiMore2Fill,
+  RiRefreshLine,
+} from 'react-icons/ri';
+import { SiCloudflare, SiVercel } from 'react-icons/si';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { ConfirmationModal } from '@/components/confirmation-modal';
+import { DashboardLayout } from '@/components/dashboard-layout';
+import {
+  DetailsSidebar,
+  DetailsSidebarCard,
+  DetailsSidebarRow,
+  ExpandableDetailsTextarea,
+} from '@/components/details-sidebar';
+import { ApexDomainMxWarning } from '@/components/domains/apex-domain-mx-warning';
+import { DomainRouting, type DomainRoutingHandle } from '@/components/domains/domain-routing';
+import { PageMeta } from '@/components/page-meta';
+import { AnimatedBadgeDot, Badge } from '@/components/primitives/badge';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/primitives/breadcrumb';
+import { Button } from '@/components/primitives/button';
+import { CompactButton } from '@/components/primitives/button-compact';
+import { CollapsibleSection } from '@/components/primitives/collapsible-section';
+import { CopyButton } from '@/components/primitives/copy-button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/primitives/dropdown-menu';
+import { InlineToast } from '@/components/primitives/inline-toast';
+import { LoadingIndicator } from '@/components/primitives/loading-indicator';
+import { Skeleton } from '@/components/primitives/skeleton';
+import { showErrorToast, showSuccessToast } from '@/components/primitives/sonner-helpers';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/primitives/table';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/primitives/tooltip';
+import { TimeDisplayHoverCard } from '@/components/time-display-hover-card';
+import { useEnvironment } from '@/context/environment/hooks';
+import {
+  useFetchDomain,
+  useFetchDomainAutoConfigure,
+  usePollDomainVerification,
+  useRefreshDomain,
+  useStartDomainAutoConfigure,
+  useUpdateDomain,
+  useVerifyDomain,
+} from '@/hooks/use-domain';
+import { useDeleteDomain } from '@/hooks/use-domains';
+import { useFeatureFlag } from '@/hooks/use-feature-flag';
+import { useHasPermission } from '@/hooks/use-has-permission';
+import { parseDomainMetadataJson } from '@/utils/domain-metadata';
+import { isApexInboundDomain } from '@/utils/inbound-domain';
+import { buildRoute, ROUTES } from '@/utils/routes';
+import { cn } from '@/utils/ui';
+
+const DATE_FORMAT_OPTIONS: Intl.DateTimeFormatOptions = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+};
+
+const DOMAIN_CONNECT_VERIFYING_TIMEOUT_MS = 90_000;
+const VERIFIED_CONFETTI_DURATION_MS = 8_000;
+
+function formatLongDate(dateStr: string): string {
+  const formatted = new Date(dateStr).toLocaleDateString('en-US', DATE_FORMAT_OPTIONS);
+
+  return formatted;
+}
+
+function formatMetadataDraft(data?: Record<string, string>): string {
+  return JSON.stringify(data ?? {}, null, 2);
+}
+
+function normalizeMetadata(data?: Record<string, string>): string {
+  const sortedData = Object.fromEntries(
+    Object.entries(data ?? {}).sort(([left], [right]) => left.localeCompare(right))
+  );
+
+  return JSON.stringify(sortedData);
+}
+
+function DomainStatusBadge({ status }: { status: DomainStatusEnum }) {

@@ -1,0 +1,6 @@
+{
+  "id":"de992f9baa911245988c56e789d8d26a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/activepieces/packages/web/src/app/builder/flow-canvas/nodes/step-node/step-node-chevron.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

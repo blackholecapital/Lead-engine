@@ -1,0 +1,9 @@
+{
+  "id":"cal-com",
+  "title":"Cal.com",
+  "category":"workspace",
+  "tags":["calendar","workspace","booking"],
+  "source":"vendor-source/workspace/cal-com",
+  "status":"downloaded",
+  "tier":"candidate"
+}

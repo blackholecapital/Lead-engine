@@ -1,0 +1,6 @@
+{
+  "id":"cea1ad203086d7cf4e5ce95483f17d7a",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/api/common/common-query-runners/utils/build-mutation-query-builder.util.ts",
+  "reasons":" builder-pattern, typescript-source,"
+}

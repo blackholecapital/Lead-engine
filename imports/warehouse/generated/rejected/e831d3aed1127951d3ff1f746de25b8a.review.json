@@ -1,0 +1,12 @@
+{
+  "id": "e831d3aed1127951d3ff1f746de25b8a",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/test/integration/metadata/suites/dashboard/successful-dashboard-page-layout-auto-creation.integration-spec.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "rejected",
+  "approved": false,
+  "notes": ""
+}

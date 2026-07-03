@@ -1,0 +1,6 @@
+{
+  "id":"dde243dece028491093bad1f1ea77681",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/ag-grid/documentation/ag-grid-docs/src/components/theme-builder/components/general/Tooltip.tsx",
+  "reasons":" builder-pattern, react-component,"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "4b5f88dcaf4bf01f9e8c734fbfdaaba2",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/query_builder/components/view/SnippetSidebarButton/SnippetSidebarButton.tsx",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "component",
+    "react",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

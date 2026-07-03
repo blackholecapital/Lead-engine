@@ -1,0 +1,13 @@
+{
+  "id": "cc181a34c6a672d99312c88a632ca1a5",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/novu/apps/worker/src/app/workflow/usecases/send-message/digest/get-digest-events.usecase.ts",
+  "score": 85,
+  "suggested_tags": [
+    "calendar",
+    "typescript",
+    "workflow"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

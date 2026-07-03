@@ -1,0 +1,12 @@
+{
+  "id": "2c4a785400e0df66fe9250b04cf53708",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/playwright/pages/DashboardListPage.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "pending",
+  "approved": false,
+  "notes": ""
+}

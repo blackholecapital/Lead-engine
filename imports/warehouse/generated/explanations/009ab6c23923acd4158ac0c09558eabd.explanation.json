@@ -1,0 +1,6 @@
+{
+  "id":"009ab6c23923acd4158ac0c09558eabd",
+  "score":95,
+  "file":"/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/superset/superset-frontend/src/explore/components/DataTablesPane/components/ResultsPaneOnDashboard.tsx",
+  "reasons":" dashboard-feature, react-component,"
+}

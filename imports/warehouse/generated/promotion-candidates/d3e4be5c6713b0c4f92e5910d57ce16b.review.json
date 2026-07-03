@@ -1,0 +1,12 @@
+{
+  "id": "d3e4be5c6713b0c4f92e5910d57ce16b",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/metabase/frontend/src/metabase/dashboard/hooks/use-dashboard-fullscreen.ts",
+  "score": 95,
+  "suggested_tags": [
+    "dashboard",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}

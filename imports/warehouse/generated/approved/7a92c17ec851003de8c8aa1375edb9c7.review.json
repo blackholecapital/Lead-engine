@@ -1,0 +1,14 @@
+{
+  "id": "7a92c17ec851003de8c8aa1375edb9c7",
+  "file": "/opt/eila-os/factory-xyz/runtime-c-assets/crm-resource-packs/twenty-crm/packages/twenty-server/src/engine/workspace-manager/workspace-migration/workspace-migration-builder/builders/page-layout-widget/workspace-migration-page-layout-widget-actions-builder.service.ts",
+  "score": 95,
+  "suggested_tags": [
+    "builder",
+    "engine",
+    "service",
+    "typescript"
+  ],
+  "review_state": "approved",
+  "approved": true,
+  "notes": ""
+}
