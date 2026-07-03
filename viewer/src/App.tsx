@@ -14,6 +14,12 @@ import Indexes from "./pages/Indexes";
 import ReviewCenter from "./pages/ReviewCenter";
 import Agents from "./pages/Agents";
 import Settings from "./pages/Settings";
+import Vectors from "./pages/Vectors";
+import Graphs from "./pages/Graphs";
+import Ranking from "./pages/Ranking";
+import Families from "./pages/Families";
+import Goldens from "./pages/Goldens";
+import Runs from "./pages/Runs";
 
 import "./styles/global.css";
 
@@ -35,6 +41,12 @@ return (
 <Route path="/review" element={<ReviewCenter/>}/>
 <Route path="/agents" element={<Agents/>}/>
 <Route path="/settings" element={<Settings/>}/>
+<Route path="/vectors" element={<Vectors/>}/>
+<Route path="/graphs" element={<Graphs/>}/>
+<Route path="/ranking" element={<Ranking/>}/>
+<Route path="/families" element={<Families/>}/>
+<Route path="/goldens" element={<Goldens/>}/>
+<Route path="/runs" element={<Runs/>}/>
 
 </Route>
 
