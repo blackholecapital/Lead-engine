@@ -1,14 +1,4 @@
-import {
-LayoutDashboard,
-Search,
-Archive,
-HardDrive,
-Database,
-GitBranch,
-ClipboardList,
-Bot,
-Settings
-} from "lucide-react";
+import {LayoutDashboard,Search,Archive,HardDrive,Database,ClipboardList,Bot,Settings,GitBranch} from "lucide-react";
 
 export const navigation=[
 {name:"Dashboard",path:"/",icon:LayoutDashboard,status:"LIVE"},
@@ -17,7 +7,7 @@ export const navigation=[
 {name:"Storage",path:"/storage",icon:HardDrive,status:"LIVE"},
 {name:"Indexes",path:"/indexes",icon:Database,status:"LIVE"},
 {name:"Vectors",path:"/vectors",icon:GitBranch,status:"LIVE"},
+{name:"Graphs",path:"/graphs",icon:GitBranch,status:"LIVE"},
 {name:"Review",path:"/review",icon:ClipboardList,status:"READY"},
 {name:"Agents",path:"/agents",icon:Bot,status:"IDLE"},
-{name:"Settings",path:"/settings",icon:Settings,status:"SYS"}
-];
+{name:"Settings",path:"/settings",icon:Settings,status:"SYS"}];

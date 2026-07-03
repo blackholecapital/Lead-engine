@@ -1,36 +1,13 @@
-import {useQuery} from "@tanstack/react-query";
+import AssetWorkbench from "../components/AssetWorkbench";
 import {getVectors} from "../api/runtime";
 
-export default function Indexes(){
-
-const {data,isLoading}=useQuery({
-queryKey:["vectors"],
-queryFn:getVectors,
-refetchInterval:3000
-});
-
-if(isLoading) return <h2>Loading Indexes...</h2>;
-
-return(
-<div>
-
-<h1>Vector Manifests</h1>
-
-<div className="dashboard-grid">
-
-<div className="panel">
-<h3>Status</h3>
-<p>{data.status}</p>
-</div>
-
-<div className="panel">
-<h3>Vector Count</h3>
-<p>{data.count}</p>
-</div>
-
-</div>
-
-</div>
+export default ()=>(
+<AssetWorkbench
+title="Vectors"
+queryKey="vectors"
+queryFn={getVectors}
+listField="vectors"
+countField="count"
+inspectType="vector"
+/>
 );
-
-}

@@ -1,13 +1,13 @@
 import AssetWorkbench from "../components/AssetWorkbench";
-import {getRanking} from "../api/runtime";
+import {getScores} from "../api/runtime";
 
 export default ()=>(
 <AssetWorkbench
-title="Ranking"
-queryKey="ranking"
-queryFn={getRanking}
+title="Scores"
+queryKey="scores"
+queryFn={getScores}
 listField="files"
 countField="count"
-inspectType="rank"
+inspectType="score"
 />
 );

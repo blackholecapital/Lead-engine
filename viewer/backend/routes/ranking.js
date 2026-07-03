@@ -12,8 +12,8 @@ files=fs.readdirSync(dir).filter(f=>f.endsWith(".rank.json"));
 
 res.json({
 status:"ONLINE",
-rankings:files.length,
-files
+count:files.length,
+files:files.sort()
 });
 
 });

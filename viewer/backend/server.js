@@ -19,6 +19,9 @@ require("./routes/runs")(app);
 require("./routes/bundles")(app);
 require("./routes/search")(app);
 require("./routes/inspect")(app);
+require("./routes/previews")(app);
+require("./routes/scores")(app);
+require("./routes/related")(app);
 require("./routes/warehouse")(app);
 
 app.get("/api/review",(req,res)=>{
