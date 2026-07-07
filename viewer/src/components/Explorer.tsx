@@ -22,7 +22,7 @@ inspectType
 
 const [selected,setSelected]=useState("");
 
-const {data,isLoading}=useQuery({
+const {data,isLoading,error}=useQuery({
 queryKey:[queryKey],
 queryFn,
 refetchInterval:5000
@@ -30,23 +30,28 @@ refetchInterval:5000
 
 if(isLoading) return <h2>Loading...</h2>;
 
+if(error){
+  console.error(error);
+  return (
+    <div style={{padding:"24px"}}>
+      <h2>Query Failed</h2>
+      <pre>{String(error)}</pre>
+    </div>
+  );
+}
+
 const list=data?.[listField] ?? [];
 
 return(
 <div>
-
 <h1>{title}</h1>
-
 <div style={{
 display:"grid",
 gridTemplateColumns:"320px 1fr",
 gap:"20px"
 }}>
-
 <div className="panel">
-
 <h3>{title} ({data?.[countField] ?? list.length})</h3>
-
 <ul style={{listStyle:"none",padding:0}}>
 {list.map((item:string)=>(
 <li
@@ -58,17 +63,12 @@ onClick={()=>setSelected(item)}
 </li>
 ))}
 </ul>
-
 </div>
-
 <Inspector
 type={inspectType}
 name={selected}
 />
-
 </div>
-
 </div>
 );
-
 }
