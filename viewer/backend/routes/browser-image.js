@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const INDEX="/mnt/eila-hot-sidecar/tracer-platform/imports/warehouse/generated/asset-browser";
+const INDEX="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/asset-browser";
 
 const TYPES={
   ".png":"image/png",

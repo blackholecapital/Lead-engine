@@ -1,5 +1,5 @@
 const fs=require("fs"),path=require("path");
-const ROOT="/mnt/eila-hot-sidecar/tracer-platform/imports/warehouse";
+const ROOT="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse";
 const MAP={
 vector:"generated/vector-manifests",
 rank:"ranking",

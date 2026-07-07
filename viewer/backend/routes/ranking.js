@@ -2,7 +2,7 @@ const fs=require("fs");
 
 module.exports=app=>app.get("/api/ranking",(req,res)=>{
 
-const dir="/mnt/eila-hot-sidecar/tracer-platform/imports/warehouse/ranking";
+const dir="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/ranking";
 
 let files=[];
 
