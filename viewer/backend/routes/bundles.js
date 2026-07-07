@@ -2,7 +2,7 @@ const fs=require("fs");
 
 module.exports=app=>app.get("/api/bundles",(req,res)=>{
 
-const dir="/mnt/eila-hot-sidecar/tracer-platform/imports/warehouse/generated/resource-bundles";
+const dir="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/resource-bundles";
 
 let files=[];
 

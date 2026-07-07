@@ -2,8 +2,8 @@ const fs=require("fs");
 
 module.exports=app=>app.get("/api/graphs",(req,res)=>{
 
-const root="/mnt/eila-hot-sidecar/tracer-platform/imports/warehouse/graphs/nodes";
-const edgeRoot="/mnt/eila-hot-sidecar/tracer-platform/imports/warehouse/graphs/edges";
+const root="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/graphs/nodes";
+const edgeRoot="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/graphs/edges";
 
 let files=[];
 let edges=[];

@@ -2,7 +2,7 @@ const fs=require("fs");
 
 module.exports=app=>app.get("/api/search",(req,res)=>{
 
-const file="/mnt/eila-hot-sidecar/tracer-platform/imports/warehouse/generated/search-index/assets.jsonl";
+const file="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/search-index/assets.jsonl";
 
 let lines=0;
 

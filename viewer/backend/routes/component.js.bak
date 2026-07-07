@@ -18,14 +18,7 @@ catalog.components.find(c=>c.path===decodeURIComponent(req.query.path||"")) || c
     if(!component)
         return res.sendStatus(404);
 
-    const repoRoots={
-        chatwoot:"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/chatwoot",
-        memgraph:"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/graph/memgraph",
-        qdrant:"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/retrieval/qdrant"
-    };
-
-    const repoRoot=repoRoots[req.params.repo] || catalog.root;
-    const sourcePath=path.join(repoRoot,component.path);
+    const sourcePath=path.join(catalog.root,component.path);
 
     let source="";
     if(fs.existsSync(sourcePath))
@@ -52,23 +45,12 @@ catalog.components.find(c=>c.path===decodeURIComponent(req.query.path||"")) || c
                     component.path.split("/").slice(0,-1).join("/"))
         .slice(0,50);
 
-    let previewFiles=[];
-
-    const componentDir=path.dirname(sourcePath);
-
-    if(fs.existsSync(componentDir)){
-        previewFiles=fs.readdirSync(componentDir)
-            .filter(f=>/\.(vue|tsx|jsx|ts|js|png|jpg|jpeg|gif|svg|webp)$/i.test(f))
-            .sort();
-    }
-
     res.json({
         component,
         source,
         imports,
         images,
-        related,
-        previewFiles
+        related
     });
 
 });

@@ -1,7 +1,7 @@
 const fs=require("fs");
 const path=require("path");
 
-const ROOT="/mnt/eila-hot-sidecar/tracer-platform/imports/warehouse/previews";
+const ROOT="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/previews";
 
 module.exports=app=>app.get("/api/preview/:name",(req,res)=>{
     const file=path.join(ROOT,req.params.name);
