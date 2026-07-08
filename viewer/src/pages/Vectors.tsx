@@ -1,60 +1,74 @@
-import {useState} from "react";
-import {useQuery} from "@tanstack/react-query";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 import AssetCard from "../components/AssetCard";
 import Inspector from "../components/Inspector";
 
-export default function Assets(){
+export default function Assets() {
+  const [selected, setSelected] = useState("");
 
-const [selected,setSelected]=useState("");
+  const {
+    data = [],
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["assets"],
+    queryFn: async () => {
+      const r = await fetch("/api/assets");
 
-const {data,isLoading}=useQuery({
-queryKey:["assets"],
-queryFn:()=>fetch("/api/assets").then(r=>r.json())
-});
+      if (!r.ok) {
+        throw new Error(`HTTP ${r.status}`);
+      }
 
-if(isLoading) return <h2>Loading Assets...</h2>;
+      const json = await r.json();
 
-return(
+      return Array.isArray(json)
+        ? json
+        : (json.assets ?? []);
+    },
+  });
 
-<div>
+  if (isLoading) return <h2>Loading Assets...</h2>;
 
-<h1>Asset Library</h1>
+  if (error) {
+    return (
+      <pre style={{ color: "tomato", padding: 20 }}>
+        {String(error)}
+      </pre>
+    );
+  }
 
-<div style={{
-display:"grid",
-gridTemplateColumns:"340px 1fr",
-gap:"20px"
-}}>
+  return (
+    <div>
+      <h1>Asset Library</h1>
 
-<div
-style={{
-maxHeight:"80vh",
-overflow:"auto"
-}}
->
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "340px 1fr",
+          gap: "20px",
+        }}
+      >
+        <div
+          style={{
+            maxHeight: "80vh",
+            overflow: "auto",
+          }}
+        >
+          {data.map((asset: any) => (
+            <AssetCard
+              key={asset.id}
+              asset={asset}
+              onSelect={setSelected}
+            />
+          ))}
+        </div>
 
-{data.map((asset:any)=>
-
-<AssetCard
-key={asset.id}
-asset={asset}
-onSelect={setSelected}
-/>
-
-)}
-
-</div>
-
-<Inspector
-type="asset"
-name={selected}
-/>
-
-</div>
-
-</div>
-
-);
-
+        <Inspector
+          type="asset"
+          name={selected}
+        />
+      </div>
+    </div>
+  );
 }

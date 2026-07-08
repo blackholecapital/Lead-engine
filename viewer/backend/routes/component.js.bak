@@ -1,0 +1,56 @@
+const fs=require("fs");
+const path=require("path");
+
+const COMPONENTS="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/component-catalog";
+const BROWSER="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/asset-browser";
+
+module.exports=app=>app.get("/api/component/:repo/:name",(req,res)=>{
+
+    const compFile=path.join(COMPONENTS,req.params.repo+".json");
+    if(!fs.existsSync(compFile))
+        return res.sendStatus(404);
+
+    const catalog=JSON.parse(fs.readFileSync(compFile,"utf8"));
+
+    const component=
+catalog.components.find(c=>c.path===decodeURIComponent(req.query.path||"")) || catalog.components.find(c=>c.name===req.params.name);
+
+    if(!component)
+        return res.sendStatus(404);
+
+    const sourcePath=path.join(catalog.root,component.path);
+
+    let source="";
+    if(fs.existsSync(sourcePath))
+        source=fs.readFileSync(sourcePath,"utf8");
+
+    const imports=[...source.matchAll(/import .*?['"](.*?)['"]/g)]
+        .map(x=>x[1]);
+
+    const browserFile=path.join(BROWSER,req.params.repo+".json");
+
+    let images=[];
+
+    if(fs.existsSync(browserFile)){
+        const browser=JSON.parse(fs.readFileSync(browserFile,"utf8"));
+
+        images=browser.images.filter(img=>{
+            const n=path.basename(img).toLowerCase();
+            return source.toLowerCase().includes(n);
+        });
+    }
+
+    const related=catalog.components
+        .filter(c=>c.path.split("/").slice(0,-1).join("/")===
+                    component.path.split("/").slice(0,-1).join("/"))
+        .slice(0,50);
+
+    res.json({
+        component,
+        source,
+        imports,
+        images,
+        related
+    });
+
+});

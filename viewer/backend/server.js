@@ -4,6 +4,12 @@ const os=require("os");
 const {execSync}=require("child_process");
 
 const app=express();
+
+app.use((req,res,next)=>{
+    console.log(req.method,req.url);
+    next();
+});
+
 app.use(cors());
 
 require("./routes/runtime")(app);
@@ -11,6 +17,10 @@ require("./routes/assets")(app);
 require("./routes/browser")(app);
 require("./routes/browser-image")(app);
 require("./routes/component")(app);
+require("./routes/features")(app);
+require("./routes/global-features")(app);
+require("./routes/readiness")(app);
+require("./routes/stories")(app);
 require("./routes/screens")(app);
 require("./routes/retrieval")(app);
 require("./routes/indexes")(app);
@@ -32,7 +42,7 @@ require("./routes/warehouse")(app);
 app.get("/api/review",(req,res)=>{
 
 const files=execSync(
-"find /mnt/eila-hot-sidecar/tracer-platform/review-center -type f 2>/dev/null | wc -l"
+"find /mnt/eila-hot-sidecar/Tracer-Dev/review-center -type f 2>/dev/null | wc -l"
 ).toString().trim();
 
 res.json({

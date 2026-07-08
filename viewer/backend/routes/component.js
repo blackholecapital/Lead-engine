@@ -1,70 +1,94 @@
-const fs=require("fs");
-const path=require("path");
+const fs = require("fs");
+const path = require("path");
 
-const COMPONENTS="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/component-catalog";
-const BROWSER="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/asset-browser";
+const COMPONENTS = "/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/component-catalog";
+const BROWSER = "/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/asset-browser";
 
-const REPO_ROOTS={
-  chatwoot:"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/comms/chatwoot",
-  memgraph:"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/graph/memgraph",
-  qdrant:"/opt/eila-os/factory-xyz/runtime-c-assets/vendor-source/retrieval/qdrant"
-};
+module.exports = app => app.get("/api/component/:repo/:name", (req, res) => {
+  const repo = req.params.repo;
+  const requestedPath = decodeURIComponent(req.query.path || "");
+  const requestedName = decodeURIComponent(req.params.name || "");
 
-module.exports=app=>app.get("/api/component/:repo/:name",(req,res)=>{
-  const compFile=path.join(COMPONENTS,req.params.repo+".json");
-  if(!fs.existsSync(compFile)) return res.sendStatus(404);
+  const compFile = path.join(COMPONENTS, repo + ".json");
+  const browserFile = path.join(BROWSER, repo + ".json");
 
-  const catalog=JSON.parse(fs.readFileSync(compFile,"utf8"));
+  let catalog = { components: [] };
+  if (fs.existsSync(compFile)) {
+    catalog = JSON.parse(fs.readFileSync(compFile, "utf8"));
+  }
 
-  const requestedPath=decodeURIComponent(req.query.path||"");
+  let browser = {};
+  if (fs.existsSync(browserFile)) {
+    browser = JSON.parse(fs.readFileSync(browserFile, "utf8"));
+  }
 
-  const component=
-    catalog.components.find(c=>c.path===requestedPath) ||
-    catalog.components.find(c=>c.name===req.params.name);
+  let component =
+    catalog.components.find(c => c.path === requestedPath) ||
+    catalog.components.find(c => c.name === requestedName) ||
+    null;
 
-  if(!component) return res.sendStatus(404);
+  if (!component && requestedPath) {
+    component = {
+      name: path.basename(requestedPath),
+      path: requestedPath,
+      story: /\.story\./i.test(requestedPath)
+    };
+  }
 
-  const repoRoot=REPO_ROOTS[req.params.repo] || catalog.root;
-  const sourcePath=path.join(repoRoot,component.path);
-
-  let source="";
-  if(fs.existsSync(sourcePath))
-    source=fs.readFileSync(sourcePath,"utf8");
-
-  const imports=[...source.matchAll(/import .*?['"](.*?)['"]/g)].map(x=>x[1]);
-
-  let images=[];
-  const browserFile=path.join(BROWSER,req.params.repo+".json");
-
-  if(fs.existsSync(browserFile)){
-    const browser=JSON.parse(fs.readFileSync(browserFile,"utf8"));
-    images=(browser.images||[]).filter(img=>{
-      const n=path.basename(img).toLowerCase();
-      return source.toLowerCase().includes(n);
+  if (!component) {
+    return res.status(404).json({
+      error: "component_not_found",
+      repo,
+      requestedName,
+      requestedPath
     });
   }
 
-  const related=catalog.components
-    .filter(c=>
-      c.path.split("/").slice(0,-1).join("/") ===
-      component.path.split("/").slice(0,-1).join("/")
-    )
-    .slice(0,50);
+  const repoRoot =
+    browser.root ||
+    catalog.root ||
+    "/mnt/eila-hot-sidecar/factory-xyz/runtime-c-assets/vendor-source";
 
-  let previewFiles=[];
-  const componentDir=path.dirname(sourcePath);
+  const sourcePath = path.join(repoRoot, component.path);
 
-  if(fs.existsSync(componentDir)){
-    previewFiles=fs.readdirSync(componentDir)
-      .filter(f=>/\.(vue|tsx|jsx|ts|js|png|jpg|jpeg|gif|svg|webp)$/i.test(f))
+  let source = "";
+  if (fs.existsSync(sourcePath)) {
+    source = fs.readFileSync(sourcePath, "utf8");
+  }
+
+  const imports = [...source.matchAll(/import .*?['"](.*?)['"]/g)].map(x => x[1]);
+
+  const images = Array.isArray(browser.images)
+    ? browser.images.filter(img => {
+        const n = path.basename(img).toLowerCase();
+        return source.toLowerCase().includes(n);
+      })
+    : [];
+
+  const related = Array.isArray(catalog.components)
+    ? catalog.components
+        .filter(c =>
+          c.path &&
+          component.path &&
+          c.path.split("/").slice(0, -1).join("/") ===
+            component.path.split("/").slice(0, -1).join("/")
+        )
+        .slice(0, 50)
+    : [];
+
+  let previewFiles = [];
+  const componentDir = path.dirname(sourcePath);
+
+  if (fs.existsSync(componentDir)) {
+    previewFiles = fs.readdirSync(componentDir)
+      .filter(f => /\.(vue|tsx|jsx|ts|js|png|jpg|jpeg|gif|svg|webp)$/i.test(f))
       .sort();
   }
 
   res.json({
-    repo:catalog.id,
     component,
-    path:component.path,
-    story:component.story,
+    path: component.path,
+    sourcePath,
     source,
     imports,
     images,

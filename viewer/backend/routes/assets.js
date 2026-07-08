@@ -1,7 +1,7 @@
 const fs=require("fs");
 const path=require("path");
 
-const ROOT="/mnt/eila-hot-sidecar/tracer-platform/imports/warehouse/generated/vector-manifests";
+const ROOT="/mnt/eila-hot-sidecar/Tracer-Dev/imports/warehouse/generated/vector-manifests";
 
 module.exports=app=>app.get("/api/assets",(req,res)=>{
     let files=[];
