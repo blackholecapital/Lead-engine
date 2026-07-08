@@ -172,3 +172,39 @@ grid-template-columns:1fr;
 }
 
 }
+
+/* PATCH_TRACER_LAYOUT_CLAMP_V1 */
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.layout {
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.content {
+  min-width: 0;
+  overflow: hidden;
+}
+
+main {
+  min-width: 0;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.panel {
+  min-width: 0;
+  overflow: hidden;
+}
+
+pre {
+  max-width: 100%;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
