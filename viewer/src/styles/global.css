@@ -95,7 +95,7 @@ margin-bottom:30px;
 
 .hero-header h1{
 margin:0;
-font-size:42px;
+font-size:32px;
 }
 
 .hero-header p{
@@ -130,7 +130,7 @@ color:#60a5fa;
 }
 
 .panel strong{
-font-size:24px;
+font-size:18px;
 }
 
 .bottom-grid{
@@ -266,4 +266,23 @@ body,
     height:100%;
     margin:0;
     overflow:hidden;
+}
+
+.sidebar h1{
+  margin:0 0 24px;
+  font-size:32px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:-0.02em;
+}
+
+.sidebar a{
+  font-size:18px;
+  padding:6px 0;
+}
+
+.header h2{
+  margin:0;
+  font-size:20px;
+  font-weight:600;
 }
