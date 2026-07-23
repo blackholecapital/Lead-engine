@@ -18,7 +18,7 @@ const cards=[
 return(
 <div>
 
-<h1>Tracer Runtime</h1>
+<h1>Lead Operations Dashboard</h1>
 
 <div className="dashboard-grid">
 

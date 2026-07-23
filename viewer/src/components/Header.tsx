@@ -5,14 +5,14 @@ export default function Header() {
     <header className="header">
 
       <div>
-        <h2>Tracer AI</h2>
+        <h2>Lead Intelligence Platform</h2>
       </div>
 
       <div className="header-right">
 
         <div className="online">
           <Wifi size={16}/>
-          Runtime Connected
+          Data Pipeline Connected
         </div>
 
         <Bell size={20}/>
