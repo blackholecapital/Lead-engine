@@ -5,7 +5,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
 
-      <h1>Lead Engine</h1>
+      <h1>Tracer AI</h1>
 
       {navigation.map((item) => {
         const Icon = item.icon;

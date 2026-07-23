@@ -1,7 +1,7 @@
 export default function StatusBar() {
   return (
     <footer className="statusbar">
-      Lead Engine • MVP • Ready
+      Tracer AI • MVP • Ready
     </footer>
   );
 }
