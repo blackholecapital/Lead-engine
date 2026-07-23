@@ -16,7 +16,7 @@ return(
 
 <div className="p-8">
 
-<h1 className="text-4xl font-bold mb-6">
+<h1 className="text-2xl font-bold mb-6">
 Live FDOT Incident Feed
 </h1>
 
@@ -29,13 +29,13 @@ key={row.id}
 className="rounded border border-zinc-700 p-4 bg-zinc-900"
 >
 
-<div className="text-xl font-semibold">
+<div className="text-base font-semibold">
 
 📍 {row.type}
 
 </div>
 
-<div className="text-zinc-400 mt-2">
+<div className="text-sm text-zinc-400 mt-2">
 
 📅 {row.date}
 
