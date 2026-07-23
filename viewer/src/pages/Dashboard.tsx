@@ -1,100 +1,61 @@
-import { useEffect, useState } from "react";
+import {useEffect,useState} from "react";
 
-type Incident = {
-  id: number;
-  type: string;
-  date: string;
-  county: string;
-  status: string;
-  source: string;
-};
+export default function Dashboard(){
 
-export default function Dashboard() {
+const [rows,setRows]=useState<any[]>([]);
 
-  const [rows,setRows] = useState<Incident[]>([]);
-  const [loading,setLoading] = useState(true);
+useEffect(()=>{
 
-  useEffect(() => {
+fetch("/api/incidents")
+.then(r=>r.json())
+.then(setRows);
 
-    fetch((import.meta.env.VITE_API_URL || "http://127.0.0.1:8000") + "/incidents")
-      .then(r=>r.json())
-      .then(data=>{
-        setRows(data);
-        setLoading(false);
-      });
+},[]);
 
-  },[]);
-
-  return (
+return(
 
 <div className="p-8">
 
 <h1 className="text-4xl font-bold mb-6">
-Lead Intelligence Feed
+Live FDOT Incident Feed
 </h1>
 
-<div className="rounded-lg border border-zinc-700 overflow-hidden">
-
-<table className="w-full">
-
-<thead className="bg-zinc-900">
-
-<tr>
-
-<th className="text-left p-3">Location</th>
-<th className="text-left p-3">Date</th>
-<th className="text-left p-3">County</th>
-<th className="text-left p-3">Status</th>
-<th className="text-left p-3">Source</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-{loading &&
-
-<tr>
-
-<td className="p-4" colSpan={5}>
-Loading...
-</td>
-
-</tr>
-
-}
+<div className="grid gap-4">
 
 {rows.map(row=>(
 
-<tr
+<div
 key={row.id}
-className="border-t border-zinc-800 hover:bg-zinc-900"
+className="rounded border border-zinc-700 p-4 bg-zinc-900"
 >
 
-<td className="p-3">{row.type}</td>
+<div className="text-xl font-semibold">
 
-<td className="p-3">{row.date}</td>
+📍 {row.type}
 
-<td className="p-3">{row.county || "Hillsborough"}</td>
+</div>
 
-<td className="p-3">
+<div className="text-zinc-400 mt-2">
 
-<span className="rounded bg-green-700 px-2 py-1 text-xs">
-{row.status || "Crash"}
-</span>
+📅 {row.date}
 
-</td>
+</div>
 
-<td className="p-3">{row.source}</td>
+<div className="mt-2">
 
-</tr>
+🏛 {row.county}
+
+</div>
+
+<div>
+
+🚔 {row.source}
+
+</div>
+
+</div>
 
 ))}
-
-</tbody>
-
-</table>
 
 </div>
 
