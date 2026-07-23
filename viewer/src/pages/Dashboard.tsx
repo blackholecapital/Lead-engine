@@ -1,54 +1,105 @@
 import { useEffect, useState } from "react";
-import { getIncidents } from "../api/incidents";
-import type { Incident } from "../api/incidents";
+
+type Incident = {
+  id: number;
+  type: string;
+  date: string;
+  county: string;
+  status: string;
+  source: string;
+};
 
 export default function Dashboard() {
-  const [incidents, setIncidents] = useState<Incident[]>([]);
-  const [loading, setLoading] = useState(true);
+
+  const [rows,setRows] = useState<Incident[]>([]);
+  const [loading,setLoading] = useState(true);
 
   useEffect(() => {
-    getIncidents()
-      .then(setIncidents)
-      .finally(() => setLoading(false));
-  }, []);
+
+    fetch((import.meta.env.VITE_API_URL || "http://127.0.0.1:8000") + "/incidents")
+      .then(r=>r.json())
+      .then(data=>{
+        setRows(data);
+        setLoading(false);
+      });
+
+  },[]);
 
   return (
-    <div style={{ padding: 32 }}>
-      <h1>Lead Engine</h1>
 
-      <h2>Total Incidents: {incidents.length}</h2>
+<div className="p-8">
 
-      {loading && <p>Loading...</p>}
+<h1 className="text-4xl font-bold mb-6">
+Lead Intelligence Feed
+</h1>
 
-      {!loading && (
-        <table width="100%" cellPadding={8}>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>County</th>
-              <th>City</th>
-              <th>Type</th>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Source</th>
-            </tr>
-          </thead>
+<div className="rounded-lg border border-zinc-700 overflow-hidden">
 
-          <tbody>
-            {incidents.map(i => (
-              <tr key={i.id}>
-                <td>{i.id}</td>
-                <td>{i.county}</td>
-                <td>{i.city}</td>
-                <td>{i.type}</td>
-                <td>{i.date}</td>
-                <td>{i.status}</td>
-                <td>{i.source}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
-  );
+<table className="w-full">
+
+<thead className="bg-zinc-900">
+
+<tr>
+
+<th className="text-left p-3">Location</th>
+<th className="text-left p-3">Date</th>
+<th className="text-left p-3">County</th>
+<th className="text-left p-3">Status</th>
+<th className="text-left p-3">Source</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{loading &&
+
+<tr>
+
+<td className="p-4" colSpan={5}>
+Loading...
+</td>
+
+</tr>
+
+}
+
+{rows.map(row=>(
+
+<tr
+key={row.id}
+className="border-t border-zinc-800 hover:bg-zinc-900"
+>
+
+<td className="p-3">{row.type}</td>
+
+<td className="p-3">{row.date}</td>
+
+<td className="p-3">{row.county || "Hillsborough"}</td>
+
+<td className="p-3">
+
+<span className="rounded bg-green-700 px-2 py-1 text-xs">
+{row.status || "Crash"}
+</span>
+
+</td>
+
+<td className="p-3">{row.source}</td>
+
+</tr>
+
+))}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+);
+
 }
