@@ -17,7 +17,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route path="/" element={<Navigate to="/assets" replace />} />
+         <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/assets" element={<Vectors />} />
           <Route path="/vectors" element={<Vectors />} />
           <Route path="/dashboard" element={<Dashboard />} />
