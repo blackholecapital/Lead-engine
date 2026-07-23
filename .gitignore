@@ -17,3 +17,11 @@ data-volumes/
 quarantine/
 snapshots/
 .backup-storage360/
+
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+
+# Database
+backend/data/*.db
