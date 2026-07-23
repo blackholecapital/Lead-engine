@@ -1,14 +1,8 @@
-import AssetWorkbench from "../components/AssetWorkbench";
-
-const getGraphs=()=>fetch("/api/graphs").then(r=>r.json());
-
-export default ()=>(
-<AssetWorkbench
-title="Graphs"
-queryKey="graphs"
-queryFn={getGraphs}
-listField="files"
-countField="nodes"
-inspectType="node"
-/>
-);
+export default function Graphs() {
+  return (
+    <div style={{padding:40}}>
+      <h1>Graphs</h1>
+      <p>Lead Engine MVP - Coming Soon</p>
+    </div>
+  );
+}

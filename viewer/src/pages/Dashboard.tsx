@@ -1,37 +1,41 @@
-import {useRuntime} from "../hooks/useRuntime";
+export default function Dashboard() {
+  return (
+    <div style={{padding:32}}>
+      <h1>Lead Engine</h1>
 
-export default function Dashboard(){
+      <p>
+        Legal Lead Intelligence Platform
+      </p>
 
-const {data,isLoading}=useRuntime();
+      <div style={{
+        display:"grid",
+        gridTemplateColumns:"repeat(4,1fr)",
+        gap:"20px",
+        marginTop:"40px"
+      }}>
 
-if(isLoading) return <h2>Connecting...</h2>;
+        <div className="card">
+          <h3>Incidents</h3>
+          <h1>0</h1>
+        </div>
 
-const cards=[
-["Runtime",data.runtime],
-["Hostname",data.hostname],
-["CPU",data.cpu],
-["Memory",`${data.memory}%`],
-["Storage",data.storage],
-["Uptime",`${Math.floor(data.uptime/3600)} hrs`]
-];
+        <div className="card">
+          <h3>Qualified Leads</h3>
+          <h1>0</h1>
+        </div>
 
-return(
-<div>
+        <div className="card">
+          <h3>Counties</h3>
+          <h1>1</h1>
+        </div>
 
-<h1>Lead Operations Dashboard</h1>
+        <div className="card">
+          <h3>Status</h3>
+          <h1>Ready</h1>
+        </div>
 
-<div className="dashboard-grid">
+      </div>
 
-{cards.map(([k,v])=>(
-<div className="panel" key={k}>
-<h3>{k}</h3>
-<p>{v}</p>
-</div>
-))}
-
-</div>
-
-</div>
-);
-
+    </div>
+  );
 }

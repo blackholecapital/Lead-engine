@@ -1,13 +1,8 @@
-import AssetWorkbench from "../components/AssetWorkbench";
-import {getScores} from "../api/runtime";
-
-export default ()=>(
-<AssetWorkbench
-title="Scores"
-queryKey="scores"
-queryFn={getScores}
-listField="files"
-countField="count"
-inspectType="score"
-/>
-);
+export default function Scores() {
+  return (
+    <div style={{padding:40}}>
+      <h1>Scores</h1>
+      <p>Lead Engine MVP - Coming Soon</p>
+    </div>
+  );
+}
